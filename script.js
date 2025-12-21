@@ -12,6 +12,11 @@ let selectedCategories = new Set();
 let searchQuery = '';
 let filteredPlaces = [];
 
+// Which dataset is currently driving the cards grid?
+// - 'places' => allPlaces from selection-data.js
+// - 'faqspecial' => special series list from faqspecial-data.js
+let activeDataset = 'places';
+
 // DOM
 const categoriesGrid = document.getElementById('categoriesGrid');
 const cardsGrid = document.getElementById('cardsGrid');
@@ -29,7 +34,7 @@ const filterJumpBtn = document.getElementById('filterJump');
 
 function updateFilterJumpVisibility() {
   if (!filterJumpBtn) return;
-  const visible = selectedCategories.size > 0;
+  const visible = (activeDataset === 'faqspecial') ? true : (selectedCategories.size > 0);
   filterJumpBtn.classList.toggle('is-visible', visible);
 }
 
@@ -62,9 +67,10 @@ function loadStats() {
 }
 
 function setActiveFilterText() {
-  const txt = `${selectedCategories.size} aktif filtre`;
+  const activeCount = (activeDataset === 'faqspecial') ? 1 : selectedCategories.size;
+  const txt = `${activeCount} aktif filtre`;
   if (activeFilterCountEl) activeFilterCountEl.textContent = txt;
-  if (activeFiltersCountEl) activeFiltersCountEl.textContent = String(selectedCategories.size);
+  if (activeFiltersCountEl) activeFiltersCountEl.textContent = String(activeCount);
 }
 
 // Render categories with checkmark
@@ -75,23 +81,47 @@ function renderCategories() {
   categories.forEach((category) => {
     const btn = document.createElement('button');
     btn.className = `category-card ${category.color}`;
-    if (selectedCategories.has(category.id)) btn.classList.add('active');
+    const isPage = category?.action?.type === 'page' && !!category?.action?.href;
+    const isDataset = category?.action?.type === 'dataset' && category?.action?.dataset === 'faqspecial';
 
-    const count = allPlaces.filter((place) => place.category.includes(category.id)).length;
+    if (isDataset && activeDataset === 'faqspecial') btn.classList.add('active');
+    if (!isDataset && selectedCategories.has(category.id)) btn.classList.add('active');
+
+    let count = '';
+    if (!isPage) {
+      if (isDataset) {
+        const list = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? faqspecialSeries : [];
+        count = String(list.length);
+      } else {
+        count = String(allPlaces.filter((place) => Array.isArray(place.category) && place.category.includes(category.id)).length);
+      }
+    }
 
     btn.innerHTML = `
       <span class="category-check" aria-hidden="true">✓</span>
       <div class="category-icon">${category.icon}</div>
       <span class="category-name">${category.name}</span>
-      <span class="category-count">${count}</span>
+      ${isPage ? '' : `<span class="category-count">${count}</span>`}
     `;
 
     btn.addEventListener('click', () => {
-      // Special categories can route to separate pages (FAQ, Articles)
-      if (category && category.action && category.action.type === 'page' && category.action.href) {
+      // Route categories (FAQ, Articles)
+      if (isPage) {
         window.location.href = category.action.href;
         return;
       }
+
+      // Dataset category: Özel Soru Serileri (filters index cards without leaving the page)
+      if (isDataset) {
+        activeDataset = (activeDataset === 'faqspecial') ? 'places' : 'faqspecial';
+        selectedCategories.clear();
+        renderCategories();
+        filterPlaces();
+        return;
+      }
+
+      // Switching back to places dataset when a normal filter is used
+      if (activeDataset !== 'places') activeDataset = 'places';
 
       if (selectedCategories.has(category.id)) selectedCategories.delete(category.id);
       else selectedCategories.add(category.id);
@@ -171,7 +201,7 @@ function renderCards() {
           </div>
         </div>
         <div class="card-actions">
-          <a class="card-detail" href="selection.html?id=${encodeURIComponent(place.id)}">Detay</a>
+          <a class="card-detail" href="${activeDataset === 'faqspecial' ? 'faqspecial-selection.html?id=' : 'selection.html?id='}${encodeURIComponent(place.id)}">Detay</a>
         </div>
       </div>
     `;
@@ -179,7 +209,7 @@ function renderCards() {
     card.addEventListener('click', (e) => {
       // Allow normal link behavior
       if (e.target.closest('a')) return;
-      window.location.href = `selection.html?id=${encodeURIComponent(place.id)}`;
+      window.location.href = `${activeDataset === 'faqspecial' ? 'faqspecial-selection.html?id=' : 'selection.html?id='}${encodeURIComponent(place.id)}`;
     });
 
     cardsGrid.appendChild(card);
@@ -196,9 +226,14 @@ function updateStats() {
 }
 
 function filterPlaces() {
-  let filtered = [...allPlaces];
+  let filtered = [];
+  if (activeDataset === 'faqspecial') {
+    filtered = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? [...faqspecialSeries] : [];
+  } else {
+    filtered = [...allPlaces];
+  }
 
-  if (selectedCategories.size > 0) {
+  if (activeDataset === 'places' && selectedCategories.size > 0) {
     filtered = filtered.filter((place) => place.category.some((cat) => selectedCategories.has(cat)));
   }
 
@@ -228,6 +263,7 @@ if (searchInput) {
 if (clearFiltersBtn) {
   clearFiltersBtn.addEventListener('click', () => {
     selectedCategories.clear();
+    activeDataset = 'places';
     searchQuery = '';
     if (searchInput) searchInput.value = '';
     renderCategories();

@@ -2,11 +2,12 @@
    "Series-like" FAQ answers (long-form).
    This dataset is separate by design.
 */
-const faqSpecialItems = [
+const faqspecialSeries = [
   {
     id: "fs-transport-001",
     title: "Kaş'a Gitmenin En Mantıklı Yolu",
-    excerpt: "Ulaşım seçeneklerini netleştiren uzun cevap (placeholder).",
+    description: "Ulaşım seçeneklerini netleştiren uzun cevap (placeholder).",
+    category: ['faqspecial'],
     image: "https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?w=1200",
     longText: `PLACEHOLDER UZUN CEVAP
 
@@ -28,7 +29,8 @@ Bu metin, "uzun yazı gibi" cevap formatını test etmek için placeholder.
   {
     id: "fs-plaj-001",
     title: "Kaş'ta Plaj Seçimi: Koy mu Halk Plajı mı?",
-    excerpt: "Kalabalık, erişim, şezlong, çocuklu aileler… Hepsi bir arada.",
+    description: "Kalabalık, erişim, şezlong, çocuklu aileler… Hepsi bir arada.",
+    category: ['faqspecial'],
     image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=1200",
     longText: `PLACEHOLDER UZUN CEVAP
 

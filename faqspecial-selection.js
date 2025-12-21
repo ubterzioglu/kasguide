@@ -18,7 +18,7 @@
   }
 
   function findItem(id) {
-    const list = (typeof faqSpecialItems !== 'undefined' && Array.isArray(faqSpecialItems)) ? faqSpecialItems : [];
+    const list = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? faqspecialSeries : [];
     return list.find((x) => String(x.id) === String(id));
   }
 

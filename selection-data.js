@@ -11,7 +11,7 @@ const categories = [
   },
   {
     id: 'beaches',
-    name: 'Plaj',
+    name: 'Plajlar',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 12h.01"/>
       <path d="M20 12h.01"/>
@@ -34,7 +34,7 @@ const categories = [
   },
   {
     id: 'food',
-    name: 'Cafe',
+    name: 'Yeme-İçme',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/>
       <circle cx="17" cy="7" r="5"/>
@@ -85,7 +85,7 @@ const categories = [
 ,
 {
   id: 'faq',
-  name: 'FAQ',
+  name: 'Soru Cevap',
   icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
     <path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4"/>
@@ -95,8 +95,40 @@ const categories = [
   action: { type: 'page', href: 'faq.html' }
 },
 {
+  id: 'faqspecial',
+  name: 'Özel Soru Serileri',
+  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M4 4h16v14H5.5L4 19.5V4z"/>
+    <path d="M8 8h8"/>
+    <path d="M8 12h8"/>
+    <path d="M8 16h5"/>
+  </svg>`,
+  color: 'category-purple',
+  action: { type: 'dataset', dataset: 'faqspecial' }
+},
+{
+  id: 'meyhane',
+  name: 'Meyhane',
+  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M8 2h8v6a4 4 0 0 1-8 0V2z"/>
+    <path d="M10 14v6"/>
+    <path d="M14 14v6"/>
+    <path d="M8 20h8"/>
+  </svg>`,
+  color: 'category-red'
+},
+{
+  id: 'bar',
+  name: 'Bar',
+  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M6 2h12l-5 8v8a2 2 0 0 1-2 2H9"/>
+    <path d="M12 10H7"/>
+  </svg>`,
+  color: 'category-pink'
+},
+{
   id: 'articles',
-  name: 'Yazı',
+  name: 'Yazılar',
   icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/>
     <path d="M20 2H6.5A2.5 2.5 0 0 0 4 4.5v15"/>
@@ -125,25 +157,12 @@ const allPlaces = [
     location: 'Kaş-Kalkan yolu üzeri',
     distance: '20 km',
     coordinates: { lat: 36.2542, lng: 29.2991 },
-    access: '187 Merdiven',
-    instagram: 'https://www.instagram.com/explore/tags/kaputa%C5%9F/',
-    website: 'https://tr.wikipedia.org/wiki/Kaputa%C5%9F_Plaj%C4%B1',
-    phone: '+90 242 000 00 00',
-    booking: '',
-    googleMapsQuery: 'Kaputaş Plajı',
+    website: '',
+    phone: '',
     duration: '3-5 saat',
     facilities: ['Ücretsiz Giriş', 'Kantin', 'Duş', 'WC', 'Şezlong', 'Şemsiye'],
     features: ['Ücretsiz Giriş', 'Kantin', 'Duş', 'WC'],
-    tags: ['turkuaz', 'kumsal', 'merdiven', 'populer'],
-    longText: `Kaputaş Plajı, Kaş ile Kalkan arasında yer alan, aşağıya inen merdivenleriyle meşhur küçük ama çok etkileyici bir koy.
-
-Buradaki “Uzunca” alanı özellikle UI test için dopdolu tutuldu.
-
-• Sabah erken saatlerde su genelde daha sakin olur.
-• Merdiven iniş-çıkışı yorabilir; su ve rahat ayakkabı iyi fikir.
-• Öğleden sonra rüzgâr/dalga artarsa yüzme koşulları değişebilir.
-
-Bu metni daha sonra gerçek içerikle değiştireceksin.`
+    tags: ['turkuaz', 'kumsal', 'merdiven', 'populer']
   },
   {
     id: 'kekova-beach',
