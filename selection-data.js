@@ -2,7 +2,7 @@
 const categories = [
   {
     id: 'places',
-    name: 'Gezilecek Yerler',
+    name: 'Gezi',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
       <circle cx="12" cy="10" r="3"/>
@@ -11,7 +11,7 @@ const categories = [
   },
   {
     id: 'beaches',
-    name: 'Plajlar & Koylar',
+    name: 'Plaj',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 12h.01"/>
       <path d="M20 12h.01"/>
@@ -26,7 +26,7 @@ const categories = [
   },
   {
     id: 'activities',
-    name: 'Aktiviteler',
+    name: 'Aktivite',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
     </svg>`,
@@ -34,7 +34,7 @@ const categories = [
   },
   {
     id: 'food',
-    name: 'Yeme-İçme',
+    name: 'Cafe',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/>
       <circle cx="17" cy="7" r="5"/>
@@ -43,7 +43,7 @@ const categories = [
   },
   {
     id: 'hotels',
-    name: 'Konaklama',
+    name: 'Otel',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 4v16"/>
       <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
@@ -54,7 +54,7 @@ const categories = [
   },
   {
     id: 'history',
-    name: 'Tarihi Yerler',
+    name: 'Tarih',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M12 2a10 10 0 1 0 10 10H12V2z"/>
       <path d="M12 6v6l4 2"/>
@@ -74,7 +74,7 @@ const categories = [
   },
   {
     id: 'shopping',
-    name: 'Alışveriş',
+    name: 'Çarşı',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <circle cx="9" cy="21" r="1"/>
       <circle cx="20" cy="21" r="1"/>
@@ -85,7 +85,7 @@ const categories = [
 ,
 {
   id: 'faq',
-  name: 'Soru - Cevap',
+  name: 'FAQ',
   icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
     <path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4"/>
@@ -96,7 +96,7 @@ const categories = [
 },
 {
   id: 'articles',
-  name: 'Yazılar',
+  name: 'Yazı',
   icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/>
     <path d="M20 2H6.5A2.5 2.5 0 0 0 4 4.5v15"/>

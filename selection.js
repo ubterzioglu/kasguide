@@ -1,8 +1,8 @@
 // selection.js (detail page)
 // - Renders a single place by id: selection.html?id=PLACE_ID
 // - Uses selection-data.js as the single source
-// - UI is stable: actions are always shown (enabled emerald / disabled gray)
-// - Tags remain in dataset but are not shown in the main UI
+// - Actions are always shown (enabled emerald / disabled gray)
+// - Tags remain in dataset but are NOT shown in the main UI
 
 (function () {
   function escapeHtml(str) {
@@ -19,21 +19,23 @@
     return params.get('id');
   }
 
+  function compactText(v) {
+    return String(v ?? '').trim();
+  }
+
   function getCategoryNames(place) {
     if (!place || !Array.isArray(place.category)) return '';
     const cats = (typeof categories !== 'undefined' && Array.isArray(categories)) ? categories : [];
+
+    // Keep it short in the header: max 3 categories
     return place.category
+      .slice(0, 3)
       .map((cid) => {
         const c = cats.find((x) => x.id === cid);
         return c ? c.name : cid;
       })
       .filter(Boolean)
       .join(' • ');
-  }
-
-  function compactText(v) {
-    const s = String(v ?? '').trim();
-    return s;
   }
 
   function buildMapsSearchHref(place) {
@@ -89,9 +91,11 @@
     // Tags remain in dataset but we intentionally do NOT surface tags in UI.
     const facilities = Array.isArray(place?.facilities) ? place.facilities : [];
     const features = Array.isArray(place?.features) ? place.features : [];
+
     const merged = [...facilities, ...features]
       .map((x) => String(x ?? '').trim())
       .filter(Boolean);
+
     // Deduplicate while keeping order
     const seen = new Set();
     const uniq = [];
@@ -102,60 +106,6 @@
       uniq.push(item);
     }
     return uniq;
-  }
-
-  function formatValue(v) {
-    if (v == null) return '';
-    if (Array.isArray(v)) {
-      return v.map((x) => (typeof x === 'string' ? x : JSON.stringify(x))).join(', ');
-    }
-    if (typeof v === 'object') {
-      return JSON.stringify(v, null, 2);
-    }
-    return String(v);
-  }
-
-  function buildDetailsRows(place) {
-    const hiddenKeys = new Set([
-      'selected',
-      'image',
-      'longText',
-      'description',
-      'category',
-      'rating',
-      'price',
-      'location',
-      'distance',
-      'duration',
-      'access',
-      'instagram',
-      'website',
-      'phone',
-      'booking',
-      'googleMaps',
-      'maps',
-      'googleMapsQuery',
-      'mapsQuery'
-    ]);
-
-    const entries = Object.entries(place || {})
-      .filter(([k]) => !hiddenKeys.has(k))
-      .sort(([a], [b]) => a.localeCompare(b));
-
-    const rows = entries
-      .map(([k, v]) => {
-        const val = formatValue(v);
-        if (!val) return '';
-        const isObj = typeof v === 'object' && v !== null;
-        const body = isObj
-          ? `<div class="kv-val"><pre style="margin:0; white-space: pre-wrap;">${escapeHtml(val)}</pre></div>`
-          : `<div class="kv-val">${escapeHtml(val)}</div>`;
-        return `<div class="kv-row"><div class="kv-key">${escapeHtml(k)}</div>${body}</div>`;
-      })
-      .filter(Boolean)
-      .join('');
-
-    return rows;
   }
 
   function metaTile(label, value) {
@@ -169,9 +119,13 @@
         <div class="detail-body">
           <h2 class="detail-title" style="color: var(--gray-800)">Bulunamadı</h2>
           <p class="detail-lead">Bu id ile bir kayıt bulunamadı.</p>
-          <div class="detail-actions-bar">
-            <a class="icon-btn is-enabled" href="index.html" aria-label="Listeye dön" title="Listeye dön">${svgIcon('map')}</a>
-          </div>
+          <a class="home-link" href="index.html" aria-label="Ana Sayfa" title="Ana Sayfa">
+            <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 11.5 12 4l9 7.5" />
+              <path d="M5 10.8V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10.8" />
+              <path d="M10 21v-6a2 2 0 0 1 4 0v6" />
+            </svg>
+          </a>
         </div>
       </div>
     `;
@@ -203,8 +157,6 @@
     const longBoxClass = longText ? 'detail-box' : 'detail-box placeholder';
     const longBoxValue = longText || '—';
 
-    const detailsRows = buildDetailsRows(place);
-
     root.innerHTML = `
       <article class="detail-card">
         <div class="detail-hero">
@@ -217,6 +169,11 @@
         </div>
 
         <div class="detail-body">
+          <p class="detail-lead">
+            <span class="detail-bullet" aria-hidden="true">🟢</span>
+            <strong>Kısaca:</strong> ${escapeHtml(place.description || '—')}
+          </p>
+
           <div class="detail-meta-grid">
             ${metaTile('Puan', place.rating)}
             ${metaTile('Fiyat', place.price)}
@@ -228,23 +185,20 @@
 
           <div class="detail-actions-bar">${actionsHtml}</div>
 
-          <p class="detail-lead"><strong>Kısaca:</strong> ${escapeHtml(place.description || '—')}</p>
-
           ${
             chips.length
-              ? `<div class="detail-chips">${chips.map((c) => `<span class="detail-chip">${escapeHtml(c)}</span>`).join('')}</div>`
+              ? `<div class="detail-chips">${chips
+                  .map((c) => `<span class="detail-chip">${escapeHtml(c)}</span>`)
+                  .join('')}</div>`
               : ''
           }
 
-          <div class="detail-section-title">Uzunca:</div>
-          <div class="${longBoxClass}" style="white-space: pre-wrap;">${escapeHtml(longBoxValue)}</div>
+          <div class="detail-section-title">
+            <span class="detail-bullet" aria-hidden="true">🟢</span>
+            Uzunca:
+          </div>
 
-          <details class="detail-accordion">
-            <summary>Detaylar</summary>
-            <div class="detail-accordion-body">
-              ${detailsRows ? `<div class="kv">${detailsRows}</div>` : `<div class="detail-box placeholder">—</div>`}
-            </div>
-          </details>
+          <div class="${longBoxClass}" style="white-space: pre-wrap;">${escapeHtml(longBoxValue)}</div>
         </div>
       </article>
     `;
