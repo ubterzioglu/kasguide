@@ -55,7 +55,6 @@
       const a = escapeHtml(item.answer || "");
 
       card.innerHTML = `
-        <div class="faq-badge">Q&A</div>
         <h3 class="faq-q">🔴 ${q}</h3>
         <p class="faq-a">🟢 ${a}</p>
       `;
