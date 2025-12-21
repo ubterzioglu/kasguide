@@ -1,8 +1,8 @@
-/* faq-data.js
-   FAQ dataset (legacy name). Kept for compatibility.
+/* faq-list-data.js
+   FAQ dataset for faq.html (list page)
    Add / edit freely. Missing fields are tolerated.
 */
-const faqItems = [
+const faqListItems = [
   {
     "id": "faq-001-kas-a-en-kolay-nasil-gidilir",
     "question": "Kaş’a en kolay nasıl gidilir?",

@@ -23,21 +23,23 @@
       <div style="width:48px"></div>
     </div>
   </header>
-  
 
   <main class="faq-page">
     <div class="container">
       <div class="faq-top">
         <div class="faq-title">Soru - Cevap</div>
-        
+
         <input id="faqSearch" class="faq-search" type="text" placeholder="Sorularda ara... (ör. ulaşım, plaj, Meis)">
+        <div id="faqCount" class="faq-count" aria-live="polite"></div>
       </div>
 
       <div id="faqList" class="faq-list"></div>
     </div>
   </main>
 
-  <script src="faq-data.js"></script>
+  <!-- Dataset: separate file so we can grow it independently -->
+  <script src="faq-list-data.js"></script>
+  <!-- Renderer -->
   <script src="faq.js"></script>
 </body>
 </html>
