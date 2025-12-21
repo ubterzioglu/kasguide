@@ -2,28 +2,6 @@
 
 /* Selection (detail) page styles */
 
-.home-link{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:44px;
-  height:44px;
-  border-radius:999px;
-  background: rgba(0,0,0,0.06);
-  text-decoration:none;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-.home-link:hover{
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-  background: rgba(0,0,0,0.08);
-}
-.home-icon{
-  width:22px;
-  height:22px;
-  color: var(--gray-800);
-}
-
 /* Detail card layout */
 .detail-page{
   padding: 2rem 0 3rem;

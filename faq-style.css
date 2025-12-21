@@ -1,73 +1,7 @@
 @import url("style.css");
-/* Kaş Guide – FAQ styles
-   Header/top layout copied to match faqspecial.html (header + container + logo)
-*/
 
-:root{
-  --bg: #f6f7f9;
-  --text: #111;
-  --muted: #444;
-  --card: #fff;
-  --border: rgba(0,0,0,.10);
-}
+/* Kaş Guide – FAQ page styles (on top of global style.css) */
 
-*{ box-sizing: border-box; }
-
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* ====== shared container ====== */
-.container{
-  width: min(980px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-/* ====== header (from faqspecial) ====== */
-.header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: #fff;
-  border-bottom: 1px solid var(--border);
-}
-
-.header-content{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  padding: 14px 0;
-}
-
-.back-link{
-  text-decoration:none;
-  color:#222;
-  font-weight:600;
-  padding: 8px 10px;
-  border-radius: 10px;
-}
-.back-link:hover{ background: rgba(0,0,0,.05); }
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-}
-.logo-img{
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-}
-.logo-text{
-  font-size: 18px;
-  margin:0;
-  letter-spacing: .2px;
-}
-
-/* ====== page ====== */
 .faq-page{
   padding: 22px 0 40px 0;
 }
@@ -82,15 +16,16 @@ body{
 
 .faq-title{
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: .2px;
+  color: var(--gray-900);
 }
 
 .faq-search{
   width: min(420px, 100%);
   padding: 12px 14px;
   font-size: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-200);
   border-radius: 12px;
   outline: none;
   background: #fff;
@@ -109,8 +44,8 @@ body{
 /* ====== cards ====== */
 .faq-card{
   position: relative;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: #fff;
+  border: 1px solid var(--gray-200);
   border-radius: 16px;
   padding: 18px 18px 18px 22px;
   box-shadow: 0 10px 22px rgba(0,0,0,.06);
@@ -132,7 +67,7 @@ body{
   align-items:center;
   gap: 8px;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: .35px;
   text-transform: uppercase;
   padding: 6px 10px;
@@ -144,16 +79,17 @@ body{
 
 .faq-q{
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 900;
   margin: 0 0 10px 0;
   line-height: 1.35;
+  color: var(--gray-900);
 }
 
 .faq-a{
   font-size: 16px;
   margin: 0;
   line-height: 1.65;
-  color: #222;
+  color: var(--gray-700);
 }
 
 /* tighter on mobile */
@@ -165,26 +101,4 @@ body{
   .faq-search{ width: 100%; }
   .faq-title{ font-size: 22px; }
   .faq-q{ font-size: 17px; }
-}
-
-.home-link{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:44px;
-  height:44px;
-  border-radius:999px;
-  background: rgba(0,0,0,0.06);
-  text-decoration:none;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-.home-link:hover{
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-  background: rgba(0,0,0,0.08);
-}
-.home-icon{
-  width:22px;
-  height:22px;
-  color: var(--gray-800);
 }
