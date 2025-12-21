@@ -1,45 +1,52 @@
-const faqData = [
-  {
-    question: "Kaş’a gitmek için en iyi zaman ne zaman?",
-    answer: "Mayıs–Ekim arası en ideal dönemdir. Deniz ve hava dengesi bu aylarda uygundur."
-  },
-  {
-    question: "Kaş’a en yakın havalimanı hangisi?",
-    answer: "Dalaman Havalimanı en sık kullanılan seçenektir."
-  },
-  {
-    question: "Kaputaş Plajı’na nasıl gidilir?",
-    answer: "Kaş–Kalkan yolunda, dolmuş veya özel araçla ulaşılabilir."
-  },
-  {
-    question: "Kaş pahalı bir tatil yeri mi?",
-    answer: "Sezona göre değişir. Yaz aylarında fiyatlar artar, bahar ayları daha uygundur."
-  },
-  {
-    question: "Kaş’ta araba kiralamak gerekir mi?",
-    answer: "Merkez için gerekmez ama koyları gezmek için faydalıdır."
-  },
-
-  {
-    question: "Kaş’ta deniz genelde dalgalı mı?",
-    answer: "Açık deniz olduğu için zaman zaman dalgalı olabilir."
-  },
-  {
-    question: "Kaş çocuklu aileler için uygun mu?",
-    answer: "Merkez sakin, bazı plajlar çocuklar için daha uygundur."
-  },
-  {
-    question: "Meis Adası’na geçiş mümkün mü?",
-    answer: "Evet, yaz sezonunda feribot seferleri vardır."
-  },
-  {
-    question: "Kaş’ta gece hayatı var mı?",
-    answer: "Büyük kulüpler yok, daha çok bar ve canlı müzik mekânları vardır."
-  },
-  {
-    question: "Kaş’ta kamp yapılabilir mi?",
-    answer: "Belirli bölgelerde ve kamp alanlarında mümkündür."
-  }
-
-  // 50’ye kadar ayni formatta devam edebilirsin
+window.faqData = [
+  { question: "Kaş’a gitmek için en uygun dönem ne zaman?", answer: "Hava ve deniz keyfi için genelde ilkbahar sonu–sonbahar başı daha rahat olur; yazın kalabalık artar." },
+  { question: "Kaş’a en yakın havalimanı hangisi?", answer: "En sık kullanılan seçenek Dalaman’dır; bazıları Antalya’yı da tercih eder." },
+  { question: "Dalaman’dan Kaş’a nasıl gidilir?", answer: "Transfer, araç kiralama veya otobüs + bağlantılı ulaşım seçenekleriyle gidilir." },
+  { question: "Antalya’dan Kaş’a nasıl gidilir?", answer: "Otobüs/minibüs hatları veya araçla sahil yolu üzerinden ulaşabilirsiniz." },
+  { question: "Kaş merkezde araba lazım mı?", answer: "Merkez yürüyerek gezilir; koylara/çevre rotalara gidecekseniz araç işinizi kolaylaştırır." },
+  { question: "Kaş’ta nerede kalmalı: merkez mi, çevre mi?", answer: "Merkez yürünebilirlik sağlar; çevre bölgeler daha sakin ve manzara odaklıdır." },
+  { question: "Kaş’ta toplu taşıma var mı?", answer: "Merkez–plaj–yakın noktalarda dolmuş/minibüs seçenekleri bulunur (sezona göre yoğunluk değişir)." },
+  { question: "Kaş’ta otopark işi zor mu?", answer: "Yazın merkezde yoğunluk artabilir; erken saatlerde park bulmak daha kolaydır." },
+  { question: "Kaş’ta deniz genelde soğuk mu?", answer: "Akıntı ve rüzgâra göre değişir; bazı koylarda su daha serin hissedilebilir." },
+  { question: "Kaş’ta en popüler plajlar hangileri?", answer: "Kaputaş, İnceboğaz ve çeşitli koy/plajlar en çok sorulan yerler arasında." },
+  { question: "Kaputaş Plajı’na nasıl gidilir?", answer: "Kaş–Kalkan yolunda; dolmuş veya araçla ulaşılır, merdivenlerle inilir." },
+  { question: "Kaputaş’ta şezlong/şemsiye var mı?", answer: "Sezona ve işletmeye göre değişir; gitmeden önce güncel durumu kontrol etmek iyi olur." },
+  { question: "İnceboğaz’a nasıl gidilir?", answer: "Merkezden kısa mesafe; yürüyüş, dolmuş veya araçla ulaşım yapılabilir." },
+  { question: "Kaş’ta ücretsiz plaj var mı?", answer: "Kıyı şeridinde halkın kullandığı alanlar bulunur; işletmeli alanlar da vardır." },
+  { question: "Kaş’ta dalış yapılır mı?", answer: "Evet; Kaş dalış noktalarıyla bilinir, sertifika ve deneme dalışı seçenekleri olur." },
+  { question: "Dalış için sertifika şart mı?", answer: "Deneme dalışında genelde şart olmaz; lisanslı dalışlar için sertifika gerekir." },
+  { question: "Kaş’ta tekne turu mantıklı mı?", answer: "Koyları görmek için en pratik yollardan biridir; rota/kalabalık turdan tura değişir." },
+  { question: "Günlük tekne turları nereden kalkar?", answer: "Genelde Kaş merkez liman/çevresinden kalkış olur." },
+  { question: "Kekova’ya Kaş’tan gidilir mi?", answer: "Evet; tur veya araçla Demre/Üçağız hattına geçip tekneyle devam eden seçenekler var." },
+  { question: "Meis Adası’na geçiş nasıl olur?", answer: "Sezonda Kaş’tan feribotla geçiş yapılır; pasaport ve gerekli işlemler gerekir." },
+  { question: "Meis için vize gerekiyor mu?", answer: "Vatandaşlık durumuna göre değişir; Schengen/kapı vizesi gibi seçenekler dönemsel olabilir." },
+  { question: "Meis’e giderken kaç saat önce limanda olmalı?", answer: "İşlemler için erken gitmek iyi olur; yoğunluğa göre süre değişebilir." },
+  { question: "Kaş’ta gün batımı nereden izlenir?", answer: "Yüksek noktalı seyir alanları, sahil yürüyüş hattı ve bazı tepeler popülerdir." },
+  { question: "Kaş’ta en iyi manzara noktaları neresi?", answer: "Merkez üstü tepeler ve sahil hattındaki bakı noktaları sık sorulur." },
+  { question: "Kaş’ta yürüyüş/trekking rotası var mı?", answer: "Likya Yolu bağlantıları ve kısa doğa yürüyüşleri sık tercih edilir." },
+  { question: "Likya Yolu için ekipman gerekir mi?", answer: "Mevsime göre; iyi ayakkabı, su ve güneş koruması temel ihtiyaç." },
+  { question: "Kaş’ta yüzme için en sakin koylar?", answer: "Rüzgâr yönüne göre değişir; sabah saatleri genelde daha sakindir." },
+  { question: "Kaş’ta rüzgâr hangi saatlerde artar?", answer: "Mevsime göre; öğleden sonra rüzgâr daha hissedilebilir." },
+  { question: "Kaş’ta internet/çekim durumu nasıl?", answer: "Merkezde genelde iyi; bazı koylarda çekim zayıflayabilir." },
+  { question: "Kaş’ta market/eczane kolay bulunur mu?", answer: "Merkezde kolay; uzak bölgelerde planlı gitmek iyi olur." },
+  { question: "Kaş’ta ATM var mı?", answer: "Merkezde ATM’ler bulunur; yoğun sezonda sıra olabiliyor." },
+  { question: "Kaş’ta nerede kahvaltı yapılır?", answer: "Merkezde kahvaltıcılar yaygın; bazı yerler serpme, bazıları tabak sunar." },
+  { question: "Kaş’ta gece hayatı nasıl?", answer: "Büyük kulüp yerine barlar ve canlı müzik daha yaygındır." },
+  { question: "Kaş’ta aileyle gidilir mi?", answer: "Evet; sakin konaklama ve uygun plaj seçimiyle aileler için de uygundur." },
+  { question: "Kaş’ta çocukla hangi plajlar daha rahat?", answer: "Dalga/derinlik durumu plaja göre değişir; sığ girişli yerler daha rahattır." },
+  { question: "Kaş’ta evcil hayvanla gidilir mi?", answer: "Konaklama ve işletme kuralları değişir; önceden teyit etmek gerekir." },
+  { question: "Kaş’ta en güzel fotoğraf noktaları?", answer: "Sahil hattı, liman, merdivenli sokaklar ve manzara noktaları öne çıkar." },
+  { question: "Kaş’ta kaç gün kalmak ideal?", answer: "Merkez + çevre koylar + bir tur düşünürseniz 3–5 gün çoğu kişi için yeterli olur." },
+  { question: "Kaş’ta yağmur olursa ne yapılır?", answer: "Kafeler, küçük müzeler/sergiler, yakın ilçelere kısa kaçamaklar tercih edilir." },
+  { question: "Kaş’ta alışverişte ne alınır?", answer: "El işi ürünler, takı/aksesuar ve yerel ürünler sık sorulan seçeneklerdir." },
+  { question: "Kaş’ta deniz ayakkabısı gerekir mi?", answer: "Bazı koylarda taşlık zemin olabileceği için faydalı olur." },
+  { question: "Kaş’ta güneşten korunma için ne önerilir?", answer: "Şapka, güneş kremi, bol su ve özellikle öğle saatlerinde gölge molası iyi olur." },
+  { question: "Kaş’ta sürpriz masraf çıkar mı?", answer: "Sezonda fiyatlar oynar; tur, plaj işletmesi ve transferler için bütçe planı iyi olur." },
+  { question: "Kaş’ta uygun bütçeyle tatil yapılır mı?", answer: "Evet; erken rezervasyon, sezon dışı ve merkezden biraz uzak konaklama yardımcı olur." },
+  { question: "Kaş’ta scooter/ATV kiralanır mı?", answer: "Bazı dönemlerde seçenek bulunur; güvenlik ve ehliyet şartlarını kontrol edin." },
+  { question: "Kaş’ta tek başına gezmek güvenli mi?", answer: "Genelde güvenli ve sosyal bir yer olarak bilinir; yine de temel dikkat her yerde geçerli." },
+  { question: "Kaş’ta en iyi yüzme saatleri?", answer: "Sabah erken veya akşamüstü hem sıcak hem de kalabalık açısından daha rahattır." },
+  { question: "Kaş’ta deniz gözlüğü/şnorkel keyifli mi?", answer: "Evet; su genelde berrak, kıyıdan şnorkel yapan çok olur." },
+  { question: "Kaş’ta tekne turu mu, araçla koy koy gezmek mi?", answer: "Tekne turu daha zahmetsiz; araçla gezmek daha esnek. Zamanına ve bütçene göre seç." },
+  { question: "Kaş’ta nerede gün doğumu izlenir?", answer: "Doğuya bakan yüksek noktalar daha iyi; erken saatlerde merkez üstü yollar sakin olur." }
 ];

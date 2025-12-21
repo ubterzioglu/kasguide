@@ -1,44 +1,86 @@
-const faqListEl = document.getElementById("faqList");
-const searchInput = document.getElementById("searchInput");
+// Kaş Guide – FAQ list (non-clickable cards)
+// Requirements:
+// - No tags
+// - Single column
+// - Only emojis (🔴 for question, 🟢 for answer)
+// - Left accent rail + Q&A badge in rotating colors
+// - Search filters by keyword in question+answer
 
-const colors = [
-  "#e74c3c",
-  "#27ae60",
-  "#2980b9",
-  "#8e44ad",
-  "#f39c12",
-  "#16a085"
-];
+(function () {
+  const grid = document.getElementById("cardsGrid");
+  const search = document.getElementById("faqSearch");
 
-function renderFaq(list) {
-  faqListEl.innerHTML = "";
+  if (!grid || !search) return;
+  if (!Array.isArray(window.faqData)) {
+    grid.innerHTML = "<div style='opacity:.7'>FAQ verisi bulunamadı (faqData).</div>";
+    return;
+  }
 
-  list.forEach((item, index) => {
-    const color = colors[index % colors.length];
+  const colors = [
+    "#8f1627", // deep red (Kaş/CAL vibe)
+    "#2980b9", // blue
+    "#27ae60", // green
+    "#f39c12", // amber
+    "#8e44ad", // purple
+    "#16a085", // teal
+    "#2c3e50", // dark
+    "#c0392b"  // red alt
+  ];
 
-    const card = document.createElement("div");
-    card.className = "faq-card";
-    card.style.setProperty("--accent", color);
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
 
-    card.innerHTML = `
-      <div class="faq-badge">Q&A</div>
-      <div class="faq-question">🔴 ${item.question}</div>
-      <div class="faq-answer">🟢 ${item.answer}</div>
-    `;
+  function render(list) {
+    grid.innerHTML = "";
 
-    faqListEl.appendChild(card);
-  });
-}
+    if (!list.length) {
+      grid.innerHTML = "<div style='padding:14px 6px;opacity:.7'>Sonuç bulunamadı.</div>";
+      return;
+    }
 
-searchInput.addEventListener("input", () => {
-  const value = searchInput.value.toLowerCase();
+    list.forEach((item, idx) => {
+      const accent = colors[idx % colors.length];
 
-  const filtered = faqData.filter(item =>
-    item.question.toLowerCase().includes(value) ||
-    item.answer.toLowerCase().includes(value)
-  );
+      const card = document.createElement("article");
+      card.className = "faq-card";
+      card.style.setProperty("--accent", accent);
 
-  renderFaq(filtered);
-});
+      const q = escapeHtml(item.question || "");
+      const a = escapeHtml(item.answer || "");
 
-renderFaq(faqData);
+      card.innerHTML = `
+        <div class="faq-badge">Q&A</div>
+        <h3 class="faq-q">🔴 ${q}</h3>
+        <p class="faq-a">🟢 ${a}</p>
+      `;
+
+      // non-clickable by design (no listeners)
+      grid.appendChild(card);
+    });
+  }
+
+  function applyFilter() {
+    const q = (search.value || "").trim().toLowerCase();
+    if (!q) {
+      render(window.faqData);
+      return;
+    }
+
+    const filtered = window.faqData.filter(x => {
+      const qq = (x.question || "").toLowerCase();
+      const aa = (x.answer || "").toLowerCase();
+      return qq.includes(q) || aa.includes(q);
+    });
+
+    render(filtered);
+  }
+
+  search.addEventListener("input", applyFilter);
+  render(window.faqData);
+})();
