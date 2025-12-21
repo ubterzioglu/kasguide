@@ -1,28 +1,5 @@
 @import url("style.css");
 
-/* Home icon (used on list pages like articles.html, optional) */
-.home-link{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:44px;
-  height:44px;
-  border-radius:999px;
-  background: rgba(0,0,0,0.06);
-  text-decoration:none;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-.home-link:hover{
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-  background: rgba(0,0,0,0.08);
-}
-.home-icon{
-  width:22px;
-  height:22px;
-  color: var(--gray-800);
-}
-
 .faq-page { padding: 2rem 0; }
 .faq-top { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
 .faq-title { font-size: 1.75rem; font-weight: 800; color: var(--gray-800); }

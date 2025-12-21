@@ -52,6 +52,16 @@
           <h2 class="detail-title">${q}</h2>
           <div class="detail-divider"></div>
           <div class="detail-longtext">${a.replaceAll('\n','<br>')}</div>
+
+          <details class="detail-accordion" open>
+            <summary class="detail-accordion-summary">Detaylar</summary>
+            <div class="detail-accordion-body">
+              <div class="detail-kv-row">
+                <div class="detail-kv-key">id</div>
+                <div class="detail-kv-val">${escapeHtml(item.id || '')}</div>
+              </div>
+            </div>
+          </details>
         </div>
       </article>
     `;

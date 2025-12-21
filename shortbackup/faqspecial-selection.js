@@ -1,5 +1,5 @@
-/* articles-selection.js
-   Detail renderer for one article (articles-selection.html?id=ARTICLE_ID)
+/* faqspecial-selection.js
+   Detail renderer for one long-form FAQ item (faqspecial-selection.html?id=ID)
 */
 (function () {
   const DASH = '—';
@@ -18,7 +18,7 @@
   }
 
   function findItem(id) {
-    const list = (typeof articles !== 'undefined' && Array.isArray(articles)) ? articles : [];
+    const list = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? faqspecialSeries : [];
     return list.find((x) => String(x.id) === String(id));
   }
 
@@ -27,9 +27,9 @@
       <article class="detail-card">
         <div class="detail-body">
           <h2 class="detail-title">Bulunamadı</h2>
-          <p class="detail-muted">Bu id ile bir yazı bulunamadı.</p>
+          <p class="detail-muted">Bu id ile bir içerik bulunamadı.</p>
           <div class="detail-actions">
-            <a class="detail-action secondary" href="articles.html">Yazılara dön</a>
+            <a class="detail-action secondary" href="faqspecial.html">Listeye dön</a>
           </div>
         </div>
       </article>
@@ -41,28 +41,31 @@
     if (!root) return;
     if (!item) return renderNotFound(root);
 
-    const title = escapeHtml(item.title || 'Yazı');
+    const title = escapeHtml(item.title || 'Özel Soru');
     const img = item.image ? `<img class="detail-hero-img" src="${escapeHtml(item.image)}" alt="${title}">` : '';
     const excerpt = item.excerpt ? `<div class="detail-muted" style="margin-top:.5rem">${escapeHtml(item.excerpt)}</div>` : '';
-    const meta = [item.source, item.date].filter(Boolean).join(' • ');
-    const urlBtn = item.url ? `<a class="detail-action" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Kaynağı aç</a>` : '';
 
-    const contentRaw = String(item.content || '').trim();
-    const content = contentRaw ? escapeHtml(contentRaw).replaceAll('\n','<br>') : DASH;
+    const textRaw = String(item.longText || '').trim();
+    const text = textRaw ? escapeHtml(textRaw).replaceAll('\n','<br>') : DASH;
 
     root.innerHTML = `
       <article class="detail-card">
-        ${img ? `<div class="detail-hero">${img}<div class="detail-hero-overlay"></div><div class="detail-hero-content"><h2 class="detail-title">${title}</h2></div></div>` : `
-          <div class="detail-body"><h2 class="detail-title">${title}</h2></div>
-        `}
+        ${img ? `<div class="detail-hero">${img}<div class="detail-hero-overlay"></div><div class="detail-hero-content"><h2 class="detail-title">${title}</h2></div></div>` : ''}
         <div class="detail-body">
+          ${img ? '' : `<h2 class="detail-title">${title}</h2>`}
           ${excerpt}
-          ${meta ? `<div class="detail-cats" style="margin-top:.5rem">${escapeHtml(meta)}</div>` : ''}
-          ${urlBtn ? `<div class="detail-actions" style="margin-top:1rem">${urlBtn}</div>` : ''}
-
           <div class="detail-divider"></div>
+          <div class="detail-longtext">${text}</div>
 
-          <div class="detail-longtext">${content}</div>
+          <details class="detail-accordion">
+            <summary class="detail-accordion-summary">Detaylar</summary>
+            <div class="detail-accordion-body">
+              <div class="detail-kv-row">
+                <div class="detail-kv-key">id</div>
+                <div class="detail-kv-val">${escapeHtml(item.id || '')}</div>
+              </div>
+            </div>
+          </details>
         </div>
       </article>
     `;

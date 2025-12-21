@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soru - Cevap - Kaş Rehberi</title>
+  <title>Özel Soru Serileri - Kaş Rehberi</title>
   <link rel="stylesheet" href="faq-style.css">
 </head>
 <body>
@@ -11,7 +11,10 @@
     <div class="container header-content">
       <a class="back-link" href="index.html" aria-label="Geri">← Geri</a>
       <div class="logo">
-        <img class="logo-img" src="assets/logos/logokasguide.png" alt="Kaş Rehberi">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+        </svg>
         <h1 class="logo-text">Kaş Rehberi</h1>
       </div>
       <div style="width:48px"></div>
@@ -21,16 +24,15 @@
   <main class="faq-page">
     <div class="container">
       <div class="faq-top">
-        <div class="faq-title">Soru - Cevap</div>
-        
-        <input id="faqSearch" class="faq-search" type="text" placeholder="Sorularda ara... (ör. ulaşım, plaj, Meis)">
+        <div class="faq-title">Özel Soru Serileri</div>
+        <input id="faqSearch" class="faq-search" type="text" placeholder="Serilerde ara... (ör. ulaşım, plaj, Meis)">
       </div>
 
-      <div id="faqList" class="faq-list"></div>
+      <div id="cardsGrid" class="faq-list"></div>
     </div>
   </main>
 
-  <script src="faq-data.js"></script>
-  <script src="faq.js"></script>
+  <script src="faqspecial-data.js"></script>
+  <script src="faqspecial.js"></script>
 </body>
 </html>

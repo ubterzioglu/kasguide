@@ -90,15 +90,6 @@ body {
   gap: 0.5rem;
 }
 
-.logo-img{
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  object-fit: cover;
-  border: 1px solid var(--gray-200);
-  box-shadow: var(--shadow-sm);
-}
-
 .logo-icon {
   width: 2rem;
   height: 2rem;

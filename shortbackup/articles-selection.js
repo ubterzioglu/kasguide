@@ -63,6 +63,16 @@
           <div class="detail-divider"></div>
 
           <div class="detail-longtext">${content}</div>
+
+          <details class="detail-accordion">
+            <summary class="detail-accordion-summary">Detaylar</summary>
+            <div class="detail-accordion-body">
+              <div class="detail-kv-row">
+                <div class="detail-kv-key">id</div>
+                <div class="detail-kv-val">${escapeHtml(item.id || '')}</div>
+              </div>
+            </div>
+          </details>
         </div>
       </article>
     `;
