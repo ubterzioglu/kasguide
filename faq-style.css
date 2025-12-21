@@ -1,3 +1,4 @@
+@import url("style.css");
 /* Kaş Guide – FAQ styles
    Header/top layout copied to match faqspecial.html (header + container + logo)
 */
@@ -164,4 +165,26 @@ body{
   .faq-search{ width: 100%; }
   .faq-title{ font-size: 22px; }
   .faq-q{ font-size: 17px; }
+}
+
+.home-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  background: rgba(0,0,0,0.06);
+  text-decoration:none;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.home-link:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  background: rgba(0,0,0,0.08);
+}
+.home-icon{
+  width:22px;
+  height:22px;
+  color: var(--gray-800);
 }
