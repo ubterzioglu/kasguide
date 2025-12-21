@@ -207,3 +207,13 @@
   .detail-hero{ height: 360px; }
   .detail-meta-grid{ grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Header logo image */
+.logo-img{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
