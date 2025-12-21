@@ -117,51 +117,135 @@ const allPlaces = [
     title: 'Kaputaş Plajı',
     description: 'Turkuaz suları ve beyaz kumsalıyla ünlü muhteşem plaj. Kaş ile Kalkan arasında 187 merdiven inilerek ulaşılıyor.',
     category: ['beaches', 'places', 'nature'],
-    image: 'https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1200',
+    image: 'https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800',
     rating: 4.9,
     price: 'Ücretsiz',
-
-    // Temel bilgiler
-    location: 'Kaş–Kalkan yolu üzeri (D400), Kaputaş inişi',
+    selected: false,
+    // YENİ ATTRIBUTE'LAR
+    location: 'Kaş-Kalkan yolu üzeri',
     distance: '20 km',
-    duration: '3-5 saat',
-    openingHours: '24/7 (halk plajı)',
-    season: 'Mayıs–Ekim (en yoğun: Temmuz–Ağustos)',
-
-    // İletişim / Linkler
-    instagram: 'https://www.instagram.com/explore/tags/kaputa%C5%9F/',
-    website: '',
-    booking: '',
-    googleMaps: 'https://www.google.com/maps?q=36.2542,29.2991',
-    phone: '',
-
-    // Ulaşım
-    access: 'Merdivenle iniş-çıkış (187 basamak). Dönüşte çıkış yorucu olabilir.',
-    parking: 'Yol kenarında sınırlı park (sezonda erken gelmek mantıklı).',
-    publicTransport: 'Kaş–Kalkan minibüsleri yol üzerinde indirir; kalan mesafe merdiven.',
-
-    // Öne çıkanlar
-    facilities: ['Duş', 'WC', 'Kantin', 'Şezlong', 'Şemsiye', 'Soyunma Kabini'],
-    features: ['Turkuaz su', 'Fotoğraf noktası', 'Kumsal', 'Merdivenli erişim', 'Dalgaya açık olabilir'],
-    tags: ['turkuaz', 'kumsal', 'merdiven', 'popüler', 'fotoğraf'],
-
-    // Koordinatlar
     coordinates: { lat: 36.2542, lng: 29.2991 },
+    access: '187 Merdiven',
+    instagram: 'https://www.instagram.com/explore/tags/kaputa%C5%9F/',
+    website: 'https://tr.wikipedia.org/wiki/Kaputa%C5%9F_Plaj%C4%B1',
+    phone: '+90 242 000 00 00',
+    booking: '',
+    googleMapsQuery: 'Kaputaş Plajı',
+    duration: '3-5 saat',
+    facilities: ['Ücretsiz Giriş', 'Kantin', 'Duş', 'WC', 'Şezlong', 'Şemsiye'],
+    features: ['Ücretsiz Giriş', 'Kantin', 'Duş', 'WC'],
+    tags: ['turkuaz', 'kumsal', 'merdiven', 'populer'],
+    longText: `Kaputaş Plajı, Kaş ile Kalkan arasında yer alan, aşağıya inen merdivenleriyle meşhur küçük ama çok etkileyici bir koy.
 
-    // Uzun yazı (detay sayfası)
-    longText: `Kaputaş Plajı, Kaş ile Kalkan arasında kalan ve çoğu zaman “kartpostal” gibi görünen küçük bir koy. 
-Yazın çok kalabalık olabildiği için **erken saatler** en iyi seçenek.
+Buradaki “Uzunca” alanı özellikle UI test için dopdolu tutuldu.
 
-Öneriler:
-- **Merdivenler**: İniş kolay, çıkış zor. Terlik yerine rahat ayakkabı + su iyi olur.
-- **Gölgelik**: Öğlen güneşi sert; şemsiye/şapka hayat kurtarır.
-- **Deniz**: Bazı günler dalga ve akıntı olabilir. Sualtı gözlüğü/şnorkel keyifli.
-- **Park**: Sınırlı; sezon dışı daha rahat.
+• Sabah erken saatlerde su genelde daha sakin olur.
+• Merdiven iniş-çıkışı yorabilir; su ve rahat ayakkabı iyi fikir.
+• Öğleden sonra rüzgâr/dalga artarsa yüzme koşulları değişebilir.
 
-Mini rota fikri:
-Kaputaş → (üstte) manzara noktası → Kalkan kahve molası → Kaş merkez akşam yürüyüşü.
-
-(Ready olunca burayı gerçek metinle değiştir.)`
+Bu metni daha sonra gerçek içerikle değiştireceksin.`
+  },
+  {
+    id: 'kekova-beach',
+    title: 'Kekova Plajı',
+    description: 'Batık şehir manzaralı, berrak sulara sahip sessiz bir plaj.',
+    category: ['beaches', 'nature'],
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800',
+    rating: 4.8,
+    price: 'Ücretsiz',
+    selected: false,
+    location: 'Kekova Adası, Üçağız',
+    distance: '35 km',
+    coordinates: { lat: 36.1833, lng: 29.8500 },
+    website: '',
+    phone: '',
+    duration: '2-4 saat',
+    facilities: ['Doğal plaj', 'Yüzme alanı']
+  },
+  {
+    id: 'hidayet',
+    title: 'Hidayet Koyu',
+    description: 'Kayalık yapısı ve berrak suyu ile bilinen, şezlong ve restoran imkanlı popüler koy.',
+    category: ['beaches'],
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+    rating: 4.7,
+    price: 'Şezlong 50 TL',
+    selected: false,
+    location: 'Kaş merkez',
+    distance: '3 km',
+    coordinates: { lat: 36.2000, lng: 29.6333 },
+    website: '',
+    phone: '',
+    duration: '4-6 saat',
+    facilities: ['Şezlong', 'Şemsiye', 'Restoran', 'Duş', 'WC']
+  },
+  {
+    id: 'buyuk-cakil',
+    title: 'Büyük Çakıl Plajı',
+    description: 'Çakıl taşlı yapısıyla bilinen, dalgasız ve sakin denizi olan aile dostu plaj.',
+    category: ['beaches', 'family'],
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800',
+    rating: 4.5,
+    price: 'Ücretsiz',
+    selected: false,
+    location: 'Kaş merkez',
+    distance: '1.5 km',
+    coordinates: { lat: 36.2028, lng: 29.6347 },
+    website: '',
+    phone: '',
+    duration: '3-5 saat',
+    facilities: ['Aile dostu', 'Sığ deniz', 'Kafe']
+  },
+  {
+    id: 'kucuk-cakil',
+    title: 'Küçük Çakıl Plajı',
+    description: 'Kaş merkezine en yakın plaj. Kafelerle iç içe küçük bir koy.',
+    category: ['beaches', 'food'],
+    image: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800',
+    rating: 4.6,
+    price: 'Ücretsiz',
+    selected: false,
+    location: 'Kaş limanı yanı',
+    distance: '500 m',
+    coordinates: { lat: 36.1975, lng: 29.6342 },
+    website: '',
+    phone: '',
+    duration: '2-4 saat',
+    facilities: ['Kafeler', 'Merkezi konum', 'Kolay ulaşım']
+  },
+  {
+    id: 'akcagerme',
+    title: 'Akçagerme Plajı',
+    description: 'Aileler için ideal, kaydıraklı ve sığ bir halk plajı.',
+    category: ['beaches', 'family'],
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    rating: 4.4,
+    price: 'Giriş 20 TL',
+    selected: false,
+    location: 'Kaş-Kalkan yolu',
+    distance: '12 km',
+    coordinates: { lat: 36.2389, lng: 29.3167 },
+    website: '',
+    phone: '',
+    duration: '4-6 saat',
+    facilities: ['Kaydıraklar', 'Aile dostu', 'Kantin', 'Duş', 'WC']
+  },
+  {
+    id: 'incebogaz',
+    title: 'İnceboğaz Plajı',
+    description: 'Kaş Belediyesi\'ne ait, iki tarafı da deniz olan dar bir burunda yer alır.',
+    category: ['beaches'],
+    image: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800',
+    rating: 4.3,
+    price: 'Ücretsiz',
+    selected: false,
+    location: 'Kaş merkez',
+    distance: '2 km',
+    coordinates: { lat: 36.1992, lng: 29.6400 },
+    website: '',
+    phone: '',
+    duration: '2-3 saat',
+    facilities: ['Halk plajı', 'Ücretsiz', 'Doğal yapı']
   },
   {
     id: 'limanagzi',
