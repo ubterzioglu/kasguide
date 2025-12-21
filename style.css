@@ -11,7 +11,16 @@
   --primary-purple: #a855f7;
   --primary-pink: #ec4899;
   
-  --gray-50: #f9fafb;
+  
+  --primary-teal: #14b8a6;
+  --primary-indigo: #6366f1;
+  --primary-amber: #f59e0b;
+  --primary-lime: #84cc16;
+  --primary-slate: #64748b;
+  --primary-violet: #8b5cf6;
+  --primary-wine: #9f1239;
+
+--gray-50: #f9fafb;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
   --gray-300: #d1d5db;
