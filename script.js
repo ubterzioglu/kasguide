@@ -27,6 +27,7 @@ const activeFilterCountEl = document.getElementById('activeFilterCount');
 const totalPlacesEl = document.getElementById('totalPlaces');
 const totalCategoriesEl = document.getElementById('totalCategories');
 const averageRatingEl = document.getElementById('averageRating');
+const totalWordsEl = document.getElementById('totalWords');
 const activeFiltersCountEl = document.getElementById('activeFiltersCount');
 const filteredCountEl = document.getElementById('filteredCount');
 
@@ -34,7 +35,7 @@ const filterJumpBtn = document.getElementById('filterJump');
 
 function updateFilterJumpVisibility() {
   if (!filterJumpBtn) return;
-  const visible = (activeDataset === 'faqspecial') ? true : (selectedCategories.size > 0);
+  const visible = (activeDataset !== 'places') ? true : (selectedCategories.size > 0);
   filterJumpBtn.classList.toggle('is-visible', visible);
 }
 
@@ -49,11 +50,20 @@ if (filterJumpBtn) {
 
 // Stats helpers
 function calculateStats(list) {
-  const total = Array.isArray(list) ? list.length : 0;
+  const items = Array.isArray(list) ? list : [];
+  const total = items.length;
+
   const avg = total
-    ? (list.reduce((sum, p) => sum + (Number(p.rating) || 0), 0) / total).toFixed(1)
+    ? (items.reduce((sum, p) => sum + (Number(p.rating) || 0), 0) / total).toFixed(1)
     : '0.0';
-  return { total, avg };
+
+  const words = items.reduce((sum, p) => {
+    const text = [p?.title, p?.description, p?.longText].filter(Boolean).join(' ');
+    const count = String(text).trim().split(/\s+/).filter(Boolean).length;
+    return sum + (isFinite(count) ? count : 0);
+  }, 0);
+
+  return { total, avg, words };
 }
 
 function loadStats() {
@@ -67,7 +77,7 @@ function loadStats() {
 }
 
 function setActiveFilterText() {
-  const activeCount = (activeDataset === 'faqspecial') ? 1 : selectedCategories.size;
+  const activeCount = (activeDataset !== 'places') ? 1 : selectedCategories.size;
   const txt = `${activeCount} aktif filtre`;
   if (activeFilterCountEl) activeFilterCountEl.textContent = txt;
   if (activeFiltersCountEl) activeFiltersCountEl.textContent = String(activeCount);
@@ -82,15 +92,18 @@ function renderCategories() {
     const btn = document.createElement('button');
     btn.className = `category-card ${category.color}`;
     const isPage = category?.action?.type === 'page' && !!category?.action?.href;
-    const isDataset = category?.action?.type === 'dataset' && category?.action?.dataset === 'faqspecial';
+    const isDataset = category?.action?.type === 'dataset' && !!category?.action?.dataset;
 
-    if (isDataset && activeDataset === 'faqspecial') btn.classList.add('active');
+    if (isDataset && activeDataset === category.action.dataset) btn.classList.add('active');
     if (!isDataset && selectedCategories.has(category.id)) btn.classList.add('active');
 
     let count = '';
     if (!isPage) {
       if (isDataset) {
-        const list = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? faqspecialSeries : [];
+        const ds = category.action.dataset;
+        let list = [];
+        if (ds === 'faqspecial') list = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? faqspecialSeries : [];
+        if (ds === 'articles') list = (typeof articles !== 'undefined' && Array.isArray(articles)) ? articles : [];
         count = String(list.length);
       } else {
         count = String(allPlaces.filter((place) => Array.isArray(place.category) && place.category.includes(category.id)).length);
@@ -113,7 +126,8 @@ function renderCategories() {
 
       // Dataset category: Özel Soru Serileri (filters index cards without leaving the page)
       if (isDataset) {
-        activeDataset = (activeDataset === 'faqspecial') ? 'places' : 'faqspecial';
+        const ds = category.action.dataset;
+        activeDataset = (activeDataset === ds) ? 'places' : ds;
         selectedCategories.clear();
         renderCategories();
         filterPlaces();
@@ -175,7 +189,7 @@ function renderCards() {
       </div>
       <div class="card-content">
         <h4 class="card-title">
-          <a class="card-title-link" href="selection.html?id=${encodeURIComponent(place.id)}">${place.title}</a>
+          <a class="card-title-link" href="${activeDataset === 'faqspecial' ? 'faqspecial-selection.html' : (activeDataset === 'articles' ? 'articles-selection.html' : 'selection.html')}?id=${encodeURIComponent(place.id)}">${place.title}</a>
         </h4>
         <p class="card-description">${place.description}</p>
         <div class="card-meta">
@@ -219,7 +233,9 @@ function renderCards() {
 function updateStats() {
   if (filteredCountEl) filteredCountEl.textContent = String(filteredPlaces.length);
   const s = calculateStats(filteredPlaces);
+
   if (averageRatingEl && filteredPlaces.length) averageRatingEl.textContent = s.avg;
+  if (totalWordsEl) totalWordsEl.textContent = String(s.words);
 
   setActiveFilterText();
   updateFilterJumpVisibility();
@@ -229,6 +245,8 @@ function filterPlaces() {
   let filtered = [];
   if (activeDataset === 'faqspecial') {
     filtered = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? [...faqspecialSeries] : [];
+  } else if (activeDataset === 'articles') {
+    filtered = (typeof articles !== 'undefined' && Array.isArray(articles)) ? [...articles] : [];
   } else {
     filtered = [...allPlaces];
   }

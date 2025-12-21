@@ -11,7 +11,7 @@ const categories = [
   },
   {
     id: 'beaches',
-    name: 'Plajlar',
+    name: 'Plaj',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 12h.01"/>
       <path d="M20 12h.01"/>
@@ -59,7 +59,7 @@ const categories = [
       <path d="M12 2a10 10 0 1 0 10 10H12V2z"/>
       <path d="M12 6v6l4 2"/>
     </svg>`,
-    color: 'category-pink'
+    color: 'category-indigo'
   },
   {
     id: 'nature',
@@ -91,7 +91,7 @@ const categories = [
     <path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4"/>
     <path d="M12 17h.01"/>
   </svg>`,
-  color: 'category-gray',
+  color: 'category-slate',
   action: { type: 'page', href: 'faq.html' }
 },
 {
@@ -103,7 +103,7 @@ const categories = [
     <path d="M8 12h8"/>
     <path d="M8 16h5"/>
   </svg>`,
-  color: 'category-purple',
+  color: 'category-violet',
   action: { type: 'dataset', dataset: 'faqspecial' }
 },
 {
@@ -115,7 +115,7 @@ const categories = [
     <path d="M14 14v6"/>
     <path d="M8 20h8"/>
   </svg>`,
-  color: 'category-red'
+  color: 'category-wine'
 },
 {
   id: 'bar',
@@ -126,6 +126,27 @@ const categories = [
   </svg>`,
   color: 'category-pink'
 },
+  {
+    id: 'cafe',
+    name: 'Cafe',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+      <path d="M2 8h16v7a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+      <path d="M6 1v3"/><path d="M10 1v3"/><path d="M14 1v3"/>
+    </svg>`,
+    color: 'category-amber'
+  },
+  {
+    id: 'diving',
+    name: 'Dalış',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M2 12c3-3 7-3 10 0s7 3 10 0"/>
+      <path d="M4 16c2-2 5-2 7 0s5 2 7 0"/>
+      <path d="M12 6v6"/><path d="M10 8l2-2 2 2"/>
+    </svg>`,
+    color: 'category-teal'
+  },
+
 {
   id: 'articles',
   name: 'Yazılar',
@@ -136,8 +157,8 @@ const categories = [
     <path d="M8 11h10"/>
     <path d="M8 15h7"/>
   </svg>`,
-  color: 'category-blue',
-  action: { type: 'page', href: 'articles.html' }
+  color: 'category-lime',
+  action: { type: 'dataset', dataset: 'articles' }
 }
 ];
 
