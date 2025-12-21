@@ -1,45 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soru - Cevap - Kaş Guide</title>
-  <link rel="stylesheet" href="faq-style.css">
+  <meta charset="UTF-8" />
+  <title>Kaş FAQ</title>
+  <link rel="stylesheet" href="faq-style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container header-content">
-      <a class="home-link" href="index.html" aria-label="Ana Sayfa">
-        <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 10.5L12 3l9 7.5"/>
-          <path d="M5 10v10h14V10"/>
-          <path d="M9 20v-6h6v6"/>
-        </svg>
-      </a>
-      <div class="logo">
-        <img class="logo-img" src="assets/logos/logokasguide.png" alt="Kaş Guide">
-        <h1 class="logo-text">Kaş Guide</h1>
-      </div>
-      <div style="width:48px"></div>
-    </div>
-  </header>
 
-  <main class="faq-page">
-    <div class="container">
-      <div class="faq-top">
-        <div class="faq-title">Soru - Cevap</div>
+  <div class="faq-wrapper">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Sorularda ara..."
+      autocomplete="off"
+    />
 
-        <input id="faqSearch" class="faq-search" type="text" placeholder="Sorularda ara... (ör. ulaşım, plaj, Meis)">
-        <div id="faqCount" class="faq-count" aria-live="polite"></div>
-      </div>
+    <div id="faqList"></div>
+  </div>
 
-      <div id="faqList" class="faq-list"></div>
-    </div>
-  </main>
-
-  <!-- Dataset: separate file so we can grow it independently -->
   <script src="faq-list-data.js"></script>
-  <!-- Renderer -->
   <script src="faq.js"></script>
 </body>
 </html>
