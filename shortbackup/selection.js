@@ -1,5 +1,5 @@
 // selection.js
-// Detail page renderer for Kaş Rehberi Places
+// Detail page renderer for Kaş Guide Places
 (function () {
   const PLACEHOLDER = "—";
 
