@@ -61,26 +61,47 @@
     return { instagram, website, booking, maps: mapsHref, phone };
   }
 
-  function actionBtn(href, label) {
-    return `<a class="detail-action" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
+  function actionSlot(href, label, opts = {}) {
+    const safeLabel = escapeHtml(label);
+
+    // disabled
+    if (!href) {
+      return `<span class="detail-action is-disabled" aria-disabled="true" title="${safeLabel}">${safeLabel}</span>`;
+    }
+
+    const safeHref = escapeHtml(href);
+    const extra = opts.newTab ? ' target="_blank" rel="noopener noreferrer"' : '';
+    const cls = `detail-action is-active${opts.secondary ? ' secondary' : ''}`;
+    return `<a class="${cls}" href="${safeHref}"${extra}>${safeLabel}</a>`;
   }
 
-  function phoneBtn(phone) {
+  function phoneHref(phone) {
     const raw = String(phone || '').trim();
     if (!raw) return '';
-    const href = `tel:${raw.replace(/\s+/g, '')}`;
-    return `<a class="detail-action" href="${escapeHtml(href)}">${escapeHtml(raw)}</a>`;
+    return `tel:${raw.replace(/\s+/g, '')}`;
   }
 
-  function chips(list) {
-    const arr = Array.isArray(list) ? list.filter(Boolean) : [];
-    if (!arr.length) return '';
-    return `<div class="detail-chips">${arr.map((x) => `<span class="detail-chip">${escapeHtml(x)}</span>`).join('')}</div>`;
+  function chipsDedup(...lists) {
+    const seen = new Set();
+    const out = [];
+    for (const list of lists) {
+      const arr = Array.isArray(list) ? list : [];
+      for (const item of arr) {
+        const s = String(item || '').trim();
+        if (!s) continue;
+        const key = s.toLowerCase();
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push(s);
+      }
+    }
+    if (!out.length) return '';
+    return `<div class="detail-chips">${out.map((x) => `<span class="detail-chip">${escapeHtml(x)}</span>`).join('')}</div>`;
   }
 
   function kvRows(place, excludedKeys) {
     const entries = Object.entries(place || {})
-      .filter(([k, v]) => !excludedKeys.has(k))
+      .filter(([k]) => !excludedKeys.has(k))
       .filter(([_, v]) => v != null && String(asText(v)).trim() !== '');
 
     // stable: alphabetical
@@ -107,7 +128,7 @@
           <h2 class="detail-title">Bulunamadı</h2>
           <p class="detail-muted">Bu id ile bir kayıt bulunamadı.</p>
           <div class="detail-actions">
-            <a class="detail-action secondary" href="index.html">Ana sayfaya dön</a>
+            <a class="detail-action secondary is-active" href="index.html">Ana sayfaya dön</a>
           </div>
         </div>
       </article>
@@ -127,13 +148,15 @@
     const longTextRaw = String(place.longText || '').trim();
 
     const { instagram, website, booking, maps, phone } = linkHref(place);
+
+    // Always show same action slots: UI consistency.
     const actions = [
-      instagram ? actionBtn(instagram, 'Instagram') : '',
-      maps ? actionBtn(maps, 'Harita') : '',
-      website ? actionBtn(website, 'Web') : '',
-      booking ? actionBtn(booking, 'Rezervasyon') : '',
-      phone ? phoneBtn(phone) : '',
-    ].filter(Boolean).join('');
+      actionSlot(maps, 'Harita', { newTab: true }),
+      actionSlot(instagram, 'Instagram', { newTab: true }),
+      actionSlot(website, 'Web', { newTab: true }),
+      actionSlot(booking, 'Rezervasyon', { newTab: true }),
+      actionSlot(phoneHref(phone), phone ? `Ara: ${phone}` : 'Telefon', { newTab: false }),
+    ].join('');
 
     const metaItems = [
       place.rating != null ? { label: 'Puan', value: place.rating } : null,
@@ -152,11 +175,7 @@
         `).join('')}</div>`
       : '';
 
-    const chipsHtml = [
-      chips(place.tags),
-      chips(place.features),
-      chips(place.facilities),
-    ].filter(Boolean).join('');
+    const chipsHtml = chipsDedup(place.tags, place.features, place.facilities);
 
     const excluded = new Set([
       'selected',
@@ -186,7 +205,7 @@
 
           ${metaHtml}
 
-          ${actions ? `<div class="detail-actions">${actions}</div>` : ''}
+          <div class="detail-actions">${actions}</div>
 
           ${chipsHtml ? `<div class="detail-divider"></div>${chipsHtml}` : ''}
 
@@ -209,7 +228,16 @@
     `;
   }
 
-  const id = getId();
-  const place = getPlaces().find((p) => String(p.id) === String(id));
-  render(place);
+  function init() {
+    const id = getId();
+    const place = getPlaces().find((p) => String(p.id) === String(id));
+    render(place);
+  }
+
+  // ensure data loaded even on slow mobile
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
