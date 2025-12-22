@@ -1,6 +1,6 @@
 /* articles-data.js
    Articles dataset (separate by design).
-   You can point to external sources, or store your own content.
+   You .can point to external sources, or store your own content.
 */
 const articles = [
   {
