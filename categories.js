@@ -82,7 +82,7 @@ const categories = [
     color: 'category-gray'
   },
 
-  // sayfa action'ı olanlar aynı kalır (Kahvaltı)
+  // sayfa action'ı olanalar aynı kalır (Kahvaltı)
     {
     id: 'breakfast',
     name: 'Kahvaltı',
