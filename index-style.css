@@ -850,7 +850,7 @@
   50% { transform: scale(1.06); }
 }
 
-/* ===== Detail page (selection.html) =====
+/* ===== Detail page (selection.html) ===== */
 
 /* Extended category colors */
 
@@ -861,4 +861,3 @@
 .category-slate { background: var(--primary-slate); }
 .category-violet { background: var(--primary-violet); }
 .category-wine { background: var(--primary-wine); }
-
