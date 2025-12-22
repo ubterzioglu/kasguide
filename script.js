@@ -10,12 +10,8 @@ if (menuToggle && mobileMenu) {
 // State
 let selectedCategories = new Set();
 let searchQuery = '';
-let filteredPlaces = [];
-
-// Which dataset is currently driving the cards grid?
-// - 'places' => allPlaces from places-data.js
-// - 'faqspecial' => special series list from faqspecial-data.js
-let activeDataset = 'places';
+let allItems = [];
+let filteredItems = [];
 
 // DOM
 const categoriesGrid = document.getElementById('categoriesGrid');
@@ -35,7 +31,7 @@ const filterJumpBtn = document.getElementById('filterJump');
 
 function updateFilterJumpVisibility() {
   if (!filterJumpBtn) return;
-  const visible = (activeDataset !== 'places') ? true : (selectedCategories.size > 0);
+  const visible = selectedCategories.size > 0 || (searchQuery || '').trim().length > 0;
   filterJumpBtn.classList.toggle('is-visible', visible);
 }
 
@@ -48,9 +44,53 @@ if (filterJumpBtn) {
   filterJumpBtn.addEventListener('click', scrollToCategories);
 }
 
+// ---------- helpers ----------
+function safeArr(x) {
+  return Array.isArray(x) ? x : [];
+}
+
+function normalizeItem(item, type) {
+  const base = { ...item };
+  base.type = type;
+
+  // IMPORTANT: category always array
+  if (type === 'place') {
+    base.category = safeArr(base.category);
+  } else if (type === 'article') {
+    base.category = ['articles'];
+  } else if (type === 'faqspecial') {
+    base.category = ['faqspecial'];
+  } else {
+    base.category = safeArr(base.category);
+  }
+
+  return base;
+}
+
+// Build one unified list: places + articles + faqspecial
+function buildAllItems() {
+  const places =
+    (typeof allPlaces !== 'undefined' && Array.isArray(allPlaces))
+      ? allPlaces.map((p) => normalizeItem(p, 'place'))
+      : [];
+
+  const articlesList =
+    (typeof articles !== 'undefined' && Array.isArray(articles))
+      ? articles.map((a) => normalizeItem(a, 'article'))
+      : [];
+
+  const faqs =
+    (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries))
+      ? faqspecialSeries.map((f) => normalizeItem(f, 'faqspecial'))
+      : [];
+
+  allItems = [...places, ...articlesList, ...faqs];
+  filteredItems = [...allItems];
+}
+
 // Stats helpers
 function calculateStats(list) {
-  const items = Array.isArray(list) ? list : [];
+  const items = safeArr(list);
   const total = items.length;
 
   const avg = total
@@ -67,8 +107,12 @@ function calculateStats(list) {
 }
 
 function loadStats() {
-  const totalPlaces = (typeof allPlaces !== 'undefined' && Array.isArray(allPlaces)) ? allPlaces.length : 0;
-  const totalCats = (typeof categories !== 'undefined' && Array.isArray(categories)) ? categories.length : 0;
+  const totalPlaces =
+    (typeof allPlaces !== 'undefined' && Array.isArray(allPlaces)) ? allPlaces.length : 0;
+
+  const totalCats =
+    (typeof categories !== 'undefined' && Array.isArray(categories)) ? categories.length : 0;
+
   if (totalPlacesEl) totalPlacesEl.textContent = String(totalPlaces);
   if (totalCategoriesEl) totalCategoriesEl.textContent = String(totalCats);
 
@@ -77,13 +121,13 @@ function loadStats() {
 }
 
 function setActiveFilterText() {
-  const activeCount = (activeDataset !== 'places') ? 1 : selectedCategories.size;
+  const activeCount = selectedCategories.size;
   const txt = `${activeCount} aktif filtre`;
   if (activeFilterCountEl) activeFilterCountEl.textContent = txt;
   if (activeFiltersCountEl) activeFiltersCountEl.textContent = String(activeCount);
 }
 
-// Render categories with checkmark
+// ---------- render categories ----------
 function renderCategories() {
   if (!categoriesGrid) return;
   categoriesGrid.innerHTML = '';
@@ -91,23 +135,17 @@ function renderCategories() {
   categories.forEach((category) => {
     const btn = document.createElement('button');
     btn.className = `category-card ${category.color}`;
+
     const isPage = category?.action?.type === 'page' && !!category?.action?.href;
-    const isDataset = category?.action?.type === 'dataset' && !!category?.action?.dataset;
 
-    if (isDataset && activeDataset === category.action.dataset) btn.classList.add('active');
-    if (!isDataset && selectedCategories.has(category.id)) btn.classList.add('active');
+    if (!isPage && selectedCategories.has(category.id)) {
+      btn.classList.add('active');
+    }
 
+    // Count: page action olanlara count basma
     let count = '';
     if (!isPage) {
-      if (isDataset) {
-        const ds = category.action.dataset;
-        let list = [];
-        if (ds === 'faqspecial') list = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? faqspecialSeries : [];
-        if (ds === 'articles') list = (typeof articles !== 'undefined' && Array.isArray(articles)) ? articles : [];
-        count = String(list.length);
-      } else {
-        count = String(allPlaces.filter((place) => Array.isArray(place.category) && place.category.includes(category.id)).length);
-      }
+      count = String(allItems.filter((it) => safeArr(it.category).includes(category.id)).length);
     }
 
     btn.innerHTML = `
@@ -118,30 +156,16 @@ function renderCategories() {
     `;
 
     btn.addEventListener('click', () => {
-      // Route categories (FAQ, Articles)
       if (isPage) {
         window.location.href = category.action.href;
         return;
       }
 
-      // Dataset category: Özel Soru Serileri (filters index cards without leaving the page)
-      if (isDataset) {
-        const ds = category.action.dataset;
-        activeDataset = (activeDataset === ds) ? 'places' : ds;
-        selectedCategories.clear();
-        renderCategories();
-        filterPlaces();
-        return;
-      }
-
-      // Switching back to places dataset when a normal filter is used
-      if (activeDataset !== 'places') activeDataset = 'places';
-
       if (selectedCategories.has(category.id)) selectedCategories.delete(category.id);
       else selectedCategories.add(category.id);
 
       renderCategories();
-      filterPlaces();
+      applyFilters();
     });
 
     categoriesGrid.appendChild(btn);
@@ -151,79 +175,90 @@ function renderCategories() {
   updateFilterJumpVisibility();
 }
 
-// Render cards (click -> selection.html?id=...)
+// ---------- render cards ----------
+function getItemHref(item) {
+  // mevcut yapına göre path’leri aynı bıraktım
+  if (item.type === 'article') return `articles-selection.html?id=${encodeURIComponent(item.id)}`;
+  if (item.type === 'faqspecial') return `faqspecial-selection.html?id=${encodeURIComponent(item.id)}`;
+  return `../places/places.html?id=${encodeURIComponent(item.id)}`;
+}
+
 function renderCards() {
   if (!cardsGrid) return;
   cardsGrid.innerHTML = '';
 
-  if (!filteredPlaces.length) {
+  if (!filteredItems.length) {
     cardsGrid.innerHTML = `
       <div class="no-results">
         <h4>Sonuç bulunamadı</h4>
-        <p>Arama kriterlerinize uygun yer bulunamadı. Filtreleri temizlemeyi deneyin.</p>
+        <p>Arama kriterlerinize uygun içerik bulunamadı. Filtreleri temizlemeyi deneyin.</p>
       </div>
     `;
     return;
   }
 
-  filteredPlaces.forEach((place) => {
+  filteredItems.forEach((item) => {
     const card = document.createElement('div');
     card.className = 'card-item fade-in slide-up';
 
-    const mainCategory = place.category[0];
+    const mainCategory = safeArr(item.category)[0];
     const categoryObj = categories.find((c) => c.id === mainCategory);
     const badgeColor = categoryObj ? categoryObj.color.replace('category-', '') : 'blue';
 
+    const href = getItemHref(item);
+    const img = item.image || 'assets/img/placeholder.jpg';
+
     card.innerHTML = `
       <div class="card-image-wrapper">
-        <img src="${place.image}" alt="${place.title}" class="card-image" loading="lazy">
+        <img src="${img}" alt="${item.title || ''}" class="card-image" loading="lazy">
         <div class="card-badge" style="background: var(--primary-${badgeColor})">
-          ${place.category
-            .map((cat) => {
-              const catObj = categories.find((c) => c.id === cat);
-              return catObj ? catObj.name : cat;
-            })
+          ${safeArr(item.category)
+            .map((cat) => (categories.find((c) => c.id === cat)?.name) || cat)
             .slice(0, 2)
             .join(', ')}
         </div>
       </div>
+
       <div class="card-content">
         <h4 class="card-title">
-          <a class="card-title-link" href="${activeDataset === 'faqspecial' ? 'faqspecial-selection.html' : (activeDataset === 'articles' ? 'articles-selection.html' : '../places/places.html')}?id=${encodeURIComponent(place.id)}">${place.title}</a>
+          <a class="card-title-link" href="${href}">${item.title || ''}</a>
         </h4>
-        <p class="card-description">${place.description}</p>
+        <p class="card-description">${item.description || ''}</p>
+
         <div class="card-meta">
           <div class="meta-item">
             <svg class="meta-icon star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </svg>
-            <span>${place.rating || ''}</span>
+            <span>${item.rating || ''}</span>
           </div>
+
           <div class="meta-item">
             <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"/>
               <polyline points="12 6 12 12 16 14"/>
             </svg>
-            <span>${place.duration || place.distance || ''}</span>
+            <span>${item.duration || item.distance || ''}</span>
           </div>
+
           <div class="meta-item">
             <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
               <line x1="1" y1="10" x2="23" y2="10"/>
             </svg>
-            <span>${place.price || ''}</span>
+            <span>${item.price || ''}</span>
           </div>
         </div>
+
         <div class="card-actions">
-          <a class="card-detail" href="${activeDataset === 'faqspecial' ? 'faqspecial-selection.html?id=' : '../places/places.html?id='}${encodeURIComponent(place.id)}">Detay</a>
+          <a class="card-detail" href="${href}">Detay</a>
         </div>
       </div>
     `;
 
     card.addEventListener('click', (e) => {
-      // Allow normal link behavior
       if (e.target.closest('a')) return;
-      window.location.href = `${activeDataset === 'faqspecial' ? 'faqspecial-selection.html?id=' : '../places/places.html?id='}${encodeURIComponent(place.id)}`;
+      window.location.href = href;
     });
 
     cardsGrid.appendChild(card);
@@ -231,41 +266,39 @@ function renderCards() {
 }
 
 function updateStats() {
-  if (filteredCountEl) filteredCountEl.textContent = String(filteredPlaces.length);
-  const s = calculateStats(filteredPlaces);
+  if (filteredCountEl) filteredCountEl.textContent = String(filteredItems.length);
 
-  if (averageRatingEl && filteredPlaces.length) averageRatingEl.textContent = s.avg;
+  const s = calculateStats(filteredItems);
+  if (averageRatingEl && filteredItems.length) averageRatingEl.textContent = s.avg;
   if (totalWordsEl) totalWordsEl.textContent = String(s.words);
 
   setActiveFilterText();
   updateFilterJumpVisibility();
 }
 
-function filterPlaces() {
-  let filtered = [];
-  if (activeDataset === 'faqspecial') {
-    filtered = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? [...faqspecialSeries] : [];
-  } else if (activeDataset === 'articles') {
-    filtered = (typeof articles !== 'undefined' && Array.isArray(articles)) ? [...articles] : [];
-  } else {
-    filtered = [...allPlaces];
+// ---------- filtering ----------
+function applyFilters() {
+  let filtered = [...allItems];
+
+  // category filter: item.category intersects selectedCategories
+  if (selectedCategories.size > 0) {
+    filtered = filtered.filter((it) =>
+      safeArr(it.category).some((c) => selectedCategories.has(c))
+    );
   }
 
-  if (activeDataset === 'places' && selectedCategories.size > 0) {
-    filtered = filtered.filter((place) => place.category.some((cat) => selectedCategories.has(cat)));
-  }
-
-  if (searchQuery.trim()) {
+  // search
+  if ((searchQuery || '').trim()) {
     const q = searchQuery.toLowerCase();
-    filtered = filtered.filter((place) => {
-      const inTitle = (place.title || '').toLowerCase().includes(q);
-      const inDesc = (place.description || '').toLowerCase().includes(q);
-      const inTags = Array.isArray(place.tags) && place.tags.some((t) => (t || '').toLowerCase().includes(q));
+    filtered = filtered.filter((it) => {
+      const inTitle = (it.title || '').toLowerCase().includes(q);
+      const inDesc = (it.description || '').toLowerCase().includes(q);
+      const inTags = Array.isArray(it.tags) && it.tags.some((t) => (t || '').toLowerCase().includes(q));
       return inTitle || inDesc || inTags;
     });
   }
 
-  filteredPlaces = filtered;
+  filteredItems = filtered;
   renderCards();
   updateStats();
 }
@@ -274,36 +307,26 @@ function filterPlaces() {
 if (searchInput) {
   searchInput.addEventListener('input', (e) => {
     searchQuery = e.target.value;
-    filterPlaces();
+    applyFilters();
   });
 }
 
 if (clearFiltersBtn) {
   clearFiltersBtn.addEventListener('click', () => {
     selectedCategories.clear();
-    activeDataset = 'places';
     searchQuery = '';
     if (searchInput) searchInput.value = '';
     renderCategories();
-    filterPlaces();
+    applyFilters();
   });
 }
 
-// Init with robust data availability (NO window.* dependence)
+// Init
 function initKasGuide() {
-  if (typeof allPlaces === 'undefined' || typeof categories === 'undefined') {
-    window.addEventListener('load', initKasGuide, { once: true });
-    return;
-  }
-  if (!Array.isArray(allPlaces) || !Array.isArray(categories)) {
-    window.addEventListener('load', initKasGuide, { once: true });
-    return;
-  }
-
-  filteredPlaces = [...allPlaces];
+  buildAllItems();
   loadStats();
   renderCategories();
-  filterPlaces();
+  applyFilters();
   updateFilterJumpVisibility();
 }
 

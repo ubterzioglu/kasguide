@@ -77,61 +77,66 @@ const categories = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <circle cx="9" cy="21" r="1"/>
       <circle cx="20" cy="21" r="1"/>
-      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      <path d="M1 1h4l2.68 13.39a2.82 2.82 0 0 0 2 1.61h9.72a2.82 2.82 0 0 0 2-1.61L23 6H6"/>
     </svg>`,
     color: 'category-gray'
-  }
-,
-{
-  id: 'faq',
-  name: 'Soru Cevap',
-  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-    <path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4"/>
-    <path d="M12 17h.01"/>
-  </svg>`,
-  color: 'category-slate',
-  action: { type: 'page', href: '../faq/faq.html' }
-},
-{
-  id: 'faqspecial',
-  name: 'Özel Soru Serileri',
-  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M4 4h16v14H5.5L4 19.5V4z"/>
-    <path d="M8 8h8"/>
-    <path d="M8 12h8"/>
-    <path d="M8 16h5"/>
-  </svg>`,
-  color: 'category-violet',
-  action: { type: 'dataset', dataset: 'faqspecial' }
-},
-{
-  id: 'meyhane',
-  name: 'Meyhane',
-  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M8 2h8v6a4 4 0 0 1-8 0V2z"/>
-    <path d="M10 14v6"/>
-    <path d="M14 14v6"/>
-    <path d="M8 20h8"/>
-  </svg>`,
-  color: 'category-wine'
-},
-{
-  id: 'bar',
-  name: 'Bar',
-  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M6 2h12l-5 8v8a2 2 0 0 1-2 2H9"/>
-    <path d="M12 10H7"/>
-  </svg>`,
-  color: 'category-pink'
-},
+  },
+
+  // sayfa action'ı olanlar aynı kalır (FAQ)
+  {
+    id: 'faq',
+    name: 'Soru Cevap',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+      <path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4"/>
+      <path d="M12 17h.01"/>
+    </svg>`,
+    color: 'category-slate',
+    action: { type: 'page', href: '../faq/faq.html' }
+  },
+
+  // BUNLAR ARTIK dataset switch değil -> normal filtre
+  {
+    id: 'faqspecial',
+    name: 'Özel Soru Serileri',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M4 4h16v14H5.5L4 19.5V4z"/>
+      <path d="M8 8h8"/>
+      <path d="M8 12h8"/>
+      <path d="M8 16h5"/>
+    </svg>`,
+    color: 'category-violet'
+  },
+
+  {
+    id: 'meyhane',
+    name: 'Meyhane',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M8 2h8v6a4 4 0 0 1-8 0V2z"/>
+      <path d="M10 14v6"/>
+      <path d="M14 14v6"/>
+      <path d="M8 20h8"/>
+    </svg>`,
+    color: 'category-wine'
+  },
+  {
+    id: 'bar',
+    name: 'Bar',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 2h12l-5 8v8a2 2 0 0 1-2 2H9"/>
+      <path d="M12 10H7"/>
+    </svg>`,
+    color: 'category-pink'
+  },
   {
     id: 'cafe',
     name: 'Cafe',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
       <path d="M2 8h16v7a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-      <path d="M6 1v3"/><path d="M10 1v3"/><path d="M14 1v3"/>
+      <path d="M6 1v3"/>
+      <path d="M10 1v3"/>
+      <path d="M14 1v3"/>
     </svg>`,
     color: 'category-amber'
   },
@@ -141,22 +146,23 @@ const categories = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 12c3-3 7-3 10 0s7 3 10 0"/>
       <path d="M4 16c2-2 5-2 7 0s5 2 7 0"/>
-      <path d="M12 6v6"/><path d="M10 8l2-2 2 2"/>
+      <path d="M12 6v6"/>
+      <path d="M10 8l2-2 2 2"/>
     </svg>`,
     color: 'category-teal'
   },
 
-{
-  id: 'articles',
-  name: 'Yazılar',
-  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/>
-    <path d="M20 2H6.5A2.5 2.5 0 0 0 4 4.5v15"/>
-    <path d="M8 7h10"/>
-    <path d="M8 11h10"/>
-    <path d="M8 15h7"/>
-  </svg>`,
-  color: 'category-lime',
-  action: { type: 'dataset', dataset: 'articles' }
-}
+  // dataset switch kaldırıldı -> normal filtre
+  {
+    id: 'articles',
+    name: 'Yazılar',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/>
+      <path d="M20 2H6.5A2.5 2.5 0 0 0 4 4.5v15"/>
+      <path d="M8 7h10"/>
+      <path d="M8 11h10"/>
+      <path d="M8 15h7"/>
+    </svg>`,
+    color: 'category-lime'
+  }
 ];
