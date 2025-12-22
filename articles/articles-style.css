@@ -1,0 +1,104 @@
+@import url("../style.css");
+
+/* Kaş Guide – FAQ page styles (on top of global style.css) */
+
+.faq-page{
+  padding: 22px 0 40px 0;
+}
+
+.faq-top{
+  display:flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.faq-title{
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  color: var(--gray-900);
+}
+
+.faq-search{
+  width: min(420px, 100%);
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+}
+.faq-search:focus{
+  border-color: rgba(0,0,0,.22);
+}
+
+/* single column list */
+.faq-list{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* ====== cards ====== */
+.faq-card{
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 18px 18px 18px 22px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+
+.faq-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width: 6px;
+  height: 100%;
+  border-radius: 16px 0 0 16px;
+  background: var(--accent, #8f1627);
+}
+
+.faq-badge{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .35px;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent, #8f1627);
+  color:#fff;
+  margin-bottom: 12px;
+}
+
+.faq-q{
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+  color: var(--gray-900);
+}
+
+.faq-a{
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.65;
+  color: var(--gray-700);
+}
+
+/* tighter on mobile */
+@media (max-width: 680px){
+  .faq-top{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .faq-search{ width: 100%; }
+  .faq-title{ font-size: 22px; }
+  .faq-q{ font-size: 17px; }
+}

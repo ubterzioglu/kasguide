@@ -13,7 +13,7 @@ let searchQuery = '';
 let filteredPlaces = [];
 
 // Which dataset is currently driving the cards grid?
-// - 'places' => allPlaces from selection-data.js
+// - 'places' => allPlaces from places-data.js
 // - 'faqspecial' => special series list from faqspecial-data.js
 let activeDataset = 'places';
 
