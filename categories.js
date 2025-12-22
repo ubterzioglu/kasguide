@@ -82,20 +82,20 @@ const categories = [
     color: 'category-gray'
   },
 
-  // sayfa action'ı olanlar aynı kalır (FAQ)
-  {
-    id: 'faq',
-    name: 'Soru Cevap',
+  // sayfa action'ı olanlar aynı kalır (Kahvaltı)
+    {
+    id: 'breakfast',
+    name: 'Kahvaltı',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-      <path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 4"/>
-      <path d="M12 17h.01"/>
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+      <path d="M2 8h16v7a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+      <path d="M6 1v3"/>
+      <path d="M10 1v3"/>
+      <path d="M14 1v3"/>
     </svg>`,
-    color: 'category-slate',
-    action: { type: 'page', href: '../faq/faq.html' }
+    color: 'category-lime'
   },
-
-  // BUNLAR ARTIK dataset switch değil -> normal filtre
+// BUNLAR ARTIK dataset switch değil -> normal filtre
   {
     id: 'faqspecial',
     name: 'Özel Soru Serileri',
@@ -163,6 +163,6 @@ const categories = [
       <path d="M8 11h10"/>
       <path d="M8 15h7"/>
     </svg>`,
-    color: 'category-lime'
+    color: 'category-slate'
   }
 ];
