@@ -29,7 +29,7 @@
           <h2 class="detail-title">Bulunamadı</h2>
           <p class="detail-muted">Bu id ile bir soru bulunamadı.</p>
           <div class="detail-actions">
-            <a class="detail-action secondary" href="faq.html">Soru listesine dön</a>
+            <a class="detail-action secondary" href="../faq/faq.html">Soru listesine dön</a>
           </div>
         </div>
       </article>

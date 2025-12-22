@@ -92,7 +92,7 @@ const categories = [
     <path d="M12 17h.01"/>
   </svg>`,
   color: 'category-slate',
-  action: { type: 'page', href: 'faq.html' }
+  action: { type: 'page', href: '../faq/faq.html' }
 },
 {
   id: 'faqspecial',
