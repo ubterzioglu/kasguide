@@ -189,7 +189,7 @@ function renderCards() {
       </div>
       <div class="card-content">
         <h4 class="card-title">
-          <a class="card-title-link" href="${activeDataset === 'faqspecial' ? 'faqspecial-selection.html' : (activeDataset === 'articles' ? 'articles-selection.html' : 'selection.html')}?id=${encodeURIComponent(place.id)}">${place.title}</a>
+          <a class="card-title-link" href="${activeDataset === 'faqspecial' ? 'faqspecial-selection.html' : (activeDataset === 'articles' ? 'articles-selection.html' : 'places.html')}?id=${encodeURIComponent(place.id)}">${place.title}</a>
         </h4>
         <p class="card-description">${place.description}</p>
         <div class="card-meta">
@@ -215,7 +215,7 @@ function renderCards() {
           </div>
         </div>
         <div class="card-actions">
-          <a class="card-detail" href="${activeDataset === 'faqspecial' ? 'faqspecial-selection.html?id=' : 'selection.html?id='}${encodeURIComponent(place.id)}">Detay</a>
+          <a class="card-detail" href="${activeDataset === 'faqspecial' ? 'faqspecial-selection.html?id=' : 'places.html?id='}${encodeURIComponent(place.id)}">Detay</a>
         </div>
       </div>
     `;
@@ -223,7 +223,7 @@ function renderCards() {
     card.addEventListener('click', (e) => {
       // Allow normal link behavior
       if (e.target.closest('a')) return;
-      window.location.href = `${activeDataset === 'faqspecial' ? 'faqspecial-selection.html?id=' : 'selection.html?id='}${encodeURIComponent(place.id)}`;
+      window.location.href = `${activeDataset === 'faqspecial' ? 'faqspecial-selection.html?id=' : 'places.html?id='}${encodeURIComponent(place.id)}`;
     });
 
     cardsGrid.appendChild(card);
