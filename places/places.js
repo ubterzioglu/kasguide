@@ -1,4 +1,4 @@
-// selection.js
+// places.js
 // Detail page renderer for Kaş Guide Places
 (function () {
   const PLACEHOLDER = "—";
@@ -89,7 +89,6 @@
   }
 
   function icon(name) {
-    // Minimal inline icons (no external deps)
     const common = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
     if (name === "map") return `<svg viewBox="0 0 24 24" ${common}><path d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg>`;
     if (name === "instagram") return `<svg viewBox="0 0 24 24" ${common}><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>`;
@@ -114,6 +113,133 @@
       : `href="javascript:void(0)" aria-disabled="true" tabindex="-1"`;
 
     return `<a class="${cls}" ${attrs} title="${escapeHtml(label)}" aria-label="${escapeHtml(label)}">${icon(iconName)}</a>`;
+  }
+
+  // -------- Slider helpers --------
+  function normalizePhotos(place) {
+    const out = [];
+    const push = (x) => {
+      const s = String(x ?? "").trim();
+      if (!s) return;
+      if (!out.includes(s)) out.push(s);
+    };
+
+    const arr = place?.images || place?.photos || place?.gallery;
+    if (Array.isArray(arr)) arr.forEach(push);
+
+    // fallback to legacy single image
+    if (place?.image) push(place.image);
+
+    // absolute fallback (never empty)
+    if (!out.length) {
+      out.push("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600");
+    }
+
+    return out;
+  }
+
+  function chevronSvg(dir) {
+    const common = 'fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"';
+    if (dir === "left") return `<svg viewBox="0 0 24 24" ${common}><path d="M15 18l-6-6 6-6"/></svg>`;
+    return `<svg viewBox="0 0 24 24" ${common}><path d="M9 18l6-6-6-6"/></svg>`;
+  }
+
+  function initHeroSlider(root, photos, title) {
+    const imgEl = root.querySelector("#heroImg");
+    const prevBtn = root.querySelector("#heroPrev");
+    const nextBtn = root.querySelector("#heroNext");
+    const counterEl = root.querySelector("#heroCounter");
+    const dotsEl = root.querySelector("#heroDots");
+
+    if (!imgEl || !prevBtn || !nextBtn || !counterEl || !dotsEl) return;
+
+    let index = 0;
+    const n = photos.length;
+
+    // hide controls if single photo
+    if (n <= 1) {
+      prevBtn.style.display = "none";
+      nextBtn.style.display = "none";
+      dotsEl.style.display = "none";
+      counterEl.style.display = "none";
+      imgEl.src = photos[0];
+      imgEl.alt = title;
+      return;
+    }
+
+    // dots
+    dotsEl.innerHTML = photos.map((_, i) =>
+      `<span class="hero-dot ${i === 0 ? "is-active" : ""}" role="button" tabindex="0" aria-label="Foto ${i + 1}"></span>`
+    ).join("");
+
+    const dotEls = Array.from(dotsEl.querySelectorAll(".hero-dot"));
+
+    function syncUi() {
+      imgEl.src = photos[index];
+      imgEl.alt = title;
+      counterEl.textContent = `${index + 1} / ${n}`;
+
+      dotEls.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    }
+
+    function go(delta) {
+      index = (index + delta + n) % n;
+      syncUi();
+    }
+
+    function goTo(i) {
+      index = Math.max(0, Math.min(n - 1, i));
+      syncUi();
+    }
+
+    prevBtn.addEventListener("click", () => go(-1));
+    nextBtn.addEventListener("click", () => go(1));
+
+    dotEls.forEach((d, i) => {
+      d.addEventListener("click", () => goTo(i));
+      d.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") goTo(i);
+      });
+    });
+
+    // keyboard (left/right)
+    function onKey(e) {
+      if (e.key === "ArrowLeft") go(-1);
+      if (e.key === "ArrowRight") go(1);
+    }
+    window.addEventListener("keydown", onKey);
+
+    // swipe
+    let startX = 0;
+    let startY = 0;
+    let active = false;
+
+    imgEl.addEventListener("touchstart", (e) => {
+      const t = e.touches?.[0];
+      if (!t) return;
+      active = true;
+      startX = t.clientX;
+      startY = t.clientY;
+    }, { passive: true });
+
+    imgEl.addEventListener("touchend", (e) => {
+      if (!active) return;
+      active = false;
+      const t = e.changedTouches?.[0];
+      if (!t) return;
+
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+
+      // ignore mostly-vertical gestures
+      if (Math.abs(dy) > Math.abs(dx)) return;
+
+      if (dx > 35) go(-1);
+      if (dx < -35) go(1);
+    }, { passive: true });
+
+    // initial paint
+    syncUi();
   }
 
   function renderNotFound(root) {
@@ -145,11 +271,12 @@
 
     const cats = getCategoryNames(place);
     const { instagram, website, booking, phone } = normalizeLinks(place);
-
     const map = mapsHref(place);
 
     const title = fmt(place.title) || "Detay";
-    const img = fmt(place.image) || "";
+    const photos = normalizePhotos(place);
+    const firstImg = photos[0];
+
     const desc = fmt(place.description);
     const longText = fmt(place.longText);
 
@@ -164,7 +291,18 @@
     root.innerHTML = `
       <article class="detail-card">
         <div class="detail-hero">
-          <img class="detail-hero-img" src="${escapeHtml(img)}" alt="${escapeHtml(title)}">
+          <img id="heroImg" class="detail-hero-img" src="${escapeHtml(firstImg)}" alt="${escapeHtml(title)}">
+
+          <button id="heroPrev" class="hero-nav hero-prev" type="button" aria-label="Önceki fotoğraf">
+            ${chevronSvg("left")}
+          </button>
+          <button id="heroNext" class="hero-nav hero-next" type="button" aria-label="Sonraki fotoğraf">
+            ${chevronSvg("right")}
+          </button>
+
+          <div id="heroCounter" class="hero-counter" aria-label="Fotoğraf sayacı"></div>
+          <div id="heroDots" class="hero-dots" aria-label="Fotoğraf noktaları"></div>
+
           <div class="detail-hero-overlay"></div>
           <div class="detail-hero-content">
             <h2 class="detail-title">${escapeHtml(title)}</h2>
@@ -203,6 +341,9 @@
         </div>
       </article>
     `;
+
+    // after render: init slider
+    initHeroSlider(root, photos, title);
   }
 
   const id = getId();

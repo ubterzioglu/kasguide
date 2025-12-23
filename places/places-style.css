@@ -1,205 +1,106 @@
-@import url("../style.css");
-
-/* Selection (detail) page styles */
-
-/* Detail card layout */
-.detail-page{
-  padding: 2rem 0 3rem;
-}
-
-.detail-root{
-  display:flex;
-  justify-content:center;
-}
-
-.detail-card{
-  width:100%;
-  max-width: 980px;
-  background: white;
-  border-radius: var(--radius-xl);
-  overflow:hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--gray-200);
-}
-
+/* --- HERO SLIDER (premium) --- */
 .detail-hero{
   position:relative;
-  height: 320px;
-  overflow:hidden;
-  background: var(--gray-100);
 }
 
-.detail-hero-img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+/* img aynı kalsın: .detail-hero-img */
 
-.detail-hero-overlay{
+.hero-nav{
   position:absolute;
-  inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.10) 55%, rgba(0,0,0,.02));
-}
-
-.detail-hero-content{
-  position:absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 16px;
-  display:flex;
-  flex-direction:column;
-  gap: 8px;
-}
-
-.detail-title{
-  margin:0;
-  font-size: 1.9rem;
-  line-height:1.2;
-  color: white;
-  text-shadow: 0 2px 8px rgba(0,0,0,.35);
-}
-
-.detail-cats{
-  display:inline-flex;
-  align-self:flex-start;
-  padding: 6px 10px;
-  border-radius: 999px;
-  color: rgba(255,255,255,.92);
-  font-weight: 700;
-  font-size: .85rem;
-  background: rgba(255,255,255,.14);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.18);
-}
-
-.detail-body{
-  padding: 1.25rem;
-}
-
-/* Kısaca block */
-.detail-kisaca{
-  margin-top: .25rem;
-  margin-bottom: 1rem;
-  padding: .9rem 1rem;
-  border-radius: var(--radius-lg);
-  background: var(--gray-50);
-  border: 1px solid var(--gray-200);
-  color: var(--gray-700);
-}
-.detail-kisaca strong{
-  color: var(--gray-900);
-}
-
-/* Meta grid (6 items) */
-.detail-meta-grid{
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: .75rem;
-  margin-bottom: 1rem;
-}
-
-.detail-meta{
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: .85rem .9rem;
-  background: white;
-}
-.detail-meta-label{
-  font-size: .78rem;
-  color: var(--gray-500);
-  font-weight: 700;
-  letter-spacing: .02em;
-  text-transform: uppercase;
-}
-.detail-meta-value{
-  margin-top: .2rem;
-  color: var(--gray-900);
-  font-weight: 800;
-}
-
-/* Action bar: icon-only */
-.detail-actions{
-  display:flex;
-  gap: .6rem;
-  flex-wrap: wrap;
-  margin: .25rem 0 1rem;
-}
-.detail-action{
+  top: 50%;
+  transform: translateY(-50%);
   width: 44px;
   height: 44px;
-  border-radius: 14px;
-  display:inline-flex;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.28);
+  display:flex;
   align-items:center;
   justify-content:center;
-  text-decoration:none;
-  border: 1px solid var(--gray-200);
-  background: var(--gray-50);
-  box-shadow: var(--shadow-sm);
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-.detail-action svg{ width: 20px; height: 20px; }
-
-.detail-action.is-enabled{
-  background: rgba(16,185,129,.12);
-  border-color: rgba(16,185,129,.35);
-  color: #0f766e;
-}
-.detail-action.is-enabled:hover{
-  transform: translateY(-1px);
-  box-shadow: var(--shadow);
-  background: rgba(16,185,129,.16);
+  color: rgba(255,255,255,.95);
+  cursor:pointer;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease, opacity .15s ease;
+  z-index: 5;
 }
 
-.detail-action.is-disabled{
-  opacity:.55;
-  cursor:not-allowed;
-  filter: grayscale(1);
-}
-.detail-action.is-disabled:hover{
-  transform:none;
-  box-shadow: var(--shadow-sm);
+.hero-nav svg{
+  width: 20px;
+  height: 20px;
 }
 
-/* Uzunca */
-.detail-long{
-  margin-top: .25rem;
-  padding: 1rem;
-  border-radius: var(--radius-xl);
-  background: white;
-  border: 1px solid var(--gray-200);
-}
-.detail-long-title{
-  margin: 0 0 .6rem;
-  font-size: 1.05rem;
-}
-.detail-long-text{
-  white-space: pre-wrap;
-  color: var(--gray-700);
-  line-height: 1.75;
+.hero-nav:hover{
+  transform: translateY(-50%) scale(1.03);
+  background: rgba(255,255,255,.20);
+  box-shadow: 0 14px 34px rgba(0,0,0,.32);
 }
 
-/* Responsive */
-@media (min-width: 860px){
-  .detail-body{ padding: 1.5rem; }
-  .detail-hero{ height: 360px; }
-  .detail-meta-grid{ grid-template-columns: repeat(3, 1fr); }
+.hero-nav:active{
+  transform: translateY(-50%) scale(.98);
 }
 
+.hero-prev{ left: 14px; }
+.hero-next{ right: 14px; }
 
-/* Trust badges */
-.detail-trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.6rem;
-  margin:.25rem 0 1rem;
+.hero-nav[disabled]{
+  opacity: .35;
+  cursor: not-allowed;
 }
-.trust-item{
-  font-size:.8rem;
-  font-weight:700;
-  color: var(--gray-600);
-  background: var(--gray-100);
-  border: 1px solid var(--gray-200);
-  padding: .35rem .6rem;
+
+/* Counter pill (top-right) */
+.hero-counter{
+  position:absolute;
+  right: 14px;
+  top: 14px;
+  padding: 7px 10px;
   border-radius: 999px;
+  font-weight: 800;
+  font-size: .82rem;
+  color: rgba(255,255,255,.95);
+  background: rgba(0,0,0,.28);
+  border: 1px solid rgba(255,255,255,.20);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 5;
+}
+
+/* Dots (bottom-center) */
+.hero-dots{
+  position:absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display:flex;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 5;
+}
+
+.hero-dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.45);
+  border: 1px solid rgba(255,255,255,.28);
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.hero-dot.is-active{
+  background: rgba(255,255,255,.95);
+  transform: scale(1.12);
+}
+
+/* Mobile: okları biraz küçült */
+@media (max-width: 520px){
+  .hero-nav{ width: 40px; height: 40px; }
+  .hero-prev{ left: 10px; }
+  .hero-next{ right: 10px; }
 }
