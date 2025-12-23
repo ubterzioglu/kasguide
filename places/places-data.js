@@ -19,6 +19,95 @@ Yazılar : articles
 
 const allPlaces = [
 
+  {
+  id: 'frida-pub',
+  title: 'Frida Pub',
+  description: 'Canlı müzik, rock ağırlıklı playlist ve pub havasıyla; Kaş’ta akşamları enerjik geçirmek isteyenlerin sık uğradığı bar.',
+  category: ['bar', 'cafe'],
+
+  image: '../assets/0_img/frida-pub_001_kapak.jpg',
+  images: [
+    '../assets/0_img/frida-pub_002.jpg',
+    '../assets/0_img/frida-pub_003.jpg',
+    '../assets/0_img/frida-pub_004.jpg'
+  ],
+
+  rating: 4.6,
+  price: '₺₺',
+  selected: false,
+
+  location: 'Andifli Mah., Kaş/Antalya (merkez, barlar sokağı çevresi)',
+  distance: 'Merkez',
+  coordinates: { lat: 36.1998, lng: 29.6422 },
+
+  website: 'https://www.instagram.com/fridapubkas/',
+  phone: '',
+  duration: '2–4 saat',
+
+  facilities: [
+    'Bar servisi',
+    'Bira & kokteyl',
+    'Canlı müzik',
+    'DJ performansları (bazı geceler)',
+    'Ayakta ve sınırlı oturma alanı',
+    'Arkadaş gruplarına uygun',
+    'Kart ile ödeme'
+  ],
+
+  features: [
+    'Rock ağırlıklı müzik kültürü',
+    'Gece saatlerinde yükselen enerji',
+    'Merkezde kolay ulaşım',
+    'Geç saatlere kadar açık',
+    'Kalabalık ama samimi ortam'
+  ],
+
+  tags: [
+    'pub',
+    'rock bar',
+    'canlı müzik',
+    'bira',
+    'gece hayatı',
+    'barlar sokağı'
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: '2025-12-23',
+    disclaimer: true
+  },
+
+  longText: `
+Frida Pub, Kaş’ta “akşam sakin başlayıp geceyi müzikle bitirelim” diyenlerin yolu mutlaka düşen yerlerden biri. Barlar sokağı çevresindeki konumuyla, özellikle gün batımı sonrası hızlıca dolmaya başlıyor. Mekânın kimliği net: pub ruhu, rock ağırlıklı müzik ve enerjisi yüksek bir gece atmosferi.
+
+Atmosfer nasıl?
+- Akşam erken saatlerde daha rahat, gece ilerledikçe kalabalık ve hareketli.
+- Canlı müzik olan gecelerde ortam belirgin şekilde ısınıyor; eşlik edenler, şarkılara katılanlar eksik olmuyor.
+- Oturup uzun sohbet etmekten çok, ayakta durup müziğe eşlik etmeye uygun bir düzen var.
+
+Kimler için uygun?
+- Rock ve alternatif müzik sevenler.
+- Arkadaş grubuyla eğlenmek isteyenler.
+- “Sessiz bar” değil, enerjik ve gürültülü ortam arayanlar.
+- Kaş gece hayatını yerel tadında yaşamak isteyen gezginler.
+
+Ne içilir?
+Bira ve klasik pub kokteylleri ön planda. Menü karmaşık değil; hızlı servis ve akışı bozmayan içecek seçenekleri var. Amaç “içkiyi al, müziğe dön” düzeni.
+
+Pratik ipuçları:
+- Canlı müzik gecelerinde erken gitmek, içeride yer bulmayı kolaylaştırır.
+- Ayakta durma süresi uzun olabileceği için rahat ayakkabı işe yarar.
+- Kalabalıktan hoşlanmıyorsan 21:00 civarı, enerjiyi seviyorsan 22:30 sonrası daha uygun.
+
+Kısa özet:
+Frida Pub; Kaş’ta rock müzik, canlı performans ve pub atmosferini bir arada arayanlar için doğru adres. Sessiz bir akşam yemeğinden sonra geceyi hareketlendirmek isteyenlerin listesinde olması gereken duraklardan.
+  `
+},
+
+
+
+
+
 {
   id: 'bunbun-kas',
   title: 'Bunbun Kaş',
@@ -467,4 +556,203 @@ Nereid Meyhanesi, Kaş’ta klasik meyhane hissini modern bir “sahne” dokunu
 },
 
 
+{
+  id: 'dragoman-diving-and-outdoor',
+  title: 'Dragoman Diving and Outdoor',
+  description: 'Kaş’ta dalış başta olmak üzere doğa ve deniz odaklı aktiviteler sunan, güven veren ve tecrübeli bir outdoor & dalış merkezi.',
+  category: ['diving', 'activities'],
+
+  image: 'dragoman-diving-and-outdoor-001-kapak.jpg',
+  images: [
+    '../assets/0_img/dragoman-diving-and-outdoor-002.jpg',
+    '../assets/0_img/dragoman-diving-and-outdoor-003.jpg',
+    '../assets/0_img/dragoman-diving-and-outdoor-004.jpg'
+  ],
+
+  rating: 4.8,
+  price: '₺₺₺',
+  selected: false,
+
+  location: 'Andifli Mah., Kaş/Antalya (merkez, liman çevresi)',
+  distance: 'Merkez',
+  coordinates: { lat: 36.1996, lng: 29.6404 },
+
+  website: 'https://www.instagram.com/dragomandiving/',
+  phone: '+90 242 836 19 06',
+  duration: 'Yarım gün – tam gün',
+
+  facilities: [
+    'Tüplü dalış (beginner & certified)',
+    'Deneme dalışı',
+    'Tekne ile dalış noktalarına ulaşım',
+    'Profesyonel eğitmenler',
+    'Ekipman temini',
+    'Briefing & güvenlik eğitimi',
+    'Fotoğraf / video çekimi (opsiyonel)'
+  ],
+
+  features: [
+    'Kaş’ın en iyi dalış noktalarına erişim',
+    'Yeni başlayanlara uygun sakin yaklaşım',
+    'Küçük gruplarla dalış',
+    'Güvenlik ve bilgilendirme odaklı',
+    'Uzun yıllara dayanan yerel tecrübe'
+  ],
+
+  tags: [
+    'tüplü dalış',
+    'scuba',
+    'deneme dalışı',
+    'outdoor',
+    'kaş dalış',
+    'tekne turu',
+    'su altı'
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: '2025-12-23',
+    disclaimer: true
+  },
+
+  longText: `
+Dragoman Diving and Outdoor, Kaş’ta denizin altını gerçekten güvenle keşfetmek isteyenlerin tercih ettiği köklü dalış merkezlerinden biri. Liman çevresindeki konumuyla ulaşımı kolay; sabah buluşup kısa bir hazırlık sonrası direkt tekneyle dalış noktalarına açılıyorsun. Burada hissedilen şey “turist fabrikası” değil, işini bilen bir ekiple kontrollü ve keyifli bir deneyim.
+
+Atmosfer nasıl?
+- Rahat ama disiplinli. Her şey aceleye getirilmeden anlatılıyor.
+- İlk kez dalacak olanlara karşı sabırlı ve açıklayıcı bir yaklaşım var.
+- Sert komutlardan çok, güven veren bir iletişim dili kullanılıyor.
+
+Kimler için uygun?
+- Hayatında ilk kez tüplü dalış yapacak olanlar.
+- Sertifikalı dalgıçlar için Kaş’ın klasik ve özel noktalarını görmek isteyenler.
+- Tatilde adrenalin arayan ama “risk almak istemeyen” gezginler.
+- Denizle ilişkisi güçlü, doğa odaklı tatil sevenler.
+
+Dalış deneyimi nasıl ilerliyor?
+Önce kısa ama net bir bilgilendirme yapılıyor. Ekipmanlar kontrol ediliyor, suya girmeden önce herkesin ne yapacağı netleşiyor. Deneme dalışlarında tempo yavaş tutuluyor; panik yaratacak hiçbir zorlamaya girilmiyor. Sertifikalı dalışlarda ise Kaş’ın batıkları, mağaramsı yapıları ve berrak görüşü gerçekten etkileyici.
+
+Pratik ipuçları:
+- Yaz sezonunda yerler hızlı doluyor; bir gün önceden rezervasyon iyi olur.
+- Sabah saatleri hem deniz hem görüş açısından genelde daha iyi.
+- Dalış sonrası hafif bir sersemlik normal; programını çok sıkıştırmamak mantıklı.
+- Deniz tutması olanlar için tekne öncesi önlem almak işe yarar.
+
+Kısa özet:
+Dragoman Diving and Outdoor, Kaş’ta dalışı güvenli, sakin ve keyifli şekilde deneyimlemek isteyenler için doğru adres. İlk kez deneyecek olanları da, tecrübeli dalgıçları da rahat ettiren bir yaklaşımı var. Kaş’ın su altı dünyasını gerçekten görmek istiyorsan, gönül rahatlığıyla listene eklenebilir.
+  `
+}
+
+{
+  id: 'the-shotlar-terminali',
+  title: 'The Shotlar Terminali',
+  description: 'Shot odaklı konsepti, yüksek enerjisi ve eğlenceli atmosferiyle; Kaş’ta geceyi hızlandırmak isteyenlerin uğradığı küçük ama hareketli bir bar.',
+  category: ['bar'],
+
+  image: 'the-shotlar-terminali-001-kapak.jpg',
+  images: [
+    '../assets/0_img/the-shotlar-terminali-002.jpg',
+    '../assets/0_img/the-shotlar-terminali-003.jpg',
+    '../assets/0_img/the-shotlar-terminali-004.jpg'
+  ],
+
+  rating: 4.5,
+  price: '₺₺',
+  selected: false,
+
+  location: 'Andifli Mah., Kaş/Antalya (merkez, barlar sokağına çok yakın)',
+  distance: 'Merkez',
+  coordinates: { lat: 36.1997, lng: 29.6420 },
+
+  website: '',
+  phone: '',
+  duration: '30 dk – 1.5 saat',
+
+  facilities: [
+    'Shot bar konsepti',
+    'Çok sayıda shot çeşidi',
+    'Ayakta servis',
+    'Hızlı içim & hızlı servis',
+    'Arkadaş gruplarına uygun',
+    'Kart ile ödeme'
+  ],
+
+  features: [
+    'Küçük ama enerjisi yüksek mekân',
+    'Geceye hızlı başlamak için ideal',
+    'Eğlenceli ve genç kitle',
+    'Barlar sokağına geçiş için iyi ara durak',
+    'Kısa süreli ama yoğun deneyim'
+  ],
+
+  tags: [
+    'shot bar',
+    'gece hayatı',
+    'hızlı eğlence',
+    'barlar sokağı',
+    'arkadaş grubu',
+    'kaş gece'
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: '2025-12-23',
+    disclaimer: true
+  },
+
+  longText: `
+The Shotlar Terminali, Kaş’ta “bir-iki shot atalım, sonra akalım” diyenlerin net adresi. Küçük bir alan, ayakta servis ve sürekli hareket… Buraya uzun uzun oturmak için değil, geceye enerji eklemek için geliniyor. Barlar sokağına yakınlığı sayesinde çoğu kişi için bir başlangıç noktası ya da mekânlar arası kısa ama eğlenceli bir mola.
+
+Atmosfer nasıl?
+- Kalabalık, gürültülü ve yüksek tempolu.
+- Müzik hızlı, sohbet kısa; eğlence ön planda.
+- Tanımadığın insanlarla yan yana shot kaldırmak çok olağan.
+
+Kimler için uygun?
+- Arkadaş grubuyla eğlence arayanlar.
+- “Sessiz bar” beklentisi olmayanlar.
+- Geceyi uzatmadan önce mod yükseltmek isteyenler.
+- Kısa sürede eğlenip başka mekâna geçmeyi sevenler.
+
+Ne içilir?
+Burada iş net: shot. Klasikten aromalı karışımlara kadar birçok seçenek var. Uzun uzun içecek menüsü incelemek yok; seç, iç ve devam et. İlk kez gelenler için daha yumuşak shotlarla başlamak mantıklı.
+
+Pratik ipuçları:
+- Mekân küçük olduğu için kalabalık saatlerde içerisi hızlı doluyor.
+- Ayakta durma ve hareket fazla; rahat ayakkabı avantaj.
+- Shot temposuna kapılıp abartmamak tamamen senin kontrolünde.
+- Geceye geç saatlerde gelmek ortamı daha eğlenceli kılıyor.
+
+Kısa özet:
+The Shotlar Terminali; Kaş gece hayatında kısa sürede tempo yakalamak isteyenler için tasarlanmış, hızlı ve eğlenceli bir shot bar. Uzun oturmalık değil ama doğru zamanda girildiğinde geceyi ciddi şekilde canlandırıyor.
+  `
+}
+
+
+
+
+
+
+
+
+
 ];
+
+
+/*
+Gezi : places
+Plaj : beaches
+Aktivite : activities
+Yeme-İçme : food
+Otel : hotels
+Tarih : history
+Doğa : nature
+Çarşı : shopping
+Kahvaltı : breakfast
+Özel Soru Serileri : faqspecial
+Meyhane : meyhane
+Bar : bar
+Cafe : cafe
+Dalış : diving
+Yazılar : articles
+*/
