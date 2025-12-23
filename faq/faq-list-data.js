@@ -1154,4 +1154,466 @@ window.faqData =
 }, {
 "question": "Kaş'ta scuba diving dışında alternatif su sporları neler?",
 "answer": "Scuba dışında Kaş'ta kano/kayak, yüzme, şnorkel, stand-up paddle board (SUP) gibi daha sakin su aktiviteleri yapabilirsiniz. Bazı plajlarda su kayağı veya jet ski gibi aktiviteler de bulunabilir ancak Kaş daha çok dalış ve kano gibi doğa odaklı sporlara yoğunlaşmıştır."
-}]
+},
+
+  {
+    "question": "Kaş’a gitmek için en iyi dönem ne zaman?",
+    "answer": "Genelde Mayıs–Haziran ve Eylül–Ekim arası hem hava güzel hem kalabalık daha dengeli olur. Çok sıcak istemiyorsan Temmuz–Ağustos yerine omuz sezonlarını hedefle; etkinlik ve deniz sıcaklığını ayrıca kontrol et."
+  },
+  {
+    "question": "Kaş’ta deniz suyu ne zaman ısınır?",
+    "answer": "Deniz genelde Mayıs sonu gibi ısınmaya başlar, en sıcak dönem Temmuz–Eylül arasıdır. Güncel su sıcaklığı için seyahat tarihine yakın meteoroloji/deniz suyu verilerine bak."
+  },
+  {
+    "question": "Kaş’ta kaç gün kalmak ideal?",
+    "answer": "İlk kez gelenler için 3–5 gün çoğu plaj, çarşı ve tekne turunu rahatça sığdırır. Meis, Likya Yolu yürüyüşü ve dalış eklersen 1 hafta daha keyifli olur."
+  },
+  {
+    "question": "Kaş’a en yakın havalimanı hangisi?",
+    "answer": "Genelde Dalaman ve Antalya havalimanları tercih edilir; yol süresi seçtiğin güzergâha göre değişir. Transfer süreleri ve sefer saatleri için seyahat tarihine yakın kontrol et."
+  },
+  {
+    "question": "Kaş’a toplu taşımayla nasıl gidilir?",
+    "answer": "Antalya/Fethiye yönünden otobüs ve minibüs bağlantılarıyla ulaşım mümkün. Sezonluk sefer yoğunluğu değiştiği için saatleri otogar firmalarından teyit et."
+  },
+  {
+    "question": "Kaş içinde ulaşım için araba şart mı?",
+    "answer": "Merkez yürüyerek gezilebilir ama Kaputaş, Patara, Saklıkent gibi noktalar için araç/servis işini kolaylaştırır. Eğer merkezde kalacaksan dolmuş ve taksiyle de idare edebilirsin."
+  },
+  {
+    "question": "Kaş’ta dolmuş var mı, nasıl kullanılır?",
+    "answer": "Sezonda yakın koylara ve çevre yerlere dolmuş/minibüs seçenekleri bulunur. Hat ve saatler sık değişebildiği için konakladığın yerden veya durağından güncel bilgi al."
+  },
+  {
+    "question": "Kaş’ta park etmek zor mu?",
+    "answer": "Yazın merkezde park yeri bulmak zorlaşabilir; erken saatler avantaj sağlar. Otopark noktalarını önceden belirlemek ve yürümeyi göze almak işini kolaylaştırır."
+  },
+  {
+    "question": "Kaş’ta konaklama için en iyi bölge neresi?",
+    "answer": "Merkezde kalmak yeme-içme ve gece yürüyüşleri için çok pratiktir; manzara isteyenler yamaç tarafındaki otelleri sever. Koylara yakınlık istiyorsan Çukurbağ Yarımadası gibi bölgeleri araştır."
+  },
+  {
+    "question": "Kaş’ta bütçe dostu konaklama bulunur mu?",
+    "answer": "Sezonda fiyatlar yükselir ama erken rezervasyon ve pansiyon/hostel seçenekleriyle uygun alternatifler bulunabilir. Fiyatları karşılaştırmak için farklı tarihler ve günler dene."
+  },
+  {
+    "question": "Kaş’ta nerede denize girilir?",
+    "answer": "Merkezde platform/merdivenli noktalar çok yaygındır; ayrıca çevrede Kaputaş, İnceboğaz, Akçagerme gibi seçenekler var. Rüzgâr ve dalga durumuna göre koy seçmek daha konforlu olur."
+  },
+  {
+    "question": "Kaş’ta çocukla denize girmek için uygun yer var mı?",
+    "answer": "Sığ ve kumlu seçenekler arıyorsan çevredeki bazı plajlar daha uygundur; merkezdeki platformlar küçük çocuk için zor olabilir. Güncel koşullar ve işletme hizmetleri için plaj yorumlarını incele."
+  },
+  {
+    "question": "Kaş’ta halk plajı var mı?",
+    "answer": "Bölgede ücretsiz/erişimi kolay noktalar ve işletmeli plajlar bir arada bulunur. Ücret/şezlong politikası sezona göre değişebileceği için gitmeden kontrol et."
+  },
+  {
+    "question": "Kaputaş Plajı’na nasıl gidilir?",
+    "answer": "Kaş–Kalkan yolu üzerinde, araçla kısa sürede ulaşılır; sezonda dolmuş da bulunabiliyor. Merdiven sayısı ve yoğunluk için erken gitmek iyi olur."
+  },
+  {
+    "question": "Patara Plajı Kaş’a yakın mı?",
+    "answer": "Patara, Kaş çevresinde günübirlik yapılabilen popüler rotalardan biridir. Mesafe ve yol durumunu planına göre haritadan kontrol et."
+  },
+  {
+    "question": "Saklıkent Kanyonu’na Kaş’tan gidilir mi?",
+    "answer": "Evet, günübirlik tur veya kendi aracınla gidilebilir. Su seviyesi ve yürüyüş zorluğu mevsime göre değiştiği için gitmeden koşulları araştır."
+  },
+  {
+    "question": "Kaş’ta tekne turu şart mı?",
+    "answer": "Denizden koy görmek ve yüzme molaları için tekne turları çok keyifli ama şart değil. Koyları kara yoluyla da gezebilirsin; tur seçerken rota ve süreyi karşılaştır."
+  },
+  {
+    "question": "Kaş’ta Meis (Kastellorizo) günübirlik yapılır mı?",
+    "answer": "Evet, uygun sefer günlerinde günübirlik geçiş yapılabiliyor. Pasaport/vize şartları ve feribot saatlerini seyahatinden önce resmi kaynaklardan teyit et."
+  },
+  {
+    "question": "Kaş’ta dalış yapılır mı, yeni başlayanlar için uygun mu?",
+    "answer": "Kaş dalış için Türkiye’de en bilinen noktalardan; deneme dalışı gibi başlangıç seçenekleri bulunur. Sağlık beyanı ve dalış merkezi seçimi için önceden bilgi al."
+  },
+  {
+    "question": "Kaş’ta şnorkelle nerede yüzülür?",
+    "answer": "Sığ kayalık alanlar ve sakin koylar şnorkel için güzel olur. Görüş mesafesi rüzgâra bağlı olduğundan sabah saatleri daha iyi olabilir."
+  },
+  {
+    "question": "Kaş’ta gece hayatı var mı?",
+    "answer": "Merkezde barlar ve canlı müzik seçenekleri bulunur; atmosfer genelde butik ve sakin-enerjik arasıdır. Yoğunluk hafta sonu ve sezon zirvesinde artar."
+  },
+  {
+    "question": "Kaş’ta gün batımı nereden izlenir?",
+    "answer": "Merkez çevresindeki teraslar ve yüksek noktalar gün batımı için popülerdir. En iyi manzara için rüzgâr yönü ve bulut durumunu da hesaba kat."
+  },
+  {
+    "question": "Kaş’ta yeme-içme pahalı mı?",
+    "answer": "Sezonda merkezde fiyatlar yükselir; bütçene göre lokanta ve sokak lezzetleri daha uygun olabilir. Menüleri ve yorumları önceden incelemek sürprizi azaltır."
+  },
+  {
+    "question": "Kaş’ta kahvaltı nerede yapılır?",
+    "answer": "Merkezde ve yarımada tarafında manzaralı kahvaltı yerleri sık bulunur. Rezervasyon gerekip gerekmediğini özellikle yazın önceden sor."
+  },
+  {
+    "question": "Kaş’ta deniz ürünleri taze mi?",
+    "answer": "Genelde deniz ürünü seçenekleri yaygındır ama tazelik işletmeye ve güne göre değişir. Yoğun sirkülasyonu olan yerleri ve güncel yorumları kontrol et."
+  },
+  {
+    "question": "Kaş’ta vejetaryen/vegan seçenek bulunur mu?",
+    "answer": "Merkezde çoğu yerde sebze ağırlıklı seçenekler ve bazı vegan alternatifler bulunur. Menüde net değilse sipariş öncesi içerik sor."
+  },
+  {
+    "question": "Kaş’ta glutensiz beslenmek zor mu?",
+    "answer": "Tamamen zor değil ama planlı olmak gerekir; bazı mekânlar özel istekleri karşılayabiliyor. Çapraz bulaşma hassasiyetin varsa bunu açıkça belirt ve paketli alternatifleri düşün."
+  },
+  {
+    "question": "Kaş’ta market ve eczane bulmak kolay mı?",
+    "answer": "Merkezde market ve eczane seçenekleri genelde yeterlidir; yoğun saatlerde sıra olabilir. Nöbetçi eczane bilgisi için yerel duyurulara bak."
+  },
+  {
+    "question": "Kaş’ta sağlık ocağı/hastane var mı?",
+    "answer": "Temel sağlık hizmetleri bulunur, daha kapsamlı ihtiyaçlarda çevre ilçelere yönlendirme olabilir. Acil durumda 112 ve en yakın sağlık birimini önceden not etmek iyi olur."
+  },
+  {
+    "question": "Kaş güvenli mi?",
+    "answer": "Genelde turistik bir yer olarak güvenli kabul edilir ama her yerde olduğu gibi kalabalıkta eşyana dikkat et. Gece geç saatlerde ıssız sokaklarda temkinli olmak yeterli."
+  },
+  {
+    "question": "Kaş’ta kadın başına seyahat edilir mi?",
+    "answer": "Birçok kişi tek başına rahatça geziyor; merkez yürünebilir ve turistik. Konaklama seçimi, gece geç saatte ulaşım ve rota planı gibi temel önlemlerle daha konforlu olur."
+  },
+  {
+    "question": "Kaş’ta internet ve mobil çekim nasıl?",
+    "answer": "Merkezde genelde iyi, bazı koylarda zayıflayabiliyor. Uzaktan çalışma planın varsa kalacağın yerden hız testi sonucu istemek iyi fikir."
+  },
+  {
+    "question": "Kaş’ta çalışma için uygun kafe var mı?",
+    "answer": "Bazı kafeler laptop dostu olabilir ama yoğun sezonda masa bulmak zorlaşır. Sessizlik ve priz ihtiyacın varsa erken saatlerde git veya coworking benzeri seçenekleri araştır."
+  },
+  {
+    "question": "Kaş’ta ATM/banka var mı?",
+    "answer": "Merkezde ATM bulmak genelde kolaydır; yazın yoğunluk olabilir. Nakit ihtiyacı için birden fazla ATM noktasını yedekte tut."
+  },
+  {
+    "question": "Kaş’ta kart geçiyor mu, yoksa nakit mi lazım?",
+    "answer": "Çoğu işletme kart kabul eder ama küçük yerlerde nakit gerekebilir. Tekne turu, dolmuş gibi durumlar için bir miktar nakit taşımak iyi olur."
+  },
+  {
+    "question": "Kaş’ta araç kiralamak mantıklı mı?",
+    "answer": "Çevre rotalarını çok gezeceksen mantıklı; sadece merkezde kalacaksan şart değil. Sezonda erken rezervasyon ve sigorta kapsamını kontrol etmek önemli."
+  },
+  {
+    "question": "Kaş’ta scooter/elektrikli araç kiralanır mı?",
+    "answer": "Bazı dönemlerde bulunabilir ama yolların eğimi ve güvenlik ekipmanı önemli. Kiralama şartlarını ve kask zorunluluğunu mutlaka sor."
+  },
+  {
+    "question": "Kaş’ta taksi bulmak kolay mı?",
+    "answer": "Merkezde genelde bulunur; yoğun saatlerde bekleme olabilir. Uzun mesafe/çevre rotalar için fiyatı baştan konuşmak iyi olur."
+  },
+  {
+    "question": "Kaş’ta yürüyüş rotası var mı?",
+    "answer": "Likya Yolu’nun etapları Kaş çevresinden geçer ve kısa yürüyüşler yapmak mümkün. Zorluk, su ve güneş koşulları için rotayı önceden planla."
+  },
+  {
+    "question": "Likya Yolu için ekipman gerekir mi?",
+    "answer": "Kısa etaplarda spor ayakkabı yetebilir ama sıcak, taşlı zemin ve rüzgâr için hazırlıklı olmak gerekir. Su, güneş koruması ve offline harita ciddi fark yaratır."
+  },
+  {
+    "question": "Kaş’ta kamp yapılır mı?",
+    "answer": "Çevrede kamp alanı/karavan seçenekleri bulunabilir; bazı koylarda serbest kamp kısıtlı olabilir. Güncel izin ve kuralları gitmeden araştır."
+  },
+  {
+    "question": "Kaş’ta plajlarda şezlong ücreti ne kadar?",
+    "answer": "Ücretler işletmeye ve sezona göre çok değişir. Gitmeden önce plajın güncel fiyatını arayıp sormak en doğru bilgi verir."
+  },
+  {
+    "question": "Kaş’ta deniz ayakkabısı gerekir mi?",
+    "answer": "Birçok yerde kayalık zemin olduğu için deniz ayakkabısı konfor sağlar. Kumlu plajlarda şart değil ama çanta kenarında bulundurmak iyi olur."
+  },
+  {
+    "question": "Kaş’ta denizde denizanası olur mu?",
+    "answer": "Dönemsel olarak görülebilir; rüzgâr ve akıntı etkiler. Güncel durumu plaj işletmelerinden veya yerel uyarılardan öğrenebilirsin."
+  },
+  {
+    "question": "Kaş’ta rüzgâr hangi aylarda daha etkili?",
+    "answer": "Rüzgâr mevsime göre değişir; bazı günler deniz dalgalı olabilir. Tekne turu planlıyorsan hava tahminini ve kaptan bilgisini dikkate al."
+  },
+  {
+    "question": "Kaş’ta tekne turu seçerken nelere bakmalı?",
+    "answer": "Rota, kişi sayısı, yemek dahil mi, yüzme molası süresi ve müzik/atmosfer gibi detaylara bak. Aynı gün birkaç teknenin programını karşılaştırmak iyi sonuç verir."
+  },
+  {
+    "question": "Kaş’ta özel tekne kiralanır mı?",
+    "answer": "Evet, grupça özel tekne kiralama seçenekleri bulunur. Fiyat; tekne tipi, saat ve rotaya göre değiştiği için birkaç teklif almak mantıklı."
+  },
+  {
+    "question": "Kaş’ta kano/SUP yapılır mı?",
+    "answer": "Sakin koylarda kano ve SUP keyifli olur; rüzgâr artınca zorlaşabilir. Sabah saatleri genelde daha uygundur; kiralama yerlerinden şartları öğren."
+  },
+  {
+    "question": "Kaş’ta yamaç paraşütü var mı?",
+    "answer": "Bölge/çevrede sezonluk seçenekler olabiliyor; nokta ve firmalar değişebilir. Güncel operasyon ve güvenlik lisansları için resmi/yerel kaynakları kontrol et."
+  },
+  {
+    "question": "Kaş’ta dalış sezonu ne zaman?",
+    "answer": "Genelde bahardan sonbahara kadar yoğun olur, kışın daha sınırlı olabilir. Görüş ve su sıcaklığı için dalış merkezlerinden mevsim bilgisi al."
+  },
+  {
+    "question": "Kaş’ta ücretsiz yapılacak şeyler neler?",
+    "answer": "Çarşıda yürümek, gün batımı izlemek, kısa yürüyüş rotaları ve bazı ücretsiz denize girme noktaları iyi alternatiflerdir. Günlük planı bütçene göre karıştırarak yapabilirsin."
+  },
+  {
+    "question": "Kaş’ta fotoğraf için en iyi noktalar nereler?",
+    "answer": "Merkez manzara noktaları, marina çevresi, gün batımı terasları ve çevre plaj yolları çok fotogeniktir. Gün ışığı için sabah erken veya gün batımı saatlerini hedefle."
+  },
+  {
+    "question": "Kaş’ta balayı için uygun mu?",
+    "answer": "Butik oteller, manzaralı akşamlar ve sakin koylar balayı için çok uygundur. Özel planlar için konaklama yerinden balayı paketi/ekstra hizmet sor."
+  },
+  {
+    "question": "Kaş’ta aile tatili yapılır mı?",
+    "answer": "Evet, sakin gün planı ve uygun plaj seçimiyle aile için uygundur. Bebek/çocukla gidiyorsan sığ plaj ve gölgelik imkânını önceliklendir."
+  },
+  {
+    "question": "Kaş’ta evcil hayvanla tatil mümkün mü?",
+    "answer": "Bazı konaklama yerleri pet-friendly olabilir; plajlarda kurallar değişebilir. Rezervasyon öncesi net şartları yazılı olarak teyit etmek iyi olur."
+  },
+  {
+    "question": "Kaş’ta sivrisinek olur mu?",
+    "answer": "Yaz akşamlarında bazı bölgelerde olabilir. İnce bir sinek kovucu ve açık renk kıyafet işe yarar; konaklamanın sineklik durumunu kontrol et."
+  },
+  {
+    "question": "Kaş’ta alışverişte ne alınır?",
+    "answer": "Yerel el işleri, küçük hediyelikler ve zeytinyağı/sabun gibi ürünler sık tercih edilir. Fiyat/kalite için birkaç dükkân gezip karşılaştırmak iyi olur."
+  },
+  {
+    "question": "Kaş’ta pazar kuruluyor mu?",
+    "answer": "Yerel pazar günleri ve yeri dönemsel olarak değişebilir. Güncel pazar gününü konakladığın yerden veya yerel duyurulardan öğren."
+  },
+  {
+    "question": "Kaş’ta tarih meraklıları için ne var?",
+    "answer": "Antik kentler, kaya mezarları ve çevredeki tarihi alanlar çok zengindir. Zamanın varsa kısa bir rota çıkarıp giriş saatlerini önceden kontrol et."
+  },
+  {
+    "question": "Kaş merkezde görülecek başlıca yerler neler?",
+    "answer": "Çarşı, marina çevresi ve yürüyüş noktaları kısa sürede gezilebilir. Eğer zamanın kısıtlıysa merkez + bir koy kombinasyonu güzel bir gün planı olur."
+  },
+  {
+    "question": "Kaş’ta müze var mı?",
+    "answer": "Merkezde/çevrede dönemsel sergiler ve küçük kültürel noktalar olabilir. Güncel müze/saha bilgisi için belediye veya turizm bilgi kaynaklarına bak."
+  },
+  {
+    "question": "Kaş’ta yağmur olursa ne yapılır?",
+    "answer": "Kafelerde dinlenmek, yerel dükkânları gezmek ve yakın çevrede kapalı alan alternatiflerine bakmak iyi olur. Yağış kısa sürerse planı esnetip gün batımına yetişebilirsin."
+  },
+  {
+    "question": "Kaş’ta deniz çok dalgalı olursa hangi koylar daha sakin olur?",
+    "answer": "Rüzgâr yönüne göre bazı koylar daha korunaklı kalır. O gün için yerel işletmelerden “hangi taraf sakin” bilgisini almak en pratik çözümdür."
+  },
+  {
+    "question": "Kaş’ta gün içinde yapılacak en güzel rutin nedir?",
+    "answer": "Sabah erken deniz, öğlen çarşı/öğle yemeği, akşam gün batımı ve kısa bir yürüyüş Kaş’ta klasik ama çok keyifli bir akıştır. Kalabalıktan kaçmak için sabahı değerlendir."
+  },
+  {
+    "question": "Kaş’ta deniz kenarında kahve içilecek yer var mı?",
+    "answer": "Marina ve denize yakın sokaklarda bu tarz yerler bulmak mümkün. Manzara için erken gidip en iyi masayı kapmak işe yarar."
+  },
+  {
+    "question": "Kaş’ta gün batımı için rezervasyon gerekir mi?",
+    "answer": "Popüler teras restoranlarda yazın gerekebilir. Gün batımı saatine yakın gidiyorsan en azından arayıp yer durumunu sormak iyi olur."
+  },
+  {
+    "question": "Kaş’ta plajlara giriş saatleri var mı?",
+    "answer": "İşletmeli plajlarda çalışma saatleri olur; ücretsiz alanlarda genelde saat kısıtı yoktur. En doğru bilgi için gideceğin yerin güncel saatlerini kontrol et."
+  },
+  {
+    "question": "Kaş’ta tekne turlarında yüzme bilmek şart mı?",
+    "answer": "Yüzme bilmek konfor sağlar ama can yeleğiyle yüzme molalarına katılanlar da olur. Güvenlik kuralları ve ekipman için turu düzenleyenle konuş."
+  },
+  {
+    "question": "Kaş’ta deniz derin mi?",
+    "answer": "Merkezdeki birçok noktada deniz hızlı derinleşir; bu yüzden yüzme bilmeyenler için dikkat gerekir. Sığ plaj arıyorsan çevredeki kumlu alternatifleri seç."
+  },
+  {
+    "question": "Kaş’ta güneşten korunmak için ne önerirsin?",
+    "answer": "Yüksek faktör güneş kremi, şapka ve gölgede mola Kaş’ta şart gibi. Özellikle öğle saatlerinde (12–16) deniz keyfini daha kısa tutmak iyi olur."
+  },
+  {
+    "question": "Kaş’ta “mavi yolculuk” benzeri uzun tur var mı?",
+    "answer": "Günübirlik turlar yaygın; çok günlük rotalar ise sezon ve tekneye göre değişebilir. Uzun tur istiyorsan birkaç acenteden rota ve konaklama detayını iste."
+  },
+  {
+    "question": "Kaş’ta dalış için sertifika gerekir mi?",
+    "answer": "Deneme dalışı gibi başlangıç paketlerinde sertifika gerekmez; eğitim ve güvenlik brifingi verilir. Lisanslı dalışlar için sertifika ve sağlık koşulları istenir."
+  },
+  {
+    "question": "Kaş’ta tüplü dalış pahalı mı?",
+    "answer": "Fiyatlar paket, dalış sayısı ve sezona göre değişir. En iyi yaklaşım: 2–3 merkezden fiyat alıp dahil olan hizmetleri karşılaştırmak."
+  },
+  {
+    "question": "Kaş’ta tekne turunda yemek nasıldır?",
+    "answer": "Bazı turlarda basit ama doyurucu menüler olur; bazıları ekstra ücret isteyebilir. Rezervasyon yapmadan önce menüyü ve içecek politikasını sor."
+  },
+  {
+    "question": "Kaş’ta en sakin saatler ne zaman?",
+    "answer": "Sabah erken saatler merkez ve plajlarda daha sakindir. Akşamüstü ve gün batımı saatinde yoğunluk artar."
+  },
+  {
+    "question": "Kaş’ta kalabalıktan kaçmak için ne yapmalı?",
+    "answer": "Popüler plajlara erken gitmek ve daha az bilinen koyları hedeflemek işe yarar. Hafta içi ziyaret de yoğunluğu ciddi azaltır."
+  },
+  {
+    "question": "Kaş’ta su sporları için en iyi yerler nereler?",
+    "answer": "Rüzgârın daha uygun olduğu günlerde belirli koylar öne çıkar; sezonluk olarak işletmeler değişebilir. O hafta hangi koyda hangi spor var diye yerelden bilgi al."
+  },
+  {
+    "question": "Kaş’ta bisiklet sürülür mü?",
+    "answer": "Eğimli yollar nedeniyle zorlayıcı olabilir ama kısa mesafe ve akşam saatleri keyiflidir. Güvenlik için ışık ve kask kullanmak önemli."
+  },
+  {
+    "question": "Kaş’ta yürüyüş yaparken nelere dikkat etmeli?",
+    "answer": "Sıcak, susuzluk ve güneş en büyük risk; yeterli su ve güneş koruması al. Rota uzunsa offline harita ve powerbank hayat kurtarır."
+  },
+  {
+    "question": "Kaş’ta kamp ateşi yakmak serbest mi?",
+    "answer": "Kurallar bölgeye ve mevsime göre değişebilir; yangın riski nedeniyle kısıt olabilir. Gitmeden yerel yönetim/alan işletmesi kurallarını kontrol et."
+  },
+  {
+    "question": "Kaş’ta plajlarda duş ve tuvalet var mı?",
+    "answer": "İşletmeli plajlarda genelde var; ücretsiz noktalarda olmayabilir. İhtiyacın varsa işletme olan yerleri tercih et."
+  },
+  {
+    "question": "Kaş’ta denize giriş ücreti olan beach club’lar var mı?",
+    "answer": "Sezonda beach club konsepti olan yerler bulunabiliyor. Giriş/harcama limiti değiştiği için güncel fiyatı önceden sormak iyi olur."
+  },
+  {
+    "question": "Kaş’ta gün içinde hava çok değişir mi?",
+    "answer": "Yazın genel olarak stabil ama rüzgâr aniden artabilir. Tekne turu ve plaj planında hava uygulamasını takip etmek işine yarar."
+  },
+  {
+    "question": "Kaş’ta güneş battıktan sonra serin olur mu?",
+    "answer": "Rüzgârlı günlerde akşam serinleyebilir, özellikle yarımada tarafında. İnce bir hırka taşımak iyi olur."
+  },
+  {
+    "question": "Kaş’ta deniz gözlüğü ve ekipman nereden alınır?",
+    "answer": "Merkezde spor/deniz ürünleri satan yerler ve marketler bulunur. Fiyat/kalite için birkaç yer gezmek mantıklı."
+  },
+  {
+    "question": "Kaş’ta plaj havlusu/şemsiye kiralanır mı?",
+    "answer": "Bazı işletmelerde şezlongla birlikte verilir veya ayrıca kiralanır. Gitmeden önce hizmet listesini sor."
+  },
+  {
+    "question": "Kaş’ta en iyi kahve nerede içilir?",
+    "answer": "Damaktan damaga değişir ama merkezde kaliteli üçüncü nesil kahve seçenekleri bulmak mümkün. Yorumlara bakıp denemek en iyi yöntem."
+  },
+  {
+    "question": "Kaş’ta yöresel yemek olarak ne denenir?",
+    "answer": "Akdeniz otları, zeytinyağlılar ve deniz ürünleri öne çıkar. Mevsime göre çıkan otları sorarsan daha “yerel” bir deneyim olur."
+  },
+  {
+    "question": "Kaş’ta gece yürüyüşü yapmak güvenli mi?",
+    "answer": "Merkez genelde canlıdır ve yürüyüş yapılır; yine de ıssız ara sokaklardan kaçınmak iyi olur. Taksi/dolmuş seçeneklerini gece için önceden planla."
+  },
+  {
+    "question": "Kaş’ta sahilde koşu yapılır mı?",
+    "answer": "Sabah erken saatler koşu için idealdir; sıcak basmadan bitirmek rahat olur. Zemin ve rota için marinaya yakın yürüyüş yollarını tercih edebilirsin."
+  },
+  {
+    "question": "Kaş’ta deniz kenarında yoga/pilates var mı?",
+    "answer": "Sezonda bazı stüdyolar ve oteller açık hava dersleri düzenleyebilir. Güncel programları sosyal medya/rezervasyon kanallarından kontrol et."
+  },
+  {
+    "question": "Kaş’ta tekne turunda şnorkel ekipmanı veriliyor mu?",
+    "answer": "Bazı turlar verir, bazıları sınırlı sayıda bulundurur. Kendi ekipmanını götürmek hem hijyen hem konfor açısından daha iyi olabilir."
+  },
+  {
+    "question": "Kaş’ta en iyi yüzme saati ne zaman?",
+    "answer": "Sabah erken saatlerde deniz daha sakin ve su daha temiz hissedilir. Öğleden sonra rüzgâr artarsa dalga yükselip keyfi azaltabilir."
+  },
+  {
+    "question": "Kaş’ta güneş yanığı olursa ne yapılır?",
+    "answer": "Güneşten çıkıp serinlemek, bol su içmek ve yatıştırıcı ürünler kullanmak yardımcı olur. Şiddetli yanıkta eczacıya/sağlık kuruluşuna danış."
+  },
+  {
+    "question": "Kaş’ta scuba dışında dalış alternatifi var mı?",
+    "answer": "Serbest dalış (freediving) ve şnorkel en yaygın alternatiflerdir. Eğitim almak istersen yerel eğitmen/merkezlerin programlarını araştır."
+  },
+  {
+    "question": "Kaş’ta gün içinde en çok neye dikkat etmeli?",
+    "answer": "Sıcak, güneş ve susuzluk Kaş’ta tatilin en büyük düşmanı olabilir. Su, gölge molası ve güneş korumasını rutine oturtmak yeter."
+  },
+  {
+    "question": "Kaş’ta plaj çantasında ne olmalı?",
+    "answer": "Su, güneş kremi, şapka, deniz ayakkabısı, ince havlu ve powerbank pratik olur. Kayalık zemine gideceksen küçük bir ilk yardım bandı da iyi fikir."
+  },
+  {
+    "question": "Kaş’ta para bozdurma işi kolay mı?",
+    "answer": "Bazı noktalarda döviz bozdurma/ATM ile çözülür; komisyonlar değişir. Yabancı kart kullanacaksan bankanın yurt dışı ücretlerini önceden kontrol et."
+  },
+  {
+    "question": "Kaş’ta İngilizce ile idare edilir mi?",
+    "answer": "Turistik bölgede çoğu işletme temel İngilizce biliyor, genelde sorun olmaz. Yine de taksi/dolmuş gibi yerlerde birkaç Türkçe ifade işini kolaylaştırır."
+  },
+  {
+    "question": "Kaş’ta otel mi pansiyon mu daha mantıklı?",
+    "answer": "Konfor ve manzara için otel, bütçe ve samimiyet için pansiyon mantıklı olabilir. Tatil tarzına göre kahvaltı, konum ve iptal koşullarını karşılaştır."
+  },
+  {
+    "question": "Kaş’ta sessiz-sakin tatil mümkün mü?",
+    "answer": "Merkez sezonda canlıdır ama yarımada tarafı veya daha sakin koylar iyi alternatif olur. Konaklama seçerken “sessiz oda” isteyip teyit almak işe yarar."
+  },
+  {
+    "question": "Kaş’ta deniz sezonu dışında gidilir mi?",
+    "answer": "Evet, kış ve erken bahar daha sakin; yürüyüş ve fotoğraf için güzel olabilir. Denize girme beklentin varsa su sıcaklığını ve işletmelerin açık olup olmadığını araştır."
+  },
+  {
+    "question": "Kaş’ta araba ile Kalkan’a geçilir mi?",
+    "answer": "Evet, Kaş–Kalkan arası araçla kısa sürede geçilir. Trafik yazın artabileceği için saat planlaması yapmak iyi olur."
+  },
+  {
+    "question": "Kaş’ta kaçırılmaması gereken günübirlik rota nedir?",
+    "answer": "Kişiye göre değişir ama bir gün tekne turu + bir gün çevre plaj/antik kent kombinasyonu çok keyifli olur. İlgi alanına göre Meis veya Saklıkent’i de ekleyebilirsin."
+  },
+  {
+    "question": "Kaş’ta en güzel manzara hangi tarafta?",
+    "answer": "Yüksek noktalar ve yarımada tarafı genelde daha geniş manzara verir. Manzara odaklıysan balkon/teraslı oda seçmek fark yaratır."
+  },
+  {
+    "question": "Kaş’ta erken rezervasyon gerekli mi?",
+    "answer": "Temmuz–Ağustos ve bayram dönemlerinde evet, fiyat ve seçenek için çok faydalıdır. Omuz sezonda daha esnek olabilirsin ama popüler oteller yine hızlı dolar."
+  },
+  {
+    "question": "Kaş’ta konaklamada nelere dikkat etmeli?",
+    "answer": "Konum (yokuş/merkez mesafesi), otopark, kahvaltı ve oda manzarası en kritikler. Ayrıca iptal koşulu ve gürültü (bar sokağı yakınlığı) sor."
+  },
+  {
+    "question": "Kaş’ta “yokuş” gerçeği var mı?",
+    "answer": "Evet, bazı bölgeler yokuşlu; yürüyüşü zorlayabilir. Yürüyüş istemiyorsan merkeze düz yakın konum veya ulaşımı kolay bölge seç."
+  },
+  {
+    "question": "Kaş’ta plajlara giderken yokuş iniş-çıkış olur mu?",
+    "answer": "Bazı koylara iniş merdivenli veya eğimli olabilir. Rahat ayakkabı ve su taşıma işi önem kazanır."
+  },
+  {
+    "question": "Kaş’ta deniz kenarında gün boyu güneş var mı?",
+    "answer": "Koyun yönüne göre öğleden sonra gölge oluşabilir. Şezlong seçerken güneş-gölge dengesini sorup yerleşmek iyi olur."
+  },
+  {
+    "question": "Kaş’ta kısa tekne turu mu uzun tur mu?",
+    "answer": "Zamanın azsa kısa tur iyi; uzun tur daha fazla koy ve yüzme molası demek. Rota ve kalabalık kriterine göre seç."
+  },
+  {
+    "question": "Kaş’ta tekne turu çocuklar için uygun mu?",
+    "answer": "Sakin denizde ve uygun tekneyle olabilir; gölge alan, can yeleği ve tuvalet gibi detaylar önemli. Rezervasyon öncesi tekne koşullarını sor."
+  },
+  {
+    "question": "Kaş’ta su içmek güvenli mi?",
+    "answer": "Genelde şişe su tercih edilir; hassas miden varsa bu daha güvenlidir. Büyük su alıp odaya koymak da pratik olur."
+  },
+  {
+    "question": "Kaş’ta en iyi dondurma nerede yenir?",
+    "answer": "Merkezde birkaç popüler nokta bulunur ama zevk meselesi; bir-iki yer deneyip karar vermek en iyisi. Yorumlarda özellikle “taze” ve “sütlü” vurgusuna bak."
+  },
+  {
+    "question": "Kaş’ta kahve/dondurma için akşam kalabalığı olur mu?",
+    "answer": "Evet, özellikle yaz akşamları çarşı çok hareketli olur. Daha sakin istersen erken akşamüstü gitmek iyi olur."
+  }
+]
