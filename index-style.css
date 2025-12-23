@@ -5,7 +5,7 @@
   position: relative;
   height: 500px;
   overflow: hidden;
-  background-image: url('https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1600');
+  background-image: '/assets/0_img/clip_home_bg.jpg';
   background-size: cover;
   background-position: center;
 }
