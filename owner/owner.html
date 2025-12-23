@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mekanınızı Ekleyin - Kaş Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --primary-blue: #0891b2;
+      --primary-cyan: #06b6d4;
+      --primary-green: #10b981;
+      --primary-red: #ef4444;
+      --primary-orange: #f97316;
+      --primary-purple: #a855f7;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-full: 9999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: var(--gray-800);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .form-header {
+      background: linear-gradient(to right, var(--primary-cyan), var(--primary-blue));
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .form-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+      opacity: 0.9;
+      font-size: 1rem;
+    }
+
+    .form-body {
+      padding: 2rem;
+    }
+
+    .form-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-icon {
+      font-size: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-label .required {
+      color: var(--primary-red);
+      margin-left: 0.25rem;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s;
+      background: white;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .photo-upload {
+      border: 3px dashed var(--gray-300);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: var(--gray-50);
+    }
+
+    .photo-upload:hover {
+      border-color: var(--primary-blue);
+      background: rgba(8, 145, 178, 0.05);
+    }
+
+    .photo-upload-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .photo-upload-text {
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+
+    .photo-upload input[type="file"] {
+      display: none;
+    }
+
+    .photo-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .photo-preview-item {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 2px solid var(--gray-200);
+    }
+
+    .photo-preview-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-remove {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--primary-red);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+
+    .photo-remove:hover {
+      transform: scale(1.1);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .category-option {
+      position: relative;
+    }
+
+    .category-checkbox {
+      display: none;
+    }
+
+    .category-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all 0.3s;
+      background: white;
+      text-align: center;
+    }
+
+    .category-checkbox:checked + .category-label {
+      border-color: var(--primary-green);
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .category-icon {
+      font-size: 1.5rem;
+    }
+
+    .category-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .submit-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--gray-200);
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: linear-gradient(to right, var(--primary-cyan), var(--primary-blue));
+      color: white;
+      border: none;
+      border-radius: var(--radius-full);
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: var(--shadow);
+    }
+
+    .submit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .submit-button:active {
+      transform: translateY(0);
+    }
+
+    .form-hint {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-top: 0.25rem;
+    }
+
+    .success-message {
+      display: none;
+      background: rgba(16, 185, 129, 0.1);
+      border: 2px solid var(--primary-green);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: slideDown 0.5s ease;
+    }
+
+    .success-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      body {
+        padding: 1rem;
+      }
+
+      .form-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .form-body {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-card">
+      <div class="form-header">
+        <h1>🏖️ Mekanınızı Ekleyin</h1>
+        <p>Kaş'taki işletmenizi rehberimize ekleyin ve binlerce gezgine ulaşın</p>
+      </div>
+
+      <div class="form-body">
+        <div class="success-message" id="successMessage">
+          <div class="success-icon">✅</div>
+          <h3>Başvurunuz Alındı!</h3>
+          <p>Mekan bilgilerinizi inceliyoruz. En kısa sürede sizinle iletişime geçeceğiz.</p>
+        </div>
+
+        <form id="venueForm">
+          <!-- Temel Bilgiler -->
+          <div class="form-section">
+            <h3 class="section-title">
+              <span class="section-icon">📍</span>
+              Temel Bilgiler
+            </h3>
+
+            <div class="form-group">
+              <label class="form-label">
+                Mekan Adı<span class="required">*</span>
+              </label>
+              <input type="text" class="form-input" name="title" required placeholder="Örn: Kaputaş Plajı">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  Konum<span class="required">*</span>
+                </label>
+                <input type="text" class="form-input" name="location" required placeholder="Örn: Kaş Merkez">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Mesafe (Kaş'a)
+                </label>
+                <input type="text" class="form-input" name="distance" placeholder="Örn: 7 km">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Kısa Açıklama<span class="required">*</span>
+              </label>
+              <textarea class="form-textarea" name="description" required placeholder="Mekanınızı kısaca tanıtın (1-2 cümle)"></textarea>
+              <p class="form-hint">Bu metin kart görünümünde gösterilecek</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Detaylı Açıklama
+              </label>
+              <textarea class="form-textarea" name="longText" placeholder="Mekanınız hakkında detaylı bilgi verin (özellikler, hizmetler, öneriler vb.)" style="min-height: 180px;"></textarea>
+            </div>
+          </div>
+
+          <!-- Kategoriler -->
+          <div class="form-section">
+            <h3 class="section-title">
+              <span class="section-icon">🏷️</span>
+              Kategoriler<span class="required">*</span>
+            </h3>
+            <p class="form-hint" style="margin-bottom: 1rem;">Mekanınız için uygun kategorileri seçin (birden fazla seçebilirsiniz)</p>
+
+            <div class="category-grid">
+              <div class="category-option">
+                <input type="checkbox" id="cat-plaj" name="category" value="plaj" class="category-checkbox">
+                <label for="cat-plaj" class="category-label">
+                  <span class="category-icon">🏖️</span>
+                  <span class="category-name">Plaj</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="cat-restoran" name="category" value="restoran" class="category-checkbox">
+                <label for="cat-restoran" class="category-label">
+                  <span class="category-icon">🍽️</span>
+                  <span class="category-name">Restoran</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="cat-kafe" name="category" value="kafe" class="category-checkbox">
+                <label for="cat-kafe" class="category-label">
+                  <span class="category-icon">☕</span>
+                  <span class="category-name">Kafe</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="cat-otel" name="category" value="otel" class="category-checkbox">
+                <label for="cat-otel" class="category-label">
+                  <span class="category-icon">🏨</span>
+                  <span class="category-name">Otel</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="cat-muzik" name="category" value="muzik" class="category-checkbox">
+                <label for="cat-muzik" class="category-label">
+                  <span class="category-icon">🎵</span>
+                  <span class="category-name">Müzik</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="cat-gezi" name="category" value="gezi" class="category-checkbox">
+                <label for="cat-gezi" class="category-label">
+                  <span class="category-icon">⛵</span>
+                  <span class="category-name">Gezi</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="cat-aktivite" name="category" value="aktivite" class="category-checkbox">
+                <label for="cat-aktivite" class="category-label">
+                  <span class="category-icon">🤿</span>
+                  <span class="category-name">Aktivite</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="cat-kamp" name="category" value="kamp" class="category-checkbox">
+                <label for="cat-kamp" class="category-label">
+                  <span class="category-icon">🏕️</span>
+                  <span class="category-name">Kamp</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fotoğraflar -->
+          <div class="form-section">
+            <h3 class="section-title">
+              <span class="section-icon">📸</span>
+              Fotoğraflar<span class="required">*</span>
+            </h3>
+            
+            <label class="photo-upload" for="photoInput">
+              <div class="photo-upload-icon">📷</div>
+              <div class="photo-upload-text">
+                <strong>Fotoğraf eklemek için tıklayın</strong>
+                <br>
+                <small>veya sürükleyip bırakın (En az 1, en fazla 10 fotoğraf)</small>
+              </div>
+              <input type="file" id="photoInput" accept="image/*" multiple>
+            </label>
+
+            <div class="photo-preview" id="photoPreview"></div>
+          </div>
+
+          <!-- Ek Bilgiler -->
+          <div class="form-section">
+            <h3 class="section-title">
+              <span class="section-icon">ℹ️</span>
+              Ek Bilgiler
+            </h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  Ortalama Fiyat
+                </label>
+                <input type="text" class="form-input" name="price" placeholder="Örn: ₺₺ veya 200-500₺">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Ortalama Süre
+                </label>
+                <input type="text" class="form-input" name="duration" placeholder="Örn: 2-3 saat">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Erişim Bilgisi
+              </label>
+              <input type="text" class="form-input" name="access" placeholder="Örn: Araçla ulaşılabilir, Tekne ile gidilir">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Google Maps Arama Terimi
+              </label>
+              <input type="text" class="form-input" name="googleMapsQuery" placeholder="Örn: Kaputaş Plajı Kaş">
+              <p class="form-hint">Mekanınızın Google Maps'te nasıl aranacağını yazın</p>
+            </div>
+          </div>
+
+          <!-- İletişim Bilgileri -->
+          <div class="form-section">
+            <h3 class="section-title">
+              <span class="section-icon">📞</span>
+              İletişim Bilgileri
+            </h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  Telefon<span class="required">*</span>
+                </label>
+                <input type="tel" class="form-input" name="phone" required placeholder="0532 123 45 67">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Instagram
+                </label>
+                <input type="text" class="form-input" name="instagram" placeholder="@kullaniciadi">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  Website
+                </label>
+                <input type="url" class="form-input" name="website" placeholder="https://ornek.com">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Rezervasyon Linki
+                </label>
+                <input type="url" class="form-input" name="booking" placeholder="https://booking.com/...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="submit-section">
+            <button type="submit" class="submit-button">
+              🚀 Başvuruyu Gönder
+            </button>
+            <p class="form-hint" style="text-align: center; margin-top: 1rem;">
+              Başvurunuzu gönderdikten sonra 1-2 iş günü içinde size dönüş yapacağız.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('venueForm');
+    const photoInput = document.getElementById('photoInput');
+    const photoPreview = document.getElementById('photoPreview');
+    const successMessage = document.getElementById('successMessage');
+    let selectedPhotos = [];
+
+    // Photo upload handling
+    photoInput.addEventListener('change', (e) => {
+      const files = Array.from(e.target.files);
+      
+      if (selectedPhotos.length + files.length > 10) {
+        alert('En fazla 10 fotoğraf yükleyebilirsiniz.');
+        return;
+      }
+
+      files.forEach(file => {
+        if (file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            selectedPhotos.push({
+              url: e.target.result,
+              file: file
+            });
+            renderPhotos();
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    });
+
+    function renderPhotos() {
+      photoPreview.innerHTML = selectedPhotos.map((photo, index) => `
+        <div class="photo-preview-item">
+          <img src="${photo.url}" alt="Preview ${index + 1}">
+          <button type="button" class="photo-remove" onclick="removePhoto(${index})">×</button>
+        </div>
+      `).join('');
+    }
+
+    window.removePhoto = (index) => {
+      selectedPhotos.splice(index, 1);
+      renderPhotos();
+    };
+
+    // Form submission
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Validate categories
+      const categories = form.querySelectorAll('input[name="category"]:checked');
+      if (categories.length === 0) {
+        alert('Lütfen en az bir kategori seçin.');
+        return;
+      }
+
+      // Validate photos
+      if (selectedPhotos.length === 0) {
+        alert('Lütfen en az bir fotoğraf ekleyin.');
+        return;
+      }
+
+      // Collect form data
+      const formData = new FormData(form);
+      const data = {
+        title: formData.get('title'),
+        location: formData.get('location'),
+        distance: formData.get('distance'),
+        description: formData.get('description'),
+        longText: formData.get('longText'),
+        categories: Array.from(categories).map(c => c.value),
+        price: formData.get('price'),
+        duration: formData.get('duration'),
+        access: formData.get('access'),
+        googleMapsQuery: formData.get('googleMapsQuery'),
+        phone: formData.get('phone'),
+        instagram: formData.get('instagram'),
+        website: formData.get('website'),
+        booking: formData.get('booking'),
+        photos: selectedPhotos.length
+      };
+
+      console.log('Form data:', data);
+      console.log('Photos:', selectedPhotos);
+
+      // Show success message
+      successMessage.classList.add('show');
+      form.reset();
+      selectedPhotos = [];
+      renderPhotos();
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+      }, 5000);
+    });
+
+    // Drag and drop for photos
+    const uploadArea = document.querySelector('.photo-upload');
+    
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+    });
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, () => {
+        uploadArea.style.borderColor = 'var(--primary-blue)';
+        uploadArea.style.background = 'rgba(8, 145, 178, 0.1)';
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      uploadArea.addEventListener(eventName, () => {
+        uploadArea.style.borderColor = 'var(--gray-300)';
+        uploadArea.style.background = 'var(--gray-50)';
+      });
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+      const files = Array.from(e.dataTransfer.files);
+      const imageFiles = files.filter(f => f.type.startsWith('image/'));
+      
+      if (selectedPhotos.length + imageFiles.length > 10) {
+        alert('En fazla 10 fotoğraf yükleyebilirsiniz.');
+        return;
+      }
+
+      imageFiles.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          selectedPhotos.push({
+            url: e.target.result,
+            file: file
+          });
+          renderPhotos();
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+  </script>
+</body>
+</html>
