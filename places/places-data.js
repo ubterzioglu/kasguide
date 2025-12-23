@@ -292,8 +292,8 @@ Manos Greek Tavern, Kaş’ta Yunan mutfağının sade ve taze lezzetlerini, sam
   images: [
     '../assets/1_places/ci-neo-cucina-by-mezetaryen-002.jpg',
     '../assets/1_places/ci-neo-cucina-by-mezetaryen-003.jpg',
-    '../assets/1_places/ci-neo-cucina-by-mezetaryen-004.jpg',
-    '../assets/1_places/ci-neo-cucina-by-mezetaryen-005.jpg'
+    '../assets/1_places/ci-neo-cucina-by-mezetaryen-004.jpg'
+    
   ],
 
   rating: 4.7,
@@ -651,7 +651,7 @@ Dragoman Diving and Outdoor, Kaş’ta dalışı güvenli, sakin ve keyifli şek
   images: [
     '../assets/1_places/the-shotlar-terminali-002.jpg',
     '../assets/1_places/the-shotlar-terminali-003.jpg',
-    '../assets/1_places/the-shotlar-terminali-004.jpg'
+    '../assets/1_places/the-shotlar-terminali-004.jpg',
   ],
 
   rating: 4.5,
