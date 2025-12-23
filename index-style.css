@@ -5,7 +5,7 @@
   position: relative;
   height: 500px;
   overflow: hidden;
-  background-image: '/assets/0_img/clip_home_bg.jpg';
+  background-image: url('../assets/0_img/clip_home_bg.jpg');
   background-size: cover;
   background-position: center;
 }

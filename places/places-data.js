@@ -18,12 +18,102 @@ Yazılar : articles
 
 
 const allPlaces = [
+
+{
+  id: 'bunbun-kas',
+  title: 'Bunbun Kaş',
+  description: 'Taze kahve, iyi sandviçler ve tatlılarla; günün her saati uğranabilen, rahat ve modern bir kafe.',
+  category: ['cafe', 'breakfast', 'food'],
+
+  image: '../assets/0_img/bunbun-kas_001_kapak.jpg',
+  images: [
+    '../assets/0_img/bunbun-kas_002.jpg',
+    '../assets/0_img/bunbun-kas_003.jpg',
+    '../assets/0_img/bunbun-kas_004.jpg'
+  ],
+
+  rating: 4.7,
+  price: '₺₺',
+  selected: false,
+
+  location: 'Andifli Mah., Kaş/Antalya (merkez, çarşıya ve sahile yürüme mesafesi)',
+  distance: 'Merkez',
+  coordinates: { lat: 36.1999, lng: 29.6426 },
+
+  website: 'https://www.instagram.com/bunbun.kas/',
+  phone: '',
+  duration: '45 dk – 2 saat',
+
+  facilities: [
+    'Kahve & espresso bazlı içecekler',
+    'Kahvaltı & brunch tabakları',
+    'Sandviç & tatlılar',
+    'Açık / kapalı oturma',
+    'Tek başına oturmaya uygun',
+    'Laptopla kısa süre çalışmaya elverişli',
+    'Kart ile ödeme'
+  ],
+
+  features: [
+    'Modern ve sade kafe atmosferi',
+    'Merkezde kolay ulaşım',
+    'Günün her saati çalışır konsept',
+    'Sabahları sakin, öğleden sonra daha hareketli',
+    'Hızlı servis'
+  ],
+
+  tags: [
+    'kahve',
+    'brunch',
+    'kahvaltı',
+    'sandviç',
+    'tatlı',
+    'kaş merkez',
+    'kafe'
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: '2025-12-23',
+    disclaimer: true
+  },
+
+
+   longText: `
+Bunbun Kaş, sabah “iyi bir kahveyle güne başlayalım” diyenlerin de, gün içinde kısa bir mola arayanların da rahatça uğradığı bir kafe. Kaş merkezde, çarşıya yakın konumu sayesinde plansızca bile girilebiliyor. İçeri adım attığında modern ama kasıntı olmayan bir atmosfer karşılıyor; sade tasarım, rahat oturma alanları ve sürekli akan bir kafe temposu var.
+
+Atmosfer nasıl?
+ Aydınlık ve ferah. Sabah saatleri daha sakin, öğleden sonra ise hareketleniyor.
+ Uzun uzun oturmak mümkün ama mekânın ritmi “akıp giden kafe” hissini koruyor.
+ Tek başına gelenler için de, iki-üç kişilik kısa buluşmalar için de uyumlu.
+
+Kimler için uygun?
+ Kahve severler: Espresso bazlı içecekler burada ana iş.
+ Kahvaltı/brunch arayanlar: Ağır serpme değil, daha pratik ve lezzet odaklı tabaklar.
+ Yalnız oturup kahve içmek ya da kısa süre laptop açmak isteyenler.
+ Denize inmeden ya da çarşı turu öncesi hızlı bir mola vermek isteyenler.
+
+Ne yenir, ne içilir?
+Kahve menüsü geniş ve dengeli. Yanında sandviçler, tatlılar ve kahvaltı tabakları var. “Aşırı süslü tabaklar” yerine, tok tutan ve düzgün hazırlanmış seçenekler öne çıkıyor. Öğle saatlerinde hafif bir sandviç + kahve ikilisi oldukça kurtarıcı.
+
+Pratik ipuçları:
+- Sabah erken saatler en sakin zaman; özellikle yazın öğleden sonra masa bulmak zorlaşabiliyor.
+- Uzun süre çalışmak için değil ama kısa işler ve kahve molası için ideal.
+- Çarşıya yakın olduğu için park derdiyle uğraşmamak adına yürüyerek gelmek daha rahat.
+
+Kısa özet:
+Bunbun Kaş; iyi kahve, pratik kahvaltı ve rahat kafe atmosferi arayanlar için güvenli bir durak. Günün herhangi bir anında “bir uğrayıp çıkayım” dediğinde seni yormayan, Kaş merkezde işini iyi yapan kafelerden biri.
+  `
+}
+
+,
+
+
   {
   id: 'manos-greek-tavern',
   title: 'Manos Greek Tavern',
   description: 'Samimi bir aile işletmesi havasında, Yunan mutfağının taze ve sade lezzetlerini Kaş’ta sunan tavern; özellikle deniz mahsulleri ve mezeleriyle keyifli akşamlar için tercih ediliyor.',
-  category: ['food'],
-
+  category: ['food','meyhane'],
   image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200',
   images: [
     'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600',
