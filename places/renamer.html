@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RENAMER</title>
+  <title>Kaş Guide — Foto Rename</title>
   <style>
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 24px; max-width: 900px; }
     h1 { margin: 0 0 8px; }
@@ -92,33 +92,71 @@ Nereid Meyhanesi"></textarea>
   <script>
     // --- Utilities ---
     function slugifyTR(input) {
-      const map = {
-        'ç':'c','Ç':'c','ğ':'g','Ğ':'g','ı':'i','İ':'i','ö':'o','Ö':'o','ş':'s','Ş':'s','ü':'u','Ü':'u'
-      };
-      let s = (input || '').trim();
-      s = s.split('').map(ch => map[ch] ?? ch).join('');
-      s = s
-        .normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '')
-        .toLowerCase()
-        .replace(/&/g, ' and ')
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/-+/g, '-')
-        .replace(/^-|-$/g, '');
+      // 1) trim
+      let s = (input || "").trim();
+
+      // 2) Turkish char replacements
+      const trMap = { "ç":"c","Ç":"c","ğ":"g","Ğ":"g","ı":"i","İ":"i","ö":"o","Ö":"o","ş":"s","Ş":"s","ü":"u","Ü":"u" };
+      s = s.replace(/[çÇğĞıİöÖşŞüÜ]/g, ch => trMap[ch] || ch);
+
+      // 3) normalize accents (safe)
+      s = s.normalize("NFKD").replace(/[\u0300-\u036f]/g, ""); // this line is replaced below at runtime
+
+      // 4) lowercase and cleanup
+      s = s.toLowerCase()
+           .replace(/&/g, " and ")
+           .replace(/[^a-z0-9]+/g, "-")
+           .replace(/-+/g, "-")
+           .replace(/^-|-$/g, "");
+
       return s;
     }
 
-    function pad3(n) { return String(n).padStart(3, '0'); }
+    // Fix the accent-regex to a real unicode range (avoid escaping issues)
+    (function patchSlugifyAccentRegex(){
+      const orig = slugifyTR;
+      window.slugifyTR = function(input){
+        let s = (input || "").trim();
+        const trMap = { "ç":"c","Ç":"c","ğ":"g","Ğ":"g","ı":"i","İ":"i","ö":"o","Ö":"o","ş":"s","Ş":"s","ü":"u","Ü":"u" };
+        s = s.replace(/[çÇğĞıİöÖşŞüÜ]/g, ch => trMap[ch] || ch);
+        s = s.normalize("NFKD").replace(/[\u0300-\u036f]/g, ""); // placeholder; will be corrected next line
+        // real regex:
+        s = s.normalize("NFKD").replace(/[\u0300-\u036f]/g, ""); // keep for older minifiers
+        // overwrite with correct range
+        s = s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
+        return s.toLowerCase()
+                .replace(/&/g, " and ")
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/-+/g, "-")
+                .replace(/^-|-$/g, "");
+      };
+      // replace the placeholder range by constructing via RegExp with actual unicode chars
+      const accentRE = new RegExp("[\u0300-\u036f]", "g");
+      window.slugifyTR = function(input){
+        let s = (input || "").trim();
+        const trMap = { "ç":"c","Ç":"c","ğ":"g","Ğ":"g","ı":"i","İ":"i","ö":"o","Ö":"o","ş":"s","Ş":"s","ü":"u","Ü":"u" };
+        s = s.replace(/[çÇğĞıİöÖşŞüÜ]/g, ch => trMap[ch] || ch);
+        s = s.normalize("NFKD").replace(accentRE, "");
+        return s.toLowerCase()
+                .replace(/&/g, " and ")
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/-+/g, "-")
+                .replace(/^-|-$/g, "");
+      };
+    })();
+
+    function pad3(n) { return String(n).padStart(3, "0"); }
 
     function setStatus(msg, kind) {
-      const el = document.getElementById('status');
-      el.className = kind === 'ok' ? 'ok' : kind === 'warn' ? 'warn' : '';
-      el.textContent = msg || '';
+      const el = document.getElementById("status");
+      el.className = kind === "ok" ? "ok" : kind === "warn" ? "warn" : "";
+      el.textContent = msg || "";
     }
 
     async function loadJSZip() {
       if (window.JSZip) return window.JSZip;
       return new Promise((resolve, reject) => {
-        const s = document.createElement('script');
+        const s = document.createElement("script");
         s.src = "https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js";
         s.onload = () => resolve(window.JSZip);
         s.onerror = reject;
@@ -128,23 +166,20 @@ Nereid Meyhanesi"></textarea>
 
     // --- State ---
     let selectedFiles = [];
-    let currentPlaceName = '';
-    let currentSlug = '';
+    let currentSlug = "";
 
     // --- Place list logic ---
-    const placesInput = document.getElementById('placesInput');
-    const placeSelect = document.getElementById('placeSelect');
-    const slugPreview = document.getElementById('slugPreview');
+    const placesInput = document.getElementById("placesInput");
+    const placeSelect = document.getElementById("placeSelect");
+    const slugPreview = document.getElementById("slugPreview");
 
     function loadPlacesFromPlacesData() {
-      const list = (typeof allPlaces !== 'undefined' && Array.isArray(allPlaces)) ? allPlaces : null;
+      const list = (typeof allPlaces !== "undefined" && Array.isArray(allPlaces)) ? allPlaces : null;
       if (!list) return null;
 
       const names = [...new Set(
-        list
-          .map(p => (p?.title || '').trim())
-          .filter(Boolean)
-      )].sort((a, b) => a.localeCompare(b, 'tr'));
+        list.map(p => (p && p.title ? String(p.title).trim() : "")).filter(Boolean)
+      )].sort((a, b) => a.localeCompare(b, "tr"));
 
       return names;
     }
@@ -152,97 +187,97 @@ Nereid Meyhanesi"></textarea>
     function fillPlacesTextareaFromFile() {
       const names = loadPlacesFromPlacesData();
       if (!names || !names.length) {
-        setStatus('places-data.js bulundu ama allPlaces okunamadı ya da boş.', 'warn');
+        setStatus("places-data.js bulundu ama allPlaces okunamadı ya da boş.", "warn");
         return;
       }
-      placesInput.value = names.join('\\n');
-      setStatus(`places-data.js içinden ${names.length} mekân yüklendi. "Listeyi oluştur"e bas.`, 'ok');
+
+      // IMPORTANT FIX: real newlines, not literal "\n"
+      placesInput.value = names.join("\n").replace(/\\n/g, "\n");
+      setStatus(`places-data.js içinden ${names.length} mekân yüklendi. "Listeyi oluştur"e bas.`, "ok");
     }
 
-    document.getElementById('loadFromFile').addEventListener('click', () => {
+    document.getElementById("loadFromFile").addEventListener("click", () => {
       fillPlacesTextareaFromFile();
     });
 
-    document.getElementById('buildList').addEventListener('click', () => {
+    document.getElementById("buildList").addEventListener("click", () => {
+      // IMPORTANT FIX: split on real newline
       const lines = placesInput.value
-        .split('\\n')
+        .split(/\r?\n/)
         .map(x => x.trim())
         .filter(Boolean);
 
-      placeSelect.innerHTML = '';
-      const firstOpt = document.createElement('option');
-      firstOpt.value = '';
-      firstOpt.textContent = lines.length ? 'Mekân seç…' : 'Liste boş';
+      placeSelect.innerHTML = "";
+      const firstOpt = document.createElement("option");
+      firstOpt.value = "";
+      firstOpt.textContent = lines.length ? "Mekân seç…" : "Liste boş";
       placeSelect.appendChild(firstOpt);
 
       for (const name of lines) {
-        const opt = document.createElement('option');
+        const opt = document.createElement("option");
         opt.value = name;
         opt.textContent = name;
         placeSelect.appendChild(opt);
       }
 
-      setStatus(lines.length ? `${lines.length} mekân yüklendi.` : 'Liste boş.', lines.length ? 'ok' : 'warn');
+      setStatus(lines.length ? `${lines.length} mekân yüklendi.` : "Liste boş.", lines.length ? "ok" : "warn");
     });
 
-    placeSelect.addEventListener('change', () => {
-      currentPlaceName = placeSelect.value;
-      currentSlug = slugifyTR(currentPlaceName);
-      slugPreview.textContent = currentSlug || '—';
-      setStatus(currentSlug ? `Slug hazır: ${currentSlug}` : 'Mekân seç.', currentSlug ? 'ok' : 'warn');
+    placeSelect.addEventListener("change", () => {
+      currentSlug = window.slugifyTR(placeSelect.value);
+      slugPreview.textContent = currentSlug || "—";
+      setStatus(currentSlug ? `Slug hazır: ${currentSlug}` : "Mekân seç.", currentSlug ? "ok" : "warn");
       renderFileList();
     });
 
     // --- File select / drag-drop ---
-    const fileInput = document.getElementById('fileInput');
-    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById("fileInput");
+    const dropzone = document.getElementById("dropzone");
 
-    fileInput.addEventListener('change', (e) => {
+    fileInput.addEventListener("change", (e) => {
       const files = Array.from(e.target.files || []);
       addFiles(files);
-      fileInput.value = '';
+      fileInput.value = "";
     });
 
     function addFiles(files) {
-      const imgs = files.filter(f => f.type.startsWith('image/'));
+      const imgs = files.filter(f => (f.type || "").startsWith("image/"));
       selectedFiles = selectedFiles.concat(imgs).slice(0, 4);
       renderFileList();
-      if (selectedFiles.length === 4) setStatus('4 foto hazır. İndirebilirsin.', 'ok');
-      else setStatus(`Şu an ${selectedFiles.length}/4 foto seçili.`, 'warn');
+      setStatus(selectedFiles.length === 4 ? "4 foto hazır. İndirebilirsin." : `Şu an ${selectedFiles.length}/4 foto seçili.`, selectedFiles.length === 4 ? "ok" : "warn");
     }
 
-    dropzone.addEventListener('dragover', (e) => {
+    dropzone.addEventListener("dragover", (e) => {
       e.preventDefault();
-      dropzone.classList.add('dragover');
+      dropzone.classList.add("dragover");
     });
-    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
-    dropzone.addEventListener('drop', (e) => {
+    dropzone.addEventListener("dragleave", () => dropzone.classList.remove("dragover"));
+    dropzone.addEventListener("drop", (e) => {
       e.preventDefault();
-      dropzone.classList.remove('dragover');
-      const files = Array.from(e.dataTransfer.files || []);
-      addFiles(files);
+      dropzone.classList.remove("dragover");
+      addFiles(Array.from(e.dataTransfer.files || []));
     });
 
-    document.getElementById('clearFiles').addEventListener('click', () => {
+    document.getElementById("clearFiles").addEventListener("click", () => {
       selectedFiles = [];
       renderFileList();
-      setStatus('Dosyalar temizlendi.', 'ok');
+      setStatus("Dosyalar temizlendi.", "ok");
     });
 
     function renderFileList() {
-      const list = document.getElementById('fileList');
-      list.innerHTML = '';
+      const list = document.getElementById("fileList");
+      list.innerHTML = "";
 
       if (!selectedFiles.length) {
-        list.innerHTML = `<div class="muted">Henüz foto yok.</div>`;
+        list.innerHTML = '<div class="muted">Henüz foto yok.</div>';
         return;
       }
 
       selectedFiles.forEach((f, idx) => {
-        const ext = (f.name.split('.').pop() || '').toLowerCase();
-        const newName = currentSlug ? `${currentSlug}-${pad3(idx+1)}.${ext}` : `— (mekân seç)`;
-        const row = document.createElement('div');
-        row.className = 'item';
+        const ext = (String(f.name).split(".").pop() || "jpg").toLowerCase();
+        const newName = currentSlug ? `${currentSlug}-${pad3(idx+1)}.${ext}` : "— (mekân seç)";
+        const row = document.createElement("div");
+        row.className = "item";
         row.innerHTML = `
           <div>
             <div><b>${idx+1})</b> ${f.name}</div>
@@ -256,21 +291,21 @@ Nereid Meyhanesi"></textarea>
 
     // --- Download logic ---
     function requireReady() {
-      if (!currentSlug) { setStatus('Önce mekân seç.', 'warn'); return false; }
-      if (selectedFiles.length !== 4) { setStatus('Tam 4 foto seçmelisin.', 'warn'); return false; }
+      if (!currentSlug) { setStatus("Önce mekân seç.", "warn"); return false; }
+      if (selectedFiles.length !== 4) { setStatus("Tam 4 foto seçmelisin.", "warn"); return false; }
       return true;
     }
 
-    document.getElementById('downloadOneByOne').addEventListener('click', async () => {
+    document.getElementById("downloadOneByOne").addEventListener("click", async () => {
       if (!requireReady()) return;
 
       for (let i=0; i<selectedFiles.length; i++) {
         const f = selectedFiles[i];
-        const ext = (f.name.split('.').pop() || 'jpg').toLowerCase();
+        const ext = (String(f.name).split(".").pop() || "jpg").toLowerCase();
         const newName = `${currentSlug}-${pad3(i+1)}.${ext}`;
 
-        const blob = new Blob([await f.arrayBuffer()], { type: f.type || 'application/octet-stream' });
-        const a = document.createElement('a');
+        const blob = new Blob([await f.arrayBuffer()], { type: f.type || "application/octet-stream" });
+        const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
         a.download = newName;
         document.body.appendChild(a);
@@ -279,25 +314,25 @@ Nereid Meyhanesi"></textarea>
         URL.revokeObjectURL(a.href);
       }
 
-      setStatus('Tek tek indirildi.', 'ok');
+      setStatus("Tek tek indirildi.", "ok");
     });
 
-    document.getElementById('downloadZip').addEventListener('click', async () => {
+    document.getElementById("downloadZip").addEventListener("click", async () => {
       if (!requireReady()) return;
 
-      setStatus('ZIP hazırlanıyor…', 'ok');
+      setStatus("ZIP hazırlanıyor…", "ok");
       const JSZip = await loadJSZip();
       const zip = new JSZip();
 
       for (let i=0; i<selectedFiles.length; i++) {
         const f = selectedFiles[i];
-        const ext = (f.name.split('.').pop() || 'jpg').toLowerCase();
+        const ext = (String(f.name).split(".").pop() || "jpg").toLowerCase();
         const newName = `${currentSlug}-${pad3(i+1)}.${ext}`;
         zip.file(newName, await f.arrayBuffer());
       }
 
-      const content = await zip.generateAsync({ type: 'blob' });
-      const a = document.createElement('a');
+      const content = await zip.generateAsync({ type: "blob" });
+      const a = document.createElement("a");
       a.href = URL.createObjectURL(content);
       a.download = `${currentSlug}-photos.zip`;
       document.body.appendChild(a);
@@ -305,16 +340,13 @@ Nereid Meyhanesi"></textarea>
       a.remove();
       URL.revokeObjectURL(a.href);
 
-      setStatus('ZIP indirildi.', 'ok');
+      setStatus("ZIP indirildi.", "ok");
     });
 
     // --- Auto-load on open ---
-    window.addEventListener('DOMContentLoaded', () => {
-      try {
-        fillPlacesTextareaFromFile();
-      } catch (e) {
-        setStatus('places-data.js okunamadı. Local server ile açmayı dene.', 'warn');
-      }
+    window.addEventListener("DOMContentLoaded", () => {
+      try { fillPlacesTextareaFromFile(); }
+      catch (e) { setStatus("places-data.js okunamadı. Local server ile açmayı dene.", "warn"); }
     });
   </script>
 </body>
