@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benioku - Kaş Guide</title>
+  <style>
+    :root {
+      --primary-blue: #0891b2;
+      --primary-cyan: #06b6d4;
+      --primary-green: #10b981;
+      --primary-orange: #f97316;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --radius-lg: 1rem;
+      --radius-full: 9999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, #f0f9ff, #ffffff);
+      color: var(--gray-800);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header */
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(to right, var(--primary-blue), #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .back-btn {
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-btn:hover {
+      background: var(--gray-200);
+      transform: translateX(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+
+    .hero-icon {
+      width: 4rem;
+      height: 4rem;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .hero-icon svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--gray-900);
+    }
+
+    .hero p {
+      color: var(--gray-600);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Steps */
+    .steps-section {
+      padding: 2rem 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .step-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .step-number {
+      width: 3rem;
+      height: 3rem;
+      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1.125rem;
+      margin-bottom: 0.25rem;
+      color: var(--gray-900);
+    }
+
+    .step-content p {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+
+    /* Accordion */
+    .accordion-section {
+      padding: 2rem 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--gray-900);
+    }
+
+    .accordion-item {
+      background: white;
+      border-radius: var(--radius-lg);
+      margin-bottom: 0.75rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+    }
+
+    .accordion-header:hover {
+      background: var(--gray-50);
+    }
+
+    .accordion-title {
+      font-weight: 600;
+      color: var(--gray-900);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .accordion-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--primary-blue);
+    }
+
+    .accordion-chevron {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--gray-400);
+      transition: transform 0.3s;
+    }
+
+    .accordion-item.active .accordion-chevron {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-body {
+      padding: 0 1.25rem 1.25rem;
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .accordion-body ul {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .accordion-body li {
+      margin: 0.5rem 0;
+    }
+
+    .accordion-body strong {
+      color: var(--gray-800);
+    }
+
+    /* Categories Grid */
+    .categories-compact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .category-badge {
+      background: var(--gray-50);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      border: 2px solid var(--gray-200);
+      transition: all 0.3s;
+    }
+
+    .category-badge:hover {
+      border-color: var(--primary-blue);
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    /* Tips */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .tip-card {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary-orange);
+      font-size: 0.95rem;
+      color: var(--gray-800);
+    }
+
+    .tip-card strong {
+      color: var(--gray-900);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--gray-900);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .footer p {
+      color: var(--gray-400);
+      font-size: 0.875rem;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .categories-compact {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .categories-compact {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="../index.html" class="logo">
+        <span class="logo-text">Kaş Guide</span>
+      </a>
+      <a href="../index.html" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Ana Sayfa
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 16v-4M12 8h.01"/>
+        </svg>
+      </div>
+      <h1>Kaş Guide Nasıl Kullanılır?</h1>
+      <p>Kaş'ın en iyi mekanlarını keşfetmek için ihtiyacınız olan her şey burada!</p>
+    </div>
+  </section>
+
+  <!-- Quick Steps -->
+  <section class="steps-section">
+    <div class="container">
+      <h2 class="section-title">🚀 Hızlı Başlangıç</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Ara veya Filtrele</h3>
+            <p>Arama kutusunu kullan veya kategorilerden birini seç</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Mekanı Seç</h3>
+            <p>İlgini çeken kartlara tıkla, detayları gör</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Keşfet</h3>
+            <p>Harita, puanlar ve yorumlarla planını yap!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Accordion -->
+  <section class="accordion-section">
+    <div class="container">
+      <h2 class="section-title">✨ Özellikler</h2>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z"/>
+            </svg>
+            Kategoriler Sistemi
+          </div>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <p><strong>Nasıl Çalışır:</strong></p>
+            <ul>
+              <li>Kategorilere tıklayarak o kategorideki tüm mekanları görebilirsin</li>
+              <li>Birden fazla kategori seçebilirsin (örn: Plaj + Aktivite)</li>
+              <li>Aktif filtreler üstte gösterilir</li>
+              <li>Her kategorinin kaç mekan içerdiği kartın üstünde yazıyor</li>
+            </ul>
+            <p><strong>İpucu:</strong> Kategoriler renkli kodlu - rengine göre kolay tanıyabilirsin!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.35-4.35"/>
+            </svg>
+            Akıllı Arama
+          </div>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <p><strong>Arama Yapabileceklerin:</strong></p>
+            <ul>
+              <li>Mekan isimleri (örn: "Kaputaş")</li>
+              <li>Kategori tipleri (örn: "plaj", "meyhane")</li>
+              <li>Açıklamalardaki kelimeler (örn: "manzara", "kahvaltı")</li>
+              <li>Etiketler (örn: "ücretsiz", "aile dostu")</li>
+            </ul>
+            <p><strong>İpucu:</strong> Arama ve filtre aynı anda çalışır - hem kategori seç hem ara!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Mekan Kartları
+          </div>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <p><strong>Her Kartta Neler Var:</strong></p>
+            <ul>
+              <li><strong>Görsel:</strong> Mekanın fotoğrafı</li>
+              <li><strong>Kategori Rozeti:</strong> Sol üst köşede renkli</li>
+              <li><strong>Puan:</strong> Yıldız ikonu ile (⭐)</li>
+              <li><strong>Süre/Mesafe:</strong> Ne kadar zaman ayırmalısın</li>
+              <li><strong>Fiyat:</strong> Bütçe planlaman için</li>
+            </ul>
+            <p><strong>İpucu:</strong> Kartın herhangi bir yerine tıkla, detay sayfasına git!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            İstatistikler
+          </div>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <p><strong>Görebileceğin İstatistikler:</strong></p>
+            <ul>
+              <li><strong>Toplam Mekan:</strong> Kaç yer var</li>
+              <li><strong>Kategori Sayısı:</strong> Kaç farklı kategori</li>
+              <li><strong>Ortalama Puan:</strong> Genel memnuniyet</li>
+              <li><strong>Aktif Filtre:</strong> Şu an kaç filtre seçili</li>
+              <li><strong>Gösterilen:</strong> Filtrelere göre kaç sonuç var</li>
+            </ul>
+            <p>İstatistikler dinamik - filtre seçince güncellenir!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="accordion-section">
+    <div class="container">
+      <h2 class="section-title">💡 İpuçları & Püf Noktaları</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <strong>Çoklu Filtre:</strong> Birden fazla kategori seçerek daha spesifik sonuçlar bul (örn: "Plaj + Aktivite" = dalış noktaları)
+        </div>
+        <div class="tip-card">
+          <strong>Filtre Temizle:</strong> Tüm filtreleri tek tıkla sıfırla - arama kutusundaki "Filtreleri Temizle" butonunu kullan
+        </div>
+        <div class="tip-card">
+          <strong>Mobil Uyumlu:</strong> Telefonda da rahatça kullan - tüm özellikler mobilde çalışır
+        </div>
+        <div class="tip-card">
+          <strong>Hızlı Erişim:</strong> Ana sayfadaki "Hızlı Erişim" bölümünden özel koleksiyonlara ulaş
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Guide -->
+  <section class="accordion-section">
+    <div class="container">
+      <h2 class="section-title">🏷️ Kategoriler Rehberi</h2>
+      <div class="categories-compact">
+        <div class="category-badge">🗺️ Gezi</div>
+        <div class="category-badge">🏖️ Plaj</div>
+        <div class="category-badge">⛰️ Aktivite</div>
+        <div class="category-badge">🍽️ Yeme-İçme</div>
+        <div class="category-badge">🏨 Otel</div>
+        <div class="category-badge">🏛️ Tarih</div>
+        <div class="category-badge">🌲 Doğa</div>
+        <div class="category-badge">🛍️ Çarşı</div>
+        <div class="category-badge">☕ Kahvaltı</div>
+        <div class="category-badge">🍷 Meyhane</div>
+        <div class="category-badge">🍹 Bar</div>
+        <div class="category-badge">☕ Cafe</div>
+        <div class="category-badge">🤿 Dalış</div>
+        <div class="category-badge">📝 Yazılar</div>
+        <div class="category-badge">❓ FAQ Serileri</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2024 Kaş Guide - Akdeniz'in incisini keşfet</p>
+    </div>
+  </footer>
+
+  <script>
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const content = item.querySelector('.accordion-content');
+        const body = item.querySelector('.accordion-body');
+        
+        // Toggle active
+        const isActive = item.classList.contains('active');
+        
+        // Close all others
+        document.querySelectorAll('.accordion-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.accordion-content').style.maxHeight = '0';
+        });
+        
+        // Open this one if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+          content.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
