@@ -26,7 +26,6 @@ const averageRatingEl = document.getElementById('averageRating');
 const totalWordsEl = document.getElementById('totalWords');
 const activeFiltersCountEl = document.getElementById('activeFiltersCount');
 const filteredCountBigEl = document.getElementById('filteredCountBig');
-const filteredCountSmallEl = document.getElementById('filteredCountSmall');
 
 const filterJumpBtn = document.getElementById('filterJump');
 
@@ -269,7 +268,6 @@ function renderCards() {
 function updateStats() {
   const count = String(filteredItems.length);
   if (filteredCountBigEl) filteredCountBigEl.textContent = count;
-  if (filteredCountSmallEl) filteredCountSmallEl.textContent = count;
 
   const s = calculateStats(filteredItems);
   if (averageRatingEl && filteredItems.length) averageRatingEl.textContent = s.avg;
