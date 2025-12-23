@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaş Guide — Foto Rename</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 24px; max-width: 900px; }
+    h1 { margin: 0 0 8px; }
+    .muted { color: #555; }
+    .row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; flex: 1; min-width: 280px; }
+    textarea { width: 100%; height: 140px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    input, select, button { font-size: 14px; padding: 10px 12px; }
+    button { cursor: pointer; }
+    .drop {
+      border: 2px dashed #bbb; border-radius: 12px; padding: 20px; text-align: center; color: #666;
+      background: #fafafa;
+    }
+    .drop.dragover { border-color: #333; color: #111; background: #f3f3f3; }
+    .list { margin-top: 12px; }
+    .item { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid #eee; }
+    .pill { background: #f0f0f0; border-radius: 999px; padding: 4px 10px; font-size: 12px; color: #333; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .warn { color: #a33; }
+    .ok { color: #1a7f37; }
+    code { background: #f6f6f6; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Kaş Guide — 4 Foto Otomatik İsimlendirme</h1>
+  <div class="muted">
+    Mekân adından <b>slug</b> üretir, 4 foto dosyanı <code>slug-001..004</code> şeklinde indirir (tek tek veya ZIP).<br/>
+    Mekân listesi otomatik olarak aynı klasördeki <code>places-data.js</code> içinden okunur (allPlaces → title).
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h3>1) Mekân listesi</h3>
+      <div class="muted">Her satır 1 mekân. Varsayılan olarak <code>places-data.js</code> içinden çekilir. İstersen manuel de düzenleyebilirsin.</div>
+      <textarea id="placesInput" placeholder="Örn:
+Dragoman Bahce
+Frida Pub
+Nereid Meyhanesi"></textarea>
+      <div class="actions">
+        <button id="loadFromFile">places-data.js’ten çek</button>
+        <button id="buildList">Listeyi oluştur</button>
+      </div>
+
+      <div style="margin-top:12px;">
+        <label for="placeSelect"><b>Seçili mekân:</b></label><br/>
+        <select id="placeSelect" style="width:100%; margin-top:6px;">
+          <option value="">Önce listeyi oluştur…</option>
+        </select>
+      </div>
+
+      <div style="margin-top:12px;">
+        <label><b>Slug önizleme:</b></label><br/>
+        <span id="slugPreview" class="pill">—</span>
+      </div>
+
+      <div class="muted" style="margin-top:10px;">
+        Not: Eğer tarayıcı <code>file://</code> altında dosya yüklemeyi engellerse, klasörde bir local server ile aç:
+        <code>python -m http.server 5500</code> → <code>http://localhost:5500/renamer.html</code>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2) 4 foto seç</h3>
+      <div id="dropzone" class="drop">Buraya 4 foto sürükle-bırak<br/><span class="muted">veya</span><br/>
+        <input id="fileInput" type="file" accept="image/*" multiple />
+      </div>
+
+      <div class="list" id="fileList"></div>
+
+      <div class="actions">
+        <button id="downloadZip">ZIP indir</button>
+        <button id="downloadOneByOne">Tek tek indir</button>
+        <button id="clearFiles">Dosyaları temizle</button>
+      </div>
+
+      <div id="status" style="margin-top:10px;"></div>
+      <div class="muted" style="margin-top:10px;">
+        Not: Tarayıcı, dosyaları bulunduğu yerde “rename” edemez. Rename edilmiş kopyaları indiririz.
+      </div>
+    </div>
+  </div>
+
+  <!-- places-data.js aynı klasörde olmalı -->
+  <script src="./places-data.js"></script>
+
+  <script>
+    // --- Utilities ---
+    function slugifyTR(input) {
+      const map = {
+        'ç':'c','Ç':'c','ğ':'g','Ğ':'g','ı':'i','İ':'i','ö':'o','Ö':'o','ş':'s','Ş':'s','ü':'u','Ü':'u'
+      };
+      let s = (input || '').trim();
+      s = s.split('').map(ch => map[ch] ?? ch).join('');
+      s = s
+        .normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '')
+        .toLowerCase()
+        .replace(/&/g, ' and ')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      return s;
+    }
+
+    function pad3(n) { return String(n).padStart(3, '0'); }
+
+    function setStatus(msg, kind) {
+      const el = document.getElementById('status');
+      el.className = kind === 'ok' ? 'ok' : kind === 'warn' ? 'warn' : '';
+      el.textContent = msg || '';
+    }
+
+    async function loadJSZip() {
+      if (window.JSZip) return window.JSZip;
+      return new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = "https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js";
+        s.onload = () => resolve(window.JSZip);
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+
+    // --- State ---
+    let selectedFiles = [];
+    let currentPlaceName = '';
+    let currentSlug = '';
+
+    // --- Place list logic ---
+    const placesInput = document.getElementById('placesInput');
+    const placeSelect = document.getElementById('placeSelect');
+    const slugPreview = document.getElementById('slugPreview');
+
+    function loadPlacesFromPlacesData() {
+      const list = (typeof allPlaces !== 'undefined' && Array.isArray(allPlaces)) ? allPlaces : null;
+      if (!list) return null;
+
+      const names = [...new Set(
+        list
+          .map(p => (p?.title || '').trim())
+          .filter(Boolean)
+      )].sort((a, b) => a.localeCompare(b, 'tr'));
+
+      return names;
+    }
+
+    function fillPlacesTextareaFromFile() {
+      const names = loadPlacesFromPlacesData();
+      if (!names || !names.length) {
+        setStatus('places-data.js bulundu ama allPlaces okunamadı ya da boş.', 'warn');
+        return;
+      }
+      placesInput.value = names.join('\\n');
+      setStatus(`places-data.js içinden ${names.length} mekân yüklendi. "Listeyi oluştur"e bas.`, 'ok');
+    }
+
+    document.getElementById('loadFromFile').addEventListener('click', () => {
+      fillPlacesTextareaFromFile();
+    });
+
+    document.getElementById('buildList').addEventListener('click', () => {
+      const lines = placesInput.value
+        .split('\\n')
+        .map(x => x.trim())
+        .filter(Boolean);
+
+      placeSelect.innerHTML = '';
+      const firstOpt = document.createElement('option');
+      firstOpt.value = '';
+      firstOpt.textContent = lines.length ? 'Mekân seç…' : 'Liste boş';
+      placeSelect.appendChild(firstOpt);
+
+      for (const name of lines) {
+        const opt = document.createElement('option');
+        opt.value = name;
+        opt.textContent = name;
+        placeSelect.appendChild(opt);
+      }
+
+      setStatus(lines.length ? `${lines.length} mekân yüklendi.` : 'Liste boş.', lines.length ? 'ok' : 'warn');
+    });
+
+    placeSelect.addEventListener('change', () => {
+      currentPlaceName = placeSelect.value;
+      currentSlug = slugifyTR(currentPlaceName);
+      slugPreview.textContent = currentSlug || '—';
+      setStatus(currentSlug ? `Slug hazır: ${currentSlug}` : 'Mekân seç.', currentSlug ? 'ok' : 'warn');
+      renderFileList();
+    });
+
+    // --- File select / drag-drop ---
+    const fileInput = document.getElementById('fileInput');
+    const dropzone = document.getElementById('dropzone');
+
+    fileInput.addEventListener('change', (e) => {
+      const files = Array.from(e.target.files || []);
+      addFiles(files);
+      fileInput.value = '';
+    });
+
+    function addFiles(files) {
+      const imgs = files.filter(f => f.type.startsWith('image/'));
+      selectedFiles = selectedFiles.concat(imgs).slice(0, 4);
+      renderFileList();
+      if (selectedFiles.length === 4) setStatus('4 foto hazır. İndirebilirsin.', 'ok');
+      else setStatus(`Şu an ${selectedFiles.length}/4 foto seçili.`, 'warn');
+    }
+
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('dragover');
+    });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      const files = Array.from(e.dataTransfer.files || []);
+      addFiles(files);
+    });
+
+    document.getElementById('clearFiles').addEventListener('click', () => {
+      selectedFiles = [];
+      renderFileList();
+      setStatus('Dosyalar temizlendi.', 'ok');
+    });
+
+    function renderFileList() {
+      const list = document.getElementById('fileList');
+      list.innerHTML = '';
+
+      if (!selectedFiles.length) {
+        list.innerHTML = `<div class="muted">Henüz foto yok.</div>`;
+        return;
+      }
+
+      selectedFiles.forEach((f, idx) => {
+        const ext = (f.name.split('.').pop() || '').toLowerCase();
+        const newName = currentSlug ? `${currentSlug}-${pad3(idx+1)}.${ext}` : `— (mekân seç)`;
+        const row = document.createElement('div');
+        row.className = 'item';
+        row.innerHTML = `
+          <div>
+            <div><b>${idx+1})</b> ${f.name}</div>
+            <div class="muted">→ ${newName}</div>
+          </div>
+          <span class="pill">${(f.size/1024).toFixed(0)} KB</span>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    // --- Download logic ---
+    function requireReady() {
+      if (!currentSlug) { setStatus('Önce mekân seç.', 'warn'); return false; }
+      if (selectedFiles.length !== 4) { setStatus('Tam 4 foto seçmelisin.', 'warn'); return false; }
+      return true;
+    }
+
+    document.getElementById('downloadOneByOne').addEventListener('click', async () => {
+      if (!requireReady()) return;
+
+      for (let i=0; i<selectedFiles.length; i++) {
+        const f = selectedFiles[i];
+        const ext = (f.name.split('.').pop() || 'jpg').toLowerCase();
+        const newName = `${currentSlug}-${pad3(i+1)}.${ext}`;
+
+        const blob = new Blob([await f.arrayBuffer()], { type: f.type || 'application/octet-stream' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = newName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(a.href);
+      }
+
+      setStatus('Tek tek indirildi.', 'ok');
+    });
+
+    document.getElementById('downloadZip').addEventListener('click', async () => {
+      if (!requireReady()) return;
+
+      setStatus('ZIP hazırlanıyor…', 'ok');
+      const JSZip = await loadJSZip();
+      const zip = new JSZip();
+
+      for (let i=0; i<selectedFiles.length; i++) {
+        const f = selectedFiles[i];
+        const ext = (f.name.split('.').pop() || 'jpg').toLowerCase();
+        const newName = `${currentSlug}-${pad3(i+1)}.${ext}`;
+        zip.file(newName, await f.arrayBuffer());
+      }
+
+      const content = await zip.generateAsync({ type: 'blob' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(content);
+      a.download = `${currentSlug}-photos.zip`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(a.href);
+
+      setStatus('ZIP indirildi.', 'ok');
+    });
+
+    // --- Auto-load on open ---
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        fillPlacesTextareaFromFile();
+      } catch (e) {
+        setStatus('places-data.js okunamadı. Local server ile açmayı dene.', 'warn');
+      }
+    });
+  </script>
+</body>
+</html>

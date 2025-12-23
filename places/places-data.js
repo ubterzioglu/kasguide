@@ -375,14 +375,13 @@ Kısa özet:
   category: ['bar', 'food'],
 
   // Kapak görseli: telifsiz placeholder (içerik fotoğraflarını sonradan sen ekleyebilirsin)
-  image: 'https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1200',
+  image: '../assets/0_img/dragoman-bahce-001-kapak.jpg',
 
   // Galeri: telifsiz placeholder (istersen gerçek mekan foto linklerini sonra ekleriz)
   images: [
-    'https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1600',
-    'https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1600&crop=entropy&cs=tinysrgb&fit=max',
-    'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1600',
-    'https://images.unsplash.com/photo-1515165562835-c3b8c9a67f1e?w=1600'
+    '../assets/0_img/dragoman-bahce-002.jpg',
+    '../assets/0_img/dragoman-bahce-003.jpg',
+    '../assets/0_img/dragoman-bahce-004.jpg'   
   ],
 
   // Not: puan/fiyat bilgisi platforma göre değişebilir; burada “rehber” formatında ortalama değer.
@@ -562,7 +561,7 @@ Nereid Meyhanesi, Kaş’ta klasik meyhane hissini modern bir “sahne” dokunu
   description: 'Kaş’ta dalış başta olmak üzere doğa ve deniz odaklı aktiviteler sunan, güven veren ve tecrübeli bir outdoor & dalış merkezi.',
   category: ['diving', 'activities'],
 
-  image: 'dragoman-diving-and-outdoor-001-kapak.jpg',
+  image: '../assets/0_img/dragoman-diving-and-outdoor-001-kapak.jpg',
   images: [
     '../assets/0_img/dragoman-diving-and-outdoor-002.jpg',
     '../assets/0_img/dragoman-diving-and-outdoor-003.jpg',
@@ -641,7 +640,7 @@ Pratik ipuçları:
 Kısa özet:
 Dragoman Diving and Outdoor, Kaş’ta dalışı güvenli, sakin ve keyifli şekilde deneyimlemek isteyenler için doğru adres. İlk kez deneyecek olanları da, tecrübeli dalgıçları da rahat ettiren bir yaklaşımı var. Kaş’ın su altı dünyasını gerçekten görmek istiyorsan, gönül rahatlığıyla listene eklenebilir.
   `
-}
+},
 
 {
   id: 'the-shotlar-terminali',
