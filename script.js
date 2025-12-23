@@ -179,7 +179,7 @@ function renderCategories() {
 function getItemHref(item) {
   // mevcut yapına göre path’leri aynı bıraktım
   if (item.type === 'article') return `../articles/articles.html?id=${encodeURIComponent(item.id)}`;
-  if (item.type === 'faqspecial') return `../faqspecialfaqspecial.html?id=${encodeURIComponent(item.id)}`;
+  if (item.type === 'faqspecial') return `../faqspecial/faqspecial.html?id=${encodeURIComponent(item.id)}`;
   return `../places/places.html?id=${encodeURIComponent(item.id)}`;
 }
 
