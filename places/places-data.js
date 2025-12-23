@@ -25,11 +25,11 @@ const allPlaces = [
   description: 'Canlı müzik, rock ağırlıklı playlist ve pub havasıyla; Kaş’ta akşamları enerjik geçirmek isteyenlerin sık uğradığı bar.',
   category: ['bar', 'cafe'],
 
-  image: '../assets/1_places/frida-pub_001.jpg',
+  image: '../assets/1_places/frida-pub-001.jpg',
   images: [
-    '../assets/1_places/frida-pub_002.jpg',
-    '../assets/1_places/frida-pub_003.jpg',
-    '../assets/1_places/frida-pub_004.jpg'
+    '../assets/1_places/frida-pub-002.jpg',
+    '../assets/1_places/frida-pub-003.jpg',
+    '../assets/1_places/frida-pub-004.jpg'
   ],
 
   rating: 4.6,
@@ -114,11 +114,11 @@ Frida Pub; Kaş’ta rock müzik, canlı performans ve pub atmosferini bir arada
   description: 'Taze kahve, iyi sandviçler ve tatlılarla; günün her saati uğranabilen, rahat ve modern bir kafe.',
   category: ['cafe', 'breakfast', 'food'],
 
-  image: '../assets/1_places/bunbun-kas_001.jpg',
+  image: '../assets/1_places/bunbun-kas-001.jpg',
   images: [
-    '../assets/1_places/bunbun-kas_002.jpg',
-    '../assets/1_places/bunbun-kas_003.jpg',
-    '../assets/1_places/bunbun-kas_004.jpg'
+    '../assets/1_places/bunbun-kas-002.jpg',
+    '../assets/1_places/bunbun-kas-003.jpg',
+    '../assets/1_places/bunbun-kas-004.jpg'
   ],
 
   rating: 4.7,
@@ -467,14 +467,13 @@ Dragoman Bahçe; Kaş merkezde, yeşillikler içinde, kokteyl-bira-atıştırmal
   category: ['meyhane', 'food'],
 
   // Kapak görseli: telifsiz placeholder (içerik fotoğraflarını sonradan sen ekleyebilirsin)
-  image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=1200',
+  image:  '../assets/1_places/nereid-meyhanesi-001.jpg',
 
   // Galeri: telifsiz placeholder (istersen gerçek mekan foto linklerini sonra ekleriz)
   images: [
-    'https://images.unsplash.com/photo-1544025162-d76694265947?w=1600',
-    'https://images.unsplash.com/photo-1555992336-03a23c7b20b0?w=1600',
-    'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1600',
-    'https://images.unsplash.com/photo-1528825871115-3581a5387919?w=1600'
+     '../assets/1_places/nereid-meyhanesi-002.jpg',
+      '../assets/1_places/nereid-meyhanesi-003.jpg',
+      '../assets/1_places/nereid-meyhanesi-004.jpg'
   ],
 
   // Not: puan/fiyat bilgisi platforma göre değişebilir; burada “rehber” formatında ortalama değer.
