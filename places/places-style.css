@@ -1,21 +1,3 @@
-/*
-Gezi : places
-Plaj : beaches
-Aktivite : activities
-Yeme-İçme : food
-Otel : hotels
-Tarih : history
-Doğa : nature
-Çarşı : shopping
-Kahvaltı : breakfast
-Özel Soru Serileri : faqspecial
-Meyhane : meyhane
-Bar : bar
-Cafe : cafe
-Dalış : diving
-Yazılar : articles
-*/
-
 @import url("../style.css");
 
 /* Selection (detail) page styles */
@@ -327,14 +309,4 @@ Yazılar : articles
   .hero-nav{ width: 40px; height: 40px; }
   .hero-prev{ left: 10px; }
   .hero-next{ right: 10px; }
-}
-
-/* Back to top button */
-.back-to-top{
-  cursor: pointer;
-  background: none;
-}
-
-.back-to-top:active{
-  transform: translateY(1px);
 }
