@@ -7311,7 +7311,7 @@ Program, buluşma yeri ve ekipman dahil mi gibi detayları mutlaka netleştir. �
 Kaş’ta serbest dalış odaklı eğitim/antrenman arayanlara yönelik bir seçenek.`
 },
 
-// 6. onluk (51–60 / 72)
+// 6.... onluk (51–60 / 72)
 
 // 51) Likya Dalış Merkezi (Bougainville Travel)
 {
@@ -7339,7 +7339,7 @@ Kaş’ta serbest dalış odaklı eğitim/antrenman arayanlara yönelik bir seç
   tags: ["likya", "bougainville", "kas"],
   trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
   longText: `**Atmosfer**
-Ajans/organizasyon tarafı güçlü olan dalış yapılarında gün daha “paket” hissettirir: buluşma, tekneye geçiş, dalış noktaları ve gün sonunda dönüş. Kaş’ta dalış gününün ritmi yine deniz koşullarına göre şekillenir.
+Ajans / organizasyon tarafı güçlü olan dalış yapılarında gün daha “paket” hissettirir: buluşma, tekneye geçiş, dalış noktaları ve gün sonunda dönüş. Kaş’ta dalış gününün ritmi yine deniz koşullarına göre şekillenir.
 
 **Kimler için uygun**
 “Ben uğraşmayayım, program hazır olsun” diyenler ve dalışı tura entegre etmek isteyenler. Sertifikalı dalıcılar için de programlar olabilir.
