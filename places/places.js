@@ -346,18 +346,15 @@
     initHeroSlider(root, photos, title);
   }
 
+
+  // Back to top button (header)
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".back-to-top");
+    if (!btn) return;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   const id = getId();
   render(getPlaceById(id));
 })();
-
-
-// Back to top button
-document.addEventListener("click", function (e) {
-  const btn = e.target.closest(".back-to-top");
-  if (!btn) return;
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
