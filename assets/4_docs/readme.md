@@ -1,0 +1,1 @@
+23.12.25 Ana hatlarıyla site tamamlandı. İçerik girdilerine başladık. İlk etapta Chat GPT nin bize sunduğu listeden yürümek görünürlüğü de arttıracaktır. 
