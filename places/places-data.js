@@ -5279,7 +5279,7 @@ Yoğun sezonda bahçe alanı hızlı dolabiliyor. Erken gitmek yer bulmayı kola
 Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternatifi.
 `
 }
-,
+
 
 
 
