@@ -203,12 +203,12 @@ Bunbun Kaş; iyi kahve, pratik kahvaltı ve rahat kafe atmosferi arayanlar için
   title: 'Manos Greek Tavern',
   description: 'Samimi bir aile işletmesi havasında, Yunan mutfağının taze ve sade lezzetlerini Kaş’ta sunan tavern; özellikle deniz mahsulleri ve mezeleriyle keyifli akşamlar için tercih ediliyor.',
   category: ['food','meyhane'],
-  image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200',
+  image: '../assets/1_places/manos-greek-tavern-001.jpg',
   images: [
-    'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600',
-    'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=1600',
-    'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600',
-    'https://images.unsplash.com/photo-1550889898-18b2cfe1979c?w=1600'
+    '../assets/1_places/manos-greek-tavern-002.jpg',
+    '../assets/1_places/manos-greek-tavern-003.jpg',
+    '../assets/1_places/manos-greek-tavern-004.jpg',
+    '../assets/1_places/manos-greek-tavern-005.jpg'
   ],
 
   rating: 4.6,
@@ -288,12 +288,12 @@ Manos Greek Tavern, Kaş’ta Yunan mutfağının sade ve taze lezzetlerini, sam
   description: 'Modern Akdeniz esintileriyle İtalyan mutfağını buluşturan rahat ama özenli bir restoran; özellikle taze malzemeler, ev yapımı lezzetler ve iyi şarap eşleşmeleri arayanlar için.',
   category: ['food'],
 
-  image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1200',
+  image: '../assets/1_places/ci-neo-cucina-by-mezetaryen-001.jpg',
   images: [
-    'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1600',
-    'https://images.unsplash.com/photo-1532634896-26909d0d1517?w=1600',
-    'https://images.unsplash.com/photo-1529042410759-befb1204b468?w=1600',
-    'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600'
+    '../assets/1_places/ci-neo-cucina-by-mezetaryen-002.jpg',
+    '../assets/1_places/ci-neo-cucina-by-mezetaryen-003.jpg',
+    '../assets/1_places/ci-neo-cucina-by-mezetaryen-004.jpg',
+    '../assets/1_places/ci-neo-cucina-by-mezetaryen-005.jpg'
   ],
 
   rating: 4.7,
