@@ -124,8 +124,8 @@
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr); /* MOBİLDE 3 */
+  gap: 0.75rem; /* biraz sıkı, mobil için daha iyi */
 }
 
 .category-card {
@@ -892,3 +892,23 @@
 .category-violet { background: var(--primary-violet); }
 .category-wine { background: var(--primary-wine); }
 
+
+
+@media (max-width: 639px) {
+  .category-card {
+    padding: 0.75rem;
+  }
+
+  .category-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .category-name {
+    font-size: 0.75rem;
+  }
+
+  .category-count {
+    font-size: 0.65rem;
+  }
+}
