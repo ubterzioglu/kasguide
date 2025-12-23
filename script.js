@@ -206,7 +206,7 @@ function renderCards() {
     const badgeColor = categoryObj ? categoryObj.color.replace('category-', '') : 'blue';
 
     const href = getItemHref(item);
-    const img = item.image || 'assets/img/placeholder.jpg';
+    const img = item.image || 'assets/0_img/placeholder.jpg';
 
     card.innerHTML = `
       <div class="card-image-wrapper">
