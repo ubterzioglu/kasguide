@@ -13,6 +13,11 @@ const allPlaces = [
     rating: 4.9,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: true,
+      infoDate: '2025',
+      disclaimer: true
+    },
     // YENİ ATTRIBUTE'LAR
     location: 'Kaş-Kalkan yolu üzeri',
     distance: '20 km',
@@ -33,6 +38,11 @@ const allPlaces = [
     rating: 4.8,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kekova Adası, Üçağız',
     distance: '35 km',
     coordinates: { lat: 36.1833, lng: 29.8500 },
@@ -50,6 +60,11 @@ const allPlaces = [
     rating: 4.7,
     price: 'Şezlong 50 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: '3 km',
     coordinates: { lat: 36.2000, lng: 29.6333 },
@@ -67,6 +82,11 @@ const allPlaces = [
     rating: 4.5,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: '1.5 km',
     coordinates: { lat: 36.2028, lng: 29.6347 },
@@ -84,6 +104,11 @@ const allPlaces = [
     rating: 4.6,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş limanı yanı',
     distance: '500 m',
     coordinates: { lat: 36.1975, lng: 29.6342 },
@@ -101,6 +126,11 @@ const allPlaces = [
     rating: 4.4,
     price: 'Giriş 20 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş-Kalkan yolu',
     distance: '12 km',
     coordinates: { lat: 36.2389, lng: 29.3167 },
@@ -118,6 +148,11 @@ const allPlaces = [
     rating: 4.3,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: '2 km',
     coordinates: { lat: 36.1992, lng: 29.6400 },
@@ -135,6 +170,11 @@ const allPlaces = [
     rating: 4.9,
     price: 'Tekne Turu',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kekova bölgesi',
     distance: '40 km',
     coordinates: { lat: 36.1667, lng: 29.8667 },
@@ -154,6 +194,11 @@ const allPlaces = [
     rating: 4.8,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Yürüme mesafesi',
     coordinates: { lat: 36.1986, lng: 29.6383 },
@@ -171,6 +216,11 @@ const allPlaces = [
     rating: 4.5,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş Cumhuriyet Meydanı',
     distance: 'Merkez',
     coordinates: { lat: 36.1997, lng: 29.6358 },
@@ -188,6 +238,11 @@ const allPlaces = [
     rating: 4.6,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.1989, lng: 29.6367 },
@@ -205,6 +260,11 @@ const allPlaces = [
     rating: 4.7,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş liman bölgesi',
     distance: '1 km',
     coordinates: { lat: 36.1967, lng: 29.6333 },
@@ -222,6 +282,11 @@ const allPlaces = [
     rating: 4.5,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez liman',
     distance: 'Merkez',
     coordinates: { lat: 36.1958, lng: 29.6342 },
@@ -239,6 +304,11 @@ const allPlaces = [
     rating: 4.0,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: '1.2 km',
     coordinates: { lat: 36.2033, lng: 29.6292 },
@@ -256,6 +326,11 @@ const allPlaces = [
     rating: 4.6,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş pazar alanı',
     distance: '2 km',
     coordinates: { lat: 36.2083, lng: 29.6250 },
@@ -273,6 +348,11 @@ const allPlaces = [
     rating: 4.4,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş Cumhuriyet Meydanı',
     distance: 'Merkez',
     coordinates: { lat: 36.1992, lng: 29.6350 },
@@ -292,6 +372,11 @@ const allPlaces = [
     rating: 4.9,
     price: 'Giriş 50 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Patara, Kaş',
     distance: '45 km',
     coordinates: { lat: 36.2650, lng: 29.3167 },
@@ -309,6 +394,11 @@ const allPlaces = [
     rating: 4.8,
     price: 'Giriş 40 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kınık, Kaş',
     distance: '55 km',
     coordinates: { lat: 36.3567, lng: 29.3183 },
@@ -326,6 +416,11 @@ const allPlaces = [
     rating: 4.7,
     price: 'Giriş 40 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kumluova, Kaş',
     distance: '58 km',
     coordinates: { lat: 36.3317, lng: 29.2917 },
@@ -343,6 +438,11 @@ const allPlaces = [
     rating: 4.5,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Çukurbağ Yarımadası',
     distance: '12 km',
     coordinates: { lat: 36.1833, lng: 29.6000 },
@@ -360,6 +460,11 @@ const allPlaces = [
     rating: 4.8,
     price: 'Tekne Turu',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Sıçak İskelesi',
     distance: '35 km (deniz yolu)',
     coordinates: { lat: 36.1500, lng: 29.8167 },
@@ -377,6 +482,11 @@ const allPlaces = [
     rating: 4.9,
     price: 'Tekne Turu',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kekova Adası',
     distance: '38 km',
     coordinates: { lat: 36.1833, lng: 29.8667 },
@@ -394,6 +504,11 @@ const allPlaces = [
     rating: 4.8,
     price: 'Tekne Turu',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaleköy, Demre',
     distance: '42 km',
     coordinates: { lat: 36.2000, lng: 29.8833 },
@@ -413,6 +528,11 @@ const allPlaces = [
     rating: 4.8,
     price: '300-500 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş Limanı',
     distance: 'Başlangıç noktası',
     coordinates: { lat: 36.1958, lng: 29.6342 },
@@ -430,6 +550,11 @@ const allPlaces = [
     rating: 4.7,
     price: '400-600 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş Limanı',
     distance: 'Başlangıç noktası',
     coordinates: { lat: 36.1958, lng: 29.6342 },
@@ -447,6 +572,11 @@ const allPlaces = [
     rating: 4.9,
     price: 'Rehberli 200 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Çukurbağ Yarımadası',
     distance: 'Varyasyonlu',
     coordinates: { lat: 36.1833, lng: 29.6000 },
@@ -464,6 +594,11 @@ const allPlaces = [
     rating: 4.9,
     price: 'Dalış 400 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş liman çevresi',
     distance: 'Merkez',
     coordinates: { lat: 36.1967, lng: 29.6333 },
@@ -481,6 +616,11 @@ const allPlaces = [
     rating: 4.6,
     price: '250-350 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez (toplanma)',
     distance: 'Tur rotası',
     coordinates: { lat: 36.1997, lng: 29.6358 },
@@ -498,6 +638,11 @@ const allPlaces = [
     rating: 4.8,
     price: '800-1200 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Baba Dağı',
     distance: '15 km',
     coordinates: { lat: 36.3000, lng: 29.4167 },
@@ -515,6 +660,11 @@ const allPlaces = [
     rating: 4.7,
     price: '100-150 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.2000, lng: 29.6367 },
@@ -532,6 +682,11 @@ const allPlaces = [
     rating: 4.5,
     price: '200-300 TL',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Tur rotası',
     coordinates: { lat: 36.1997, lng: 29.6358 },
@@ -551,6 +706,11 @@ const allPlaces = [
     rating: 4.9,
     price: '₺₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş Limanı',
     distance: 'Merkez',
     coordinates: { lat: 36.1961, lng: 29.6347 },
@@ -568,6 +728,11 @@ const allPlaces = [
     rating: 4.8,
     price: '₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.2003, lng: 29.6375 },
@@ -585,6 +750,11 @@ const allPlaces = [
     rating: 4.7,
     price: '₺₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş Marina',
     distance: '1 km',
     coordinates: { lat: 36.1972, lng: 29.6331 },
@@ -602,6 +772,11 @@ const allPlaces = [
     rating: 4.6,
     price: '₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş çarşı içi',
     distance: 'Merkez',
     coordinates: { lat: 36.1992, lng: 29.6369 },
@@ -619,6 +794,11 @@ const allPlaces = [
     rating: 4.5,
     price: '₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş Limanı',
     distance: 'Merkez',
     coordinates: { lat: 36.1958, lng: 29.6350 },
@@ -636,6 +816,11 @@ const allPlaces = [
     rating: 4.8,
     price: '₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.2011, lng: 29.6381 },
@@ -653,6 +838,11 @@ const allPlaces = [
     rating: 4.7,
     price: '₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.1986, lng: 29.6372 },
@@ -670,6 +860,11 @@ const allPlaces = [
     rating: 4.6,
     price: '₺₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş çarşı',
     distance: 'Merkez',
     coordinates: { lat: 36.1994, lng: 29.6364 },
@@ -689,6 +884,11 @@ const allPlaces = [
     rating: 4.7,
     price: '₺₺₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.2017, lng: 29.6392 },
@@ -706,6 +906,11 @@ const allPlaces = [
     rating: 4.8,
     price: '₺₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Küçük Çakıl Plajı yanı',
     distance: '600 m',
     coordinates: { lat: 36.1969, lng: 29.6347 },
@@ -723,6 +928,11 @@ const allPlaces = [
     rating: 4.5,
     price: '₺₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: '800 m',
     coordinates: { lat: 36.2031, lng: 29.6403 },
@@ -740,6 +950,11 @@ const allPlaces = [
     rating: 4.9,
     price: '₺₺₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Çukurbağ Yarımadası',
     distance: '4 km',
     coordinates: { lat: 36.1889, lng: 29.6117 },
@@ -757,6 +972,11 @@ const allPlaces = [
     rating: 4.4,
     price: '₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.2006, lng: 29.6369 },
@@ -774,6 +994,11 @@ const allPlaces = [
     rating: 4.6,
     price: '₺₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.1989, lng: 29.6358 },
@@ -791,6 +1016,11 @@ const allPlaces = [
     rating: 4.5,
     price: '₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: '900 m',
     coordinates: { lat: 36.2022, lng: 29.6383 },
@@ -808,6 +1038,11 @@ const allPlaces = [
     rating: 4.3,
     price: '₺₺',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: '1.2 km',
     coordinates: { lat: 36.2042, lng: 29.6375 },
@@ -827,6 +1062,11 @@ const allPlaces = [
     rating: 4.8,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Çukurbağ Yarımadası',
     distance: '3 km başlangıç',
     coordinates: { lat: 36.1850, lng: 29.6050 },
@@ -844,6 +1084,11 @@ const allPlaces = [
     rating: 4.7,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş\'ın batısı',
     distance: '4 km',
     coordinates: { lat: 36.1900, lng: 29.6083 },
@@ -861,6 +1106,11 @@ const allPlaces = [
     rating: 4.9,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş yukarı mahalle',
     distance: '2 km',
     coordinates: { lat: 36.2083, lng: 29.6417 },
@@ -878,6 +1128,11 @@ const allPlaces = [
     rating: 4.8,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaputaş Plajı üstü',
     distance: '20 km',
     coordinates: { lat: 36.2547, lng: 29.2989 },
@@ -895,6 +1150,11 @@ const allPlaces = [
     rating: 4.6,
     price: 'Ücretsiz',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş liman girişi',
     distance: '1.5 km',
     coordinates: { lat: 36.1942, lng: 29.6325 },
@@ -914,6 +1174,11 @@ const allPlaces = [
     rating: 4.5,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş çarşı içi',
     distance: 'Merkez',
     coordinates: { lat: 36.1994, lng: 29.6372 },
@@ -931,6 +1196,11 @@ const allPlaces = [
     rating: 4.7,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.2000, lng: 29.6367 },
@@ -948,6 +1218,11 @@ const allPlaces = [
     rating: 4.6,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş çevre köyleri',
     distance: '8 km',
     coordinates: { lat: 36.2250, lng: 29.6250 },
@@ -965,6 +1240,11 @@ const allPlaces = [
     rating: 4.8,
     price: 'Serbest',
     selected: false,
+    trust: {
+      verified: false,
+      infoDate: '',
+      disclaimer: false
+    },
     location: 'Kaş merkez',
     distance: 'Merkez',
     coordinates: { lat: 36.1983, lng: 29.6361 },
@@ -1012,25 +1292,7 @@ Bu alanı sonra uzun metinle dolduracağız (8–20 paragraf gibi düşünebilir
         p.longText = isPilot ? pilotText : defaultText;
       }
 
-      
-      // trust flags (reliability badges) - defaults for all items
-      // If you don't set anything per item, UI will treat them as false/empty and hide badges.
-      if (!p.trust || typeof p.trust !== 'object') {
-        p.trust = { verified: false, infoDate: '', disclaimer: false };
-      } else {
-        // normalize missing keys
-        if (typeof p.trust.verified !== 'boolean') p.trust.verified = false;
-        if (typeof p.trust.infoDate !== 'string') p.trust.infoDate = '';
-        if (typeof p.trust.disclaimer !== 'boolean') p.trust.disclaimer = false;
-      }
-
-      // Pilot: Kaputaş visible by default (can be changed later)
-      if (isPilot) {
-        p.trust.verified = true;
-        p.trust.infoDate = '2025';
-        p.trust.disclaimer = true;
-      }
-// Bazı item'larda link alanı yoksa bile selection.js "links" objesini destekliyor.
+      // Bazı item'larda link alanı yoksa bile selection.js "links" objesini destekliyor.
       // İstersen burada ileride normalize edebiliriz.
     });
   } catch (e) {

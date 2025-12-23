@@ -1,2002 +1,1157 @@
-window.faqData = [
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #1 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 1’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #2 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 2’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #3 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 3’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #4 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 4’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #5 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 5’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #6 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 6’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #7 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 7’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #8 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 8’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #9 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 9’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #10 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 10’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #11 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 11’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #12 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 12’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #13 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 13’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #14 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 14’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #15 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 15’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #16 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 16’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #17 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 17’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #18 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 18’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #19 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 19’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #20 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 20’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #21 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 21’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #22 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 22’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #23 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 23’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #24 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 24’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #25 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 25’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #26 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 26’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #27 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 27’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #28 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 28’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #29 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 29’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #30 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 30’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #31 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 31’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #32 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 32’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #33 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 33’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #34 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 34’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #35 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 35’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #36 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 36’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #37 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 37’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #38 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 38’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #39 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 39’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #40 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 40’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #41 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 41’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #42 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 42’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #43 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 43’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #44 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 44’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #45 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 45’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #46 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 46’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #47 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 47’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #48 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 48’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #49 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 49’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #50 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 50’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #51 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 51’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #52 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 52’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #53 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 53’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #54 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 54’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #55 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 55’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #56 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 56’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #57 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 57’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #58 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 58’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #59 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 59’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #60 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 60’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #61 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 61’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #62 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 62’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #63 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 63’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #64 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 64’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #65 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 65’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #66 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 66’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #67 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 67’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #68 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 68’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #69 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 69’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #70 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 70’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #71 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 71’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #72 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 72’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #73 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 73’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #74 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 74’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #75 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 75’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #76 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 76’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #77 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 77’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #78 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 78’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #79 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 79’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #80 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 80’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #81 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 81’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #82 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 82’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #83 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 83’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #84 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 84’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #85 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 85’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #86 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 86’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #87 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 87’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #88 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 88’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #89 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 89’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #90 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 90’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #91 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 91’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #92 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 92’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #93 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 93’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #94 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 94’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #95 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 95’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #96 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 96’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #97 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 97’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #98 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 98’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #99 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 99’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #100 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 100’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #101 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 101’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #102 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 102’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #103 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 103’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #104 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 104’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #105 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 105’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #106 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 106’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #107 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 107’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #108 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 108’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #109 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 109’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #110 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 110’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #111 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 111’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #112 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 112’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #113 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 113’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #114 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 114’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #115 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 115’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #116 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 116’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #117 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 117’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #118 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 118’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #119 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 119’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #120 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 120’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #121 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 121’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #122 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 122’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #123 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 123’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #124 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 124’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #125 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 125’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #126 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 126’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #127 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 127’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #128 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 128’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #129 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 129’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #130 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 130’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #131 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 131’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #132 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 132’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #133 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 133’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #134 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 134’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #135 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 135’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #136 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 136’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #137 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 137’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #138 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 138’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #139 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 139’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #140 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 140’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #141 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 141’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #142 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 142’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #143 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 143’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #144 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 144’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #145 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 145’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #146 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 146’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #147 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 147’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #148 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 148’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #149 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 149’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #150 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 150’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #151 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 151’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #152 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 152’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #153 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 153’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #154 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 154’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #155 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 155’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #156 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 156’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #157 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 157’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #158 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 158’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #159 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 159’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #160 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 160’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #161 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 161’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #162 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 162’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #163 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 163’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #164 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 164’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #165 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 165’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #166 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 166’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #167 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 167’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #168 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 168’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #169 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 169’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #170 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 170’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #171 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 171’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #172 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 172’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #173 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 173’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #174 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 174’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #175 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 175’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #176 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 176’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #177 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 177’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #178 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 178’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #179 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 179’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #180 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 180’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #181 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 181’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #182 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 182’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #183 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 183’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #184 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 184’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #185 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 185’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #186 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 186’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #187 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 187’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #188 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 188’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #189 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 189’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #190 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 190’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #191 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 191’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #192 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 192’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #193 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 193’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #194 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 194’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #195 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 195’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #196 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 196’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #197 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 197’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #198 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 198’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #199 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 199’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #200 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 200’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #201 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 201’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #202 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 202’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #203 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 203’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #204 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 204’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #205 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 205’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #206 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 206’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #207 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 207’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #208 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 208’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #209 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 209’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #210 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 210’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #211 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 211’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #212 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 212’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #213 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 213’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #214 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 214’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #215 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 215’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #216 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 216’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #217 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 217’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #218 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 218’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #219 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 219’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #220 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 220’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #221 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 221’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #222 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 222’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #223 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 223’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #224 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 224’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #225 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 225’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #226 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 226’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #227 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 227’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #228 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 228’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #229 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 229’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #230 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 230’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #231 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 231’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #232 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 232’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #233 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 233’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #234 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 234’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #235 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 235’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #236 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 236’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #237 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 237’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #238 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 238’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #239 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 239’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #240 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 240’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #241 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 241’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #242 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 242’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #243 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 243’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #244 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 244’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #245 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 245’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #246 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 246’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #247 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 247’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #248 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 248’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #249 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 249’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #250 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 250’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #251 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 251’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #252 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 252’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #253 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 253’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #254 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 254’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #255 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 255’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #256 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 256’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #257 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 257’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #258 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 258’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #259 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 259’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #260 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 260’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #261 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 261’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #262 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 262’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #263 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 263’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #264 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 264’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #265 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 265’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #266 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 266’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #267 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 267’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #268 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 268’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #269 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 269’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #270 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 270’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #271 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 271’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #272 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 272’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #273 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 273’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #274 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 274’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #275 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 275’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #276 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 276’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #277 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 277’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #278 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 278’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #279 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 279’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #280 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 280’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #281 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 281’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #282 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 282’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #283 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 283’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #284 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 284’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #285 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 285’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #286 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 286’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #287 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 287’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #288 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 288’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #289 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 289’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #290 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 290’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #291 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 291’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #292 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 292’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #293 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 293’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #294 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 294’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #295 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 295’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #296 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 296’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #297 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 297’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #298 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 298’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #299 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 299’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #300 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 300’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #301 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 301’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #302 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 302’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #303 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 303’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #304 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 304’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #305 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 305’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #306 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 306’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #307 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 307’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #308 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 308’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #309 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 309’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #310 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 310’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #311 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 311’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #312 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 312’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #313 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 313’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #314 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 314’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #315 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 315’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #316 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 316’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #317 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 317’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #318 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 318’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #319 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 319’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #320 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 320’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #321 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 321’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #322 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 322’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #323 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 323’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #324 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 324’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #325 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 325’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #326 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 326’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #327 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 327’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #328 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 328’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #329 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 329’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #330 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 330’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #331 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 331’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #332 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 332’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #333 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 333’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #334 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 334’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #335 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 335’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #336 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 336’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #337 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 337’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #338 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 338’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #339 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 339’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #340 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 340’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #341 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 341’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #342 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 342’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #343 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 343’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #344 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 344’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #345 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 345’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #346 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 346’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #347 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 347’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #348 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 348’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #349 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 349’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #350 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 350’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #351 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 351’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #352 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 352’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #353 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 353’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #354 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 354’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #355 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 355’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #356 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 356’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #357 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 357’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #358 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 358’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #359 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 359’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #360 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 360’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #361 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 361’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #362 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 362’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #363 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 363’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #364 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 364’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #365 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 365’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #366 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 366’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #367 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 367’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #368 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 368’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #369 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 369’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #370 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 370’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #371 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 371’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #372 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 372’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #373 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 373’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #374 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 374’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #375 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 375’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #376 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 376’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #377 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 377’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #378 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 378’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #379 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 379’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #380 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 380’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #381 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 381’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #382 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 382’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #383 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 383’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #384 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 384’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #385 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 385’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #386 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 386’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #387 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 387’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #388 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 388’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #389 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 389’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #390 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 390’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #391 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 391’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #392 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 392’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #393 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 393’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #394 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 394’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #395 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 395’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #396 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 396’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #397 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 397’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #398 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 398’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #399 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 399’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #400 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 400’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #401 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 401’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #402 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 402’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #403 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 403’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #404 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 404’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #405 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 405’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #406 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 406’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #407 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 407’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #408 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 408’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #409 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 409’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #410 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 410’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #411 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 411’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #412 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 412’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #413 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 413’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #414 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 414’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #415 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 415’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #416 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 416’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #417 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 417’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #418 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 418’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #419 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 419’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #420 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 420’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #421 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 421’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #422 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 422’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #423 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 423’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #424 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 424’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #425 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 425’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #426 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 426’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #427 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 427’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #428 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 428’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #429 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 429’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #430 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 430’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #431 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 431’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #432 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 432’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #433 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 433’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #434 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 434’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #435 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 435’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #436 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 436’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #437 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 437’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #438 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 438’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #439 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 439’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #440 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 440’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #441 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 441’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #442 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 442’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #443 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 443’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #444 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 444’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #445 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 445’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #446 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 446’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #447 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 447’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #448 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 448’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #449 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 449’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #450 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 450’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #451 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 451’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #452 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 452’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #453 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 453’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #454 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 454’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #455 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 455’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #456 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 456’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #457 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 457’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #458 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 458’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #459 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 459’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #460 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 460’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #461 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 461’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #462 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 462’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #463 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 463’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #464 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 464’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #465 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 465’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #466 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 466’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #467 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 467’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #468 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 468’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #469 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 469’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #470 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 470’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #471 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 471’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #472 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 472’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #473 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 473’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #474 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 474’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #475 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 475’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #476 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 476’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #477 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 477’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #478 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 478’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #479 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 479’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #480 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 480’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #481 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 481’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #482 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 482’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #483 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 483’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #484 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 484’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #485 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 485’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #486 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 486’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #487 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 487’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #488 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 488’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #489 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 489’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #490 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 490’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #491 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 491’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #492 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 492’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #493 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 493’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #494 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 494’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #495 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 495’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #496 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 496’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #497 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 497’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #498 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 498’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #499 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 499’dir."
-  },
-  {
-    "question": "Kaş ile ilgili sık sorulan soru #500 nedir?",
-    "answer": "Bu, Kaş rehberi kapsamında hazırlanan örnek cevap numara 500’dir."
-  }
-];
+window.faqData = 
+
+[{
+"question": "Kaş nerededir ve hangi ile bağlıdır?",
+"answer": "Kaş, Türkiye'nin güneybatısında Antalya iline bağlı bir sahil ilçesidir. Akdeniz kıyısında, Antalya ile Fethiye arasında yer alır."
+}, {
+"question": "Kaş nasıl bir yerdir?",
+"answer": "Kaş, küçük ve şirin bir tatil kasabası olup tarihi dokusu ve turkuaz deniziyle ünlüdür. Sakin atmosferi ve doğasıyla hem dinlenmek hem de keşfetmek için idealdir."
+}, {
+"question": "Kaş neyle ünlüdür?",
+"answer": "Kaş, berrak denizi, dalış noktaları ve Likya dönemi tarihi kalıntılarıyla ünlüdür. Ayrıca bohem kafeleri ve gün batımı manzaralarıyla da tanınır."
+}, {
+"question": "Kaş'ın nüfusu ne kadardır?",
+"answer": "Kaş ilçesinin nüfusu yaklaşık 60 bin civarındadır. Turizm sezonunda yaz aylarında gelen ziyaretçilerle bu sayı artış göstermektedir."
+}, {
+"question": "Kaş ismi nereden geliyor?",
+"answer": "Türkçe'de 'kaş' kelimesi anlam olarak gözün üzerindeki kıvrımı ifade eder. Rivayete göre, Kaş kasabasının Meis Adası'na bakan konumu nedeniyle bu ismi aldığı söylenir."
+}, {
+"question": "Kaş'ın tarihi geçmişi hakkında ne bilinir?",
+"answer": "Kaş, antik dönemde Likya uygarlığına ait Antiphellos yerleşimiyle bilinir ve Likya, Roma ve Bizans izlerini taşır. İlçe merkezinde ve çevresinde bu dönemlerden kalma tarihi kalıntılar görülebilir."
+}, {
+"question": "Kaş güvenli bir yer mi?",
+"answer": "Kaş, genel olarak güvenli ve huzurlu bir tatil beldesidir. Yine de her yerde olduğu gibi değerli eşyalarınıza dikkat etmekte fayda vardır."
+}, {
+"question": "Kaş'ta Türkçe dışında hangi diller konuşulur?",
+"answer": "Kaş'ta turistik bir bölge olduğu için İngilizce yaygın olarak anlaşılır. Birçok turistik işletmede temel İngilizce iletişim kurulabilir."
+}, {
+"question": "Kaş’ta turist bilgilendirme ofisi var mı?",
+"answer": "Evet, Kaş ilçe merkezinde bir turizm danışma ofisi bulunmaktadır. Bu ofisten harita alabilir ve bölge hakkında bilgi edinebilirsiniz."
+}, {
+"question": "Kaş yıl boyunca yaşanır mı yoksa sadece yazlık bir yer mi?",
+"answer": "Kaş yaz aylarında çok canlıdır ancak kışın oldukça sakindir. Yıl boyu yaşayan bir nüfus olsa da birçok turistik işletme sezon dışında kapalı olabiliyor."
+}, {
+"question": "Kaş yazın kalabalık olur mu?",
+"answer": "Evet, özellikle Temmuz ve Ağustos aylarında Kaş oldukça kalabalık olur. Tatil sezonunun yoğun zamanlarında konaklama ve plajlarda kalabalığa hazırlıklı olun."
+}, {
+"question": "Kaş kışın ziyaret edilebilir mi?",
+"answer": "Kaş kışın da ziyaret edilebilir; hava ılımandır ancak deniz aktiviteleri sınırlı olabilir. Kışın ilçe sakin ve huzurludur, ancak bazı işletmeler kapalı olabilir."
+}, {
+"question": "Kaş’ta mevsimlik mi yaşanıyor, yerel halk var mı?",
+"answer": "Kaş’ta yerel halk yıl boyu yaşamaktadır ancak turizm sezonunda nüfus artar. Kışın daha sakin bir kasaba atmosferi hakimdir."
+}, {
+"question": "Kaş pahalı bir tatil yeri mi?",
+"answer": "Kaş, çok lüks bir yer olmamakla birlikte popülerliğinden dolayı fiyatlar yazın yükselir. Yeme-içme ve konaklama fiyatları, benzer tatil bölgeleriyle kıyaslandığında orta seviyededir."
+}, {
+"question": "Kaş'ta ATM ve banka bulabilir miyim?",
+"answer": "Evet, Kaş merkezinde çeşitli bankalara ait ATM'ler ve bankalar bulunmaktadır. Bu sayede nakit para çekebilir veya döviz bozdurabilirsiniz."
+}, {
+"question": "Kaş'ta kredi kartı geçiyor mu?",
+"answer": "Çoğu otel, restoran ve mağaza kredi kartı kabul eder. Yine de küçük esnaf veya pazar yerlerinde yanınızda bir miktar nakit bulundurmanız iyi olur."
+}, {
+"question": "Kaş küçük bir yer mi?",
+"answer": "Kaş, coğrafi olarak küçük ve merkezi yürüyerek gezilebilecek bir kasabadır. Bir uçtan diğer uca yürümek genellikle yarım saatten kısa sürer."
+}, {
+"question": "Kaş’ın plaka kodu ve telefon alan kodu nedir?",
+"answer": "Kaş, Antalya iline bağlı olduğundan plaka kodu 07'dir. Telefon alan kodu ise 0242 olarak kullanılır."
+}, {
+"question": "Kaş'ta internet ve cep telefonu çekimi nasıl?",
+"answer": "İlçe merkezinde ve çoğu turistik bölgede cep telefonu çekimi ve mobil internet genellikle iyidir. Kırsal alanlarda veya dağlık bölgelerde sinyal biraz zayıflayabilir."
+}, {
+"question": "Kaş'ta hastane veya sağlık ocağı var mı?",
+"answer": "Evet, Kaş'ta bir devlet hastanesi ve sağlık ocakları bulunmaktadır. Acil durumlar için 112 ambulans hizmeti de mevcuttur."
+}, {
+"question": "Kaş'ta eczane bulabilir miyim?",
+"answer": "Kaş merkezinde birkaç eczane bulunmaktadır. Tatil dönemlerinde nöbetçi eczane uygulamasıyla gece saatlerinde de hizmet alınabilir."
+}, {
+"question": "Kaş hangi bölgenin turizm yeridir?",
+"answer": "Kaş, Akdeniz Bölgesi'nin önemli turistik noktalarından biridir. Antalya ilinin batı ucunda, Teke Yarımadası üzerinde yer alır."
+}, {
+"question": "Kaş'a en yakın büyük şehir hangisi?",
+"answer": "Kaş'a en yakın büyük şehir Antalya'dır (yaklaşık 3,5 saat mesafede). Ayrıca Fethiye de yaklaşık 2 saat mesafede olup diğer bir yakın turistik merkezdir."
+}, {
+"question": "Kaş'ın uluslararası bilinirliği var mı?",
+"answer": "Kaş, özellikle dalış tutkunları ve doğa sever yabancı turistler arasında tanınmıştır. Son yıllarda uluslararası seyahat dergilerinde de adından söz ettirmektedir."
+}, {
+"question": "Kaş'ta ünlü biriyle karşılaşmak mümkün mü?",
+"answer": "Kaş, popüler ama samimi bir tatil mekanı olduğu için zaman zaman ünlü simalar da tatil için tercih edebilir. Ancak genelde herkes rahat bir şekilde tatilini geçirir."
+}, {
+"question": "Kaş'ın atmosferi nasıldır?",
+"answer": "Kaş, bohem ve rahat bir atmosfere sahiptir; kalabalık tatil beldelerinden farklı olarak daha sakin ve sıcak bir ortam sunar. Sokaklarında çiçekli balkonlar ve sanat galerileri görmek mümkündür."
+}, {
+"question": "Kaş tarihi dokusunu koruyabilmiş mi?",
+"answer": "Evet, Kaş betonlaşmadan büyük ölçüde korunmuş, tarihi sokakları ve antik kalıntılarıyla özgün dokusunu muhafaza eden bir yerdir. Modern yapılaşma sınırlı tutulmaya çalışılmıştır."
+}, {
+"question": "Kaş'ta film veya dizi çekildi mi?",
+"answer": "Zaman zaman Kaş ve çevresinde film ve dizi çekimleri yapılmıştır, ancak çok sık değildir. Kasabanın güzelliği bazı yapımların sahnelerinde yer almıştır."
+}, {
+"question": "Kaş’a balayı için gidilir mi?",
+"answer": "Kaş, balayı çiftleri için de popülerdir; sakin ortamı, romantik gün batımı manzaraları ve özel konaklama seçenekleri sunar. Çiftler için keyifli bir tatil destinasyonu olabilir."
+}, {
+"question": "Kaş, Kalkan ve Kekova arasındaki farklar nelerdir?",
+"answer": "Kaş ilçe merkezidir ve hareketli bir kasabadır, Kalkan ise Kaş’a bağlı bir mahalle olarak daha küçük ve İngiliz turistlerin yoğun olduğu bir bölgedir. Kekova ise yerleşim olmayan, tekne turlarıyla gezilen batık şehir ve koylar bölgesidir."
+}, {
+"question": "Kaş tatilinde araba gerekli mi?",
+"answer": "Kaş merkezde konaklıyorsanız birçok yere yürüyebilirsiniz ve tekne turlarıyla koyları gezebilirsiniz. Ancak çevre antik kentleri veya uzak plajları keşfetmek isterseniz araba faydalı olabilir."
+}, {
+"question": "Kaş'ta trafik ve otopark sorunu var mı?",
+"answer": "Yaz aylarında Kaş merkezinde trafik yoğunlaşabilir ve otopark bulmak zorlaşabilir. Merkezde araç yerine yürümek veya scooter kullanmak daha pratik olabilir."
+}, {
+"question": "Kaş hangi antik kentin üzerine kuruludur?",
+"answer": "Kaş, antik Antiphellos kentinin bulunduğu bölgede kuruludur. İlçe merkezinde Antiphellos’tan kalma antik tiyatro ve kaya mezarları gibi kalıntılar görülebilir."
+}, {
+"question": "Kaş’ta Likya medeniyetine ait izler var mı?",
+"answer": "Evet, Kaş ve çevresi eski Likya uygarlığının topraklarıdır. Likya dönemine ait kaya mezarları, yazıtlar ve antik kent kalıntıları bölgede bulunmaktadır."
+}, {
+"question": "Kaş ile Kalkan arası mesafe ne kadar?",
+"answer": "Kaş ilçe merkezi ile Kalkan arası yaklaşık 25 kilometredir. Araçla ortalama yarım saat içinde bu iki nokta arasında ulaşım sağlanabilir."
+}, {
+"question": "Kaş'ın plajları mı daha güzel yoksa çevresindeki koylar mı?",
+"answer": "Kaş merkezindeki plajlar küçük ve çakıllı olup, çevredeki koylar ve plajlar (örneğin Kaputaş, Patara gibi) genellikle daha geniş ve ünlüdür. Birçok ziyaretçi Kaş'ta konaklayıp yakınlardaki koyları tekneyle keşfetmeyi tercih eder."
+}, {
+"question": "Kaş'ta deniz manzaralı kafeler var mı?",
+"answer": "Evet, Kaş merkezinde ve liman çevresinde deniz manzaralı birçok kafe ve restoran bulunur. Özellikle gün batımında bu mekanlarda oturup manzaranın tadını çıkarabilirsiniz."
+}, {
+"question": "Kaş'ta gece yürüyüş yapmak güvenli midir?",
+"answer": "Kaş’ta gece vakti yürüyüş yapmak genellikle güvenlidir. Kasaba merkezi akşamları da hareketlidir ve suç oranı düşüktür, yine de her yerde olduğu gibi temel tedbirleri elden bırakmamalısınız."
+}, {
+"question": "Kaş'a tek başına seyahat eden biri için ortam nasıl?",
+"answer": "Kaş, tek başına seyahat edenler için de uygundur; güvenli ve samimi bir ortam sunar. Yalnız gezginler burada kolayca arkadaşlıklar kurabilir ve grup aktivitelerine katılabilir."
+}, {
+"question": "Kaş'ta fotoğraf çekilecek nereler var?",
+"answer": "Kaş'ta liman, Uzun Çarşı'daki tarihi Likya lahdi ve antik tiyatro gibi fotoğenik noktalar vardır. Ayrıca gün batımında Çukurbağ Yarımadası manzarası da fotograflamak için muhteşemdir."
+}, {
+"question": "Kaş'ta yerel halk nasıldır?",
+"answer": "Kaş'ın yerel halkı misafirperver ve yardımseverdir. Turizme alışkın oldukları için ziyaretçilere karşı anlayışlı ve güleryüzlü davranırlar."
+}, {
+"question": "Kaş'ın çevre bilinci nasıldır?",
+"answer": "Kaş ve çevresinde çevre bilinci giderek artmaktadır. Özellikle deniz temizliği ve caretta caretta kaplumbağaları koruma gibi konularda yerel sivil toplum hareketleri aktif rol oynuyor."
+}, {
+"question": "Kaş'ta festival zamanları neye dikkat etmeli?",
+"answer": "Festivaller sırasında Kaş normalden daha kalabalık olur, konaklama ve ulaşımı önceden planlamak önemlidir. Ayrıca etkinlik programlarını takip ederek katılabilirsiniz."
+}, {
+"question": "Kaş'ta toplu taşıma var mı?",
+"answer": "Kaş ilçe içinde şehir içi toplu taşıma pek yoktur; merkez küçük olduğu için çoğunlukla yürüyerek gezilir. Yakın yerlere dolmuş ve minibüslerle ulaşım sağlanır."
+}, {
+"question": "Kaş'ta bisiklet kiralanabilir mi?",
+"answer": "Evet, Kaş’ta bisiklet kiralama imkanı sunan yerler bulunmaktadır. Özellikle düz sayılabilecek sahil yolu ve çevresinde bisikletle gezmek keyifli olabilir."
+}, {
+"question": "Kaş'ta scooter veya motosiklet kiralamak mümkün mü?",
+"answer": "Kaş’ta motosiklet ve scooter kiralayan firmalar vardır. Trafiğin yoğun olduğu zamanlarda scooter kiralamak park ve ulaşım kolaylığı sağlayabilir, ancak kask ve trafik kurallarına dikkat etmelisiniz."
+}, {
+"question": "Kaş'ta yüzme bilmeyen biri tatilin tadını çıkarabilir mi?",
+"answer": "Evet, yüzme bilmeseniz bile Kaş'ta tekne turlarıyla koy gezilerine katılabilir, plajda güneşlenebilir veya tarihi ve doğal yerleri keşfe çıkabilirsiniz. Aktivitelerin çoğu yüzme dışında seçenekler de sunar."
+}, {
+"question": "Kaş'ta elektrik prizi ve voltaj nasıl, yabancı cihazlar çalışır mı?",
+"answer": "Türkiye genelinde olduğu gibi Kaş'ta da 220V elektrik ve Avrupa tip (Tip F) prizler kullanılır. Yabancı cihazlar için uygun adaptörünüz varsa sorunsuz kullanabilirsiniz."
+}, {
+"question": "Kaş'ta turistler için vize gerekiyor mu?",
+"answer": "Kaş, Türkiye sınırları içinde olduğu için yabancı turistlerin Türkiye'ye giriş yaparken ülke vatandaşlıklarına göre vize alması gerekebilir. Bazı ülke vatandaşları e-vize veya kapıda vize ile giriş yapabilir; güncel vize şartlarını araştırmanız önerilir."
+}, {
+"question": "Kaş'ta kamp yaparken izin almak gerekiyor mu?",
+"answer": "Resmi kamp alanlarında kalıyorsanız özel bir izin gerekmez, ancak ormanlık alanlarda veya sahilde izinsiz kamp yaparken yerel kurallara dikkat etmelisiniz. Doğaya zarar vermemeye ve ateş yakmamaya özen gösterin."
+}, {
+"question": "Kaş'ta konaklama için kaç gün önerilir?",
+"answer": "Kaş ve çevresini rahatça gezmek için en az 3-4 günlük bir süre idealdir. Bu sayede hem Kaş'ın tadını çıkarabilir hem de yakınlardaki önemli yerleri ziyaret edebilirsiniz."
+}, {
+"question": "Kaş'ta sokak hayvanları var mı, tehlikeli mi?",
+"answer": "Kaş'ta sokaklarda genellikle dost canlısı kediler ve köpekler görebilirsiniz. Yerel halk ve gönüllüler bu hayvanlarla ilgilenir; saldırganlık pek gözlenmez, ancak her zaman temkinli yaklaşmak iyi olur."
+}, {
+"question": "Kaş'a ne zaman gitmek en iyisidir?",
+"answer": "Kaş'ı ziyaret etmek için en ideal dönem bahar sonu ve yaz başıdır. Nisan-Ekim ayları arasında hava güzel ve deniz keyiflidir; Temmuz-Ağustos en yoğun dönemdir."
+}, {
+"question": "Kaş'ta tatil yaparken nelere dikkat etmeliyim?",
+"answer": "Kaş'ta tatil yaparken çevreyi temiz tutmaya ve tarihi alanlara saygılı olmaya dikkat edin. Ayrıca yazın güneşten korunmak, bol su içmek ve yerel kurallara uymak önemlidir."
+}, {
+"question": "Kaş'ın denizi nasıl, hemen derinleşiyor mu?",
+"answer": "Kaş ve çevresindeki deniz genellikle berrak ve derindir; bazı plajlarda kıyıdan birkaç adım sonra derinleşir. Yüzme konusunda yeniyseniz, yüzerken dikkatli olmakta fayda vardır."
+}, {
+"question": "Kaş'tan görünen Yunan adası hangisi?",
+"answer": "Kaş sahilinden, tam karşısında Yunanistan'ın Meis Adası (Kastellorizo) görülür. Bu küçük ada Kaş'a çok yakındır ve gün içinde manzarayı süsler."
+}, {
+"question": "Kaş'a en kolay ulaşım hangi havalimanından sağlanır?",
+"answer": "Kaş’a uçakla gelecekseniz, en yakın havalimanı Muğla Dalaman Havalimanı’dır. Dalaman Kaş’a yaklaşık 150 km mesafededir ve karayoluyla ortalama 2,5 saat sürer."
+}, {
+"question": "Antalya Havalimanı Kaş'a ne kadar uzaklıkta?",
+"answer": "Antalya Havalimanı, Kaş’a yaklaşık 200 km uzaklıktadır. Özel araç veya otobüsle bu mesafe ortalama 3,5-4 saatte katedilebilir."
+}, {
+"question": "Dalaman Havalimanı'ndan Kaş'a nasıl gidilir?",
+"answer": "Dalaman Havalimanı'ndan Kaş'a ulaşmak için HAVAŞ otobüsüyle Fethiye'ye gidip oradan Kaş minibüsüne binebilirsiniz. Alternatif olarak özel transfer ayarlayabilir veya araç kiralayabilirsiniz."
+}, {
+"question": "Antalya Havalimanı'ndan Kaş'a ulaşım nasıl sağlanır?",
+"answer": "Antalya Havalimanı'ndan Kaş'a doğrudan otobüs seferleri bulunmaz; önce Antalya Otogarı'na geçip oradan Kaş otobüsüne binmeniz gerekir. Özel transfer hizmetleriyle de direkt olarak Kaş'a ulaşabilirsiniz."
+}, {
+"question": "İstanbul'dan Kaş'a en kolay nasıl gidilir?",
+"answer": "İstanbul'dan Kaş'a uçakla gitmek en hızlı seçenektir (Dalaman veya Antalya'ya uçup karayoluyla devam edebilirsiniz). Otobüsle direkt gelmek isterseniz, İstanbul-Kaş otobüsleri yaklaşık 14-15 saat sürmektedir."
+}, {
+"question": "Ankara'dan Kaş'a ulaşım kaç saat sürer?",
+"answer": "Ankara'dan Kaş'a otobüsle yaklaşık 10-12 saatte ulaşılabilir. Daha hızlı bir yöntem olarak Ankara'dan Antalya'ya uçup, oradan 3-4 saatlik bir kara yolculuğuyla Kaş'a varabilirsiniz."
+}, {
+"question": "İzmir'den Kaş'a ulaşım nasıldır?",
+"answer": "İzmir'den Kaş'a direkt otobüs seferleri bulunabilir ve yolculuk yaklaşık 7-8 saat sürer. Özel araçla seyahat ediyorsanız D400 sahil yolunu takip ederek Fethiye üzerinden Kaş'a ulaşabilirsiniz."
+}, {
+"question": "Kaş'a trenle gidilebilir mi?",
+"answer": "Hayır, Kaş'a tren ulaşımı yoktur. En yakın demiryolu bağlantıları Antalya veya Denizli gibi şehirlerdedir; Kaş'a ulaşmak için bu noktalardan otobüs veya araç kullanmak gerekir."
+}, {
+"question": "Kaş'ta otogar (otobüs terminali) var mı?",
+"answer": "Evet, Kaş ilçe merkezinde küçük bir otogar vardır. Şehirlerarası otobüsler ve dolmuşlar yolcuları burada indirip bindirir."
+}, {
+"question": "Antalya'dan Kaş'a otobüs var mı?",
+"answer": "Evet, Antalya Otogarı'ndan Kaş'a düzenli otobüs ve minibüs seferleri vardır. Yolculuk trafik durumuna bağlı olarak yaklaşık 3,5 saat sürer."
+}, {
+"question": "Fethiye'den Kaş'a nasıl gidilir?",
+"answer": "Fethiye'den Kaş'a minibüs veya otobüsle yaklaşık 2 saatlik bir yolculukla ulaşabilirsiniz. D400 sahil yolu üzerinden ilerleyen bu dolmuşlar gün boyu düzenli aralıklarla hizmet verir."
+}, {
+"question": "Kaş'ta şehir içi dolmuş hattı var mı?",
+"answer": "Kaş merkezinin kendisi küçük olduğundan şehir içi dolmuş pek kullanılmaz. Ancak Kaş'tan yakın çevre köylere veya Kalkan gibi yerlere dolmuş seferleri mevcuttur."
+}, {
+"question": "Kaş'ta taksi bulmak kolay mı?",
+"answer": "Evet, Kaş merkezde taksi durağı bulunur ve genellikle taksi bulmak kolaydır. Kısa mesafeler için ücretler makul olmakla birlikte, taksiye binmeden önce yaklaşık ücreti sormak faydalı olabilir."
+}, {
+"question": "Kaş'ta taksi ücretleri pahalı mı?",
+"answer": "Kaş içinde kısa mesafe taksi ücretleri genelde uygundur. Ancak uzak koylar veya havalimanı transferi gibi daha uzun mesafelerde taksimetre ücreti doğal olarak daha yüksek olacaktır."
+}, {
+"question": "Kaş'ta otostop yapmak güvenli mi?",
+"answer": "Kaş ve çevresinde otostop yapan turistlere rastlanabilir ve genellikle güvenli olarak görülür. Yine de, her zaman dikkatli olmanız ve güvendiğiniz durumlarda otostop yapmanız önerilir."
+}, {
+"question": "Kaş'ın yolları nasıl, virajlı mı?",
+"answer": "Kaş'a ulaşımı sağlayan D400 karayolu oldukça virajlı ve dağlık bir güzergâhtır ancak manzarası çok güzeldir. Özellikle gece veya ilk defa bu yolu kullanıyorsanız dikkatli ve yavaş sürmeniz tavsiye edilir."
+}, {
+"question": "Kaş'ta araç kiralama imkanı var mı?",
+"answer": "Evet, Kaş'ta araç kiralama ofisleri bulunmaktadır. Çevredeki koyları ve antik kentleri özgürce gezmek için araç kiralayabilirsiniz; ancak sadece ilçe merkezinde kalacaksanız araca çok gerek duymazsınız."
+}, {
+"question": "Kaş'ta motosiklet veya scooter kiralanabilir mi?",
+"answer": "Kaş'ta motosiklet ve scooter kiralayan işletmeler mevcuttur. Özellikle yazın trafik yoğun olduğunda scooter pratik olabilir, ancak kask takmayı ve trafik kurallarına uymayı ihmal etmeyin."
+}, {
+"question": "Kaş'ta bisiklet kullanmak uygun mu?",
+"answer": "Kaş merkezinde bisiklet kullanılabilir ancak sokakların bazıları yokuşlu ve taş döşelidir. Kısa mesafelerde bisiklet pratik olabilir; yine de trafikte dikkatli olunmalıdır."
+}, {
+"question": "Kaş'ta park yeri bulmak zor mu?",
+"answer": "Yüksek sezonda Kaş merkezinde park yeri bulmak zorlaşabilir. Belediyenin birkaç otoparkı ve yol kenarı park alanları mevcut, ancak yaz aylarında erken saatte dolabiliyor."
+}, {
+"question": "Kaş'ta otopark ücretli mi?",
+"answer": "Kaş merkezde belediyeye ait otoparklar ve özel otoparklar bulunur ve buralarda cüzi bir ücret ödenebilir. Yol kenarına park ederken işaretlere dikkat edin, bazı yerler ücretli olabilir."
+}, {
+"question": "Kaş'a özel tekneyle gelebilir miyim?",
+"answer": "Evet, kendi teknenizle Kaş'a gelebilirsiniz. Kaş'ta yat limanı bulunuyor ve tekneniz için burada bağlama yeri ve su, elektrik gibi hizmetler mevcut."
+}, {
+"question": "Kaş'ta yat limanı var mı?",
+"answer": "Kaş'ta bir yat limanı (marina) vardır. Bu marina, yat ve tekneler için bağlama olanağı sunar ve yakıt ikmali gibi hizmetleri de bulunur."
+}, {
+"question": "Kaş'a deniz yoluyla Türkiye içinden feribot var mı?",
+"answer": "Türkiye iç hatlarında Kaş'a düzenli feribot seferi bulunmamaktadır. Deniz yoluyla ulaşmak isterseniz özel tekneyle gelebilir veya mavi tur rotalarına katılabilirsiniz."
+}, {
+"question": "Kaş'tan Meis Adası'na feribot var mı?",
+"answer": "Evet, Kaş'tan karşıdaki Yunanistan'a ait Meis Adası'na düzenli feribot seferleri yapılmaktadır. Yolculuk yaklaşık 20 dakika sürer; ancak pasaport ve vize gerekliliklerini önceden kontrol etmelisiniz."
+}, {
+"question": "Meis Adası'ndan Kaş'a ulaşmak mümkün mu?",
+"answer": "Evet, Meis (Kastellorizo) Adası'ndan Kaş'a her gün feribot seferleri düzenlenir. Bu yolculuk ortalama 20 dakika sürer ve uluslararası geçiş olduğu için pasaport kontrolü yapılır."
+}, {
+"question": "Kaş'a deniz uçağı veya helikopterle ulaşım var mı?",
+"answer": "Kaş'ta deniz uçağı için düzenli bir sefer bulunmuyor. Helikopter ile özel ulaşım ise mümkün ancak yaygın bir seçenek değil; genellikle karayolu veya deniz yolu tercih ediliyor."
+}, {
+"question": "Kaş'tan Kaputaş Plajı'na nasıl gidilir?",
+"answer": "Kaputaş Plajı, Kaş ile Kalkan arasında D400 yolu üzerinde yer alır. Kaş’tan kalkan minibüslerle Kaputaş yakınında inebilirsiniz; plaj yol kenarından merdivenlerle aşağıya inerek ulaşılıyor."
+}, {
+"question": "Kaş'tan Patara'ya nasıl giderim?",
+"answer": "Patara Plajı ve antik kenti, Kaş'a yaklaşık 45 km mesafededir. Kaş’tan Fethiye yönüne giden otobüs veya minibüslerle Gelemiş (Patara) yol ayrımında inip, oradan kısa bir taksi yolculuğuyla plaja ulaşabilirsiniz."
+}, {
+"question": "Kaş'tan Saklıkent Kanyonu'na ulaşım var mı?",
+"answer": "Saklıkent Kanyonu, Kaş'a yaklaşık 60 km uzaklıktadır. Kaş'tan doğrudan toplu taşıma olmamakla birlikte, Kalkan üzerinden aktarma yapabilir veya tur şirketlerinin düzenlediği günübirlik turlara katılabilirsiniz."
+}, {
+"question": "Kaş'tan Demre (Myra) ve Üçağız'a nasıl gidilir?",
+"answer": "Kaş'tan Demre yönüne doğru giden dolmuşları kullanarak Demre (Myra) ilçesine ulaşabilirsiniz (yaklaşık 45-50 km). Üçağız Köyü'ne gitmek için yine Demre minibüsleriyle Üçağız yol ayrımında inip taksi tutmak veya araç kiralamak gerekebilir."
+}, {
+"question": "Kaş'ta gece Antalya veya Fethiye'ye otobüs bulabilir miyim?",
+"answer": "Kaş'tan Antalya veya Fethiye'ye son otobüs seferleri genellikle akşamüzeri saatlerdedir. Gece geç saatte toplu taşıma olmadığı için bu yönde seyahat planlıyorsanız, erken saatlerde yola çıkmalısınız."
+}, {
+"question": "Kaş'tan havalimanlarına transfer hizmeti var mı?",
+"answer": "Evet, Kaş'tan Dalaman veya Antalya havalimanlarına özel transfer hizmeti sunan acenteler bulunmaktadır. Ücret karşılığı bu servisleri önceden rezerve ederek konforlu bir ulaşım sağlayabilirsiniz."
+}, {
+"question": "Kaş yolları kışın açık oluyor mu?",
+"answer": "Akdeniz kıyısında olduğu için Kaş yolları yıl boyu açıktır ve kar sorunu yaşanmaz. Kışın yağışlı havalarda dikkatli sürmek dışında genelde ulaşımda sıkıntı olmaz."
+}, {
+"question": "Kaş'ta yakıt (benzin) istasyonu var mı?",
+"answer": "Evet, Kaş ilçe merkezine yakın birkaç akaryakıt istasyonu bulunuyor. Seyahate çıkmadan önce ya da Kaş’a varmadan hemen önce bu istasyonlardan yakıt ikmali yapabilirsiniz."
+}, {
+"question": "Kaş'ta elektrikli araç şarj istasyonu bulunuyor mu?",
+"answer": "Kaş ve çevresinde yeni yeni elektrikli araç şarj istasyonları kurulmaya başlanmıştır. Ancak yaygın olmadığından, elektrikli araçla seyahat edecekseniz mevcut istasyonları önceden araştırmanız yararlı olur."
+}, {
+"question": "Kaş'ta trafik yoğun mu?",
+"answer": "Kaş, büyük şehirlere kıyasla sakin olsa da yaz aylarında ve bayram tatillerinde ilçe merkezinde trafik artabilir. Özellikle dar sokaklarda ve otopark çevrelerinde araç trafiği yavaşlayabilir."
+}, {
+"question": "Kaş'ta nerede kalınır?",
+"answer": "Kaş'ta konaklama için en popüler seçenekler butik oteller, pansiyonlar ve birkaç küçük tatil tesisidir. Kaş merkezde kalmak size her yere yakınlık sağlarken, Çukurbağ Yarımadası üzerindeki oteller ise daha sakin ve manzaralı bir deneyim sunar."
+}, {
+"question": "Kaş'ta otel fiyatları ortalama nasıl?",
+"answer": "Kaş'ta otel fiyatları sezona ve tesisin özelliklerine göre değişir. Yaz aylarında ve bayram dönemlerinde fiyatlar yükselirken, sezon dışında daha uygun fiyatlı konaklama bulmak mümkündür."
+}, {
+"question": "Kaş'ta uygun fiyatlı konaklama bulabilir miyim?",
+"answer": "Evet, Kaş'ta bütçe dostu pansiyonlar, apart daireler ve hatta hostel tarzı konaklama seçenekleri bulunuyor. Erken rezervasyon yaparak veya sezon dışı dönemde gelerek daha uygun fiyatlar yakalayabilirsiniz."
+}, {
+"question": "Kaş'ta her şey dahil otel var mı?",
+"answer": "Kaş, genellikle küçük otellerin bulunduğu bir yer olduğundan her şey dahil sistem pek yaygın değil. Çoğu otel oda-kahvaltı hizmet veriyor; öğlen ve akşam yemekleri için kasabadaki restoranları tercih edebilirsiniz."
+}, {
+"question": "Kaş'ta havuzlu otel var mı?",
+"answer": "Evet, Kaş'ta özellikle Çukurbağ Yarımadası üzerinde veya çevresinde yüzme havuzlu butik oteller mevcut. Merkezdeki bazı oteller küçük de olsa havuz bulundurabiliyor."
+}, {
+"question": "Kaş'ta deniz manzaralı oteller nerede yoğunlukta?",
+"answer": "Kaş'ta deniz manzaralı oteller genellikle limana yakın yamaçlarda ve Çukurbağ Yarımadası çevresinde yoğunlaşır. Bu bölgelerdeki tesisler, balkondan veya terastan Meis Adası ve gün batımı manzarası sunar."
+}, {
+"question": "Kaş'ta villa kiralama seçeneği var mı?",
+"answer": "Evet, Kaş ve özellikle Kalkan bölgesinde tatil için günlük veya haftalık kiralanabilen villalar bulunur. Havuzlu ve deniz manzaralı villalar, kalabalık aileler veya arkadaş grupları için iyi bir seçenek olabilir."
+}, {
+"question": "Kaş'ta Airbnb veya ev kiralama popüler mi?",
+"answer": "Kaş'ta ev veya daire kiralamak (Airbnb gibi) mümkündür ve popülerdir. Birçok yerel ev sahibi, günlük veya haftalık kiralama yaparak evlerini tatilcilere sunmaktadır."
+}, {
+"question": "Kaş'ta kamp yapacak yerler var mı?",
+"answer": "Evet, Kaş'ta çadır kampı yapabileceğiniz belirlenmiş kamp alanları mevcut. Özellikle Büyük Çakıl Plajı yolu üzerindeki Kaş Camping gibi tesislerde çadır kurabilir veya karavanla konaklayabilirsiniz."
+}, {
+"question": "Kaş'ta kamp yapmak güvenli mi?",
+"answer": "Kaş'ta resmi kamp alanlarında kamp yapmak genellikle güvenlidir. Bu alanlar ışıklandırma, tuvalet, duş gibi imkanlar sunar. Vahşi kamp yapmayı düşünüyorsanız, güvenli bir yer seçmeli ve doğaya zarar vermemeye özen göstermelisiniz."
+}, {
+"question": "Kaş'ta kamp alanları nerede bulunur?",
+"answer": "Kaş merkezine yakın bir kamp alanı, Büyük Çakıl Plajı yolu üzerindedir. Ayrıca Çukurbağ Yarımadası bölgesinde de denize yakın bazı kamp ve karavan alanları bulunmaktadır."
+}, {
+"question": "Kaş'ta karavan ile konaklayabilir miyim?",
+"answer": "Evet, Kaş'ta karavan konaklaması yapabileceğiniz kamp alanları var. Bu alanlarda karavanınız için elektrik ve su bağlantısı gibi hizmetler sunulur."
+}, {
+"question": "Kaş'ta aileler için uygun oteller hangileri?",
+"answer": "Kaş'ta çocuklu ailelerin rahat edebileceği birçok otel ve apart daire seçeneği vardır. Havuzlu oteller, geniş aile odaları sunan pansiyonlar veya mutfaklı apartlar aileler tarafından tercih edilmektedir."
+}, {
+"question": "Kaş'ta balayı için romantik oteller var mı?",
+"answer": "Kaş'ta balayı çiftlerine hitap eden romantik butik oteller bulunuyor. Manzaralı odalar, özel teraslar sunan veya sadece yetişkinlere hizmet veren sakin oteller balayı için tercih edilebilir."
+}, {
+"question": "Kaş'ta konaklama için önceden rezervasyon şart mı?",
+"answer": "Özellikle yaz sezonunda ve bayram tatillerinde Kaş'ta önceden rezervasyon yapmak önemlidir. Oteller ve pansiyonlar çabuk dolabileceği için birkaç ay önceden yerinizi ayırtmanız önerilir."
+}, {
+"question": "Kaş'ta sezon dışında açık otel var mı?",
+"answer": "Sezon dışında (sonbahar-kış aylarında) Kaş'ta bazı oteller ve pansiyonlar kapalı olsa da, yıl boyu açık kalan işletmeler de vardır. Özellikle merkezde birkaç otel kışın da hizmet vermeye devam ediyor."
+}, {
+"question": "Kaş merkezde mi kalmak daha iyi, yoksa yarımadada mı?",
+"answer": "Kaş merkezde kalmak restoranlara, çarşıya ve limana yürüme mesafesinde olmanızı sağlar. Çevrede (örneğin Çukurbağ Yarımadası veya yakın köyler) kalmak ise daha sessiz bir ortam ve doğayla iç içe konaklama sunar; araba veya servis kullanmak gerekebilir."
+}, {
+"question": "Kaş'ta pansiyonlar nasıl, konforlu mu?",
+"answer": "Kaş'taki pansiyonlar genellikle aile işletmesi olup temiz ve samimi bir ortam sunar. Odalar genelde sade ve konforludur, kahvaltı çoğu zaman fiyata dahildir. Büyük otellerin lüksünü aramıyorsanız pansiyonlar keyifli bir deneyim sunabilir."
+}, {
+"question": "Kaş'ta büyük tatil köyleri var mı?",
+"answer": "Kaş'ta devasa tatil köyleri yoktur; burada daha çok butik otel ve pansiyon konsepti hakimdir. Bu sayede Kaş'ta daha sakin ve kişisel bir tatil deneyimi yaşanır."
+}, {
+"question": "Kaş'ta çadır kampı yaparken nelere dikkat etmeliyim?",
+"answer": "Kaş'ta kamp yaparken özellikle yaz aylarında yangın riskine karşı dikkatli olmalısınız (açık ateş yakmamak gibi). Ayrıca çadırınızı rüzgara ve olası yağmura karşı sağlam kurmalı, değerli eşyalarınızı güvende tutmalısınız. Daha fazla bilgi için araştırma yapabilirsiniz."
+}, {
+"question": "Kaş'ta gece hayatı konaklamayı rahatsız eder mi?",
+"answer": "Kaş'ta gece hayatı çok gürültülü değildir; merkezdeki barların sesi genellikle belirli bir saatten sonra azalır. Konaklama yerleri genelde sessiz sokaklarda olduğu için geceleri rahatça dinlenebilirsiniz."
+}, {
+"question": "Kaş'ta otellerde kahvaltı dahil mi?",
+"answer": "Birçok Kaş oteli ve pansiyonu oda + kahvaltı konseptiyle hizmet verir. Rezervasyon yaparken kahvaltı dahil olup olmadığını kontrol edebilir, isterseniz konaklama sırasında yerel kafelerde de kahvaltı yapabilirsiniz."
+}, {
+"question": "Kaş'ta kadınlara özel plaj veya tesis var mı?",
+"answer": "Kaş'ta yalnızca kadınlara özel bir plaj ya da tesis bulunmamaktadır. Genel olarak tüm plajlar ve konaklama tesisleri kadınlar için de rahattır ve güvenlidir."
+}, {
+"question": "Kaş'ta evcil hayvan kabul eden konaklama yerleri var mı?",
+"answer": "Evet, Kaş'ta bazı otel ve pansiyonlar evcil hayvan dostudur ve küçük köpek veya kedi kabul edebilmektedir. Gitmeden önce kalacağınız yere evcil hayvan getirmek istediğinizi bildirerek teyit almanız iyi olur."
+}, {
+"question": "Kaş'ta klimalı odalar bulmak kolay mı?",
+"answer": "Kaş'taki çoğu konaklama yerinde klima mevcuttur, zira yaz aylarında hava oldukça sıcak olabilir. Rezervasyon sırasında oda özelliklerinde klima olup olmadığını kontrol edebilirsiniz."
+}, {
+"question": "Kaş'ta hostel ya da dorm tipi konaklama var mı?",
+"answer": "Evet, Kaş'ta birkaç hostel veya misafirhane tarzı konaklama seçeneği bulunmaktadır. Bu yerler genellikle uygun fiyatlı olup, ortak odalarda (dorm) kalma imkanı sunarak sırt çantalı gezginlere hitap eder."
+}, {
+"question": "Kaş'ta engelli dostu otel bulabilir miyim?",
+"answer": "Bazı Kaş otelleri engelli misafirler için uygun düzenlemelere sahiptir (örneğin asansör veya rampa). Ancak tarihi yapıdaki veya küçük işletmelerde imkanlar kısıtlı olabilir; bu nedenle özel bir gereksiniminiz varsa rezervasyon öncesinde otelle iletişim kurmanızı öneririz."
+}, {
+"question": "Kaş'ta kalabalık grup için ne tür konaklama uygun?",
+"answer": "Kalabalık bir grup olarak Kaş'a geliyorsanız birden fazla odalı apart daireler veya müstakil villalar iyi bir seçenek olabilir. Böylece aynı yerde birlikte konaklayabilir ve ortak alanları kullanarak daha rahat edebilirsiniz."
+}, {
+"question": "Kaş'ta son dakika konaklama bulabilir miyim?",
+"answer": "Yüksek sezonda son dakikaya kalmak riskli olabilir çünkü Kaş'taki popüler tesisler çabuk doluyor. Ancak sezon dışında veya şansınız yaver giderse, son dakika da bir pansiyon veya otelde yer bulma ihtimali var; yine de planlı olmak en iyisi."
+}, {
+"question": "Kaş'ta denize girmek için en iyi yerler nereler?",
+"answer": "Kaş merkezde Küçük Çakıl ve Büyük Çakıl plajları denize girmek için tercih edilir. Ayrıca tekneyle ulaşabileceğiniz Limanağzı koyları ve yakın çevredeki Kaputaş ile Patara plajları da ünlüdür."
+}, {
+"question": "Kaş'ın en güzel plajları hangileri?",
+"answer": "Kaş çevresindeki en güzel plajlar arasında turkuaz rengiyle ünlü Kaputaş Plajı, uzun kumsalıyla Patara Plajı ve Kaş'a yakın Büyük Çakıl Plajı sayılabilir. Ayrıca Akçagerme Plajı ve Limanağzı koyları da çok beğenilir."
+}, {
+"question": "Kaş'ta kum plaj var mı?",
+"answer": "Kaş ilçe merkezindeki plajlar çoğunlukla çakıllıdır. Kum plaj deneyimi için Kaş'a yakın Kaputaş Plajı veya biraz daha uzaktaki Patara Plajı tercih edilebilir."
+}, {
+"question": "Küçük Çakıl Plajı nasıl bir yer?",
+"answer": "Küçük Çakıl Plajı Kaş merkezde küçük bir koyda yer alır ve adından da anlaşıldığı gibi çakıl taşlıdır. Suyu oldukça berrak ve serindir; plajın hemen yanında kafeler bulunduğu için ihtiyaçlarınızı karşılamak kolaydır."
+}, {
+"question": "Büyük Çakıl Plajı'nın özelliği nedir?",
+"answer": "Büyük Çakıl Plajı, Kaş merkeze 2 km mesafede çakıl taşlı bir plajdır. Deniz altından karışan tatlı su kaynakları nedeniyle bazı noktalarında su serin olabilir; plajda şezlong, şemsiye kiralama ve yeme-içme imkanı vardır."
+}, {
+"question": "Kaputaş Plajı Kaş'a ne kadar uzak?",
+"answer": "Kaputaş Plajı, Kaş ile Kalkan arasında olup Kaş'a yaklaşık 20 km mesafededir. Araçla veya minibüsle 20-30 dakikada ulaşılabilir; yol kenarından merdivenlerle inilen bu plaj, turkuaz rengi sularıyla meşhurdur."
+}, {
+"question": "Patara Plajı Kaş'a yakın mı?",
+"answer": "Patara Plajı Kaş'a yaklaşık 40 km uzaklıktadır (araçla 50 dakika civarı). Kaş'tan Kalkan yönüne giden dolmuşlarla Patara yakınlarına kadar gidip oradan plaja ulaşmak mümkündür."
+}, {
+"question": "Kaş'ta plajlar yazın kalabalık oluyor mu?",
+"answer": "Temmuz ve Ağustos aylarında Kaş'taki popüler plajlar oldukça kalabalık olabiliyor. Kaputaş, Patara gibi ünlü plajlarda yer bulmak için sabah erken saatlerde gitmek faydalı olabilir."
+}, {
+"question": "Kaş'ta şezlong ve şemsiye kiralayabilir miyim?",
+"answer": "Evet, Kaş ve çevresindeki çoğu plajda şezlong ve şemsiye kiralama imkanı vardır. Örneğin Büyük Çakıl Plajı ve Akçagerme Plajı'nda cüzi bir ücret karşılığında şezlong-şemsiye kiralayabilirsiniz."
+}, {
+"question": "Kaş plajlarında duş ve soyunma kabini var mı?",
+"answer": "Bazı plajlarda (Akçagerme, Büyük Çakıl gibi) duş, tuvalet ve soyunma kabini gibi tesisler bulunur. Ancak Kaputaş gibi doğal plajlarda bu imkanlar sınırlı olabilir; hazırlıklı gitmekte fayda var."
+}, {
+"question": "Kaş'ta deniz suyu sıcaklığı nasıldır?",
+"answer": "Yazın Kaş'ta deniz suyu oldukça sıcaktır, genelde 25-28°C civarındadır. İlkbahar başı ve sonbahar sonuna doğru su sıcaklığı biraz düşer, kışın ise 17-19°C seviyelerine kadar inebilir."
+}, {
+"question": "Kaş'ta deniz ne zaman ısınır?",
+"answer": "Kaş'ta deniz suyu Mayıs sonu itibariyle ısınmaya başlar ve Ekim ayına kadar yüzmeye uygun sıcaklıkta kalır. En sıcak dönemi Temmuz-Ağustos'tur."
+}, {
+"question": "Kaş'ta deniz genelde dalgalı mı?",
+"answer": "Kaş ve civarındaki koylar coğrafi yapısı gereği genelde sakin ve dalgasızdır. Rüzgarlı havalar dışında deniz çoğunlukla çarşaf gibidir, bu da yüzme ve dalış için idealdir."
+}, {
+"question": "Kaş'ın denizi neden bu kadar berrak?",
+"answer": "Kaş'ta büyük nehirlerin olmaması ve kıyıların kayalık/çakıl olması nedeniyle su bulanmaz ve berraklığını korur. Ayrıca bölgedeki çevre bilinci sayesinde deniz temiz tutulur; bu yüzden su altı görüş mesafesi yüksektir."
+}, {
+"question": "Kaş'ta su altı görüş mesafesi ne kadar?",
+"answer": "Kaş'ta dalış sırasında su altı görüş mesafesi çoğu gün 30 metre veya daha fazladır. Bu berraklık sayesinde Kaş, Türkiye'nin en iyi dalış noktalarından biri olarak ünlenmiştir."
+}, {
+"question": "Kaş'ta şnorkelle nereleri gezebilirim?",
+"answer": "Kaş'ta şnorkelle dalış için Limanağzı koyları, Akvaryum Koyu veya Çukurbağ Yarımadası kıyıları çok uygundur. Bu noktalarda kayalık dip yapısı ve zengin deniz yaşamı sayesinde maske ve şnorkel ile bile keyifli gözlemler yapabilirsiniz."
+}, {
+"question": "Kaş'ta hangi deniz canlılarını görebilirim?",
+"answer": "Kaş'ta dalış veya şnorkel yaparken akya, orfoz, papağan balığı gibi balık türlerini görebilirsiniz. Ayrıca deniz kaplumbağaları (caretta caretta) sıkça görülür; nadiren de olsa Akdeniz fokuna rastlanma ihtimali vardır."
+}, {
+"question": "Kaş'ta caretta caretta kaplumbağası görebilir miyim?",
+"answer": "Evet, Kaş ve çevresinde caretta caretta deniz kaplumbağalarını görmek mümkündür. Özellikle tekne turları sırasında veya sakin koylarda yüzerken su yüzeyinde nefes almak için çıkan kaplumbağalara rastlayabilirsiniz."
+}, {
+"question": "Kaş'ta plajlara giriş ücretli mi?",
+"answer": "Kaş'taki plajların çoğu halk plajıdır ve giriş ücreti yoktur. Örneğin Kaputaş ve Patara plajlarına girmek ücretsizdir; şezlong, şemsiye veya otopark gibi hizmetler için ise makul ücretler talep edilebilir."
+}, {
+"question": "Kaş'ta sakin bir plaj arıyorum, öneriniz var mı?",
+"answer": "Yoğun sezonda bile daha sakin kalabilen yerler olarak Limanağzı koylarını veya daha az bilinen küçük koyları tercih edebilirsiniz. Sabah erken saatlerde Büyük Çakıl Plajı gibi popüler yerler bile sakindir. Ayrıca tekne kiralayarak kalabalıktan uzakta bakir koylara gidebilirsiniz."
+}, {
+"question": "Kaş'ta gece denize girilebilir mi?",
+"answer": "Resmi olarak plajların gece kullanımı denetimsiz olduğu için tavsiye edilmez, ancak küçük gruplar halinde sakin koylarda gece yüzenler oluyor. Gece denize girecekseniz güvenlik açısından çok dikkatli olmalı ve mümkünse arkadaşlarınızla birlikte hareket etmelisiniz."
+}, {
+"question": "Kaş'ta yüzme bilmeyen biri için uygun plajlar var mı?",
+"answer": "Akçagerme Plajı, sığ ve kademeli olarak derinleşen yapısıyla yüzme bilmeyenler veya çocuklar için oldukça uygundur. Kaş merkezdeki plajlar ise kısa mesafede derinleştiğinden yüzme bilmeyenlerin dikkatli olması gerekir."
+}, {
+"question": "Akçagerme Plajı nasıl bir yer?",
+"answer": "Akçagerme Plajı Kaş'a 4-5 km mesafede, ailelerin sıklıkla tercih ettiği bir plajdır. Suyu nispeten sığ, zemini kum-çakıl karışık ve küçük bir su parkı ile diğer tesislere sahiptir; Mavi Bayrak ödüllü temiz bir plajdır."
+}, {
+"question": "Limanağzı plajlarına ulaşım nasıl oluyor?",
+"answer": "Kaş merkezden Limanağzı koylarındaki plajlara düzenli tekne servisi yapılır. Limandan kalkan tekneler sizi birkaç dakikada bu koylara ulaştırır. Alternatif olarak patika yürüyüşle de gidilebilir, ancak tekne daha kolay ve hızlıdır."
+}, {
+"question": "Limanağzı'nda hangi plajlar var?",
+"answer": "Limanağzı'nda birkaç işletme bulunur: örneğin Nuri's Beach, Bilal'in Yeri (Delos Beach) gibi plajlar ziyaretçilere hizmet verir. Bu plajlar şezlong, restoran gibi olanaklar sunar ve teknelerle Kaş'tan erişilebilir."
+}, {
+"question": "Kaş'ta plajlara ulaşım için dolmuş var mı?",
+"answer": "Kaş merkez plajlarına yürüyerek ulaşabilirsiniz. Kaputaş Plajı'na Kaş-Kalkan minibüsleriyle gidilebilir; Patara Plajı için ise Kalkan yönüne giden araçlarla Gelemiş köyüne ulaşmak gerekir. Limanağzı'na ise dolmuş yerine tekne servisleri kullanılıyor."
+}, {
+"question": "Kaş'ta halk plajı var mı?",
+"answer": "Evet, Kaş'ta halkın ücretsiz kullandığı plajlar var. Büyük Çakıl ve Küçük Çakıl plajları kamuya açıktır; ayrıca belediyenin işlettiği Akçagerme Plajı da halka hizmet veren bir plajdır."
+}, {
+"question": "Kaş'ta plajlarda yiyecek-içecek bulabilir miyim?",
+"answer": "Birçok plajın yakınında kafe veya restoran bulunur. Örneğin Büyük Çakıl Plajı'nın arkasında plaj restoranları var; Kaputaş gibi doğal plajlarda ise seyyar büfeler olabiliyor. Dilerseniz kendi atıştırmalıklarınızı da götürebilirsiniz."
+}, {
+"question": "Kaş çevresinde keşfedilmemiş koylar var mı?",
+"answer": "Kaş çevresinde tekneyle veya zorlu patikalarla ulaşabileceğiniz, pek kalabalık olmayan küçük koylar mevcut. Bu gizli koyları keşfetmek isterseniz yerel tekne turlarına katılabilir veya doğa yürüyüşlerine çıkabilirsiniz. Daha fazla bilgi için araştırma yapabilirsiniz."
+}, {
+"question": "Kaş'ta Mavi Bayraklı plaj bulunuyor mu?",
+"answer": "Evet, Kaş'ta temizliği onaylanmış Mavi Bayrak sahibi plajlar var. Örneğin Akçagerme Plajı bir dönem Mavi Bayrak almıştı. Bölgedeki plajlar genel olarak temiz deniz suyuyla bilinir."
+}, {
+"question": "Kaş'ta sahilde kamp yapmak mümkün mu?",
+"answer": "Kaş ve çevresinde bazı kamp alanları deniz kenarındadır, buralarda çadır kurarak sahilin tadını çıkarabilirsiniz. Ancak halka açık plajlarda izinsiz kamp yapmak genellikle yasaktır; kamp için ayrılmış alanları tercih etmelisiniz."
+}, {
+"question": "Kaş'ta tüplü dalış yapmadan su altını görebilir miyim?",
+"answer": "Şnorkelle yüzerek Kaş'ın berrak sularında yüzey yakınındaki balıkları ve kayalıkları görebilirsiniz. Ayrıca cam tabanlı tekne turları ile batıkları ve su altı manzaralarını incelemek mümkün. Ancak derinlerdeki su altı güzelliklerini görmek isterseniz tüplü dalış en etkili yol olacaktır."
+}, {
+"question": "Kaş'ta plajlar çocuklar için uygun mu?",
+"answer": "Kaş'taki plajların bir kısmı (örneğin Akçagerme) çocuklar için uygun ve görece sığdır. Küçük Çakıl ve Büyük Çakıl gibi plajlar ise çabuk derinleştiği için çocuklarla yüzerken ekstra dikkat gerektirir; yine de deniz genelde sakin olduğu için gözetimle sorun yaşanmaz."
+}, {
+"question": "Kaş sahillerinde gece kamp ateşi yakabilir miyim?",
+"answer": "Güvenlik ve çevre kuralları nedeniyle sahillerde açıkta ateş yakmak yasaktır ve tehlikeli olabilir. Kamp yapıyorsanız kontrollü şekilde ve izin verilen alanlarda küçük kamp ocakları kullanmanız daha doğrudur."
+}, {
+"question": "Kaş koylarında deniz niye bu kadar temiz ve berrak?",
+"answer": "Kaş koylarının berrak olmasının nedeni, bölgede kirletici büyük akarsuların olmaması ve kıyıların çoğunlukla kayalık/çakıl olmasıdır. Ayrıca yerel halk ve ziyaretçiler çevre temizliğine özen gösterir, bu sayede deniz suyu kristal berraklığını korur."
+}, {
+"question": "Kaş'ta ekonomik yemek seçenekleri nelerdir?",
+"answer": "Kaş'ta bütçe dostu yemek için dönerciler, gözlemeciler ve ev yemekleri sunan küçük lokantalar tercih edilebilir. Özellikle çarşı içindeki esnaf lokantaları uygun fiyata doyurucu öğünler sunar."
+}, {
+"question": "Kaş'ta vejetaryen veya vegan yemek bulabilir miyim?",
+"answer": "Evet, Kaş'ta vejetaryen/vegan dostu kafeler ve restoranlar mevcut. Birçok mekanda zeytinyağlı sebze yemekleri, mezeler, salatalar gibi etsiz seçenekler bulunur; hatta tamamen vegan menü sunan işletmeler de vardır."
+}, {
+"question": "Kaş'ta glutensiz veya sağlıklı beslenme seçenekleri var mı?",
+"answer": "Kaş'ta bazı restoranlar ve kafeler menülerinde glutensiz, organik veya sağlıklı beslenmeye uygun seçenekler barındırıyor. Özellikle smoothie bowl, salata ve vegan tatlı gibi sağlıklı atıştırmalıkları bulabileceğiniz modern kafeler mevcut."
+}, {
+"question": "Kaş'ta gece geç saatte yemek bulabilir miyim?",
+"answer": "Yaz sezonunda Kaş'ta restoranlar ve bazı büfeler gece geç saatlere kadar açıktır. Özellikle midye dolma, tost veya çorba gibi atıştırmalıklar sunan yerleri gece yarısından sonra da bulabilirsiniz; ancak kışın geç saatlerde seçenekler daha sınırlı olabilir."
+}, {
+"question": "Kaş'ın meşhur tatlıları veya içecekleri var mı?",
+"answer": "Kaş'ta özellikle keçi sütünden yapılan dondurma ve tahinli kabak tatlısı oldukça sevilir. İçecek olarak ise taze sıkılmış meyve suları, limonata ve adaçayı gibi doğal içecekler yaygındır; yörede üretilen Likya bölgesi şaraplarını da deneyebilirsiniz."
+}, {
+"question": "Kaş'ta kahvaltı yapmak için önerilen yerler neresi?",
+"answer": "Kaş'ta serpme kahvaltısıyla ünlü pek çok kafe bulunur. Deniz manzaralı bir kahvaltı isterseniz liman bölgesindeki kafeleri tercih edebilirsiniz, ayrıca Uzun Çarşı civarındaki küçük kahvaltı mekanları da taze ürünlerle lezzetli köy kahvaltısı sunar."
+}, {
+"question": "Kaş'ta deniz ürünleri dışında ne tür yemekler var?",
+"answer": "Kaş'ta Türk mutfağının farklı lezzetlerini de bulabilirsiniz; ızgara etler, kebaplar, pideler yapan lokantalar mevcut. Ayrıca pizza, hamburger gibi uluslararası hızlı yemek seçenekleri ve Uzak Doğu mutfağı sunan restoranlar da bulmak mümkün."
+}, {
+"question": "Kaş'ta meyhane kültürü var mı?",
+"answer": "Evet, Kaş'ta akşamları meyhaneler oldukça popülerdir. Çarşı içindeki meyhanelerde onlarca çeşit meze, taze balıklar ve rakı eşliğinde keyifli bir ortam bulabilirsiniz; bazı meyhanelerde fasıl veya canlı müzik de oluyor."
+}, {
+"question": "Kaş'ta alkollü içki nerede içilir?",
+"answer": "Kaş'ta akşamları liman çevresinde ve çarşı içinde barlar ve meyhaneler alkollü içki servisi yapıyor. Deniz kenarında kokteyl barlar, publar veya meyhane tarzı mekanlarda içkinizi yudumlayabilirsiniz."
+}, {
+"question": "Kaş'ta canlı müzik eşliğinde yemek yiyebilir miyim?",
+"answer": "Bazı restoran ve meyhanelerde akşamları canlı müzik (örneğin akustik gitar, caz veya Türk sanat müziği) olabiliyor. Özellikle yaz aylarında haftanın belirli günleri misafirlerine müzik sunan mekanlar mevcut."
+}, {
+"question": "Kaş'ta Türk kahvesi ve tatlı nerede keyif yapılır?",
+"answer": "Kaş merkezde sahil şeridindeki kafeler veya Uzun Çarşı'daki küçük çay bahçeleri Türk kahvesi için idealdir. Kahvenizin yanına ev yapımı bir tatlı ya da dondurma alarak hoş bir mola verebilirsiniz."
+}, {
+"question": "Kaş'ta dondurma nereden alınır?",
+"answer": "Kaş'ta liman yakınlarında ve çarşıda birkaç ünlü dondurmacı bulunur. Bu dondurmacılarda özellikle keçi sütünden yapılan ve taze meyvelerle aromalandırılmış dondurmaları denemenizi öneririz."
+}, {
+"question": "Kaş'ta içecek olarak ne meşhur?",
+"answer": "Kaş'ta taze meyve kokteylleri ve limonata gibi serinleticiler yazın çok tüketilir. Ayrıca bölgesel olarak adaçayı ve keçiboynuzu (harnup) özlü içecekler, dağ kekiği çayı gibi doğal içecekler de denenebilir."
+}, {
+"question": "Kaş'ta gece pazarı veya yemek festivali var mı?",
+"answer": "Yaz aylarında Kaş'ta zaman zaman sokak lezzetleri festivali veya gece pazarları düzenlense de sürekli bir gece pazarı yok. Etkinlik takvimine bağlı olarak bazı haftasonları özel yeme-içme etkinlikleri olabiliyor; gitmeden önce takvimi araştırabilirsiniz."
+}, {
+"question": "Kaş'ta bahşiş vermek gerekiyor mu?",
+"answer": "Türkiye genelinde olduğu gibi Kaş'ta da restoran ve kafelerde iyi bir hizmet aldıysanız %5-10 civarı bahşiş bırakmak yaygındır. Küçük hesaplarda bozukluk bırakmak da nazik bir davranış olarak kabul edilir."
+}, {
+"question": "Kaş'ta alkol fiyatları yüksek mi?",
+"answer": "Türkiye genelinde alkol fiyatları vergiler nedeniyle Avrupa'ya kıyasla yüksek. Kaş'ta bar ve restoranlardaki içki fiyatları genelde Antalya veya İstanbul gibi şehirlerle benzer düzeydedir; kokteyller ve ithal içkiler özellikle pahalı olabilir, yerli bira ve şarap ise nispeten daha uygun bulunabilir."
+}, {
+"question": "Kaş'ta sokak lezzetleri neler?",
+"answer": "Kaş'ta akşamları midye dolma satanlar, tostçular gibi sokak lezzeti seçenekleriyle karşılaşabilirsiniz. Ayrıca sahilde mısır veya çiğdem (çekirdek) atıştırmak da yerel bir alışkanlıktır; büyük şehirlerdeki kadar zengin olmasa da küçük tezgahlar bulmak mümkündür."
+}, {
+"question": "Kaş'ta romantik bir akşam yemeği için neresi önerilir?",
+"answer": "Deniz kenarında gün batımını izleyebileceğiniz bir restoran romantik bir akşam için ideal olacaktır. Kaş Limanı boyunca sıralanan restoranlar veya tepedeki manzaralı mekanlar çiftler tarafından sıkça tercih edilir."
+}, {
+"question": "Kaş'ta içki içmek için kurallar nelerdir?",
+"answer": "Kaş'ta restoran ve barlarda 18 yaşından büyükler için alkollü içecek servisi yapılır. Kamuya açık alanlarda içki içmek Türkiye'de yasal olsa da, çevreyi rahatsız etmemek önemlidir; Kaş'ta da genellikle bar veya restoran ortamında içki tüketilir."
+}, {
+"question": "Kaş'ta gece hayatı nasıldır?",
+"answer": "Kaş'ta gece hayatı diğer tatil beldelerine göre daha sakin ama keyiflidir. Küçük barlar, meyhaneler ve canlı müzik yapan mekanlar bulunur; genel olarak samimi bir ortamda eğlence yaşanır, büyük gece kulüpleri pek yoktur."
+}, {
+"question": "Kaş'ta barlar en çok nerede bulunur?",
+"answer": "Kaş'ta barlar ve gece mekanları, genellikle liman çevresi ve merkezde, Uzun Çarşı ve çevresindeki sokaklarda yoğunlaşır. Buralarda yan yana dizilmiş bar ve publar akşamları hareketlenir."
+}, {
+"question": "Kaş'ta diskolar veya kulüpler var mı?",
+"answer": "Kaş, Bodrum veya Antalya gibi büyük diskolarıyla ünlü bir yer değil. Birkaç bar gece geç saatlere dek DJ müziği ve dans imkanı sunar ancak tam anlamıyla büyük bir gece kulübü bulunmaz."
+}, {
+"question": "Kaş'ta canlı müzik nerede dinleyebilirim?",
+"answer": "Kaş'ta birçok bar akşamları canlı müzik programı yapıyor. Rock, caz veya yerli pop müzik yapılan mekanlar var; örneğin bazı barlarda akustik gitar performansları ya da yerel grupların canlı müziğini dinleyebilirsiniz."
+}, {
+"question": "Kaş'ta gece mekanları saat kaça kadar açık?",
+"answer": "Kaş'ta barlar ve gece mekanları genellikle gece yarısından sonra 1-2'ye kadar açıktır. Yaz sezonunda haftasonları bu saat biraz uzayabilir, ancak aşırı geç saatlere kadar süren bir gece hayatı yoktur."
+}, {
+"question": "Kaş'ta gece sokakta yürümek güvenli midir?",
+"answer": "Evet, Kaş genel olarak gece de güvenli bir yerdir. İlçe merkezi küçük ve hareketli olduğu için gece vakti sokaklarda yürümek genelde rahattır; elbette her yerde olduğu gibi temel önlemleri elden bırakmamak gerekir."
+}, {
+"question": "Kaş'ta sabaha kadar açık bir yer bulabilir miyim?",
+"answer": "Kaş'ta çoğu mekan en geç 2 gibi kapanır, sabaha kadar açık bar pek bulunmaz. Çok geç saatlerde acıktıysanız nöbetçi çorbacılar veya fast-food büfeleri bulabilirsiniz."
+}, {
+"question": "Kaş'ta pub tarzı mekanlar var mı?",
+"answer": "Evet, Kaş'ta birkaç pub ve bira evi tarzı mekan mevcut. Buralarda çeşitli biraları tadabilir, arkadaşlarınızla sohbet edebilir ve bazen spor müsabakalarını ekranda izleyebilirsiniz."
+}, {
+"question": "Kaş'ta karaoke yapabileceğim bir yer var mı?",
+"answer": "Kaş'ta karaoke çok yaygın olmamakla birlikte bazı barlar ara sıra karaoke geceleri düzenleyebiliyor. Bu tür etkinlikler genellikle özel geceler olarak yapılıyor; gitmeden programları kontrol etmekte fayda var."
+}, {
+"question": "Kaş'ta bir gece kulübü önerir misiniz?",
+"answer": "Kaş'ta tam anlamıyla büyük bir gece kulübü bulunmadığından bunun yerine geç saatlere kadar açık, dans edilebilen barlar önerilebilir. Canlı DJ performansı olan veya açık hava dans pisti sunan mekanlar küçük ölçekli ama eğlencelidir."
+}, {
+"question": "Kaş'ta gece eğlencesi daha çok hangi tarzda?",
+"answer": "Kaş'ta gece eğlencesi genellikle canlı müzik dinlemek, sohbet etmek ve hafif dans etmek şeklinde ilerler. Meyhane kültürü de güçlüdür; uzun sohbetler, müzik eşliğinde rakı-balık keyfi geceye damga vurur."
+}, {
+"question": "Kaş'ta gece plajda vakit geçirmek mümkün mü?",
+"answer": "Kaş'ta bazı insanlar akşam saatlerinde plaj kenarında arkadaşlarıyla oturup sohbet eder veya gitar çalarak vakit geçirir. Ancak düzenli bir plaj partisi kültürü yoktur ve plajlar gece resmi olarak kapalı sayılır; dolayısıyla kendi sorumluluğunuzda sakin bir şekilde vakit geçirebilirsiniz."
+}, {
+"question": "Kaş'ta yaz akşamları hava nasıl olur, ne giymeli?",
+"answer": "Yazın Kaş'ta akşamları genellikle ılıktır ve hafif bir esinti olabilir. Gece dışarı çıkarken çok kalın giyinmeye gerek yok; ince bir ceket ya da şal yanınızda bulundurmak rüzgar çıktığında işinize yarayabilir."
+}, {
+"question": "Kaş'ta özel etkinlikli geceler var mı?",
+"answer": "Yaz sezonunda Kaş'ta bazı barlar belirli günlerde özel temalı geceler (örneğin Latin gecesi, 80'ler partisi) düzenleyebiliyor. Ayrıca festival dönemlerinde konserler ve açık hava etkinlikleri de gece hayatını renklendiriyor; güncel programlar için araştırma yapabilirsiniz."
+}, {
+"question": "Kaş'ta tekne partileri düzenleniyor mu?",
+"answer": "Kaş'ta Bodrum veya Marmaris'teki gibi büyük tekne partileri yaygın değil. Tekne turları genellikle gündüz gezi amaçlı yapılıyor, nadiren özel gruplar akşam tekne turu düzenleyebiliyor; fakat bu, genel bir parti aktivitesi değil."
+}, {
+"question": "Kaş'ta yerel halkın katıldığı etkinlikler oluyor mu?",
+"answer": "Kaş küçük bir yer olduğu için sosyal yaşam turizm odaklı olsa da, yerel halkın katıldığı etkinlikler de oluyor. Örneğin resmi bayramlarda kutlamalar, yerel spor turnuvaları, okulların gösterileri gibi etkinlikler yapılıyor. Ayrıca Kaşlılar için önemli kabul edilen mevlit veya düğün gibi geleneksel etkinlikler de kasaba yaşamının parçası."
+}, {
+"question": "Kaş'ta görülmesi gereken tarihi yerler nelerdir?",
+"answer": "Kaş'ta Antiphellos Antik Tiyatrosu, Uzun Çarşı'daki Likya lahiti (Kral Mezarı) ve çevredeki kaya mezarları başlıca tarihi yerlerdir. Ayrıca Kaş yakınlarındaki Patara, Xanthos, Myra gibi antik kentler de gezilebilir."
+}, {
+"question": "Antiphellos Antik Tiyatrosu nerede ve özelliği nedir?",
+"answer": "Antiphellos Antik Tiyatrosu, Kaş ilçe merkezinin batı yakasında, denize nazır bir tepecik üzerinde yer alır. Likya döneminden kalma bu tiyatro 4 bin kişiliktir ve muhteşem Meis Adası manzarasına karşı gün batımını izlemek için harika bir noktadır; girişi de ücretsizdir."
+}, {
+"question": "Kaş'taki Likya lahiti (Kral Mezarı) nerede bulunuyor?",
+"answer": "Kaş'ın merkezinde, Uzun Çarşı'nın yukarısında bir Likya kral lahdi bulunmaktadır. Sokak ortasındaki bu tarihi lahit, aslan motifleriyle süslüdür ve Kaş'ın simgelerinden biridir."
+}, {
+"question": "Kaş'ta kaya mezarları görülebilir mi?",
+"answer": "Evet, Kaş merkezdeki yamaçta antik döneme ait Likya kaya mezarlarını görebilirsiniz. Özellikle Kaş Devlet Hastanesi'nin arkasındaki tepede kayalara oyulmuş birkaç mezar bulunur; bunlar Likya uygarlığının Kaş'taki izlerindendir."
+}, {
+"question": "Kekova'daki batık şehir nedir?",
+"answer": "Kekova Adası çevresinde, deprem sonucu denize batmış antik Simena kentine ait kalıntılar bulunmaktadır. Tekne turlarıyla bu batık şehrin su altındaki harabelerini cam tabanlı tekneden görebilir, yüzeyden şnorkelle izleyebilirsiniz."
+}, {
+"question": "Kaş'tan Kekova'ya nasıl gidilir, neler görülür?",
+"answer": "Kaş'tan Kekova bölgesine günlük tekne turları düzenlenir. Bu turlarda Kekova Adası çevresindeki batık şehir kalıntıları, tarihi Kaleköy (Simena) köyü ve güzel koylar görülür; yüzme molaları da verilir."
+}, {
+"question": "Kaleköy (Simena) nedir ve Kaş'tan ulaşılabilir mi?",
+"answer": "Kaleköy, Kekova bölgesinde antik Simena kentinin kalıntıları üzerine kurulmuş şirin bir köydür. Denizden ulaşım vardır; Kaş'tan tekne turları veya Üçağız köyünden kalkan teknelerle Kaleköy'e gidilebilir. Tepedeki kalesi ve Likya kaya mezarları görülmeye değerdir."
+}, {
+"question": "Simena Kalesi'ne çıkmak için ne yapmak gerekir?",
+"answer": "Kaleköy'de bulunan Simena Kalesi'ne köy içinden yaya olarak tırmanmak gerekiyor. Yaklaşık 10-15 dakikalık bir merdivenli patika ile kaleye ulaşılıyor; giriş ücretli olabilir. Kaleden muhteşem bir Kekova manzarası izleyebilirsiniz."
+}, {
+"question": "Myra Antik Kenti ve Noel Baba Kilisesi Kaş'a uzak mı?",
+"answer": "Myra Antik Kenti (Demre) ve Noel Baba (Aziz Nikola) Kilisesi, Kaş'a yaklaşık 45-50 km mesafede, Demre ilçesinde bulunur. Kaş'tan araçla yaklaşık 1 saat sürer; birçok kişi Demre'ye gidip Likya dönemine ait kaya mezarlarını ve Noel Baba'nın kilisesini ziyaret ediyor."
+}, {
+"question": "Patara Antik Kenti Kaş'ta mı ve neden önemli?",
+"answer": "Patara Antik Kenti, Kaş ilçe sınırlarında (Gelemiş Köyü civarında) yer alır ve Likya uygarlığının önemli bir liman kentiydi. Kazılarda ortaya çıkarılan antik tiyatro, sütunlu cadde ve dünyanın ilk demokratik meclis binalarından biri olan Likya Birliği Meclisi ile ünlüdür."
+}, {
+"question": "Patara Plajı ile antik kent birbirine yakın mı?",
+"answer": "Evet, Patara Plajı ile antik kent iç içedir. Antik kent girişinden geçerek plaja ulaşırsınız; bu sayede aynı ziyaret sırasında hem tarihi kalıntıları görüp hem de kumsalda denizin keyfini çıkarabilirsiniz."
+}, {
+"question": "Xanthos Antik Kenti Kaş'a yakın mı?",
+"answer": "Xanthos Antik Kenti, Kaş'a yaklaşık 60 km (Kınık yakınlarında) bulunmaktadır. UNESCO Dünya Mirası listesinde olan Xanthos, Likya'nın eski başkentidir; Kaş'tan araçla yaklaşık 1 saatlik bir yolculukla ulaşılabilir."
+}, {
+"question": "Letoon Ören Yeri nedir, görülmeye değer mi?",
+"answer": "Letoon, Xanthos yakınlarında bulunan ve Likya uygarlığının dini merkezi olan bir antik yerleşimdir. Leto, Apollon ve Artemis tapınak kalıntılarını içerir; Xanthos ile birlikte UNESCO Dünya Mirası listesinde yer alır ve tarih meraklıları için görülmeye değerdir."
+}, {
+"question": "Kaş'ta bir müze var mı?",
+"answer": "Kaş'ta klasik anlamda bir arkeoloji müzesi bulunmuyor; ancak ilçede rastladığınız birçok tarihi eser açık havada sergileniyor. Dalış meraklıları için Kaş Sualtı Arkeoparkı adında su altı tarihi kalıntı alanları da mevcut."
+}, {
+"question": "Kaş Sualtı Arkeoparkı nedir?",
+"answer": "Kaş Sualtı Arkeoparkı, dalgıçlar için oluşturulmuş, su altında tarihi temalar içeren bir dalış alanıdır. Bu alanda batık bir uçak, antik gemi replikaları ve amforalar gibi görülecek ilginç objeler bulunur; ancak görmek için tüplü dalış yapmanız gerekir."
+}, {
+"question": "Likya Uygarlıkları Müzesi nerede, Kaş'tan gidilir mi?",
+"answer": "Likya Uygarlıkları Müzesi, Demre ilçesinde (Andriake Limanı'nda) bulunmaktadır. Kaş'tan yaklaşık 1 saatlik mesafede olan bu modern müzede Likya dönemine ait eserler sergilenir; özellikle tarihe meraklıysanız ziyaret etmeye değer."
+}, {
+"question": "Kaş'ta gezebileceğim antik kalıntılar var mı?",
+"answer": "Kaş'ın bizzat kendisi antik Antiphellos kentinin üzerine kurulu olduğu için, yürürken bile tarihi kalıntılar görebilirsiniz. Merkezdeki Likya lahdi, tiyatro ve kaya mezarları bunun örnekleridir; ayrıca civar köylerde (örneğin Üzümlü'de) küçük Likya kalıntıları da bulunmaktadır."
+}, {
+"question": "Uzun Çarşı Caddesi neden ünlü?",
+"answer": "Uzun Çarşı, Kaş'ın tarihi dokusunu en iyi hissettiren taş döşeli sokağıdır. Üzerinde eski cumbalı evler, otantik dükkanlar bulunur ve Kaş'ın simgesi olan Likya lahdi de bu cadde üzerindedir; hem alışveriş yapıp hem tarih kokusunu alabileceğiniz bir yerdir."
+}, {
+"question": "Kaş'ta bir kilise veya sinagog var mı?",
+"answer": "Kaş'ta günümüzde aktif kilise veya sinagog bulunmamaktadır. Tarihsel olarak Rum nüfusundan kalan bir kilise binası geçmişte var olsa da günümüzde camiye çevrilmiş veya farklı amaçla kullanılmaktadır. Kaş merkezde ve mahallelerinde birkaç cami bulunmaktadır."
+}, {
+"question": "Phellos Antik Kenti nedir, Kaş'tan gidilebilir mi?",
+"answer": "Phellos, Kaş'ın kuzeyindeki dağlık bölgede yer alan antik bir Likya kentinin kalıntılarıdır. Ulaşımı biraz zorlu olup genellikle arazi aracı veya yürüyüşle gidilir; ancak tarihi kalıntılar (sur duvarları, lahitler) görmek mümkündür. Maceracı gezginler için ilginç olabilir."
+}, {
+"question": "Aperlai Antik Kenti nerede ve nasıl ulaşılır?",
+"answer": "Aperlai, Kaş ile Kekova arasında, Aperlai Koyu'nda yer alan küçük bir antik kent kalıntısıdır. Karadan ulaşım için Çayağzı (Sıçak Yarımadası) üzerinden zorlu bir yürüyüş gerekebilir; tekneyle ulaşmak daha yaygındır. Aperlai'de sur kalıntıları ve su altında liman izleri görülebilir."
+}, {
+"question": "Andriake (Çayağzı) Limanı neyiyle ünlü?",
+"answer": "Andriake, Demre yakınlarında antik bir liman yerleşimidir; Likya'nın Myra kentine hizmet eden liman olarak kullanılmıştır. Günümüzde Likya Uygarlıkları Müzesi burada kuruludur ve antik hububat ambarı (Granarium) restore edilmiştir."
+}, {
+"question": "Kaş'ta fotoğraf çekmek için tarihi ve kültürel en iyi yerler nereler?",
+"answer": "Kaş'ta Uzun Çarşı'daki Likya lahdi önünde, antik tiyatroda gün batımına karşı ve Kaleköy-Simena'nın tepesindeki kalede harika fotoğraflar çekebilirsiniz. Ayrıca Patara'nın sütunlu caddesinde veya Myra'nın kaya mezarları önünde de etkileyici kareler yakalanabilir."
+}, {
+"question": "Kaş'taki Likya yolu rotaları hangileri?",
+"answer": "Likya Yolu Kaş yakınlarında iki ana rota sunar: birincisi Kaş'tan başlayıp Limanağzı ve Aperlai üzerinden Üçağız/Kaleköy'e giden sahil rotası, ikincisi Kaş'tan Kalkan yönüne uzanan parkurdur. Her iki rota da tarih ve doğa manzaralarıyla doludur."
+}, {
+"question": "Likya Yolu üzerinde Kaş'tan yürüyerek nereye gidebilirim?",
+"answer": "Kaş'tan yürüyerek Likya Yolu'nun bir parçası olan Limanağzı yönüne gidebilirsiniz. Bu rota sizi Antiphellos'un devamı olan küçük koylara ve Aperlai antik kentine doğru götürür. Alternatif olarak Kaş'tan Kalkan istikametine doğru da Likya Yolu parkurunu takip etmek mümkün."
+}, {
+"question": "Demre'deki Noel Baba Kilisesi neden önemli?",
+"answer": "Demre (Myra), Noel Baba olarak bilinen Aziz Nikolaos'un piskoposluk yaptığı yer olduğu için önemlidir. Noel Baba Kilisesi, Aziz Nikolaos'un burada gömülü olduğuna inanılan ve Orta Çağ'da hac merkezi haline gelmiş tarihi bir kilisedir. Kaş'a yakın olması nedeniyle birçok turist Demre'yi de ziyaret eder."
+}, {
+"question": "Kaş çevresinde başka hangi antik kentler var?",
+"answer": "Kaş çevresinde Patara, Xanthos, Letoon, Myra gibi büyük antik kentlerin yanı sıra, Nisa, Kandyba, Istlada gibi daha küçük Likya yerleşimlerinin kalıntıları da bulunuyor. Bu antik kentler tarih meraklıları için ilgi çekici duraklardır; ancak bazılarına ulaşım zorludur ve özel planlama gerektirebilir."
+}, {
+"question": "Kaş'ta yıl içinde düzenlenen önemli festivaller hangileri?",
+"answer": "Kaş'ta her yıl birkaç önemli etkinlik ve festival düzenleniyor. Haziran sonunda Uluslararası Likya-Kaş Kültür ve Sanat Festivali yapılıyor; Ağustos sonunda ise Kaş Caz Festivali gerçekleştiriliyor. Ayrıca yaz aylarında film festivali ve çeşitli spor etkinlikleri de organize ediliyor."
+}, {
+"question": "Likya Kaş Kültür ve Sanat Festivali nedir, ne zaman olur?",
+"answer": "Likya Kaş Kültür ve Sanat Festivali, Kaş Belediyesi'nin her yıl Haziran ayı sonunda düzenlediği bir etkinliktir. 3 gün süren festivalde konserler, halk dansları gösterileri, sergiler ve çeşitli sanat etkinlikleri gerçekleşir; bölge halkı ve turistler bir araya gelir."
+}, {
+"question": "Kaş Caz Festivali hangi tarihlerde yapılıyor?",
+"answer": "Kaş Caz Festivali genellikle Ağustos ayı sonunda düzenlenen bir müzik festivalidir. 3 gün süren bu festivalde caz ve modern müzik sanatçıları Kaş'ta performans sergiler. Tarihler her yıl değişebilir, bu yüzden güncel program için önceden kontrol etmekte fayda var."
+}, {
+"question": "Kaş'ta film festivali var mı?",
+"answer": "Evet, Kaş'ta uluslararası bir film festivali de düzenleniyor. Kaş Film Festivali genellikle Haziran ortasında gerçekleşiyor ve birkaç gün boyunca film gösterimleri, söyleşiler ve yarışmalarla sinemaseverleri bir araya getiriyor."
+}, {
+"question": "Meis-Kaş yüzme yarışı nedir?",
+"answer": "Meis-Kaş yüzme yarışı, Yunanistan'ın Meis Adası'ndan başlayıp Kaş'ta sona eren yaklaşık 7 km'lik açık deniz yüzme maratonudur. Genelde her yıl Haziran sonunda (Likya-Kaş Festivali kapsamında) düzenlenir ve uluslararası yüzücülerin katıldığı özel bir etkinliktir."
+}, {
+"question": "Kaş'ta spor etkinlikleri düzenleniyor mu?",
+"answer": "Kaş'ta yüzme maratonu (Meis-Kaş Yarışı) gibi spor etkinliklerinin yanı sıra, zaman zaman dalış festivalleri, yelken yarışları veya trail koşuları gibi organizasyonlar da yapılıyor. Etkinlik takvimine göre her yıl farklı spor aktivitelerine denk gelebilirsiniz."
+}, {
+"question": "Kaş'ta bayram tatillerinde özel etkinlikler olur mu?",
+"answer": "Milli bayramlarda (örneğin Cumhuriyet Bayramı 29 Ekim) Kaş'ta resmi törenler ve akşamları fener alayı veya konser gibi etkinlikler olabilir. Dini bayramlarda ise Kaş genellikle çok kalabalık olur; belediyenin düzenlediği ücretsiz halk konserleri veya eğlenceler de olabiliyor."
+}, {
+"question": "Kaş'ta yılbaşında (Yeni Yıl) neler yapılır?",
+"answer": "Yılbaşı akşamı Kaş'ta bazı restoran ve barlar özel programlar düzenler, canlı müzik veya DJ performansları olabilir. İlçenin merkezinde yılbaşı gecesi açık havada toplananlar da olur ancak büyük şehirlerdeki gibi görkemli kutlamalar beklememek gerekir."
+}, {
+"question": "Kaş'ta Noel zamanı (Aralık) etkinlik oluyor mu?",
+"answer": "Kaş'ta Noel (25 Aralık) yerel halk çoğunlukla Müslüman olduğu için resmi bir kutlama yoktur. Ancak Kaş'ta yaşayan yabancılar veya turistler kendi aralarında küçük Noel etkinlikleri yapabilir, bazı oteller bu dönemde süslemelerle yılbaşı atmosferi sağlar."
+}, {
+"question": "Kaş'ta turist sezonu dışında festivaller var mı?",
+"answer": "Kaş'taki çoğu festival ve etkinlik yaz sezonunda yoğunlaşmıştır. İlkbahar ve sonbaharda daha küçük ölçekli kültürel etkinlikler, dalış buluşmaları veya bisiklet turları gibi organizasyonlar da yapılabiliyor, ama kışın genel olarak sakin geçer."
+}, {
+"question": "Kaş'ta konserler nerede düzenlenir?",
+"answer": "Kaş'ta büyük konserler genellikle açık havada, Kaş Meydanı'nda veya antik tiyatroda düzenlenir. Festival dönemlerinde ünlü sanatçılar antik tiyatroda konser verebiliyor; bunun dışında yaz akşamlarında meydanda veya liman çevresinde ücretsiz halk konserleri de yapılabiliyor."
+}, {
+"question": "Kaş'ta sergi veya sanat etkinlikleri oluyor mu?",
+"answer": "Yıl boyunca olmasa da yaz sezonunda Kaş'ta çeşitli sergiler ve sanat etkinlikleri olabiliyor. Yerel sanat galerilerinde resim ve fotoğraf sergileri açılıyor; festival dönemlerinde açık hava resim sergileri, heykel atölyeleri gibi etkinlikler de düzenlenebiliyor."
+}, {
+"question": "Kaş Likya festivali sırasında neler yaşanıyor?",
+"answer": "Likya Festivali sırasında Kaş oldukça hareketlenir; gündüzleri sportif etkinlikler (yüzme yarışı gibi) yapılırken akşamları konserler, halk oyunları ve gösteriler sergilenir. İlçenin sokaklarında festival kortejleri geçer, esnaf stantlar açar; Kaş tam bir şenlik alanına döner."
+}, {
+"question": "Kaş'ta dalış festivali düzenleniyor mu?",
+"answer": "Zaman zaman Kaş'ta ulusal veya uluslararası dalış etkinlikleri düzenleniyor. Örneğin bazı yıllar Kaş Dalış Festivali adı altında dalgıçlar bir araya gelip su altı temizliği, fotoğraf yarışmaları gibi etkinlikler yaptılar. Bu tür etkinlikler her yıl olmasa da duyuruları takip ederseniz yakalayabilirsiniz."
+}, {
+"question": "Kaş'ta yöresel bir kutlama ya da panayır var mı?",
+"answer": "Kaş'ta eskiden beri süregelen büyük bir panayır geleneği yoktur, ancak çevre köylerde yaz aylarında yayla şenlikleri veya küçü k festival benzeri etkinlikler düzenlenebilir. Kaş merkezde ise en önemli kutlamalar bahsettiğimiz kültür-sanat festivalleri ve resmi bayram etkinlikleridir."
+}, {
+"question": "Kaş, çocuklu aileler için uygun bir yer mi?",
+"answer": "Evet, Kaş genellikle çocuklu aileler için uygun ve güvenli bir tatil ortamı sunar. İlçe sakin ve her şey yakın mesafede olduğu için çocuklarla rahatça gezilebilir; ayrıca birçok işletme aile dostudur ve çocuklara karşı sıcak tavırlıdır."
+}, {
+"question": "Çocuğumla Kaş'ta hangi plaja gitmeliyim?",
+"answer": "Kaş'ta çocuklu aileler için en uygun plajlardan biri Akçagerme Plajı'dır çünkü denizi sığ ve kademeli olarak derinleşir. Ayrıca plajda küçük bir su parkı ve oyun alanı da bulunuyor. Büyük Çakıl Plajı da ailelerce tercih edilir ama orada su biraz daha hızlı derinleşir."
+}, {
+"question": "Kaş'ta çocuklar için özel bir aktivite var mı?",
+"answer": "Kaş'ta çocuklar için özel eğlence parkları gibi yerler olmamakla birlikte, tekne turlarına katılıp denizde balıkları izlemek, Akçagerme Plajı'ndaki mini su parkında kaydıraklara binmek gibi aktiviteler hoşlarına gidebilir. Ayrıca akşamları meydanda dondurma yemek, sahilde yürüyüş yapmak gibi basit ama keyifli aktiviteler çocuklar için eğlenceli oluyor."
+}, {
+"question": "Kaş'ta bir akvaryum ya da hayvanat bahçesi var mı?",
+"answer": "Hayır, Kaş'ta akvaryum, hayvanat bahçesi gibi yerler yok. Ancak doğal ortamında deniz kaplumbağalarını gözlemleme şansınız var; tekne turlarında veya Patara Plajı'nda caretta carettaları görebilirsiniz."
+}, {
+"question": "Kaş'ta çocuklar için oyun parkı var mı?",
+"answer": "Kaş merkezde çocuklar için küçük bir oyun parkı/alanı bulunmaktadır. Özellikle belediye tarafından düzenlenmiş parkta salıncak ve kaydırak gibi temel oyun grupları var; akşamları aileler çocuklarını burada vakit geçirmeye getiriyor."
+}, {
+"question": "Bebek arabasıyla Kaş'ta dolaşmak mümkün mü?",
+"answer": "Kaş merkezinin bazı sokakları (örneğin Uzun Çarşı) merdivenli ve taş döşeli olduğu için bebek arabasıyla ilerlemek biraz zor olabilir. Ancak sahil şeridi, çarşı meydanı ve ana caddeler bebek arabasıyla dolaşmaya uygun. Hafif bir puset tercih edip gerektiğinde taşıyarak gezebilirsiniz."
+}, {
+"question": "Kaş'ta bebekler için ihtiyaç malzemelerini bulabilir miyim?",
+"answer": "Evet, Kaş'ta süpermarketler ve eczanelerde bebek bezi, ıslak mendil, mama gibi temel bebek ürünlerini bulabilirsiniz. Özel bir marka kullanıyorsanız gelmeden önce stoklamak iyi olabilir, ama genel ihtiyaçlarınızı Kaş'ta karşılamak mümkündür."
+}, {
+"question": "Kaş'ta sağlık hizmetleri çocuklar için yeterli mi?",
+"answer": "Kaş'ta bir devlet hastanesi ve birkaç sağlık ocağı bulunmaktadır. Basit rahatsızlıklarda veya küçük kazalarda burada müdahale edilebilir. Daha ciddi durumlar için Fethiye veya Antalya gibi daha büyük şehirlerdeki hastanelere yönlendirme yapılabilir. Seyahate çıkmadan seyahat sigortası yaptırmanız her ihtimale karşı iyi olur."
+}, {
+"question": "Kaş'ta restoranlar çocuk dostu mu?",
+"answer": "Çoğu Kaş restoranı çocuklu ailelere alışkındır ve gerekli kolaylıkları sağlar. Birçok restoranda mama sandalyesi bulunur, bazıları çocuk menüsü veya küçük porsiyon seçenekleri de sunar. Restoran personeli genellikle çocuklara karşı anlayışlı ve yardımseverdir."
+}, {
+"question": "Kaş'ta çocuklarla akşamları ne yapılabilir?",
+"answer": "Akşamları Kaş'ta ailece yapabileceğiniz en keyifli şeylerden biri liman çevresinde yürüyüş yapmak ve dondurma yemektir. Meydanda bazen canlı müzik veya küçük etkinlikler olabiliyor; çocuklar bu hareketli ortamı seviyor. Ayrıca erken saatte bir restoranda deniz kenarında ailece yemek yemek de hoş bir plan olabilir."
+}, {
+"question": "Kaş'ta çocuklar için yüzme kursu veya aktivitesi var mı?",
+"answer": "Kaş'ta özel olarak çocuklar için yüzme kursu gibi bir etkinlik yok, ancak çocuklarınız plajlarda sizin gözetiminizde rahatlıkla denize girebilir. Bazı dalış merkezleri 8-10 yaş üstü çocuklar için keşif dalışı veya şnorkel turları düzenleyebiliyor; ilgilenirseniz dalış okullarına danışabilirsiniz."
+}, {
+"question": "Kaş'ta su parkı veya aquapark var mı?",
+"answer": "Kaş'ta büyük bir aquapark yok. Ancak Akçagerme Plajı'nda çocukların kayabileceği küçük su kaydırakları ve havuzlar içeren mini bir su parkı alanı bulunmaktadır. Bu, özellikle küçük çocuklar için oldukça eğlenceli olabiliyor."
+}, {
+"question": "Kaş'ta sıcak havada çocuklarla nasıl serinleyebiliriz?",
+"answer": "Kaş'ta yazın serinlemek için en iyi yol plaj veya havuz keyfi yapmak. Deniz suyu genellikle oldukça temiz ve serinletici. Ayrıca dondurma, soğuk içecek molalarıyla çocuklarınızı ferah tutabilirsiniz. Çok bunaldığınızda Kaş'tan daha serin olan Gömbe Yaylası'na günübirlik bir kaçış da yapılabilir."
+}, {
+"question": "Kaş'ta çocuklarla yakındaki nereleri gezebiliriz?",
+"answer": "Kaş'a yakın olarak Patara Plajı'na gidip hem antik kent kalıntılarını görebilir hem geniş kumsalda çocuklarla oynayabilirsiniz. Kekova tekne turuna çocuklarla katılmak da iyi bir fikir; cam tabanlı teknede su altı kalıntılarını izlemek onların ilgisini çekebilir. Ayrıca Saklıkent Kanyonu'na giderken çocuklar için uygun ayakkabı ve dikkatle kısa bir kanyon yürüyüşü deneyimi yaşayabilirsiniz."
+}, {
+"question": "Kaş'ta yıl içinde acil bir durumda ne yapmalıyım?",
+"answer": "Kaş'ta herhangi bir acil durumda (sağlık sorunu, kaza, vb.) öncelikle 112 Acil Servisi aramalısınız. İlçede bir hastane olduğundan ambulans kısa sürede yönlendirilir. Ayrıca polis için 155, jandarma için 156 numaraları aranabilir."
+}, {
+"question": "Kaş güvenli mi, hırsızlık gibi olaylar olur mu?",
+"answer": "Kaş, suç oranı oldukça düşük, güvenli bir yerdir. Hırsızlık olayları çok nadiren duyulur ancak elbette kalabalık ortamlarda çantanıza cüzdanınıza dikkat etmek her zaman önerilir. Araçla gelenler de eşyalarını görünür yerde bırakmamaya özen gösterirse iyi olur."
+}, {
+"question": "Kaş'ta musluk suyu içilir mi?",
+"answer": "Kaş'ta musluk suyu resmi olarak içilebilir niteliktedir ancak yüksek klor nedeniyle tadı ağır gelebilir. Çoğu kişi içme suyu olarak pet şişe suyu tercih eder. Diş fırçalamak veya çay demlemek için musluk suyu kullanılabilir, fakat içme suyu olarak ambalajlı su almanız önerilir."
+}, {
+"question": "Kaş'ta sivrisinek veya böcek sorunu var mı?",
+"answer": "Yaz aylarında Kaş'ta akşamları sivrisinek görülebilir, özellikle rüzgarsız ve nemli günlerde. Konaklama yerinizde sineklik veya sivrisinek teli olması faydalı olur; ayrıca yanınızda sinek kovucu bulundurmak da rahat ettirir."
+}, {
+"question": "Kaş'ta güneş çarpmasına karşı dikkat etmeli miyim?",
+"answer": "Kaş'ta yazın güneş oldukça etkili olur. Özellikle öğle saatlerinde şapka takmalı, yüksek faktörlü güneş kremi kullanmalı ve bol su içmelisiniz. Güneş altında uzun süre kalmamaya özen göstererek güneş çarpmasını önleyebilirsiniz."
+}, {
+"question": "Kaş'ta denizde tehlikeli canlılar var mı?",
+"answer": "Kaş çevresinde denizde insanlara ciddi zarar verecek tehlikeli canlılar bulunmaz. Nadiren denizanası görülebilir; onlardan da uzak durmak yeterli. Kayalıklarda deniz kestaneleri olabileceği için denize girerken dikkat etmek veya deniz ayakkabısı giymek faydalıdır."
+}, {
+"question": "Kaş'ta denizde deniz kestanesi var mı?",
+"answer": "Evet, Kaş'ta özellikle kayalık kıyılarda deniz kestaneleri bulunabilir. Denize girerken ayağınıza deniz kestanesi batmaması için dikkat etmelisiniz; isterseniz deniz ayakkabısı kullanabilirsiniz. Eğer batarsa, sağlık kuruluşuna başvurmanız gerekebilir."
+}, {
+"question": "Kaş'ta yüzme sırasında akıntı veya dip dalgası (rıp akıntısı) riski var mı?",
+"answer": "Kaş ve yakın koylarında belirgin rip akıntıları genellikle yoktur, deniz çoğunlukla sakindir. Ancak Kaputaş gibi açık denize bakan plajlarda nadiren de olsa dalga ve akıntı olabilir; cankurtaran uyarılarına dikkat ederek yüzmek güvenli olacaktır."
+}, {
+"question": "Kaş'ta cankurtaran var mı plajlarda?",
+"answer": "Kaş merkezdeki küçük plajlarda genelde cankurtaran bulunmaz. Ancak Akçagerme Plajı gibi daha düzenli plajlarda ve Kaputaş Plajı'nda dönem dönem cankurtaran hizmeti olabiliyor. Her durumda çocukları ve kendinizi plajda yüzerken gözlem altında tutmak önemlidir."
+}, {
+"question": "Kaş'ta araç kullanırken dikkat edilmesi gerekenler neler?",
+"answer": "Kaş'a giden yollar virajlı ve özellikle yazın trafik olabilir. İlçe içinde sokaklar dardır; hızınızı düşük tutun ve yaya geçitlerine dikkat edin. Ayrıca turistik sezonda park yeri ararken çift sıra park yapmamaya özen gösterin zira çekiciyle araç çekilebilir."
+}, {
+"question": "Kaş'ta tek başıma kadın gezgin olarak güvenle dolaşabilir miyim?",
+"answer": "Kaş, tek başına seyahat eden kadınlar tarafından da tercih edilen güvenli bir destinasyondur. Yerel halk saygılı ve yardımseverdir. Gece geç saatlerde de ilçe merkezinde genelde sorun yaşamadan dolaşabilirsiniz; yalnız temel önlemleri almak her yerde olduğu gibi burada da geçerlidir."
+}, {
+"question": "Kaş'ta deprem riski var mı?",
+"answer": "Kaş, Akdeniz bölgesinde yer almakla birlikte büyük şehirler kadar belirgin bir deprem aktivitesiyle anılmaz. Zaman zaman küçük sarsıntılar olabilir (Türkiye genelinde olduğu gibi), ancak büyük depremler ender ve risk en azından şu ana dek düşüktü. Konakladığınız yerlerin depreme dayanıklılığına dikkat etmek isterseniz, yeni ve sağlam yapıları tercih edebilirsiniz."
+}, {
+"question": "Kaş'ta orman yangını tehlikesine karşı nelere dikkat etmeli?",
+"answer": "Yaz aylarında çevrede orman yangını riski olabileceğinden ateşle ilgili konularda dikkatli olmak gerekir. Ormanlık alanlarda mangal/ateş yakmamak, sigara izmaritlerini söndürmeden atmamak önemlidir. Bir duman veya yangın belirtisi görürseniz hemen 112 veya 177 Orman Yangını İhbar Hattı'na bildirin."
+}, {
+"question": "Kaş'ta trafikte kiralık scooter veya ATV kullanmak güvenli mi?",
+"answer": "Kaş'ta scooter veya ATV kiralıyorsanız mutlaka kask takın ve trafik kurallarına uyun. İlçe içi yollar dar ve virajlı olabiliyor, özellikle akşam saatlerinde dikkatli sürüş şart. Yavaş gitmek ve aniden önünüze çıkabilecek yayalara karşı tetikte olmak güvenliğiniz için önemli."
+}, {
+"question": "Kaş'ta eczaneler gece açık mı?",
+"answer": "Kaş'ta her gece nöbetçi bir eczane bulunur. Normalde eczaneler akşam mesai bitiminde kapanır, ancak nöbetçi eczane sistemi sayesinde herhangi bir gece acil ilaç ihtiyacınız olursa açık bir eczane bulabilirsiniz. Nöbetçi eczanenin hangisi olduğunu eczane kapılarındaki listeden veya internetten öğrenebilirsiniz."
+}, {
+"question": "Kaş'ta COVID-19 veya benzeri sağlık önlemleri var mı?",
+"answer": "Pandemi dönemlerinde Kaş'taki işletmeler ve oteller de genel kurallara uygun önlemler almıştır. Güncel durumda genel hijyen kurallarına uymak yeterli olacaktır. Seyahate çıkmadan önce güncel sağlık tavsiyelerini kontrol etmek iyi bir fikir."
+}, {
+"question": "Kaş'ta su altı dalış güvenliği nasıl sağlanıyor?",
+"answer": "Kaş'taki dalış merkezleri güvenliğe büyük önem verir. Her dalış öncesi ekipman kontrolleri yapılır, dalış brifingi verilir ve limitler dahilinde dalış gerçekleştirilir. Dalış sırasında eğitmenler gruba liderlik eder; acil durum ekipmanları (oksijen kiti vs.) teknelerde hazır bulundurulur."
+}, {
+"question": "Kaş'ta telefon şebekesi ve internet çekiyor mu?",
+"answer": "Kaş merkezinde ve yakın bölgelerde Türk mobil operatörlerinin şebekesi genellikle iyi çeker. 4.5G mobil internet çoğu yerde vardır. Ancak çok ücra koylarda veya dağlık arazide zaman zaman çekim gücü düşebilir; bunlar da genelde yerleşimin olmadığı noktalardır."
+}, {
+"question": "Kaş'ta iklim nasıldır?",
+"answer": "Kaş, tipik Akdeniz iklimine sahiptir. Yazlar sıcak ve kurak geçer, kışlar ise ılıman ve yağışlıdır. Yılın büyük bölümünde güneşli gün sayısı fazladır; deniz suyu sıcaklıkları da Mayıs'tan Ekim'e kadar yüzmeye elverişlidir."
+}, {
+"question": "Kaş'ta yazın hava sıcaklığı ne kadar olur?",
+"answer": "Yaz aylarında Kaş'ta gündüz sıcaklıkları genellikle 30-35°C civarında seyreder, özellikle Temmuz ve Ağustos en sıcak dönemdir. Nem oranı deniz kenarında hissedilir ama açık hava esintisiyle bunaltıcı düzeye genelde çıkmaz."
+}, {
+"question": "Kaş'ta kışın hava nasıl olur?",
+"answer": "Kaş kışın oldukça ılımandır; gündüz sıcaklıkları çoğunlukla 10-15°C civarında seyreder. Kış aylarında yağışlar artar, özellikle Aralık ve Ocak en yağışlı dönemdir. Kar yağışı ilçe merkezinde çok nadir görülür."
+}, {
+"question": "Kaş'a gitmek için en iyi dönem ne zamandır?",
+"answer": "Kaş'ı ziyaret etmek için en iyi dönem ilkbahar sonu (Mayıs-Haziran) ile sonbahar başıdır (Eylül-Ekim). Bu aylarda hava sıcak ama bunaltıcı değildir, deniz de yüzmek için oldukça elverişlidir. Temmuz-Ağustos çok sıcak ve kalabalık olabilir, ancak deniz aktiviteleri için hala güzeldir."
+}, {
+"question": "Kaş'ta bahar aylarında hava nasıl olur?",
+"answer": "İlkbaharda (Nisan-Mayıs) Kaş'ta hava ılıman ve keyiflidir; doğa canlanır, çiçekler açar. Gündüzleri 20-25°C civarı sıcaklıklar görülür, akşamları serin olabilir, hafif bir ceket yeterli olur. Yağışlar Mart sonuna doğru azalır, bahar genel olarak gezmek için ideal zamandır."
+}, {
+"question": "Kaş'ta sonbaharda denize girilir mi?",
+"answer": "Evet, sonbahar başı (Eylül ve çoğu zaman Ekim de) Kaş'ta deniz suyu hala sıcaktır, rahatlıkla denize girilebilir. Eylül ayı hava olarak yazdan çok farklı değildir, sadece kalabalık biraz azalır; Ekim ortasından sonra akşamlar serinlemeye, yağmur ihtimali artmaya başlar."
+}, {
+"question": "Kaş'ta deniz suyu yılın hangi aylarında sıcak olur?",
+"answer": "Kaş'ta deniz suyu Mayıs'tan itibaren ısınmaya başlar. En sıcak dönem Temmuz-Ağustos'tur; Eylül ayında da su genellikle çok sıcaktır. Ekim'de su sıcaklığı düşmeye başlasa da erken Ekimde hala girilebilir; kışın 17-19°C civarına iner."
+}, {
+"question": "Kaş'ta en yağışlı ay hangisi?",
+"answer": "Kaş'ta genelde Aralık ve Ocak en yağışlı aylardır. Bu dönemde kuvvetli sağanak yağmurlar görülebilir. Yaz aylarında ise yağış neredeyse hiç olmaz, hava sürekli güneşli ve açık geçer."
+}, {
+"question": "Kaş'ta kar yağar mı?",
+"answer": "Kaş ilçe merkezine kar yağışı son derece nadirdir; uzun yıllar hiç kar görmeyebilir. Ancak Kaş'a yakın yüksek bölgeler (örneğin Gömbe Yaylası, Toros Dağları'nın etekleri) kışın kar alır. Kaş merkezde birkaç yılda bir sembolik birkaç dakikalık kar görülebilir o kadar."
+}, {
+"question": "Kaş'ta nem oranı yüksek midir?",
+"answer": "Kaş, deniz kenarında olduğundan yazları belli bir nem hissedilir ama Antalya şehir merkezine kıyasla biraz daha az bunaltıcıdır. Özellikle öğleden sonraları meltem rüzgarları çıkar ve nemin etkisini azaltır; akşamları da genellikle hafif bir esinti olur."
+}, {
+"question": "Kaş'ta meltem rüzgarı eser mi?",
+"answer": "Evet, yaz aylarında Kaş'ta öğleden sonra hafif meltem (denizden karaya esen rüzgar) çıkar. Bu rüzgar bunaltıcı sıcağı bir nebze kırar ve özellikle tekne turlarında hoş bir serinlik sağlar. Rüzgar genelde akşam durulur."
+}, {
+"question": "Kaş'ta akşamları yazın üstüme bir şey almam gerekir mi?",
+"answer": "Yazın Kaş'ta akşamlar genellikle ılık geçer, çoğu zaman kısa kollu ile rahat edersiniz. Ancak bazen denizden hafif bir esinti olabilir; özellikle tekne turundan dönüyorsanız veya açık havada geç saatlere kalacaksanız ince bir hırka veya şal yanınızda bulundurmanız iyi olabilir."
+}, {
+"question": "Kaş'ta deniz ne zaman durgun olur?",
+"answer": "Kaş'ın denizi yaz aylarında genellikle durgundur. Özellikle sabah saatlerinde deniz çarşaf gibi sakin olur; öğleden sonra meltem çıkınca hafif dalga olabilir. Kışın fırtınalı havalar dışında Kaş liman ve koyları korunaklı olduğu için yılın büyük kısmında deniz sakindir."
+}, {
+"question": "Kaş'ta güçlü rüzgar veya fırtına olur mu?",
+"answer": "Kaş, coğrafi konumu gereği çok şiddetli rüzgarlara maruz kalmaz; etrafındaki dağlar korunak sağlar. Yılda birkaç kez (özellikle kışın) fırtınalı havalar olabilir, o zaman da deniz dalgalanır ve tekne seferleri iptal edilebilir. Ama genel olarak Kaş'ta hava şartları sert olmaktan uzaktır."
+}, {
+"question": "Kaş'ta sezon ne zaman biter?",
+"answer": "Kaş'ta turizm sezonu genellikle Ekim sonuna doğru yavaşlar. Kasım itibarıyla birçok otel ve işletme sezonu kapatmaya başlar. Ancak hava durumuna bağlı olarak Ekim ayında hala hareketlilik görülür; Kasım ise oldukça sakin geçer."
+}, {
+"question": "Kaş'ta mevsim geçişlerinde dikkat edilmesi gereken bir durum var mı?",
+"answer": "İlkbahar başı (Mart gibi) havalar bazen aniden serinleyip yağmurlu olabilir, bu dönemde Kaş'a gelirken hem ince hem kalın kıyafet bulundurmak iyi olur. Sonbahar sonunda da (Ekim sonu, Kasım) gündüz sıcak olsa da akşamları hızlı soğuma yaşanabilir; katmanlı giyinmekte fayda vardır."
+}, {
+"question": "Kaş'ta yaz sezonunda orman yangını riski yüksek mi?",
+"answer": "Genel olarak yaz aylarında Akdeniz bölgesinde orman yangını riski artar, buna Kaş çevresi de dahildir. Yağmursuz ve sıcak geçen uzun bir dönemde ormanlık alanlarda dikkatli olunmalı, yangın çıkarmaya müsait davranışlardan kaçınılmalı. Kaş civarında büyük ormanlar az olmakla birlikte her zaman temkinli olmak gerekiyor."
+}, {
+"question": "Kaş'ta yerel halk hangi dili konuşur?",
+"answer": "Kaş'ta yerel halkın anadili Türkçedir. Turistik bir yer olduğu için birçok esnaf ve çalışan temel düzeyde İngilizce de konuşabilir. Ancak birkaç Türkçe kelime öğrenmek (merhaba, teşekkür ederim gibi) sıcak bir iletişim için hoş karşılanır."
+}, {
+"question": "Kaş'ta İngilizce ile anlaşabilir miyim?",
+"answer": "Evet, Kaş'ta turizm sektöründe çalışanların çoğu İngilizce bilir, en azından temel düzeyde anlaşabilirsiniz. Restoran menüleri genelde İngilizce olarak da bulunur. Yine de bazı yaşlı esnaf veya pazardaki köylüler Türkçe konuşur; o durumlarda basit işaretler ve gülümseme bile iletişime yardımcı olur."
+}, {
+"question": "Kaş'ta biraz Türkçe bilmek işime yarar mı?",
+"answer": "Kesinlikle evet, birkaç Türkçe sözcük bilmek işinizi kolaylaştırır ve yerel halkla sıcak ilişki kurmanızı sağlar. -Merhaba- (hello), -Teşekkür ederim- (thank you) gibi basit ifadeler öğrenerek giderseniz güleryüzle karşılanırsınız."}, {
+"question": "Kaş'ta yerel halk turistlere karşı nasıl davranır?",
+"answer": "Kaş halkı genelde turiste karşı çok misafirperver ve yardımseverdir. İlçede turizm uzun yıllardır var olduğu için yabancılara alışkındırlar; sorularınızı sabırla yanıtlar, genelde dürüst ve samimi davranırlar."
+}, {
+"question": "Kaş'ta turist fiyatlandırması gibi bir durum var mı, pazarlık etmeli miyim?",
+"answer": "Kaş'taki restoran ve mağazalarda fiyatlar genellikle herkes için aynıdır. Menülerde fiyatlar yazar, turist diye extra ücret talebi olmaz. Ancak hediyelik eşya, takı veya pazardaki ürünlerde pazarlık payı olabilir; alacağınız şeyin fiyatından emin değilseniz kibarca pazarlık yapabilirsiniz."
+}, {
+"question": "Kaş'ta giyim konusunda dikkat edilmesi gereken bir şey var mı?",
+"answer": "Kaş, turistlere alışkın modern bir yer, günlük yazlık kıyafetlerle her yere gidebilirsiniz. Plajdan çıkıp şehre giderken bir tişört veya pareo giymek kibarlık olur. Cami ziyareti düşünürseniz dizleri ve omuzları örtecek şekilde giyinmelisiniz."
+}, {
+"question": "Kaş'ta cami veya ibadethane ziyaret edebilir miyim?",
+"answer": "Kaş merkezdeki camiyi ziyaret edebilirsiniz; ibadet saatleri dışında içine girip görebilirsiniz. İçeri girerken saygı gereği omuzlar ve dizler örtülü olmalı, ayakkabılar kapıda çıkarılmalıdır. İlçede tarihi bir kilise yok; Noel Baba Kilisesi Demre'dedir, Kaş'ta aktif kilise bulunmuyor."
+}, {
+"question": "Kaş'ta Ramazan ayında restoranlar açık olur mu?",
+"answer": "Evet, Kaş turistik bir yer olduğu için Ramazan ayında da restoranlar ve kafeler açıktır, turistlere hizmet vermeye devam eder. Yeme-içme konusunda bir kısıtlama yaşamazsınız; yalnız iftar saatine denk gelirseniz bazı işletmeler kalabalık olabilir veya rezervasyonlu olabilir."
+}, {
+"question": "Kaş'ta alkol almak sorun olur mu?",
+"answer": "Hayır, Kaş'ta restoran ve barlarda rahatlıkla alkol alabilirsiniz; yerel halk ve işletmeler turistik alışkanlıklara açıktır. Sadece kamuya açık alanlarda şişe elde içkiyle gezmek yerine barlarda veya restoranlarda tüketmeyi tercih ederseniz daha uygun olur."
+}, {
+"question": "Kaş'ta helal gıda bulabilir miyim?",
+"answer": "Türkiye genelinde olduğu gibi Kaş'taki et ürünleri de helal kesimdir. Restoranlarda domuz eti kullanılmaz (çok az özel ürün dışında). Yani Müslüman bir ziyaretçi için yeme-içme konusunda genellikle bir sıkıntı yoktur."
+}, {
+"question": "Kaş'ta prizler ve elektrik nasıldır? Yabancı cihazlarımı kullanabilir miyim?",
+"answer": "Kaş'ta (Türkiye genelinde) 220V, 50Hz elektrik kullanılır ve prizler Avrupa tipi yuvarlak iki pindir (Tip F). Eğer cihazlarınız bu voltajı destekliyorsa sorun yok; İngiltere, ABD gibi farklı priz standardı olan ülkelerden geliyorsanız yanınıza bir adaptör almayı unutmayın."
+}, {
+"question": "Kaş'ta Wi-Fi internet bulabilir miyim?",
+"answer": "Evet, Kaş'ta birçok kafe, restoran ve otel müşterilerine ücretsiz Wi-Fi imkanı sunar. Şifreyi garsondan isteyebilirsiniz. Ayrıca mobil operatörlerin 4.5G interneti ilçe genelinde çektiği için telefonunuzda da internet erişiminiz olur."
+}, {
+"question": "Kaş'ta fotoğraf çekerken nelere dikkat etmeliyim?",
+"answer": "Kaş genel olarak fotoğraf dostu bir yer; antik kalıntıların, yerel halkın fotoğrafını çekerken saygılı olmak yeterli. Askeri bölge veya kamu binalarını (polis, askerlik vb.) fotoğraflamaktan kaçının. İnsanların yakın portrelerini çekerken de izin istemek her zaman nazik bir davranıştır."
+}, {
+"question": "Kaş'ta tarihi eser bulursam ne yapmalıyım?",
+"answer": "Eğer karada veya denizde tesadüfen bir tarihi eser (örneğin bir amfora parçası) bulursanız, onu yerinden oynatmayıp en yakın yetkiliye (müze yetkilisi veya jandarma/polis) haber vermelisiniz. Türkiye'de tarihi eserleri izinsiz çıkarmak ve sahiplenmek yasadışıdır; bu konuya dikkat etmek gerekir."
+}, {
+"question": "Kaş'ta bahşiş bırakmak gerekiyor mu?",
+"answer": "Kaş'ta da Türkiye'nin genelinde olduğu gibi iyi bir hizmet aldığınızda bahşiş bırakmak yaygındır. Restoran ve kafelerde hesabın yaklaşık %5-10'u kadar bahşiş uygun olur. Küçük hesaplarda bozuk para bırakabilirsiniz; bırakmasanız da kimse sizi zorlamaz, ancak memnuniyetinizi göstermek için bahşiş jestini yapabilirsiniz."
+}, {
+"question": "Kaş'ta mahalle arasında gürültü yapmaya dikkat etmeli miyim?",
+"answer": "Kaş sakin bir kasaba; gece geç saatte konaklama yerinizin balkonu veya sokakta yüksek sesle konuşmak komşuları rahatsız edebilir. Genel saygı kuralları içinde hareket etmek (özellikle gece 11'den sonra sessizliğe özen göstermek) doğru olacaktır. Turistik barlar zaten belirli bölgede, onların dışında gürültüyü minimumda tutmak iyi bir fikir."
+}, {
+"question": "Antalya ile Kaş arası kaç km ve ne kadar sürer?",
+"answer": "Antalya şehir merkezi ile Kaş arası yaklaşık 190-200 km'dir. Özel araçla yaklaşık 3,5 - 4 saatte bu yolu alabilirsiniz; yolun bir kısmı virajlı sahil yoludur. Otobüsle ise molalarla birlikte 4 saate yakın sürmektedir."
+}, {
+"question": "İstanbul'dan Kaş'a mesafe ne kadar?",
+"answer": "İstanbul ile Kaş arasındaki mesafe karayoluyla yaklaşık 840 km civarındadır. Özel araçla duraksız 11-12 saat sürebilir; otobüs yolculukları genelde 14 saat civarında sürer. Uçakla gelmeyi düşünürseniz, uçuş sonrası karayolu ile birlikte toplam 4-5 saate Kaş'a ulaşabilirsiniz."
+}, {
+"question": "Eskişehir'den Kaş'a ulaşmak için hangi yol tercih edilmeli?",
+"answer": "Eskişehir'den Kaş'a direkt otobüs seferi bulmak zor olabilir; genellikle Antalya aktarmalı gidilir. Özel araçla Afyon - Burdur - Antalya güzergahını kullanıp ardından Kaş'a doğru devam ederek toplam ~7 saatlik bir yolculukla ulaşabilirsiniz. Otobüsle Eskişehir'den önce Antalya'ya (6-7 saat), oradan Kaş otobüsüne geçmeniz gerekecektir."
+}, {
+"question": "Bursa'dan Kaş'a nasıl gidebilirim?",
+"answer": "Bursa'dan Kaş'a direkt otobüs seferleri yaz sezonunda bulunabiliyor, yolculuk yaklaşık 10-11 saat sürüyor. Özel araçla gitmek isterseniz Bursa'dan Afyon-Denizli-Fethiye güzergahını takip ederek yaklaşık 7-8 saatte Kaş'a ulaşabilirsiniz. Otobüsle ise molalarla birlikte 11-12 saati bulabilir; uçak seçeneği olarak da Bursa'dan Antalya'ya uçup oradan devam edebilirsiniz."
+}, {
+"question": "Konya'dan Kaş'a ulaşım nasıl yapılır?",
+"answer": "Konya'dan Kaş'a direkt otobüs seferi genellikle yok, bu yüzden en pratik yol Konya'dan Antalya'ya otobüsle gidip (yaklaşık 5-6 saat), oradan Kaş otobüsüne aktarma yapmaktır. Özel araçla ise Konya'dan Antalya yönüne inip, ardından D400 karayolunu kullanarak toplamda yaklaşık 7-8 saatlik bir yolculukla Kaş'a varabilirsiniz."
+}, {
+"question": "Adana'dan Kaş'a gitmek için hangi yolu izlemeliyim?",
+"answer": "Adana'dan Kaş'a en kolay yol, Adana'dan Antalya'ya uçmak veya otobüsle geçmektir. Antalya'ya ulaştıktan sonra Kaş'a otobüsle devam edebilirsiniz (Antalya-Kaş ~4 saat). Özel araçla Adana'dan çıkıp Pozantı üzerinden Antalya yönüne inip oradan Kaş'a geçebilirsiniz; bu güzergah yaklaşık 9-10 saat sürer."
+}, {
+"question": "Gaziantep'ten Kaş'a doğrudan ulaşım var mı?",
+"answer": "Gaziantep'ten Kaş'a direkt otobüs seferi bulunmayabilir. Genellikle Gaziantep'ten Antalya'ya otobüsle gelip (yaklaşık 12 saat) sonra Antalya'dan Kaş otobüsüne binmek tercih edilir. Özel araçla ise Gaziantep'ten çıkıp Konya-Antalya yolunu takip ederek bir günde (12-13 saat) Kaş'a ulaşabilirsiniz. Uçak seçeneği olarak Gaziantep'ten Antalya'ya uçup oradan karayolu ile devam etmek de mümkündür."
+}, {
+"question": "Trabzon'dan Kaş'a en hızlı nasıl giderim?",
+"answer": "Trabzon'dan Kaş'a en hızlı yöntem uçaktır: Trabzon'dan Antalya'ya direkt uçuşla gidip, ardından Antalya'dan Kaş'a otobüs veya transferle devam edebilirsiniz (Antalya-Kaş ~4 saat). Otobüsle gelmek isterseniz, çok uzun bir yolculuk (yaklaşık 20 saat ve birden fazla aktarma) yapmanız gerekir. Özel araçla ise Karadeniz'den Akdeniz'e geçmek yaklaşık 15-16 saat sürecektir."
+}, {
+"question": "Van'dan Kaş'a nasıl gidebilirim?",
+"answer": "Van'dan Kaş'a en makul yol, Van'dan uçakla Antalya'ya gelmektir (veya Iğdır/Erzurum'dan). Antalya'ya vardıktan sonra otobüsle Kaş'a geçebilirsiniz. Otobüsle direkt gelmek isterseniz Van'dan önce Ankara/Antalya yönüne bir otobüs (20+ saat) ardından Kaş'a aktarma yapmanız gerekir ki çok uzun sürer. Bu yüzden uçak + karayolu kombinasyonu genellikle tercih edilir."
+}, {
+"question": "Yurt dışından Kaş'a ulaşım nasıl sağlanır?",
+"answer": "Yurt dışından Kaş'a gelmek için en pratik yol Antalya veya Dalaman havalimanına uluslararası uçuşla gelip oradan karayoluyla Kaş'a geçmektir. Doğrudan Kaş'a uçuş yoktur. Örneğin Avrupa'dan Dalaman'a uçup 2 saatlik transfer yapabilirsiniz. Alternatif olarak Yunanistan'dan geliyorsanız Rodos Adası'ndan Meis Adası'na, oradan da kısa bir feribotla Kaş'a geçiş gibi rota izleyen turistler de mevcut."
+}, {
+"question": "Kaş'ta plaja yakın oteller var mı?",
+"answer": "Evet, Kaş merkezinde plajlara yürüme mesafesinde birçok otel ve pansiyon bulunuyor. Özellikle Küçük Çakıl ve Büyük Çakıl plajları civarında konaklama seçenekleri mevcut."
+}, {
+"question": "Kaş'ta kamp alanlarında konaklamak ücretli mi?",
+"answer": "Kaş'taki resmi kamp alanlarında çadır veya karavanla konaklama yapmak genellikle ücretlidir, ancak fiyatlar oldukça makuldür. Vahşi doğada ücretsiz kamp yapabilirsiniz, ancak bu durumda hiçbir tesis veya güvenlik hizmeti olmadığını unutmayın."
+}, {
+"question": "Kaş'taki kamp alanlarında elektrik ve su var mı?",
+"answer": "Evet, Kaş'taki çoğu kamp alanı temel ihtiyaçlar için elektrik prizi, duş ve tuvalet gibi olanaklar sunar. Böylece çadır kampı yaparken bile konforunuzdan çok ödün vermenize gerek kalmaz."
+}, {
+"question": "Kaş'ta kamp ekipmanı kiralanabilir mi?",
+"answer": "Kaş'ta kamp ekipmanı kiralama seçeneği sınırlıdır, bu nedenle kendi çadır ve uyku ekipmanlarınızı getirmeniz en iyisi olacaktır. Bazı kamp alanları basit gereçleri kiralayabilir, ancak gelmeden önce araştırma yapmanız önerilir."
+}, {
+"question": "Kaş'ta 5 yıldızlı otel var mı?",
+"answer": "Kaş'ta büyük ölçekli 5 yıldızlı tatil köyleri bulunmuyor. Bunun yerine yüksek kaliteli hizmet sunan, butik tarzda küçük oteller ve apartlar tercih ediliyor."
+}, {
+"question": "Kaş'ta otellerin resepsiyonu 24 saat açık mı?",
+"answer": "Birçok otel ve pansiyonda resepsiyon 24 saat hizmet verse de, bazı küçük aile işletmelerinde gece belli bir saatten sonra resepsiyon kapalı olabiliyor. Geç saatte varacaksanız kalacağınız yerle önceden iletişime geçmek iyi bir fikir."
+}, {
+"question": "Kaş'ta alkolsüz (alkol servisi olmayan) otel var mı?",
+"answer": "Kaş'ta çoğu otel ve restoran misafirlerin tercihlerine göre alkol servisi sunar. Tamamen alkolsüz konseptli otel yaygın değil, ancak dilerseniz konaklama yerinin alkol servisi yapıp yapmadığını önceden sorabilirsiniz."
+}, {
+"question": "Büyük Çakıl Plajı'nda duş ve tuvalet var mı?",
+"answer": "Evet, Büyük Çakıl Plajı'nda birkaç restoran ve işletme olduğu için duş, tuvalet ve kabin gibi temel olanaklar mevcuttur. Plajı kullananlar genellikle bu işletmelerin imkanlarından faydalanabiliyor."
+}, {
+"question": "Küçük Çakıl Plajı'na giriş ücretli mi?",
+"answer": "Hayır, Küçük Çakıl Plajı halka açık bir plajdır, giriş için ücret ödemezsiniz. Ancak plaj küçük olduğu için şezlong ve şemsiye kiralamak isterseniz ilgili işletmeye cüzi bir ücret ödemeniz gerekebilir."
+}, {
+"question": "Akçagerme Plajı'na giriş ücreti var mı?",
+"answer": "Akçagerme Plajı halk plajıdır, girişte ücret ödemezsiniz. Şezlong, şemsiye kiralamak veya su parkını kullanmak isterseniz küçük ücretler olabilir, ancak genel olarak bütçe dostu bir plajdır."
+}, {
+"question": "Limanağzı'ndaki plajlarda konaklama imkanı var mı?",
+"answer": "Limanağzı koylarındaki bazı işletmeler pansiyon/kamping tarzı konaklama da sunabiliyor. Örneğin Nuri's Beach gibi yerlerde bungalov veya çadır alanı bulunabiliyor. Yani isterseniz bu sakin koylarda gece de kalabilirsiniz."
+}, {
+"question": "Kaş'ta plajlarda köpek gezdirmek serbest mi?",
+"answer": "Resmi bir yasak olmamakla birlikte, Kaş'ta çoğu plajda köpeklerle denize girenler olabiliyor. Yine de plaj kalabalıkken etraftakilere rahatsızlık vermemek ve temizlik kurallarına uymak önemli. Bazı işletmeli plajlar evcil hayvan konusunda kendi kurallarını koyabilir, gitmeden sormakta fayda var."
+}, {
+"question": "Kaş'ta plajda gece çadır kurabilir miyim?",
+"answer": "Kaş ve çevresindeki plajlarda (Kaputaş, Patara gibi koruma alanları dahil) izinsiz olarak gece çadır kurmak resmi olarak yasaktır ve tavsiye edilmez. Kamp yapmak isterseniz özel kamp alanlarını veya izin verilen bölgeleri tercih etmelisiniz."
+}, {
+"question": "Kaş'ta yeme-içme fiyatları genel olarak nasıl?",
+"answer": "Kaş'ta restoran fiyatları, Türkiye ortalamasının biraz üzerindedir ama aşırı pahalı sayılmaz. Turistik bir ilçe olduğundan akşam yemeği veya kahvaltı ücretleri büyük şehirlere benzer düzeydedir. Örneğin ortalama bir restoranda kişi başı bir akşam yemeği (ana yemek+meze+içecek) tutarı büyük şehirlerdeki gibi çıkabilir. Yine de Kaş, Bodrum veya Çeşme kadar pahalı değildir; küçük sahil kasabalarından ise biraz daha yüksek fiyatlıdır."
+}, {
+"question": "Kaş'ta Starbucks gibi kahve zincirleri var mı?",
+"answer": "Hayır, Kaş'ta uluslararası kahve zincirleri (Starbucks vb.) bulunmuyor. Ancak ilçe merkezinde çok sayıda şirin kafe var ve bu mekanlarda espresso bazlı kahvelerden Türk kahvesine kadar her türlü içeceği bulabilirsiniz. Yerel kafelerin atmosferi de oldukça keyiflidir."
+}, {
+"question": "Kaş'ta nargile içebileceğim bir yer var mı?",
+"answer": "Kaş'ta nargile servisi sunan birkaç kafe bulunabilir, ancak büyük şehirlerdeki gibi yaygın bir nargile kafesi kültürü yoktur. Genellikle bazı bar veya kafelerin özel bölümünde nargile sunulmaktadır."
+}, {
+"question": "Kaş'ta gece hayatı hangi aylarda hareketlidir?",
+"answer": "Kaş'ta gece hayatı özellikle yaz aylarında (Haziran'dan Eylül'e kadar) hareketlidir. Bu dönemde barlar, etkinlikler ve konserler yoğundur; kış aylarında ise birçok mekan kapalıdır veya oldukça sakindir."
+}, {
+"question": "Kaş'ta gece müzik yayınına bir kısıtlama var mı?",
+"answer": "Evet, genelde Kaş'ta gece saat 01:00'den sonra yüksek sesli müzik yayını kısıtlanır. Mekanlar bu saatten sonra ses düzeyini düşürür veya kapatır, böylece kasabada gece belirli bir sakinlik sağlanır."
+}, {
+"question": "Kaş'ta ünlü DJ performansları veya büyük konserler oluyor mu?",
+"answer": "Kaş'ta günlük gece hayatında genellikle yerel DJ performansları veya küçük grupların müziği olur, çok ünlü DJ'ler pek sahne almaz. Ancak Kaş Caz Festivali gibi etkinliklerde veya yaz konserlerinde dönem dönem tanınmış müzisyenler ve gruplar sahne alabilmektedir."
+}, {
+"question": "Kaş'ta alkolsüz (İslami konsept) otel var mı?",
+"answer": "Kaş'ta birkaç tane muhafazakâr konsepte uygun, alkolsüz hizmet veren otel bulunuyor. Bu otellerde alkol servisi yapılmıyor ve bazı olanaklar kadın-erkek ayrı veya aile mahremiyetine uygun düzenleniyor. Örneğin biraz Kaş dışında Likya yolu üzerinde bir tesis bu konsepte sahipti (Likya Road Resort Hotel gibi). Rezervasyon öncesi otelin 'alkolsüz' olduğunu teyit edebilirsiniz."
+}, {
+"question": "Kaş semenderi nedir?",
+"answer": "Kaş semenderi (Lyciasalamandra luschani basoglui), Kaş ve çevresine özgü endemik bir semender türüdür. Küçük ve genellikle kahverengi-turuncu tonlarında olan bu amfibi, sadece bu bölgedeki nemli kayalık alanlarda yaşar. Doğada nadir görülen bir canlıdır ve korunması gereken türler arasındadır."
+}, {
+"question": "Likya Kaş orkidesi nedir, nerede bulunur?",
+"answer": "Likya Kaş orkidesi (Ophrys lycia), Kaş ve civarındaki bölgeye özgü endemik bir yabani orkide türüdür. Bu orkidenin çiçekleri arıya benzer şekildedir (ophrys cinsi özelliği) ve ilkbaharda kayalık makilik alanlarda çıkar. Nadiren rastlanan bu çiçek, bölgenin eşsiz bitki çeşitliliğinin bir parçasıdır."
+}, {
+"question": "Kaş'taki Antiphellos Antik Tiyatrosu kaç kişilik ve giriş ücreti var mı?",
+"answer": "Antiphellos Antik Tiyatrosu yaklaşık 4,000 kişilik kapasiteye sahipti (antik çağda). Günümüzde ziyaret etmek ücretsizdir, açık bir alan olduğu için bilet gerekmez. Dilerseniz günbatımında tiyatronun basamaklarına oturup Meis Adası manzarası eşliğinde keyif yapabilirsiniz."
+}, {
+"question": "Kaş'ta en popüler plaj hangisidir?",
+"answer": "Kaş denilince birçok kişinin aklına ilk gelen ve en popüler plaj Kaputaş Plajı'dır. Berrak turkuaz suyu ve kanyon ağzındaki kumsalıyla ün kazanmıştır. Ayrıca Kaş merkezdeki Küçük Çakıl ve Büyük Çakıl plajları ile yakın çevredeki Patara Plajı da popülerlik açısından öne çıkan diğer plajlardır."
+}, {
+"question": "Kaş'ta en popüler aktivite nedir?",
+"answer": "Kaş'ta en popüler aktivitelerin başında tüplü dalış gelir. Türkiye'nin en iyi dalış noktalarından biri olarak bilinen Kaş, her seviyeden dalgıç için cazip dalış imkanları sunar. Bunun yanı sıra tekne turları, antik kent gezileri ve yamaç paraşütü de son yıllarda oldukça popüler hale gelmiştir."
+}, {
+"question": "Kaş'ta mutlaka görülmesi gereken yerler hangileri?",
+"answer": "Kaş'ta mutlaka görmeniz gereken yerlerin başında Uzun Çarşı'daki Aslanlı Lahit ve Antiphellos Antik Tiyatrosu geliyor. Ayrıca bir tekne turuna çıkıp Kekova (Batık Şehir) ve Kaleköy'ü görmek, Kaputaş Plajı'nda yüzmek, Patara Antik Kenti'ni ziyaret etmek de 'kaçırılmaması gerekenler' arasında. Kaş'ın kendisi zaten başlı başına bir güzellik; sokaklarında dolaşmak bile keyiflidir."
+}, {
+"question": "Kaş'ta kaç gün kalmalı, ideal tatil süresi nedir?",
+"answer": "Kaş'ın tadını tam anlamıyla çıkarmak için ideal tatil süresi 3-5 gün arasıdır diyebiliriz. 3 günde önemli yerleri görüp denizin keyfini çıkarırsınız; 1 hafta kalırsanız çevredeki Patara, Kekova gibi yerleri de rahatça ziyaret edebilirsiniz. Daha uzun kalmak isterseniz Kaş'ın huzurlu atmosferinde sıkılmadan vakit geçirebilirsiniz."
+}, {
+"question": "Kaş ilçesinde araç kiralama imkanı var mı?",
+"answer": "Evet, Kaş ilçesinde araç kiralama ofisleri bulunmaktadır. Çevredeki koyları ve antik kentleri özgürce gezmek için araç kiralayabilirsiniz; ancak sadece ilçe merkezinde kalacaksanız araca çok gerek duymazsınız."
+}, {
+"question": "Kaş ilçesine ulaşım seçenekleri nelerdir?",
+"answer": "Kaş ilçesine hava yoluyla gelmek isteyenler için en yakın havalimanları Dalaman ve Antalya'dır. Karayolu ile birçok şehirden Kaş'a otobüs seferleri bulunur. Özel araçla da D400 sahil yolunu takip ederek Kaş'a ulaşabilirsiniz, bu yol manzaralı ancak virajlıdır."
+}, {
+"question": "Dalaman Havalimanı'ndan Kaş'a ulaşım seçenekleri nelerdir?",
+"answer": "Dalaman Havalimanı'ndan Kaş'a ulaşmak için HAVAŞ veya belediye otobüsüyle Fethiye'ye gidip, oradan Kaş minibüsüne aktarma yapabilirsiniz. Alternatif olarak özel transfer hizmetlerini kullanabilir ya da araç kiralayarak 2,5 saatlik bir yolculukla Kaş'a varabilirsiniz."
+}, {
+"question": "Kaş ilçesinde taksi bulmak kolay mı?",
+"answer": "Evet, Kaş ilçe merkezinde taksi bulmak genelde zor değildir; ana meydan civarında taksiler bekler. Otogarda da taksiler bulunmaktadır. Özellikle gece geç saatlerde veya uzak koylara giderken taksi kullanılabilir; sadece taksimetre açıldığından emin olup yaklaşık ücreti önceden sormakta fayda var."
+}, {
+"question": "Kaş ilçesine İstanbul'dan ulaşım seçenekleri nelerdir?",
+"answer": "İstanbul'dan Kaş ilçesine gitmek için en hızlı yol, İstanbul'dan Dalaman veya Antalya'ya uçup oradan karayoluyla devam etmektir. Otobüsle gitmek isterseniz yaklaşık 14-15 saatlik bir yolculuk söz konusu. Özel araçla Ege üzerinden inerek ortalama 12 saatte ulaşabilirsiniz; güzergah olarak İstanbul-Bursa-Balıkesir-İzmir-Fethiye-Kaş rotası tercih edilir."
+}, {
+"question": "Kaş'a İzmir'den kaç saatte varılıyor?",
+"answer": "İzmir'den Kaş ilçesine özel araçla yaklaşık 6,5-7 saatte varılabilir (güzergahınızın durumuna göre). Otobüs ile genellikle 8 saat civarında sürüyor, gece seferleri mevcut. Uçakla gelmek isterseniz, İzmir'den Dalaman'a uçup oradan 2,5 saatlik bir transfer yaparak Kaş'a ulaşabilirsiniz."
+}, {
+"question": "Kaş ilçesine otobüs yolculuğu kaç saat sürüyor?",
+"answer": "Kaş'a Türkiye'nin farklı şehirlerinden otobüs yolculuğu süreleri mesafeye göre değişir. Örneğin İstanbul'dan otobüs ~14 saat, Ankara'dan ~10 saat, İzmir'den ~8 saat sürer. Antalya'dan Kaş'a otobüs ise 4 saate yakındır. Bu süreler trafik ve mola durumuna göre biraz değişebilir."
+}, {
+"question": "Kaş ilçesine gitmek için tren veya deniz yolu seçeneği bulunuyor mu?",
+"answer": "Kaş ilçesine tren yolu ulaşımı yoktur. En yakın tren hattı Denizli veya Konya yönündedir, oradan otobüs aktarması gerekir. Deniz yoluyla da iç hat feribot seferi yok, sadece Yunanistan'ın Meis Adası'ndan Kaş'a kısa bir feribot vardır. Bu nedenle Kaş'a ulaşımda ana seçenekler kara yolu veya yakın havalimanına uçmaktır."
+}, {
+"question": "Kaş ilçesinin plajlarında temel olanaklar bulunuyor mu?",
+"answer": "Kaş'taki belli başlı plajlarda (örneğin Büyük Çakıl, Akçagerme) duş, tuvalet, soyunma kabini gibi olanaklar bulunur ve plajı çevreleyen işletmeler sayesinde yiyecek-içecek temin etmek mümkündür. Ancak daha bakir koylarda bu tür tesisler olmaz; bu nedenle oraları ziyaret ederken su, atıştırmalık ve havlu gibi ihtiyaçlarınızı yanınıza almanız gerekir."
+}, {
+"question": "Kaş ilçesinde taksi ücretleri yüksek mi?",
+"answer": "Kaş içerisinde kısa mesafelerde taksi ücretleri makul sayılabilir, taksimetre üzerinden hesaplanır. İlçe içinde çoğu yer yürüme mesafesinde olduğundan genelde çok kullanılmaz. Daha uzak mesafeler (örneğin Kaputaş Plajı gibi) için taksi tutarsanız maliyet artacaktır. Yola çıkmadan önce şoförden yaklaşık fiyat bilgisi alabilirsiniz."
+}, {
+"question": "Kaş ilçesinde kamp yerlerine ulaşım nasıl sağlanır?",
+"answer": "Kaş merkezine yakın Kaş Camping gibi kamp yerlerine yürüyerek ya da kısa bir araç yolculuğuyla ulaşabilirsiniz. Daha uzaktaki kamp alanlarına gitmek için genelde özel araç gerekiyor; eğer aracınız yoksa taksiyle gidebilir ya da bazı kamp işletmelerinin transfer hizmeti olup olmadığını sorabilirsiniz."
+}, {
+"question": "Kaş ilçesinde restoranlar genelde kaçta kapanıyor?",
+"answer": "Kaş'ta yaz sezonunda restoranlar genelde gece 11-12'ye kadar açık kalır. Müşteri oldukça mutfaklar açık olabilir. Kışın ise daha erken kapatabilirler (9-10 gibi). Barlar ve kafeler ise yazın 1-2'ye dek açık kalırken, kışın çoğu en geç yarıya kadar hizmet verir."
+}, {
+"question": "Kaş ilçesinde ambulans kaç dakikada geliyor?",
+"answer": "Kaş küçük bir yer olduğundan ambulans genellikle çağrıdan sonraki 5-10 dakika içinde olay yerine ulaşabiliyor. Tabi ki bu, olayın yerine ve yoğunluğa bağlı değişebilir; ama ilçe içinde sağlık ekibinin hızlı müdahale etmesi beklenir."
+}, {
+"question": "Kaş'ta Kaş semenderi hangi mevsimde görülür?",
+"answer": "Endemik Kaş semenderleri genelde ilkbahar aylarında üreme döneminde daha aktif olurlar. Yağışlı ve nemli havalarda (özellikle Mart-Nisan gibi) kayalık ve ormanlık alanlarda ortaya çıkabilirler. Yazın kurak dönemde pek görülmezler, kışın da soğukta gizlenirler."
+}, {
+"question": "Kaş ilçesinde elektrik ve su kesintileri yaşanıyor mu?",
+"answer": "Kaş'ta elektrik altyapısı genelde sorunsuzdur; çok nadir planlı bakım kesintileri olabilir ama sık sık elektrik kesintisi yaşanmaz. Su konusunda da yazın yüksek sezonda zaman zaman basınç düşebilir, ancak genel olarak uzun süreli su kesintileri olmaz. Oteller ve işletmeler bu konularda önlem de almaktadır."
+}, {
+"question": "Kaş'ta plaj voleybolu oynayabileceğim bir yer var mı?",
+"answer": "Evet, Kaş'ta plaj voleybolu oynayabileceğiniz bir yer olarak Akçagerme Plajı'nda voleybol sahası bulunuyor. Akçagerme, Kaş merkezine birkaç kilometre mesafede ve içerisinde plaj voleybolu alanı, basketbol sahası gibi spor olanakları sunan bir tesis."
+}, {
+"question": "Kaş'ta el yapımı deri sandalet bulabilir miyim?",
+"answer": "Evet, Kaş çarşısında el yapımı deri sandalet ve çanta satan küçük atölye/dükkanlar bulunur. Bu dükkanlarda ayağınıza uygun numarayı deneyip alabilir, hatta bazı ustalar küçük ayarları anında yapabilir. Turistik ama özgün bir hediye olarak düşünebilirsiniz."
+}, {
+"question": "Kalkan'da pazar ne zaman kuruluyor?",
+"answer": "Kalkan (Kaş'a bağlı mahalle) yöresel ürün pazarı genellikle haftada iki gün kuruluyor: Çarşamba ve Cumartesi günleri. Bu pazarda çevre köylerden gelen taze ürünler ve el işleri bulabilirsiniz. Kaş merkez pazarı ise Cuma günleridir."
+}, {
+"question": "Kaş'ta serbest dalış (freediving) yapılıyor mu?",
+"answer": "Evet, Kaş son yıllarda serbest dalış konusunda da popüler hale geldi. Bazı dalış okulları apne (freediving) eğitimleri ve etkinlikleri düzenliyor; hatta Kaş'ta uluslararası serbest dalış yarışmaları ve rekor denemeleri dahi yapılmıştı. Eğer ilgi duyuyorsanız, serbest dalış eğitimi veren merkezlerle iletişime geçebilirsiniz."
+}, {
+"question": "Kaş'ta su sporları için lisans veya sertifika gerekir mi?",
+"answer": "Genel olarak hayır. Tüplü dalış yapacaksanız sertifikanız yoksa 'deneme dalışı' yaparsınız veya kurs alırsınız. Diğer su sporlarında (jet ski, kano, parasailing vb.) lisans gerekmiyor; bu aktiviteleri rehberler veya eğitimciler eşliğinde güvenli bir şekilde deneyebilirsiniz."
+}, {
+"question": "Kaş'ta elektronik eşya veya telefon aksesuarı bulabilir miyim?",
+"answer": "Kaş küçük bir yer olduğu için büyük elektronik mağazalar yok, ancak temel ihtiyaçlarınızı karşılayacak dükkanlar mevcut. Telefoncularda şarj aleti, kulaklık, batarya gibi aksesuarlar bulunur; bozulursa tamir için küçük teknik servisler de var. Büyük elektronik alışverişleri için Fethiye veya Antalya gibi şehirlere gitmek gerekebilir."
+}, {
+"question": "Kaş'ta festivallere nasıl katılabilirim, bilet gerekiyor mu?",
+"answer": "Kaş'ta düzenlenen festivallerin çoğu halka açık ve ücretsiz etkinlikler içerir. Örneğin Likya Kaş Festivali veya Caz Festivali'nde meydan konserleri genelde ücretsizdir. Yalnızca sınırlı kapasiteli özel etkinlikler olursa önceden duyuru yapılır. Yani festival döneminde Kaş'ta olmanız etkinliklere katılmak için genellikle yeterlidir, ekstra bilet gerekmez."
+}, {
+"question": "Çocuklarımla Kaş'ta tekne turuna çıkmak güvenli mi?",
+"answer": "Evet, Kaş'taki tekne turları aileler ve çocuklar için de uygundur. Teknelerde genellikle her yaşa uygun can yelekleri bulundurulur; hareketli olmayan sakin koylarda yüzme molası verilir. Yine de teknede çocuklarınızı gözetim altında tutmak ve deniz tutmasına karşı hazırlıklı olmak önemli."
+}, {
+"question": "Kaş'ta deniz suyu temiz mi, sağlık açısından güvenli mi?",
+"answer": "Kaş'ın denizi genelde oldukça temiz ve berraktır; birden fazla plajı Mavi Bayrak ödülüne layık görülmüştür. Doğal olarak her denizde olduğu gibi çok nadir cilt hassasiyeti veya kulak enfeksiyonu olasılığı bulunsa da, Kaş bölgesinde deniz suyu kalitesi yüksek olduğu için sağlık açısından güvenlidir. Yine de uzun süre denizde kalacaksanız duş almak iyi bir önlem olabilir."
+}, {
+"question": "Kaş'ta deniz suyu tuz oranı nasıldır?",
+"answer": "Kaş'ta Akdeniz'in suyu genel olarak tuzludur; dünya ortalamasına göre biraz daha tuzlu sayılır. Bu yüzden yüzerken batmamak daha kolay olabilir, ancak deniz suyu gözlere kaçtığında yakıcı olabilir. Hassas ciltler deniz sonrası durulanırsa iyi olur. Yani Karadeniz'e göre daha tuzlu, Ege ile benzer tuzluluk seviyesindedir."
+}, {
+"question": "Kaş'ta internet kafe bulabilir miyim?",
+"answer": "Kaş'ta günümüzde yaygın olmasa da bir iki adet internet kafe bulunabilir. Ancak çoğu kişi otellerdeki Wi-Fi veya cep telefonu internetini kullandığı için internet kafe sayısı azalmıştır. Acil ihtiyacınız olursa çarşı civarında bir yerel internet cafe bulma şansınız var."
+}, {
+"question": "Kaş'tan Rodos Adası'na feribotla geçilebilir mi?",
+"answer": "Kaş'tan Rodos Adası'na doğrudan feribot seferi yoktur. Rodos'a en yakın feribot seferleri Fethiye ve Marmaris'ten düzenlenir. Eğer Kaş'tan Rodos'a gitmek isterseniz, önce karayoluyla Fethiye'ye geçip oradan feribota binebilirsiniz. Alternatif olarak Kaş'tan Yunan Meis Adası'na geçip oradan Rodos'a aktarma yapmak teoride mümkün ama bu oldukça dolaylı bir rotadır."
+}, {
+"question": "Hidayet Koyu'na Kaş merkezden nasıl giderim?",
+"answer": "Hidayet Koyu, Kaş merkezine yaklaşık 2-3 km mesafede, Çukurbağ Yarımadası yolunda yer alır. Özel aracınızla 5 dakikada ulaşabilirsiniz (yol kenarında tabelası var). Aracınız yoksa taksiyle veya temmuz-ağustos aylarında yarımadaya giden minibüslerle de gidebilirsiniz. Koya vardığınızda deniz kenarında işletme bulunmaktadır; şezlong kiralayıp gün boyu vakit geçirebilirsiniz."
+}, {
+"question": "İnceboğaz Plajı nerede, nasıl bir yerdir?",
+"answer": "İnceboğaz Plajı Kaş Çukurbağ Yarımadası'nın boğaz kısmında (yarımadanın anakaraya en ince bağlandığı yerde) bulunur. Aslında birbirine yakın iki küçük plajı vardır: Biri yarımadanın Kaş'a bakan tarafında sakin bir koy, diğeri açık denize bakan tarafta. Deniz genellikle sakin ve temizdir; burada belediyenin işlettiği tesis de bulunur, şezlong-şemsiye ve büfe hizmeti vardır."
+}, {
+"question": "Kaş'ta dalış turlarında eğitmenler hangi dilde iletişim kuruyor?",
+"answer": "Kaş'taki dalış merkezlerinin çoğu Türkçe ve İngilizce hizmet veriyor. Eğitmenler genellikle İngilizceyi iyi biliyor; bu yüzden yabancı dalgıçlar rahatlıkla katılabiliyor. Bazı okullarda Almanca, Fransızca gibi diller bilen eğitmenler de bulunabiliyor. Rezervasyon yaparken dil tercihinizi belirtirseniz uygun gruba dahil edilirsiniz."
+}, {
+"question": "Kaş'ta dalış yaparken dalış elbisesi (wetsuit) gerekir mi?",
+"answer": "Yaz aylarında Kaş'ta deniz suyu sıcaklığı 25°C civarına çıktığı için sığ sularda dalış yaparken 3mm'lik ince bir dalış elbisesi veya shorty giymek yeterli oluyor. Bazı tecrübeli dalgıçlar kısa süreli dalışlarda mayo ile bile dalıyor. Ancak ılıman da olsa derinlerde su biraz serinleyebilir; genelde dalış okulları size uygun kalınlıkta bir elbise temin ediyorlar."
+}, {
+"question": "Kaş'ta kamp ve dalış malzemesi alabileceğim dükkanlar var mı?",
+"answer": "Kaş'ta temel kamp malzemeleri (mat, uyku tulumu, tüp vb.) satan çok fazla dükkan yoktur; yola çıkmadan büyük şehirden temin etmek daha garantili olur. Dalış malzemeleri konusunda ise Kaş'ta birkaç dalış mağazası mevcuttur, maske, şnorkel, palet gibi ekipmanları bu mağazalardan alabilirsiniz. Fiyatlar turistik yerde olduğunuz için biraz yüksek olabilir."
+}, {
+"question": "Kaş'ta tenis kortu var mı?",
+"answer": "Kaş'ta halka açık profesyonel bir tenis kompleksi olmamakla birlikte, Akçagerme Tesisleri içerisinde bir tenis kortu bulunmaktadır. Ayrıca bazı otellerin özel tenis kortları olabilir. Kendi raketinizle giderseniz Akçagerme'deki kortu ücret karşılığı kullanma imkanı bulabilirsiniz."
+}, {
+"question": "Kaş'ta spor salonu (fitness merkezi) var mı?",
+"answer": "Kaş'ta büyük spor salonları olmasa da temel ekipmanları olan bir iki küçük fitness merkezi bulunuyor. Bazı oteller de misafirleri için küçük spor salonları sunabiliyor. Uzun süre kalacak ve spor rutininizi sürdürmek isteyecekseniz, Kaş merkezdeki yerel bir spor salonuna uğrayıp kısa süreli üyelik seçeneklerini sorabilirsiniz."
+}, {
+"question": "Kaş'ta koşu veya yürüyüş yapabileceğim güzel bir parkur var mı?",
+"answer": "Kaş'ta sabah erken saatlerde veya akşamüstü serinliğinde koşu/yürüyüş yapmak için güzel rotalar bulunuyor. Örneğin liman çevresinden başlayıp Küçük Çakıl yönüne veya Çukurbağ Yarımadası yoluna doğru koşabilirsiniz. Ayrıca antik tiyatro çevresi ve Kaş'ın iç sokakları da sakin saatlerde yürüyüş için keyifli. Çok uzun parkurlar olmasa da manzaralı ve temiz havada spor yapabilirsiniz."
+}, {
+"question": "Kaş'ta Starbucks veya benzeri kahve zinciri bulunuyor mu?",
+"answer": "Hayır, Kaş ilçesinde uluslararası kahve zincirleri mevcut değil. Ancak birçok yerel kafe, kahve evi bulunuyor ve buralarda dünya standartlarında kahve çeşitlerini bulabiliyorsunuz. Özellikle çarşı içinde butik kahveciler hem kaliteli içecekler sunuyor hem de hoş bir ortam sağlıyor."
+}, {
+"question": "Kaş'ta Kaş Uluslararası Film Festivali'ne nasıl katılabilirim?",
+"answer": "Kaş Uluslararası Film Festivali genellikle Haziran ortasında Kaş'ta düzenleniyor. Festival süresince film gösterimleri açık havada veya salonda yapılıyor ve çoğunlukla halka açık ve ücretsiz oluyor. Programı festivalin resmi sitesinden veya sosyal medya duyurularından takip edip, etkinlik saatlerinde gösterim mekanına gitmeniz yeterli; bilet gerekmiyor."
+}, {
+"question": "Kaş'ta endemik hangi canlı türleri var?",
+"answer": "Kaş bölgesi bazı endemik türlere ev sahipliği yapar. Örneğin Kaş Semenderi (Lyciasalamandra) bu yöreye özgü bir amfibidir. Ayrıca Likya Kaş Orkidesi adı verilen nadir bir orkide türü de bölgede yetişir. Bu canlılar sadece Kaş ve çevresinde doğal olarak bulunur, koruma altındadır."
+}, {
+"question": "Kaş'ta bir haftasonu için neler yapabilirim?",
+"answer": "Kaş'ta iki günlük bir kaçamak için ilk gün merkezin tadını çıkarabilir, çarşıda gezip antik tiyatroya uğrayabilir ve akşamını limanda yemekle noktalayabilirsiniz. İkinci gün bir tekne turuna katılarak Kekova'yı ve Kaleköy'ü görebilir veya karayoluyla Kaputaş Plajı ile Patara Antik Kenti'ni ziyaret edebilirsiniz. Kısacası bir haftasonunda Kaş'ın hem kültürel hem doğal güzelliklerinden küçük bir seçki yapabilirsiniz."
+}, {
+"question": "Kaş'ta hediye olarak ne alınır?",
+"answer": "Kaş'tan alınabilecek hediyelikler arasında el yapımı takılar (özellikle deniz kabuğu ve boncuklu tasarımlar), yerel motifli seramikler, nazar boncuklu süs eşyaları popülerdir. Ayrıca Antalya yöresine özgü turunç reçeli, dut reçeli veya kekik balı gibi lezzetler de sevdiklerinize götürülebilecek güzel hediyelerdendir."
+}, {
+"question": "Kaş'ta hangi özel günler veya bayramlar coşkuyla kutlanır?",
+"answer": "Kaş'ta ulusal bayramlar (23 Nisan, 19 Mayıs, 30 Ağustos, 29 Ekim gibi) resmi törenlerle kutlanır, akşamları fener alayları veya konserler düzenlenebilir. Dini bayramlarda (Ramazan, Kurban) Kaş yerli turistlerle dolar ve tatil havasında geçer ama özel bir tören olmaz. Ayrıca 10 Kasım gibi anma günlerinde de Atatürk anılır. Yerel olarak da Likya-Kaş Festivali en coşkulu dönemlerden biridir."
+}, {
+"question": "Kaş'ta kredi kartı kullanımında ek komisyon alınır mı?",
+"answer": "Kaş'ta restoran, mağaza ve otellerde kredi kartı kullanırken genellikle ek komisyon alınmaz, ödediğiniz tutar pos cihazından geçilir. Ancak bazı küçük işletmeler veya tur hizmeti veren yerler, kart yerine nakit tercih edebilir. Ödeme yapmadan önce kart geçip geçmediğini ve ek bir ücret olup olmadığını sorabilirsiniz; büyük çoğunlukta sorunsuz kullanırsınız."
+}, {
+"question": "Kaş'ta tipik bir akşam nasıl geçer?",
+"answer": "Kaş'ta akşamları genelde gün batımını izleyerek başlar; insanlar antik tiyatroya ya da bir kafeye gidip manzarayı seyreder. Sonrasında çarşı içindeki restoranlarda yemeğe geçilir. Yemek sonrası liman boyunda yürüyüş yapmak, dondurma yemek popülerdir. Gece ise barlar ve meyhaneler canlıdır ama aşırı gürültülü değildir; hoş sohbetle veya müzik dinleyerek geceyi sonlandırabilirsiniz."
+}, {
+"question": "Kaş'ta balık restoranları nerede yoğunlaşır?",
+"answer": "Kaş'ta balık restoranları genellikle liman çevresinde ve merkezde Uzun Çarşı civarında yoğunlaşır. Sahil boyunca ve meydana yakın sokaklarda çok sayıda deniz ürünü sunan lokanta bulabilirsiniz. Hepsi taze mezeleri ve günlük balıklarıyla ünlüdür."
+}, {
+"question": "Kaş'ta tatildeyken Instagramlık fotoğraf noktaları nereler?",
+"answer": "Kaş'ta fotojenik birçok nokta var. Örneğin rengarenk begonvillerle kaplı eski taş evlerin olduğu Uzun Çarşı, sokaktaki Likya lahdi ile harika bir arka plan sunar. Antiphellos Antik Tiyatrosu'nda gün batımı manzarası, Kaputaş Plajı'nın yukarıdan turkuaz görüntüsü ve limanda gün batarken çekilecek kareler Instagram için oldukça çekicidir."
+}, {
+"question": "Kaş'ta Yunanistan'dan gelen turistler var mı?",
+"answer": "Kaş, Yunanistan'ın Meis Adası'na çok yakın olduğu için karşılıklı turist geçişleri olur. Yazları Meis'ten günübirlik Kaş'a gelen Yunan turistler görmek mümkün. Aynı şekilde Kaş'tan Meis'e giden Türk turistler de vardır. Kaş esnafı bu yüzden biraz Yunanca kelimeler de öğrenmiştir; Yunan turistler Kaş'ı çok sempatik bulur."
+}, {
+"question": "Kaş ilçesinde tarihi Aslanlı Lahit kaç yıllıktır?",
+"answer": "Kaş'ın simgesi olan Aslanlı Lahit, yaklaşık 2400 yıllık bir tarihi mirastır. M.Ö. 4. yüzyılda Likya döneminde yapıldığı tahmin edilir. Lahitin üzerindeki aslan başı kabartmaları ve Likçe yazıt, onun ne kadar eski ve değerli olduğunu gösterir."
+}, {
+"question": "Kaş ilçesinde serinlemek için yayla turu yapılır mı?",
+"answer": "Kaş'a en yakın yayla bölgesi olan Gömbe Yaylası, yazın sıcaktan bunalanlar için güzel bir kaçış noktasıdır. Kaş'tan Gömbe'ye araçla yaklaşık 1,5 saatte ulaşabilirsiniz. Gömbe, serin havası, yeşil doğası, Uçarsu Şelalesi ve yayla pazarı ile ünlüdür; günübirlik veya 1 gece konaklamalı gidip serinleyebilirsiniz."
+}, {
+"question": "Kaş'ta scuba diving dışında alternatif su sporları neler?",
+"answer": "Scuba dışında Kaş'ta kano/kayak, yüzme, şnorkel, stand-up paddle board (SUP) gibi daha sakin su aktiviteleri yapabilirsiniz. Bazı plajlarda su kayağı veya jet ski gibi aktiviteler de bulunabilir ancak Kaş daha çok dalış ve kano gibi doğa odaklı sporlara yoğunlaşmıştır."
+}]
