@@ -647,7 +647,7 @@ Dragoman Diving and Outdoor, Kaş’ta dalışı güvenli, sakin ve keyifli şek
   description: 'Shot odaklı konsepti, yüksek enerjisi ve eğlenceli atmosferiyle; Kaş’ta geceyi hızlandırmak isteyenlerin uğradığı küçük ama hareketli bir bar.',
   category: ['bar'],
 
-  image: 'the-shotlar-terminali-001.jpg',
+  image: '../assets/1_places/the-shotlar-terminali-001.jpg',
   images: [
     '../assets/1_places/the-shotlar-terminali-002.jpg',
     '../assets/1_places/the-shotlar-terminali-003.jpg',
