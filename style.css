@@ -228,3 +228,37 @@ body {
 .back-link:hover{
   background: rgba(0,0,0,.05);
 }
+
+
+/* === Shared Header Left Actions === */
+.header-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.action-btn{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  background: rgba(255,255,255,0.92);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  padding:0;
+  cursor:pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.action-btn img{
+  width:22px;
+  height:22px;
+}
+.action-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.12);
+}
+.action-btn:active{
+  transform: scale(0.96);
+}
