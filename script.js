@@ -178,8 +178,8 @@ function renderCategories() {
 // ---------- render cards ----------
 function getItemHref(item) {
   // mevcut yapına göre path’leri aynı bıraktım
-  if (item.type === 'article') return `articles-selection.html?id=${encodeURIComponent(item.id)}`;
-  if (item.type === 'faqspecial') return `faqspecial-selection.html?id=${encodeURIComponent(item.id)}`;
+  if (item.type === 'article') return `../articles/articles.html?id=${encodeURIComponent(item.id)}`;
+  if (item.type === 'faqspecial') return `../faqspecialfaqspecial.html?id=${encodeURIComponent(item.id)}`;
   return `../places/places.html?id=${encodeURIComponent(item.id)}`;
 }
 
