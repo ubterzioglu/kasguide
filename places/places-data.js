@@ -3830,7 +3830,1457 @@ Pratik ipuçları:
 Kısa özet:
 Sardelaki, Kaş’ta Yunan mutfağı tadında, sakin ve uzun akşam sofraları arayanlar için güçlü bir taverna seçeneği.
   `
+},
+
+{
+  id: "bella-vita-pizza",
+  title: "Bella Vita Pizza",
+  description: "Kaş merkezde, odun fırın pizzalarıyla bilinen, hızlı ama kaliteli yemek arayanlara hitap eden İtalyan tarzı pizza mekânı.",
+  category: ["food"],
+
+  image: "../assets/1_places/bella-vita-pizza-001.jpg",
+  images: [
+    "../assets/1_places/bella-vita-pizza-002.jpg",
+    "../assets/1_places/bella-vita-pizza-003.jpg",
+    "../assets/1_places/bella-vita-pizza-004.jpg"
+  ],
+
+  rating: 4.5,
+  price: "₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1995, lng: 29.6424 },
+
+  website: "",
+  phone: "",
+
+  duration: "30 dk – 1.5 saat",
+
+  facilities: [
+    "Odun fırını",
+    "Pizza & makarna",
+    "Masa servisi",
+    "Take-away",
+    "Alkollü & alkolsüz içecek"
+  ],
+
+  features: [
+    "Odun fırın pizza",
+    "Hızlı servis",
+    "Merkez konum",
+    "Rahat ve gündelik ortam"
+  ],
+
+  tags: [
+    "pizza",
+    "italyan mutfağı",
+    "odun fırını",
+    "hızlı yemek",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Bella Vita Pizza, Kaş’ta “bir akşam pizza yiyelim ama düzgün olsun” diyenlerin uğradığı merkez pizza adreslerinden biri. Odun fırın pizzalar menünün ana omurgasını oluşturuyor ve servis temposu genelde hızlı.
+
+Atmosfer:
+Gündelik ve rahat. Uzun akşam sofralarından ziyade, pizza yiyip devam etmeye uygun bir düzen var. Turistik ama bunaltıcı olmayan bir hareketlilik hâkim.
+
+Kimler için uygun?
+- Pizza ve İtalyan mutfağı sevenler
+- Uzun meyhane akşamı istemeyenler
+- Hızlı ama kaliteli bir öğün arayanlar
+
+Pratik ipuçları:
+- Akşam yoğunluğu oluşabiliyor; pizza çıkış süreleri uzayabilir.
+- Take-away seçeneği pratik bir alternatif.
+- Uzun süreli oturma planı için değil, yemek odaklı düşünülmeli.
+
+Kısa özet:
+Bella Vita Pizza, Kaş’ta odun fırın pizzasıyla öne çıkan, hızlı ve net bir pizza durağı.
+  `
 }
+,
+{
+  id: "oburus-notos",
+  title: "Oburus Notos",
+  description: "Kaş’ta, Oburus mutfak anlayışını daha modern ve yaratıcı tabaklarla sunan, akşam yemeği odaklı bir restoran.",
+  category: ["food"],
+
+  image: "../assets/1_places/oburus-notos-001.jpg",
+  images: [
+    "../assets/1_places/oburus-notos-002.jpg",
+    "../assets/1_places/oburus-notos-003.jpg",
+    "../assets/1_places/oburus-notos-004.jpg"
+  ],
+
+  rating: 4.7,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.2002, lng: 29.6406 },
+
+  website: "",
+  phone: "",
+
+  duration: "2–3 saat",
+
+  facilities: [
+    "Modern mutfak",
+    "Masa servisi",
+    "Şarap & kokteyl",
+    "Akşam yemeği servisi",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Modern ve yaratıcı tabaklar",
+    "Akşam yemeği odaklı konsept",
+    "Sunum ön planda",
+    "Daha butik restoran deneyimi"
+  ],
+
+  tags: [
+    "modern mutfak",
+    "fine dining",
+    "yaratıcı tabaklar",
+    "akşam yemeği",
+    "kaş"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Oburus Notos, Oburus mutfak çizgisinin Kaş’taki daha modern ve deneysel yorumunu sunan bir restoran. Menü, klasik ev yemeklerinden ziyade daha yaratıcı ve sunum odaklı tabaklar etrafında şekilleniyor.
+
+Atmosfer:
+Şık ama kasıntısız. Akşam yemeğine odaklı bir düzen var; masa başında geçirilen süre daha uzun. Gürültülü bir ortam yok, daha çok yemek deneyimi ön planda.
+
+Kimler için uygun?
+- Modern mutfak ve farklı tabaklar denemek isteyenler
+- Klasik restoranlardan sıkılanlar
+- Akşam yemeğini deneyim olarak görenler
+
+Pratik ipuçları:
+- Rezervasyon özellikle yaz sezonunda faydalı.
+- Menüde porsiyonlar paylaşmaya uygun olabilir.
+- Acele bir yemek planı için değil, yavaş akşamlar için düşünülmeli.
+
+Kısa özet:
+Oburus Notos, Kaş’ta modern ve yaratıcı mutfak deneyimi arayanlar için öne çıkan, butik bir akşam yemeği adresi.
+  `
+}
+,
+{
+  id: "zoka-street-food",
+  title: "Zoka Street Food",
+  description: "Kaş merkezde, sokak lezzetleri odaklı menüsüyle hızlı, doyurucu ve pratik yemekler sunan küçük ölçekli bir street food noktası.",
+  category: ["food"],
+
+  image: "../assets/1_places/zoka-street-food-001.jpg",
+  images: [
+    "../assets/1_places/zoka-street-food-002.jpg",
+    "../assets/1_places/zoka-street-food-003.jpg",
+    "../assets/1_places/zoka-street-food-004.jpg"
+  ],
+
+  rating: 4.5,
+  price: "₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1996, lng: 29.6427 },
+
+  website: "",
+  phone: "",
+
+  duration: "20–45 dk",
+
+  facilities: [
+    "Hızlı servis",
+    "Ayakta/yüksek masa",
+    "Take-away",
+    "Alkolsüz servis"
+  ],
+
+  features: [
+    "Street food konsepti",
+    "Kısa sürede servis",
+    "Gece yemeğine uygun",
+    "Merkez konum"
+  ],
+
+  tags: [
+    "street food",
+    "hızlı yemek",
+    "gece yemeği",
+    "pratik",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Zoka Street Food, Kaş’ta “acıkınca hızlıca bir şeyler yiyelim” ihtiyacına net cevap veren yerlerden biri. Uzun masa, servis ritüeli ya da akşam yemeği temposu yok; burada amaç kısa sürede doyurucu bir şeyler yemek.
+
+Atmosfer:
+Street food mantığı hâkim. Otur–kalk hızlı, ortam hareketli. Özellikle akşam geç saatlerde ve bar çıkışlarında daha canlı.
+
+Kimler için uygun?
+- Hızlı ve pratik yemek arayanlar
+- Uzun restoran oturması istemeyenler
+- Gece acıkanlar
+
+Pratik ipuçları:
+- Ayakta veya yüksek masada yemek normal.
+- Take-away en sık kullanılan seçenek.
+- Yoğun saatlerde sıra oluşabilir ama hızlı ilerler.
+
+Kısa özet:
+Zoka Street Food, Kaş’ta hızlı, net ve doyurucu sokak lezzetleri arayanlar için ideal bir kısa durak.
+  `
+}
+,
+{
+  id: "hold-and-bite",
+  title: "Hold&Bite",
+  description: "Kaş merkezde, burger ve sandviç odaklı menüsüyle modern street food anlayışını sunan küçük ve hızlı servisli bir mekân.",
+  category: ["food"],
+
+  image: "../assets/1_places/hold-and-bite-001.jpg",
+  images: [
+    "../assets/1_places/hold-and-bite-002.jpg",
+    "../assets/1_places/hold-and-bite-003.jpg",
+    "../assets/1_places/hold-and-bite-004.jpg"
+  ],
+
+  rating: 4.4,
+  price: "₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.1997, lng: 29.6429 },
+
+  website: "",
+  phone: "",
+
+  duration: "30–60 dk",
+
+  facilities: [
+    "Burger & sandviç",
+    "Hızlı servis",
+    "Take-away",
+    "Alkolsüz servis"
+  ],
+
+  features: [
+    "Burger odaklı menü",
+    "Modern street food yaklaşımı",
+    "Kısa sürede servis",
+    "Merkez konum"
+  ],
+
+  tags: [
+    "burger",
+    "street food",
+    "sandviç",
+    "hızlı yemek",
+    "kaş"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Hold&Bite, Kaş’ta burger ve sandviç üzerine odaklanan, modern street food çizgisinde bir mekân. Menü sade; amaç çok seçenekten ziyade net birkaç ürünü düzgün yapmak.
+
+Atmosfer:
+Küçük, hızlı ve gündelik. Uzun oturmaya değil, yiyip devam etmeye uygun. Genç kitle ve hızlı yemek arayanlar ağırlıkta.
+
+Kimler için uygun?
+- Burger sevenler
+- Akşam yemeğini kısa tutmak isteyenler
+- Uzun restoran oturması istemeyenler
+
+Pratik ipuçları:
+- Take-away sık tercih ediliyor.
+- Yoğun saatlerde servis süresi biraz uzayabilir.
+- Büyük grup yemekleri için uygun değil.
+
+Kısa özet:
+Hold&Bite, Kaş’ta burger ve sandviçle hızlı ama düzgün bir öğün arayanlar için net bir seçenek.
+  `
+}
+,
+{
+  id: "bay-kofte",
+  title: "Bay Köfte",
+  description: "Kaş merkezde, köfte ve ızgara odaklı menüsüyle sade, doyurucu ve yemek merkezli bir köfteci.",
+  category: ["food"],
+
+  image: "../assets/1_places/bay-kofte-001.jpg",
+  images: [
+    "../assets/1_places/bay-kofte-002.jpg",
+    "../assets/1_places/bay-kofte-003.jpg",
+    "../assets/1_places/bay-kofte-004.jpg"
+  ],
+
+  rating: 4.4,
+  price: "₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1994, lng: 29.6420 },
+
+  website: "",
+  phone: "",
+
+  duration: "30–75 dk",
+
+  facilities: [
+    "Izgara köfte",
+    "Masa servisi",
+    "Alkolsüz servis",
+    "Hızlı mutfak"
+  ],
+
+  features: [
+    "Köfte odaklı menü",
+    "Sade lokanta havası",
+    "Öğle ve erken akşam için uygun",
+    "Fiyat–performans dengesi"
+  ],
+
+  tags: [
+    "köfte",
+    "ızgara",
+    "lokanta",
+    "hızlı yemek",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Bay Köfte, Kaş’ta köfte üzerine yoğunlaşan, süsü olmayan ama net bir beklentiye cevap veren bir köfteci. Menüde köfte ve ızgara çeşitleri ön planda; karmaşık tabaklar ya da uzun menüler yok.
+
+Atmosfer:
+Lokanta havası baskın. Uzun akşam sofraları için değil, yemek odaklı kısa oturmalar için uygun. Öğle saatlerinde daha hareketli.
+
+Kimler için uygun?
+- Köfte sevenler
+- Öğle yemeğinde hızlı ama doyurucu bir şey isteyenler
+- Alkollü mekân aramayanlar
+
+Pratik ipuçları:
+- Öğle saatlerinde yoğunluk oluşabiliyor.
+- Uzun uzun oturmak için değil, yemek için gelmek daha doğru.
+- Menü sade olduğu için karar vermek kolay.
+
+Kısa özet:
+Bay Köfte, Kaş’ta köfte odaklı, sade ve doyurucu bir öğün arayanlar için pratik bir adres.
+  `
+}
+,
+{
+  id: "kasik-manti-ev-yemekleri",
+  title: "Kaşık Mantı & Ev Yemekleri",
+  description: "Kaş merkezde, mantı ve ev yemeği odaklı menüsüyle sade, hızlı ve doyurucu öğünler sunan küçük bir lokanta.",
+  category: ["food"],
+
+  image: "../assets/1_places/kasik-manti-ev-yemekleri-001.jpg",
+  images: [
+    "../assets/1_places/kasik-manti-ev-yemekleri-002.jpg",
+    "../assets/1_places/kasik-manti-ev-yemekleri-003.jpg",
+    "../assets/1_places/kasik-manti-ev-yemekleri-004.jpg"
+  ],
+
+  rating: 4.4,
+  price: "₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.1998, lng: 29.6421 },
+
+  website: "",
+  phone: "",
+
+  duration: "30 dk – 1.25 saat",
+
+  facilities: [
+    "Ev yemeği",
+    "Mantı çeşitleri",
+    "Masa servisi",
+    "Alkolsüz servis",
+    "Hızlı mutfak"
+  ],
+
+  features: [
+    "Mantı odaklı menü",
+    "Ev yemeği hissi",
+    "Öğle yemeğine uygun",
+    "Fiyat–performans dengesi"
+  ],
+
+  tags: [
+    "mantı",
+    "ev yemeği",
+    "lokanta",
+    "öğle yemeği",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Kaşık Mantı & Ev Yemekleri, Kaş’ta mantı ve ev yemeği denince akla gelen sade lokantalardan biri. Menü çok geniş değil; zaten mekânın iddiası da bu değil. Buraya gelenler mantı ve günlük çıkan ev yemekleri için geliyor.
+
+Atmosfer:
+Klasik lokanta havası hâkim. Uzun oturmalar veya akşam eğlencesi yok. Daha çok öğle saatlerinde hareketli, akşamları ise sakin.
+
+Kimler için uygun?
+- Mantı sevenler
+- Ev yemeği arayanlar
+- Öğle yemeğini hızlı ama doyurucu geçirmek isteyenler
+
+Pratik ipuçları:
+- Günlük yemekleri sormak avantaj sağlar.
+- Öğle saatlerinde yoğunluk olabilir.
+- Uzun oturmalı bir plan için değil, yemek odaklı düşünülmeli.
+
+Kısa özet:
+Kaşık Mantı & Ev Yemekleri, Kaş’ta mantı ve ev yemeği için net, sade ve güvenilir bir lokanta.
+  `
+}
+,
+{
+  id: "ora-kebap-restaurant",
+  title: "Ora Kebap Restaurant",
+  description: "Kaş merkezde, kebap ve ızgara et odaklı menüsüyle klasik ocakbaşı çizgisinde hizmet veren bir restoran.",
+  category: ["food"],
+
+  image: "../assets/1_places/ora-kebap-restaurant-001.jpg",
+  images: [
+    "../assets/1_places/ora-kebap-restaurant-002.jpg",
+    "../assets/1_places/ora-kebap-restaurant-003.jpg",
+    "../assets/1_places/ora-kebap-restaurant-004.jpg"
+  ],
+
+  rating: 4.3,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1996, lng: 29.6424 },
+
+  website: "",
+  phone: "",
+
+  duration: "1–2.5 saat",
+
+  facilities: [
+    "Kebap & ızgara",
+    "Masa servisi",
+    "Alkollü & alkolsüz içecek",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Kebap odaklı menü",
+    "Akşam yemeği temposu",
+    "Merkezde kolay ulaşım",
+    "Klasik restoran düzeni"
+  ],
+
+  tags: [
+    "kebap",
+    "ızgara",
+    "ocakbaşı",
+    "akşam yemeği",
+    "kaş"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Ora Kebap Restaurant, Kaş’ta kebap ve ızgara et yemek isteyenlerin tercih ettiği merkez restoranlardan biri. Menü klasik kebap çizgisinde; fazla deneysellik yok, tanıdık tatlar ön planda.
+
+Atmosfer:
+Restoran düzeni hâkim. Akşam saatlerinde doluluk artıyor ama ortam genelde yemek odaklı kalıyor.
+
+Kimler için uygun?
+- Kebap ve ızgara sevenler
+- Akşam yemeğini merkezde planlayanlar
+- Klasik restoran düzenini tercih edenler
+
+Pratik ipuçları:
+- Akşam yoğunluğu için rezervasyon rahat ettirir.
+- Meze beklentisini düşük tutup ana yemeğe odaklanmak daha iyi sonuç verir.
+- Merkez konum yürüyerek ulaşımı kolaylaştırır.
+
+Kısa özet:
+Ora Kebap Restaurant, Kaş’ta kebap odaklı, sade ve net bir akşam yemeği seçeneği.
+  `
+}
+,
+{
+  id: "emre-restaurant",
+  title: "Emre Restaurant",
+  description: "Kaş merkezde, deniz ürünü ve Türk mutfağı ağırlıklı menüsüyle uzun yıllardır hizmet veren klasik bir restoran.",
+  category: ["food"],
+
+  image: "../assets/1_places/emre-restaurant-001.jpg",
+  images: [
+    "../assets/1_places/emre-restaurant-002.jpg",
+    "../assets/1_places/emre-restaurant-003.jpg",
+    "../assets/1_places/emre-restaurant-004.jpg"
+  ],
+
+  rating: 4.5,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, liman/çarşı çevresi",
+  distance: "Merkez",
+  coordinates: { lat: 36.1992, lng: 29.6430 },
+
+  website: "",
+  phone: "",
+
+  duration: "1.5–3 saat",
+
+  facilities: [
+    "Deniz ürünleri",
+    "Masa servisi",
+    "Alkollü servis",
+    "Açık oturma",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Balık ve deniz ürünü ağırlıklı menü",
+    "Uzun süredir hizmet veren işletme",
+    "Akşam yemeği odaklı",
+    "Merkez konum"
+  ],
+
+  tags: [
+    "balık",
+    "deniz ürünleri",
+    "restoran",
+    "akşam yemeği",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Emre Restaurant, Kaş’ta uzun süredir hizmet veren, özellikle balık ve deniz ürünü ile bilinen merkez restoranlardan biri. Menü Türk mutfağı ve deniz ürünleri etrafında dönüyor; klasik çizgiden şaşmıyor.
+
+Atmosfer:
+Restoran havası net. Akşam saatlerinde doluluk artıyor, masa başı sohbet ve yemek temposu öne çıkıyor.
+
+Kimler için uygun?
+- Balık ve deniz ürünü sevenler
+- Akşam yemeğini merkezde geçirmek isteyenler
+- Klasik restoran deneyimi arayanlar
+
+Pratik ipuçları:
+- Balık çeşitleri günlük duruma göre değişebilir.
+- Akşam için rezervasyon iyi olur.
+- Uzun oturmalı bir akşam planına uygun.
+
+Kısa özet:
+Emre Restaurant, Kaş’ta balık ve deniz ürünü ağırlıklı, güvenilir ve klasik bir akşam yemeği adresi.
+  `
+}
+,
+{
+  id: "pells-cafe",
+  title: "Pell’s Cafe",
+  description: "Kaş merkezde, kahve ve hafif yiyeceklerle günün her saatine uyum sağlayan bir kafe.",
+  category: ["cafe"],
+  image: "../assets/1_places/pells-cafe-001.jpg",
+  images: [
+    "../assets/1_places/pells-cafe-002.jpg",
+    "../assets/1_places/pells-cafe-003.jpg",
+    "../assets/1_places/pells-cafe-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "30–90 dk",
+  facilities: ["oturma alanı"],
+  features: ["kahve", "hafif atıştırmalıklar"],
+  tags: ["kahve", "kafe", "kaş merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Pell’s Cafe, Kaş merkezde sakin ve rahat bir ortam sunan küçük ölçekli bir kafe. Gün içinde mola vermek ya da kısa bir oturum için uygun.
+
+## Kimler için uygun
+Kahve içmek isteyenler, kısa bir dinlenme arası arayanlar ve merkezde sakin bir durak arayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Kahve çeşitleri ve hafif atıştırmalıklar tercih ediliyor. Uzun oturumdan ziyade kısa molalar için daha uygun.
+
+## Pratik ipuçları
+Merkezde olduğu için yürüyerek ulaşım kolay. Yoğun saatlerde yer bulmak zorlaşabilir.
+
+## Kısa özet
+Kaş merkezde, sade ve pratik bir kahve molası noktası.
+`
+}
+,
+{
+  id: "pika-coffee",
+  title: "Pika Coffee",
+  description: "Kaş’ta nitelikli kahveye odaklanan, modern ve sade bir kahve dükkanı.",
+  category: ["cafe"],
+  image: "../assets/1_places/pika-coffee-001.jpg",
+  images: [
+    "../assets/1_places/pika-coffee-002.jpg",
+    "../assets/1_places/pika-coffee-003.jpg",
+    "../assets/1_places/pika-coffee-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "30–60 dk",
+  facilities: ["oturma alanı"],
+  features: ["nitelikli kahve"],
+  tags: ["coffee", "specialty coffee", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Pika Coffee, daha modern ve minimal bir çizgiye sahip. Kahve odaklı, sakin ve net bir ortam sunuyor.
+
+## Kimler için uygun
+Kahvesini gerçekten kahve için içenler ve kısa ama kaliteli bir mola arayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Kahve çeşitleri öne çıkıyor. Menü genelde sade, odak noktası içecekler.
+
+## Pratik ipuçları
+Oturma alanı sınırlı olabilir. Take-away için de uygun bir durak.
+
+## Kısa özet
+Kaş’ta nitelikli kahve arayanlar için sade ve net bir adres.
+`
+}
+
+,
+{
+  id: "godo-coffee-and-more",
+  title: "Godo Coffee & More",
+  description: "Kahve merkezli menüsünü farklı içecek ve atıştırmalıklarla tamamlayan bir kafe.",
+  category: ["cafe"],
+  image: "../assets/1_places/godo-coffee-and-more-001.jpg",
+  images: [
+    "../assets/1_places/godo-coffee-and-more-002.jpg",
+    "../assets/1_places/godo-coffee-and-more-003.jpg",
+    "../assets/1_places/godo-coffee-and-more-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "45–120 dk",
+  facilities: ["oturma alanı"],
+  features: ["kahve", "atıştırmalık"],
+  tags: ["kafe", "kahve", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Godo Coffee & More, klasik bir kafe ortamı sunuyor. Uzun oturmaya da kısa molaya da uygun bir yapısı var.
+
+## Kimler için uygun
+Kahve içip biraz vakit geçirmek isteyenler, sohbet etmek isteyen küçük gruplar için uygun.
+
+## Ne alınır – ne yapılır
+Kahve ana ürün. Yanında basit atıştırmalıklar tercih ediliyor. Sohbet ve dinlenme için uygun.
+
+## Pratik ipuçları
+Merkezde olduğu için ulaşım kolay. Öğleden sonra saatlerinde daha sakin oluyor.
+
+## Kısa özet
+Kahve odaklı ama esnek kullanıma açık, rahat bir Kaş kafesi.
+`
+}
+
+,
+{
+  id: "nur-pastanesi",
+  title: "Nur Pastanesi",
+  description: "Kaş merkezde, klasik pastane ürünleri ve tatlılarıyla bilinen yerel bir pastane.",
+  category: ["cafe", "breakfast"],
+  image: "../assets/1_places/nur-pastanesi-001.jpg",
+  images: [
+    "../assets/1_places/nur-pastanesi-002.jpg",
+    "../assets/1_places/nur-pastanesi-003.jpg",
+    "../assets/1_places/nur-pastanesi-004.jpg"
+  ],
+  rating: "",
+  price: "₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "15–45 dk",
+  facilities: ["oturma alanı"],
+  features: ["tatlı", "pastane ürünleri", "çay"],
+  tags: ["pastane", "tatlı", "kahvaltı", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Nur Pastanesi, Kaş’ta uzun süredir varlığını sürdüren, sade ve yerel bir pastane havasına sahip. Gösterişten uzak, günlük ziyaretlere uygun.
+
+## Kimler için uygun
+Tatlı veya çay molası vermek isteyenler, hızlı bir kahvaltı alternatifi arayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Pastane ürünleri ve klasik tatlılar öne çıkıyor. Çayla birlikte kısa bir mola için tercih ediliyor.
+
+## Pratik ipuçları
+Genellikle hızlı gir-çık yapılan bir yer. Uzun oturum beklentisiyle gitmemek daha doğru.
+
+## Kısa özet
+Kaş merkezde, klasik ve pratik bir pastane durağı.
+`
+}
+
+,
+{
+  id: "chayote-cafe",
+  title: "Chayote Cafe",
+  description: "Kaş’ta kahve, hafif yemekler ve rahat oturum sunan sakin bir kafe.",
+  category: ["cafe"],
+  image: "../assets/1_places/chayote-cafe-001.jpg",
+  images: [
+    "../assets/1_places/chayote-cafe-002.jpg",
+    "../assets/1_places/chayote-cafe-003.jpg",
+    "../assets/1_places/chayote-cafe-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "60–120 dk",
+  facilities: ["oturma alanı"],
+  features: ["kahve", "hafif yemekler"],
+  tags: ["kafe", "kahve", "rahat ortam", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Chayote Cafe, sakin ve rahat bir kafe atmosferine sahip. Gürültüden uzak, uzun oturmaya uygun bir ortam sunuyor.
+
+## Kimler için uygun
+Çalışmak, sohbet etmek ya da uzun bir kahve molası vermek isteyenler için uygun.
+
+## Ne alınır – ne yapılır
+Kahve başlıca tercih. Yanında hafif yemek ve atıştırmalıklar eşlik edebiliyor.
+
+## Pratik ipuçları
+Yoğun olmayan saatlerde daha keyifli. Uzun süre oturmayı planlayanlar için iyi bir seçenek.
+
+## Kısa özet
+Kaş’ta sakinlik arayanlar için rahat bir kafe alternatifi.
+`
+}
+,
+{
+  id: "panu-kas",
+  title: "Panu Kaş",
+  description: "Kaş merkezde, Akdeniz mutfağı odaklı modern bir restoran.",
+  category: ["food"],
+  image: "../assets/1_places/panu-kas-001.jpg",
+  images: [
+    "../assets/1_places/panu-kas-002.jpg",
+    "../assets/1_places/panu-kas-003.jpg",
+    "../assets/1_places/panu-kas-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–150 dk",
+  facilities: ["oturma alanı"],
+  features: ["akdeniz mutfağı", "modern sunum"],
+  tags: ["restoran", "akdeniz", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Panu Kaş, modern ve özenli bir restoran atmosferi sunuyor. Daha çok akşam yemekleri için tercih edilen bir yapıya sahip.
+
+## Kimler için uygun
+Yemek deneyimine önem verenler, daha sakin ve uzun bir akşam planlayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Akdeniz mutfağı odaklı tabaklar öne çıkıyor. Yemekle birlikte uzun sohbetlere uygun.
+
+## Pratik ipuçları
+Akşam saatlerinde yoğun olabiliyor. Gitmeden önce plan yapmak faydalı olabilir.
+
+## Kısa özet
+Kaş’ta daha özenli bir akşam yemeği arayanlar için modern bir adres.
+`
+}
+,
+{
+  id: "hideaway-bar-and-cafe",
+  title: "Hideaway Bar & Cafe",
+  description: "Kaş’ta gün içinde kafe, akşam saatlerinde bar olarak kullanılan rahat bir mekân.",
+  category: ["bar", "cafe"],
+  image: "../assets/1_places/hideaway-bar-and-cafe-001.jpg",
+  images: [
+    "../assets/1_places/hideaway-bar-and-cafe-002.jpg",
+    "../assets/1_places/hideaway-bar-and-cafe-003.jpg",
+    "../assets/1_places/hideaway-bar-and-cafe-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "60–150 dk",
+  facilities: ["oturma alanı"],
+  features: ["alkollü içecekler", "kahve"],
+  tags: ["bar", "kafe", "akşam", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Hideaway Bar & Cafe, isminin hakkını veren sakin ve rahat bir ortama sahip. Gün içinde daha dingin, akşam saatlerinde ise bar havasına bürünen bir yapısı var.
+
+## Kimler için uygun
+Gündüz kahve içmek isteyenler, akşamüstü ve akşam saatlerinde içkiyle sohbet etmeyi sevenler için uygun.
+
+## Ne alınır – ne yapılır
+Kahve ve alkollü içecekler öne çıkıyor. Uzun sohbetler ve sakin vakit geçirmek için tercih ediliyor.
+
+## Pratik ipuçları
+Akşam saatlerinde bar kimliği daha baskın. Sessiz bir ortam arayanlar için gündüz saatleri daha uygun.
+
+## Kısa özet
+Kaş’ta gün ve akşam temposuna uyum sağlayan, rahat bir bar-kafe.
+`
+}
+
+,
+{
+  id: "menta-coffee",
+  title: "Menta Coffee",
+  description: "Kaş’ta kahve odaklı, küçük ve sade bir kafe.",
+  category: ["cafe"],
+  image: "../assets/1_places/menta-coffee-001.jpg",
+  images: [
+    "../assets/1_places/menta-coffee-002.jpg",
+    "../assets/1_places/menta-coffee-003.jpg",
+    "../assets/1_places/menta-coffee-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "30–60 dk",
+  facilities: ["oturma alanı"],
+  features: ["kahve"],
+  tags: ["coffee", "kafe", "kaş merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Menta Coffee, küçük ve sade bir kafe. Gösterişten uzak, kahveye odaklanan bir ortam sunuyor.
+
+## Kimler için uygun
+Kısa bir kahve molası vermek isteyenler ve sakin bir ortam arayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Kahve ana odak noktası. Genellikle kısa süreli oturumlar tercih ediliyor.
+
+## Pratik ipuçları
+Oturma alanı sınırlı olabilir. Yoğun saatlerde hızlı gir-çık daha yaygın.
+
+## Kısa özet
+Kaş’ta sade, kahve odaklı ve pratik bir durak.
+`
+}
+,
+{
+  id: "huseyinin-yeri-cafe-white",
+  title: "Hüseyin’in Yeri (Cafe White)",
+  description: "Kaş’ta deniz manzarasıyla bilinen, sade ve yerel bir kafe.",
+  category: ["cafe"],
+  image: "../assets/1_places/huseyinin-yeri-cafe-white-001.jpg",
+  images: [
+    "../assets/1_places/huseyinin-yeri-cafe-white-002.jpg",
+    "../assets/1_places/huseyinin-yeri-cafe-white-003.jpg",
+    "../assets/1_places/huseyinin-yeri-cafe-white-004.jpg"
+  ],
+  rating: "",
+  price: "₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "45–120 dk",
+  facilities: ["oturma alanı", "manzara"],
+  features: ["kahve", "çay"],
+  tags: ["kafe", "manzara", "yerel", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Hüseyin’in Yeri (Cafe White), sade ve samimi bir atmosfere sahip. Manzarasıyla öne çıkan, yerel bir kafe havası sunuyor.
+
+## Kimler için uygun
+Manzara eşliğinde çay veya kahve içmek isteyenler, sakin bir mola arayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Çay ve kahve öne çıkıyor. Uzun sohbetler ve manzara izlemek için tercih ediliyor.
+
+## Pratik ipuçları
+Yoğun sezonlarda manzaralı masalar çabuk dolabiliyor. Daha sakin saatler tercih edilebilir.
+
+## Kısa özet
+Kaş’ta manzarasıyla öne çıkan, sade ve yerel bir kafe.
+`
+}
+,
+{
+  id: "dejavu-cafe-and-bar",
+  title: "Dejavu Cafe & Bar",
+  description: "Kaş’ta gündüz kafe, akşam bar olarak kullanılan sosyal ve canlı bir mekân.",
+  category: ["cafe", "bar"],
+  image: "../assets/1_places/dejavu-cafe-and-bar-001.jpg",
+  images: [
+    "../assets/1_places/dejavu-cafe-and-bar-002.jpg",
+    "../assets/1_places/dejavu-cafe-and-bar-003.jpg",
+    "../assets/1_places/dejavu-cafe-and-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "60–180 dk",
+  facilities: ["oturma alanı"],
+  features: ["kahve", "alkollü içecekler"],
+  tags: ["bar", "kafe", "sosyal", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Dejavu Cafe & Bar, gün içinde daha sakin bir kafe havasına sahipken akşam saatlerinde bar kimliği öne çıkan bir mekân. Sosyal ve hareketli bir ortam sunuyor.
+
+## Kimler için uygun
+Gündüz kahve molası vermek isteyenler, akşamüstü ve akşam saatlerinde içki eşliğinde sohbet arayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Kahve ve alkollü içecekler öne çıkıyor. Arkadaş buluşmaları ve uzun sohbetler için tercih ediliyor.
+
+## Pratik ipuçları
+Akşam saatlerinde daha kalabalık olabiliyor. Daha sakin bir deneyim için gündüz saatleri uygun.
+
+## Kısa özet
+Kaş’ta gün ve geceye uyum sağlayan, sosyal bir bar-kafe.
+`
+}
+,
+{
+  id: "echo-bar",
+  title: "Echo Bar",
+  description: "Kaş’ta akşam saatlerinde hareketlenen, müzik ve içki odaklı bir bar.",
+  category: ["bar"],
+  image: "../assets/1_places/echo-bar-001.jpg",
+  images: [
+    "../assets/1_places/echo-bar-002.jpg",
+    "../assets/1_places/echo-bar-003.jpg",
+    "../assets/1_places/echo-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–240 dk",
+  facilities: ["oturma alanı"],
+  features: ["alkollü içecekler", "müzik"],
+  tags: ["bar", "gece", "müzik", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Echo Bar, akşam saatlerinde canlanan ve müzikle öne çıkan bir bar atmosferine sahip. Daha çok gece saatlerinde tercih ediliyor.
+
+## Kimler için uygun
+Müzik eşliğinde içki içmek isteyenler ve gece hayatını sevenler için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ön planda. Müzik eşliğinde vakit geçirmek temel deneyim.
+
+## Pratik ipuçları
+Gece saatlerinde kalabalık olabilir. Daha rahat bir ortam için erken saatler tercih edilebilir.
+
+## Kısa özet
+Kaş’ta akşam ve gece saatlerine yönelik, müzik odaklı bir bar.
+`
+}
+,
+{
+  id: "red-point-bar",
+  title: "Red Point Bar",
+  description: "Kaş’ta akşamları tercih edilen, sade ve bar odaklı bir mekân.",
+  category: ["bar"],
+  image: "../assets/1_places/red-point-bar-001.jpg",
+  images: [
+    "../assets/1_places/red-point-bar-002.jpg",
+    "../assets/1_places/red-point-bar-003.jpg",
+    "../assets/1_places/red-point-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–210 dk",
+  facilities: ["oturma alanı"],
+  features: ["alkollü içecekler"],
+  tags: ["bar", "akşam", "kaş merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Red Point Bar, sade ve net bir bar atmosferine sahip. Akşam saatlerinde daha canlı bir yapıya bürünüyor.
+
+## Kimler için uygun
+Sessiz ama bar havası olan bir mekân arayanlar ve akşam içkisi için merkezde bir durak isteyenler için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ana odak. Uzun sohbetler ve sakin bir akşam için tercih ediliyor.
+
+## Pratik ipuçları
+Gece ilerledikçe yoğunluk artabilir. Daha sakin saatler için erken gelmek avantaj sağlar.
+
+## Kısa özet
+Kaş’ta sade, bar odaklı ve akşam saatlerine uygun bir adres.
+`
+}
+,
+{
+  id: "quanta-rock-bar",
+  title: "Quanta Rock Bar (Quanta Rock Cafe)",
+  description: "Kaş’ta rock müzik ağırlıklı, akşamları canlanan bar-kafe.",
+  category: ["bar", "cafe"],
+  image: "../assets/1_places/quanta-rock-bar-001.jpg",
+  images: [
+    "../assets/1_places/quanta-rock-bar-002.jpg",
+    "../assets/1_places/quanta-rock-bar-003.jpg",
+    "../assets/1_places/quanta-rock-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–240 dk",
+  facilities: ["oturma alanı"],
+  features: ["rock müzik", "alkollü içecekler"],
+  tags: ["rock bar", "müzik", "bar", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Quanta Rock Bar, rock müzik odaklı ve enerjik bir atmosfere sahip. Akşam saatlerinde hareketleniyor ve bar kimliği öne çıkıyor.
+
+## Kimler için uygun
+Rock müzik sevenler ve müzik eşliğinde içki içmek isteyenler için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ana odak. Müzik eşliğinde vakit geçirmek temel deneyim.
+
+## Pratik ipuçları
+Gece saatlerinde ses seviyesi yüksek olabilir. Daha sakin bir ortam için erken saatler tercih edilebilir.
+
+## Kısa özet
+Kaş’ta rock müzik sevenler için akşamları tercih edilen bir bar-kafe.
+`
+}
+,
+{
+  id: "barboon-bar",
+  title: "Barboon Bar",
+  description: "Kaş’ta akşam ve gece saatlerinde tercih edilen, sosyal bir bar.",
+  category: ["bar"],
+  image: "../assets/1_places/barboon-bar-001.jpg",
+  images: [
+    "../assets/1_places/barboon-bar-002.jpg",
+    "../assets/1_places/barboon-bar-003.jpg",
+    "../assets/1_places/barboon-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–210 dk",
+  facilities: ["oturma alanı"],
+  features: ["alkollü içecekler"],
+  tags: ["bar", "gece", "kaş merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Barboon Bar, akşam saatlerinde canlanan ve sosyal yapısıyla öne çıkan bir bar. Daha çok geceye doğru hareketleniyor.
+
+## Kimler için uygun
+Akşam içkisi için merkezde bir durak arayanlar ve arkadaş grupları için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ön planda. Sohbet ve sosyalleşme ağırlıklı bir deneyim sunuyor.
+
+## Pratik ipuçları
+Gece ilerledikçe kalabalık artabiliyor. Daha rahat bir ortam için erken saatler tercih edilebilir.
+
+## Kısa özet
+Kaş’ta sosyal ve akşam odaklı bir bar alternatifi.
+`
+}
+,
+{
+  id: "ara-bar",
+  title: "Ara Bar",
+  description: "Kaş’ta küçük ölçekli, samimi ve bar odaklı bir mekân.",
+  category: ["bar"],
+  image: "../assets/1_places/ara-bar-001.jpg",
+  images: [
+    "../assets/1_places/ara-bar-002.jpg",
+    "../assets/1_places/ara-bar-003.jpg",
+    "../assets/1_places/ara-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "60–180 dk",
+  facilities: ["oturma alanı"],
+  features: ["alkollü içecekler"],
+  tags: ["bar", "samimi", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Ara Bar, küçük ve samimi bir bar atmosferine sahip. Gürültülü mekânlardan ziyade daha sakin bir yapı sunuyor.
+
+## Kimler için uygun
+Daha sessiz bir bar arayanlar ve kısa ya da orta süreli oturum isteyenler için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ana ürün. Sohbet ve dinlenme ön planda.
+
+## Pratik ipuçları
+Oturma alanı sınırlı olabilir. Kalabalık saatlerde ayakta vakit geçirmek gerekebilir.
+
+## Kısa özet
+Kaş’ta sade, samimi ve bar odaklı bir durak.
+`
+}
+,
+{
+  id: "no-11-bar",
+  title: "No.11 Bar",
+  description: "Kaş’ta akşam saatlerinde hareketlenen, bar odaklı bir mekân.",
+  category: ["bar"],
+  image: "../assets/1_places/no-11-bar-001.jpg",
+  images: [
+    "../assets/1_places/no-11-bar-002.jpg",
+    "../assets/1_places/no-11-bar-003.jpg",
+    "../assets/1_places/no-11-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–210 dk",
+  facilities: ["oturma alanı"],
+  features: ["alkollü içecekler"],
+  tags: ["bar", "akşam", "kaş merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+No.11 Bar, sade ve net bir bar atmosferi sunuyor. Akşam saatlerinde daha canlı bir hale geliyor.
+
+## Kimler için uygun
+Merkezde akşam içkisi için pratik bir durak arayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ön planda. Sohbet ve kısa-orta süreli oturumlar yaygın.
+
+## Pratik ipuçları
+Gece ilerledikçe kalabalık artabiliyor. Daha sakin bir deneyim için erken saatler tercih edilebilir.
+
+## Kısa özet
+Kaş’ta akşam saatlerine uygun, sade bir bar alternatifi.
+`
+}
+,
+{
+  id: "hijazz-bar",
+  title: "HiJazz Bar",
+  description: "Kaş’ta caz ve benzeri müziklerle öne çıkan, akşam odaklı bir bar.",
+  category: ["bar"],
+  image: "../assets/1_places/hijazz-bar-001.jpg",
+  images: [
+    "../assets/1_places/hijazz-bar-002.jpg",
+    "../assets/1_places/hijazz-bar-003.jpg",
+    "../assets/1_places/hijazz-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–240 dk",
+  facilities: ["oturma alanı"],
+  features: ["müzik", "alkollü içecekler"],
+  tags: ["bar", "caz", "müzik", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+HiJazz Bar, müzik odaklı ve daha karakterli bir bar atmosferine sahip. Akşam saatlerinde öne çıkıyor.
+
+## Kimler için uygun
+Caz ve benzeri müzikleri sevenler, müzik eşliğinde içki içmek isteyenler için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ana ürün. Müzik eşliğinde vakit geçirmek temel deneyim.
+
+## Pratik ipuçları
+Müzik saatlerinde ortam daha canlı olabilir. Daha sakin bir deneyim için erken saatler tercih edilebilir.
+
+## Kısa özet
+Kaş’ta müzik odaklı, akşamları tercih edilen bir bar.
+`
+}
+,
+{
+  id: "old-house-bar",
+  title: "Old House Bar",
+  description: "Kaş’ta eski ev dokusu hissi veren, akşam saatlerinde tercih edilen bir bar.",
+  category: ["bar"],
+  image: "../assets/1_places/old-house-bar-001.jpg",
+  images: [
+    "../assets/1_places/old-house-bar-002.jpg",
+    "../assets/1_places/old-house-bar-003.jpg",
+    "../assets/1_places/old-house-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–210 dk",
+  facilities: ["oturma alanı"],
+  features: ["alkollü içecekler"],
+  tags: ["bar", "akşam", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Old House Bar, daha klasik ve sakin bir bar atmosferi sunuyor. Akşam saatlerinde daha çok tercih ediliyor.
+
+## Kimler için uygun
+Daha sakin bir ortamda içki içmek isteyenler ve sohbet odaklı akşam planlayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler öne çıkıyor. Uzun sohbetler için uygun bir ortam sunuyor.
+
+## Pratik ipuçları
+Gece ilerledikçe yoğunluk artabilir. Daha rahat bir deneyim için erken saatler tercih edilebilir.
+
+## Kısa özet
+Kaş’ta sakin, klasik bar havası arayanlar için bir seçenek.
+`
+}
+,
+{
+  id: "gagarin-bar",
+  title: "Gagarin Bar",
+  description: "Kaş’ta alternatif müzik ve sosyal atmosferiyle bilinen akşam odaklı bir bar.",
+  category: ["bar"],
+  image: "../assets/1_places/gagarin-bar-001.jpg",
+  images: [
+    "../assets/1_places/gagarin-bar-002.jpg",
+    "../assets/1_places/gagarin-bar-003.jpg",
+    "../assets/1_places/gagarin-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–240 dk",
+  facilities: ["oturma alanı"],
+  features: ["alkollü içecekler", "müzik"],
+  tags: ["bar", "müzik", "gece", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Gagarin Bar, alternatif ve enerjik bir bar atmosferine sahip. Akşam saatlerinde daha canlı, sosyal bir yapıya bürünüyor.
+
+## Kimler için uygun
+Müzik eşliğinde sosyalleşmek isteyenler ve gece hayatını sevenler için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ana odak. Müzik dinleyip sohbet etmek temel deneyim.
+
+## Pratik ipuçları
+Gece ilerledikçe kalabalık artabiliyor. Daha sakin bir ortam için erken saatler tercih edilebilir.
+
+## Kısa özet
+Kaş’ta müzik ve sosyal atmosfer arayanlar için akşamları tercih edilen bir bar.
+`
+}
+,
+{
+  id: "botanik-garden-bar",
+  title: "Botanik Garden Bar",
+  description: "Kaş’ta açık alanı ve bahçe hissiyle öne çıkan, akşamları tercih edilen bir bar.",
+  category: ["bar"],
+  image: "../assets/1_places/botanik-garden-bar-001.jpg",
+  images: [
+    "../assets/1_places/botanik-garden-bar-002.jpg",
+    "../assets/1_places/botanik-garden-bar-003.jpg",
+    "../assets/1_places/botanik-garden-bar-004.jpg"
+  ],
+  rating: "",
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6370 },
+  website: "",
+  phone: "",
+  duration: "90–210 dk",
+  facilities: ["açık alan", "bahçe"],
+  features: ["alkollü içecekler", "açık hava"],
+  tags: ["bar", "bahçe", "açık alan", "kaş"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+## Atmosfer
+Botanik Garden Bar, açık alan ve bahçe hissiyle daha ferah bir bar atmosferi sunuyor. Akşam saatlerinde keyifli bir ortam oluşuyor.
+
+## Kimler için uygun
+Açık havada içki içmeyi sevenler ve daha ferah bir bar ortamı arayanlar için uygun.
+
+## Ne alınır – ne yapılır
+Alkollü içecekler ön planda. Açık alanda sohbet ederek vakit geçirmek temel deneyim.
+
+## Pratik ipuçları
+Yoğun sezonda bahçe alanı hızlı dolabiliyor. Erken gitmek yer bulmayı kolaylaştırır.
+
+## Kısa özet
+Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternatifi.
+`
+}
+,
+
 
 
 

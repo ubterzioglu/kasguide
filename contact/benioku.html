@@ -69,12 +69,14 @@
     }
 
     .logo-text {
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: linear-gradient(to right, var(--primary-blue), #2563eb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, var(--primary-blue), #2563eb);
+  background-clip: text;
+  -webkit-background-clip: text; /* Safari için, buna VS Code ses etmiyor */
+  color: transparent;
+}
+
 
     .back-btn {
       background: var(--gray-100);
