@@ -27,9 +27,27 @@
 
   <main class="faq-page">
     <div class="container">
+
       <div class="faq-top">
         <div class="faq-title">Sık Sorulan Sorular</div>
-        <input id="faqSearch" class="faq-search" type="text" placeholder="Sorularda ara... (ör. ulaşım, plaj, Meis)">
+
+        <!-- FULL-WIDTH SEARCH ROW -->
+        <div class="faq-search-row">
+          <input id="faqSearch" class="faq-search" type="text" placeholder="Sorularda ara... (ör. ulaşım, plaj, Meis)">
+        </div>
+
+        <!-- STATS (2 CARDS) -->
+        <div class="faq-stats">
+          <div class="faq-stat-card">
+            <div class="faq-stat-label">Toplam Soru</div>
+            <div id="faqTotalCount" class="faq-stat-value">—</div>
+          </div>
+
+          <div class="faq-stat-card">
+            <div class="faq-stat-label">Arama Sonucu</div>
+            <div id="faqResultCount" class="faq-stat-value">—</div>
+          </div>
+        </div>
       </div>
 
       <div id="cardsGrid" class="faq-list"></div>

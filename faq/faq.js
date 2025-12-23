@@ -10,7 +10,12 @@
   const grid = document.getElementById("cardsGrid");
   const search = document.getElementById("faqSearch");
 
+  // NEW: counters
+  const totalEl = document.getElementById("faqTotalCount");
+  const resultEl = document.getElementById("faqResultCount");
+
   if (!grid || !search) return;
+
   if (!Array.isArray(window.faqData)) {
     grid.innerHTML = "<div style='opacity:.7'>FAQ verisi bulunamadı (faqData).</div>";
     return;
@@ -36,8 +41,16 @@
       .replaceAll("'", "&#039;");
   }
 
+  function setCounts(total, shown) {
+    if (totalEl) totalEl.textContent = String(total);
+    if (resultEl) resultEl.textContent = String(shown);
+  }
+
   function render(list) {
     grid.innerHTML = "";
+
+    // NEW: always keep counts in sync
+    setCounts(window.faqData.length, list.length);
 
     if (!list.length) {
       grid.innerHTML = "<div style='padding:14px 6px;opacity:.7'>Sonuç bulunamadı.</div>";
@@ -81,5 +94,8 @@
   }
 
   search.addEventListener("input", applyFilter);
+
+  // init
+  setCounts(window.faqData.length, window.faqData.length);
   render(window.faqData);
 })();
