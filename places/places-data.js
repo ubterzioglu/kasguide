@@ -5278,15 +5278,2946 @@ Yoğun sezonda bahçe alanı hızlı dolabiliyor. Erken gitmek yer bulmayı kola
 ## Kısa özet
 Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternatifi.
 `
+},
+
+
+
+
+
+
+
+{
+  id: "kaputas-plaji",
+  title: "Kaputaş Plajı",
+  description: "Turkuaz rengi denizi ve kanyon ağzındaki konumuyla ünlü, küçük ve fotojenik bir plaj.",
+  category: ["beaches"],
+  image: "../assets/1_places/kaputas-plaji-001.jpg",
+  images: [
+    "../assets/1_places/kaputas-plaji-002.jpg",
+    "../assets/1_places/kaputas-plaji-003.jpg",
+    "../assets/1_places/kaputas-plaji-004.jpg"
+  ],
+  rating: 4.4,
+  price: "₺",
+  selected: false,
+  location: "Kaş – Kalkan Yolu",
+  distance: "Kaş merkezden 20 km",
+  coordinates: { lat: 36.228767, lng: 29.449142 },
+  website: "",
+  phone: "",
+  duration: "2-3 saat",
+  facilities: ["şezlong", "şemsiye", "duş", "kafe"],
+  features: ["altın rengi kum", "turkuaz deniz", "dalgalı deniz", "dik yamaçlar"],
+  tags: ["fotojenik", "turistlerin gözdesi", "doğal güzellik"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Kaputaş Plajı, dik bir kanyonun denize açıldığı noktada yer alan, kartpostalları andıran bir koy. Turkuaz renkteki denizi ve altın rengi kumsalıyla ilk görüşte büyülüyor. Yazın oldukça kalabalık olabiliyor; küçük plaj alanı erken saatlerden itibaren renkli şemsiyelerle doluyor. Dalgaların sesi ve çevresini saran yüksek kayalıklar atmosferi doğal ve etkileyici kılıyor.
+
+**Kimler için uygun:** Eşsiz manzaralar peşindeki fotoğraf tutkunları ve serin sularda yüzmeyi seven maceraperestler için ideal. Yüzme bilen yetişkinler burada çok keyif alır; ancak deniz aniden derinleşip dalgalı olabildiği için küçük çocuklu ailelerin ve yüzme konusunda kendini güvende hissetmeyenlerin dikkatli olması gerekir.
+
+**Ne alınır-ne yapılır:** Plaja ulaşmak için yol kenarına aracınızı bırakıp yaklaşık 170 basamak iniyorsunuz. Bu zahmete kesinlikle değiyor; turkuaz sularda yüzüp serinlemek en popüler aktivite. Günün erken saatlerinde deniz daha sakin ve çarşaf gibi oluyor, öğleden sonra ise dalgalar artabiliyor. Yanınızda şnorkel getirirseniz berrak suda balıkları gözlemleyebilirsiniz. Plajın hemen yanında küçük bir kafe belediye tarafından işletiliyor; burada atıştırmalık bir şeyler alabilir veya duş ve tuvalet imkânlarından yararlanabilirsiniz.
+
+**Pratik ipuçları:** Yazın plaj çok kalabalıklaştığı için sabah erken gitmek hem park yeri bulmak hem de sakin bir ortam yakalamak adına önemli. Otopark alanı kısıtlı olduğundan aracınızı yol kenarına park edebilirsiniz. Giriş ücreti kişi başı 50 TL (2025 itibarıyla) ve dilerseniz kendi havlunuzu serip ücretsiz şekilde denizin tadını çıkarabilirsiniz. Şezlong ve şemsiye kiralamak isterseniz oldukça pahalı (çift olarak ~510 TL):contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}, bu yüzden birçok ziyaretçi kendi şemsiyesini getiriyor. Plajda öğleden sonra sert rüzgar ve dalga olabileceğini unutmayın; çocuklarla gelenler veya iyi yüzme bilmeyenler sabah saatlerini tercih etmeli. Yüksek kayalıklardan sızan tatlı su kaynakları nedeniyle deniz suyu yer yer serin gelebilir, hazırlıklı olun.
+
+**Kısa özet:** Kaputaş Plajı, Kaş ile Kalkan arasındaki kıvrımlı sahil yolunun en etkileyici durağı. Ulaşımı biraz zahmetli ve kalabalık olsa da, kanyon ağzındaki bu plajın turkuaz sularında yüzmek ve o nefes kesen manzarayı görmek unutulmaz bir deneyim. Türkiye’nin en meşhur plajlarından biri olan Kaputaş, kısa bir mola için bile rotanıza değecek bir doğa harikası.
+`
+},
+
+{
+  id: "hidayet-koyu",
+  title: "Hidayet Koyu (Blanca Beach)",
+  description: "Akvaryum gibi berrak deniziyle ünlü, tesisli ve popüler bir koy.",
+  category: ["beaches"],
+  image: "../assets/1_places/hidayet-koyu-001.jpg",
+  images: [
+    "../assets/1_places/hidayet-koyu-002.jpg",
+    "../assets/1_places/hidayet-koyu-003.jpg",
+    "../assets/1_places/hidayet-koyu-004.jpg"
+  ],
+  rating: 4.2,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş – Çukurbağ Yarımadası",
+  distance: "Kaş merkezden 3 km",
+  coordinates: { lat: 36.197000, lng: 29.613000 },
+  website: "",
+  phone: "",
+  duration: "Yarım gün",
+  facilities: ["platform plaj", "şezlong", "şemsiye", "restoran", "duş"],
+  features: ["berrak deniz", "kaya snorkeling", "canlı müzik (yazın)"],
+  tags: ["şnorkel", "plaj kulübü", "popüler"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Hidayet Koyu, Çukurbağ Yarımadası’nda zeytin ağaçlarıyla çevrili küçük bir cennet koyu. Turkuaz denizi o kadar berrak ki su altını adeta bir akvaryum gibi izleyebiliyorsunuz. Koyda 2015’ten beri hizmet veren Blanca Beach işletmesi sayesinde ortam oldukça canlı ve hareketli:contentReference[oaicite:2]{index=2}. Tahta platformlar üzerine sıralanmış şezlonglar, arka planda çalan hafif müzikler ve cıvıl cıvıl sohbet eden tatilcilerle tam bir yaz kulübü atmosferi hissediliyor. Doğal güzellik ile modern tesis havası iç içe geçmiş durumda.
+
+**Kimler için uygun:** Konforundan ödün vermeden denize girmek isteyenler için ideal bir yer. Şnorkelle dalmayı sevenler, berrak sularda rengârenk balıkları görmek için mutlaka uğramalı. Genç çiftler ve arkadaş grupları popüler müzikler eşliğinde güneşlenip sosyalleşmekten keyif alacaktır. Aileler de çocuklarla burada vakit geçirebilir, ancak derinlik aniden arttığı için küçük çocuklar dikkatle yüzdürülmeli.
+
+**Ne alınır-ne yapılır:** Şezlongunuza uzanıp masmavi koy manzarasının tadını çıkarabilirsiniz; deniz burada inanılmaz temiz ve sakin. Mutlaka şnorkel veya deniz gözlüğü getirin, çünkü kayalık kenarlarda yüzerken çeşit çeşit balığı ve deniz canlılarını gözlemlemek çok zevkli. Blanca Beach’in restoranında öğle yemeği için taze deniz ürünleri veya atıştırmalıklar bulabilirsiniz. Kokteylinizi yudumlayıp güneşlenirken, zaman zaman yapılan canlı müzik performanslarına kulak vermek de mümkün. Dalış meraklıları için koyun açıkları gece dalışı gibi aktivitelerle de ünlü.
+
+**Pratik ipuçları:** Hidayet Koyu oldukça popüler olduğundan özellikle temmuz-ağustos aylarında yer bulmak zorlaşabiliyor. Sabah erken saatlerde gelip şezlong kapmak en iyisi; 10-11’den sonra neredeyse tüm localar doluyor:contentReference[oaicite:3]{index=3}. Giriş ücreti yok fakat 2025 itibarıyla 1 şezlong 600 TL, şemsiye 100 TL gibi yüksek kiralama bedelleri var:contentReference[oaicite:4]{index=4}. Bütçeniz kısıtlıysa havlunuzu çim alana serip ücretsiz oturabilirsiniz, ancak tesis kuralları gereği kendi yiyecek-içeceğinizi sokmak mümkün değil. Denizin derinliği kıyıdan birkaç adım sonra arttığı için yüzme bilmeyenler açılsa da deniz gözlüğüyle etrafı izlemek daha uygun olabilir. Su pırıl pırıl olsa da zaman zaman Caretta caretta kaplumbağalarla veya ufak denizanalarıyla karşılaşabilirsiniz; bu doğallığın bir parçası. Son olarak, yüksek sezonda hizmet kalitesinin düşebildiğini ve fiyatların Kaş ortalamasının epey üstünde olduğunu hatırlatmakta fayda var.
+
+**Kısa özet:** Hidayet Koyu, Kaş’ın en gözde koylarından biri olarak berrak denizi ve canlı atmosferiyle öne çıkıyor. Şnorkelle balıkları izleyebileceğiniz bu turkuaz sularda yüzmek harika bir deneyim. Lüks beach club hizmeti sayesinde konforlu bir gün geçirebilirsiniz ancak kalabalığı ve yüksek fiyatları göze alın. Doğal güzelliğiyle büyüleyen bu koy, Kaş tatilinde en az bir kez uğramaya değer.
+`
+},
+
+{
+  id: "antiphellos-antik-tiyatro",
+  title: "Antiphellos Antik Tiyatrosu",
+  description: "Deniz manzaralı, Likya döneminden kalma tarihi bir açık hava tiyatrosu.",
+  category: ["history"],
+  image: "../assets/1_places/antiphellos-antik-tiyatro-001.jpg",
+  images: [
+    "../assets/1_places/antiphellos-antik-tiyatro-002.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatro-003.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatro-004.jpg"
+  ],
+  rating: 4.3,
+  price: "₺",
+  selected: false,
+  location: "Kaş – Andifli",
+  distance: "Kaş merkezde",
+  coordinates: { lat: 36.200030, lng: 29.634850 },
+  website: "",
+  phone: "",
+  duration: "1 saat",
+  facilities: ["oturma basamakları"],
+  features: ["tarihî kalıntı", "deniz manzarası", "gün batımı noktası"],
+  tags: ["Likya tarihi", "müze kart gerektirmez", "ücretsiz"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Kaş Antiphellos Antik Tiyatrosu, milattan önce 1. yüzyıla tarihlenen Likya döneminden kalma etkileyici bir yapıdır. Yarımadanın kıyısında, denize bakan bir yamaç üzerinde konumlandığı için Anadolu’da deniz manzaralı tek antik tiyatro unvanına sahiptir:contentReference[oaicite:5]{index=5}. Oturma basamaklarına adım attığınızda, hemen aşağıda uzanan Kaş koyu ve Meis Adası manzarası sizi selamlar. Gün içinde sakin ve huzurlu bir atmosferi vardır; öğleden sonraları birkaç ziyaretçi gölgeliklerde oturup dinlenirken, akşamüstü saatlerinde altın turuncu gün batımı ışıkları antik taşları boyar ve ortamı büyülü bir havaya sokar.
+
+**Kimler için uygun:** Tarihe meraklı gezginler ve antik kalıntıları görmek isteyenler için ideal bir durak. Özellikle Likya uygarlığı hakkında bilgi sahibi olmak isteyenler, bu tiyatroya hayran kalacak. Aynı zamanda Kaş’ta romantik bir gün batımı noktası arayan çiftler veya sakin bir manzara keyfi yaşamak isteyen herkes burada vakit geçirebilir. Yürüyüş mesafesinde olduğundan çocuklu aileler de bebek arabasıyla rahatça ulaşabilir (tiyatro içinde merdivenler olduğunu unutmayarak).
+
+**Ne alınır-ne yapılır:** Tiyatroya giriş ücretsiz; herhangi bir bilet veya MüzeKart gerekmiyor. Gündüz saatlerinde tarihi taş basamaklarda dolaşıp Akdeniz’in ve karşı kıyıdaki Meis Adası’nın manzarasını fotoğraflayabilirsiniz. Bu antik yapı yaklaşık 4 bin kişilik kapasitesiyle geçmişteki gösterilere ev sahipliği yapmış. Basamakların en üst sırasına çıkıp oturarak deniz meltemi eşliğinde manzaranın tadını çıkarmak çok keyifli. Yaz aylarında bazen burada yoga seansları veya küçük konserler de düzenleniyor – eğer şanslıysanız tarihi atmosferde müzik dinleme imkanınız olabilir. Akşam üstü ise bir içeceğinizi yanınıza alıp gün batımını izlemek yapabileceğiniz en unutulmaz aktivitelerden.
+
+**Pratik ipuçları:** Özellikle yazın öğle sıcağında antik tiyatronun taşları epey ısınabilir; bu yüzden sabah erken veya akşamüzeri ziyaret etmek daha konforlu olacaktır. Basamaklar yüksek ve dar olduğundan tırmanırken dikkat edin, sağlam sandalet veya spor ayakkabı tercih edin. Tiyatroda bilgilendirici tabelalar sınırlı, bu nedenle biraz tarih bilgisiyle gelirseniz gezerken daha anlamlı hale gelir. Gün batımında fotoğraf çekmek isterseniz yanınıza tripod alabilir veya biraz erken gelip en üst sırada kendinize güzel bir yer bulabilirsiniz. Etraf açık alan olduğundan yaz akşamları sivrisinek spreyi bulundurmak da iyi bir fikir.
+
+**Kısa özet:** Antiphellos Antik Tiyatrosu, Kaş merkezine yürüme mesafesinde ulaşabileceğiniz, denize nazır muhteşem bir tarihi miras. Hem gündüz hem de gün batımında farklı güzellikler sunan bu tiyatro, Kaş’ın sakinliğinde tarih ve manzarayı bir arada deneyimlemek isteyen herkesin görmesi gereken bir nokta. Ücretsiz olarak ziyaret edebileceğiniz bu açık hava tiyatrosu, Kaş tatiline kültürel bir dokunuş katıyor.
+`
+},
+
+{
+  id: "kekova-batik-sehir",
+  title: "Kekova Batık Şehir",
+  description: "Tekneyle gezilebilen, deniz altındaki Likya dönemi kalıntılarıyla ünlü tarihi bir bölge.",
+  category: ["history", "nature"],
+  image: "../assets/1_places/kekova-batik-sehir-001.jpg",
+  images: [
+    "../assets/1_places/kekova-batik-sehir-002.jpg",
+    "../assets/1_places/kekova-batik-sehir-003.jpg",
+    "../assets/1_places/kekova-batik-sehir-004.jpg"
+  ],
+  rating: 4.6,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş – Üçağız (Kekova)",
+  distance: "Kaş merkezden 35 km",
+  coordinates: { lat: 36.183330, lng: 29.883330 },
+  website: "",
+  phone: "",
+  duration: "Tüm gün",
+  facilities: ["tekne turları", "rehberli gezi"],
+  features: ["sualtı kalıntıları", "Likya kenti", "kale (Kaleköy)", "kristal deniz"],
+  tags: ["tekne turu", "tarih ve doğa", "sualtı arkeolojisi"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Kekova bölgesi, tarihi ve doğayı bir arada sunan büyüleyici bir atmosfere sahip. Turkuaz denizin üzerinde tekneniz süzülürken, altında binlerce yıl öncesinin Likya kenti kalıntılarını görebiliyorsunuz. Batık Şehir adı verilen bu kesimde, MS 2. yüzyıldaki depremlerle sulara gömülmüş ev temelleri, liman kalıntıları ve merdivenler cam gibi berrak suyun altında seçilebiliyor. Tekneler motorlarını yavaşlatıp süzülürken suyun altındaki tarihi kalıntılar adeta hayalet gibi size eşlik ediyor. Çevrede sadece dalgaların ve rüzgarın sesi duyuluyor; etraftaki ıssız adacıklar ve antik çağın izleri insana huzur veren bir atmosfer yaratıyor.
+
+**Kimler için uygun:** Hem tarihe hem de doğal güzelliklere ilgi duyan gezginler için ideal bir deneyim. Özellikle antik uygarlıklar ve arkeoloji meraklıları, sualtındaki Likya kalıntılarını görmekten etkilenecektir. Çocuklu aileler de tekne turu konsepti sayesinde rahatlıkla katılabilir; çocuklar genellikle su altındaki “batık şehir” efsanesini dinlemeye bayılıyor. Yüzme ve şnorkel sevenler de turun yüzme molası verilen koylarında keyifli vakit geçirebilir (batık şehirde yüzmek yasak olduğu için başka koylarda duruluyor).
+
+**Ne alınır-ne yapılır:** Kekova’yı keşfetmenin en yaygın yolu Üçağız köyünden veya Kaş’tan kalkan günlük tekne turlarına katılmak. Bu turlar genelde tüm gün sürer ve içerisinde Batık Şehir’i panoramik gezme, Kaleköy (Simena) ziyareti ve yüzme molaları bulunur. Tekne üzerinde rehberiniz size su altındaki kalıntıların ne olduğunu, antik Likya kenti Dolichiste’nin hikayesini anlatır. Batık Şehir üzerinde tekneyle süzülürken denizin dibindeki eski liman taşlarını ve şehir planını hayal etmeye çalışın. Simena (Kaleköy) durağında karaya çıkıp tarihi kaleye tırmanabilir, kale içindeki tiyatro ve manzarayı görebilirsiniz. Ayrıca Kaleköy’de meşhur ev yapımı dondurmanın tadına bakmayı unutmayın. Turun yüzme molalarında tertemiz koylarda Akdeniz’in keyfini çıkarabilir, şnorkelle balıkları izleyebilirsiniz.
+
+**Pratik ipuçları:** Tekne turu için Kaş’tan direkt kalkan turlara katılabileceğiniz gibi araçla Üçağız köyüne gidip oradan da tura başlayabilirsiniz. Kaş-Kekova arası kara yolu yaklaşık 50 dakika sürüyor (35 km). Turlar genelde sabah 9-10 civarında başlar, bu nedenle önceden rezervasyon yapmak iyi olur; yaz sezonunda tekneler dolabiliyor. Tekne gezisi sırasında güneş çok yakıcı olabileceği için şapka, güneş kremi ve bol su getirmeniz önemli. Batık Şehir üzerinde yüzme yasağı var – bölge sit alanı olduğu için dalış veya şnorkel yapmak yasak, sadece tekneden izleyebilirsiniz. Ancak turun diğer duraklarında bol bol yüzme şansı oluyor, yanınıza mayo ve havlu almayı unutmayın. Kamera veya su altı görüntü alma ekipmanınız varsa, su altındaki kalıntıları tekneden çekerken polarize filtre kullanmak parlamayı azaltabilir. Son olarak, Kaleköy’de yürüyüş yapacağınız için sandalet gibi rahat ayakkabılar giyin.
+
+**Kısa özet:** Kekova Batık Şehir, Akdeniz’in dibine saklanmış bir tarih hazinesi. Sadece tekneden görülebilen bu sualtı antik kenti, doğal güzelliğiyle birleşerek ziyaretçilerine unutulmaz bir deneyim sunuyor. Tekne turuyla gezerken hem masmavi koylarda yüzmenin hem de binlerce yıllık Likya kalıntılarını keşfetmenin heyecanını yaşayacaksınız. Kekova, Kaş tatilinizde tarih ve doğayı iç içe geçirmek için mutlaka planınıza eklemeniz gereken özel bir rota.
+`
+},
+
+{
+  id: "kas-dalis",
+  title: "Kaş Dalış Deneyimi",
+  description: "Türkiye’nin en zengin sualtı yaşamına sahip bölgelerinden birinde unutulmaz dalış deneyimi.",
+  category: ["diving", "activities"],
+  image: "../assets/1_places/kas-dalis-001.jpg",
+  images: [
+    "../assets/1_places/kas-dalis-002.jpg",
+    "../assets/1_places/kas-dalis-003.jpg",
+    "../assets/1_places/kas-dalis-004.jpg"
+  ],
+  rating: 4.9,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş – Merkez",
+  distance: "Kaş merkezde",
+  coordinates: { lat: 36.201800, lng: 29.637300 },
+  website: "",
+  phone: "",
+  duration: "2-4 saat (bir dalış turu)",
+  facilities: ["dalış okulları", "ekipman kiralama", "tekneyle ulaşım"],
+  features: ["batıklar", "resifler", "mağaralar", "deniz kaplumbağaları"],
+  tags: ["scuba diving", "sertifika kursu", "şnorkel"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Kaş, Akdeniz’in en iyi dalış noktalarından biri olarak bilinir ve sualtının atmosferi adeta büyüleyicidir. Limandan hareket eden dalış tekneleriyle açıldığınız anda, tertemiz ve derin mavilikler sizi sarar. Dalış noktalarında suyun altına süzülürken etrafınızı saran sessizlik, sadece kendi nefes baloncuklarınızın sesiyle bölünür. Rengârenk balık sürüleri, mercan kayalıkları ve antik amphora parçaları arasında yüzerken kendinizi başka bir dünyada hissedersiniz. Bazen koca bir deniz kaplumbağası yanınızdan süzülür, bazen de bir Akdeniz fokunun görüldüğüne dair hikayeler duyarsınız. Kaş’ın sualtı atmosferi hem huzur verici hem de keşif duygusunu kamçılayan bir sakinliğe sahip.
+
+**Kimler için uygun:** Kaş’ta dalış, ister yeni başlayan olsun ister tecrübeli her seviyeden dalgıca hitap ediyor. Hiç dalış yapmamış olanlar için birçok dalış okulu tarafından “deneme dalışı” imkânı sunuluyor – eğitmen eşliğinde temel bilgilerle sualtını keşfedebilirler. Sertifikalı dalgıçlar ise Kaş’ın zengin dalış rotalarına bayılacak; hem orta seviye resif dalışları hem de ileri seviye derin dalışlar mümkün. Sualtı fotoğrafçıları için de Kaş gerçek bir cennet: berrak görüş mesafesi sayesinde antik kalıntılarla dolu batıkları ve deniz canlılarını görüntülemek keyifli. Macera arayan gençlerden, sakin bir hobi olarak dalış yapan orta yaş gruplarına kadar herkes burada uygun bir dalış deneyimi bulabilir.
+
+**Ne alınır-ne yapılır:** Kaş’ta yapacağınız dalışlarda birbirinden ilginç noktalara gidebilirsiniz. Ünlü dalış noktalarından bazıları: sualtı kanyonuyla ünlenen **Kanyon** bölgesi, eski bir askeri uçağın batığının bulunduğu **DC-3 Dakota Uçak Batığı**, içinde heykeller ve antik çağdan kalma parçalar sergilenen **Kaş Arkeopark (sualtı müzesi)** ve dipteki mağarasıyla **Mavi Mağara**. Dalış teknesine bindiğinizde size uygun ekipmanlar veriliyor veya kendi malzemelerinizi kullanabiliyorsunuz. Eğitmenler her seviyeye göre gruplar ayarlıyor; brifing sonrası akıntısız ve güvenli noktalarda dalışa geçiliyor. 1 günde genellikle 2 dalış yapılıyor (sabah ve öğleden sonra). Dalışlar arasında teknede çay, öğle yemeği veya atıştırmalıklar sunuluyor. Su altında 18-20 metrelerde gezinen caretta caretta deniz kaplumbağalarıyla karşılaşmak çok olası, özellikle **Yaz Batığı** ve **Güvercin Adası** civarında. Ayrıca küçük renkli mürenler, ahtapotlar ve orfoz gibi balıklar da Kaş’ın sualtı sakinlerinden. Eğer şanslıysanız, Kaş açıklarında nadir görülen Akdeniz fokuna bile denk gelinebildiği anlatılır.
+
+**Pratik ipuçları:** Dalış planınızı önceden yapıp Kaş’taki lisanslı dalış okullarından birine rezervasyon yaptırmanız tavsiye edilir. Yaz sezonunda (özellikle Temmuz-Ağustos) tekneler hızlı doluyor. İlk kez dalış yapacaksanız, sabah daha dinç olacağınız için sabah turunu tercih edin. Yanınıza mayo, havlu, güneş kremi (teknenin üstünde güneşlenirken lazım) ve deniz tutmasına karşı bir ilaç almayı unutmayın. Dalış yapacağınız gün ağır alkol almamış ve iyi dinlenmiş olmaya dikkat edin. Ayrıca uçakla seyahat planınız varsa, dönüş uçağınızdan en az 24 saat önce son dalışınızı yapmış olmanız güvenli olacaktır (dalış sonrası vücuttaki azot atılımı için). Kaş’ta su altı görüş mesafesi genelde 30 metrelere kadar çok iyi, ancak en iyi dönemler Eylül ayı civarı suyun en sıcak ve sakin olduğu zamanlar. Dalış sonrasında, çektiğiniz sualtı fotoğraflarını Kaş’ta bir kafede oturup incelemek ve anıları tazelemek de ayrı bir keyif!
+
+**Kısa özet:** Kaş, Türkiye’nin dalış cenneti olarak ünlenmiş bir destinasyon. İster başlangıç seviyesinde olun ister ileri seviye bir dalgıç, Kaş’ın kristal berraklıktaki sularında unutulmaz bir dalış deneyimi yaşayabilirsiniz. Batık antik kentler, uçak batığı ve zengin deniz yaşamıyla dolu bu sularda dalmak, Kaş tatilinin en heyecan verici anılarından biri olacak. Profesyonel dalış merkezlerinin rehberliğinde güvenle keşfe çıkabilir, Akdeniz’in büyülü derinliklerinde bambaşka bir dünya keşfedebilirsiniz.
+`
+},
+
+{
+  id: "keyf-i-dem-meyhane",
+  title: "Keyf-i Dem Meyhane",
+  description: "Marina manzaralı, mezeleri ve canlı atmosferiyle ünlü geleneksel bir meyhane.",
+  category: ["meyhane", "food"],
+  image: "../assets/1_places/keyf-i-dem-meyhane-001.jpg",
+  images: [
+    "../assets/1_places/keyf-i-dem-meyhane-002.jpg",
+    "../assets/1_places/keyf-i-dem-meyhane-003.jpg",
+    "../assets/1_places/keyf-i-dem-meyhane-004.jpg"
+  ],
+  rating: 4.8,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş – Andifli",
+  distance: "Kaş merkezde",
+  coordinates: { lat: 36.201000, lng: 29.637000 },
+  website: "",
+  phone: "+90 542 836 14 20",
+  duration: "2-3 saat",
+  facilities: ["açık oturma alanı", "rezervasyon", "alkollü içecek servisi"],
+  features: ["deniz ürünleri", "mezeler", "canlı müzik (bazı akşamlar)"],
+  tags: ["rakı-balık", "romantik", "popüler mekan"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Keyf-i Dem, Kaş’ın tam kalbinde, limana yakın konumuyla misafirlerini karşılıyor. Geniş bir açık hava oturma alanına sahip bu meyhane, etrafını saran sarmaşıklarla ve ahşap masaların üzerindeki mavi-beyaz pötikareli örtülerle samimi bir Ege atmosferi sunuyor:contentReference[oaicite:6]{index=6}. Ayaklarınızın altında serilmiş marina manzarası, yakamozlar eşliğinde içkinizi yudumlarken insana huzur veriyor. Arkada çalan hafif Türk sanat müziği ve eski şarkılar, sohbetlere keyif katıyor. Kalabalık akşamlarda bile güleryüzlü garsonların koşturduğu, cıvıl cıvıl ama kimseyi rahatsız etmeyen bir canlılık hissediliyor. Keyf-i Dem’in atmosferi, zamanı yavaşlatan ve sizi dost meclisinde hissettiren bir sığınak gibi:contentReference[oaicite:7]{index=7}.
+
+**Kimler için uygun:** Klasik bir rakı-balık gecesi yaşamak isteyen herkes için ideal bir mekân. Özellikle çiftler ve arkadaş grupları, mezelerle donatılmış masada uzun sohbetlerin tadını çıkarabilir. Kaş’a gelip de meyhane deneyimi arayan turistlerin bir numaralı tercihlerinden; hem yerli hem yabancı misafirlerin memnun ayrıldığı bir yer. Romantik bir akşam yemeği için deniz manzarası ve loş ışıklar eşliğinde güzel bir ambiyansı var. Çocuklu aileler de rahatlıkla gelebilir, açık alandaki ferahlık sayesinde ortam ailelere de uygun düşüyor (ancak geç saatlerde müzik ve sohbet yoğun olabileceğinden küçük çocuklar için biraz gürültülü olabilir).
+
+**Ne alınır-ne yapılır:** Masanızı birbirinden leziz meze tabaklarıyla donatmak buradaki en keyifli ritüel. Özellikle deniz börülcesi, Girit ezmesi, fava, köpoğlu gibi Ege mezeleri çok beğeniliyor. Balık olarak günlük taze levrek ızgara veya kağıtta lagos gibi seçenekler övgü alıyor:contentReference[oaicite:8]{index=8}. Ara sıcaklardan kalamar tava ve sarımsaklı karides mutlaka denenmeli; çıtır kalamarın yanında gelen özel sos harika. Ana yemek isterseniz balık dışında bademli tavuk veya lokum gibi et seçenekleri de mevcut ve özenle hazırlanıyor:contentReference[oaicite:9]{index=9}. Menüsünde geniş bir rakı ve şarap listesi var, geleneksel rakı sohbetine uygun her şey düşünülmüş. Yemeğinizin sonunda tatlı olarak tahin-pekmez veya fırın helva deneyebilirsiniz. Keyf-i Dem’de bazı akşamlar canlı fasıl müziği veya soft bir gitar müziği olabiliyor; eğer öyle bir geceye denk gelirseniz şarkılara zaman zaman siz de eşlik edebilirsiniz.
+
+**Pratik ipuçları:** Mekân Kaş’ın en popüler meyhanelerinden olduğundan yaz sezonunda kesinlikle önceden rezervasyon yaptırın, özellikle liman manzaralı ön masalarda oturmak isterseniz birkaç gün öncesinden aramakta fayda var. Akşam 19:00-20:00 suları kalabalık artmaya başlıyor, mümkünse gün batımına yakın gidip hem manzaranın hem de sakin başlangıcın keyfini çıkarın. Menülerinde İngilizce açıklamalar da bulunduğundan yabancı misafirler sipariş vermekte zorlanmıyor. Fiyatlar Kaş ortalamasına göre yüksek gelebilir, ancak porsiyonlar doyurucu ve servis kalitesi iyi olduğundan genel deneyim fiyatını hak ediyor. Hesap öderken nakit veya kart geçiyor; bahşiş bırakmak yaygın bir nezaket. Konum olarak merkezi bir cadde üzerinde olduğu için yemeğin ardından Kaş çarşısında yürüyüşe çıkmak da kolay.
+
+**Kısa özet:** Keyf-i Dem Meyhane, Kaş’ta Ege ruhunu tam anlamıyla yaşayabileceğiniz, leziz mezeler ve taptaze deniz ürünleri eşliğinde rakı keyfi yapabileceğiniz özel bir mekan. Sıcacık atmosferi, marina manzarası ve güler yüzlü servisiyle hem damaklara hem ruhlara hitap ediyor. Kaş’ta unutulmaz bir akşam geçirmek isterseniz, dostlarınızla Keyf-i Dem’in samimi masasında buluşmayı ihmal etmeyin.
+`
+},
+
+{
+  id: "dudu-mutfak",
+  title: "Dudu Mutfak",
+  description: "Eski bir Kaş evinde, zengin serpme kahvaltısıyla ünlü sıcak ve samimi bir kafe-restoran.",
+  category: ["breakfast", "food"],
+  image: "../assets/1_places/dudu-mutfak-001.jpg",
+  images: [
+    "../assets/1_places/dudu-mutfak-002.jpg",
+    "../assets/1_places/dudu-mutfak-003.jpg",
+    "../assets/1_places/dudu-mutfak-004.jpg"
+  ],
+  rating: 4.6,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş – Andifli",
+  distance: "Kaş merkezde",
+  coordinates: { lat: 36.201500, lng: 29.638000 },
+  website: "",
+  phone: "+90 536 347 10 94",
+  duration: "1-2 saat",
+  facilities: ["deniz manzarası", "vegan seçenek", "paket servis"],
+  features: ["serpme kahvaltı", "ev yapımı reçeller", "günlük ev yemekleri"],
+  tags: ["kahvaltı", "ev yapımı lezzetler", "vejetaryen dostu"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Dudu Mutfak, Kaş ilçe merkezinde tarihi bir Kaş evinin giriş katında hizmet veriyor:contentReference[oaicite:10]{index=10}. Kapısından içeri adım attığınızda hemen o nostaljik ve sıcak atmosferi hissediyorsunuz: Taş duvarlar, ahşap detaylar ve birkaç masalık küçük bir salon... Mekânın arka tarafındaki terastan ve pencerelerden Kaş’ın mavi denizi ve Meis Adası manzarası göz kırpıyor. Sade ama özenli dekore edilmiş bu ufak restoranda ortam oldukça huzurlu ve samimi. Sabahları kuş sesleri ve hafif bir müzik eşliğinde kahvaltı eden insanların sohbeti ortama neşe katıyor. Kendinizi sanki bir arkadaşınızın evinde konuk olmuşsunuz gibi rahat hissedebileceğiniz, ferah ve içten bir atmosfer var.
+
+**Kimler için uygun:** Özellikle kahvaltı severler için Kaş’ta bir numaralı adreslerden biri. Zengin serpme kahvaltısıyla ünlü olduğu için güne güzel bir başlangıç yapmak isteyen çiftler, aileler ve arkadaş grupları burada buluşuyor. Vegan, vejetaryen veya glutensiz beslenenler de Dudu Mutfak’ta kendilerine uygun seçenekler bulabiliyor, çünkü menü herkesin damak tadına hitap edecek çeşitlilikte. Öğle ve akşam saatlerinde ise ev yemekleri arayanlar ve hafif, sağlıklı öğün tercih edenler için de uygun bir durak. Çocuklu aileler de samimi ortam sayesinde rahat ediyor; çocuklar ev yapımı reçellerle tatlı bir ziyafet çekebiliyor.
+
+**Ne alınır-ne yapılır:** Dudu Mutfak’ın alametifarikası serpme kahvaltısı. Masanız, ev yapımı reçeller, taze köy peyniri ve zeytinler, çıtır sıcak börekler, pişi (hamur kızartması) ve mis kokulu omletler ile donatılıyor. Özellikle mandalina ve karadut reçelleri çok beğeniliyor; bu reçeller tamamen ev yapımı ve mevsimine göre çeşitleniyor. Vegan kahvaltı tabağı da bulmak mümkün, bitkisel sütlü kahve veya taze sıkma meyve sularıyla destekleyebilirsiniz. Kahvaltı dışında öğleden sonra uğrarsanız anne köftesi, ev mantısı, yaprak ciğer veya günlük değişen zeytinyağlılar gibi ev yemekleri sunuyorlar:contentReference[oaicite:11]{index=11}. Falafel ve erişte gibi vejetaryen seçenekler de mevcut. Yemeklerin ardından menüdeki ev yapımı kek veya tatlılardan alıp Türk kahvesiyle keyif yapmak da önerilir. Mekân alkollü içecek servisi de yapıyor, dilerseniz akşam yemeğinde bir kadeh şarap da alabilirsiniz.
+
+**Pratik ipuçları:** Dudu Mutfak haftanın her günü Salı hariç açık, 09:00-22:00 saatleri arasında hizmet veriyor:contentReference[oaicite:12]{index=12}. Kahvaltı için rezervasyon almıyorlar, bu yüzden özellikle yüksek sezonda sabah biraz erken gitmek yer bulmak açısından avantajlı olabilir. En yoğun zamanlar 09:30-11:00 arası; eğer beklemek istemiyorsanız 9’a doğru giderseniz rahat edersiniz. Mekânın oturma kapasitesi sınırlı (toplam 6-7 masası var), bu da aslında hizmetin kaliteli ve ilgili olmasını sağlıyor. Yazın terastaki masalarda güneş olabileceği için şapka veya güneş gözlüğü almanız iyi olabilir. Fiyatlar sunulan ev yapımı ürünlerin kalitesine göre makul seviyede, ancak toplu serpme kahvaltı söylediğinizde kişi başı ücreti biraz yüksek gelebilir – ürünlerin doğallığı ve çeşitliliği bunu dengeliyor. Paket servis imkânı da var; Kaş’ta kaldığınız yere menülerindeki bazı ürünleri sipariş edebilirsiniz.
+
+**Kısa özet:** Dudu Mutfak, Kaş’ın bir klasiği haline gelmiş, sıcacık ortamıyla misafirlerini kendi evinde gibi hissettiren bir kafe-restoran. Özellikle serpme kahvaltısıyla dillere destan olan bu mekânda, organik ve ev yapımı lezzetlerle dolu bir sofrada güne başlayabilirsiniz. Samimi atmosferi ve zengin menüsüyle Dudu Mutfak, Kaş’ta hem kahvaltı hem de diğer öğünler için güvenle tercih edilecek, damakta tatlı bir anı bırakan özel bir adres.
+`
+},
+
+{
+  id: "mavi-bar",
+  title: "Mavi Bar",
+  description: "Kaş’ın en eski barı; alternatif müzikleri, salaş ortamı ve gün batımı manzarasıyla meşhur buluşma noktası.",
+  category: ["bar"],
+  image: "../assets/1_places/mavi-bar-001.jpg",
+  images: [
+    "../assets/1_places/mavi-bar-002.jpg",
+    "../assets/1_places/mavi-bar-003.jpg",
+    "../assets/1_places/mavi-bar-004.jpg"
+  ],
+  rating: 4.4,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş – Andifli",
+  distance: "Kaş merkezde",
+  coordinates: { lat: 36.199400, lng: 29.640800 },
+  website: "http://www.mavibarkas.com",
+  phone: "+90 533 391 31 71",
+  duration: "2-4 saat (akşam)",
+  facilities: ["açık alan", "kokteyl menüsü", "canlı müzik"],
+  features: ["rock müzik", "gün batımı manzarası", "ikonik mekan"],
+  tags: ["gece hayatı", "alternatif", "yerel müdavimler"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Mavi Bar, 1980’lerden bu yana Kaş’ın simgesi haline gelmiş, ruhu olan bir mekan:contentReference[oaicite:13]{index=13}. Küçük meydandaki konumuyla akşamları herkesin buluştuğu, capcanlı bir atmosferi var. Salaş bir sahil barı konseptinde, renkli ahşap sandalyeler kaldırıma kadar taşıyor ve barın hemen yanında seyyar midyeciler müşterilere atıştırmalık sunuyor:contentReference[oaicite:14]{index=14}. Duvarları eski posterler ve hatıralarla dolu içeride hafif loş bir ışık, dışarıda ise yıldızlı Kaş göğü altındasınız. Rock, hard rock ve alternatif müzik burada gecenin ritmini belirliyor; özenle seçilmiş klasik rock şarkıları çalıyor ve müdavimler kimi zaman parçaları mırıldanıyor. Yerli yabancı herkesin kaynaştığı, samimi sohbetlerin dönüp bira bardaklarının tokuşturulduğu bir ortam hakim. Kaş’ın 40 yıllık efsanesi Mavi Bar’ın kendine has bir ruhu ve sıcaklığı var; sanki duvarları bile anılarla konuşuyor.
+
+**Kimler için uygun:** Özellikle rock müzik severlerin ve rahat, salaş bir ortam arayan gezginlerin vazgeçilmez adresi. Genç gezginler, dalgıçlar, sanatçılar – her kesimden insan burada yan yana oturup muhabbet edebiliyor. Kaş’ın gece hayatını deneyimlemek isteyen ama kulüp gürültüsü yerine sohbet edebileceği bir yer arayanlar için ideal. Aynı zamanda gün batımında bir içkiyle günü noktalamak isteyen çiftler de Mavi Bar’ın önündeki merdivenlere oturup manzaranın tadını çıkarıyor. Gündüzleri sakin bir kafeterya gibi olsa da aslında akşamları canlanan bir mekan; 18 yaş altı gençler de akşam belli bir saate kadar ortamda görülebiliyor ama genel olarak yetişkin bir kitleye hitap ediyor.
+
+**Ne alınır-ne yapılır:** Mavi Bar’da özel bir kokteyl menüsü olsa da en çok tercih edilen içecek klasik bir soğuk bira veya bir kadeh yerel şarap. Barın içi küçük olduğundan genelde herkes içkisini alıp dışarıdaki meydanda veya barın önündeki banklarda oturuyor, hatta yere minder serip oturan bile var. Gün batımı saatlerinde burada olmak ayrı bir keyif; turuncu gökyüzü ve hafif esinti eşliğinde içkinizi yudumlayın. Menüde fiyatlar makul düzeyde, örneğin kokteyller 130-160 TL civarı:contentReference[oaicite:15]{index=15}, bira ise uygun fiyatlı ve buz gibi geliyor. Atıştırmalık olarak barın kendisi çok kapsamlı bir yemek sunmasa da hemen yanındaki midyeci tezgahından taze midye dolma alabilirsiniz; birçok kişi birasını yudumlarken midye yemeyi adet haline getirmiş. Arada sırada DJ performansları veya konuk müzisyenler de olabiliyor, özellikle yaz aylarında belirli gecelerde canlı rock müzik yapıldığı oluyor. Servis hızlı ve çalışanlar samimi; hatta müdavimler garsonları yıllardır tanır, muhabbet eder. 
+
+**Pratik ipuçları:** Mavi Bar gece yarısından sonra da açık kalan bir yer (genelde yazın 03:00’e kadar canlıdır), ancak en hareketli zamanı 21:00-01:00 arası diyebiliriz. Oturacak yer bulmak istiyorsanız biraz erken gidip barın önündeki masalardan birine kurulun. Eğer yer bulamazsanız üzülmeyin; Kaş’ta adet olduğu üzere pek çok kişi içkisini alıp barın karşısındaki merdivenlere veya meydana yayılıp oturur, sokak atmosferinin tadını çıkarır. Müzik bazen içeride yüksek gelebilir, sohbet etmek isterseniz dışarıda oturmak daha iyi olacaktır (içeride çalan müzik dışarıya hoparlörle de veriliyor ama biraz daha kısık duyuluyor). Yaz sezonunda servis yoğunluktan aksarsa biraz sabırlı olun, Kaş’ın rahat temposuna uyum sağlamak gerekiyor. Kış aylarında ise Mavi Bar apayrı sıcak bir ortama bürünür; soba etrafında toplanan Kaş sakinleriyle sohbet edip farklı bir yüzünü deneyimleyebilirsiniz. 
+
+**Kısa özet:** Mavi Bar, Kaş’ın kırk yılı aşkın süredir yaşayan efsanesi, bir barından öte anıların mekanı. Renkli sandalyelerinde oturup rock müzik eşliğinde içkinizi yudumlarken, bir yandan da limana vuran dalgaları ve yıldızlı gökyüzünü seyredebilirsiniz. Salaş ve özgün atmosferiyle Mavi Bar, Kaş gecelerinin vazgeçilmez buluşma noktası ve herkesin en az bir kez uğrayıp müdavimi olduğu özel bir yer.
+`
+},
+
+{
+  id: "uzun-carsi",
+  title: "Uzun Çarşı & Aslanlı Lahit",
+  description: "Tarihi Kaş çarşısı; otantik dükkanları ve sonunda yer alan 2400 yıllık Aslanlı Lahit ile ünlü sokak.",
+  category: ["shopping", "history"],
+  image: "../assets/1_places/uzun-carsi-001.jpg",
+  images: [
+    "../assets/1_places/uzun-carsi-002.jpg",
+    "../assets/1_places/uzun-carsi-003.jpg",
+    "../assets/1_places/uzun-carsi-004.jpg"
+  ],
+  rating: 4.2,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş – Andifli",
+  distance: "Kaş merkezde",
+  coordinates: { lat: 36.201700, lng: 29.637500 },
+  website: "",
+  phone: "",
+  duration: "1-2 saat",
+  facilities: ["mağazalar", "kafe ve dondurmacılar", "bankamatik"],
+  features: ["el işi ürünler", "antikacılar", "fotojenik sokak"],
+  tags: ["hediyelik eşya", "Likia lahdi", "otantik deneyim"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Uzun Çarşı, Kaş’ın ruhunu yansıtan en canlı ve otantik sokaklardan biri. Arnavutkaldırımı taş döşeli bu daracık çarşı sokağının iki yanında sıralanan cumbalı eski evler, begonvillerle bezenmiş balkonlarıyla göz dolduruyor. Gündüz saatlerinde dükkanlardan yayılan baharat ve taze kahve kokuları, takı ve halı mağazalarından gelen hafif müziklerle karışıyor. Akşamüstüne doğru çarşı hareketleniyor; lambalar yanmaya başladığında sıcacık sarı ışıklar altında alışveriş yapan insanlar, dondurma yalayan çocuklar, sokak boyunca yürüyen turistlerle tam bir Akdeniz akşamı atmosferi oluşuyor. Sokak sonunda, dev bir çınar ağacının dibinde duran 2400 yıllık Aslanlı Lahit (Kral Mezarı) tüm ihtişamıyla yükseliyor:contentReference[oaicite:16]{index=16}. Hem tarih hem canlılık iç içe geçmiş; Uzun Çarşı’da gezerken bir yandan tarih kokusunu alıyor, bir yandan da rengarenk vitrinler arasında kayboluyorsunuz.
+
+**Kimler için uygun:** Kaş’tan hatıra bir şeyler almak isteyen her ziyaretçinin mutlaka uğraması gereken bir yer. El işi takılar, tekstil ürünleri, hediyelik eşya meraklıları için cennet gibi. Tarih meraklıları da sokağın sonunda duran Likya dönemine ait Aslanlı Lahit’i görmekten keyif alacak. Fotoğraf çekmeyi sevenler için de Uzun Çarşı oldukça fotogenik; özellikle sabah erken saatlerde boşken veya akşam kalabalığında çekilen fotoğraflar çok güzel çıkıyor. Aileler çocuklarıyla rahatlıkla gezebilir, çünkü trafiğe kapalı bir bölge. Romantik bir akşam yürüyüşü yapmak isteyen çiftler için de ideal bir ortam; dükkanlara baka baka yürürken zamanın nasıl geçtiğini anlamazsınız.
+
+**Ne alınır-ne yapılır:** Çarşının girişinden itibaren takıcılar, halıcılar, giysi butikleri ve baharatçılar sıralanıyor. Kaş’a özgü el yapımı deri sandaletlerden bir çift edinebilirsiniz; bu işi yıllardır yapan ustaların dükkanları var. Gümüş takılar ve özellikle lacivert renkli oymalı Osmanlı yüzükleri turistlerin gözdesi. Yöresel desenli peştamaller, el dokuması kilimler de birkaç dükkanda bulunuyor. Baharat ve doğal ürünler satan aktarların önünde durup adaçayı, kekik gibi kokuları koklayın; belki biraz taze adaçayı veya nar ekşisi almadan geçmeyin. Uzun Çarşı boyunca ayrıca küçük kafeler ve dondurmacılar da var; alışverişe mola vermek isterseniz ev yapımı dondurmasıyla ünlü köşedeki dondurmacıdan bir top karadut dondurması alıp yürüyüşe öyle devam edin. Sokağın sonunda ulaştığınız Aslanlı Lahit’in üzerindeki aslan kabartmalarını inceleyin; bu lahit Likya döneminden kalma ve Kaş’ın simgelerinden biri. Dilerseniz lahitin önünde hatıra fotoğrafı çektirin – lahitin heybeti ve arka plandaki çarşı manzarası harika bir kare oluyor.
+
+**Pratik ipuçları:** Uzun Çarşı yaz aylarında akşamları kalabalık olsa da dükkanlar genelde 23:00’e kadar açık kaldığı için rahatça gezebilirsiniz. Özellikle cuma akşamları ertesi günün Kaş pazarı için gelenlerle çarşı ekstra hareketli olabilir. Sabah saatlerinde daha sakin bir ortam istiyorsanız 10:00 civarı dükkanlar yeni açılmışken gitmek iyi bir fikir; fotoğraf çekmek için de o saatler güzel ışık veriyor. Çarşı içindeki fiyatlar turistik olduğu için biraz pazarlık payı bırakılmış olabilir, beğendiğiniz bir ürün olursa çekinmeden pazarlık yapın. Aslanlı Lahit çevresinde genelde sokak sanatçıları veya el yapımı bileklik satan gençler olabiliyor, onlara da göz atabilirsiniz. Çarşının bir bölümü merdivenli yokuş şeklinde; rahat ayakkabı giymekte fayda var. Son olarak, lahitin bulunduğu noktadan yukarı doğru devam eden merdivenler sizi Kaş’ın arka sokaklarına ve daha sessiz mahallelerine götürür – eğer keşfetmek isterseniz o tarafı da yürüyebilirsiniz.
+
+**Kısa özet:** Uzun Çarşı, Kaş’ın hem ticari hem tarihi kalbi diyebileceğimiz, canlı ve renkli bir sokak. Otantik dükkanlarında dolaşıp alışveriş yaparken, sokak sonunda sizi bekleyen binlerce yıllık Aslanlı Lahit’le zamanda yolculuk yapmış gibi olacaksınız. El işi hediyelikler almak, yerel lezzetleri tatmak veya sadece atmosferin tadını çıkarmak için Kaş’ta mutlaka görülmesi gereken bu çarşı, gündüzü ayrı gecesi ayrı güzellikte bir deneyim sunuyor.
+`
+},
+
+{
+  id: "lukka-exclusive-hotel",
+  title: "Lukka Exclusive Hotel",
+  description: "Çukurbağ Yarımadası’nda, denize sıfır konumu ve lüks olanaklarıyla tanınan, yetişkinlere yönelik butik otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/lukka-exclusive-hotel-001.jpg",
+  images: [
+    "../assets/1_places/lukka-exclusive-hotel-002.jpg",
+    "../assets/1_places/lukka-exclusive-hotel-003.jpg",
+    "../assets/1_places/lukka-exclusive-hotel-004.jpg"
+  ],
+  rating: 4.9,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş – Çukurbağ Yarımadası",
+  distance: "Kaş merkezden 5 km",
+  coordinates: { lat: 36.194015, lng: 29.593389 },
+  website: "https://www.lukkahotel.com",
+  phone: "+90 242 836 14 20",
+  duration: "Konaklama",
+  facilities: ["özel plaj platformu", "sonsuzluk havuzu", "restoran", "spa hizmetleri"],
+  features: ["yalnız yetişkin (+12)", "deniz manzaralı odalar", "butik hizmet", "sessiz ortam"],
+  tags: ["lüks", "balayı oteli", "ödüllü"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `
+**Atmosfer:** Lukka Exclusive Hotel, Kaş Çukurbağ Yarımadası’nın en ucunda, huzur dolu bir ortam sunuyor:contentReference[oaicite:17]{index=17}. Otele adım attığınız anda sizi Akdeniz’in uçsuz bucaksız maviliği ve palmiye ağaçları karşılıyor. 30 odalı bu butik otel son derece zarif ve ferah bir tasarıma sahip; her köşesinden deniz manzarası görülebiliyor. Ortam sakin, sadece yetişkin misafir kabul edildiği için (14 yaş altı almıyor) sessizlik ve mahremiyet ön planda. Büyük bir sonsuzluk havuzu bulunuyor ve deniz suyu ile doldurulmuş bu havuzdan ufukla birleşen bir manzarada yüzmek büyüleyici bir deneyim. Günbatımında otelin terası yumuşak bir müzik eşliğinde altın renginde ışıklara bürünüyor; atmosfer adeta romantik bir film sahnesini andırıyor. Hem doğal güzellik hem de sofistike lüksün buluştuğu bir ambiyans hakim.
+
+**Kimler için uygun:** Balayı çiftleri, özel bir tatil arayanlar ve Kaş tatilinde konforu en üst düzeyde yaşamak isteyen misafirler için ideal. Lukka, üst üste yıllarca Kaş’ın en iyi oteli seçilmiş ödüllü bir tesis:contentReference[oaicite:18]{index=18}, dolayısıyla beklentisi yüksek olan konukları bile memnun ediyor. Çocuk kabul edilmediğinden özellikle çiftler ve yetişkin arkadaş grupları için huzurlu bir kaçamak ortamı sunuyor. Kalabalıktan ve şehir gürültüsünden uzak, dingin bir atmosfer arayanlar burada kendilerini şımartabilir. Dalış, yamaç paraşütü gibi macera aktivitelerine katılıp gün sonunda sakin bir lüks mekâna çekilmek isteyenler de Lukka’nın sunduğu olanaklardan memnun kalacaktır.
+
+**Ne alınır-ne yapılır:** Otelin kendine ait deniz platformundan masmavi denize girebilirsiniz; merdivenden indiğiniz an kendinizi Akdeniz’in serin sularında buluyorsunuz. Platformda şezlongunuza uzanıp size özel hizmetle kokteylinizi sipariş edebilirsiniz. Lukka’nın restoranı, gurme lezzetleriyle ünlü – taze deniz mahsulleri ve Akdeniz mutfağından seçkin tatlar sunuluyor. Özellikle gün batımında terasta akşam yemeği yemek unutulmaz bir deneyim; şefin özel menüsünden karidesli risotto veya kabak çiçeği dolması gibi lezzetler tavsiye edilir. Sabahları ise deniz manzaralı terasta serpme kahvaltı servis ediliyor; ev yapımı reçellerden taze meyvelere oldukça zengin. Otelin havuzunda yüzmek isterseniz havuz kenarında da bar hizmeti var, buzlu içeceğinizi yudumlayıp sonsuzluk havuzunda vakit geçirebilirsiniz. Ayrıca isteyen misafirlere oda içinde masaj ve spa hizmetleri de organize ediliyor; odanızın balkonunda dalga sesleri eşliğinde masaj yapmak mümkün. Otelde gün boyu yapılacak çok şey var ama Kaş merkeze inmek isterseniz resepsiyondan 5 dakikalık bir taksi çağırmak yeterli, akşamları Kaş’ın merkezinde vakit geçirdikten sonra yine otele dönüp sessizliğin tadını çıkarabilirsiniz.
+
+**Pratik ipuçları:** Lukka Exclusive oldukça popüler olduğu için yaz sezonu ve bayram dönemleri için aylar öncesinden rezervasyon yaptırmak gerekebiliyor. Oda seçenekleri 30 m² ile 80 m² arasında değişiyor, bütçenize uygunsa deniz manzaralı süit odaları tercih edin – balkonunuzdan gün doğumu ve batımını izlemek harika oluyor. Otel +12 yetişkin oteli olduğu için ailecek çocuklarla gelmek mümkün değil, bunu göz önünde bulundurun. Kaş merkeze yaklaşık 5 km mesafede olduğu için kendi arabanız yoksa ulaşımı taksiyle sağlayabilirsiniz; otel çalışanları bu konuda çok yardımcı ve hızlıca araç çağırıyorlar. Tesis konumu gereği yamaca kurulu olduğundan ve denize inmek için merdiven kullanıldığından eğer yürüme güçlüğü çeken biri varsa önceden durumunu bildirmenizde fayda var (personel yardımcı oluyor ancak çok fazla basamak olduğunu bilin). Check-in saati 14:00, çıkış 11:00 ama müsaitlik durumunda esneklik gösterebiliyorlar. Özellikle balayı için geliyorsanız, odaya çiçek ve şarap ikramı gibi jestler yapılıyor; rezervasyon sırasında belirtmeyi unutmayın.
+
+**Kısa özet:** Lukka Exclusive Hotel, Kaş’ta lüks ve huzurun adresi. Muhteşem deniz manzarası, özenli hizmeti ve romantik atmosferiyle misafirlerine unutulmaz bir konaklama deneyimi sunuyor. Ödüllü bu butik otel, balayı çiftlerinden dinlenmeye çekilen gezginlere kadar herkesin beklentisini fazlasıyla karşılıyor. Kaş’ın sakin yarımadasında, dalga sesleri ve gün batımları eşliğinde rüya gibi bir tatil için Lukka, doğru tercih olacaktır.
+`
+},
+
+
+
+
+// 2. onluk (10/72)
+
+// 11) Büyük Çakıl Plajı
+{
+  id: "buyuk-cakil-plaji",
+  title: "Büyük Çakıl Plajı",
+  description: "Kaş merkeze yürünebilir mesafede, çakıllı yapısı ve hızlı derinleşen deniziyle bilinen popüler bir halk plajı.",
+  category: ["beaches"],
+  image: "../assets/1_places/buyuk-cakil-plaji-001.jpg",
+  images: [
+    "../assets/1_places/buyuk-cakil-plaji-002.jpg",
+    "../assets/1_places/buyuk-cakil-plaji-003.jpg",
+    "../assets/1_places/buyuk-cakil-plaji-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.19176, lng: 29.65163 },
+  website: "",
+  phone: "",
+  duration: "",
+  facilities: ["duş", "şezlong/şemsiye (sezona göre)", "yakınında yeme-içme (sezona göre)"],
+  features: ["çakıllı sahil", "hızlı derinleşen deniz", "şnorkel için uygun (deniz sakin olduğunda)"],
+  tags: ["halk plajı", "merkeze yakın", "gün batımı"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Büyük Çakıl, Kaş’ın “hemen çıkıp denize gireyim” dediğin klasik noktalarından biri. Sahil çakıllı; deniz genelde çok berrak oluyor. Plajın en belirgin özelliği, suyun kısa sürede derinleşmesi. Bu yüzden hem yüzmeyi sevenlerin hem de serin, temiz su arayanların favorilerinden.
+
+**Kimler için uygun**
+Merkeze yakın bir plaj arayanlar, günü kısa bir kaçamakla değerlendirmek isteyenler için ideal. Yüzme bilmeyenler veya çocuklu aileler içinse dikkatli olmak gerekiyor; derinleşme hızlı olabildiği için güvenli bir alan seçmek ve denizi gözlemek önemli.
+
+**Ne alınır-ne yapılır**
+Gün boyu denize girip çıkmak, kıyıda güneşlenmek ve sakin bir zamanda şnorkelle kıyı çizgisini keşfetmek güzel oluyor. Deniz dalgasızsa, su altı görüşü tatmin edici. Kısa bir yürüyüşle Kaş merkezle birleştirip “deniz + kahve” şeklinde de planlanabilir.
+
+**Pratik ipuçları**
+Çakıl nedeniyle deniz ayakkabısı işini kolaylaştırır. Erken saatler daha sakindir; öğleden sonra kalabalık artabilir. Denize giriş çıkışta kaygan taşlara dikkat et. Şezlong/şemsiye durumu ve işletme düzeni sezona göre değişebildiği için, gittiğinde yerinde bakmak en doğrusu.
+
+**Kısa özet**
+Merkeze yakın, berrak su, çakıllı sahil ve hızlı derinleşen deniz: Büyük Çakıl’ın özeti bu. “Kısa sürede denize gireyim” diyenler için güçlü bir seçenek.`
+},
+
+// 12) Küçük Çakıl Plajı (Çınarlar Plajı)
+{
+  id: "kucuk-cakil-plaji",
+  title: "Küçük Çakıl Plajı (Çınarlar Plajı)",
+  description: "Kaş merkezde küçük bir koy hissi veren, çakıllı ve berrak suya sahip, yürüyerek kolay ulaşılan plaj.",
+  category: ["beaches"],
+  image: "../assets/1_places/kucuk-cakil-plaji-001.jpg",
+  images: [
+    "../assets/1_places/kucuk-cakil-plaji-002.jpg",
+    "../assets/1_places/kucuk-cakil-plaji-003.jpg",
+    "../assets/1_places/kucuk-cakil-plaji-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺",
+  selected: false,
+  location: "Kaş Merkez, Andifli/Kaş",
+  distance: "",
+  coordinates: { lat: 36.19741, lng: 29.64418 },
+  website: "",
+  phone: "",
+  duration: "",
+  facilities: ["yakınında kafe/işletmeler (sezona göre)"],
+  features: ["küçük koy", "berrak su", "merkez içi ulaşım kolaylığı"],
+  tags: ["merkez plajı", "kolay ulaşım", "kısa kaçamak"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Küçük Çakıl, Kaş’ın tam merkezinde “şehrin içinden denize” hissini en net veren noktalardan. Küçük bir koy gibi; su genelde berrak ve ferah. Alanı sınırlı olduğu için gün içinde kalabalık olabiliyor; buna rağmen Kaş’ın en pratik yüzme noktalarından biri.
+
+**Kimler için uygun**
+Arabayla uğraşmadan yürüyerek denize girmek isteyenler, kısa süreli serinleme molası arayanlar ve merkezde konaklayanlar için çok uygun. Çocuklu aileler için kalabalık saatlerde yer bulmak zor olabilir; ayrıca taş/çakıl zemine hazırlıklı olmak iyi olur.
+
+**Ne alınır-ne yapılır**
+Kısa bir yüzme, kıyıda güneşlenme, sonra merkezde yemek/kahve… Küçük Çakıl’ın en güzel tarafı bu “akışkan plan.” Deniz sakinse kıyı boyunca şnorkelle bakınmak da keyifli; fakat alan dar olduğu için çevreyi rahatsız etmeden hareket etmek önemli.
+
+**Pratik ipuçları**
+Deniz ayakkabısı konfor sağlar. Sabah erken veya akşamüstü daha nefes aldırır. Alan küçük olduğundan, eşyaları derli toplu tutmak hem senin hem herkesin işini kolaylaştırır. Sezonda işletme düzeni değişebilir; gittiğinde güncel duruma göre plan yapmak en doğrusu.
+
+**Kısa özet**
+Küçük, merkezde, pratik ve berrak: Küçük Çakıl tam olarak bu. “Kaş’tayım ve şimdi denize girmek istiyorum” cümlesinin en hızlı cevabı.`
+},
+
+// 13) Kaş Belediyesi Halk Plajı
+{
+  id: "kas-belediyesi-halk-plaji",
+  title: "Kaş Belediyesi Halk Plajı",
+  description: "Kaş merkezde platform/çakıl karışımı yapısıyla, duş–WC gibi temel imkanları bulunan popüler belediye plajı.",
+  category: ["beaches"],
+  image: "../assets/1_places/kas-belediyesi-halk-plaji-001.jpg",
+  images: [
+    "../assets/1_places/kas-belediyesi-halk-plaji-002.jpg",
+    "../assets/1_places/kas-belediyesi-halk-plaji-003.jpg",
+    "../assets/1_places/kas-belediyesi-halk-plaji-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.19802, lng: 29.61765 },
+  website: "",
+  phone: "",
+  duration: "",
+  facilities: ["duş", "wc", "soyuna kabini", "gölgelik alan", "otopark (sezona göre)", "kafe/teras (sezona göre)"],
+  features: ["platformlu alanlar", "hızlı derinleşebilen deniz", "merkeze yakın"],
+  tags: ["belediye plajı", "tesis var", "kolay gün planı"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş Belediyesi Halk Plajı, “tesis olsun ama yine de halk plajı rahatlığı kalsın” isteyenlerin sık kullandığı bir yer. Platformlu alanlar ve düzenli bir yerleşim hissi var. Deniz genelde temiz ve serin; bazı noktalarda hızlı derinleşebiliyor.
+
+**Kimler için uygun**
+Duş, WC, soyunma kabini gibi temel ihtiyaçları plajda çözmek isteyenler için iyi. Merkeze yakın olduğu için günü ikiye bölmek isteyenlere de uygun: sabah deniz, öğleden sonra şehir. Yüzme bilmeyenler veya çocuklarla gelenler, denizin derinleşen kısımlarına karşı temkinli olmalı.
+
+**Ne alınır-ne yapılır**
+Klasik “günlük deniz” planı için ideal: gir-çık, gölgede dinlen, bir şeyler iç, tekrar yüz. Deniz sakin olduğunda platformdan giriş çıkış rahat olur. Gün batımı saatlerinde ışık çok güzel olabiliyor; kısa bir yürüyüşle manzarayı da tamamlayabilirsin.
+
+**Pratik ipuçları**
+Sezonda yoğun olabiliyor; erken gitmek yer seçimini kolaylaştırır. Platform/merdivenlerden inerken kayganlığa dikkat et. Tesislerin çalışma düzeni ve ücretlendirme detayları sezona göre değişebildiği için, gittiğinde güncel durumu kontrol etmek en sağlıklısı.
+
+**Kısa özet**
+Merkeze yakın, temel imkanları olan, düzenli bir halk plajı: Kaş Belediyesi Halk Plajı. “Konfor + pratiklik” dengesini sevenlere iyi gider.`
+},
+
+// 14) İnceboğaz Plajı
+{
+  id: "incebogaz-plaji",
+  title: "İnceboğaz Plajı",
+  description: "Kaş yarımada tarafında, daha korunaklı koy hissi veren, çakıllı ve sakin deniziyle bilinen plaj.",
+  category: ["beaches"],
+  image: "../assets/1_places/incebogaz-plaji-001.jpg",
+  images: [
+    "../assets/1_places/incebogaz-plaji-002.jpg",
+    "../assets/1_places/incebogaz-plaji-003.jpg",
+    "../assets/1_places/incebogaz-plaji-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺",
+  selected: false,
+  location: "Kaş Yarımada, Andifli/Kaş",
+  distance: "",
+  coordinates: { lat: 36.200693, lng: 29.624793 },
+  website: "",
+  phone: "",
+  duration: "",
+  facilities: ["sezona göre şezlong/şemsiye", "yakınında yeme-içme (sezona göre)"],
+  features: ["korunaklı koy hissi", "daha sakin deniz (hava durumuna bağlı)", "çakıllı sahil"],
+  tags: ["yarımada", "sakinlik", "berrak su"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+İnceboğaz, Kaş’ta “daha korunaklı bir su” arayanların aklına gelen yerlerden. Yarımada tarafında olduğu için rüzgâr yönüne bağlı olarak deniz daha sakin hissedebilir. Çakıllı zemin ve berrak su, Kaş klasiği.
+
+**Kimler için uygun**
+Kalabalıktan biraz uzaklaşmak isteyenler, daha sakin bir koy hissi sevenler ve gününü yarımada tarafında geçirmek isteyenler için uygun. Çocuklu aileler için de (deniz sakin olduğunda) daha rahat bir deneyim olabilir; yine de derinleşme ve taşlı zemin her zaman hesaba katılmalı.
+
+**Ne alınır-ne yapılır**
+Burada plan basit: denize gir, uzun uzun yüz, kıyıda dinlen. Deniz uygun olduğunda şnorkel iyi bir eşlikçi. Ayrıca yarımada hattında kısa bir yürüyüşle manzara izlemek de keyifli oluyor.
+
+**Pratik ipuçları**
+Deniz ayakkabısı ve su gözlüğü faydalı. Rüzgâr yönü deniz deneyimini çok etkiler; gitmeden önce hava durumuna göz atmak iyi fikir. Sezonda şezlong/işletme düzeni değişebildiği için, yerinde güncel durumu kontrol etmek en doğrusu.
+
+**Kısa özet**
+Yarımada tarafında, koy hissi veren, sakinlik arayana iyi gelen bir Kaş plajı: İnceboğaz.`
+},
+
+// 15) Narr Plajı
+{
+  id: "narr-plaji",
+  title: "Narr Plajı",
+  description: "Merkeze yakın, iskele/rocky shore tarzı denize giriş sunan ve yeme-içmeyle birleşen beach-cafe konseptli nokta.",
+  category: ["beaches", "cafe"],
+  image: "../assets/1_places/narr-plaji-001.jpg",
+  images: [
+    "../assets/1_places/narr-plaji-002.jpg",
+    "../assets/1_places/narr-plaji-003.jpg",
+    "../assets/1_places/narr-plaji-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.204441, lng: 29.638981 }, // kesin koordinat bulamazsak Kaş merkez placeholder
+  website: "",
+  phone: "+90 538 477 50 49",
+  duration: "",
+  facilities: ["iskele/platfom giriş (duruma göre)", "yeme-içme", "şezlong/oturma alanı (sezona göre)"],
+  features: ["merkeze yakın", "iskele üzerinden denize giriş", "gün boyu takılmalık"],
+  tags: ["beach-cafe", "merkez", "iskele"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Narr tarafı daha “plaj gibi uzanayım”dan ziyade “deniz + oturma + yeme-içme” akışında. Kaş merkez çevresinde, kayalık/iskele karakteriyle denize girilen tarzda bir noktadan bahsediyoruz. Gün içinde hem yüzüp hem de masada vakit geçiren çok olur.
+
+**Kimler için uygun**
+Kum/şezlong plajı aramayan, denize girip çıkmayı iskeleden seven, arkadaş grubu veya çift olarak günü uzun tutmak isteyenler için uygun. Çocuklu ailelerde ise kayalık/iskele girişi herkes için rahat olmayabilir; daha güvenli giriş isteyenler alternatif bakabilir.
+
+**Ne alınır-ne yapılır**
+Günün planı net: denize gir, kurulan, bir şeyler ye/iç, tekrar denize… Kaş’ta “bir yere çöküp tüm günü orada geçirmek” isteyenler için bu format seviliyor. Deniz sakinse kısa şnorkel turu da eklenebilir.
+
+**Pratik ipuçları**
+Kayalık/merdivenli giriş olasılığı için deniz ayakkabısı iyi fikir. Sezonda harcama limiti veya işletme düzeni olabiliyor; gittiğinde güncel koşulları sorup ona göre rahat edersin. Akşamüstü saatleri daha keyifli bir ışık verebilir.
+
+**Kısa özet**
+Narr, Kaş’ta deniz keyfini “oturmalı-kalkmalı” bir beach-cafe düzeninde yaşamak isteyenlere uygun, merkez çevresi bir seçenek.`
+},
+
+// 16) Derya Beach Club
+{
+  id: "derya-beach-club",
+  title: "Derya Beach Club",
+  description: "Küçük Çakıl hattında, denize girme ve kokteyl/yeme-içmeyi birleştiren beach club konseptli işletme.",
+  category: ["beaches", "bar", "food"],
+  image: "../assets/1_places/derya-beach-club-001.jpg",
+  images: [
+    "../assets/1_places/derya-beach-club-002.jpg",
+    "../assets/1_places/derya-beach-club-003.jpg",
+    "../assets/1_places/derya-beach-club-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Küçük Çakıl Mevkii, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.204441, lng: 29.638981 }, // kesin koordinat yerine Kaş merkez placeholder
+  website: "",
+  phone: "+90 242 836 33 76",
+  duration: "",
+  facilities: ["yeme-içme", "gün içi oturma/şezlong (sezona göre)", "denize giriş alanı"],
+  features: ["merkeze yakın", "beach club", "gün boyu kullanım"],
+  tags: ["küçük çakıl", "kokteyl", "deniz günü"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Derya, Küçük Çakıl çevresinde “deniz + kokteyl + yemek” konseptini sevenlerin bildiği bir adres. Denize girip çıktıkça masaya dönülen, günün yavaş aktığı bir düzen var. Kaş’ta merkezden çok uzaklaşmadan beach club havası isteyenler burada takılıyor.
+
+**Kimler için uygun**
+Günü tek bir noktada geçirmek, yüzme molalarını yeme-içmeyle birleştirmek isteyenler için uygun. Sessiz-sakin “kendi havlumla minimal” tarzından ziyade, işletme düzeniyle günü yaşamak isteyenlere hitap ediyor.
+
+**Ne alınır-ne yapılır**
+Denize girme aralarıyla uzun oturmalar, soğuk içecekler ve gün içinde atıştırmalık/yemek planı. Denizin berrak olduğu günlerde kısa şnorkel bakışları da eklenebilir (giriş yapısına göre).
+
+**Pratik ipuçları**
+Sezonda yoğun olabiliyor; erken gitmek yer bulmayı kolaylaştırır. Harcama/şezlong uygulaması sezona göre değişebildiği için en net bilgi gittiğinde alınır. Çakıl/kayalık giriş ihtimaline karşı deniz ayakkabısı yine kurtarır.
+
+**Kısa özet**
+Derya, Kaş merkez çevresinde beach club gününü “yüzme + yeme-içme” şeklinde yaşamak isteyenler için pratik bir seçenek.`
+},
+
+// 17) Leymona Beach Club
+{
+  id: "leymona-beach-club",
+  title: "Leymona Beach Club",
+  description: "Kaş merkezde, deniz günü ile yeme-içmeyi birleştiren ve sakin bir atmosfer hedefleyen beach restoran/bar konsepti.",
+  category: ["beaches", "food", "bar"],
+  image: "../assets/1_places/leymona-beach-club-001.jpg",
+  images: [
+    "../assets/1_places/leymona-beach-club-002.jpg",
+    "../assets/1_places/leymona-beach-club-003.jpg",
+    "../assets/1_places/leymona-beach-club-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli, Hastane Cd. çevresi, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.204441, lng: 29.638981 }, // kesin koordinat yerine Kaş merkez placeholder
+  website: "https://leymonabeach.com/",
+  phone: "",
+  duration: "",
+  facilities: ["yeme-içme", "denize giriş alanı", "oturma alanı", "wi-fi (işletmeye göre)"],
+  features: ["merkeze yakın", "beach restoran", "gün boyu oturmalık"],
+  tags: ["beach day", "merkez", "rahat ortam"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Leymona, Kaş’ta merkez civarında olup da “biraz daha sakin bir tonda beach günü” arayanların radarına giren tarzda. Denize girip çıktıkça masaya dönülen, müzik ve kalabalık dozunun (güne göre) daha kontrollü olabildiği bir beach-restoran hissi var.
+
+**Kimler için uygun**
+Günü uzun uzun oturarak geçirmek isteyenler, hem yüzüp hem de yemek/içecek eşliğinde vakit geçirmek isteyenler için uygun. “Sadece havlumu serer girer çıkarım” minimalizmi yerine, işletme düzeniyle günü yaşayanlara daha yakın.
+
+**Ne alınır-ne yapılır**
+Denize giriş + güneşlenme + yemek/içmek. Kaş’ta plan çoğu zaman bu kadar basit ve iyi. Eğer günün bir kısmında çalışmak/dinlenmek istiyorsan, bazı beach noktalarında masa/wifi gibi pratikler olabiliyor; en neti gittiğinde sorarak ilerlemek.
+
+**Pratik ipuçları**
+Sezonda yoğunluk artabilir; erken saatler daha rahat eder. Harcama limiti/rezervasyon gibi uygulamalar dönemsel değişebilir—gitmeden önce web/instagram üzerinden güncel bilgi bakmak faydalı olur. Deniz ayakkabısı yine konfor sağlar.
+
+**Kısa özet**
+Leymona, Kaş merkez çevresinde beach günü + yeme-içme kombinini, görece daha “rahat oturmalı” bir tonda yaşamak isteyenlere uygun bir seçenek.`
+},
+
+// 18) Asma6 Beach & Restaurant
+{
+  id: "asma6-beach-restaurant",
+  title: "Asma6 Beach & Restaurant",
+  description: "Kaş merkez sahil hattında, denize girme alanı ve gün boyu yeme-içmeyi bir arada sunan beach restoran/bar.",
+  category: ["beaches", "food", "bar", "cafe"],
+  image: "../assets/1_places/asma6-beach-restaurant-001.jpg",
+  images: [
+    "../assets/1_places/asma6-beach-restaurant-002.jpg",
+    "../assets/1_places/asma6-beach-restaurant-003.jpg",
+    "../assets/1_places/asma6-beach-restaurant-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli, İskele Sk. No:22, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.204441, lng: 29.638981 }, // kesin koordinat yerine Kaş merkez placeholder
+  website: "http://www.asma6.net/",
+  phone: "+90 534 359 35 37",
+  duration: "",
+  facilities: ["yeme-içme", "oturma alanı", "denize giriş alanı", "wi-fi (işletmeye göre)"],
+  features: ["sahil hattı", "beach bar", "gün boyu kullanım"],
+  tags: ["iskele", "deniz+akşam", "merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Asma6, Kaş’ta sahil hattında günün saatine göre şekil değiştiren yerlerden: gündüz beach gibi, akşamüstü daha sosyal, geceye doğru daha “oturup uzatayım” havası. Denize girme imkânı ve yeme-içme bir arada olunca, “bir yer seçeyim ve uzun takılayım” planına iyi oturuyor.
+
+**Kimler için uygun**
+Günü tek mekânda geçirmek isteyenler, yüzme molalarını yemek/içecekle birleştirmeyi sevenler için uygun. Daha sakin ve izole bir koy arayanlar yerine, merkez dinamizmini sevenler daha mutlu olur.
+
+**Ne alınır-ne yapılır**
+Denize gir-çık, hafif bir şeyler ye, serin içecek al, güneş düşünce manzaraya karşı otur… Kaş’ta “günlük ritim” tam bu şekilde akıyor. Deniz girişi kayalık/merdivenli olabileceği için, planı buna göre düşünmek iyi.
+
+**Pratik ipuçları**
+Sezonda yer bulmak zorlaşabilir; erken saatler avantaj. Harcama/rezervasyon gibi detaylar dönemsel değişebilir; gitmeden önce güncel kanallardan bakmak iyi olur. Deniz ayakkabısı konfor, küçük bir çanta da “gün boyu” planı için şart.
+
+**Kısa özet**
+Merkezde beach-restoran düzeni: deniz + yeme-içme + uzun oturma. Asma6 bu kombinasyonu sevenlere iyi gider.`
+},
+
+// 19) Nuri’s Beach (Limanağzı)
+{
+  id: "nuris-beach",
+  title: "Nuri’s Beach (Limanağzı)",
+  description: "Limanağzı’nda, karayolu olmayan bölgede tekneyle ulaşılan, deniz günü ve konaklamayı birleştirebilen sahil işletmesi.",
+  category: ["beaches", "food", "hotels"],
+  image: "../assets/1_places/nuris-beach-001.jpg",
+  images: [
+    "../assets/1_places/nuris-beach-002.jpg",
+    "../assets/1_places/nuris-beach-003.jpg",
+    "../assets/1_places/nuris-beach-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Limanağzı Mevkii, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.172741, lng: 29.649598 },
+  website: "https://www.nurisbeachbungalow.com/",
+  phone: "+90 538 899 32 72",
+  duration: "",
+  facilities: ["tekne ile ulaşım", "yeme-içme", "şezlong/oturma alanı (sezona göre)", "konaklama (bungalow)"],
+  features: ["Limanağzı", "arabası olmayan koy", "günlük deniz kaçamağı"],
+  tags: ["water taxi", "doğa", "tüm gün"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Nuri’s Beach, Limanağzı’nın “arabadan uzak, tekneyle gidilen” dünyasında yer alıyor. Bu tarafın ortak hissi: daha yavaş, daha doğaya yakın ve şehir gürültüsünden kopuk. Deniz genelde çok berrak; gün boyu aynı koyda kalınca gerçekten “kaçmış” gibi oluyorsun.
+
+**Kimler için uygun**
+Merkezden kısa bir tekne yolculuğuyla farklı bir gün yaşamak isteyenler için ideal. Kalabalık şehir plajı yerine koy deneyimi arayanlar, doğa severler ve “tüm gün orada takılayım” diyenler daha çok sever. Karayolu erişimi olmadığı için, hareket kabiliyeti kısıtlı olanlar planı daha dikkatli yapmalı.
+
+**Ne alınır-ne yapılır**
+Gün burada yüzme, güneşlenme ve uzun uzun oturma üzerine kurulu. Denizin berrak olduğu saatlerde şnorkel güzel eşlik eder. Limanağzı’nda “bir yer seçip bütün günü denize göre ayarlamak” en doğru yaklaşım.
+
+**Pratik ipuçları**
+Ulaşım genelde Kaş’tan kalkan tekne/su taksiyle olur; saatler sezona göre değişebilir. Nakit/ödeme yöntemlerini ve dönüş saatini baştan netleştirmek rahat ettirir. Akşamüstü rüzgârı artarsa, dönüşü buna göre planlamak iyi olur.
+
+**Kısa özet**
+Limanağzı’nda tekneyle ulaşılan, doğa hissi yüksek bir deniz günü: Nuri’s Beach, “Kaş’ta bir günlüğüne kaçış” arayanlara çok uygun.`
+},
+
+// 20) Bilal’in Yeri (Limanağzı)
+{
+  id: "bilalin-yeri",
+  title: "Bilal’in Yeri (Limanağzı)",
+  description: "Limanağzı’nda tekneyle ulaşılan, denize girme alanı ve yeme-içmeyi birleştiren klasik duraklardan biri.",
+  category: ["beaches", "food", "cafe"],
+  image: "../assets/1_places/bilalin-yeri-001.jpg",
+  images: [
+    "../assets/1_places/bilalin-yeri-002.jpg",
+    "../assets/1_places/bilalin-yeri-003.jpg",
+    "../assets/1_places/bilalin-yeri-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Limanağzı Mevkii, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.204441, lng: 29.638981 }, // kesin koordinat bulamazsak Kaş merkez placeholder
+  website: "",
+  phone: "+90 545 881 86 86",
+  duration: "",
+  facilities: ["tekne ile ulaşım", "yeme-içme", "oturma alanı", "denize giriş alanı"],
+  features: ["Limanağzı", "gün boyu deniz", "doğaya yakın"],
+  tags: ["water taxi", "limanağzı klasiği", "tüm gün"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Bilal’in Yeri, Limanağzı’nın klasik “denize gir-otur-yemek ye” düzenini yaşatan duraklarından. Bu bölgede arabasızlık hissi atmosferi otomatik güzelleştiriyor: deniz sesi, daha doğal bir koy düzeni ve şehirden kopuş.
+
+**Kimler için uygun**
+Günü Limanağzı’nda geçirmek isteyenler, denize girmeyi bir işletme düzeniyle (oturma/yeme-içme) birleştirmek isteyenler için uygun. “Sadece yüzüp döneyim” diyenler de uğrayabilir ama asıl keyif, günü yavaşlatınca çıkıyor.
+
+**Ne alınır-ne yapılır**
+Denize girip çıkmak, güneşlenmek, sonra gölgede bir şeyler yiyip içmek. Limanağzı’nda en güzel plan bu. Deniz sakin olduğunda şnorkel de çok yakışır; kıyı çizgisi genelde görsel olarak tatmin edici oluyor.
+
+**Pratik ipuçları**
+Ulaşım çoğunlukla Kaş’tan kalkan tekne/su taksiyle; dönüş saatini baştan netleştir. Sezonda yoğunluk olabilir—erken saatler daha rahat. Kayalık/merdivenli giriş ihtimaline karşı deniz ayakkabısı yine iyi fikir.
+
+**Kısa özet**
+Bilal’in Yeri, Limanağzı’nda tekneyle gidilen bir deniz gününü, yeme-içmeyle birlikte “tüm güne” yaymak isteyenler için uygun bir durak.`
+},
+
+
+
+
+
+// 3. onluk (21–30 / 72)
+
+// 21) La Moda Beach (Limanağzı)
+{
+  id: "la-moda-beach",
+  title: "La Moda Beach (Limanağzı)",
+  description: "Limanağzı’nda tekneyle ulaşılan, denize giriş platformu ve yeme-içmeyi birleştiren popüler beach noktası.",
+  category: ["beaches", "food", "bar"],
+  image: "../assets/1_places/la-moda-beach-001.jpg",
+  images: [
+    "../assets/1_places/la-moda-beach-002.jpg",
+    "../assets/1_places/la-moda-beach-003.jpg",
+    "../assets/1_places/la-moda-beach-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Limanağzı, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.1727, lng: 29.6496 }, // Limanağzı genel nokta
+  website: "",
+  phone: "",
+  duration: "Tüm gün",
+  facilities: ["tekne ile ulaşım", "şezlong/oturma alanı", "yeme-içme"],
+  features: ["berrak deniz", "platform giriş", "koy atmosferi"],
+  tags: ["limanağzı", "water taxi", "günlük deniz"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Limanağzı’nın klasik “arabadan kopuk” hissini veren La Moda, deniz sesi ve sade beach düzeniyle rahat bir gün vadediyor. Platformdan denize girişle berrak sulara ulaşılıyor.
+
+**Kimler için uygun**
+Günü tek bir koyda geçirmek isteyenler, deniz+yeme-içme kombinini sevenler için uygun. Küçük çocuklar için platform girişini göz önünde bulundurmak gerekir.
+
+**Ne alınır-ne yapılır**
+Uzun yüzme seansları, şnorkel (deniz sakinse) ve gün boyu masada dinlenme. Limanağzı’nda plan genelde bu.
+
+**Pratik ipuçları**
+Ulaşım su taksiyle; dönüş saatini baştan netleştir. Deniz ayakkabısı platform/kayalık girişlerde konfor sağlar.
+
+**Kısa özet**
+Limanağzı’nda sakin bir deniz günü arayanlara uygun, pratik bir beach durağı.`
+},
+
+// 22) Hakiliki Beach Club
+{
+  id: "hakiliki-beach-club",
+  title: "Hakiliki Beach Club",
+  description: "Kaş merkez çevresinde, denize giriş ve yeme-içmeyi bir araya getiren beach club.",
+  category: ["beaches", "food", "bar"],
+  image: "../assets/1_places/hakiliki-beach-club-001.jpg",
+  images: [
+    "../assets/1_places/hakiliki-beach-club-002.jpg",
+    "../assets/1_places/hakiliki-beach-club-003.jpg",
+    "../assets/1_places/hakiliki-beach-club-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // Kaş merkez placeholder
+  website: "",
+  phone: "",
+  duration: "Yarım/Tüm gün",
+  facilities: ["denize giriş alanı", "oturma alanı", "yeme-içme"],
+  features: ["merkeze yakın", "beach club", "gün boyu kullanım"],
+  tags: ["merkez", "beach day", "oturmalı"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Merkez çevresinde beach club ritmi: yüz, otur, ye-iç. Gün içinde temposu artıp azalabiliyor.
+
+**Kimler için uygun**
+Merkezden kopmadan beach günü isteyenler.
+
+**Ne alınır-ne yapılır**
+Deniz molaları arasında uzun oturmalar.
+
+**Pratik ipuçları**
+Sezonda yoğunluk ve uygulamalar değişebilir; gittiğinde sor.
+
+**Kısa özet**
+Merkez yakınında pratik bir beach club seçeneği.`
+},
+
+// 23) Lures Hotel Beach Club
+{
+  id: "lures-hotel-beach-club",
+  title: "Lures Hotel Beach Club",
+  description: "Çukurbağ Yarımadası’nda, denize sıfır konumda, otel misafirlerine ve dışarıdan gelenlere açık beach alanı.",
+  category: ["beaches", "hotels", "food"],
+  image: "../assets/1_places/lures-hotel-beach-club-001.jpg",
+  images: [
+    "../assets/1_places/lures-hotel-beach-club-002.jpg",
+    "../assets/1_places/lures-hotel-beach-club-003.jpg",
+    "../assets/1_places/lures-hotel-beach-club-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Çukurbağ Yarımadası, Kaş/Antalya",
+  distance: "Kaş merkezden ~4 km",
+  coordinates: { lat: 36.1964, lng: 29.5989 },
+  website: "https://lureshotel.com",
+  phone: "",
+  duration: "Yarım/Tüm gün",
+  facilities: ["platform plaj", "şezlong", "restoran", "bar"],
+  features: ["yarımada", "daha sakin ortam", "temiz deniz"],
+  tags: ["yarımada", "otel beach", "konfor"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Yarımada tarafında daha sakin ve düzenli bir beach hissi. Platformdan berrak denize giriş.
+
+**Kimler için uygun**
+Konfor arayanlar ve kalabalıktan kaçmak isteyenler.
+
+**Ne alınır-ne yapılır**
+Yüzme, güneşlenme, restoranda mola.
+
+**Pratik ipuçları**
+Dışarıdan kabul ve uygulamalar sezona göre değişebilir.
+
+**Kısa özet**
+Yarımadada konforlu bir beach günü.`
+},
+
+// 24) Mavi Kıyı Suites
+{
+  id: "mavi-kiyi-suites",
+  title: "Mavi Kıyı Suites",
+  description: "Denize yakın konumu ve modern süitleriyle bilinen butik konaklama tesisi.",
+  category: ["hotels"],
+  image: "../assets/1_places/mavi-kiyi-suites-001.jpg",
+  images: [
+    "../assets/1_places/mavi-kiyi-suites-002.jpg",
+    "../assets/1_places/mavi-kiyi-suites-003.jpg",
+    "../assets/1_places/mavi-kiyi-suites-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "Konaklama",
+  facilities: ["denize yakın", "suit odalar"],
+  features: ["butik", "modern"],
+  tags: ["konaklama", "suit"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Modern ve sade; denize yakın olmanın avantajı öne çıkıyor.
+
+**Kimler için uygun**
+Rahat ve merkezi konaklama arayanlar.
+
+**Ne alınır-ne yapılır**
+Kaş merkez ve plajlara kolay erişim.
+
+**Pratik ipuçları**
+Oda tipleri ve sezon fiyatları değişken.
+
+**Kısa özet**
+Denize yakın, modern bir butik konaklama.`
+},
+
+// 25) Lures Hotel & Beach Club
+{
+  id: "lures-hotel",
+  title: "Lures Hotel & Beach Club",
+  description: "Çukurbağ Yarımadası’nda, otel konaklaması ile beach club deneyimini birleştiren tesis.",
+  category: ["hotels", "beaches"],
+  image: "../assets/1_places/lures-hotel-001.jpg",
+  images: [
+    "../assets/1_places/lures-hotel-002.jpg",
+    "../assets/1_places/lures-hotel-003.jpg",
+    "../assets/1_places/lures-hotel-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Çukurbağ Yarımadası, Kaş/Antalya",
+  distance: "Kaş merkezden ~4 km",
+  coordinates: { lat: 36.1964, lng: 29.5989 },
+  website: "https://lureshotel.com",
+  phone: "",
+  duration: "Konaklama",
+  facilities: ["özel plaj", "restoran", "bar"],
+  features: ["yarımada", "sessiz"],
+  tags: ["otel", "beach club"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Yarımada sakinliği ve düzenli tesis hissi.
+
+**Kimler için uygun**
+Sessiz, konforlu tatil isteyenler.
+
+**Ne alınır-ne yapılır**
+Plaj, havuz ve restoran kullanımı.
+
+**Pratik ipuçları**
+Rezervasyonları erken yapmak avantajlı.
+
+**Kısa özet**
+Konforlu yarımada oteli.`
+},
+
+// 26) Luvi Kaş Otel
+{
+  id: "luvi-kas-otel",
+  title: "Luvi Kaş Otel",
+  description: "Kaş merkezde, manzaralı ve butik yapısıyla öne çıkan otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/luvi-kas-otel-001.jpg",
+  images: [
+    "../assets/1_places/luvi-kas-otel-002.jpg",
+    "../assets/1_places/luvi-kas-otel-003.jpg",
+    "../assets/1_places/luvi-kas-otel-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 },
+  website: "",
+  phone: "",
+  duration: "Konaklama",
+  facilities: ["teras", "manzara"],
+  features: ["butik", "merkez"],
+  tags: ["otel", "manzara"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Merkezde, manzaraya açılan sakin bir butik otel.
+
+**Kimler için uygun**
+Merkezde kalmak isteyenler.
+
+**Ne alınır-ne yapılır**
+Kaş çarşı ve plajlara yürüyüş.
+
+**Pratik ipuçları**
+Yazın erken rezervasyon önerilir.
+
+**Kısa özet**
+Merkezde butik ve manzaralı.`
+},
+
+// 27) Payam Hotel
+{
+  id: "payam-hotel",
+  title: "Payam Hotel",
+  description: "Kaş merkezde, küçük ölçekli ve samimi bir butik otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/payam-hotel-001.jpg",
+  images: [
+    "../assets/1_places/payam-hotel-002.jpg",
+    "../assets/1_places/payam-hotel-003.jpg",
+    "../assets/1_places/payam-hotel-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 },
+  website: "",
+  phone: "",
+  duration: "Konaklama",
+  facilities: ["bahçe/teras"],
+  features: ["butik", "samimi"],
+  tags: ["otel", "merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Samimi ve küçük ölçekli.
+
+**Kimler için uygun**
+Sade konaklama arayanlar.
+
+**Ne alınır-ne yapılır**
+Merkezden kolay erişim.
+
+**Pratik ipuçları**
+Sezonluk doluluk yüksek olabilir.
+
+**Kısa özet**
+Merkezde sade butik otel.`
+},
+
+// 28) Kaş Marin Hotel
+{
+  id: "kas-marin-hotel",
+  title: "Kaş Marin Hotel",
+  description: "Deniz manzaralı odaları ve merkezi konumuyla bilinen otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/kas-marin-hotel-001.jpg",
+  images: [
+    "../assets/1_places/kas-marin-hotel-002.jpg",
+    "../assets/1_places/kas-marin-hotel-003.jpg",
+    "../assets/1_places/kas-marin-hotel-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 },
+  website: "",
+  phone: "",
+  duration: "Konaklama",
+  facilities: ["teras", "manzara"],
+  features: ["deniz manzarası"],
+  tags: ["otel"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Manzara odaklı, sakin.
+
+**Kimler için uygun**
+Manzara sevenler.
+
+**Ne alınır-ne yapılır**
+Merkez ve sahile erişim.
+
+**Pratik ipuçları**
+Manzaralı oda tercih edilebilir.
+
+**Kısa özet**
+Deniz manzaralı konaklama.`
+},
+
+// 29) Hideaway Hotel
+{
+  id: "hideaway-hotel",
+  title: "Hideaway Hotel",
+  description: "Merkezde, yetişkinlere yönelik, sessiz ve butik bir otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/hideaway-hotel-001.jpg",
+  images: [
+    "../assets/1_places/hideaway-hotel-002.jpg",
+    "../assets/1_places/hideaway-hotel-003.jpg",
+    "../assets/1_places/hideaway-hotel-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 },
+  website: "",
+  phone: "",
+  duration: "Konaklama",
+  facilities: ["havuz", "teras"],
+  features: ["adult friendly", "sessiz"],
+  tags: ["butik", "yetişkin"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Sessiz ve yetişkin odaklı.
+
+**Kimler için uygun**
+Huzur arayan çiftler.
+
+**Ne alınır-ne yapılır**
+Merkezde sakin konaklama.
+
+**Pratik ipuçları**
+Yüksek sezonda erken rezervasyon.
+
+**Kısa özet**
+Merkezde huzurlu butik otel.`
+},
+
+// 30) Hotel Sonne
+{
+  id: "hotel-sonne",
+  title: "Hotel Sonne",
+  description: "Merkezde, teras manzarası ve klasik Kaş oteli atmosferiyle bilinen tesis.",
+  category: ["hotels"],
+  image: "../assets/1_places/hotel-sonne-001.jpg",
+  images: [
+    "../assets/1_places/hotel-sonne-002.jpg",
+    "../assets/1_places/hotel-sonne-003.jpg",
+    "../assets/1_places/hotel-sonne-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez, Andifli/Kaş",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 },
+  website: "",
+  phone: "",
+  duration: "Konaklama",
+  facilities: ["teras", "manzara"],
+  features: ["merkez", "klasik"],
+  tags: ["otel"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Klasik Kaş oteli hissi.
+
+**Kimler için uygun**
+Merkez ve manzara isteyenler.
+
+**Ne alınır-ne yapılır**
+Çarşı ve sahil yürüyüşleri.
+
+**Pratik ipuçları**
+Manzaralı oda tercih edilebilir.
+
+**Kısa özet**
+Merkezde klasik bir Kaş oteli.`
+},
+
+// 4. onluk (31–40 / 72)
+
+// 31) Sardunya Otel
+{
+  id: "sardunya-otel",
+  title: "Sardunya Otel",
+  description: "Kaş merkezde denize çok yakın konumda, bahçe/terası ve deniz erişimiyle öne çıkan otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/sardunya-otel-001.jpg",
+  images: [
+    "../assets/1_places/sardunya-otel-002.jpg",
+    "../assets/1_places/sardunya-otel-003.jpg",
+    "../assets/1_places/sardunya-otel-004.jpg"
+  ],
+  rating: 9.6, // Expedia puanı (10 üzerinden)
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli, Hastane Cd., 07580 Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // emin olmadığım için Kaş merkez placeholder
+  website: "https://sardunyaotel.com.tr",
+  phone: "+90 242 836 30 80",
+  duration: "Konaklama",
+  facilities: ["kahvaltı", "Wi-Fi", "denize yakın", "teras/bahçe"],
+  features: ["merkeze yürüme", "deniz manzarası (bazı odalar)", "sakin otel hissi"],
+  tags: ["kas-merkez", "butik-otel", "denize-yakin"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Sardunya Otel, Kaş merkezde “her yere yürüyebileyim” diyenlerin sevdiği tipte bir yer. Gün içinde çarşı kalabalığına karışıp akşam daha sakin bir otele dönme hissi veriyor. Deniz tarafı/teras gibi alanlar günün ritmini yumuşatıyor.
+
+**Kimler için uygun**
+Merkezde kalıp arabayı unutmak isteyenler için iyi bir aday. Gün içinde tekne turu, akşam çarşı yürüyüşü gibi plan yapan çiftler ve arkadaş grupları uyum sağlar. Sessizlik arayanlar için de genel olarak uygun; yine de sezonda Kaş merkez hareketli olabilir.
+
+**Ne alınır-ne yapılır**
+Otel tarafında “çok aktivite” yerine Kaş’ı yaşama kolaylığı öne çıkıyor: sabah kahvaltı, gündüz deniz/tekne, akşamüstü kısa dinlenme, sonra çarşı. Deniz kenarında vakit geçirmek isteyenler için en pratik senaryo bu.
+
+**Pratik ipuçları**
+Merkezde otopark her zaman kolay değil; konaklama öncesi park/valet durumunu netleştirmek iyi olur. Oda seçerken manzara ve merdiven/konum detaylarını sor.
+
+**Kısa özet**
+Merkeze yakın, Kaş’ı yürüyerek yaşamak isteyenlere uygun, denize yakın bir otel.`
+},
+
+// 32) HillCity Hotel
+{
+  id: "hillcity-hotel",
+  title: "HillCity Hotel",
+  description: "Çukurbağ Yarımadası tarafında, manzara ve havuz odağında butik otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/hillcity-hotel-001.jpg",
+  images: [
+    "../assets/1_places/hillcity-hotel-002.jpg",
+    "../assets/1_places/hillcity-hotel-003.jpg",
+    "../assets/1_places/hillcity-hotel-004.jpg"
+  ],
+  rating: 8.8, // Agoda genel puan (yaklaşık)
+  price: "₺₺₺",
+  selected: false,
+  location: "Çukurbağ Yarımadası, Kaş/Antalya",
+  distance: "Kaş merkezden ~5 km",
+  coordinates: { lat: 36.1964, lng: 29.5989 }, // yarımada genel nokta
+  website: "https://www.hillcityhotel.com",
+  phone: "",
+  duration: "Konaklama",
+  facilities: ["havuz", "Wi-Fi", "kahvaltı", "otopark"],
+  features: ["panoramik manzara", "yarımada sakinliği", "butik konsept"],
+  tags: ["cukurbağ-yarimadasi", "manzara", "butik-otel"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Yarımada tarafındaki otellerin klasik avantajı burada da var: daha sakin, daha geniş manzara. Gün içinde Kaş merkezin temposundan uzak, daha “otelde de vakit geçireyim” hissi.
+
+**Kimler için uygun**
+Manzaraya önem verenler, günün bir kısmını havuz/teras düzeninde geçirmek isteyenler için uygun. Merkezde her yere yürüyeyim diyenler içinse araç/transfer ihtiyacı doğabilir.
+
+**Ne alınır-ne yapılır**
+Sabah kahvaltı sonrası havuz-manzara molası, gün ortasında plaj/tekne, akşam tekrar otelde dinlenme. Kaş’ta yorulmadan tatil kurgusu isteyenler bunu seviyor.
+
+**Pratik ipuçları**
+Yarımada rotalarında taksi/araç planını baştan yapmak rahat ettirir. Oda tipleri (manzara/teras) deneyimi ciddi etkiler; rezervasyon öncesi sor.
+
+**Kısa özet**
+Yarımadada manzara ve sakinlik isteyenlere uygun butik otel.`
+},
+
+// 33) Sea View Otel
+{
+  id: "sea-view-otel",
+  title: "Sea View Otel",
+  description: "Kaş sahil hattına yakın, özel güneşlenme terası/iskeleyi vurgulayan deniz kıyısı oteli.",
+  category: ["hotels"],
+  image: "../assets/1_places/sea-view-otel-001.jpg",
+  images: [
+    "../assets/1_places/sea-view-otel-002.jpg",
+    "../assets/1_places/sea-view-otel-003.jpg",
+    "../assets/1_places/sea-view-otel-004.jpg"
+  ],
+  rating: 8.8, // Agoda puanı
+  price: "₺₺",
+  selected: false,
+  location: "Kaş sahil hattı, Kaş/Antalya (merkeze ~300 m)",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // Kaş merkez placeholder
+  website: "https://www.seaviewotel.com",
+  phone: "+90 242 836 10 14",
+  duration: "Konaklama",
+  facilities: ["özel güneşlenme terası/iskelesi", "Wi-Fi", "kahvaltı", "restoran/bar"],
+  features: ["deniz manzarası", "merkeze yakın", "denize kolay erişim"],
+  tags: ["sahil", "deniz-erisim", "kas-merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Adından beklendiği gibi deniz odaklı bir konum: sabah manzarayla uyanıp gün içinde denize in-çık yapmak kolay. Merkeze yakın olduğundan dışarı çıkma planı da pratik.
+
+**Kimler için uygun**
+Denize yakın olayım, gün içinde sürekli denize girip çıkayım diyenlere uygun. Akşam yürüyerek çarşıya karışmak isteyenler de rahat eder.
+
+**Ne alınır-ne yapılır**
+En iyi senaryo basit: yüzme molaları, kısa yürüyüşler, akşamüstü gün batımı manzarası. Tekne turu + otelde dinlenme kombinine iyi oturur.
+
+**Pratik ipuçları**
+Deniz erişimi iskele/teras düzeninde olabiliyor; denize giriş tipini (merdiven/platform) sevmeyenler önceden kontrol etmeli. Sezonda oda tipleri ve manzara farkı belirgin.
+
+**Kısa özet**
+Denize yakın ve merkeze yakın; “deniz günü + çarşı akşamı” planı için pratik.`
+},
+
+// 34) Novva Hotel Kaş (Novva Hotels Kaş)
+{
+  id: "novva-hotel-kas",
+  title: "Novva Hotel Kaş (Novva Hotels Kaş)",
+  description: "Çukurbağ Yarımadası’nda, süit/özel havuz gibi seçenekleriyle öne çıkan modern konaklama.",
+  category: ["hotels"],
+  image: "../assets/1_places/novva-hotel-kas-001.jpg",
+  images: [
+    "../assets/1_places/novva-hotel-kas-002.jpg",
+    "../assets/1_places/novva-hotel-kas-003.jpg",
+    "../assets/1_places/novva-hotel-kas-004.jpg"
+  ],
+  rating: 8.0, // Booking yorum sayfasında görünen genel skor
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli, Çukurbağ Yarımadası, Demokrasi Cd. No:30, 07580 Kaş/Antalya",
+  distance: "Kaş merkezden ~4 km",
+  coordinates: { lat: 36.1964, lng: 29.5989 }, // yarımada genel nokta
+  website: "https://www.novvakas.com/novva-kas",
+  phone: "+90 242 505 39 25",
+  duration: "Konaklama",
+  facilities: ["Wi-Fi", "otopark", "teras/bahçe", "bazı odalarda özel havuz"],
+  features: ["yarımada", "modern süit konsepti", "daha izole tatil hissi"],
+  tags: ["novva", "suite", "private-pool"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Novva tarafı daha “site/kompleks” hissi verebilen, modern tasarımlı bir konaklama çizgisinde. Yarımada konumu sayesinde merkezden biraz uzaklaşıp daha izole bir tempo yakalanıyor.
+
+**Kimler için uygun**
+Klasik pansiyon/merkez oteli yerine daha modern, süit ağırlıklı bir şey arayanlara uygun. “Odamda/terasımda da vakit geçireyim” diyenler daha çok keyif alır.
+
+**Ne alınır-ne yapılır**
+Yarımada-merkez dengesini kurup günü bölmek iyi çalışıyor: sabah otelde, öğlen deniz/tekne, akşam merkez. Oda konseptine göre “otelde dinlenme” daha büyük yer tutabilir.
+
+**Pratik ipuçları**
+Yarımada tarafında araç/transfer planı önem kazanır. Oda tipleri (havuz, manzara, mutfak vb.) çok değişebiliyor; rezervasyon öncesi netleştir.
+
+**Kısa özet**
+Modern süit konsepti ve yarımada sakinliği arayanlar için güçlü bir seçenek.`
+},
+
+// 35) Rhapsody Hotel Kaş
+{
+  id: "rhapsody-hotel-kas",
+  title: "Rhapsody Hotel Kaş",
+  description: "Kaş merkez çevresinde, Küçük Çakıl’a yakın konumuyla öne çıkan butik otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/rhapsody-hotel-kas-001.jpg",
+  images: [
+    "../assets/1_places/rhapsody-hotel-kas-002.jpg",
+    "../assets/1_places/rhapsody-hotel-kas-003.jpg",
+    "../assets/1_places/rhapsody-hotel-kas-004.jpg"
+  ],
+  rating: 8.7, // HotelsCombined (10 üzerinden)
+  price: "₺₺",
+  selected: false,
+  location: "Hükümet Cd. civarı / Küçük Çakıl mevkii, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // Kaş merkez placeholder
+  website: "https://kas.rhapsodyhotels.com",
+  phone: "+90 242 836 12 00",
+  duration: "Konaklama",
+  facilities: ["kahvaltı", "Wi-Fi", "merkeze yakınlık"],
+  features: ["plajlara yakın", "yürünebilir lokasyon", "butik"],
+  tags: ["kucuk-cakil", "kas-merkez", "butik-otel"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Merkeze yakın konumlarda sevilen “Kaş oteli” formatı: sabah kısa bir kahvaltı, gün boyu dışarıda deniz/tekne, akşam yürüyerek yemek.
+
+**Kimler için uygun**
+Merkezde kalayım, plaja da yakın olayım diyenler için uygun. Gün içinde sürekli dışarıda olan ama akşam otele dönünce rahat etmek isteyenler sever.
+
+**Ne alınır-ne yapılır**
+Küçük Çakıl-merkez hattında yürüyüş, gün batımında sahil tarafında oturma, gündüz tekne turu. Kaş’ın klasik akışı.
+
+**Pratik ipuçları**
+Merkezde otopark değişken olabilir; araçla geliyorsan önceden sor. Oda konumu/manzara beklentini netleştir.
+
+**Kısa özet**
+Merkez-plaj dengesini isteyenler için pratik, butik bir konaklama.`
+},
+
+// 36) Hotel Marsala
+{
+  id: "hotel-marsala",
+  title: "Hotel Marsala",
+  description: "Çukurbağ Yarımadası’nda, deniz terası ve sakin ortamıyla bilinen butik otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/hotel-marsala-001.jpg",
+  images: [
+    "../assets/1_places/hotel-marsala-002.jpg",
+    "../assets/1_places/hotel-marsala-003.jpg",
+    "../assets/1_places/hotel-marsala-004.jpg"
+  ],
+  rating: 8.6, // Booking genel skor
+  price: "₺₺₺",
+  selected: false,
+  location: "Çukurbağ Yarımadası, Demokrasi Cd., Melih Temizyürek Sk. No:12, Kaş/Antalya",
+  distance: "Kaş merkezden ~4–5 km",
+  coordinates: { lat: 36.1964, lng: 29.5989 }, // yarımada genel nokta
+  website: "https://www.marsalahotelkas.com",
+  phone: "+90 242 836 14 45",
+  duration: "Konaklama",
+  facilities: ["kahvaltı", "Wi-Fi", "deniz terası", "havuz (tesis bazlı)"],
+  features: ["yarımada", "sakin", "deniz odaklı"],
+  tags: ["marsala", "cukurbağ-yarimadasi", "butik-otel"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Marsala daha sakin bir yarımada temposu sunuyor. Merkez karmaşasını istemeyenlerin sevdiği türden: gün içinde deniz, akşam daha sessiz bir dönüş.
+
+**Kimler için uygun**
+Huzurlu bir konaklama arayan çiftler ve “otelde de dinleneyim” diyenler için uygun. Merkezde sürekli yürüyerek gezmek isteyenler için araç ihtiyacı doğabilir.
+
+**Ne alınır-ne yapılır**
+Deniz terası/deniz kıyısı düzeni olan otellerde gün daha yavaş akar: sabah kahvaltı, gün içinde deniz molaları, akşam erken dinlenme.
+
+**Pratik ipuçları**
+Yarımada rotasında taksi/araç planı rahat ettirir. Oda tiplerinde teras/özel havuz gibi detaylar olabiliyor; beklentini rezervasyonda netleştir.
+
+**Kısa özet**
+Yarımadada sakin, deniz odaklı bir butik otel.`
+},
+
+// 37) Aquarius Hotel (Cappari Hotels Aquarius)
+{
+  id: "aquarius-hotel",
+  title: "Aquarius Hotel (Cappari Hotels Aquarius)",
+  description: "Çukurbağ Yarımadası’nda, denize sıfır konum ve kendi plaj alanını vurgulayan otel.",
+  category: ["hotels", "beaches"],
+  image: "../assets/1_places/aquarius-hotel-001.jpg",
+  images: [
+    "../assets/1_places/aquarius-hotel-002.jpg",
+    "../assets/1_places/aquarius-hotel-003.jpg",
+    "../assets/1_places/aquarius-hotel-004.jpg"
+  ],
+  rating: 4.0, // Tripadvisor (5 üzerinden) sayfa özetinde
+  price: "₺₺₺",
+  selected: false,
+  location: "Doğan Kaşaroğlu Sk. No:6, Çukurbağ Yarımadası, 07580 Kaş/Antalya",
+  distance: "Kaş merkezden ~4–5 km",
+  coordinates: { lat: 36.1964, lng: 29.5989 }, // yarımada genel nokta
+  website: "https://aquariusotel.com",
+  phone: "+90 242 836 18 96",
+  duration: "Konaklama",
+  facilities: ["özel plaj", "restoran", "bar", "Wi-Fi"],
+  features: ["denize sıfır", "yarımada", "Meis manzarası (bazı noktalar)"],
+  tags: ["cappari", "beach-hotel", "cukurbağ"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Denize sıfır otel hissi: günün büyük kısmı suya yakın geçiyor. Yarımada konumu merkezin temposunu biraz geride bırakıyor.
+
+**Kimler için uygun**
+“Otelden denize ineyim” rahatlığını isteyenler ve konforu öncelik yapanlar için uygun. Merkeze sürekli yürüyerek gidip gelmek isteyenler için mesafe yorucu olabilir.
+
+**Ne alınır-ne yapılır**
+Deniz molaları, gün boyu şezlong/teras düzeni, akşamüstü manzara keyfi. Kaş’ta tekne turu planlıyorsan dönüşte otelde dinlenme iyi oturur.
+
+**Pratik ipuçları**
+Denize giriş çoğu zaman platform/merdiven düzeninde olabilir; deniz ayakkabısı konfor sağlar. Ulaşım için araç/taksi planını önceden düşün.
+
+**Kısa özet**
+Yarımadada denize sıfır, plaj alanı olan, konfor odaklı bir otel.`
+},
+
+// 38) Nur Beach Hotel
+{
+  id: "nur-beach-hotel",
+  title: "Nur Beach Hotel",
+  description: "Kaş merkezde Küçük Çakıl’a yakın, deniz kenarı restoran/barı ve manzarasıyla bilinen otel.",
+  category: ["hotels", "beaches", "food", "bar"],
+  image: "../assets/1_places/nur-beach-hotel-001.jpg",
+  images: [
+    "../assets/1_places/nur-beach-hotel-002.jpg",
+    "../assets/1_places/nur-beach-hotel-003.jpg",
+    "../assets/1_places/nur-beach-hotel-004.jpg"
+  ],
+  rating: 4.0, // Tripadvisor (5 üzerinden)
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli, Hükümet Cd. No:49, 07580 Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // Kaş merkez placeholder
+  website: "https://www.nurbeachhotel.com",
+  phone: "+90 242 836 18 28",
+  duration: "Konaklama",
+  facilities: ["kahvaltı", "Wi-Fi", "deniz kıyısı alan", "restoran/bar"],
+  features: ["merkez", "denize yakın", "manzara"],
+  tags: ["kucuk-cakil", "sahil", "hotel+beach"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Nur Beach Hotel’in olayı konum: denize yakın, merkeze yakın ve gün içinde “çok plan yapmadan” akıp gidebilen bir düzen. Deniz kenarı alanı da otelin ritmini belirliyor.
+
+**Kimler için uygun**
+Merkezde kalıp hem plaj hem akşam yemeğini aynı hatta çözmek isteyenler için uygun. Gün içinde tekne turu yapıp akşam yürüyerek merkeze karışmak isteyenler de rahat eder.
+
+**Ne alınır-ne yapılır**
+Sabah kısa kahvaltı, gün içinde deniz/tekne, akşamüstü deniz kenarında oturma. Burası “Kaş klasiği” akışına çok uyuyor.
+
+**Pratik ipuçları**
+Merkezde otopark ve trafik sezonda değişken olabilir. Deniz alanı ve masa düzeni yoğun saatlerde dolabilir; özellikle akşam için erken saat iyi fikir.
+
+**Kısa özet**
+Merkezde, denize yakın; hem konaklama hem deniz kenarı vakti isteyenler için pratik.`
+},
+
+// 39) La Kumsal Hotel
+{
+  id: "la-kumsal-hotel",
+  title: "La Kumsal Hotel",
+  description: "Çukurbağ Yarımadası’nda, manzara ve sakinlik odaklı butik otel.",
+  category: ["hotels"],
+  image: "../assets/1_places/la-kumsal-hotel-001.jpg",
+  images: [
+    "../assets/1_places/la-kumsal-hotel-002.jpg",
+    "../assets/1_places/la-kumsal-hotel-003.jpg",
+    "../assets/1_places/la-kumsal-hotel-004.jpg"
+  ],
+  rating: 9.3, // Expedia/Agoda puanları üzerinden (10 üzerinden)
+  price: "₺₺₺",
+  selected: false,
+  location: "Çukurbağ Yarımadası, Beyhan Cenkçi Cd. No:74, 07580 Kaş/Antalya",
+  distance: "Kaş merkezden ~4–5 km",
+  coordinates: { lat: 36.1964, lng: 29.5989 }, // yarımada genel nokta
+  website: "https://www.lakumsal.com",
+  phone: "+90 242 836 34 04",
+  duration: "Konaklama",
+  facilities: ["havuz", "Wi-Fi", "kahvaltı", "restoran/bar"],
+  features: ["yarımada", "manzara", "daha sakin tempo"],
+  tags: ["la-kumsal", "manzara", "butik-otel"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+La Kumsal, yarımada tarafının “sakin ve manzaralı” çizgisinde. Merkezdeki kalabalık enerjiden uzaklaşıp daha yavaş bir tempo isteyenlere hitap ediyor.
+
+**Kimler için uygun**
+Manzarayı ve sessizliği önceleyen çiftler için uygun. Gün içinde çok gezen ama akşam sakin bir yere dönmek isteyenler de sever.
+
+**Ne alınır-ne yapılır**
+Gün planı genelde şöyle çalışıyor: sabah manzara-kahvaltı, öğlen deniz/tekne, akşamüstü havuz/teras dinlenmesi. Kaş’ta “dinlenmeyi” de tatilin parçası yapmak isteyenlere iyi oturur.
+
+**Pratik ipuçları**
+Yarımada tarafında araç/taksi planını baştan yapmak iyi olur. Oda tipleri ve manzara seçenekleri deneyimi etkiler; rezervasyonda sor.
+
+**Kısa özet**
+Yarımadada, sakin ve manzaralı bir butik otel arayanlara uygun.`
+},
+
+// 40) Upper House Hotel
+{
+  id: "upper-house-hotel",
+  title: "Upper House Hotel",
+  description: "Kaş merkezde, çarşı ve sahile yakın konumda butik konaklama.",
+  category: ["hotels"],
+  image: "../assets/1_places/upper-house-hotel-001.jpg",
+  images: [
+    "../assets/1_places/upper-house-hotel-002.jpg",
+    "../assets/1_places/upper-house-hotel-003.jpg",
+    "../assets/1_places/upper-house-hotel-004.jpg"
+  ],
+  rating: 7.2, // Expedia (10 üzerinden)
+  price: "₺₺",
+  selected: false,
+  location: "Ptt Cd. Öztürk Sk. No:15, 07580 Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // Kaş merkez placeholder
+  website: "https://www.upperhousehotel.net",
+  phone: "+90 242 836 43 33",
+  duration: "Konaklama",
+  facilities: ["Wi-Fi", "kahvaltı (tesise göre)", "merkezi konum"],
+  features: ["çarşıya yakın", "yürünebilir lokasyon", "butik"],
+  tags: ["kas-merkez", "carsi", "butik-otel"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Upper House, Kaş merkezde “konum her şeydir” diyenlerin tercih ettiği tipte. Gün boyunca çarşı-sahil hattında dolaşıp otele kısa bir yürüyüşle dönme kolaylığı var.
+
+**Kimler için uygun**
+Merkezde kalıp her yere yürüyerek gitmek isteyenler için uygun. Gün boyu dışarıda olup otele sadece dinlenmek için dönenler daha memnun olur.
+
+**Ne alınır-ne yapılır**
+Kaş’ta merkez konaklamanın klasiği: sabah kahvaltı, gün içinde deniz/tekne, akşam çarşıda yemek. Otel konumu bu akışı kolaylaştırıyor.
+
+**Pratik ipuçları**
+Merkezde bazı otellerde merdiven ve asansör durumu önemli olabiliyor; mobilite hassasiyeti varsa önceden sor. Otopark konusu sezona göre değişir.
+
+**Kısa özet**
+Kaş merkezde, yürüyerek yaşamak isteyenler için pratik bir butik otel.`
+},
+
+// 5. onluk (41–50 / 72)
+
+// 41) Talay Otel
+{
+  id: "talay-otel",
+  title: "Talay Otel",
+  description: "Küçük Çakıl’a çok yakın, merkezde konum avantajı olan, uzun yıllardır hizmet veren otel/pansiyon.",
+  category: ["hotels"],
+  image: "../assets/1_places/talay-otel-001.jpg",
+  images: [
+    "../assets/1_places/talay-otel-002.jpg",
+    "../assets/1_places/talay-otel-003.jpg",
+    "../assets/1_places/talay-otel-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Küçükçakıl Mah., Koza Sok. No:7, 07580 Kaş/Antalya",
+  distance: "Küçük Çakıl'a ~2 dk yürüyüş",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // kesin koordinat yoksa Kaş merkez placeholder
+  website: "https://talayotel.com/",
+  phone: "+90 242 836 11 01",
+  duration: "Konaklama",
+  facilities: ["Wi-Fi", "otopark (duruma göre)", "teras", "bahçe"],
+  features: ["merkeze yürüme", "Küçük Çakıl'a yakın", "klasik Kaş konaklaması"],
+  tags: ["kas-merkez", "kucuk-cakil", "konaklama"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Talay Otel, Kaş merkezde “işim gücüm dışarıda, otelde konum rahatlığı arıyorum” diyenlerin tarzında. Küçük Çakıl hattına yakın olduğundan gün içinde denize inip çıkmak kolay. Akşam da çarşıya karışıp yürüyerek dönme rahatlığı var.
+
+**Kimler için uygun**
+Merkezde kalmak isteyenler, Kaş’ı yürüyerek yaşamak isteyenler için uygun. Çok izole, sessizlik odaklı resort beklentisi olanlar içinse merkez temposu yorucu gelebilir.
+
+**Ne alınır-ne yapılır**
+Klasik Kaş planı burada iyi çalışır: sabah kahvaltı → tekne turu/plaj → akşam çarşı. Otel tarafında “aktivite”den çok pratiklik öne çıkar.
+
+**Pratik ipuçları**
+Merkezde otopark sezon yoğunluğunda değişken olabilir; araçla geliyorsan önceden sor. Oda seçerken manzara/kat/merdiven gibi detayları netleştirmek konforu artırır.
+
+**Kısa özet**
+Merkez + Küçük Çakıl yakınlığıyla, Kaş’ı yürüyerek yaşamak isteyenlere pratik konaklama.`
+},
+
+// 42) Çakıl Pansiyon
+{
+  id: "cakil-pansiyon",
+  title: "Çakıl Pansiyon",
+  description: "Küçük Çakıl mevkiinde denize çok yakın, kahvaltı konseptiyle bilinen pansiyon.",
+  category: ["hotels"],
+  image: "../assets/1_places/cakil-pansiyon-001.jpg",
+  images: [
+    "../assets/1_places/cakil-pansiyon-002.jpg",
+    "../assets/1_places/cakil-pansiyon-003.jpg",
+    "../assets/1_places/cakil-pansiyon-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli Mh., Küçük Çakıl Mevkii No:43, 07580 Kaş/Antalya",
+  distance: "Küçük Çakıl'a ~1 dk",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // kesin koordinat yoksa Kaş merkez placeholder
+  website: "https://www.cakilpension.com/",
+  phone: "+90 242 836 15 32",
+  duration: "Konaklama",
+  facilities: ["açık büfe kahvaltı", "Wi-Fi", "klima", "denize yakın"],
+  features: ["Küçük Çakıl mevkii", "manzara (bazı odalar)", "merkeze yürüme"],
+  tags: ["kucuk-cakil", "pansiyon", "denize-yakin"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Çakıl Pansiyon’un olayı lokasyon: Küçük Çakıl hattında “deniz hemen aşağıda” rahatlığı. Kaş merkezde gün boyu dolaşanlar için otele dönüşler kısa ve kolay.
+
+**Kimler için uygun**
+Denize yakın konaklama arayanlar, sabah hızlı kahvaltı edip günü dışarıda geçirenler için uygun. Çok geniş tesis/havuz beklentisi olanlar için uygun olmayabilir.
+
+**Ne alınır-ne yapılır**
+Gündüz Küçük Çakıl’da hızlı deniz molaları, sonra tekne turu ya da başka koy planı. Akşam da çarşıda yemek ve yürüyüş.
+
+**Pratik ipuçları**
+Merkezde araç/park işi sezon yoğunluğuna göre değişir. Oda seçerken balkon/manzara ve merdiven durumunu sor.
+
+**Kısa özet**
+Küçük Çakıl mevkiinde, denize çok yakın ve merkez odaklı bir pansiyon.`
+},
+
+// 43) Nautilus Diving
+{
+  id: "nautilus-diving",
+  title: "Nautilus Diving",
+  description: "Kaş Limanı çıkışlı, tekne dalışları ve eğitimler sunan PADI odaklı dalış merkezi.",
+  category: ["diving", "activities"],
+  image: "../assets/1_places/nautilus-diving-001.jpg",
+  images: [
+    "../assets/1_places/nautilus-diving-002.jpg",
+    "../assets/1_places/nautilus-diving-003.jpg",
+    "../assets/1_places/nautilus-diving-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş Limanı / Liman Cad. civarı, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // liman/merkez placeholder
+  website: "https://www.nautilusdivingkas.com/?lang=en",
+  phone: "+90 242 836 28 18",
+  duration: "Yarım/Tam gün (dalış programına göre)",
+  facilities: ["tekne dalışı", "eğitim", "ekipman", "rehberlik"],
+  features: ["Kaş dalış noktaları", "yeni başlayanlara uygun seçenekler", "tekne çıkışı"],
+  tags: ["padi", "tekne-dalisi", "kas-limani"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş’ta dalış günü genelde limanda başlar: ekipman hazırlığı, kısa bilgilendirme, tekneyle noktalara çıkış. Nautilus da bu klasik akışın içinden çalışan bir merkez.
+
+**Kimler için uygun**
+İlk kez deneyecek olanlar (discovery), sertifikalı dalıcılar ve eğitim almak isteyenler için uygun. Dalış yapmayanlar bazen tekneye “yüzme/şnorkel” için de katılabiliyor (gününe göre değişebilir).
+
+**Ne alınır-ne yapılır**
+Kaş çevresindeki koylarda tekne dalışları; gün içinde 1–2 dalış + yüzme molaları gibi bir plan yaygın. Sertifikaya göre rota seçimi değişir.
+
+**Pratik ipuçları**
+Sezonda yer hızlı dolabilir; bir gün önceden yazmak/aramak iyi olur. Hangi seviyeye hangi noktaların planlandığını ve fiyata nelerin dahil olduğunu netleştir.
+
+**Kısa özet**
+Kaş Limanı çıkışlı, eğitim ve tekne dalışları yapan köklü dalış merkezi.`
+},
+
+// 44) Kaş Diving (Kas Diving®)
+{
+  id: "kas-diving",
+  title: "Kaş Diving (Kas Diving®)",
+  description: "Merkezde konumlanan, dalış turları ve kurslarıyla bilinen dalış okulu.",
+  category: ["diving", "activities"],
+  image: "../assets/1_places/kas-diving-001.jpg",
+  images: [
+    "../assets/1_places/kas-diving-002.jpg",
+    "../assets/1_places/kas-diving-003.jpg",
+    "../assets/1_places/kas-diving-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli Mah., Hükümet Cd. No:10/1, 07580 Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // merkez placeholder
+  website: "https://www.kas-diving.com/en/",
+  phone: "+90 544 369 62 50",
+  duration: "Yarım/Tam gün",
+  facilities: ["tekne dalışı", "kurslar", "ekipman", "rehberlik"],
+  features: ["Nitrox seçenekleri (kurs/opsiyon)", "merkez konum", "tekne programı"],
+  tags: ["scuba", "nitrox", "kas-merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Merkezden organize olan bir dalış günü: sabah buluş, ekipman, tekneyle noktalara çıkış. Kaş’ta su altı genelde sakin ve görüş iyi olduğunda efsane olur; hava/deniz koşulu planı doğrudan etkiler.
+
+**Kimler için uygun**
+Yeni başlayanlar, sertifikalı dalıcılar ve kurs almak isteyenler. “Dalışı bir-iki kez deneyip geçeyim” diyenler için de discovery formatları olur.
+
+**Ne alınır-ne yapılır**
+Tekne dalışları, eğitim dalışları, seviyeye göre farklı noktalar. Nitrox gibi opsiyonlar ilgini çekiyorsa baştan konuşmak iyi olur.
+
+**Pratik ipuçları**
+Kurs/tekne programı ve dahil olanlar (ekipman, transfer, foto/video) netleştirilmeli. Sezonda rezervasyon önemli.
+
+**Kısa özet**
+Merkez çıkışlı, kurs ve tekne dalışlarıyla öne çıkan bir dalış okulu.`
+},
+
+// 45) Ege Barakuda Dalış Merkezi
+{
+  id: "ege-barakuda-dalis-merkezi",
+  title: "Ege Barakuda Dalış Merkezi",
+  description: "Kaş’ta tekne dalışları ve eğitimler sunan, bilinen dalış merkezlerinden biri.",
+  category: ["diving", "activities"],
+  image: "../assets/1_places/ege-barakuda-dalis-merkezi-001.jpg",
+  images: [
+    "../assets/1_places/ege-barakuda-dalis-merkezi-002.jpg",
+    "../assets/1_places/ege-barakuda-dalis-merkezi-003.jpg",
+    "../assets/1_places/ege-barakuda-dalis-merkezi-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş Merkez / Hükümet Cd. civarı, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // merkez placeholder
+  website: "",
+  phone: "+90 532 447 40 44",
+  duration: "Yarım/Tam gün",
+  facilities: ["tekne dalışı", "kurslar", "ekipman"],
+  features: ["Kaş dalış noktaları", "tekne programı"],
+  tags: ["barakuda", "scuba", "kas"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş’ta dalış merkezlerinin çoğu liman/merkez hattında benzer bir ritimde çalışır: sabah hazırlık, tekneyle çıkış, gün boyu dalış + yüzme molaları.
+
+**Kimler için uygun**
+Yeni başlayanlar ve sertifikalı dalıcılar. Kurs düşünenler için de seçenekleri oluyor.
+
+**Ne alınır-ne yapılır**
+Seviyene göre 1–2 dalış planı, aralarda teknede dinlenme. Kaş’ta gün genelde denizde geçer.
+
+**Pratik ipuçları**
+Program saatlerini ve fiyata dahil olanları (ekipman, transfer, foto/video) baştan netleştir.
+
+**Kısa özet**
+Kaş’ta tekne dalışları ve eğitimler sunan bilinen bir dalış merkezi.`
+},
+
+// 46) SubAQUA Dalış Merkezi
+{
+  id: "subaqua-dalis-merkezi",
+  title: "SubAQUA Dalış Merkezi",
+  description: "Kaş Limanı çıkışlı, PADI eğitimleri ve tekne dalışları yapan dalış merkezi.",
+  category: ["diving", "activities"],
+  image: "../assets/1_places/subaqua-dalis-merkezi-001.jpg",
+  images: [
+    "../assets/1_places/subaqua-dalis-merkezi-002.jpg",
+    "../assets/1_places/subaqua-dalis-merkezi-003.jpg",
+    "../assets/1_places/subaqua-dalis-merkezi-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş Limanı (Kas Harbour), Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // liman placeholder
+  website: "https://www.subaquadive.com/",
+  phone: "+90 532 221 01 29",
+  duration: "Yarım/Tam gün",
+  facilities: ["PADI kursları", "tekne dalışı", "ekipman", "sigorta (tesise göre)"],
+  features: ["liman çıkışı", "kurs odaklı yapı", "tekne operasyonu"],
+  tags: ["padi", "kas-harbour", "kurs"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Daha “eğitim” tarafı güçlü bir dalış merkezi hissi. Kaş’ta su altı deneyimi kadar, karada bilgilendirme ve düzen de önemli; özellikle ilk dalışını yapıyorsan.
+
+**Kimler için uygun**
+PADI kursu almak isteyenler, ilk kez deneyecekler ve düzenli tekne dalışına çıkan sertifikalı dalıcılar.
+
+**Ne alınır-ne yapılır**
+Kurslar, günlük tekne dalışları, seviye dalışları. Program, deniz durumuna göre esneyebilir.
+
+**Pratik ipuçları**
+Kurs seviyeni ve beklentini (kaç dalış, kaç gün) netleştir. Sezonda yoğunluk olabilir; önceden iletişim kurmak rahat ettirir.
+
+**Kısa özet**
+Kaş Limanı çıkışlı, PADI kursları ve tekne dalışları yapan dalış merkezi.`
+},
+
+// 47) Oceanids Dalış Merkezi
+{
+  id: "oceanids-dalis-merkezi",
+  title: "Oceanids Dalış Merkezi",
+  description: "Kaş merkezde, tekne dalışları ve eğitimler sunan dalış okulu.",
+  category: ["diving", "activities"],
+  image: "../assets/1_places/oceanids-dalis-merkezi-001.jpg",
+  images: [
+    "../assets/1_places/oceanids-dalis-merkezi-002.jpg",
+    "../assets/1_places/oceanids-dalis-merkezi-003.jpg",
+    "../assets/1_places/oceanids-dalis-merkezi-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli Mah., Öztürk Sok. No:17/1, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // merkez placeholder
+  website: "https://oceanids.org/",
+  phone: "+90 535 434 57 80",
+  duration: "Yarım/Tam gün",
+  facilities: ["tekne dalışı", "kurslar", "ekipman"],
+  features: ["merkez konum", "eğitim + gezi dalışı"],
+  tags: ["oceanids", "scuba", "kas-merkez"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş’ta dalış merkezleri “küçük ekip – yoğun gün” düzeninde çalışır. Oceanids de merkezde konumuyla hızlı organize olan, dalış günü ritmini iyi oturtan tarzda.
+
+**Kimler için uygun**
+İlk kez dalacaklar, sertifikalı dalıcılar ve kurs almak isteyenler.
+
+**Ne alınır-ne yapılır**
+Günlük tekne dalışları (genelde sabah/öğleden sonra çıkışları olur), eğitim dalışları ve seviyeye göre nokta seçimi.
+
+**Pratik ipuçları**
+Hangi saat çıkış olduğunu ve dalış sayısını baştan konuş. Dalış yapmayan eş/arkadaş varsa teknede yüzme/şnorkel imkânı olup olmadığını sor.
+
+**Kısa özet**
+Merkezde, eğitim ve tekne dalışlarını birlikte sunan bir dalış merkezi.`
+},
+
+// 48) Kanyon Diving
+{
+  id: "kanyon-diving",
+  title: "Kanyon Diving",
+  description: "Kaş’ta tüplü dalış turları ve kurslar sunan, yerel dalış merkezlerinden biri.",
+  category: ["diving", "activities"],
+  image: "../assets/1_places/kanyon-diving-001.jpg",
+  images: [
+    "../assets/1_places/kanyon-diving-002.jpg",
+    "../assets/1_places/kanyon-diving-003.jpg",
+    "../assets/1_places/kanyon-diving-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // merkez placeholder
+  website: "",
+  phone: "+90 532 456 54 82",
+  duration: "Yarım/Tam gün",
+  facilities: ["tekne dalışı", "kurs", "ekipman"],
+  features: ["Kaş dalış noktaları", "günlük program"],
+  tags: ["kanyon", "scuba", "kas"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş dalışında gün hızlı geçer: tekne, dalış, yüzme molası, tekrar dalış. Kanyon Diving de bu günlük program akışında hizmet veren merkezlerden.
+
+**Kimler için uygun**
+İlk dalışını denemek isteyenler ve sertifikalı dalıcılar. Kurs düşünenler için de seçenekler olabilir.
+
+**Ne alınır-ne yapılır**
+Seviyeye göre 1–2 dalış, aralarda yüzme/şnorkel ve teknede dinlenme.
+
+**Pratik ipuçları**
+Kayıt öncesi sağlık beyanı ve seviyene uygun program detaylarını sor. Fiyata dahil olanları netleştir.
+
+**Kısa özet**
+Kaş’ta günlük tekne dalışları ve kurslar sunan yerel bir dalış merkezi.`
+},
+
+// 49) Life Aquatic (Serbest Dalış & Yoga)
+{
+  id: "life-aquatic",
+  title: "Life Aquatic (Serbest Dalış & Yoga)",
+  description: "Kaş merkezde serbest dalış (freediving) eğitimleri ve yoga derslerini bir arada sunan okul.",
+  category: ["activities", "diving", "nature"],
+  image: "../assets/1_places/life-aquatic-001.jpg",
+  images: [
+    "../assets/1_places/life-aquatic-002.jpg",
+    "../assets/1_places/life-aquatic-003.jpg",
+    "../assets/1_places/life-aquatic-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli Mah., Necipbey Cad. No:3, 07580 Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // merkez placeholder
+  website: "https://lifeaquatickas.com/en/homepage/",
+  phone: "+90 532 400 88 36",
+  duration: "1–3 saat (ders) / çok günlü program",
+  facilities: ["freediving kursları", "yoga dersleri", "eğitmenler", "teori+pratik"],
+  features: ["serbest dalış odaklı", "nefes/teknik çalışmaları", "yoga ile destek"],
+  tags: ["freediving", "yoga", "nefes"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Burada tempo “tekneyle dalış”tan farklı: daha çok nefes, teknik, odak ve sakinlik. Serbest dalışın ritmi, Kaş’ın denizini daha meditasyon gibi yaşatabiliyor.
+
+**Kimler için uygun**
+Serbest dalışa meraklı olanlar, nefes/teknik geliştirmek isteyenler ve yoga ile denge arayanlar. “Adrenalin değil, kontrollü gelişim” isteyenlere daha uygun.
+
+**Ne alınır-ne yapılır**
+Freediving dersleri (teori + su çalışması), nefes teknikleri, yoga seansları. Programlar günlük ders veya çok günlü paket şeklinde olabiliyor.
+
+**Pratik ipuçları**
+Seviye ve hedefini (ilk kez mi, gelişim mi) baştan söyle. Ders süresi, ekipman ve buluşma noktası detaylarını netleştir.
+
+**Kısa özet**
+Kaş’ta serbest dalış + yoga kombinasyonu isteyenler için güçlü bir adres.`
+},
+
+// 50) Freedive Cosmos
+{
+  id: "freedive-cosmos",
+  title: "Freedive Cosmos",
+  description: "Kaş’ta serbest dalış (freediving) odaklı eğitim ve antrenmanlar sunan ekip/okul.",
+  category: ["activities", "diving", "nature"],
+  image: "../assets/1_places/freedive-cosmos-001.jpg",
+  images: [
+    "../assets/1_places/freedive-cosmos-002.jpg",
+    "../assets/1_places/freedive-cosmos-003.jpg",
+    "../assets/1_places/freedive-cosmos-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // net bilgi yoksa Kaş merkez placeholder
+  website: "",
+  phone: "",
+  duration: "1–3 saat (ders) / programlara göre",
+  facilities: ["serbest dalış eğitimi", "antrenman", "teknik çalışma"],
+  features: ["freediving odaklı", "nefes ve teknik gelişim"],
+  tags: ["freedive", "nefes", "kas"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Serbest dalış tarafında atmosfer genelde sakin ve odaklıdır: kısa brifing, nefes/teknik, su çalışması. Kaş’ın suyu bu tarz çalışmalara çok elverişli olabiliyor.
+
+**Kimler için uygun**
+Serbest dalışa giriş yapmak isteyenler veya tekniğini geliştirmek isteyenler. “Tüplü dalış” yerine daha çok beden kontrolü ve nefese odaklananlar.
+
+**Ne alınır-ne yapılır**
+Seviye dersleri, antrenman seansları, teknik geri bildirim. İçerik eğitmen planına göre değişir.
+
+**Pratik ipuçları**
+Program, buluşma yeri ve ekipman dahil mi gibi detayları mutlaka netleştir. İlk kez deneyeceksen sağlık/konfor sınırlarını açıkça paylaş.
+
+**Kısa özet**
+Kaş’ta serbest dalış odaklı eğitim/antrenman arayanlara yönelik bir seçenek.`
+},
+
+// 6. onluk (51–60 / 72)
+
+// 51) Likya Dalış Merkezi (Bougainville Travel)
+{
+  id: "likya-dalis-merkezi",
+  title: "Likya Dalış Merkezi (Bougainville Travel)",
+  description: "Kaş’ta dalış turları ve eğitimler sunan, Bougainville Travel çatısı altında geçen dalış hizmeti/organizasyonu.",
+  category: ["diving", "activities"],
+  image: "../assets/1_places/likya-dalis-merkezi-001.jpg",
+  images: [
+    "../assets/1_places/likya-dalis-merkezi-002.jpg",
+    "../assets/1_places/likya-dalis-merkezi-003.jpg",
+    "../assets/1_places/likya-dalis-merkezi-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // net adres/koordinat teyidi yoksa Kaş merkez placeholder
+  website: "",
+  phone: "",
+  duration: "Yarım/Tam gün",
+  facilities: ["tekne dalışı", "rehberlik", "organizasyon"],
+  features: ["tur/ajans bağlantılı", "dalış programı"],
+  tags: ["likya", "bougainville", "kas"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Ajans/organizasyon tarafı güçlü olan dalış yapılarında gün daha “paket” hissettirir: buluşma, tekneye geçiş, dalış noktaları ve gün sonunda dönüş. Kaş’ta dalış gününün ritmi yine deniz koşullarına göre şekillenir.
+
+**Kimler için uygun**
+“Ben uğraşmayayım, program hazır olsun” diyenler ve dalışı tura entegre etmek isteyenler. Sertifikalı dalıcılar için de programlar olabilir.
+
+**Ne alınır-ne yapılır**
+Tekne dalışları, eğitim/deneme dalışları (varsa) ve yüzme molaları. Hangi seviyeye hangi noktalar çıktığı gün içinde netleşebilir.
+
+**Pratik ipuçları**
+Kayıt olmadan önce: fiyata neler dahil, kaç dalış var, ekipman dahil mi, çıkış saati/dönüş saati gibi temel şeyleri yazışarak netleştir.
+
+**Kısa özet**
+Bougainville bağlantılı, dalış programını “organizasyon” gibi yöneten bir seçenek.`
+},
+
+// 52) Boat Trips by Captain Ergun
+{
+  id: "boat-trips-by-captain-ergun",
+  title: "Boat Trips by Captain Ergun",
+  description: "Kaş çıkışlı, günlük tekne turları ve koy molalarıyla deniz günü planlayan tekne turu işletmesi.",
+  category: ["activities", "places", "nature"],
+  image: "../assets/1_places/boat-trips-by-captain-ergun-001.jpg",
+  images: [
+    "../assets/1_places/boat-trips-by-captain-ergun-002.jpg",
+    "../assets/1_places/boat-trips-by-captain-ergun-003.jpg",
+    "../assets/1_places/boat-trips-by-captain-ergun-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş Limanı, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.1994, lng: 29.6426 }, // Kaş Limanı genel nokta
+  website: "",
+  phone: "",
+  duration: "Tam gün",
+  facilities: ["tekne turu", "yüzme molaları", "öğle yemeği (tur paketine göre)"],
+  features: ["koy gezisi", "şnorkel molaları", "tüm gün denizde"],
+  tags: ["tekne-turu", "kas-limani", "koylar"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş’ta tekne turu, tatilin “en kolay iyi geçen” günlerinden biridir: sabah limanda buluş, gün boyu koy koy yüzme, güneş, sohbet. Kaptanlı turlarda atmosfer çoğunlukla samimi ve pratiktir.
+
+**Kimler için uygun**
+Plajdan sıkılanlar, gün boyu denizde kalmak isteyenler, Kaş’ın koylarını tek günde görmek isteyenler için uygun. Çocuklu aileler için de iyi olabilir; teknenin düzeni ve gölge alanı önemli.
+
+**Ne alınır-ne yapılır**
+Koy molaları, şnorkel, teknede dinlenme. Bazı turlarda öğle yemeği dahil olabilir; menü/opsiyon turdan tura değişir.
+
+**Pratik ipuçları**
+Güneş koruması, havlu, deniz ayakkabısı ve su şart. Rüzgâr/deniz durumu rotayı etkileyebilir; “bugün hangi koylar?” sorusunu sabah sormak normal.
+
+**Kısa özet**
+Kaş’ta “bir gün full deniz” planı için tekne turu; Captain Ergun tarzı işletmeler bu günü paketler.`
+},
+
+// 53) Xanthos Travel
+{
+  id: "xanthos-travel",
+  title: "Xanthos Travel",
+  description: "Kaş’ta tekne turları, günlük geziler ve transfer gibi hizmetler sunan yerel tur acentesi.",
+  category: ["activities", "places"],
+  image: "../assets/1_places/xanthos-travel-001.jpg",
+  images: [
+    "../assets/1_places/xanthos-travel-002.jpg",
+    "../assets/1_places/xanthos-travel-003.jpg",
+    "../assets/1_places/xanthos-travel-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // merkez placeholder
+  website: "",
+  phone: "",
+  duration: "",
+  facilities: ["tekne turu", "günlük tur", "transfer (duruma göre)"],
+  features: ["tur acentesi", "çoklu rota"],
+  tags: ["travel", "turlar", "kas"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Acenteler Kaş’ta “tek bir yerden her şeyi bağlayayım” kolaylığı sağlar. Tekne turu, jeep safari, Saklıkent, Patara gibi rotaları aynı yerden almak mümkün olur.
+
+**Kimler için uygun**
+Plan yapmayı sevmeyenler, birkaç aktiviteyi kısa sürede organize etmek isteyenler.
+
+**Ne alınır-ne yapılır**
+Tekne turları, günlük gezi rotaları, bazen özel transferler. Hangi gün hangi tur var, sezona göre değişir.
+
+**Pratik ipuçları**
+İptal/erteleme koşullarını ve turda dahil olanları (yemek, giriş ücreti, transfer) netleştir.
+
+**Kısa özet**
+Kaş’ta tur ve aktiviteleri tek yerden organize etmek için yerel acente.`
+},
+
+// 54) Tatil Sihirbazı
+{
+  id: "tatil-sihirbazi",
+  title: "Tatil Sihirbazı",
+  description: "Kaş ve çevresine yönelik turlar, aktiviteler ve rezervasyonlar sunan tur/organizasyon firması.",
+  category: ["activities", "places"],
+  image: "../assets/1_places/tatil-sihirbazi-001.jpg",
+  images: [
+    "../assets/1_places/tatil-sihirbazi-002.jpg",
+    "../assets/1_places/tatil-sihirbazi-003.jpg",
+    "../assets/1_places/tatil-sihirbazi-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "",
+  facilities: ["tur satışı", "aktivite rezervasyonu"],
+  features: ["organizasyon", "çoklu seçenek"],
+  tags: ["tur", "rezervasyon"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Bu tarz firmalar genelde “WhatsApp’tan yaz, planı kur” kolaylığıyla çalışır. Kaş’ta günler dolu geçsin isteyenler için hızlı çözümdür.
+
+**Kimler için uygun**
+Birden fazla aktiviteyi kısa sürede ayarlamak isteyenler.
+
+**Ne alınır-ne yapılır**
+Tekne turu, günlük gezi, dalış/aktivite gibi seçenekler. En net liste sezonluk olur.
+
+**Pratik ipuçları**
+Fiyata dahil olanlar ve iptal koşulları mutlaka sorulmalı.
+
+**Kısa özet**
+Kaş’ta tur/aktivite planını hızlandıran organizasyon seçeneği.`
+},
+
+// 55) Aslar Travel
+{
+  id: "aslar-travel",
+  title: "Aslar Travel",
+  description: "Kaş merkezde, günlük turlar ve tekne turları dahil çeşitli gezi/aktivite satışları yapan acente.",
+  category: ["activities", "places"],
+  image: "../assets/1_places/aslar-travel-001.jpg",
+  images: [
+    "../assets/1_places/aslar-travel-002.jpg",
+    "../assets/1_places/aslar-travel-003.jpg",
+    "../assets/1_places/aslar-travel-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "",
+  facilities: ["günlük turlar", "tekne turları", "transfer (duruma göre)"],
+  features: ["merkez acente", "çoklu rota"],
+  tags: ["travel", "turlar"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş merkezde acentelerle çalışmanın avantajı pratiklik: bir turu iptal edip başka güne kaydırmak, farklı rota sormak, toplu rezervasyon yapmak kolay.
+
+**Kimler için uygun**
+“Ben tek tek uğraşamam” diyenler ve birkaç aktiviteyi paketle almak isteyenler.
+
+**Ne alınır-ne yapılır**
+Tekne turları, Saklıkent/Patara gibi günlük geziler, bazen transfer.
+
+**Pratik ipuçları**
+Turun dahil olmayan masraflarını (giriş ücreti vb.) baştan öğren.
+
+**Kısa özet**
+Merkezden tur/aktivite organize etmeye yarayan yerel acente.`
+},
+
+// 56) Eroğlu Boat Tours
+{
+  id: "eroglu-boat-tours",
+  title: "Eroğlu Boat Tours",
+  description: "Kaş Limanı’ndan kalkan günlük tekne turlarıyla koy gezileri ve yüzme molaları sunan işletme.",
+  category: ["activities", "nature", "places"],
+  image: "../assets/1_places/eroglu-boat-tours-001.jpg",
+  images: [
+    "../assets/1_places/eroglu-boat-tours-002.jpg",
+    "../assets/1_places/eroglu-boat-tours-003.jpg",
+    "../assets/1_places/eroglu-boat-tours-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺₺",
+  selected: false,
+  location: "Kaş Limanı, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.1994, lng: 29.6426 }, // Kaş Limanı genel nokta
+  website: "",
+  phone: "",
+  duration: "Tam gün",
+  facilities: ["tekne turu", "yüzme molaları", "öğle yemeği (tura göre)"],
+  features: ["koy gezisi", "şnorkel molaları", "gün boyu deniz"],
+  tags: ["boat-tour", "kas-limani"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş tekne turu, günün büyük kısmını su üstünde geçirdiğin bir “ritüel” gibi. Koylarda dur-kalk, denize atla, teknede uzan, sonra bir sonraki koy.
+
+**Kimler için uygun**
+Deniz seven herkes: arkadaş grubu, çiftler, aileler. Tekne düzeni (gölge, merdiven, WC) konforu etkiler.
+
+**Ne alınır-ne yapılır**
+Yüzme molaları, şnorkel, teknede dinlenme. Bazı teknelerde öğle yemeği dahil olur.
+
+**Pratik ipuçları**
+Güneş koruması şart. Rota rüzgâr/deniz durumuna göre değişebilir.
+
+**Kısa özet**
+Kaş Limanı çıkışlı klasik bir “koy koy yüzme” tekne turu.`
+},
+
+// 57) Kaş Cuma Pazarı (Kaş Pazar Yeri)
+{
+  id: "kas-cuma-pazari",
+  title: "Kaş Cuma Pazarı (Kaş Pazar Yeri)",
+  description: "Cuma günleri kurulan, sebze-meyve, yerel ürünler, giyim ve hediyelik bulabileceğin Kaş’ın en canlı pazarı.",
+  category: ["shopping", "places"],
+  image: "../assets/1_places/kas-cuma-pazari-001.jpg",
+  images: [
+    "../assets/1_places/kas-cuma-pazari-002.jpg",
+    "../assets/1_places/kas-cuma-pazari-003.jpg",
+    "../assets/1_places/kas-cuma-pazari-004.jpg"
+  ],
+  rating: 4.6,
+  price: "₺",
+  selected: false,
+  location: "Andifli, Kaş Pazar Yeri, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2008, lng: 29.6418 }, // pazar alanı genel nokta
+  website: "",
+  phone: "",
+  duration: "1–2 saat",
+  facilities: ["yiyecek standları (sezona göre)", "otopark (yakın çevre)", "WC (yakın çevre)"],
+  features: ["yerel ürünler", "taze sebze-meyve", "baharat/kurutmalık", "giyim-aksesuar"],
+  tags: ["pazar", "cuma", "yerel-urun"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş Cuma Pazarı gününde şehir daha bir canlanır. Tezgâhlar dolu, sesler karışık, hızlı bir akış vardır. Pazar alanına girince “buradan eli boş çıkmam” hissi gelir.
+
+**Kimler için uygun**
+Yerel ürün sevenler, evde bir şeyler yapmayı düşünenler, uygun fiyatlı meyve-sebze arayanlar ve küçük alışveriş keyfi isteyenler.
+
+**Ne alınır-ne yapılır**
+Mevsim meyvesi, zeytin/peynir, baharat, kurutmalık, domates gibi Kaş çevresinin klasik ürünleri; bir de yazın turistik giyim-aksesuar tezgâhları.
+
+**Pratik ipuçları**
+Erken saatler daha rahat; öğlene doğru kalabalık artar. Nakit taşımak işini kolaylaştırır. Alışveriş çantası (bez torba) iyi fikir.
+
+**Kısa özet**
+Cuma günü Kaş’ın en canlı noktası: yerel ürün, giyim ve hediyelik için hızlı bir tur.`
+},
+
+// 58) Rabia Ucuzluk Pazarı
+{
+  id: "rabia-ucuzluk-pazari",
+  title: "Rabia Ucuzluk Pazarı",
+  description: "Kaş merkezde, günlük ihtiyaçlar ve uygun fiyatlı ürünler bulabileceğin yerel ‘ucuzluk’ mağazası.",
+  category: ["shopping"],
+  image: "../assets/1_places/rabia-ucuzluk-pazari-001.jpg",
+  images: [
+    "../assets/1_places/rabia-ucuzluk-pazari-002.jpg",
+    "../assets/1_places/rabia-ucuzluk-pazari-003.jpg",
+    "../assets/1_places/rabia-ucuzluk-pazari-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺",
+  selected: false,
+  location: "Kaş Merkez, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "15–30 dk",
+  facilities: ["market tipi alışveriş"],
+  features: ["uygun fiyat", "günlük ihtiyaç"],
+  tags: ["ucuzluk", "market"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Burası “turistik keşif”ten çok pratik bir durak. Kaş’ta uzun kalanların ya da eksiklerini tamamlamak isteyenlerin uğradığı türden.
+
+**Kimler için uygun**
+Pansiyonda/evde kalanlar, hızlı alışveriş yapmak isteyenler.
+
+**Ne alınır-ne yapılır**
+Günlük ihtiyaçlar, küçük ev/temizlik ürünleri, temel market ürünleri (stok dönemsel değişir).
+
+**Pratik ipuçları**
+Yoğun saatlerde kasa sırası olabilir; hızlı gir-çık için kısa listeyle gitmek iyi olur.
+
+**Kısa özet**
+Merkezde pratik ve uygun fiyatlı alışveriş noktası.`
+},
+
+// 59) Feraye Store & Atelier
+{
+  id: "feraye-store-atelier",
+  title: "Feraye Store & Atelier",
+  description: "Kaş’ta tasarım/atelier çizgisinde, seçki kıyafet-aksesuar ve el işi ürünler bulabileceğin butik mağaza.",
+  category: ["shopping"],
+  image: "../assets/1_places/feraye-store-atelier-001.jpg",
+  images: [
+    "../assets/1_places/feraye-store-atelier-002.jpg",
+    "../assets/1_places/feraye-store-atelier-003.jpg",
+    "../assets/1_places/feraye-store-atelier-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez, Uzun Çarşı çevresi, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "20–45 dk",
+  facilities: ["butik alışveriş"],
+  features: ["tasarım ürün", "atelier", "hediyelik"],
+  tags: ["butik", "tasarim", "hediyelik"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş’ın çarşı içinde sevilen tarafı “küçük ama karakterli” dükkânlar. Feraye gibi atelier/butik yerler de bu havayı tamamlıyor: acele yok, bakınma var.
+
+**Kimler için uygun**
+Tasarım ürün sevenler, hediyelik arayanlar ve sıradan zincir mağaza yerine seçki butik gezmeyi sevenler.
+
+**Ne alınır-ne yapılır**
+Kıyafet, aksesuar, el işi/özel üretim ürünler (seçki sezonluk değişebilir).
+
+**Pratik ipuçları**
+Uzun Çarşı çevresinde yürürken uğramalık; açılış saatleri sezon dışı değişebilir.
+
+**Kısa özet**
+Kaş çarşısında seçki ve tasarım butik tarzı bir durak.`
+},
+
+// 60) Kash Cosmetics
+{
+  id: "kash-cosmetics",
+  title: "Kash Cosmetics",
+  description: "Kaş merkezde kozmetik ve kişisel bakım ürünleri bulabileceğin mağaza.",
+  category: ["shopping"],
+  image: "../assets/1_places/kash-cosmetics-001.jpg",
+  images: [
+    "../assets/1_places/kash-cosmetics-002.jpg",
+    "../assets/1_places/kash-cosmetics-003.jpg",
+    "../assets/1_places/kash-cosmetics-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "10–30 dk",
+  facilities: ["mağaza"],
+  features: ["kişisel bakım", "kozmetik"],
+  tags: ["kozmetik", "bakim"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Turistik rota üstünde olsa da amacı net: ihtiyaç tamamlamak. Güneş kremi, bakım ürünü, küçük eksikler gibi şeyler için uğranır.
+
+**Kimler için uygun**
+Tatilde eksiklerini tamamlamak isteyenler, hızlı alışveriş yapanlar.
+
+**Ne alınır-ne yapılır**
+Kozmetik/bakım ürünleri ve dönemsel kampanyalar (stok değişebilir).
+
+**Pratik ipuçları**
+Marka/ürün çeşitliliği dönemsel değişebilir; ihtiyacın spesifikse önceden arayıp sormak mantıklı.
+
+**Kısa özet**
+Merkezde pratik kozmetik/bakım alışverişi için bir durak.`
+},
+
+// 7. onluk (61–70 / 72)
+
+// 61) Minelli Butik
+{
+  id: "minelli-butik",
+  title: "Minelli Butik",
+  description: "Kaş çarşı içinde, kadın giyim ve aksesuar ağırlıklı seçkisiyle bilinen butik mağaza.",
+  category: ["shopping"],
+  image: "../assets/1_places/minelli-butik-001.jpg",
+  images: [
+    "../assets/1_places/minelli-butik-002.jpg",
+    "../assets/1_places/minelli-butik-003.jpg",
+    "../assets/1_places/minelli-butik-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Çarşı, Uzun Çarşı çevresi, Andifli/Kaş",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // net teyit yoksa Kaş merkez placeholder
+  website: "",
+  phone: "",
+  duration: "20–45 dk",
+  facilities: ["butik alışveriş"],
+  features: ["seçki ürünler", "çarşı içinde", "hediyelik/aksesuar seçenekleri"],
+  tags: ["butik", "giyim", "uzun-carsi"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş çarşıdaki butiklerin havası genelde aynı: acele yok, bakınma var. Minelli tarzı dükkânlar, Uzun Çarşı turunun “biraz stil molası” kısmı gibi.
+
+**Kimler için uygun**
+Kadın giyim/aksesuar bakmak isteyenler, hediyelik ya da “tatilde bir parça alayım” diyenler.
+
+**Ne alınır-ne yapılır**
+Elbise, üst giyim, aksesuar gibi ürünler; seçki sezonluk değişebilir.
+
+**Pratik ipuçları**
+Çarşı içinde yürürken uğramalık. Sezon dışı açılış saatleri değişebilir.
+
+**Kısa özet**
+Kaş çarşıda giyim-aksesuar için butik bir durak.`
+},
+
+// 62) Uzun Çarşı
+{
+  id: "uzun-carsi",
+  title: "Uzun Çarşı",
+  description: "Kaş’ın en ikonik yürüyüş hattı; butik dükkânlar, hediyelikçiler, kafeler ve Aslanlı Lahit çevresini birleştiren çarşı bölgesi.",
+  category: ["shopping", "places"],
+  image: "../assets/1_places/uzun-carsi-001.jpg",
+  images: [
+    "../assets/1_places/uzun-carsi-002.jpg",
+    "../assets/1_places/uzun-carsi-003.jpg",
+    "../assets/1_places/uzun-carsi-004.jpg"
+  ],
+  rating: 4.7,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli, Kaş Merkez, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2010, lng: 29.6406 }, // çarşı hattı genel nokta
+  website: "",
+  phone: "",
+  duration: "1–2 saat",
+  facilities: ["kafe/restoran", "butikler", "hediyelikçiler", "bankamatik (yakın çevre)"],
+  features: ["çarşı yürüyüşü", "hediyelik", "fotoğraf noktaları", "tarihle iç içe rota"],
+  tags: ["kas-merkez", "shopping-walk", "iconic"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Uzun Çarşı, Kaş’ın “en Kaş” yürüyüş rotası. Dar sokak dokusu, küçük butik dükkânlar, taş duvarlar ve aralara serpiştirilmiş kafe/restoranlar… Üstüne bir de Aslanlı Lahit gibi tarihi bir simgeyle iç içe olunca, burada yürümek sadece alışveriş değil, atmosfer turu.
+
+**Kimler için uygun**
+Çarşı gezmeyi seven herkes. Hediyelik arayanlar, fotoğraf çekmek isteyenler, “biraz dolaşayım, sonra bir kahve içeyim” diyenler için birebir. Akşamüstü ve akşam saatlerinde daha hareketli.
+
+**Ne alınır-ne yapılır**
+El yapımı takılar, tekstil/keten ürünler, küçük tasarım objeler, magnet/hediyelikler… Bir de tabii yürürken arada kafe molası verilir. Aslanlı Lahit’in çevresinde kısa durup hikâyesini okumak (ya da fotoğraf çekmek) klasik.
+
+**Pratik ipuçları**
+Yaz akşamları kalabalık olur; daha sakin gezmek için sabah veya öğle saatleri iyi. Rahat ayakkabı önemli; sokaklar taşlık ve dar. Pazarlık bazı dükkânlarda mümkün, ama her yerde değil.
+
+**Kısa özet**
+Kaş merkezde butik, tarih ve “sokak ruhu”nu aynı hatta yaşatan ikonik çarşı yürüyüşü.`
+},
+
+// 63) Tuğra Art Gallery
+{
+  id: "tugra-art-gallery",
+  title: "Tuğra Art Gallery",
+  description: "Kaş’ta yerel/çağdaş eserlerin sergilendiği, çarşı içinde gezilebilen sanat galerisi.",
+  category: ["shopping", "places", "articles"],
+  image: "../assets/1_places/tugra-art-gallery-001.jpg",
+  images: [
+    "../assets/1_places/tugra-art-gallery-002.jpg",
+    "../assets/1_places/tugra-art-gallery-003.jpg",
+    "../assets/1_places/tugra-art-gallery-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez / Uzun Çarşı çevresi, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "15–45 dk",
+  facilities: ["galeri"],
+  features: ["sanat eserleri", "çerçeve/hediyelik olasılığı", "kısa ziyaret"],
+  tags: ["art", "gallery", "kas"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaş’ta galeriler genelde küçük ama karakterli olur. İçeri girince çarşının gürültüsü azalır, daha sakin bir “bakınma” başlar.
+
+**Kimler için uygun**
+Sanat meraklıları, çarşı turuna farklı bir mola eklemek isteyenler.
+
+**Ne alınır-ne yapılır**
+Sergiyi gezmek, beğenilen bir işi satın almak ya da sadece ilham almak. Bazı galerilerde küçük baskılar/objeler de olabiliyor.
+
+**Pratik ipuçları**
+Açılış saatleri sezon dışı değişebilir; kapalıysa hemen yakında başka galeri/dükkânlarla tur devam eder.
+
+**Kısa özet**
+Çarşı içinde kısa bir sanat molası için galeri durağı.`
+},
+
+// 64) Atelier Thalia
+{
+  id: "atelier-thalia",
+  title: "Atelier Thalia",
+  description: "Kaş’ta atölye/butik çizgisinde, el işi ve tasarım ürünler görebileceğin sanat odaklı mekân.",
+  category: ["shopping", "places", "articles"],
+  image: "../assets/1_places/atelier-thalia-001.jpg",
+  images: [
+    "../assets/1_places/atelier-thalia-002.jpg",
+    "../assets/1_places/atelier-thalia-003.jpg",
+    "../assets/1_places/atelier-thalia-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "20–60 dk",
+  facilities: ["atelier", "butik"],
+  features: ["tasarım/el işi", "sınırlı seçki", "hediyelik"],
+  tags: ["atelier", "tasarim", "kas"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Atölye hissi olan yerlerde “ürün bakmak” yerine “işin hikâyesine bakmak” da olur. Kaş’ta bu tarz mekânlar çarşı turuna güzel çeşitlilik katar.
+
+**Kimler için uygun**
+Tasarım ve el işi meraklıları, özgün hediyelik arayanlar.
+
+**Ne alınır-ne yapılır**
+El işi objeler, küçük tasarım parçalar; dönemsel üretimler değişebilir.
+
+**Pratik ipuçları**
+Bazı atölyeler belli gün/saat açık olur; denk gelmezsen üzülme, Kaş çarşıda benzer tarz çok.
+
+**Kısa özet**
+Tasarım/atölye dokusunu sevenlere çarşı içinde alternatif mola.`
+},
+
+// 65) Gallery Anatolia
+{
+  id: "gallery-anatolia",
+  title: "Gallery Anatolia",
+  description: "Kaş çarşı içinde, resim/seramik gibi Anadolu temalı eserler görebileceğin sanat galerisi/butik.",
+  category: ["shopping", "places", "articles"],
+  image: "../assets/1_places/gallery-anatolia-001.jpg",
+  images: [
+    "../assets/1_places/gallery-anatolia-002.jpg",
+    "../assets/1_places/gallery-anatolia-003.jpg",
+    "../assets/1_places/gallery-anatolia-004.jpg"
+  ],
+  rating: 0.0,
+  price: "₺₺",
+  selected: false,
+  location: "Kaş Merkez, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2019, lng: 29.6374 }, // placeholder
+  website: "",
+  phone: "",
+  duration: "15–45 dk",
+  facilities: ["galeri", "satış"],
+  features: ["sanat/objeler", "hediyelik"],
+  tags: ["galeri", "anatolia", "kas"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Çarşı içinde kısa bir “sanat molası” sunan yerlerden. Kaş’ta galeri gezerken zamanın yavaşlaması hoş olur.
+
+**Kimler için uygun**
+Sanat meraklıları ve özgün hediyelik arayanlar.
+
+**Ne alınır-ne yapılır**
+Eserlere bakmak, küçük objeler/baskılar almak (varsa).
+
+**Pratik ipuçları**
+Açılış saatleri sezon dışı değişebilir.
+
+**Kısa özet**
+Çarşı içinde Anadolu temalı sanat/hediyelik için galeri durağı.`
+},
+
+// 66) Antiphellos Antik Tiyatrosu
+{
+  id: "antiphellos-antik-tiyatrosu",
+  title: "Antiphellos Antik Tiyatrosu",
+  description: "Kaş’ın simge noktası; deniz manzarasına karşı oturan antik tiyatro, özellikle gün batımında çok etkileyici.",
+  category: ["history", "places"],
+  image: "../assets/1_places/antiphellos-antik-tiyatrosu-001.jpg",
+  images: [
+    "../assets/1_places/antiphellos-antik-tiyatrosu-002.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatrosu-003.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatrosu-004.jpg"
+  ],
+  rating: 4.8,
+  price: "₺",
+  selected: false,
+  location: "Andifli, Kaş/Antalya (Tiyatro Yolu/Çevresi)",
+  distance: "",
+  coordinates: { lat: 36.19696, lng: 29.63669 },
+  website: "",
+  phone: "",
+  duration: "30–60 dk",
+  facilities: ["oturma basamakları", "manzara noktası"],
+  features: ["gün batımı", "tarih", "Meis manzarası (hava açıksa)"],
+  tags: ["antik", "tiyatro", "sunset"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Antiphellos Tiyatrosu Kaş’ın “sessiz ama çok etkileyici” yerlerinden. Basamaklara oturunca önünde deniz, karşıda ufuk ve çoğu zaman Meis silueti. Gün batımında ışık yumuşayınca tiyatronun taş dokusu başka bir havaya bürünür.
+
+**Kimler için uygun**
+Tarih sevenler, manzara avcıları, fotoğraf çekmeyi sevenler ve “Kaş’ta kısa ama anlamlı bir yürüyüş” arayanlar için ideal. Çocuklu aileler için de uygun; sadece basamaklar nedeniyle dikkat gerek.
+
+**Ne alınır-ne yapılır**
+Gün batımı izlemek klasik. Tiyatronun etrafında kısa bir yürüyüş yapıp Kaş’ın taş sokaklarına geri dönmek de güzel bir mini rota. Etkinlik denk gelirse (konser vb.) deneyimi farklılaşır.
+
+**Pratik ipuçları**
+Akşamüstü kalabalık olabilir; biraz daha erken gidip yer seçmek iyi olur. Basamaklar taş olduğu için rahat ayakkabı önerilir. Yazın güneş sertse su götür.
+
+**Kısa özet**
+Kaş’ın simge tarih noktası; deniz manzaralı antik tiyatro ve en iyi zamanı gün batımı.`
+},
+
+// 67) Aslanlı Lahit (Kral Mezarı)
+{
+  id: "aslanli-lahit",
+  title: "Aslanlı Lahit (Kral Mezarı)",
+  description: "Kaş Uzun Çarşı içinde yer alan, Likya dönemine ait ikonik lahit; Kaş’ın en fotoğraflanan simgelerinden.",
+  category: ["history", "places"],
+  image: "../assets/1_places/aslanli-lahit-001.jpg",
+  images: [
+    "../assets/1_places/aslanli-lahit-002.jpg",
+    "../assets/1_places/aslanli-lahit-003.jpg",
+    "../assets/1_places/aslanli-lahit-004.jpg"
+  ],
+  rating: 4.7,
+  price: "₺",
+  selected: false,
+  location: "Uzun Çarşı, Andifli, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.20138, lng: 29.64216 },
+  website: "",
+  phone: "",
+  duration: "10–20 dk",
+  facilities: ["açık alan"],
+  features: ["Likya tarihi", "çarşı içinde", "fotoğraf noktası"],
+  tags: ["likya", "iconic", "uzun-carsi"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Aslanlı Lahit, Kaş’ta yürürken bir anda karşına çıkan “tarih burada” anı. Çarşının içinde olması çok etkileyici: bir yanda dükkânlar, bir yanda binlerce yıllık taş bir eser.
+
+**Kimler için uygun**
+Herkes. Çünkü zaten çarşı turunda yolun üstünde. Tarih meraklısı olmasan bile durup bir iki dakika bakınca Kaş’ın ruhunu daha iyi yakalıyorsun.
+
+**Ne alınır-ne yapılır**
+Fotoğraf çekmek klasik. Üzerindeki yazı/işlemelere yakından bakmak da keyifli. Lahitin çevresindeki sokaklarda dolaşmak, “Kaş çarşı turu”nun en güzel kısmı.
+
+**Pratik ipuçları**
+Akşamüstü ve akşam kalabalık olur; sakin fotoğraf için sabah daha iyi. Çok kısa bir durak; ama etkisi büyük.
+
+**Kısa özet**
+Kaş’ın çarşı içindeki ikonik Likya eseri; kısa dur, bak, fotoğraf çek, devam et.`
+},
+
+// 68) Kaleköy (Simena Kalesi)
+{
+  id: "kalekoy-simena-kalesi",
+  title: "Kaleköy (Simena Kalesi)",
+  description: "Kaş yakınlarında, tekneyle ulaşılan tarihi köy; Simena Kalesi’nden Kekova manzarasıyla ünlü.",
+  category: ["history", "nature", "places"],
+  image: "../assets/1_places/kalekoy-simena-kalesi-001.jpg",
+  images: [
+    "../assets/1_places/kalekoy-simena-kalesi-002.jpg",
+    "../assets/1_places/kalekoy-simena-kalesi-003.jpg",
+    "../assets/1_places/kalekoy-simena-kalesi-004.jpg"
+  ],
+  rating: 4.8,
+  price: "₺₺",
+  selected: false,
+  location: "Kaleköy (Simena), Demre/Antalya",
+  distance: "Kaş merkezden ~35–45 km (tekne/rota ile)",
+  coordinates: { lat: 36.18590, lng: 29.85690 },
+  website: "",
+  phone: "",
+  duration: "2–4 saat (tur planına göre)",
+  facilities: ["tekne ile ulaşım", "kafe/restaurant", "kale girişi"],
+  features: ["kale manzarası", "tarihi köy", "Kekova hattı"],
+  tags: ["simena", "kalekoy", "kekova"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kaleköy’e yaklaşırken bile “burası başka” hissi gelir: kıyıya dizilmiş küçük evler, tekne sesleri ve tepede kale. Köy trafiğe kapalı, bu yüzden ortam doğal olarak daha sakin.
+
+**Kimler için uygun**
+Kekova hattını görmek isteyen herkes. Tarih + manzara + kısa yürüyüş kombinini sevenler için ideal. Merdiven/yokuş sevmeyenler için kaleye çıkış yorucu olabilir ama köyde dolaşmak bile keyif.
+
+**Ne alınır-ne yapılır**
+Köy içinde kısa tur, dondurma/soğuk içecek molası, sonra Simena Kalesi’ne tırmanıp manzarayı izlemek. Kale yukarıdan Kekova’yı “harita gibi” gösterir.
+
+**Pratik ipuçları**
+Kale çıkışı için rahat ayakkabı şart. Yazın güneş sert; su ve şapka iyi olur. Tekne turlarında süre sınırlı olabilir; kaleye çıkacaksan zamanı iyi kullan.
+
+**Kısa özet**
+Tekneyle ulaşılan tarihi köy + kale manzarası: Kekova rotasının en sevilen duraklarından.`
+},
+
+// 69) Kekova Batık Şehir
+{
+  id: "kekova-batik-sehir",
+  title: "Kekova Batık Şehir",
+  description: "Kekova adası çevresinde, kıyı boyunca su altında kalan antik kalıntıları tekneyle izleyebileceğin koruma alanı.",
+  category: ["history", "nature", "places"],
+  image: "../assets/1_places/kekova-batik-sehir-001.jpg",
+  images: [
+    "../assets/1_places/kekova-batik-sehir-002.jpg",
+    "../assets/1_places/kekova-batik-sehir-003.jpg",
+    "../assets/1_places/kekova-batik-sehir-004.jpg"
+  ],
+  rating: 4.7,
+  price: "₺₺",
+  selected: false,
+  location: "Kekova, Demre/Antalya",
+  distance: "Kaş merkezden ~35–45 km (tekne/rota ile)",
+  coordinates: { lat: 36.1737, lng: 29.8733 },
+  website: "",
+  phone: "",
+  duration: "1–2 saat (tur planına göre)",
+  facilities: ["tekne turu", "rehber anlatımı (tura göre)"],
+  features: ["batık kalıntılar", "berrak su", "tarihle denizin birleşimi"],
+  tags: ["batik-sehir", "kekova", "tekne-turu"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kekova Batık Şehir’de atmosfer biraz “müze gibi” ama açık havada. Tekne yavaşlar, herkes suyun altına bakar; bazen taş duvar çizgileri, basamaklar, yapı izleri seçilir. Berrak günlerde görüntü çok daha etkileyici.
+
+**Kimler için uygun**
+Tarihle ilgilenenler, tekne turuna anlam katmak isteyenler, “suda tarih görmek” fikrini sevenler.
+
+**Ne alınır-ne yapılır**
+Teknede sakin bir izleme. Bazı turlarda kano/SUP gibi alternatifler de olur ama batık şehir bölgesinde kurallar sıkı olabilir; operatör ne diyorsa ona uymak gerekir.
+
+**Pratik ipuçları**
+Cam gibi deniz günlerinde görüntü harika olur; rüzgâr varsa su dalgalanır, görünürlük düşer. Polarize güneş gözlüğü su altını seçmeyi kolaylaştırır.
+
+**Kısa özet**
+Tekneyle geçerken su altındaki antik izleri gördüğün, Kekova rotasının “en farklı” noktası.`
+},
+
+// 70) Aperlai Antik Kenti
+{
+  id: "aperlai-antik-kenti",
+  title: "Aperlai Antik Kenti",
+  description: "Kekova hattında, daha sakin kalan Likya antik yerleşimi; karadan yürüyüş veya tekne rotalarıyla görülebilir.",
+  category: ["history", "nature", "places"],
+  image: "../assets/1_places/aperlai-antik-kenti-001.jpg",
+  images: [
+    "../assets/1_places/aperlai-antik-kenti-002.jpg",
+    "../assets/1_places/aperlai-antik-kenti-003.jpg",
+    "../assets/1_places/aperlai-antik-kenti-004.jpg"
+  ],
+  rating: 4.6,
+  price: "₺",
+  selected: false,
+  location: "Aperlai, Demre/Antalya (Kekova çevresi)",
+  distance: "Kaş merkezden ~40–55 km (rota ile)",
+  coordinates: { lat: 36.1822, lng: 29.8446 },
+  website: "",
+  phone: "",
+  duration: "1–2 saat",
+  facilities: ["açık alan", "yürüyüş rotası (duruma göre)"],
+  features: ["daha sakin antik kent", "doğa içinde", "Likya izleri"],
+  tags: ["aperlai", "likya", "kekova-hatti"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Aperlai, “turist kalabalığı az, doğa daha çok” hissi veren antik yerlerden. Çevresi daha sessiz; kalıntılar doğayla iç içe. Bu yüzden gezmesi biraz keşif gibi.
+
+**Kimler için uygun**
+Kalabalık sevmeyen tarih meraklıları, yürüyüşü sevenler ve Kekova hattında daha az bilinen bir nokta görmek isteyenler.
+
+**Ne alınır-ne yapılır**
+Kalıntılar arasında kısa bir yürüyüş, kıyı çizgisini izleme ve fotoğraf. Tekne rotasıyla geçiliyorsa, kısa durak şeklinde de olabilir.
+
+**Pratik ipuçları**
+Yürüyüş zemini taşlık olabilir; rahat ayakkabı şart. Güneş ve su hazırlığı önemli. Ulaşım şekli (tekne mi, karadan mı) deneyimi değiştirir.
+
+**Kısa özet**
+Kekova hattında daha sakin, doğa içinde bir Likya antik kenti.`
 }
+,
+// 8. onluk (71–72 / 72)  ✅ son parça
 
+// 71) Patara Plajı
+{
+  id: "patara-plaji",
+  title: "Patara Plajı",
+  description: "Türkiye’nin en uzun ve en geniş kumsallarından; kum tepeleri ve gün batımıyla ünlü, Kaş çevresinin ikonik plajı.",
+  category: ["beaches", "nature", "places"],
+  image: "../assets/1_places/patara-plaji-001.jpg",
+  images: [
+    "../assets/1_places/patara-plaji-002.jpg",
+    "../assets/1_places/patara-plaji-003.jpg",
+    "../assets/1_places/patara-plaji-004.jpg"
+  ],
+  rating: 4.8,
+  price: "₺₺",
+  selected: false,
+  location: "Patara, Gelemiş Mah., Kaş/Antalya",
+  distance: "Kaş merkezden ~40–45 km",
+  coordinates: { lat: 36.2759, lng: 29.3176 },
+  website: "",
+  phone: "",
+  duration: "2–4 saat (tam gün de olur)",
+  facilities: ["geniş kumsal", "şezlong/şemsiye (sezona göre)", "kafe/büfe (sezona göre)", "WC/duş (sezona göre)"],
+  features: ["çok uzun kumsal", "kum tepeleri", "gün batımı", "rüzgarlı günler"],
+  tags: ["patara", "kumsal", "sunset", "dogal-plaj"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Patara, “plaj” kelimesinin bildiğin karşılığı: uçsuz bucaksız kum, geniş bir ufuk ve yürüdükçe açılan bir sessizlik. Kaş’ta taşlık/platform denizlere alışınca, burada kumun verdiği rahatlık çok iyi gelir. Kum tepeleri ve gün batımı da atmosferi iyice sinematik yapar.
 
+**Kimler için uygun**
+Kumsal seven herkes için uygun. Uzun yürüyüş yapmayı sevenler, çocuklu aileler (kum avantaj), fotoğraf çekmeyi sevenler ve “kalabalıktan kaçayım” diyenler burada mutlu olur. Rüzgârlı günlerde deniz dalgalanabilir; o gün daha çok sahil yürüyüşü gibi düşünmek gerekir.
 
+**Ne alınır-ne yapılır**
+Kumda uzun yürüyüş, deniz keyfi, kum tepelerinde kısa bir “manzara molası”. Gün batımı planlayanlar için en güzel saatler akşamüstü. İstersen plaj + Patara Antik Kenti’ni aynı güne de koyabilirsin; yorucu ama çok dolu bir gün olur.
 
+**Pratik ipuçları**
+Güneş burada çok yakar; şapka, güneş kremi, su şart. Rüzgâr varsa kum uçuşabilir; gözlük iyi gelir. Aracın varsa ulaşım kolay; toplu taşımada plan yapmak gerekebilir.
 
+**Kısa özet**
+Kaş çevresinin en ikonik kumsalı: dev gibi sahil, kum tepeleri ve efsane gün batımı.`
+},
 
+// 72) Patara Antik Kenti
+{
+  id: "patara-antik-kenti",
+  title: "Patara Antik Kenti",
+  description: "Likya’nın önemli kentlerinden; tiyatro, meclis binası ve anıtsal kapı gibi yapılarıyla öne çıkan büyük arkeolojik alan.",
+  category: ["history", "places", "nature"],
+  image: "../assets/1_places/patara-antik-kenti-001.jpg",
+  images: [
+    "../assets/1_places/patara-antik-kenti-002.jpg",
+    "../assets/1_places/patara-antik-kenti-003.jpg",
+    "../assets/1_places/patara-antik-kenti-004.jpg"
+  ],
+  rating: 4.7,
+  price: "₺₺",
+  selected: false,
+  location: "Patara (Gelemiş), Kaş/Antalya",
+  distance: "Kaş merkezden ~40–45 km",
+  coordinates: { lat: 36.2748, lng: 29.3199 },
+  website: "",
+  phone: "",
+  duration: "1.5–3 saat",
+  facilities: ["otopark (yakın çevre)", "bilet gişesi (sezona göre)", "yürüyüş rotaları", "bilgilendirme panoları"],
+  features: ["Likya tarihi", "geniş alan", "anıtsal yapılar", "doğa içinde gezi"],
+  tags: ["patara", "likya", "antik-kent", "arkeoloji"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Patara Antik Kenti genişliğiyle etkileyen yerlerden. Birkaç yapı görüp çıkayım değil; yürüdükçe açılan bir alan. Kum, rüzgâr ve düzlükler yüzünden bazen “antik kent”ten çok “zamanın içinde bir manzara” gibi hissettirir. Bu da Patara’yı özel yapar.
 
+**Kimler için uygun**
+Tarih meraklıları, fotoğraf sevenler ve “büyük arkeolojik alan gezmeyi” sevenler için ideal. Çok kısa sürede hızlı tur isteyenler için zorlayıcı olabilir; çünkü alan büyük ve yürüyüş ister.
 
+**Ne alınır-ne yapılır**
+Anıtsal kapı, tiyatro, meclis binası gibi öne çıkan yapıları takip ederek bir rota yapmak iyi olur. Zamanın varsa yavaş yavaş gezip detaylarda kaybolmak daha keyifli. Aynı gün Patara Plajı’na da geçmek en popüler kombin.
+
+**Pratik ipuçları**
+Rahat ayakkabı, su ve güneş koruması şart. Yazın öğle sıcağında gezmek zorlayabilir; sabah veya geç öğleden sonra daha konforlu.
+
+**Kısa özet**
+Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla mükemmel ikili.`
+}
 
 
 ];
