@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kaş Guide – Place Data Rehberi (Schema)</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a30;
+      --card2:#0d172b;
+      --txt:#e7eefc;
+      --muted:#a9b7d0;
+      --line:rgba(255,255,255,.10);
+      --chip:rgba(255,255,255,.08);
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --bad:#ef4444;
+      --link:#60a5fa;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+    }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background: radial-gradient(1000px 500px at 20% -10%, rgba(96,165,250,.25), transparent 60%),
+                  radial-gradient(800px 500px at 80% 0%, rgba(34,197,94,.15), transparent 60%),
+                  var(--bg);
+      color:var(--txt);
+      line-height:1.55;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 16px 60px;}
+    .top{
+      display:flex;gap:14px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
+      padding:18px 18px;border:1px solid var(--line);border-radius:18px;background:rgba(15,26,48,.65);
+      backdrop-filter: blur(10px);
+    }
+    h1{font-size:1.35rem;margin:0 0 4px 0;}
+    .sub{color:var(--muted);margin:0;font-size:.95rem}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .b{font-size:.78rem;padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--line);color:var(--muted)}
+    .b.ok{color:#bff7d4;border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.10)}
+    .b.warn{color:#ffe5b3;border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.10)}
+    .b.bad{color:#ffb5b5;border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.10)}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    .card{
+      border:1px solid var(--line);border-radius:18px;background:rgba(15,26,48,.55);
+      overflow:hidden;
+    }
+    .card h2{margin:0;padding:14px 16px;border-bottom:1px solid var(--line);font-size:1.05rem}
+    .card .p{padding:14px 16px;color:var(--muted);margin:0}
+    .note{padding:12px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem;background:rgba(13,23,43,.55)}
+    .k{font-family:var(--mono);font-size:.92rem;color:#d7e6ff}
+    .tableWrap{overflow:auto;border-top:1px solid var(--line)}
+    table{width:100%;border-collapse:collapse;min-width:920px}
+    th,td{padding:12px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{
+      text-align:left;font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);
+      background:rgba(13,23,43,.6);
+      position:sticky;top:0;z-index:2;
+    }
+    td{font-size:.95rem}
+    .req{display:inline-block;margin-left:6px;font-size:.74rem;padding:2px 8px;border-radius:999px;background:rgba(34,197,94,.10);border:1px solid rgba(34,197,94,.30);color:#bff7d4}
+    .opt{display:inline-block;margin-left:6px;font-size:.74rem;padding:2px 8px;border-radius:999px;background:rgba(96,165,250,.10);border:1px solid rgba(96,165,250,.25);color:#cfe3ff}
+    .fallback{display:inline-block;margin-left:6px;font-size:.74rem;padding:2px 8px;border-radius:999px;background:rgba(245,158,11,.10);border:1px solid rgba(245,158,11,.25);color:#ffe5b3}
+    .danger{display:inline-block;margin-left:6px;font-size:.74rem;padding:2px 8px;border-radius:999px;background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.25);color:#ffb5b5}
+    .mono{font-family:var(--mono);font-size:.9rem}
+    .muted{color:var(--muted)}
+    a{color:var(--link)}
+    code{font-family:var(--mono);font-size:.92rem;background:rgba(255,255,255,.06);border:1px solid var(--line);padding:2px 6px;border-radius:8px}
+    .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    @media (max-width:900px){ .cols{grid-template-columns:1fr} }
+    .mini{padding:12px 16px;color:var(--muted)}
+    .mini ul{margin:8px 0 0 18px}
+    .mini li{margin:6px 0}
+    .ex{
+      margin-top:10px;background:rgba(13,23,43,.55);border:1px solid var(--line);
+      border-radius:14px;padding:12px 14px;font-family:var(--mono);font-size:.88rem;color:#d7e6ff;white-space:pre;overflow:auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1>Kaş Guide – Place Data Rehberi (places-data.js Schema)</h1>
+        <p class="sub">
+          Bu sayfa, <span class="k">allPlaces</span> içindeki her bir item (mekan/yer) için hangi attribute'lara hangi veri girileceğini gösterir.
+          Kodun okuduğu alanlara göre hazırlanmıştır.
+        </p>
+        <div class="badges">
+          <span class="b ok">✅ Zorunlu: minimum çalışması için</span>
+          <span class="b warn">⚠️ Fallback: boş bırakılırsa başka alanla tamamlanır</span>
+          <span class="b">ℹ️ Opsiyonel: UI'da "—" gibi görünür veya hiç görünmez</span>
+        </div>
+      </div>
+      <div class="b" title="Kopyala / yapıştır için hızlı ipucu">
+        Dosya: <span class="mono">places-data.js</span><br/>
+        Liste: <span class="mono">const allPlaces = [ ... ]</span>
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <section class="card">
+        <h2>1) Minimum çalışan bir place için gerekenler</h2>
+        <div class="mini">
+          Minimumda şunlar olsun:
+          <ul>
+            <li><code>id</code> (unique)</li>
+            <li><code>title</code></li>
+            <li><code>category</code> (array)</li>
+            <li><code>image</code> veya <code>images</code> (en az 1 foto)</li>
+          </ul>
+          Diğer her şey opsiyonel; boş olursa detayda <b>—</b> basılır ya da alan görünmez.
+          <div class="ex">{
+  id: "ornek-id",
+  title: "Örnek Mekan",
+  category: ["food","places"],
+  image: "https://....jpg"
+}</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2) Tüm tanımlı attribute’lar (Place object)</h2>
+
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Attribute</th>
+                <th>Tip</th>
+                <th>Ne işe yarar / Nerede kullanılır</th>
+                <th>Örnek</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td><span class="mono">id</span><span class="req">Zorunlu</span></td>
+                <td class="mono">string</td>
+                <td class="muted">
+                  URL'den <code>?id=</code> ile bulunur. Unique olmalı. Boşluk kullanma; <code>kebab-case</code> önerilir.
+                </td>
+                <td class="mono">"nereid-meyhanesi"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">title</span><span class="req">Zorunlu</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Kart başlığı + detay sayfası başlığı.</td>
+                <td class="mono">"Nereid Meyhanesi"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">description</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Detayda <b>🟢 Kısaca:</b> blokunda gösterilir. Kartlarda da kullanılıyor.</td>
+                <td class="mono">"Sakin, klasik meyhane..."</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">category</span><span class="req">Zorunlu</span></td>
+                <td class="mono">string[]</td>
+                <td class="muted">
+                  Filtreler bununla çalışır. İçindeki id’ler <code>categories.js</code> ile eşleşmeli.
+                </td>
+                <td class="mono">["food","places"]</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">image</span><span class="fallback">Fallback</span></td>
+                <td class="mono">string (URL)</td>
+                <td class="muted">
+                  Tek görsel alanı. Slider için <code>images</code> yoksa bunu kullanır.
+                </td>
+                <td class="mono">"https://...w=1200"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">images</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string[] (URL)</td>
+                <td class="muted">
+                  Hero slider gallery. En az 1. Ekledikçe otomatik artar. Yoksa <code>image</code> fallback olur.
+                </td>
+                <td class="mono">["url1","url2","url3"]</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">photos</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string[]</td>
+                <td class="muted">Alternatif isim. Slider, <code>images</code> yoksa bunu da kabul eder.</td>
+                <td class="mono">["url1","url2"]</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">gallery</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string[]</td>
+                <td class="muted">Alternatif isim. Slider bunu da kabul eder.</td>
+                <td class="mono">["url1"]</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">rating</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">number | string</td>
+                <td class="muted">Detay meta “Puan”. İstatistik ortalamasında da kullanılıyor.</td>
+                <td class="mono">4.6</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">price</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Detay meta “Fiyat”. Serbest text (₺₺₺, Ücretsiz, “Giriş 50 TL” vb.).</td>
+                <td class="mono">"₺₺₺"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">location</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">
+                  Detay meta “Konum”. Harita query’si boşsa title ile birlikte default aramaya girer.
+                </td>
+                <td class="mono">"Kaş merkez, Uzun Çarşı"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">distance</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Detay meta “Mesafe” (Merkez, 2 km, 45 km vb.).</td>
+                <td class="mono">"Merkez"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">duration</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Detay meta “Süre” (1-2 saat, Tüm gün, 20-30 dk).</td>
+                <td class="mono">"2–3 saat"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">access</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Detay meta “Erişim” (yürüyerek, araçla, tekneyle vb.).</td>
+                <td class="mono">"Yürüyerek"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">coordinates</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">{ lat:number, lng:number }</td>
+                <td class="muted">Şu an UI’da doğrudan basılmıyor ama data için değerli (ileride harita/rota için).</td>
+                <td class="mono">{ lat: 36.1989, lng: 29.6362 }</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">selected</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">boolean</td>
+                <td class="muted">Index’te “selected” state/işaretleme için kullanılıyor.</td>
+                <td class="mono">false</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">facilities</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string[]</td>
+                <td class="muted">Şu an detail sayfasında basılmıyor; kart/filtre geliştirmelerinde kullanılabilir.</td>
+                <td class="mono">["Duş","WC","Şezlong"]</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">features</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string[]</td>
+                <td class="muted">Şu an detail sayfasında basılmıyor; ileride “özellikler” için hazır.</td>
+                <td class="mono">["Gün batımı", "Manzara"]</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">tags</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string[]</td>
+                <td class="muted">Şu an detail’de basılmıyor; arama/etiket filtre geleceği için iyi.</td>
+                <td class="mono">["meyhane","rakı-balık"]</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">longText</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Detayda <b>🟢 Uzunca:</b> bölümü. İstatistiklerde kelime sayısına dahil ediliyor.</td>
+                <td class="mono">"Uzun açıklama..."</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">trust</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">{ verified:boolean, infoDate:string, disclaimer:boolean }</td>
+                <td class="muted">
+                  Detail’de “Yerinde doğrulandı / Bilgi tarihi / Değişiklik olabilir” badge’leri.
+                </td>
+                <td class="mono">{ verified:true, infoDate:"2025", disclaimer:true }</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">instagram</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string (URL)</td>
+                <td class="muted">Detay action bar’daki Instagram butonu.</td>
+                <td class="mono">"https://instagram.com/..."</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">website</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string (URL)</td>
+                <td class="muted">Detay action bar’daki Web butonu.</td>
+                <td class="mono">"https://site.com"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">booking</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string (URL)</td>
+                <td class="muted">Detay action bar’daki Rezervasyon butonu.</td>
+                <td class="mono">"https://..."</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">phone</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Detay action bar “Telefon” butonu → <code>tel:</code> linkine çevrilir.</td>
+                <td class="mono">"+90 242 ..."</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">links</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">{ instagram, website, booking, phone }</td>
+                <td class="muted">
+                  Linkleri tek objede tutmak istersen. Düz alanlar (<code>instagram</code> vs) varsa onlar öncelikli.
+                </td>
+                <td class="mono">{ instagram:"...", website:"..." }</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">googleMapsQuery</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Harita butonunda arama query’si. Öncelik sırasına göre ilk bulunan kullanılır.</td>
+                <td class="mono">"Nereid Meyhanesi Kaş"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">mapsQuery</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Harita query’si için alternatif attribute.</td>
+                <td class="mono">"Kaputaş Plajı"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">googleMaps</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Harita query’si için alternatif attribute.</td>
+                <td class="mono">"Antiphellos Antik Tiyatro"</td>
+              </tr>
+
+              <tr>
+                <td><span class="mono">maps</span><span class="opt">Opsiyonel</span></td>
+                <td class="mono">string</td>
+                <td class="muted">Harita query’si için alternatif attribute.</td>
+                <td class="mono">"Uzun Çarşı Kaş"</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>Önemli:</b> Slider fotoğrafları için tercih sırası: <code>images</code> → <code>photos</code> → <code>gallery</code> → <code>image</code>.
+          Hiçbiri yoksa kod otomatik bir “fallback” foto koyuyor (boş kalmasın diye).
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>3) Kategori id’leri (category alanına ne yazabilirim?)</h2>
+        <div class="mini">
+          <code>category</code> içine yazdığın id’ler, <code>categories.js</code> içindeki <code>id</code> alanlarıyla eşleşmeli.
+          Örnek bazıları:
+          <div class="ex">["places","beaches","activities","food","hotels","history","nature","shopping","breakfast", ...]</div>
+          Not: categories.js dosyanda daha fazla id var; ekledikçe burada da kullanabilirsin.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>4) Hazır şablon (copy-paste)</h2>
+        <div class="mini">
+          Yeni mekan girerken bunu kopyala, doldur:
+          <div class="ex">{
+  id: "",
+  title: "",
+  description: "",
+  category: [],
+
+  // Foto
+  image: "",
+  images: [],
+
+  // Meta
+  rating: "",
+  price: "",
+  location: "",
+  distance: "",
+  duration: "",
+  access: "",
+
+  // Links
+  instagram: "",
+  website: "",
+  booking: "",
+  phone: "",
+  // links: { instagram:"", website:"", booking:"", phone:"" },
+
+  // Maps query (istersen)
+  // googleMapsQuery: "",
+
+  // Extra
+  coordinates: { lat: 0, lng: 0 },
+  facilities: [],
+  features: [],
+  tags: [],
+  longText: "",
+
+  trust: { verified: false, infoDate: "", disclaimer: false },
+
+  selected: false
+}</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>
