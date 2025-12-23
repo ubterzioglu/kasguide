@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KasGuide - Çok Yakında</title>
+
     <style>
         * {
             margin: 0;
@@ -22,6 +23,20 @@
             position: relative;
         }
 
+        /* === BIG CENTER LOGO === */
+        .hero-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70vmin;
+            max-width: 600px;
+            opacity: 0.25;
+            z-index: 1;
+            pointer-events: none;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35));
+        }
+
         .waves {
             position: absolute;
             bottom: 0;
@@ -29,6 +44,7 @@
             width: 100%;
             height: 200px;
             overflow: hidden;
+            z-index: 0;
         }
 
         .wave {
@@ -62,6 +78,7 @@
             z-index: 10;
             padding: 20px;
             max-width: 800px;
+            position: relative;
         }
 
         .logo {
@@ -107,39 +124,22 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        .icon:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-
-        .icon:nth-child(3) {
-            animation-delay: 1s;
-        }
+        .icon:nth-child(2) { animation-delay: 0.5s; }
+        .icon:nth-child(3) { animation-delay: 1s; }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
         }
 
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .coming-soon {
@@ -165,10 +165,20 @@
             .message { font-size: 1rem; }
             .icon { font-size: 2rem; }
             .icons { gap: 1rem; }
+
+            .hero-logo {
+                width: 85vmin;
+                opacity: 0.2;
+            }
         }
     </style>
 </head>
+
 <body>
+
+    <!-- BIG CENTER LOGO -->
+    <img src="kas-guide-logo.png" alt="Kaş Guide Logo" class="hero-logo">
+
     <div class="waves">
         <div class="wave"></div>
         <div class="wave"></div>
@@ -178,7 +188,7 @@
     <div class="container">
         <h1 class="logo"><span class="kas">Kaş</span>Guide</h1>
         <p class="subtitle">🌊 Akdeniz'in İncisi'ne Kapsamlı Rehberiniz</p>
-        
+
         <div class="icons">
             <div class="icon">🏖️</div>
             <div class="icon">🌅</div>
@@ -194,5 +204,13 @@
             ✨ Çok Yakında ✨
         </div>
     </div>
+
+    <!-- GoatCounter -->
+    <script
+        data-goatcounter="https://kasguidede.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js">
+    </script>
+
 </body>
 </html>
