@@ -25,11 +25,11 @@ const allPlaces = [
   description: 'Canlı müzik, rock ağırlıklı playlist ve pub havasıyla; Kaş’ta akşamları enerjik geçirmek isteyenlerin sık uğradığı bar.',
   category: ['bar', 'cafe'],
 
-  image: '../assets/0_img/frida-pub_001_kapak.jpg',
+  image: '../assets/1_places/frida-pub_001.jpg',
   images: [
-    '../assets/0_img/frida-pub_002.jpg',
-    '../assets/0_img/frida-pub_003.jpg',
-    '../assets/0_img/frida-pub_004.jpg'
+    '../assets/1_places/frida-pub_002.jpg',
+    '../assets/1_places/frida-pub_003.jpg',
+    '../assets/1_places/frida-pub_004.jpg'
   ],
 
   rating: 4.6,
@@ -114,11 +114,11 @@ Frida Pub; Kaş’ta rock müzik, canlı performans ve pub atmosferini bir arada
   description: 'Taze kahve, iyi sandviçler ve tatlılarla; günün her saati uğranabilen, rahat ve modern bir kafe.',
   category: ['cafe', 'breakfast', 'food'],
 
-  image: '../assets/0_img/bunbun-kas_001_kapak.jpg',
+  image: '../assets/1_places/bunbun-kas_001.jpg',
   images: [
-    '../assets/0_img/bunbun-kas_002.jpg',
-    '../assets/0_img/bunbun-kas_003.jpg',
-    '../assets/0_img/bunbun-kas_004.jpg'
+    '../assets/1_places/bunbun-kas_002.jpg',
+    '../assets/1_places/bunbun-kas_003.jpg',
+    '../assets/1_places/bunbun-kas_004.jpg'
   ],
 
   rating: 4.7,
@@ -375,13 +375,13 @@ Kısa özet:
   category: ['bar', 'food'],
 
   // Kapak görseli: telifsiz placeholder (içerik fotoğraflarını sonradan sen ekleyebilirsin)
-  image: '../assets/0_img/dragoman-bahce-001-kapak.jpg',
+  image: '../assets/1_places/dragoman-bahce-001.jpg',
 
   // Galeri: telifsiz placeholder (istersen gerçek mekan foto linklerini sonra ekleriz)
   images: [
-    '../assets/0_img/dragoman-bahce-002.jpg',
-    '../assets/0_img/dragoman-bahce-003.jpg',
-    '../assets/0_img/dragoman-bahce-004.jpg'   
+    '../assets/1_places/dragoman-bahce-002.jpg',
+    '../assets/1_places/dragoman-bahce-003.jpg',
+    '../assets/1_places/dragoman-bahce-004.jpg'   
   ],
 
   // Not: puan/fiyat bilgisi platforma göre değişebilir; burada “rehber” formatında ortalama değer.
@@ -561,11 +561,11 @@ Nereid Meyhanesi, Kaş’ta klasik meyhane hissini modern bir “sahne” dokunu
   description: 'Kaş’ta dalış başta olmak üzere doğa ve deniz odaklı aktiviteler sunan, güven veren ve tecrübeli bir outdoor & dalış merkezi.',
   category: ['diving', 'activities'],
 
-  image: '../assets/0_img/dragoman-diving-and-outdoor-001-kapak.jpg',
+  image: '../assets/1_places/dragoman-diving-and-outdoor-001.jpg',
   images: [
-    '../assets/0_img/dragoman-diving-and-outdoor-002.jpg',
-    '../assets/0_img/dragoman-diving-and-outdoor-003.jpg',
-    '../assets/0_img/dragoman-diving-and-outdoor-004.jpg'
+    '../assets/1_places/dragoman-diving-and-outdoor-002.jpg',
+    '../assets/1_places/dragoman-diving-and-outdoor-003.jpg',
+    '../assets/1_places/dragoman-diving-and-outdoor-004.jpg'
   ],
 
   rating: 4.8,
@@ -648,11 +648,11 @@ Dragoman Diving and Outdoor, Kaş’ta dalışı güvenli, sakin ve keyifli şek
   description: 'Shot odaklı konsepti, yüksek enerjisi ve eğlenceli atmosferiyle; Kaş’ta geceyi hızlandırmak isteyenlerin uğradığı küçük ama hareketli bir bar.',
   category: ['bar'],
 
-  image: 'the-shotlar-terminali-001-kapak.jpg',
+  image: 'the-shotlar-terminali-001.jpg',
   images: [
-    '../assets/0_img/the-shotlar-terminali-002.jpg',
-    '../assets/0_img/the-shotlar-terminali-003.jpg',
-    '../assets/0_img/the-shotlar-terminali-004.jpg'
+    '../assets/1_places/the-shotlar-terminali-002.jpg',
+    '../assets/1_places/the-shotlar-terminali-003.jpg',
+    '../assets/1_places/the-shotlar-terminali-004.jpg'
   ],
 
   rating: 4.5,
