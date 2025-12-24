@@ -29,6 +29,11 @@
       --radius-lg: 1rem;
       --radius-xl: 1.5rem;
       --radius-full: 9999px;
+      --office-blue: #00A4EF;
+      --office-red: #F25022;
+      --office-green: #7FBA00;
+      --office-yellow: #FFB900;
+      --office-purple: #742774;
     }
 
     * {
@@ -185,27 +190,20 @@
     }
 
     .submit-button {
-      width: 100%;
-      padding: 1rem 2rem;
-      background: #ffffff;
-      color: var(--gray-800);
-      border: none;
-      border-radius: var(--radius-full);
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: var(--shadow);
-    }
-
-    .submit-button:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .submit-button:active {
-      transform: translateY(0);
-    }
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--office-blue), var(--office-green));
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: var(--shadow);
+}
+.submit-button:hover { transform: translateY(-1px); filter: brightness(1.03); }
+.submit-button:active { transform: translateY(0px); }
 
     .form-hint {
       font-size: 0.85rem;
@@ -359,41 +357,66 @@
   flex: 0 0 auto;
 }
 
+
 /* Required star */
 .required {
-  color: var(--primary-red);
+  color: var(--office-red);
   font-weight: 900;
   margin-left: 0.35rem;
 }
 
-/* Office-like color variants for section cards */
+/* Office logo colors for section cards */
 .section-card--blue {
-  border-color: rgba(8, 145, 178, 0.25);
-  background: linear-gradient(180deg, rgba(8, 145, 178, 0.10), #ffffff 55%);
+  border-color: color-mix(in srgb, var(--office-blue) 28%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--office-blue) 14%, transparent),
+    #ffffff 58%);
 }
 .section-card--red {
-  border-color: rgba(239, 68, 68, 0.25);
-  background: linear-gradient(180deg, rgba(239, 68, 68, 0.10), #ffffff 55%);
+  border-color: color-mix(in srgb, var(--office-red) 28%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--office-red) 14%, transparent),
+    #ffffff 58%);
 }
 .section-card--green {
-  border-color: rgba(16, 185, 129, 0.25);
-  background: linear-gradient(180deg, rgba(16, 185, 129, 0.10), #ffffff 55%);
+  border-color: color-mix(in srgb, var(--office-green) 28%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--office-green) 14%, transparent),
+    #ffffff 58%);
 }
-.section-card--orange {
-  border-color: rgba(249, 115, 22, 0.25);
-  background: linear-gradient(180deg, rgba(249, 115, 22, 0.10), #ffffff 55%);
+.section-card--yellow {
+  border-color: color-mix(in srgb, var(--office-yellow) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--office-yellow) 16%, transparent),
+    #ffffff 58%);
 }
 .section-card--purple {
-  border-color: rgba(168, 85, 247, 0.25);
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.10), #ffffff 55%);
+  border-color: color-mix(in srgb, var(--office-purple) 28%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--office-purple) 14%, transparent),
+    #ffffff 58%);
 }
 
-/* Make section title badge match card variant automatically */
-.section-card--blue .section-title { border-color: rgba(8, 145, 178, 0.22); background: rgba(8, 145, 178, 0.10); }
-.section-card--red .section-title { border-color: rgba(239, 68, 68, 0.22); background: rgba(239, 68, 68, 0.10); }
-.section-card--green .section-title { border-color: rgba(16, 185, 129, 0.22); background: rgba(16, 185, 129, 0.10); }
-.section-card--orange .section-title { border-color: rgba(249, 115, 22, 0.22); background: rgba(249, 115, 22, 0.10); }
-.section-card--purple .section-title { border-color: rgba(168, 85, 247, 0.22); background: rgba(168, 85, 247, 0.10); }
+.section-card--blue .section-title {
+  border-color: color-mix(in srgb, var(--office-blue) 28%, transparent);
+  background: color-mix(in srgb, var(--office-blue) 12%, transparent);
+}
+.section-card--red .section-title {
+  border-color: color-mix(in srgb, var(--office-red) 28%, transparent);
+  background: color-mix(in srgb, var(--office-red) 12%, transparent);
+}
+.section-card--green .section-title {
+  border-color: color-mix(in srgb, var(--office-green) 28%, transparent);
+  background: color-mix(in srgb, var(--office-green) 12%, transparent);
+}
+.section-card--yellow .section-title {
+  border-color: color-mix(in srgb, var(--office-yellow) 34%, transparent);
+  background: color-mix(in srgb, var(--office-yellow) 14%, transparent);
+}
+.section-card--purple .section-title {
+  border-color: color-mix(in srgb, var(--office-purple) 28%, transparent);
+  background: color-mix(in srgb, var(--office-purple) 12%, transparent);
+}
 
 /* Ensure all regular text is readable */
 .section-card, .form-label, .form-hint, .category-name, .category-label, .form-input, .form-textarea {
@@ -622,7 +645,7 @@
       <!-- Ek Bilgiler -->
 
           <div class="form-section">
-  <div class="section-card">
+  <div class="section-card section-card--purple">
 <h3 class="section-title">
               <span class="section-icon">ℹ️</span>
               Ek Bilgiler
