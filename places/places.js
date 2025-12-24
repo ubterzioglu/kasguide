@@ -81,12 +81,14 @@
     const emoji = String(def.emoji || place?.badgeEmoji || "🧑‍🧳");
     const title = String(def.title || def.label || "Turist Dostu");
     const description = String(def.description || "");
+    // Tooltip text: prefer description; fall back to title
+    const tip = String((description || title) || "").trim();
     // emoji-only, legend via tooltip (desktop) / tap-to-explain (mobile)
     return `
       <div class="detail-meta meta-badge" data-badge-id="${escapeHtml(badgeId)}">
         <div class="detail-meta-label">Kaş Guide Badge</div>
         <div class="detail-meta-value">
-          <button type="button" class="kg-badge-emoji" aria-label="${escapeHtml(title)}" data-tooltip="${escapeHtml(title)}" data-desc="${escapeHtml(description)}">
+          <button type="button" class="kg-badge-emoji" aria-label="${escapeHtml(title)}" data-tooltip="${escapeHtml(title)}" data-desc="${escapeHtml(description)}" data-tip="${escapeHtml(tip)}">
             ${escapeHtml(emoji)}
           </button>
           <div class="kg-badge-help" aria-live="polite"></div>

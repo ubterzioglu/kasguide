@@ -118,6 +118,119 @@
   font-weight: 800;
 }
 
+/* =========================
+   META BADGES (palette)
+   ========================= */
+
+/* Fallback palette (if not already defined in ../style.css) */
+:root{
+  --kg-blue: var(--primary-blue, #2563eb);
+  --kg-green: var(--primary-green, #16a34a);
+  --kg-orange: var(--primary-orange, #f97316);
+  --kg-purple: var(--primary-purple, #7c3aed);
+}
+
+/* Colorize the 4 meta cards shown in the screenshot */
+.detail-meta.meta-rating{
+  border-color: color-mix(in srgb, var(--kg-blue) 28%, var(--gray-200));
+  background: color-mix(in srgb, var(--kg-blue) 6%, white);
+}
+.detail-meta.meta-price{
+  border-color: color-mix(in srgb, var(--kg-orange) 28%, var(--gray-200));
+  background: color-mix(in srgb, var(--kg-orange) 6%, white);
+}
+.detail-meta.meta-location{
+  border-color: color-mix(in srgb, var(--kg-green) 28%, var(--gray-200));
+  background: color-mix(in srgb, var(--kg-green) 6%, white);
+}
+.detail-meta.meta-badge{
+  border-color: color-mix(in srgb, var(--kg-purple) 28%, var(--gray-200));
+  background: color-mix(in srgb, var(--kg-purple) 6%, white);
+}
+
+.detail-meta.meta-rating .detail-meta-value{ color: color-mix(in srgb, var(--kg-blue) 78%, var(--gray-900)); }
+.detail-meta.meta-price .detail-meta-value{ color: color-mix(in srgb, var(--kg-orange) 78%, var(--gray-900)); }
+.detail-meta.meta-location .detail-meta-value{ color: color-mix(in srgb, var(--kg-green) 78%, var(--gray-900)); }
+
+/* Badge emoji button */
+.kg-badge-emoji{
+  appearance: none;
+  border: 1px solid color-mix(in srgb, var(--kg-purple) 28%, var(--gray-200));
+  background: color-mix(in srgb, var(--kg-purple) 10%, white);
+  width: 38px;
+  height: 32px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  position: relative; /* for tooltip */
+}
+
+.kg-badge-emoji:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
+.kg-badge-emoji:active{ transform: translateY(0); }
+.kg-badge-emoji:focus-visible{ outline: 3px solid color-mix(in srgb, var(--kg-purple) 35%, transparent); outline-offset: 3px; }
+
+/* Mobile tap-to-explain text */
+.kg-badge-help{
+  margin-top: .4rem;
+  font-size: .85rem;
+  color: var(--gray-700);
+  line-height: 1.45;
+}
+
+/* Desktop hover tooltip (was missing) */
+@media (hover: hover) and (pointer: fine){
+  .kg-badge-emoji::after,
+  .kg-badge-emoji::before{ display:none; }
+
+  .kg-badge-emoji:hover::after,
+  .kg-badge-emoji:focus-visible::after{
+    display:block;
+    content: attr(data-tip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    min-width: 200px;
+    max-width: 280px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: .82rem;
+    font-weight: 700;
+    color: white;
+    background: rgba(17, 24, 39, .92);
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 14px 34px rgba(0,0,0,.28);
+    z-index: 20;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .kg-badge-emoji:hover::before,
+  .kg-badge-emoji:focus-visible::before{
+    display:block;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 2px);
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: rgba(17, 24, 39, .92);
+    border-left: 1px solid rgba(255,255,255,.14);
+    border-bottom: 1px solid rgba(255,255,255,.14);
+    rotate: 45deg;
+    z-index: 19;
+  }
+
+  /* On desktop, keep the inline help hidden (only for touch) */
+  .kg-badge-help{ display:none; }
+}
+
 /* Action bar: icon-only */
 .detail-actions{
   display:flex;
