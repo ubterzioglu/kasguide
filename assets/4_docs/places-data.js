@@ -5361,7 +5361,7 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "antiphellos-antik-tiyatro",
-  title: "Antiphellos Antik Tiyatrosu",
+  title: "Antiphellos Antik Tiyatro",
   description: "Deniz manzaralı, Likya döneminden kalma tarihi bir açık hava tiyatrosu.",
   category: ["history"],
   image: "../assets/1_places/antiphellos-antik-tiyatro-001.jpg",
