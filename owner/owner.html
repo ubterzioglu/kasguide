@@ -95,9 +95,6 @@
       padding: 2rem;
     }
 
-    
-    
-    
     .form-group {
       margin-bottom: 1.5rem;
     }
@@ -108,11 +105,6 @@
       color: var(--gray-700);
       margin-bottom: 0.5rem;
       font-size: 0.95rem;
-    }
-
-    .form-label . {
-      color: var(--primary-red);
-      margin-left: 0.25rem;
     }
 
     .form-input,
@@ -197,20 +189,20 @@
     }
 
     .submit-button {
-  width: 100%;
-  padding: 1rem 1.25rem;
-  background: linear-gradient(135deg, var(--kas-purple), var(--kas-pink));
-  color: #ffffff;
-  border: none;
-  border-radius: var(--radius-lg);
-  font-size: 1rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-  box-shadow: var(--shadow);
-}
-.submit-button:hover { transform: translateY(-1px); filter: brightness(1.03); }
-.submit-button:active { transform: translateY(0px); }
+      width: 100%;
+      padding: 1rem 1.25rem;
+      background: linear-gradient(135deg, var(--kas-purple), var(--kas-pink));
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      box-shadow: var(--shadow);
+    }
+    .submit-button:hover { transform: translateY(-1px); filter: brightness(1.03); }
+    .submit-button:active { transform: translateY(0px); }
 
     .form-hint {
       font-size: 0.85rem;
@@ -271,166 +263,158 @@
       }
     }
 
-/* Header (copied markup from faq.html, styled locally for owner page) */
-.header {
-  background: #ffffff;
-  border-bottom: 1px solid var(--gray-200);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.header .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
-  gap: 1rem;
-}
-.home-link {
-  width: 48px;
-  height: 48px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  color: var(--gray-700);
-  text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-.home-link:hover { background: var(--gray-100); color: var(--gray-900); }
-.home-icon { width: 22px; height: 22px; }
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  user-select: none;
-}
-.logo-img { width: 36px; height: 36px; object-fit: contain; }
-.logo-text {
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  background: linear-gradient(to right, var(--primary-blue), #2563eb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 1rem;
+    }
+    .home-link {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: var(--gray-700);
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .home-link:hover { background: var(--gray-100); color: var(--gray-900); }
+    .home-icon { width: 22px; height: 22px; }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      user-select: none;
+    }
+    .logo-img { width: 36px; height: 36px; object-fit: contain; }
+    .logo-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, var(--primary-blue), #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-.page-wrap {
-  padding: 2rem 1rem;
-}
+    .page-wrap {
+      padding: 2rem 1rem;
+    }
 
-/* Section cards (use existing palette vars) */
-.form-section {
-  padding: 1.25rem 2rem;
-  border-bottom: 1px solid var(--gray-200);
-  background: transparent;
-}
+    .form-section {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--gray-200);
+      background: transparent;
+    }
 
-.section-card {
-  background: #ffffff;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow);
-  padding: 1.25rem 1.25rem 1.5rem 1.25rem;
-}
+    .section-card {
+      background: #ffffff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+    }
 
-.section-title {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 1rem;
-  margin: 0 0 1rem 0;
-  background: linear-gradient(135deg, rgba(8, 145, 178, 0.14), rgba(6, 182, 212, 0.10));
-  border: 1px solid rgba(8, 145, 178, 0.22);
-  border-radius: var(--radius-lg);
-  color: var(--gray-900);
-}
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      margin: 0 0 1rem 0;
+      background: linear-gradient(135deg, rgba(8, 145, 178, 0.14), rgba(6, 182, 212, 0.10));
+      border: 1px solid rgba(8, 145, 178, 0.22);
+      border-radius: var(--radius-lg);
+      color: var(--gray-900);
+    }
 
-.section-icon {
-  width: 36px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: rgba(8, 145, 178, 0.18);
-  color: var(--primary-blue);
-  font-size: 1.1rem;
-  flex: 0 0 auto;
-}
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(8, 145, 178, 0.18);
+      color: var(--primary-blue);
+      font-size: 1.1rem;
+      flex: 0 0 auto;
+    }
 
+    .required {
+      color: var(--kas-red);
+      font-weight: 900;
+      margin-left: 0.35rem;
+    }
 
+    .section-card--orange {
+      border-color: color-mix(in srgb, var(--kas-orange) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-orange) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--cyan {
+      border-color: color-mix(in srgb, var(--kas-cyan) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-cyan) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--green {
+      border-color: color-mix(in srgb, var(--kas-green) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-green) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--lime {
+      border-color: color-mix(in srgb, var(--kas-lime) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-lime) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--red {
+      border-color: color-mix(in srgb, var(--kas-red) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-red) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--purple {
+      border-color: color-mix(in srgb, var(--kas-purple) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-purple) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--indigo {
+      border-color: color-mix(in srgb, var(--kas-indigo) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-indigo) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--burgundy {
+      border-color: color-mix(in srgb, var(--kas-burgundy) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-burgundy) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--pink {
+      border-color: color-mix(in srgb, var(--kas-pink) 32%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-pink) 18%, transparent), #ffffff 60%);
+    }
+    .section-card--dark {
+      border-color: color-mix(in srgb, var(--kas-dark-gray) 35%, transparent);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-dark-gray) 16%, transparent), #ffffff 60%);
+    }
 
-/* Required star */
-.required {
-  color: var(--kas-red);
-  font-weight: 900;
-  margin-left: 0.35rem;
-}
+    .section-card--orange .section-title   { border-color: color-mix(in srgb, var(--kas-orange) 34%, transparent);   background: color-mix(in srgb, var(--kas-orange) 12%, transparent); }
+    .section-card--cyan .section-title     { border-color: color-mix(in srgb, var(--kas-cyan) 34%, transparent);     background: color-mix(in srgb, var(--kas-cyan) 12%, transparent); }
+    .section-card--green .section-title    { border-color: color-mix(in srgb, var(--kas-green) 34%, transparent);    background: color-mix(in srgb, var(--kas-green) 12%, transparent); }
+    .section-card--lime .section-title     { border-color: color-mix(in srgb, var(--kas-lime) 34%, transparent);     background: color-mix(in srgb, var(--kas-lime) 12%, transparent); }
+    .section-card--red .section-title      { border-color: color-mix(in srgb, var(--kas-red) 34%, transparent);      background: color-mix(in srgb, var(--kas-red) 12%, transparent); }
+    .section-card--purple .section-title   { border-color: color-mix(in srgb, var(--kas-purple) 34%, transparent);   background: color-mix(in srgb, var(--kas-purple) 12%, transparent); }
+    .section-card--indigo .section-title   { border-color: color-mix(in srgb, var(--kas-indigo) 34%, transparent);   background: color-mix(in srgb, var(--kas-indigo) 12%, transparent); }
+    .section-card--burgundy .section-title { border-color: color-mix(in srgb, var(--kas-burgundy) 34%, transparent); background: color-mix(in srgb, var(--kas-burgundy) 12%, transparent); }
+    .section-card--pink .section-title     { border-color: color-mix(in srgb, var(--kas-pink) 34%, transparent);     background: color-mix(in srgb, var(--kas-pink) 12%, transparent); }
+    .section-card--dark .section-title     { border-color: color-mix(in srgb, var(--kas-dark-gray) 34%, transparent); background: color-mix(in srgb, var(--kas-dark-gray) 12%, transparent); }
 
-/* Kaş Guide palette cards (EXACT colors from your screenshot) */
-.section-card--orange {
-  border-color: color-mix(in srgb, var(--kas-orange) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-orange) 18%, transparent), #ffffff 60%);
-}
-.section-card--cyan {
-  border-color: color-mix(in srgb, var(--kas-cyan) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-cyan) 18%, transparent), #ffffff 60%);
-}
-.section-card--green {
-  border-color: color-mix(in srgb, var(--kas-green) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-green) 18%, transparent), #ffffff 60%);
-}
-.section-card--lime {
-  border-color: color-mix(in srgb, var(--kas-lime) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-lime) 18%, transparent), #ffffff 60%);
-}
-.section-card--red {
-  border-color: color-mix(in srgb, var(--kas-red) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-red) 18%, transparent), #ffffff 60%);
-}
-.section-card--purple {
-  border-color: color-mix(in srgb, var(--kas-purple) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-purple) 18%, transparent), #ffffff 60%);
-}
-.section-card--indigo {
-  border-color: color-mix(in srgb, var(--kas-indigo) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-indigo) 18%, transparent), #ffffff 60%);
-}
-.section-card--burgundy {
-  border-color: color-mix(in srgb, var(--kas-burgundy) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-burgundy) 18%, transparent), #ffffff 60%);
-}
-.section-card--pink {
-  border-color: color-mix(in srgb, var(--kas-pink) 32%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-pink) 18%, transparent), #ffffff 60%);
-}
-.section-card--dark {
-  border-color: color-mix(in srgb, var(--kas-dark-gray) 35%, transparent);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-dark-gray) 16%, transparent), #ffffff 60%);
-}
-
-/* Title badges inherit the card color */
-.section-card--orange .section-title   { border-color: color-mix(in srgb, var(--kas-orange) 34%, transparent);   background: color-mix(in srgb, var(--kas-orange) 12%, transparent); }
-.section-card--cyan .section-title     { border-color: color-mix(in srgb, var(--kas-cyan) 34%, transparent);     background: color-mix(in srgb, var(--kas-cyan) 12%, transparent); }
-.section-card--green .section-title    { border-color: color-mix(in srgb, var(--kas-green) 34%, transparent);    background: color-mix(in srgb, var(--kas-green) 12%, transparent); }
-.section-card--lime .section-title     { border-color: color-mix(in srgb, var(--kas-lime) 34%, transparent);     background: color-mix(in srgb, var(--kas-lime) 12%, transparent); }
-.section-card--red .section-title      { border-color: color-mix(in srgb, var(--kas-red) 34%, transparent);      background: color-mix(in srgb, var(--kas-red) 12%, transparent); }
-.section-card--purple .section-title   { border-color: color-mix(in srgb, var(--kas-purple) 34%, transparent);   background: color-mix(in srgb, var(--kas-purple) 12%, transparent); }
-.section-card--indigo .section-title   { border-color: color-mix(in srgb, var(--kas-indigo) 34%, transparent);   background: color-mix(in srgb, var(--kas-indigo) 12%, transparent); }
-.section-card--burgundy .section-title { border-color: color-mix(in srgb, var(--kas-burgundy) 34%, transparent); background: color-mix(in srgb, var(--kas-burgundy) 12%, transparent); }
-.section-card--pink .section-title     { border-color: color-mix(in srgb, var(--kas-pink) 34%, transparent);     background: color-mix(in srgb, var(--kas-pink) 12%, transparent); }
-.section-card--dark .section-title     { border-color: color-mix(in srgb, var(--kas-dark-gray) 34%, transparent); background: color-mix(in srgb, var(--kas-dark-gray) 12%, transparent); }
-
-/* Keep everything readable */
-.section-card, .form-label, .form-hint, .category-name, .category-label, .form-input, .form-textarea {
-  color: var(--gray-900);
-}
+    .section-card, .form-label, .form-hint, .category-name, .category-label, .form-input, .form-textarea {
+      color: var(--gray-900);
+    }
   </style>
 </head>
 <body>
@@ -455,26 +439,27 @@
   <div class="container">
     <div class="form-card">
       <div class="form-header">
-        <h1>🏖️ Mekanınızı Ekleyin</h1>
+        <h1>🖌️ Mekanınızı Ekleyin</h1>
         <p>Kaş'taki işletmenizi rehberimize ekleyin ve binlerce gezgine ulaşın</p>
       </div>
-<!-- Önemli Bilgilendirme -->
-<div class="form-section">
-  <div class="section-card" section-card--blue">
-    <h3 class="section-title">
-      <span class="section-icon">ℹ️</span>
-      Önemli Bilgilendirme
-    </h3>
 
-    <ul style="margin: 0; padding-left: 1.25rem; color: var(--gray-800); line-height: 1.6;">
-      <li>Bu platform Kaş’ı sevenler için hazırlanmış gönüllü bir rehberdir.</li>
-      <li>Tüm içerikler tamamen ücretsizdir, hiçbir ücret talep edilmez.</li>
-      <li>Amacımız mekân sahiplerinin kendi bilgilerini doğrudan paylaşabilmesidir.</li>
-      <li>Gönderilen bilgiler ticari bir taahhüt veya reklam zorunluluğu içermez.</li>
-      <li>Paylaşımlar Kaş rehberini daha güncel ve faydalı hale getirir.</li>
-    </ul>
-  </div>
-</div>
+      <!-- Önemli Bilgilendirme -->
+      <div class="form-section">
+        <div class="section-card section-card--cyan">
+          <h3 class="section-title">
+            <span class="section-icon">ℹ️</span>
+            Önemli Bilgilendirme
+          </h3>
+
+          <ul style="margin: 0; padding-left: 1.25rem; color: var(--gray-800); line-height: 1.6;">
+            <li>Bu platform Kaş'ı sevenler için hazırlanmış gönüllü bir rehberdir.</li>
+            <li>Tüm içerikler tamamen ücretsizdir, hiçbir ücret talep edilmez.</li>
+            <li>Amacımız mekân sahiplerinin kendi bilgilerini doğrudan paylaşabilmesidir.</li>
+            <li>Gönderilen bilgiler ticari bir taahhüt veya reklam zorunluluğu içermez.</li>
+            <li>Paylaşımlar Kaş rehberini daha güncel ve faydalı hale getirir.</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="form-body">
         <div class="success-message" id="successMessage">
@@ -486,240 +471,233 @@
         <form id="venueForm">
           <!-- Temel Bilgiler -->
           <div class="form-section">
-  <div class="section-card" section-card--purple">
-<h3 class="section-title">
-              <span class="section-icon">📍</span>
-              Temel Bilgiler
-            </h3>
+            <div class="section-card section-card--purple">
+              <h3 class="section-title">
+                <span class="section-icon">📝</span>
+                Temel Bilgiler
+              </h3>
 
-            <div class="form-group">
-              <label class="form-label">Mekan Adı<span class="required">*</span></label>
-              <input type="text" class="form-input" name="title"  placeholder="Örn: Kaputaş Plajı" required>
-            </div>
-
-            <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Konum</label>
-                <input type="text" class="form-input" name="location"  placeholder="Örn: Kaş Merkez">
+                <label class="form-label">Mekan Adı<span class="required">*</span></label>
+                <input type="text" class="form-input" name="title" placeholder="Örn: Kaputaş Plajı" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Konum</label>
+                  <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Mesafe (Kaş'a)</label>
+                  <input type="text" class="form-input" name="distance" placeholder="Örn: 7 km">
+                </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label">Mesafe (Kaş'a)</label>
-                <input type="text" class="form-input" name="distance" placeholder="Örn: 7 km">
+                <label class="form-label">Kısa Açıklama</label>
+                <textarea class="form-textarea" name="description" placeholder="Mekanınızı kısaca tanıtın (1-2 cümle)"></textarea>
+                <p class="form-hint">Bu metin kart görünümünde gösterilecek</p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Detaylı Açıklama<span class="required">*</span></label>
+                <textarea class="form-textarea" name="longText" placeholder="Mekanınız hakkında detaylı bilgi verin (özellikler, hizmetler, öneriler vb.)" style="min-height: 180px;" required></textarea>
               </div>
             </div>
-
-            <div class="form-group">
-              <label class="form-label">Kısa Açıklama</label>
-              <textarea class="form-textarea" name="description"  placeholder="Mekanınızı kısaca tanıtın (1-2 cümle)"></textarea>
-              <p class="form-hint">Bu metin kart görünümünde gösterilecek</p>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Detaylı Açıklama<span class="required">*</span></label>
-              <textarea class="form-textarea" name="longText" placeholder="Mekanınız hakkında detaylı bilgi verin (özellikler, hizmetler, öneriler vb.)" style="min-height: 180px;" required></textarea>
-            </div>
-  </div>
-</div>
-
+          </div>
 
           <!-- Kategoriler -->
           <div class="form-section">
-  <div class="section-card" section-card--red">
-<h3 class="section-title">
-              <span class="section-icon">🏷️</span>
-              Kategoriler<span class="">*</span>
-            </h3>
-            <p class="form-hint" style="margin-bottom: 1rem;">Mekanınız için uygun kategorileri seçin (birden fazla seçebilirsiniz)</p>
+            <div class="section-card section-card--red">
+              <h3 class="section-title">
+                <span class="section-icon">🏷️</span>
+                Kategoriler<span class="required">*</span>
+              </h3>
+              <p class="form-hint" style="margin-bottom: 1rem;">Mekanınız için uygun kategorileri seçin (birden fazla seçebilirsiniz)</p>
 
-            <div class="category-grid">
+              <div class="category-grid">
+                <div class="category-option">
+                  <input type="checkbox" id="cat-bar" name="category" value="bar" class="category-checkbox">
+                  <label for="cat-bar" class="category-label">
+                    <span class="category-icon">🍸</span>
+                    <span class="category-name">Bar</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-bar" name="category" value="bar" class="category-checkbox">
-        <label for="cat-bar" class="category-label">
-          <span class="category-icon">🍸</span>
-          <span class="category-name">Bar</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-meyhane" name="category" value="meyhane" class="category-checkbox">
+                  <label for="cat-meyhane" class="category-label">
+                    <span class="category-icon">🥂</span>
+                    <span class="category-name">Meyhane</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-meyhane" name="category" value="meyhane" class="category-checkbox">
-        <label for="cat-meyhane" class="category-label">
-          <span class="category-icon">🥂</span>
-          <span class="category-name">Meyhane</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-canli-muzik" name="category" value="canli-muzik" class="category-checkbox">
+                  <label for="cat-canli-muzik" class="category-label">
+                    <span class="category-icon">🎤</span>
+                    <span class="category-name">Canlı Müzik</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-canli-muzik" name="category" value="canli-muzik" class="category-checkbox">
-        <label for="cat-canli-muzik" class="category-label">
-          <span class="category-icon">🎤</span>
-          <span class="category-name">Canlı Müzik</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-otel" name="category" value="otel" class="category-checkbox">
+                  <label for="cat-otel" class="category-label">
+                    <span class="category-icon">🏨</span>
+                    <span class="category-name">Otel</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-otel" name="category" value="otel" class="category-checkbox">
-        <label for="cat-otel" class="category-label">
-          <span class="category-icon">🏨</span>
-          <span class="category-name">Otel</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-kahvalti" name="category" value="kahvalti" class="category-checkbox">
+                  <label for="cat-kahvalti" class="category-label">
+                    <span class="category-icon">🥐</span>
+                    <span class="category-name">Kahvaltı</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-kahvalti" name="category" value="kahvalti" class="category-checkbox">
-        <label for="cat-kahvalti" class="category-label">
-          <span class="category-icon">🥐</span>
-          <span class="category-name">Kahvaltı</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-muzik" name="category" value="muzik" class="category-checkbox">
+                  <label for="cat-muzik" class="category-label">
+                    <span class="category-icon">🎵</span>
+                    <span class="category-name">Müzik</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-muzik" name="category" value="muzik" class="category-checkbox">
-        <label for="cat-muzik" class="category-label">
-          <span class="category-icon">🎵</span>
-          <span class="category-name">Müzik</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-kafe" name="category" value="kafe" class="category-checkbox">
+                  <label for="cat-kafe" class="category-label">
+                    <span class="category-icon">☕</span>
+                    <span class="category-name">Kafe</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-kafe" name="category" value="kafe" class="category-checkbox">
-        <label for="cat-kafe" class="category-label">
-          <span class="category-icon">☕</span>
-          <span class="category-name">Kafe</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-plaj" name="category" value="plaj" class="category-checkbox">
+                  <label for="cat-plaj" class="category-label">
+                    <span class="category-icon">🏖️</span>
+                    <span class="category-name">Plaj</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-plaj" name="category" value="plaj" class="category-checkbox">
-        <label for="cat-plaj" class="category-label">
-          <span class="category-icon">🏖️</span>
-          <span class="category-name">Plaj</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-kamp" name="category" value="kamp" class="category-checkbox">
+                  <label for="cat-kamp" class="category-label">
+                    <span class="category-icon">🏕️</span>
+                    <span class="category-name">Kamp</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-kamp" name="category" value="kamp" class="category-checkbox">
-        <label for="cat-kamp" class="category-label">
-          <span class="category-icon">🏕️</span>
-          <span class="category-name">Kamp</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-aktivite" name="category" value="aktivite" class="category-checkbox">
+                  <label for="cat-aktivite" class="category-label">
+                    <span class="category-icon">🧗</span>
+                    <span class="category-name">Aktivite</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-aktivite" name="category" value="aktivite" class="category-checkbox">
-        <label for="cat-aktivite" class="category-label">
-          <span class="category-icon">🧗</span>
-          <span class="category-name">Aktivite</span>
-        </label>
-      </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-dalis" name="category" value="dalis" class="category-checkbox">
+                  <label for="cat-dalis" class="category-label">
+                    <span class="category-icon">🤿</span>
+                    <span class="category-name">Dalış</span>
+                  </label>
+                </div>
 
-      <div class="category-option">
-        <input type="checkbox" id="cat-dalis" name="category" value="dalis" class="category-checkbox">
-        <label for="cat-dalis" class="category-label">
-          <span class="category-icon">🤿</span>
-          <span class="category-name">Dalış</span>
-        </label>
-      </div>
-
-      <div class="category-option">
-        <input type="checkbox" id="cat-alisveris" name="category" value="alisveris" class="category-checkbox">
-        <label for="cat-alisveris" class="category-label">
-          <span class="category-icon">🛍️</span>
-          <span class="category-name">Alışveriş</span>
-        </label>
-      </div>
-    </div>
-  </div>
-</div>
-
+                <div class="category-option">
+                  <input type="checkbox" id="cat-alisveris" name="category" value="alisveris" class="category-checkbox">
+                  <label for="cat-alisveris" class="category-label">
+                    <span class="category-icon">🛍️</span>
+                    <span class="category-name">Alışveriş</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- Fotoğraflar -->
-      <div class="form-section">
-  <div class="section-card" section-card--blue">
-<h3 class="section-title">
-          <span class="section-icon">📸</span>
-          Fotoğraflar (Opsiyonel)
-        </h3>
-
-        <div class="form-group">
-          <label class="form-label">Fotoğraf Seç</label>
-          <input type="file" id="photoInput" class="form-input" accept="image/*" multiple>
-          <p class="form-hint">İsterseniz birden fazla fotoğraf seçebilirsiniz. Sürükle-bırak yok.</p>
-        </div>
-  </div>
-</div>
-
-
-      <!-- Ek Bilgiler -->
-
           <div class="form-section">
-  <div class="section-card section-card--red">
-<h3 class="section-title">
-              <span class="section-icon">ℹ️</span>
-              Ek Bilgiler
-            </h3>
+            <div class="section-card section-card--orange">
+              <h3 class="section-title">
+                <span class="section-icon">📸</span>
+                Fotoğraflar (Opsiyonel)
+              </h3>
 
-            <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Ortalama Fiyat</label>
-                <input type="text" class="form-input" name="price" placeholder="Örn: ₺₺ veya 200-500₺">
+                <label class="form-label">Fotoğraf Seç</label>
+                <input type="file" id="photoInput" class="form-input" accept="image/*" multiple>
+                <p class="form-hint">İsterseniz birden fazla fotoğraf seçebilirsiniz. Sürükle-bırak yok.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ek Bilgiler -->
+          <div class="form-section">
+            <div class="section-card section-card--green">
+              <h3 class="section-title">
+                <span class="section-icon">ℹ️</span>
+                Ek Bilgiler
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Ortalama Fiyat</label>
+                  <input type="text" class="form-input" name="price" placeholder="Örn: ₺₺ veya 200-500₺">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Ortalama Süre</label>
+                  <input type="text" class="form-input" name="duration" placeholder="Örn: 2-3 saat">
+                </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label">Ortalama Süre</label>
-                <input type="text" class="form-input" name="duration" placeholder="Örn: 2-3 saat">
+                <label class="form-label">Erişim Bilgisi</label>
+                <input type="text" class="form-input" name="access" placeholder="Örn: Araçla ulaşılabilir, Tekne ile gidilir">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Google Maps Arama Terimi</label>
+                <input type="text" class="form-input" name="googleMapsQuery" placeholder="Örn: Kaputaş Plajı Kaş">
+                <p class="form-hint">Mekanınızın Google Maps'te nasıl aranacağını yazın</p>
               </div>
             </div>
-
-            <div class="form-group">
-              <label class="form-label">Erişim Bilgisi</label>
-              <input type="text" class="form-input" name="access" placeholder="Örn: Araçla ulaşılabilir, Tekne ile gidilir">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Google Maps Arama Terimi</label>
-              <input type="text" class="form-input" name="googleMapsQuery" placeholder="Örn: Kaputaş Plajı Kaş">
-              <p class="form-hint">Mekanınızın Google Maps'te nasıl aranacağını yazın</p>
-            </div>
-  </div>
-</div>
-
+          </div>
 
           <!-- İletişim Bilgileri -->
           <div class="form-section">
-  <div class="section-card">
-<h3 class="section-title">
-              <span class="section-icon">📞</span>
-              İletişim Bilgileri
-            </h3>
+            <div class="section-card section-card--indigo">
+              <h3 class="section-title">
+                <span class="section-icon">📞</span>
+                İletişim Bilgileri
+              </h3>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label">Telefon<span class="required">*</span></label>
-                <input type="tel" class="form-input" name="phone"  placeholder="0532 123 45 67" required>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Telefon<span class="required">*</span></label>
+                  <input type="tel" class="form-input" name="phone" placeholder="0532 123 45 67" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Instagram</label>
+                  <input type="text" class="form-input" name="instagram" placeholder="@kullaniciadi">
+                </div>
               </div>
 
-              <div class="form-group">
-                <label class="form-label">Instagram</label>
-                <input type="text" class="form-input" name="instagram" placeholder="@kullaniciadi">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Website</label>
+                  <input type="url" class="form-input" name="website" placeholder="https://ornek.com">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Rezervasyon Linki</label>
+                  <input type="url" class="form-input" name="booking" placeholder="https://booking.com/...">
+                </div>
               </div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label">Website</label>
-                <input type="url" class="form-input" name="website" placeholder="https://ornek.com">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Rezervasyon Linki</label>
-                <input type="url" class="form-input" name="booking" placeholder="https://booking.com/...">
-              </div>
-            </div>
-  </div>
-</div>
-
+          </div>
 
           <!-- Submit -->
           <div class="submit-section">
@@ -744,7 +722,8 @@
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-        const formData = new FormData(form);
+    const formData = new FormData(form);
+    const categories = form.querySelectorAll('input[name="category"]:checked');
 
     const data = {
       title: formData.get('title'),
@@ -752,7 +731,7 @@
       distance: formData.get('distance'),
       description: formData.get('description'),
       longText: formData.get('longText'),
-      categories: Array.from(categories || []).map(c => c.value),
+      categories: Array.from(categories).map(c => c.value),
       price: formData.get('price'),
       duration: formData.get('duration'),
       access: formData.get('access'),
@@ -766,14 +745,10 @@
 
     console.log('Form data:', data);
 
-    // Show success message
     successMessage.classList.add('show');
     form.reset();
-
-    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Hide success message after 5 seconds
     setTimeout(() => {
       successMessage.classList.remove('show');
     }, 5000);
