@@ -29,17 +29,18 @@
       --radius-lg: 1rem;
       --radius-xl: 1.5rem;
       --radius-full: 9999px;
-      --kas-orange: #FF7A18;
-      --kas-cyan: #06B6D4;
-      --kas-green: #16C172;
-      --kas-lime: #8CD211;
-      --kas-red: #F04444;
-      --kas-purple: #9B5CF6;
-      --kas-indigo: #6366F1;
-      --kas-teal: #0EA5A4;
-      --kas-burgundy: #9C1235;
-      --kas-pink: #EC4899;
-      --kas-dark-gray: #4B5563;
+      --kas-orange: #F78911;
+      --kas-cyan: #07A4C3;
+      --kas-green: #12B893;
+      --kas-lime: #84CC16;
+      --kas-red: #EE4444;
+      --kas-purple: #9A59F6;
+      --kas-indigo: #6367F0;
+      --kas-burgundy: #9F1339;
+      --kas-pink: #EB4999;
+      --kas-dark-gray: #4B5463;
+      --kas-bg: #FAFBFB;
+      --kas-slate: #64748B;
     }
 
     * {
@@ -51,7 +52,7 @@
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
-      background: #ffffff;
+      background: var(--kas-bg);
       color: var(--gray-800);
       min-height: 100vh;
       padding: 0;
@@ -364,70 +365,6 @@
 }
 
 
-/* Required star */
-.required {
-  color: var(--office-red);
-  font-weight: 900;
-  margin-left: 0.35rem;
-}
-
-/* Office logo colors for section cards */
-.section-card--blue {
-  border-color: color-mix(in srgb, var(--office-blue) 28%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--office-blue) 14%, transparent),
-    #ffffff 58%);
-}
-.section-card--red {
-  border-color: color-mix(in srgb, var(--office-red) 28%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--office-red) 14%, transparent),
-    #ffffff 58%);
-}
-.section-card--green {
-  border-color: color-mix(in srgb, var(--office-green) 28%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--office-green) 14%, transparent),
-    #ffffff 58%);
-}
-.section-card--yellow {
-  border-color: color-mix(in srgb, var(--office-yellow) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--office-yellow) 16%, transparent),
-    #ffffff 58%);
-}
-.section-card--purple {
-  border-color: color-mix(in srgb, var(--office-purple) 28%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--office-purple) 14%, transparent),
-    #ffffff 58%);
-}
-
-.section-card--blue .section-title {
-  border-color: color-mix(in srgb, var(--office-blue) 28%, transparent);
-  background: color-mix(in srgb, var(--office-blue) 12%, transparent);
-}
-.section-card--red .section-title {
-  border-color: color-mix(in srgb, var(--office-red) 28%, transparent);
-  background: color-mix(in srgb, var(--office-red) 12%, transparent);
-}
-.section-card--green .section-title {
-  border-color: color-mix(in srgb, var(--office-green) 28%, transparent);
-  background: color-mix(in srgb, var(--office-green) 12%, transparent);
-}
-.section-card--yellow .section-title {
-  border-color: color-mix(in srgb, var(--office-yellow) 34%, transparent);
-  background: color-mix(in srgb, var(--office-yellow) 14%, transparent);
-}
-.section-card--purple .section-title {
-  border-color: color-mix(in srgb, var(--office-purple) 28%, transparent);
-  background: color-mix(in srgb, var(--office-purple) 12%, transparent);
-}
-
-/* Ensure all regular text is readable */
-.section-card, .form-label, .form-hint, .category-name, .category-label, .form-input, .form-textarea {
-  color: var(--gray-900);
-}
 
 /* Required star */
 .required {
@@ -436,79 +373,59 @@
   margin-left: 0.35rem;
 }
 
-/* Kaş Guide palette cards */
+/* Kaş Guide palette cards (EXACT colors from your screenshot) */
 .section-card--orange {
   border-color: color-mix(in srgb, var(--kas-orange) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-orange) 18%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-orange) 18%, transparent), #ffffff 60%);
 }
 .section-card--cyan {
   border-color: color-mix(in srgb, var(--kas-cyan) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-cyan) 18%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-cyan) 18%, transparent), #ffffff 60%);
 }
 .section-card--green {
   border-color: color-mix(in srgb, var(--kas-green) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-green) 18%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-green) 18%, transparent), #ffffff 60%);
+}
+.section-card--lime {
+  border-color: color-mix(in srgb, var(--kas-lime) 32%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-lime) 18%, transparent), #ffffff 60%);
 }
 .section-card--red {
   border-color: color-mix(in srgb, var(--kas-red) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-red) 18%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-red) 18%, transparent), #ffffff 60%);
 }
 .section-card--purple {
   border-color: color-mix(in srgb, var(--kas-purple) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-purple) 18%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-purple) 18%, transparent), #ffffff 60%);
 }
 .section-card--indigo {
   border-color: color-mix(in srgb, var(--kas-indigo) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-indigo) 18%, transparent),
-    #ffffff 60%);
-}
-.section-card--teal {
-  border-color: color-mix(in srgb, var(--kas-teal) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-teal) 18%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-indigo) 18%, transparent), #ffffff 60%);
 }
 .section-card--burgundy {
   border-color: color-mix(in srgb, var(--kas-burgundy) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-burgundy) 18%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-burgundy) 18%, transparent), #ffffff 60%);
 }
 .section-card--pink {
   border-color: color-mix(in srgb, var(--kas-pink) 32%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-pink) 18%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-pink) 18%, transparent), #ffffff 60%);
 }
 .section-card--dark {
   border-color: color-mix(in srgb, var(--kas-dark-gray) 35%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--kas-dark-gray) 16%, transparent),
-    #ffffff 60%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kas-dark-gray) 16%, transparent), #ffffff 60%);
 }
 
 /* Title badges inherit the card color */
-.section-card--orange .section-title { border-color: color-mix(in srgb, var(--kas-orange) 34%, transparent); background: color-mix(in srgb, var(--kas-orange) 12%, transparent); }
-.section-card--cyan .section-title   { border-color: color-mix(in srgb, var(--kas-cyan) 34%, transparent);   background: color-mix(in srgb, var(--kas-cyan) 12%, transparent); }
-.section-card--green .section-title  { border-color: color-mix(in srgb, var(--kas-green) 34%, transparent);  background: color-mix(in srgb, var(--kas-green) 12%, transparent); }
-.section-card--red .section-title    { border-color: color-mix(in srgb, var(--kas-red) 34%, transparent);    background: color-mix(in srgb, var(--kas-red) 12%, transparent); }
-.section-card--purple .section-title { border-color: color-mix(in srgb, var(--kas-purple) 34%, transparent); background: color-mix(in srgb, var(--kas-purple) 12%, transparent); }
-.section-card--indigo .section-title { border-color: color-mix(in srgb, var(--kas-indigo) 34%, transparent); background: color-mix(in srgb, var(--kas-indigo) 12%, transparent); }
-.section-card--teal .section-title   { border-color: color-mix(in srgb, var(--kas-teal) 34%, transparent);   background: color-mix(in srgb, var(--kas-teal) 12%, transparent); }
+.section-card--orange .section-title   { border-color: color-mix(in srgb, var(--kas-orange) 34%, transparent);   background: color-mix(in srgb, var(--kas-orange) 12%, transparent); }
+.section-card--cyan .section-title     { border-color: color-mix(in srgb, var(--kas-cyan) 34%, transparent);     background: color-mix(in srgb, var(--kas-cyan) 12%, transparent); }
+.section-card--green .section-title    { border-color: color-mix(in srgb, var(--kas-green) 34%, transparent);    background: color-mix(in srgb, var(--kas-green) 12%, transparent); }
+.section-card--lime .section-title     { border-color: color-mix(in srgb, var(--kas-lime) 34%, transparent);     background: color-mix(in srgb, var(--kas-lime) 12%, transparent); }
+.section-card--red .section-title      { border-color: color-mix(in srgb, var(--kas-red) 34%, transparent);      background: color-mix(in srgb, var(--kas-red) 12%, transparent); }
+.section-card--purple .section-title   { border-color: color-mix(in srgb, var(--kas-purple) 34%, transparent);   background: color-mix(in srgb, var(--kas-purple) 12%, transparent); }
+.section-card--indigo .section-title   { border-color: color-mix(in srgb, var(--kas-indigo) 34%, transparent);   background: color-mix(in srgb, var(--kas-indigo) 12%, transparent); }
 .section-card--burgundy .section-title { border-color: color-mix(in srgb, var(--kas-burgundy) 34%, transparent); background: color-mix(in srgb, var(--kas-burgundy) 12%, transparent); }
-.section-card--pink .section-title   { border-color: color-mix(in srgb, var(--kas-pink) 34%, transparent);   background: color-mix(in srgb, var(--kas-pink) 12%, transparent); }
-.section-card--dark .section-title   { border-color: color-mix(in srgb, var(--kas-dark-gray) 34%, transparent); background: color-mix(in srgb, var(--kas-dark-gray) 12%, transparent); }
+.section-card--pink .section-title     { border-color: color-mix(in srgb, var(--kas-pink) 34%, transparent);     background: color-mix(in srgb, var(--kas-pink) 12%, transparent); }
+.section-card--dark .section-title     { border-color: color-mix(in srgb, var(--kas-dark-gray) 34%, transparent); background: color-mix(in srgb, var(--kas-dark-gray) 12%, transparent); }
 
 /* Keep everything readable */
 .section-card, .form-label, .form-hint, .category-name, .category-label, .form-input, .form-textarea {
