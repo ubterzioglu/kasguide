@@ -57,12 +57,13 @@ const allPlaces = [
   description: 'Canlı müzik, rock ağırlıklı playlist ve pub havasıyla; Kaş’ta akşamları enerjik geçirmek isteyenlerin sık uğradığı bar.',
   category: ['bar', 'cafe'],
 
-  image: '../assets/1_places/frida-pub/frida-pub-001.jpg',
+  image: '../assets/1_places/frida-pub-001.jpg',
   images: [
-    '../assets/1_places/frida-pub/frida-pub-002.jpg',
-    '../assets/1_places/frida-pub/frida-pub-003.jpg',
-    '../assets/1_places/frida-pub/frida-pub-004.jpg'
+    '../assets/1_places/frida-pub-002.jpg',
+    '../assets/1_places/frida-pub-003.jpg',
+    '../assets/1_places/frida-pub-004.jpg'
   ],
+
   rating: 4.6,
   price: '₺₺',
   selected: false,
@@ -143,12 +144,13 @@ Frida Pub; Kaş’ta rock müzik, canlı performans ve pub atmosferini bir arada
   description: 'Taze kahve, iyi sandviçler ve tatlılarla; günün her saati uğranabilen, rahat ve modern bir kafe.',
   category: ['cafe', 'breakfast', 'food'],
 
-  image: '../assets/1_places/bunbun-kas/bunbun-kas-001.jpg',
+  image: '../assets/1_places/bunbun-kas-001.jpg',
   images: [
-    '../assets/1_places/bunbun-kas/bunbun-kas-002.jpg',
-    '../assets/1_places/bunbun-kas/bunbun-kas-003.jpg',
-    '../assets/1_places/bunbun-kas/bunbun-kas-004.jpg'
+    '../assets/1_places/bunbun-kas-002.jpg',
+    '../assets/1_places/bunbun-kas-003.jpg',
+    '../assets/1_places/bunbun-kas-004.jpg'
   ],
+
   rating: 4.7,
   price: '₺₺',
   selected: false,
@@ -230,12 +232,13 @@ Bunbun Kaş; iyi kahve, pratik kahvaltı ve rahat kafe atmosferi arayanlar için
   title: 'Manos Greek Tavern',
   description: 'Samimi bir aile işletmesi havasında, Yunan mutfağının taze ve sade lezzetlerini Kaş’ta sunan tavern; özellikle deniz mahsulleri ve mezeleriyle keyifli akşamlar için tercih ediliyor.',
   category: ['food','meyhane'],
-  image: '../assets/1_places/manos-greek-tavern/manos-greek-tavern-001.jpg',
+  image: '../assets/1_places/manos-greek-tavern-001.jpg',
   images: [
-    '../assets/1_places/manos-greek-tavern/manos-greek-tavern-002.jpg',
-    '../assets/1_places/manos-greek-tavern/manos-greek-tavern-003.jpg',
-    '../assets/1_places/manos-greek-tavern/manos-greek-tavern-004.jpg'
+    '../assets/1_places/manos-greek-tavern-002.jpg',
+    '../assets/1_places/manos-greek-tavern-003.jpg',
+    '../assets/1_places/manos-greek-tavern-004.jpg'
   ],
+
   rating: 4.6,
   price: '₺₺₺',
   selected: false,
@@ -314,12 +317,14 @@ Manos Greek Tavern, Kaş’ta Yunan mutfağının sade ve taze lezzetlerini, sam
   description: 'Modern Akdeniz esintileriyle İtalyan mutfağını buluşturan rahat ama özenli bir restoran; özellikle taze malzemeler, ev yapımı lezzetler ve iyi şarap eşleşmeleri arayanlar için.',
   category: ['food'],
 
-  image: '../assets/1_places/ci-neo-cucina-by-mezetaryen/ci-neo-cucina-by-mezetaryen-001.jpg',
+  image: '../assets/1_places/ci-neo-cucina-by-mezetaryen-001.jpg',
   images: [
-    '../assets/1_places/ci-neo-cucina-by-mezetaryen/ci-neo-cucina-by-mezetaryen-002.jpg',
-    '../assets/1_places/ci-neo-cucina-by-mezetaryen/ci-neo-cucina-by-mezetaryen-003.jpg',
-    '../assets/1_places/ci-neo-cucina-by-mezetaryen/ci-neo-cucina-by-mezetaryen-004.jpg'
+    '../assets/1_places/ci-neo-cucina-by-mezetaryen-002.jpg',
+    '../assets/1_places/ci-neo-cucina-by-mezetaryen-003.jpg',
+    '../assets/1_places/ci-neo-cucina-by-mezetaryen-004.jpg'
+    
   ],
+
   rating: 4.7,
   price: '₺₺₺',
   selected: false,
@@ -400,13 +405,15 @@ Kısa özet:
   category: ['bar', 'food'],
 
   // Kapak görseli: telifsiz placeholder (içerik fotoğraflarını sonradan sen ekleyebilirsin)
-  image: '../assets/1_places/dragoman-bahce/dragoman-bahce-001.jpg',
+  image: '../assets/1_places/dragoman-bahce-001.jpg',
+
   // Galeri: telifsiz placeholder (istersen gerçek mekan foto linklerini sonra ekleriz)
   images: [
-    '../assets/1_places/dragoman-bahce/dragoman-bahce-002.jpg',
-    '../assets/1_places/dragoman-bahce/dragoman-bahce-003.jpg',
-    '../assets/1_places/dragoman-bahce/dragoman-bahce-004.jpg'
+    '../assets/1_places/dragoman-bahce-002.jpg',
+    '../assets/1_places/dragoman-bahce-003.jpg',
+    '../assets/1_places/dragoman-bahce-004.jpg'   
   ],
+
   // Not: puan/fiyat bilgisi platforma göre değişebilir; burada “rehber” formatında ortalama değer.
   rating: 4.8,
   price: '₺₺',
@@ -491,13 +498,15 @@ Dragoman Bahçe; Kaş merkezde, yeşillikler içinde, kokteyl-bira-atıştırmal
   category: ['meyhane', 'food'],
 
   // Kapak görseli: telifsiz placeholder (içerik fotoğraflarını sonradan sen ekleyebilirsin)
-  image:  '../assets/1_places/nereid-meyhanesi/nereid-meyhanesi-001.jpg',
+  image:  '../assets/1_places/nereid-meyhanesi-001.jpg',
+
   // Galeri: telifsiz placeholder (istersen gerçek mekan foto linklerini sonra ekleriz)
   images: [
-    '../assets/1_places/nereid-meyhanesi/nereid-meyhanesi-002.jpg',
-    '../assets/1_places/nereid-meyhanesi/nereid-meyhanesi-003.jpg',
-    '../assets/1_places/nereid-meyhanesi/nereid-meyhanesi-004.jpg'
+     '../assets/1_places/nereid-meyhanesi-002.jpg',
+      '../assets/1_places/nereid-meyhanesi-003.jpg',
+      '../assets/1_places/nereid-meyhanesi-004.jpg'
   ],
+
   // Not: puan/fiyat bilgisi platforma göre değişebilir; burada “rehber” formatında ortalama değer.
   rating: 4.5,
   price: '₺₺₺',
@@ -583,12 +592,13 @@ Nereid Meyhanesi, Kaş’ta klasik meyhane hissini modern bir “sahne” dokunu
   description: 'Kaş’ta dalış başta olmak üzere doğa ve deniz odaklı aktiviteler sunan, güven veren ve tecrübeli bir outdoor & dalış merkezi.',
   category: ['diving', 'activities'],
 
-  image: '../assets/1_places/dragoman-diving-and-outdoor/dragoman-diving-and-outdoor-001.jpg',
+  image: '../assets/1_places/dragoman-diving-and-outdoor-001.jpg',
   images: [
-    '../assets/1_places/dragoman-diving-and-outdoor/dragoman-diving-and-outdoor-002.jpg',
-    '../assets/1_places/dragoman-diving-and-outdoor/dragoman-diving-and-outdoor-003.jpg',
-    '../assets/1_places/dragoman-diving-and-outdoor/dragoman-diving-and-outdoor-004.jpg'
+    '../assets/1_places/dragoman-diving-and-outdoor-002.jpg',
+    '../assets/1_places/dragoman-diving-and-outdoor-003.jpg',
+    '../assets/1_places/dragoman-diving-and-outdoor-004.jpg'
   ],
+
   rating: 4.8,
   price: '₺₺₺',
   selected: false,
@@ -671,12 +681,13 @@ Dragoman Diving and Outdoor, Kaş’ta dalışı güvenli, sakin ve keyifli şek
   description: 'Shot odaklı konsepti, yüksek enerjisi ve eğlenceli atmosferiyle; Kaş’ta geceyi hızlandırmak isteyenlerin uğradığı küçük ama hareketli bir bar.',
   category: ['bar'],
 
-  image: '../assets/1_places/the-shotlar-terminali/the-shotlar-terminali-001.jpg',
+  image: '../assets/1_places/the-shotlar-terminali-001.jpg',
   images: [
-    '../assets/1_places/the-shotlar-terminali/the-shotlar-terminali-002.jpg',
-    '../assets/1_places/the-shotlar-terminali/the-shotlar-terminali-003.jpg',
-    '../assets/1_places/the-shotlar-terminali/the-shotlar-terminali-004.jpg'
+    '../assets/1_places/the-shotlar-terminali-002.jpg',
+    '../assets/1_places/the-shotlar-terminali-003.jpg',
+    '../assets/1_places/the-shotlar-terminali-004.jpg',
   ],
+
   rating: 4.5,
   price: '₺₺',
   selected: false,
@@ -757,12 +768,13 @@ The Shotlar Terminali; Kaş gece hayatında kısa sürede tempo yakalamak isteye
   description: "Kaş Marina içinde, tekne manzarası eşliğinde gün batımına oturmalık; kahve–yemek–içki hattında çalışan bir pub/bar.",
   category: ["bar", "food", "breakfast", "cafe"],
 
-  image: '../assets/1_places/oxygen-pub/oxygen-pub-001.jpg',
+  image: "../assets/1_places/oxygen-pub-001.jpg",
   images: [
-    '../assets/1_places/oxygen-pub/oxygen-pub-002.jpg',
-    '../assets/1_places/oxygen-pub/oxygen-pub-003.jpg',
-    '../assets/1_places/oxygen-pub/oxygen-pub-004.jpg'
+    "../assets/1_places/oxygen-pub-002.jpg",
+    "../assets/1_places/oxygen-pub-003.jpg",
+    "../assets/1_places/oxygen-pub-004.jpg"
   ],
+
   rating: 4.5,
   price: "₺₺",
   selected: false,
@@ -846,12 +858,13 @@ Oxygen Pub, Kaş’ta “marina manzarasında oturalım” fikrini en net veren 
   description: "Kaş’ın Çukurbağ Yarımadası’nda, ocakbaşı ve geleneksel kebap odaklı lezzetler sunan uzun yıllardır yerel ve turist tarafından bilinen restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/zaika-ocakbasi/zaika-ocakbasi-001.jpg',
+  image: "../assets/1_places/zaika-ocakbasi-001.jpg",
   images: [
-    '../assets/1_places/zaika-ocakbasi/zaika-ocakbasi-002.jpg',
-    '../assets/1_places/zaika-ocakbasi/zaika-ocakbasi-003.jpg',
-    '../assets/1_places/zaika-ocakbasi/zaika-ocakbasi-004.jpg'
+    "../assets/1_places/zaika-ocakbasi-002.jpg",
+    "../assets/1_places/zaika-ocakbasi-003.jpg",
+    "../assets/1_places/zaika-ocakbasi-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺₺",
   selected: false,
@@ -929,12 +942,13 @@ Zaika Ocakbaşı, Çukurbağ Yarımadası’nda **geleneksel ocakbaşı lezzetle
   description: "Kaş merkezde vegan/vejetaryen odaklı, Akdeniz-füzyon tarzı modern restoran; deniz manzarasına yakın konumuyla akşamüstü ve akşam yemekleri için popüler.",
   category: ["food"],
 
-  image: '../assets/1_places/oburus-momus/oburus-momus-001.jpg',
+  image: "../assets/1_places/oburus-momus-001.jpg",
   images: [
-    '../assets/1_places/oburus-momus/oburus-momus-002.jpg',
-    '../assets/1_places/oburus-momus/oburus-momus-003.jpg',
-    '../assets/1_places/oburus-momus/oburus-momus-004.jpg'
+    "../assets/1_places/oburus-momus-002.jpg",
+    "../assets/1_places/oburus-momus-003.jpg",
+    "../assets/1_places/oburus-momus-004.jpg"
   ],
+
   rating: 4.7,
   price: "₺₺₺",
   selected: false,
@@ -1013,12 +1027,13 @@ Oburus Momus, Kaş’ta klasik lezzetlerin dışında, **modern, vegan/vejetarye
   description: "Kaş merkezde, eski bir evin bahçesinde modern Fransız-Akdeniz mutfağı ve şarap/kokteyl eşliğinde akşam yemekleri için öne çıkan restoran.",
   category: ["food", "bar"],
 
-  image: '../assets/1_places/l-apero/l-apero-001.jpg',
+  image: "../assets/1_places/l-apero-001.jpg",
   images: [
-    '../assets/1_places/l-apero/l-apero-002.jpg',
-    '../assets/1_places/l-apero/l-apero-003.jpg',
-    '../assets/1_places/l-apero/l-apero-004.jpg'
+    "../assets/1_places/l-apero-002.jpg",
+    "../assets/1_places/l-apero-003.jpg",
+    "../assets/1_places/l-apero-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺₺",
   selected: false,
@@ -1098,12 +1113,13 @@ L’Apéro, Kaş merkezde **Fransız ve Akdeniz lezzetlerini birleştiren**, bah
   description: "Kaş merkezde, klasik meyhane düzeninde, meze ve rakı eşliğinde uzun sofralara odaklanan sakin bir akşam yemeği mekânı.",
   category: ["meyhane", "food"],
 
-  image: '../assets/1_places/ruhi-bey-meyhanesi/ruhi-bey-meyhanesi-001.jpg',
+  image: "../assets/1_places/ruhi-bey-meyhanesi-001.jpg",
   images: [
-    '../assets/1_places/ruhi-bey-meyhanesi/ruhi-bey-meyhanesi-002.jpg',
-    '../assets/1_places/ruhi-bey-meyhanesi/ruhi-bey-meyhanesi-003.jpg',
-    '../assets/1_places/ruhi-bey-meyhanesi/ruhi-bey-meyhanesi-004.jpg'
+    "../assets/1_places/ruhi-bey-meyhanesi-002.jpg",
+    "../assets/1_places/ruhi-bey-meyhanesi-003.jpg",
+    "../assets/1_places/ruhi-bey-meyhanesi-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺₺",
   selected: false,
@@ -1175,12 +1191,13 @@ Ruhi Bey Meyhanesi, Kaş’ta klasik meyhane deneyimini sade ve sohbet odaklı y
   description: "Kaş merkezde, modern meyhane çizgisinde, meze ve deniz ürünü ağırlıklı menüsüyle akşamları tercih edilen bir rakı-balık mekânı.",
   category: ["meyhane", "food"],
 
-  image: '../assets/1_places/voyn-meyhane/voyn-meyhane-001.jpg',
+  image: "../assets/1_places/voyn-meyhane-001.jpg",
   images: [
-    '../assets/1_places/voyn-meyhane/voyn-meyhane-002.jpg',
-    '../assets/1_places/voyn-meyhane/voyn-meyhane-003.jpg',
-    '../assets/1_places/voyn-meyhane/voyn-meyhane-004.jpg'
+    "../assets/1_places/voyn-meyhane-002.jpg",
+    "../assets/1_places/voyn-meyhane-003.jpg",
+    "../assets/1_places/voyn-meyhane-004.jpg"
   ],
+
   rating: 4.5,
   price: "₺₺₺",
   selected: false,
@@ -1252,12 +1269,13 @@ Voyn Meyhane, Kaş merkezde modern meyhane tarzında, meze ve deniz ürünü ağ
   description: "Kaş’ta ev sıcaklığı hissi veren, küçük ölçekli ve samimi yapısıyla öne çıkan, meze ve rakı odaklı bir meyhane.",
   category: ["meyhane", "food"],
 
-  image: '../assets/1_places/demeti-meyhane/demeti-meyhane-001.jpg',
+  image: "../assets/1_places/demeti-meyhane-001.jpg",
   images: [
-    '../assets/1_places/demeti-meyhane/demeti-meyhane-002.jpg',
-    '../assets/1_places/demeti-meyhane/demeti-meyhane-003.jpg',
-    '../assets/1_places/demeti-meyhane/demeti-meyhane-004.jpg'
+    "../assets/1_places/demeti-meyhane-002.jpg",
+    "../assets/1_places/demeti-meyhane-003.jpg",
+    "../assets/1_places/demeti-meyhane-004.jpg"
   ],
+
   rating: 4.6,
   price: "₺₺₺",
   selected: false,
@@ -1329,12 +1347,13 @@ Demeti Meyhane, Kaş’ta sakin, samimi ve ev sıcaklığında bir meyhane deney
   description: "Kaş merkezde, meze odaklı mutfağı ve imza kokteylleriyle meyhane ile bar çizgisini birleştiren akşam mekânı.",
   category: ["meyhane", "bar", "food"],
 
-  image: '../assets/1_places/zuhtu-meze-cocktails/zuhtu-meze-cocktails-001.jpg',
+  image: "../assets/1_places/zuhtu-meze-cocktails-001.jpg",
   images: [
-    '../assets/1_places/zuhtu-meze-cocktails/zuhtu-meze-cocktails-002.jpg',
-    '../assets/1_places/zuhtu-meze-cocktails/zuhtu-meze-cocktails-003.jpg',
-    '../assets/1_places/zuhtu-meze-cocktails/zuhtu-meze-cocktails-004.jpg'
+    "../assets/1_places/zuhtu-meze-cocktails-002.jpg",
+    "../assets/1_places/zuhtu-meze-cocktails-003.jpg",
+    "../assets/1_places/zuhtu-meze-cocktails-004.jpg"
   ],
+
   rating: 4.5,
   price: "₺₺₺",
   selected: false,
@@ -1406,12 +1425,13 @@ Zühtü, Kaş’ta meyhane ile kokteyl bar arasında dengeli bir yerde duran, mo
   description: "Kaş merkezde, klasik meyhane kültürünü sade ve samimi bir ortamda sunan, meze ve rakı odaklı akşam mekânı.",
   category: ["meyhane", "food"],
 
-  image: '../assets/1_places/beyhude-meyhane/beyhude-meyhane-001.jpg',
+  image: "../assets/1_places/beyhude-meyhane-001.jpg",
   images: [
-    '../assets/1_places/beyhude-meyhane/beyhude-meyhane-002.jpg',
-    '../assets/1_places/beyhude-meyhane/beyhude-meyhane-003.jpg',
-    '../assets/1_places/beyhude-meyhane/beyhude-meyhane-004.jpg'
+    "../assets/1_places/beyhude-meyhane-002.jpg",
+    "../assets/1_places/beyhude-meyhane-003.jpg",
+    "../assets/1_places/beyhude-meyhane-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺₺",
   selected: false,
@@ -1483,12 +1503,13 @@ Beyhude Meyhane, Kaş’ta “abartısız ama düzgün” bir meyhane akşamı a
   description: "Kaş merkezde, ev mutfağı hissi veren mezeleri ve sakin ortamıyla öne çıkan, küçük ölçekli bir meyhane.",
   category: ["meyhane", "food"],
 
-  image: '../assets/1_places/uzum-kizi-meyhanesi/uzum-kizi-meyhanesi-001.jpg',
+  image: "../assets/1_places/uzum-kizi-meyhanesi-001.jpg",
   images: [
-    '../assets/1_places/uzum-kizi-meyhanesi/uzum-kizi-meyhanesi-002.jpg',
-    '../assets/1_places/uzum-kizi-meyhanesi/uzum-kizi-meyhanesi-003.jpg',
-    '../assets/1_places/uzum-kizi-meyhanesi/uzum-kizi-meyhanesi-004.jpg'
+    "../assets/1_places/uzum-kizi-meyhanesi-002.jpg",
+    "../assets/1_places/uzum-kizi-meyhanesi-003.jpg",
+    "../assets/1_places/uzum-kizi-meyhanesi-004.jpg"
   ],
+
   rating: 4.6,
   price: "₺₺₺",
   selected: false,
@@ -1560,12 +1581,13 @@ Kısa özet:
   description: "Kaş merkezde, klasik ocakbaşı düzeninde kebap ve ızgara etlere odaklanan, akşam yemeği için tercih edilen restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/mupptela-ocakbasi/mupptela-ocakbasi-001.jpg',
+  image: "../assets/1_places/mupptela-ocakbasi-001.jpg",
   images: [
-    '../assets/1_places/mupptela-ocakbasi/mupptela-ocakbasi-002.jpg',
-    '../assets/1_places/mupptela-ocakbasi/mupptela-ocakbasi-003.jpg',
-    '../assets/1_places/mupptela-ocakbasi/mupptela-ocakbasi-004.jpg'
+    "../assets/1_places/mupptela-ocakbasi-002.jpg",
+    "../assets/1_places/mupptela-ocakbasi-003.jpg",
+    "../assets/1_places/mupptela-ocakbasi-004.jpg"
   ],
+
   rating: 4.3,
   price: "₺₺₺",
   selected: false,
@@ -1637,12 +1659,13 @@ Müpptela Ocakbaşı, Kaş’ta klasik ocakbaşı çizgisinde, et odaklı ve ak�
   description: "Kaş merkezde, ev yemeği ve Türk mutfağı ağırlıklı menüsüyle öğle ve akşam yemeklerinde tercih edilen sade bir restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/pisekar-restoran/pisekar-restoran-001.jpg',
+  image: "../assets/1_places/pisekar-restoran-001.jpg",
   images: [
-    '../assets/1_places/pisekar-restoran/pisekar-restoran-002.jpg',
-    '../assets/1_places/pisekar-restoran/pisekar-restoran-003.jpg',
-    '../assets/1_places/pisekar-restoran/pisekar-restoran-004.jpg'
+    "../assets/1_places/pisekar-restoran-002.jpg",
+    "../assets/1_places/pisekar-restoran-003.jpg",
+    "../assets/1_places/pisekar-restoran-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺",
   selected: false,
@@ -1715,12 +1738,13 @@ Pişekar Restoran, Kaş’ta ev yemeği tadında, sade ve güvenilir bir öğün
   description: "Kaş merkezde, gün boyu açık yapısıyla kahvaltıdan akşam yemeğine kadar geniş bir menü sunan merkezi bir kafe-restoran.",
   category: ["food", "cafe", "breakfast"],
 
-  image: '../assets/1_places/meydan-restaurant-cafe/meydan-restaurant-cafe-001.jpg',
+  image: "../assets/1_places/meydan-restaurant-cafe-001.jpg",
   images: [
-    '../assets/1_places/meydan-restaurant-cafe/meydan-restaurant-cafe-002.jpg',
-    '../assets/1_places/meydan-restaurant-cafe/meydan-restaurant-cafe-003.jpg',
-    '../assets/1_places/meydan-restaurant-cafe/meydan-restaurant-cafe-004.jpg'
+    "../assets/1_places/meydan-restaurant-cafe-002.jpg",
+    "../assets/1_places/meydan-restaurant-cafe-003.jpg",
+    "../assets/1_places/meydan-restaurant-cafe-004.jpg"
   ],
+
   rating: 4.2,
   price: "₺₺",
   selected: false,
@@ -1792,12 +1816,13 @@ Meydan Restaurant & Cafe, Kaş’ta gün boyu çalışan, merkezi ve çok amaçl
   description: "Kaş merkezde, deniz ürünü ve Akdeniz mutfağı ağırlıklı menüsüyle akşam yemekleri için tercih edilen restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/fici-restaurant/fici-restaurant-001.jpg',
+  image: "../assets/1_places/fici-restaurant-001.jpg",
   images: [
-    '../assets/1_places/fici-restaurant/fici-restaurant-002.jpg',
-    '../assets/1_places/fici-restaurant/fici-restaurant-003.jpg',
-    '../assets/1_places/fici-restaurant/fici-restaurant-004.jpg'
+    "../assets/1_places/fici-restaurant-002.jpg",
+    "../assets/1_places/fici-restaurant-003.jpg",
+    "../assets/1_places/fici-restaurant-004.jpg"
   ],
+
   rating: 4.3,
   price: "₺₺₺",
   selected: false,
@@ -1869,12 +1894,13 @@ Fıçı Restaurant, Kaş’ta deniz ürünü ağırlıklı, sade ve akşam yeme�
   description: "Kaş merkezde, uluslararası mutfak seçenekleri ve rahat ortamıyla gün boyu hizmet veren bir restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/smileys-restaurant/smileys-restaurant-001.jpg',
+  image: "../assets/1_places/smileys-restaurant-001.jpg",
   images: [
-    '../assets/1_places/smileys-restaurant/smileys-restaurant-002.jpg',
-    '../assets/1_places/smileys-restaurant/smileys-restaurant-003.jpg',
-    '../assets/1_places/smileys-restaurant/smileys-restaurant-004.jpg'
+    "../assets/1_places/smileys-restaurant-002.jpg",
+    "../assets/1_places/smileys-restaurant-003.jpg",
+    "../assets/1_places/smileys-restaurant-004.jpg"
   ],
+
   rating: 4.2,
   price: "₺₺",
   selected: false,
@@ -1946,12 +1972,13 @@ Smileys Restaurant, Kaş’ta geniş menülü, rahat ve gün boyu çalışan bir
   description: "Kaş merkezde, bahçeli ortamda kahvaltıdan akşam yemeğine uzanan Türk mutfağı menüsüyle gün boyu çalışan bir restoran.",
   category: ["food", "breakfast", "cafe"],
 
-  image: '../assets/1_places/bi-lokma/bi-lokma-001.jpg',
+  image: "../assets/1_places/bi-lokma-001.jpg",
   images: [
-    '../assets/1_places/bi-lokma/bi-lokma-002.jpg',
-    '../assets/1_places/bi-lokma/bi-lokma-003.jpg',
-    '../assets/1_places/bi-lokma/bi-lokma-004.jpg'
+    "../assets/1_places/bi-lokma-002.jpg",
+    "../assets/1_places/bi-lokma-003.jpg",
+    "../assets/1_places/bi-lokma-004.jpg"
   ],
+
   rating: 4.3,
   price: "₺₺₺",
   selected: false,
@@ -2025,12 +2052,13 @@ Menü geniş: kahvaltı, mezeler, ana yemekler, tatlılar ve içecekler. Site me
   description: "Uzun Çarşı civarında, ev yemekleri ve deniz ürünü seçenekleriyle bilinen, akşamları yoğunlaşan popüler bir Kaş restoranı.",
   category: ["food"],
 
-  image: '../assets/1_places/sempati-turkish-cuisine/sempati-turkish-cuisine-001.jpg',
+  image: "../assets/1_places/sempati-turkish-cuisine-001.jpg",
   images: [
-    '../assets/1_places/sempati-turkish-cuisine/sempati-turkish-cuisine-002.jpg',
-    '../assets/1_places/sempati-turkish-cuisine/sempati-turkish-cuisine-003.jpg',
-    '../assets/1_places/sempati-turkish-cuisine/sempati-turkish-cuisine-004.jpg'
+    "../assets/1_places/sempati-turkish-cuisine-002.jpg",
+    "../assets/1_places/sempati-turkish-cuisine-003.jpg",
+    "../assets/1_places/sempati-turkish-cuisine-004.jpg"
   ],
+
   rating: 4.7,
   price: "₺₺₺",
   selected: false,
@@ -2103,12 +2131,13 @@ Burası “akşam yemeği için gidelim, masada biraz oturalım” temposunda. K
   description: "Kaş merkezde, yüksek konumu sayesinde geniş manzaraya sahip, Akdeniz ve Türk mutfağı ağırlıklı akşam yemeği restoranı.",
   category: ["food"],
 
-  image: '../assets/1_places/panorama-restaurant/panorama-restaurant-001.jpg',
+  image: "../assets/1_places/panorama-restaurant-001.jpg",
   images: [
-    '../assets/1_places/panorama-restaurant/panorama-restaurant-002.jpg',
-    '../assets/1_places/panorama-restaurant/panorama-restaurant-003.jpg',
-    '../assets/1_places/panorama-restaurant/panorama-restaurant-004.jpg'
+    "../assets/1_places/panorama-restaurant-002.jpg",
+    "../assets/1_places/panorama-restaurant-003.jpg",
+    "../assets/1_places/panorama-restaurant-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺₺",
   selected: false,
@@ -2180,12 +2209,13 @@ Panorama Restaurant, Kaş’ta manzara eşliğinde sakin ve uzun bir akşam yeme
   description: "Kaş merkezde, akşam yemekleri sonrası bar havasına dönen, restoran ve bar konseptini bir arada sunan mekân.",
   category: ["food", "bar"],
 
-  image: '../assets/1_places/luna-restaurant-bar/luna-restaurant-bar-001.jpg',
+  image: "../assets/1_places/luna-restaurant-bar-001.jpg",
   images: [
-    '../assets/1_places/luna-restaurant-bar/luna-restaurant-bar-002.jpg',
-    '../assets/1_places/luna-restaurant-bar/luna-restaurant-bar-003.jpg',
-    '../assets/1_places/luna-restaurant-bar/luna-restaurant-bar-004.jpg'
+    "../assets/1_places/luna-restaurant-bar-002.jpg",
+    "../assets/1_places/luna-restaurant-bar-003.jpg",
+    "../assets/1_places/luna-restaurant-bar-004.jpg"
   ],
+
   rating: 4.3,
   price: "₺₺₺",
   selected: false,
@@ -2257,12 +2287,13 @@ Luna, Kaş’ta restoran ve bar arasında geçiş yapan, akşamı tek noktada de
   description: "Kaş merkezde, küçük ölçekli, kahve ve hafif yemeklere odaklanan, samimi bir köşe kafe-restoran.",
   category: ["cafe", "food"],
 
-  image: '../assets/1_places/lilys-corner/lilys-corner-001.jpg',
+  image: "../assets/1_places/lilys-corner-001.jpg",
   images: [
-    '../assets/1_places/lilys-corner/lilys-corner-002.jpg',
-    '../assets/1_places/lilys-corner/lilys-corner-003.jpg',
-    '../assets/1_places/lilys-corner/lilys-corner-004.jpg'
+    "../assets/1_places/lilys-corner-002.jpg",
+    "../assets/1_places/lilys-corner-003.jpg",
+    "../assets/1_places/lilys-corner-004.jpg"
   ],
+
   rating: 4.5,
   price: "₺₺",
   selected: false,
@@ -2333,12 +2364,13 @@ Lily’s Corner, Kaş’ta küçük, samimi ve rahat bir kafe-restoran arayanlar
   description: "Kaş merkezde, ev yemeği ve ızgara ağırlıklı menüsüyle bilinen, sade ve yerel bir lokanta.",
   category: ["food"],
 
-  image: '../assets/1_places/memedin-yeri/memedin-yeri-001.jpg',
+  image: "../assets/1_places/memedin-yeri-001.jpg",
   images: [
-    '../assets/1_places/memedin-yeri/memedin-yeri-002.jpg',
-    '../assets/1_places/memedin-yeri/memedin-yeri-003.jpg',
-    '../assets/1_places/memedin-yeri/memedin-yeri-004.jpg'
+    "../assets/1_places/memedin-yeri-002.jpg",
+    "../assets/1_places/memedin-yeri-003.jpg",
+    "../assets/1_places/memedin-yeri-004.jpg"
   ],
+
   rating: 4.5,
   price: "₺₺",
   selected: false,
@@ -2411,12 +2443,13 @@ Memed’in Yeri, Kaş’ta sade, yerel ve fiyat–performans odaklı bir lokanta
   description: "Kaş merkezde, Türk mutfağı ağırlıklı menüsü ve rahat ortamıyla öğle ve akşam yemeklerinde tercih edilen restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/tasra-restoran/tasra-restoran-001.jpg',
+  image: "../assets/1_places/tasra-restoran-001.jpg",
   images: [
-    '../assets/1_places/tasra-restoran/tasra-restoran-002.jpg',
-    '../assets/1_places/tasra-restoran/tasra-restoran-003.jpg',
-    '../assets/1_places/tasra-restoran/tasra-restoran-004.jpg'
+    "../assets/1_places/tasra-restoran-002.jpg",
+    "../assets/1_places/tasra-restoran-003.jpg",
+    "../assets/1_places/tasra-restoran-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺",
   selected: false,
@@ -2487,12 +2520,13 @@ Taşra Restoran, Kaş’ta sade, rahat ve tanıdık lezzetlerle yemek yemek iste
   description: "Kaş merkezde, deniz ürünü ve meze ağırlıklı menüsüyle restoran ve meyhane çizgisini birleştiren akşam mekânı.",
   category: ["meyhane", "food"],
 
-  image: '../assets/1_places/yelken-restaurant-meyhane/yelken-restaurant-meyhane-001.jpg',
+  image: "../assets/1_places/yelken-restaurant-meyhane-001.jpg",
   images: [
-    '../assets/1_places/yelken-restaurant-meyhane/yelken-restaurant-meyhane-002.jpg',
-    '../assets/1_places/yelken-restaurant-meyhane/yelken-restaurant-meyhane-003.jpg',
-    '../assets/1_places/yelken-restaurant-meyhane/yelken-restaurant-meyhane-004.jpg'
+    "../assets/1_places/yelken-restaurant-meyhane-002.jpg",
+    "../assets/1_places/yelken-restaurant-meyhane-003.jpg",
+    "../assets/1_places/yelken-restaurant-meyhane-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺₺",
   selected: false,
@@ -2564,12 +2598,13 @@ Yelken Restaurant & Meyhane, Kaş’ta deniz ürünü ve meze odaklı, sakin ama
   description: "Kaş merkezde, Yunan mutfağı odaklı mezeleri ve deniz ürünü ağırlıklı menüsüyle sakin akşam sofraları sunan bir taverna.",
   category: ["meyhane", "food"],
 
-  image: '../assets/1_places/sardelaki-greek-tavern/sardelaki-greek-tavern-001.jpg',
+  image: "../assets/1_places/sardelaki-greek-tavern-001.jpg",
   images: [
-    '../assets/1_places/sardelaki-greek-tavern/sardelaki-greek-tavern-002.jpg',
-    '../assets/1_places/sardelaki-greek-tavern/sardelaki-greek-tavern-003.jpg',
-    '../assets/1_places/sardelaki-greek-tavern/sardelaki-greek-tavern-004.jpg'
+    "../assets/1_places/sardelaki-greek-tavern-002.jpg",
+    "../assets/1_places/sardelaki-greek-tavern-003.jpg",
+    "../assets/1_places/sardelaki-greek-tavern-004.jpg"
   ],
+
   rating: 4.6,
   price: "₺₺₺",
   selected: false,
@@ -2641,12 +2676,13 @@ Sardelaki, Kaş’ta Yunan mutfağı tadında, sakin ve uzun akşam sofraları a
   description: "Kaş merkezde, odun fırın pizzalarıyla bilinen, hızlı ama kaliteli yemek arayanlara hitap eden İtalyan tarzı pizza mekânı.",
   category: ["food"],
 
-  image: '../assets/1_places/bella-vita-pizza/bella-vita-pizza-001.jpg',
+  image: "../assets/1_places/bella-vita-pizza-001.jpg",
   images: [
-    '../assets/1_places/bella-vita-pizza/bella-vita-pizza-002.jpg',
-    '../assets/1_places/bella-vita-pizza/bella-vita-pizza-003.jpg',
-    '../assets/1_places/bella-vita-pizza/bella-vita-pizza-004.jpg'
+    "../assets/1_places/bella-vita-pizza-002.jpg",
+    "../assets/1_places/bella-vita-pizza-003.jpg",
+    "../assets/1_places/bella-vita-pizza-004.jpg"
   ],
+
   rating: 4.5,
   price: "₺₺",
   selected: false,
@@ -2718,12 +2754,13 @@ Bella Vita Pizza, Kaş’ta odun fırın pizzasıyla öne çıkan, hızlı ve ne
   description: "Kaş’ta, Oburus mutfak anlayışını daha modern ve yaratıcı tabaklarla sunan, akşam yemeği odaklı bir restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/oburus-notos/oburus-notos-001.jpg',
+  image: "../assets/1_places/oburus-notos-001.jpg",
   images: [
-    '../assets/1_places/oburus-notos/oburus-notos-002.jpg',
-    '../assets/1_places/oburus-notos/oburus-notos-003.jpg',
-    '../assets/1_places/oburus-notos/oburus-notos-004.jpg'
+    "../assets/1_places/oburus-notos-002.jpg",
+    "../assets/1_places/oburus-notos-003.jpg",
+    "../assets/1_places/oburus-notos-004.jpg"
   ],
+
   rating: 4.7,
   price: "₺₺₺",
   selected: false,
@@ -2795,12 +2832,13 @@ Oburus Notos, Kaş’ta modern ve yaratıcı mutfak deneyimi arayanlar için ön
   description: "Kaş merkezde, sokak lezzetleri odaklı menüsüyle hızlı, doyurucu ve pratik yemekler sunan küçük ölçekli bir street food noktası.",
   category: ["food"],
 
-  image: '../assets/1_places/zoka-street-food/zoka-street-food-001.jpg',
+  image: "../assets/1_places/zoka-street-food-001.jpg",
   images: [
-    '../assets/1_places/zoka-street-food/zoka-street-food-002.jpg',
-    '../assets/1_places/zoka-street-food/zoka-street-food-003.jpg',
-    '../assets/1_places/zoka-street-food/zoka-street-food-004.jpg'
+    "../assets/1_places/zoka-street-food-002.jpg",
+    "../assets/1_places/zoka-street-food-003.jpg",
+    "../assets/1_places/zoka-street-food-004.jpg"
   ],
+
   rating: 4.5,
   price: "₺₺",
   selected: false,
@@ -2871,12 +2909,13 @@ Zoka Street Food, Kaş’ta hızlı, net ve doyurucu sokak lezzetleri arayanlar 
   description: "Kaş merkezde, burger ve sandviç odaklı menüsüyle modern street food anlayışını sunan küçük ve hızlı servisli bir mekân.",
   category: ["food"],
 
-  image: '../assets/1_places/hold-and-bite/hold-and-bite-001.jpg',
+  image: "../assets/1_places/hold-and-bite-001.jpg",
   images: [
-    '../assets/1_places/hold-and-bite/hold-and-bite-002.jpg',
-    '../assets/1_places/hold-and-bite/hold-and-bite-003.jpg',
-    '../assets/1_places/hold-and-bite/hold-and-bite-004.jpg'
+    "../assets/1_places/hold-and-bite-002.jpg",
+    "../assets/1_places/hold-and-bite-003.jpg",
+    "../assets/1_places/hold-and-bite-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺",
   selected: false,
@@ -2947,12 +2986,13 @@ Hold&Bite, Kaş’ta burger ve sandviçle hızlı ama düzgün bir öğün araya
   description: "Kaş merkezde, köfte ve ızgara odaklı menüsüyle sade, doyurucu ve yemek merkezli bir köfteci.",
   category: ["food"],
 
-  image: '../assets/1_places/bay-kofte/bay-kofte-001.jpg',
+  image: "../assets/1_places/bay-kofte-001.jpg",
   images: [
-    '../assets/1_places/bay-kofte/bay-kofte-002.jpg',
-    '../assets/1_places/bay-kofte/bay-kofte-003.jpg',
-    '../assets/1_places/bay-kofte/bay-kofte-004.jpg'
+    "../assets/1_places/bay-kofte-002.jpg",
+    "../assets/1_places/bay-kofte-003.jpg",
+    "../assets/1_places/bay-kofte-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺",
   selected: false,
@@ -3023,12 +3063,13 @@ Bay Köfte, Kaş’ta köfte odaklı, sade ve doyurucu bir öğün arayanlar iç
   description: "Kaş merkezde, mantı ve ev yemeği odaklı menüsüyle sade, hızlı ve doyurucu öğünler sunan küçük bir lokanta.",
   category: ["food"],
 
-  image: '../assets/1_places/kasik-manti-ev-yemekleri/kasik-manti-ev-yemekleri-001.jpg',
+  image: "../assets/1_places/kasik-manti-ev-yemekleri-001.jpg",
   images: [
-    '../assets/1_places/kasik-manti-ev-yemekleri/kasik-manti-ev-yemekleri-002.jpg',
-    '../assets/1_places/kasik-manti-ev-yemekleri/kasik-manti-ev-yemekleri-003.jpg',
-    '../assets/1_places/kasik-manti-ev-yemekleri/kasik-manti-ev-yemekleri-004.jpg'
+    "../assets/1_places/kasik-manti-ev-yemekleri-002.jpg",
+    "../assets/1_places/kasik-manti-ev-yemekleri-003.jpg",
+    "../assets/1_places/kasik-manti-ev-yemekleri-004.jpg"
   ],
+
   rating: 4.4,
   price: "₺₺",
   selected: false,
@@ -3100,12 +3141,13 @@ Kaşık Mantı & Ev Yemekleri, Kaş’ta mantı ve ev yemeği için net, sade ve
   description: "Kaş merkezde, kebap ve ızgara et odaklı menüsüyle klasik ocakbaşı çizgisinde hizmet veren bir restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/ora-kebap-restaurant/ora-kebap-restaurant-001.jpg',
+  image: "../assets/1_places/ora-kebap-restaurant-001.jpg",
   images: [
-    '../assets/1_places/ora-kebap-restaurant/ora-kebap-restaurant-002.jpg',
-    '../assets/1_places/ora-kebap-restaurant/ora-kebap-restaurant-003.jpg',
-    '../assets/1_places/ora-kebap-restaurant/ora-kebap-restaurant-004.jpg'
+    "../assets/1_places/ora-kebap-restaurant-002.jpg",
+    "../assets/1_places/ora-kebap-restaurant-003.jpg",
+    "../assets/1_places/ora-kebap-restaurant-004.jpg"
   ],
+
   rating: 4.3,
   price: "₺₺₺",
   selected: false,
@@ -3176,12 +3218,13 @@ Ora Kebap Restaurant, Kaş’ta kebap odaklı, sade ve net bir akşam yemeği se
   description: "Kaş merkezde, deniz ürünü ve Türk mutfağı ağırlıklı menüsüyle uzun yıllardır hizmet veren klasik bir restoran.",
   category: ["food"],
 
-  image: '../assets/1_places/emre-restaurant/emre-restaurant-001.jpg',
+  image: "../assets/1_places/emre-restaurant-001.jpg",
   images: [
-    '../assets/1_places/emre-restaurant/emre-restaurant-002.jpg',
-    '../assets/1_places/emre-restaurant/emre-restaurant-003.jpg',
-    '../assets/1_places/emre-restaurant/emre-restaurant-004.jpg'
+    "../assets/1_places/emre-restaurant-002.jpg",
+    "../assets/1_places/emre-restaurant-003.jpg",
+    "../assets/1_places/emre-restaurant-004.jpg"
   ],
+
   rating: 4.5,
   price: "₺₺₺",
   selected: false,
@@ -3252,11 +3295,11 @@ Emre Restaurant, Kaş’ta balık ve deniz ürünü ağırlıklı, güvenilir ve
   title: "Pell’s Cafe",
   description: "Kaş merkezde, kahve ve hafif yiyeceklerle günün her saatine uyum sağlayan bir kafe.",
   category: ["cafe"],
-  image: '../assets/1_places/pells-cafe/pells-cafe-001.jpg',
+  image: "../assets/1_places/pells-cafe-001.jpg",
   images: [
-    '../assets/1_places/pells-cafe/pells-cafe-002.jpg',
-    '../assets/1_places/pells-cafe/pells-cafe-003.jpg',
-    '../assets/1_places/pells-cafe/pells-cafe-004.jpg'
+    "../assets/1_places/pells-cafe-002.jpg",
+    "../assets/1_places/pells-cafe-003.jpg",
+    "../assets/1_places/pells-cafe-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3296,11 +3339,11 @@ Kaş merkezde, sade ve pratik bir kahve molası noktası.
   title: "Pika Coffee",
   description: "Kaş’ta nitelikli kahveye odaklanan, modern ve sade bir kahve dükkanı.",
   category: ["cafe"],
-  image: '../assets/1_places/pika-coffee/pika-coffee-001.jpg',
+  image: "../assets/1_places/pika-coffee-001.jpg",
   images: [
-    '../assets/1_places/pika-coffee/pika-coffee-002.jpg',
-    '../assets/1_places/pika-coffee/pika-coffee-003.jpg',
-    '../assets/1_places/pika-coffee/pika-coffee-004.jpg'
+    "../assets/1_places/pika-coffee-002.jpg",
+    "../assets/1_places/pika-coffee-003.jpg",
+    "../assets/1_places/pika-coffee-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3340,11 +3383,11 @@ Kaş’ta nitelikli kahve arayanlar için sade ve net bir adres.
   title: "Godo Coffee & More",
   description: "Kahve merkezli menüsünü farklı içecek ve atıştırmalıklarla tamamlayan bir kafe.",
   category: ["cafe"],
-  image: '../assets/1_places/godo-coffee-and-more/godo-coffee-and-more-001.jpg',
+  image: "../assets/1_places/godo-coffee-and-more-001.jpg",
   images: [
-    '../assets/1_places/godo-coffee-and-more/godo-coffee-and-more-002.jpg',
-    '../assets/1_places/godo-coffee-and-more/godo-coffee-and-more-003.jpg',
-    '../assets/1_places/godo-coffee-and-more/godo-coffee-and-more-004.jpg'
+    "../assets/1_places/godo-coffee-and-more-002.jpg",
+    "../assets/1_places/godo-coffee-and-more-003.jpg",
+    "../assets/1_places/godo-coffee-and-more-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3384,11 +3427,11 @@ Kahve odaklı ama esnek kullanıma açık, rahat bir Kaş kafesi.
   title: "Nur Pastanesi",
   description: "Kaş merkezde, klasik pastane ürünleri ve tatlılarıyla bilinen yerel bir pastane.",
   category: ["cafe", "breakfast"],
-  image: '../assets/1_places/nur-pastanesi/nur-pastanesi-001.jpg',
+  image: "../assets/1_places/nur-pastanesi-001.jpg",
   images: [
-    '../assets/1_places/nur-pastanesi/nur-pastanesi-002.jpg',
-    '../assets/1_places/nur-pastanesi/nur-pastanesi-003.jpg',
-    '../assets/1_places/nur-pastanesi/nur-pastanesi-004.jpg'
+    "../assets/1_places/nur-pastanesi-002.jpg",
+    "../assets/1_places/nur-pastanesi-003.jpg",
+    "../assets/1_places/nur-pastanesi-004.jpg"
   ],
   rating: "",
   price: "₺",
@@ -3428,11 +3471,11 @@ Kaş merkezde, klasik ve pratik bir pastane durağı.
   title: "Chayote Cafe",
   description: "Kaş’ta kahve, hafif yemekler ve rahat oturum sunan sakin bir kafe.",
   category: ["cafe"],
-  image: '../assets/1_places/chayote-cafe/chayote-cafe-001.jpg',
+  image: "../assets/1_places/chayote-cafe-001.jpg",
   images: [
-    '../assets/1_places/chayote-cafe/chayote-cafe-002.jpg',
-    '../assets/1_places/chayote-cafe/chayote-cafe-003.jpg',
-    '../assets/1_places/chayote-cafe/chayote-cafe-004.jpg'
+    "../assets/1_places/chayote-cafe-002.jpg",
+    "../assets/1_places/chayote-cafe-003.jpg",
+    "../assets/1_places/chayote-cafe-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3472,11 +3515,11 @@ Kaş’ta sakinlik arayanlar için rahat bir kafe alternatifi.
   title: "Panu Kaş",
   description: "Kaş merkezde, Akdeniz mutfağı odaklı modern bir restoran.",
   category: ["food"],
-  image: '../assets/1_places/panu-kas/panu-kas-001.jpg',
+  image: "../assets/1_places/panu-kas-001.jpg",
   images: [
-    '../assets/1_places/panu-kas/panu-kas-002.jpg',
-    '../assets/1_places/panu-kas/panu-kas-003.jpg',
-    '../assets/1_places/panu-kas/panu-kas-004.jpg'
+    "../assets/1_places/panu-kas-002.jpg",
+    "../assets/1_places/panu-kas-003.jpg",
+    "../assets/1_places/panu-kas-004.jpg"
   ],
   rating: "",
   price: "₺₺₺",
@@ -3516,11 +3559,11 @@ Kaş’ta daha özenli bir akşam yemeği arayanlar için modern bir adres.
   title: "Hideaway Bar & Cafe",
   description: "Kaş’ta gün içinde kafe, akşam saatlerinde bar olarak kullanılan rahat bir mekân.",
   category: ["bar", "cafe"],
-  image: '../assets/1_places/hideaway-bar-and-cafe/hideaway-bar-and-cafe-001.jpg',
+  image: "../assets/1_places/hideaway-bar-and-cafe-001.jpg",
   images: [
-    '../assets/1_places/hideaway-bar-and-cafe/hideaway-bar-and-cafe-002.jpg',
-    '../assets/1_places/hideaway-bar-and-cafe/hideaway-bar-and-cafe-003.jpg',
-    '../assets/1_places/hideaway-bar-and-cafe/hideaway-bar-and-cafe-004.jpg'
+    "../assets/1_places/hideaway-bar-and-cafe-002.jpg",
+    "../assets/1_places/hideaway-bar-and-cafe-003.jpg",
+    "../assets/1_places/hideaway-bar-and-cafe-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3560,11 +3603,11 @@ Kaş’ta gün ve akşam temposuna uyum sağlayan, rahat bir bar-kafe.
   title: "Menta Coffee",
   description: "Kaş’ta kahve odaklı, küçük ve sade bir kafe.",
   category: ["cafe"],
-  image: '../assets/1_places/menta-coffee/menta-coffee-001.jpg',
+  image: "../assets/1_places/menta-coffee-001.jpg",
   images: [
-    '../assets/1_places/menta-coffee/menta-coffee-002.jpg',
-    '../assets/1_places/menta-coffee/menta-coffee-003.jpg',
-    '../assets/1_places/menta-coffee/menta-coffee-004.jpg'
+    "../assets/1_places/menta-coffee-002.jpg",
+    "../assets/1_places/menta-coffee-003.jpg",
+    "../assets/1_places/menta-coffee-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3604,11 +3647,11 @@ Kaş’ta sade, kahve odaklı ve pratik bir durak.
   title: "Hüseyin’in Yeri (Cafe White)",
   description: "Kaş’ta deniz manzarasıyla bilinen, sade ve yerel bir kafe.",
   category: ["cafe"],
-  image: '../assets/1_places/huseyinin-yeri-cafe-white/huseyinin-yeri-cafe-white-001.jpg',
+  image: "../assets/1_places/huseyinin-yeri-cafe-white-001.jpg",
   images: [
-    '../assets/1_places/huseyinin-yeri-cafe-white/huseyinin-yeri-cafe-white-002.jpg',
-    '../assets/1_places/huseyinin-yeri-cafe-white/huseyinin-yeri-cafe-white-003.jpg',
-    '../assets/1_places/huseyinin-yeri-cafe-white/huseyinin-yeri-cafe-white-004.jpg'
+    "../assets/1_places/huseyinin-yeri-cafe-white-002.jpg",
+    "../assets/1_places/huseyinin-yeri-cafe-white-003.jpg",
+    "../assets/1_places/huseyinin-yeri-cafe-white-004.jpg"
   ],
   rating: "",
   price: "₺",
@@ -3648,11 +3691,11 @@ Kaş’ta manzarasıyla öne çıkan, sade ve yerel bir kafe.
   title: "Dejavu Cafe & Bar",
   description: "Kaş’ta gündüz kafe, akşam bar olarak kullanılan sosyal ve canlı bir mekân.",
   category: ["cafe", "bar"],
-  image: '../assets/1_places/dejavu-cafe-and-bar/dejavu-cafe-and-bar-001.jpg',
+  image: "../assets/1_places/dejavu-cafe-and-bar-001.jpg",
   images: [
-    '../assets/1_places/dejavu-cafe-and-bar/dejavu-cafe-and-bar-002.jpg',
-    '../assets/1_places/dejavu-cafe-and-bar/dejavu-cafe-and-bar-003.jpg',
-    '../assets/1_places/dejavu-cafe-and-bar/dejavu-cafe-and-bar-004.jpg'
+    "../assets/1_places/dejavu-cafe-and-bar-002.jpg",
+    "../assets/1_places/dejavu-cafe-and-bar-003.jpg",
+    "../assets/1_places/dejavu-cafe-and-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3692,11 +3735,11 @@ Kaş’ta gün ve geceye uyum sağlayan, sosyal bir bar-kafe.
   title: "Echo Bar",
   description: "Kaş’ta akşam saatlerinde hareketlenen, müzik ve içki odaklı bir bar.",
   category: ["bar"],
-  image: '../assets/1_places/echo-bar/echo-bar-001.jpg',
+  image: "../assets/1_places/echo-bar-001.jpg",
   images: [
-    '../assets/1_places/echo-bar/echo-bar-002.jpg',
-    '../assets/1_places/echo-bar/echo-bar-003.jpg',
-    '../assets/1_places/echo-bar/echo-bar-004.jpg'
+    "../assets/1_places/echo-bar-002.jpg",
+    "../assets/1_places/echo-bar-003.jpg",
+    "../assets/1_places/echo-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3736,11 +3779,11 @@ Kaş’ta akşam ve gece saatlerine yönelik, müzik odaklı bir bar.
   title: "Red Point Bar",
   description: "Kaş’ta akşamları tercih edilen, sade ve bar odaklı bir mekân.",
   category: ["bar"],
-  image: '../assets/1_places/red-point-bar/red-point-bar-001.jpg',
+  image: "../assets/1_places/red-point-bar-001.jpg",
   images: [
-    '../assets/1_places/red-point-bar/red-point-bar-002.jpg',
-    '../assets/1_places/red-point-bar/red-point-bar-003.jpg',
-    '../assets/1_places/red-point-bar/red-point-bar-004.jpg'
+    "../assets/1_places/red-point-bar-002.jpg",
+    "../assets/1_places/red-point-bar-003.jpg",
+    "../assets/1_places/red-point-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3780,11 +3823,11 @@ Kaş’ta sade, bar odaklı ve akşam saatlerine uygun bir adres.
   title: "Quanta Rock Bar (Quanta Rock Cafe)",
   description: "Kaş’ta rock müzik ağırlıklı, akşamları canlanan bar-kafe.",
   category: ["bar", "cafe"],
-  image: '../assets/1_places/quanta-rock-bar/quanta-rock-bar-001.jpg',
+  image: "../assets/1_places/quanta-rock-bar-001.jpg",
   images: [
-    '../assets/1_places/quanta-rock-bar/quanta-rock-bar-002.jpg',
-    '../assets/1_places/quanta-rock-bar/quanta-rock-bar-003.jpg',
-    '../assets/1_places/quanta-rock-bar/quanta-rock-bar-004.jpg'
+    "../assets/1_places/quanta-rock-bar-002.jpg",
+    "../assets/1_places/quanta-rock-bar-003.jpg",
+    "../assets/1_places/quanta-rock-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3824,11 +3867,11 @@ Kaş’ta rock müzik sevenler için akşamları tercih edilen bir bar-kafe.
   title: "Barboon Bar",
   description: "Kaş’ta akşam ve gece saatlerinde tercih edilen, sosyal bir bar.",
   category: ["bar"],
-  image: '../assets/1_places/barboon-bar/barboon-bar-001.jpg',
+  image: "../assets/1_places/barboon-bar-001.jpg",
   images: [
-    '../assets/1_places/barboon-bar/barboon-bar-002.jpg',
-    '../assets/1_places/barboon-bar/barboon-bar-003.jpg',
-    '../assets/1_places/barboon-bar/barboon-bar-004.jpg'
+    "../assets/1_places/barboon-bar-002.jpg",
+    "../assets/1_places/barboon-bar-003.jpg",
+    "../assets/1_places/barboon-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3868,11 +3911,11 @@ Kaş’ta sosyal ve akşam odaklı bir bar alternatifi.
   title: "Ara Bar",
   description: "Kaş’ta küçük ölçekli, samimi ve bar odaklı bir mekân.",
   category: ["bar"],
-  image: '../assets/1_places/ara-bar/ara-bar-001.jpg',
+  image: "../assets/1_places/ara-bar-001.jpg",
   images: [
-    '../assets/1_places/ara-bar/ara-bar-002.jpg',
-    '../assets/1_places/ara-bar/ara-bar-003.jpg',
-    '../assets/1_places/ara-bar/ara-bar-004.jpg'
+    "../assets/1_places/ara-bar-002.jpg",
+    "../assets/1_places/ara-bar-003.jpg",
+    "../assets/1_places/ara-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3912,11 +3955,11 @@ Kaş’ta sade, samimi ve bar odaklı bir durak.
   title: "No.11 Bar",
   description: "Kaş’ta akşam saatlerinde hareketlenen, bar odaklı bir mekân.",
   category: ["bar"],
-  image: '../assets/1_places/no-11-bar/no-11-bar-001.jpg',
+  image: "../assets/1_places/no-11-bar-001.jpg",
   images: [
-    '../assets/1_places/no-11-bar/no-11-bar-002.jpg',
-    '../assets/1_places/no-11-bar/no-11-bar-003.jpg',
-    '../assets/1_places/no-11-bar/no-11-bar-004.jpg'
+    "../assets/1_places/no-11-bar-002.jpg",
+    "../assets/1_places/no-11-bar-003.jpg",
+    "../assets/1_places/no-11-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -3956,11 +3999,11 @@ Kaş’ta akşam saatlerine uygun, sade bir bar alternatifi.
   title: "HiJazz Bar",
   description: "Kaş’ta caz ve benzeri müziklerle öne çıkan, akşam odaklı bir bar.",
   category: ["bar"],
-  image: '../assets/1_places/hijazz-bar/hijazz-bar-001.jpg',
+  image: "../assets/1_places/hijazz-bar-001.jpg",
   images: [
-    '../assets/1_places/hijazz-bar/hijazz-bar-002.jpg',
-    '../assets/1_places/hijazz-bar/hijazz-bar-003.jpg',
-    '../assets/1_places/hijazz-bar/hijazz-bar-004.jpg'
+    "../assets/1_places/hijazz-bar-002.jpg",
+    "../assets/1_places/hijazz-bar-003.jpg",
+    "../assets/1_places/hijazz-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -4000,11 +4043,11 @@ Kaş’ta müzik odaklı, akşamları tercih edilen bir bar.
   title: "Old House Bar",
   description: "Kaş’ta eski ev dokusu hissi veren, akşam saatlerinde tercih edilen bir bar.",
   category: ["bar"],
-  image: '../assets/1_places/old-house-bar/old-house-bar-001.jpg',
+  image: "../assets/1_places/old-house-bar-001.jpg",
   images: [
-    '../assets/1_places/old-house-bar/old-house-bar-002.jpg',
-    '../assets/1_places/old-house-bar/old-house-bar-003.jpg',
-    '../assets/1_places/old-house-bar/old-house-bar-004.jpg'
+    "../assets/1_places/old-house-bar-002.jpg",
+    "../assets/1_places/old-house-bar-003.jpg",
+    "../assets/1_places/old-house-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -4044,11 +4087,11 @@ Kaş’ta sakin, klasik bar havası arayanlar için bir seçenek.
   title: "Gagarin Bar",
   description: "Kaş’ta alternatif müzik ve sosyal atmosferiyle bilinen akşam odaklı bir bar.",
   category: ["bar"],
-  image: '../assets/1_places/gagarin-bar/gagarin-bar-001.jpg',
+  image: "../assets/1_places/gagarin-bar-001.jpg",
   images: [
-    '../assets/1_places/gagarin-bar/gagarin-bar-002.jpg',
-    '../assets/1_places/gagarin-bar/gagarin-bar-003.jpg',
-    '../assets/1_places/gagarin-bar/gagarin-bar-004.jpg'
+    "../assets/1_places/gagarin-bar-002.jpg",
+    "../assets/1_places/gagarin-bar-003.jpg",
+    "../assets/1_places/gagarin-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -4088,11 +4131,11 @@ Kaş’ta müzik ve sosyal atmosfer arayanlar için akşamları tercih edilen bi
   title: "Botanik Garden Bar",
   description: "Kaş’ta açık alanı ve bahçe hissiyle öne çıkan, akşamları tercih edilen bir bar.",
   category: ["bar"],
-  image: '../assets/1_places/botanik-garden-bar/botanik-garden-bar-001.jpg',
+  image: "../assets/1_places/botanik-garden-bar-001.jpg",
   images: [
-    '../assets/1_places/botanik-garden-bar/botanik-garden-bar-002.jpg',
-    '../assets/1_places/botanik-garden-bar/botanik-garden-bar-003.jpg',
-    '../assets/1_places/botanik-garden-bar/botanik-garden-bar-004.jpg'
+    "../assets/1_places/botanik-garden-bar-002.jpg",
+    "../assets/1_places/botanik-garden-bar-003.jpg",
+    "../assets/1_places/botanik-garden-bar-004.jpg"
   ],
   rating: "",
   price: "₺₺",
@@ -4132,11 +4175,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Kaputaş Plajı",
   description: "Turkuaz rengi denizi ve kanyon ağzındaki konumuyla ünlü, küçük ve fotojenik bir plaj.",
   category: ["beaches"],
-  image: '../assets/1_places/kaputas-plaji/kaputas-plaji-001.jpg',
+  image: "../assets/1_places/kaputas-plaji-001.jpg",
   images: [
-    '../assets/1_places/kaputas-plaji/kaputas-plaji-002.jpg',
-    '../assets/1_places/kaputas-plaji/kaputas-plaji-003.jpg',
-    '../assets/1_places/kaputas-plaji/kaputas-plaji-004.jpg'
+    "../assets/1_places/kaputas-plaji-002.jpg",
+    "../assets/1_places/kaputas-plaji-003.jpg",
+    "../assets/1_places/kaputas-plaji-004.jpg"
   ],
   rating: 4.4,
   price: "₺",
@@ -4171,11 +4214,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Hidayet Koyu (Blanca Beach)",
   description: "Akvaryum gibi berrak deniziyle ünlü, tesisli ve popüler bir koy.",
   category: ["beaches"],
-  image: '../assets/1_places/hidayet-koyu/hidayet-koyu-001.jpg',
+  image: "../assets/1_places/hidayet-koyu-001.jpg",
   images: [
-    '../assets/1_places/hidayet-koyu/hidayet-koyu-002.jpg',
-    '../assets/1_places/hidayet-koyu/hidayet-koyu-003.jpg',
-    '../assets/1_places/hidayet-koyu/hidayet-koyu-004.jpg'
+    "../assets/1_places/hidayet-koyu-002.jpg",
+    "../assets/1_places/hidayet-koyu-003.jpg",
+    "../assets/1_places/hidayet-koyu-004.jpg"
   ],
   rating: 4.2,
   price: "₺₺₺",
@@ -4210,11 +4253,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Antiphellos Antik Tiyatrosu",
   description: "Deniz manzaralı, Likya döneminden kalma tarihi bir açık hava tiyatrosu.",
   category: ["history"],
-  image: '../assets/1_places/antiphellos-antik-tiyatro/antiphellos-antik-tiyatro-001.jpg',
+  image: "../assets/1_places/antiphellos-antik-tiyatro-001.jpg",
   images: [
-    '../assets/1_places/antiphellos-antik-tiyatro/antiphellos-antik-tiyatro-002.jpg',
-    '../assets/1_places/antiphellos-antik-tiyatro/antiphellos-antik-tiyatro-003.jpg',
-    '../assets/1_places/antiphellos-antik-tiyatro/antiphellos-antik-tiyatro-004.jpg'
+    "../assets/1_places/antiphellos-antik-tiyatro-002.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatro-003.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatro-004.jpg"
   ],
   rating: 4.3,
   price: "₺",
@@ -4249,11 +4292,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Kekova Batık Şehir",
   description: "Tekneyle gezilebilen, deniz altındaki Likya dönemi kalıntılarıyla ünlü tarihi bir bölge.",
   category: ["history", "nature"],
-  image: '../assets/1_places/kekova-batik-sehir/kekova-batik-sehir-001.jpg',
+  image: "../assets/1_places/kekova-batik-sehir-001.jpg",
   images: [
-    '../assets/1_places/kekova-batik-sehir/kekova-batik-sehir-002.jpg',
-    '../assets/1_places/kekova-batik-sehir/kekova-batik-sehir-003.jpg',
-    '../assets/1_places/kekova-batik-sehir/kekova-batik-sehir-004.jpg'
+    "../assets/1_places/kekova-batik-sehir-002.jpg",
+    "../assets/1_places/kekova-batik-sehir-003.jpg",
+    "../assets/1_places/kekova-batik-sehir-004.jpg"
   ],
   rating: 4.6,
   price: "₺₺",
@@ -4288,11 +4331,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Kaş Dalış Deneyimi",
   description: "Türkiye’nin en zengin sualtı yaşamına sahip bölgelerinden birinde unutulmaz dalış deneyimi.",
   category: ["diving", "activities"],
-  image: '../assets/1_places/kas-dalis/kas-dalis-001.jpg',
+  image: "../assets/1_places/kas-dalis-001.jpg",
   images: [
-    '../assets/1_places/kas-dalis/kas-dalis-002.jpg',
-    '../assets/1_places/kas-dalis/kas-dalis-003.jpg',
-    '../assets/1_places/kas-dalis/kas-dalis-004.jpg'
+    "../assets/1_places/kas-dalis-002.jpg",
+    "../assets/1_places/kas-dalis-003.jpg",
+    "../assets/1_places/kas-dalis-004.jpg"
   ],
   rating: 4.9,
   price: "₺₺₺",
@@ -4327,11 +4370,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Keyf-i Dem Meyhane",
   description: "Marina manzaralı, mezeleri ve canlı atmosferiyle ünlü geleneksel bir meyhane.",
   category: ["meyhane", "food"],
-  image: '../assets/1_places/keyf-i-dem-meyhane/keyf-i-dem-meyhane-001.jpg',
+  image: "../assets/1_places/keyf-i-dem-meyhane-001.jpg",
   images: [
-    '../assets/1_places/keyf-i-dem-meyhane/keyf-i-dem-meyhane-002.jpg',
-    '../assets/1_places/keyf-i-dem-meyhane/keyf-i-dem-meyhane-003.jpg',
-    '../assets/1_places/keyf-i-dem-meyhane/keyf-i-dem-meyhane-004.jpg'
+    "../assets/1_places/keyf-i-dem-meyhane-002.jpg",
+    "../assets/1_places/keyf-i-dem-meyhane-003.jpg",
+    "../assets/1_places/keyf-i-dem-meyhane-004.jpg"
   ],
   rating: 4.8,
   price: "₺₺₺",
@@ -4366,11 +4409,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Dudu Mutfak",
   description: "Eski bir Kaş evinde, zengin serpme kahvaltısıyla ünlü sıcak ve samimi bir kafe-restoran.",
   category: ["breakfast", "food"],
-  image: '../assets/1_places/dudu-mutfak/dudu-mutfak-001.jpg',
+  image: "../assets/1_places/dudu-mutfak-001.jpg",
   images: [
-    '../assets/1_places/dudu-mutfak/dudu-mutfak-002.jpg',
-    '../assets/1_places/dudu-mutfak/dudu-mutfak-003.jpg',
-    '../assets/1_places/dudu-mutfak/dudu-mutfak-004.jpg'
+    "../assets/1_places/dudu-mutfak-002.jpg",
+    "../assets/1_places/dudu-mutfak-003.jpg",
+    "../assets/1_places/dudu-mutfak-004.jpg"
   ],
   rating: 4.6,
   price: "₺₺",
@@ -4405,11 +4448,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Mavi Bar",
   description: "Kaş’ın en eski barı; alternatif müzikleri, salaş ortamı ve gün batımı manzarasıyla meşhur buluşma noktası.",
   category: ["bar"],
-  image: '../assets/1_places/mavi-bar/mavi-bar-001.jpg',
+  image: "../assets/1_places/mavi-bar-001.jpg",
   images: [
-    '../assets/1_places/mavi-bar/mavi-bar-002.jpg',
-    '../assets/1_places/mavi-bar/mavi-bar-003.jpg',
-    '../assets/1_places/mavi-bar/mavi-bar-004.jpg'
+    "../assets/1_places/mavi-bar-002.jpg",
+    "../assets/1_places/mavi-bar-003.jpg",
+    "../assets/1_places/mavi-bar-004.jpg"
   ],
   rating: 4.4,
   price: "₺₺",
@@ -4444,11 +4487,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Uzun Çarşı & Aslanlı Lahit",
   description: "Tarihi Kaş çarşısı; otantik dükkanları ve sonunda yer alan 2400 yıllık Aslanlı Lahit ile ünlü sokak.",
   category: ["shopping", "history"],
-  image: '../assets/1_places/uzun-carsi/uzun-carsi-001.jpg',
+  image: "../assets/1_places/uzun-carsi-001.jpg",
   images: [
-    '../assets/1_places/uzun-carsi/uzun-carsi-002.jpg',
-    '../assets/1_places/uzun-carsi/uzun-carsi-003.jpg',
-    '../assets/1_places/uzun-carsi/uzun-carsi-004.jpg'
+    "../assets/1_places/uzun-carsi-002.jpg",
+    "../assets/1_places/uzun-carsi-003.jpg",
+    "../assets/1_places/uzun-carsi-004.jpg"
   ],
   rating: 4.2,
   price: "₺₺",
@@ -4483,11 +4526,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Lukka Exclusive Hotel",
   description: "Çukurbağ Yarımadası’nda, denize sıfır konumu ve lüks olanaklarıyla tanınan, yetişkinlere yönelik butik otel.",
   category: ["hotels"],
-  image: '../assets/1_places/lukka-exclusive-hotel/lukka-exclusive-hotel-001.jpg',
+  image: "../assets/1_places/lukka-exclusive-hotel-001.jpg",
   images: [
-    '../assets/1_places/lukka-exclusive-hotel/lukka-exclusive-hotel-002.jpg',
-    '../assets/1_places/lukka-exclusive-hotel/lukka-exclusive-hotel-003.jpg',
-    '../assets/1_places/lukka-exclusive-hotel/lukka-exclusive-hotel-004.jpg'
+    "../assets/1_places/lukka-exclusive-hotel-002.jpg",
+    "../assets/1_places/lukka-exclusive-hotel-003.jpg",
+    "../assets/1_places/lukka-exclusive-hotel-004.jpg"
   ],
   rating: 4.9,
   price: "₺₺₺",
@@ -4522,11 +4565,11 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
   title: "Büyük Çakıl Plajı",
   description: "Kaş merkeze yürünebilir mesafede, çakıllı yapısı ve hızlı derinleşen deniziyle bilinen popüler bir halk plajı.",
   category: ["beaches"],
-  image: '../assets/1_places/buyuk-cakil-plaji/buyuk-cakil-plaji-001.jpg',
+  image: "../assets/1_places/buyuk-cakil-plaji-001.jpg",
   images: [
-    '../assets/1_places/buyuk-cakil-plaji/buyuk-cakil-plaji-002.jpg',
-    '../assets/1_places/buyuk-cakil-plaji/buyuk-cakil-plaji-003.jpg',
-    '../assets/1_places/buyuk-cakil-plaji/buyuk-cakil-plaji-004.jpg'
+    "../assets/1_places/buyuk-cakil-plaji-002.jpg",
+    "../assets/1_places/buyuk-cakil-plaji-003.jpg",
+    "../assets/1_places/buyuk-cakil-plaji-004.jpg"
   ],
   rating: 0.0,
   price: "₺",
@@ -4564,11 +4607,11 @@ Merkeze yakın, berrak su, çakıllı sahil ve hızlı derinleşen deniz: Büyü
   title: "Küçük Çakıl Plajı (Çınarlar Plajı)",
   description: "Kaş merkezde küçük bir koy hissi veren, çakıllı ve berrak suya sahip, yürüyerek kolay ulaşılan plaj.",
   category: ["beaches"],
-  image: '../assets/1_places/kucuk-cakil-plaji/kucuk-cakil-plaji-001.jpg',
+  image: "../assets/1_places/kucuk-cakil-plaji-001.jpg",
   images: [
-    '../assets/1_places/kucuk-cakil-plaji/kucuk-cakil-plaji-002.jpg',
-    '../assets/1_places/kucuk-cakil-plaji/kucuk-cakil-plaji-003.jpg',
-    '../assets/1_places/kucuk-cakil-plaji/kucuk-cakil-plaji-004.jpg'
+    "../assets/1_places/kucuk-cakil-plaji-002.jpg",
+    "../assets/1_places/kucuk-cakil-plaji-003.jpg",
+    "../assets/1_places/kucuk-cakil-plaji-004.jpg"
   ],
   rating: 0.0,
   price: "₺",
@@ -4606,11 +4649,11 @@ Küçük, merkezde, pratik ve berrak: Küçük Çakıl tam olarak bu. “Kaş’
   title: "Kaş Belediyesi Halk Plajı",
   description: "Kaş merkezde platform/çakıl karışımı yapısıyla, duş–WC gibi temel imkanları bulunan popüler belediye plajı.",
   category: ["beaches"],
-  image: '../assets/1_places/kas-belediyesi-halk-plaji/kas-belediyesi-halk-plaji-001.jpg',
+  image: "../assets/1_places/kas-belediyesi-halk-plaji-001.jpg",
   images: [
-    '../assets/1_places/kas-belediyesi-halk-plaji/kas-belediyesi-halk-plaji-002.jpg',
-    '../assets/1_places/kas-belediyesi-halk-plaji/kas-belediyesi-halk-plaji-003.jpg',
-    '../assets/1_places/kas-belediyesi-halk-plaji/kas-belediyesi-halk-plaji-004.jpg'
+    "../assets/1_places/kas-belediyesi-halk-plaji-002.jpg",
+    "../assets/1_places/kas-belediyesi-halk-plaji-003.jpg",
+    "../assets/1_places/kas-belediyesi-halk-plaji-004.jpg"
   ],
   rating: 0.0,
   price: "₺",
@@ -4648,11 +4691,11 @@ Merkeze yakın, temel imkanları olan, düzenli bir halk plajı: Kaş Belediyesi
   title: "İnceboğaz Plajı",
   description: "Kaş yarımada tarafında, daha korunaklı koy hissi veren, çakıllı ve sakin deniziyle bilinen plaj.",
   category: ["beaches"],
-  image: '../assets/1_places/incebogaz-plaji/incebogaz-plaji-001.jpg',
+  image: "../assets/1_places/incebogaz-plaji-001.jpg",
   images: [
-    '../assets/1_places/incebogaz-plaji/incebogaz-plaji-002.jpg',
-    '../assets/1_places/incebogaz-plaji/incebogaz-plaji-003.jpg',
-    '../assets/1_places/incebogaz-plaji/incebogaz-plaji-004.jpg'
+    "../assets/1_places/incebogaz-plaji-002.jpg",
+    "../assets/1_places/incebogaz-plaji-003.jpg",
+    "../assets/1_places/incebogaz-plaji-004.jpg"
   ],
   rating: 0.0,
   price: "₺",
@@ -4690,11 +4733,11 @@ Yarımada tarafında, koy hissi veren, sakinlik arayana iyi gelen bir Kaş plaj�
   title: "Narr Plajı",
   description: "Merkeze yakın, iskele/rocky shore tarzı denize giriş sunan ve yeme-içmeyle birleşen beach-cafe konseptli nokta.",
   category: ["beaches", "cafe"],
-  image: '../assets/1_places/narr-plaji/narr-plaji-001.jpg',
+  image: "../assets/1_places/narr-plaji-001.jpg",
   images: [
-    '../assets/1_places/narr-plaji/narr-plaji-002.jpg',
-    '../assets/1_places/narr-plaji/narr-plaji-003.jpg',
-    '../assets/1_places/narr-plaji/narr-plaji-004.jpg'
+    "../assets/1_places/narr-plaji-002.jpg",
+    "../assets/1_places/narr-plaji-003.jpg",
+    "../assets/1_places/narr-plaji-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -4732,11 +4775,11 @@ Narr, Kaş’ta deniz keyfini “oturmalı-kalkmalı” bir beach-cafe düzenind
   title: "Derya Beach Club",
   description: "Küçük Çakıl hattında, denize girme ve kokteyl/yeme-içmeyi birleştiren beach club konseptli işletme.",
   category: ["beaches", "bar", "food"],
-  image: '../assets/1_places/derya-beach-club/derya-beach-club-001.jpg',
+  image: "../assets/1_places/derya-beach-club-001.jpg",
   images: [
-    '../assets/1_places/derya-beach-club/derya-beach-club-002.jpg',
-    '../assets/1_places/derya-beach-club/derya-beach-club-003.jpg',
-    '../assets/1_places/derya-beach-club/derya-beach-club-004.jpg'
+    "../assets/1_places/derya-beach-club-002.jpg",
+    "../assets/1_places/derya-beach-club-003.jpg",
+    "../assets/1_places/derya-beach-club-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -4774,11 +4817,11 @@ Derya, Kaş merkez çevresinde beach club gününü “yüzme + yeme-içme” ş
   title: "Leymona Beach Club",
   description: "Kaş merkezde, deniz günü ile yeme-içmeyi birleştiren ve sakin bir atmosfer hedefleyen beach restoran/bar konsepti.",
   category: ["beaches", "food", "bar"],
-  image: '../assets/1_places/leymona-beach-club/leymona-beach-club-001.jpg',
+  image: "../assets/1_places/leymona-beach-club-001.jpg",
   images: [
-    '../assets/1_places/leymona-beach-club/leymona-beach-club-002.jpg',
-    '../assets/1_places/leymona-beach-club/leymona-beach-club-003.jpg',
-    '../assets/1_places/leymona-beach-club/leymona-beach-club-004.jpg'
+    "../assets/1_places/leymona-beach-club-002.jpg",
+    "../assets/1_places/leymona-beach-club-003.jpg",
+    "../assets/1_places/leymona-beach-club-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -4816,11 +4859,11 @@ Leymona, Kaş merkez çevresinde beach günü + yeme-içme kombinini, görece da
   title: "Asma6 Beach & Restaurant",
   description: "Kaş merkez sahil hattında, denize girme alanı ve gün boyu yeme-içmeyi bir arada sunan beach restoran/bar.",
   category: ["beaches", "food", "bar", "cafe"],
-  image: '../assets/1_places/asma6-beach-restaurant/asma6-beach-restaurant-001.jpg',
+  image: "../assets/1_places/asma6-beach-restaurant-001.jpg",
   images: [
-    '../assets/1_places/asma6-beach-restaurant/asma6-beach-restaurant-002.jpg',
-    '../assets/1_places/asma6-beach-restaurant/asma6-beach-restaurant-003.jpg',
-    '../assets/1_places/asma6-beach-restaurant/asma6-beach-restaurant-004.jpg'
+    "../assets/1_places/asma6-beach-restaurant-002.jpg",
+    "../assets/1_places/asma6-beach-restaurant-003.jpg",
+    "../assets/1_places/asma6-beach-restaurant-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -4858,11 +4901,11 @@ Merkezde beach-restoran düzeni: deniz + yeme-içme + uzun oturma. Asma6 bu komb
   title: "Nuri’s Beach (Limanağzı)",
   description: "Limanağzı’nda, karayolu olmayan bölgede tekneyle ulaşılan, deniz günü ve konaklamayı birleştirebilen sahil işletmesi.",
   category: ["beaches", "food", "hotels"],
-  image: '../assets/1_places/nuris-beach/nuris-beach-001.jpg',
+  image: "../assets/1_places/nuris-beach-001.jpg",
   images: [
-    '../assets/1_places/nuris-beach/nuris-beach-002.jpg',
-    '../assets/1_places/nuris-beach/nuris-beach-003.jpg',
-    '../assets/1_places/nuris-beach/nuris-beach-004.jpg'
+    "../assets/1_places/nuris-beach-002.jpg",
+    "../assets/1_places/nuris-beach-003.jpg",
+    "../assets/1_places/nuris-beach-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -4900,11 +4943,11 @@ Limanağzı’nda tekneyle ulaşılan, doğa hissi yüksek bir deniz günü: Nur
   title: "Bilal’in Yeri (Limanağzı)",
   description: "Limanağzı’nda tekneyle ulaşılan, denize girme alanı ve yeme-içmeyi birleştiren klasik duraklardan biri.",
   category: ["beaches", "food", "cafe"],
-  image: '../assets/1_places/bilalin-yeri/bilalin-yeri-001.jpg',
+  image: "../assets/1_places/bilalin-yeri-001.jpg",
   images: [
-    '../assets/1_places/bilalin-yeri/bilalin-yeri-002.jpg',
-    '../assets/1_places/bilalin-yeri/bilalin-yeri-003.jpg',
-    '../assets/1_places/bilalin-yeri/bilalin-yeri-004.jpg'
+    "../assets/1_places/bilalin-yeri-002.jpg",
+    "../assets/1_places/bilalin-yeri-003.jpg",
+    "../assets/1_places/bilalin-yeri-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -4942,11 +4985,11 @@ Bilal’in Yeri, Limanağzı’nda tekneyle gidilen bir deniz gününü, yeme-i�
   title: "La Moda Beach (Limanağzı)",
   description: "Limanağzı’nda tekneyle ulaşılan, denize giriş platformu ve yeme-içmeyi birleştiren popüler beach noktası.",
   category: ["beaches", "food", "bar"],
-  image: '../assets/1_places/la-moda-beach/la-moda-beach-001.jpg',
+  image: "../assets/1_places/la-moda-beach-001.jpg",
   images: [
-    '../assets/1_places/la-moda-beach/la-moda-beach-002.jpg',
-    '../assets/1_places/la-moda-beach/la-moda-beach-003.jpg',
-    '../assets/1_places/la-moda-beach/la-moda-beach-004.jpg'
+    "../assets/1_places/la-moda-beach-002.jpg",
+    "../assets/1_places/la-moda-beach-003.jpg",
+    "../assets/1_places/la-moda-beach-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -4984,11 +5027,11 @@ Limanağzı’nda sakin bir deniz günü arayanlara uygun, pratik bir beach dura
   title: "Hakiliki Beach Club",
   description: "Kaş merkez çevresinde, denize giriş ve yeme-içmeyi bir araya getiren beach club.",
   category: ["beaches", "food", "bar"],
-  image: '../assets/1_places/hakiliki-beach-club/hakiliki-beach-club-001.jpg',
+  image: "../assets/1_places/hakiliki-beach-club-001.jpg",
   images: [
-    '../assets/1_places/hakiliki-beach-club/hakiliki-beach-club-002.jpg',
-    '../assets/1_places/hakiliki-beach-club/hakiliki-beach-club-003.jpg',
-    '../assets/1_places/hakiliki-beach-club/hakiliki-beach-club-004.jpg'
+    "../assets/1_places/hakiliki-beach-club-002.jpg",
+    "../assets/1_places/hakiliki-beach-club-003.jpg",
+    "../assets/1_places/hakiliki-beach-club-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -5026,11 +5069,11 @@ Merkez yakınında pratik bir beach club seçeneği.`
   title: "Lures Hotel Beach Club",
   description: "Çukurbağ Yarımadası’nda, denize sıfır konumda, otel misafirlerine ve dışarıdan gelenlere açık beach alanı.",
   category: ["beaches", "hotels", "food"],
-  image: '../assets/1_places/lures-hotel-beach-club/lures-hotel-beach-club-001.jpg',
+  image: "../assets/1_places/lures-hotel-beach-club-001.jpg",
   images: [
-    '../assets/1_places/lures-hotel-beach-club/lures-hotel-beach-club-002.jpg',
-    '../assets/1_places/lures-hotel-beach-club/lures-hotel-beach-club-003.jpg',
-    '../assets/1_places/lures-hotel-beach-club/lures-hotel-beach-club-004.jpg'
+    "../assets/1_places/lures-hotel-beach-club-002.jpg",
+    "../assets/1_places/lures-hotel-beach-club-003.jpg",
+    "../assets/1_places/lures-hotel-beach-club-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -5068,11 +5111,11 @@ Yarımadada konforlu bir beach günü.`
   title: "Mavi Kıyı Suites",
   description: "Denize yakın konumu ve modern süitleriyle bilinen butik konaklama tesisi.",
   category: ["hotels"],
-  image: '../assets/1_places/mavi-kiyi-suites/mavi-kiyi-suites-001.jpg',
+  image: "../assets/1_places/mavi-kiyi-suites-001.jpg",
   images: [
-    '../assets/1_places/mavi-kiyi-suites/mavi-kiyi-suites-002.jpg',
-    '../assets/1_places/mavi-kiyi-suites/mavi-kiyi-suites-003.jpg',
-    '../assets/1_places/mavi-kiyi-suites/mavi-kiyi-suites-004.jpg'
+    "../assets/1_places/mavi-kiyi-suites-002.jpg",
+    "../assets/1_places/mavi-kiyi-suites-003.jpg",
+    "../assets/1_places/mavi-kiyi-suites-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -5110,11 +5153,11 @@ Denize yakın, modern bir butik konaklama.`
   title: "Lures Hotel & Beach Club",
   description: "Çukurbağ Yarımadası’nda, otel konaklaması ile beach club deneyimini birleştiren tesis.",
   category: ["hotels", "beaches"],
-  image: '../assets/1_places/lures-hotel/lures-hotel-001.jpg',
+  image: "../assets/1_places/lures-hotel-001.jpg",
   images: [
-    '../assets/1_places/lures-hotel/lures-hotel-002.jpg',
-    '../assets/1_places/lures-hotel/lures-hotel-003.jpg',
-    '../assets/1_places/lures-hotel/lures-hotel-004.jpg'
+    "../assets/1_places/lures-hotel-002.jpg",
+    "../assets/1_places/lures-hotel-003.jpg",
+    "../assets/1_places/lures-hotel-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -5152,11 +5195,11 @@ Konforlu yarımada oteli.`
   title: "Luvi Kaş Otel",
   description: "Kaş merkezde, manzaralı ve butik yapısıyla öne çıkan otel.",
   category: ["hotels"],
-  image: '../assets/1_places/luvi-kas-otel/luvi-kas-otel-001.jpg',
+  image: "../assets/1_places/luvi-kas-otel-001.jpg",
   images: [
-    '../assets/1_places/luvi-kas-otel/luvi-kas-otel-002.jpg',
-    '../assets/1_places/luvi-kas-otel/luvi-kas-otel-003.jpg',
-    '../assets/1_places/luvi-kas-otel/luvi-kas-otel-004.jpg'
+    "../assets/1_places/luvi-kas-otel-002.jpg",
+    "../assets/1_places/luvi-kas-otel-003.jpg",
+    "../assets/1_places/luvi-kas-otel-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -5194,11 +5237,11 @@ Merkezde butik ve manzaralı.`
   title: "Payam Hotel",
   description: "Kaş merkezde, küçük ölçekli ve samimi bir butik otel.",
   category: ["hotels"],
-  image: '../assets/1_places/payam-hotel/payam-hotel-001.jpg',
+  image: "../assets/1_places/payam-hotel-001.jpg",
   images: [
-    '../assets/1_places/payam-hotel/payam-hotel-002.jpg',
-    '../assets/1_places/payam-hotel/payam-hotel-003.jpg',
-    '../assets/1_places/payam-hotel/payam-hotel-004.jpg'
+    "../assets/1_places/payam-hotel-002.jpg",
+    "../assets/1_places/payam-hotel-003.jpg",
+    "../assets/1_places/payam-hotel-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -5236,11 +5279,11 @@ Merkezde sade butik otel.`
   title: "Kaş Marin Hotel",
   description: "Deniz manzaralı odaları ve merkezi konumuyla bilinen otel.",
   category: ["hotels"],
-  image: '../assets/1_places/kas-marin-hotel/kas-marin-hotel-001.jpg',
+  image: "../assets/1_places/kas-marin-hotel-001.jpg",
   images: [
-    '../assets/1_places/kas-marin-hotel/kas-marin-hotel-002.jpg',
-    '../assets/1_places/kas-marin-hotel/kas-marin-hotel-003.jpg',
-    '../assets/1_places/kas-marin-hotel/kas-marin-hotel-004.jpg'
+    "../assets/1_places/kas-marin-hotel-002.jpg",
+    "../assets/1_places/kas-marin-hotel-003.jpg",
+    "../assets/1_places/kas-marin-hotel-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -5278,11 +5321,11 @@ Deniz manzaralı konaklama.`
   title: "Hideaway Hotel",
   description: "Merkezde, yetişkinlere yönelik, sessiz ve butik bir otel.",
   category: ["hotels"],
-  image: '../assets/1_places/hideaway-hotel/hideaway-hotel-001.jpg',
+  image: "../assets/1_places/hideaway-hotel-001.jpg",
   images: [
-    '../assets/1_places/hideaway-hotel/hideaway-hotel-002.jpg',
-    '../assets/1_places/hideaway-hotel/hideaway-hotel-003.jpg',
-    '../assets/1_places/hideaway-hotel/hideaway-hotel-004.jpg'
+    "../assets/1_places/hideaway-hotel-002.jpg",
+    "../assets/1_places/hideaway-hotel-003.jpg",
+    "../assets/1_places/hideaway-hotel-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -5320,11 +5363,11 @@ Merkezde huzurlu butik otel.`
   title: "Hotel Sonne",
   description: "Merkezde, teras manzarası ve klasik Kaş oteli atmosferiyle bilinen tesis.",
   category: ["hotels"],
-  image: '../assets/1_places/hotel-sonne/hotel-sonne-001.jpg',
+  image: "../assets/1_places/hotel-sonne-001.jpg",
   images: [
-    '../assets/1_places/hotel-sonne/hotel-sonne-002.jpg',
-    '../assets/1_places/hotel-sonne/hotel-sonne-003.jpg',
-    '../assets/1_places/hotel-sonne/hotel-sonne-004.jpg'
+    "../assets/1_places/hotel-sonne-002.jpg",
+    "../assets/1_places/hotel-sonne-003.jpg",
+    "../assets/1_places/hotel-sonne-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -5362,11 +5405,11 @@ Merkezde klasik bir Kaş oteli.`
   title: "Sardunya Otel",
   description: "Kaş merkezde denize çok yakın konumda, bahçe/terası ve deniz erişimiyle öne çıkan otel.",
   category: ["hotels"],
-  image: '../assets/1_places/sardunya-otel/sardunya-otel-001.jpg',
+  image: "../assets/1_places/sardunya-otel-001.jpg",
   images: [
-    '../assets/1_places/sardunya-otel/sardunya-otel-002.jpg',
-    '../assets/1_places/sardunya-otel/sardunya-otel-003.jpg',
-    '../assets/1_places/sardunya-otel/sardunya-otel-004.jpg'
+    "../assets/1_places/sardunya-otel-002.jpg",
+    "../assets/1_places/sardunya-otel-003.jpg",
+    "../assets/1_places/sardunya-otel-004.jpg"
   ],
   rating: 9.6, // Expedia puanı (10 üzerinden)
   price: "₺₺₺",
@@ -5404,11 +5447,11 @@ Merkeze yakın, Kaş’ı yürüyerek yaşamak isteyenlere uygun, denize yakın 
   title: "HillCity Hotel",
   description: "Çukurbağ Yarımadası tarafında, manzara ve havuz odağında butik otel.",
   category: ["hotels"],
-  image: '../assets/1_places/hillcity-hotel/hillcity-hotel-001.jpg',
+  image: "../assets/1_places/hillcity-hotel-001.jpg",
   images: [
-    '../assets/1_places/hillcity-hotel/hillcity-hotel-002.jpg',
-    '../assets/1_places/hillcity-hotel/hillcity-hotel-003.jpg',
-    '../assets/1_places/hillcity-hotel/hillcity-hotel-004.jpg'
+    "../assets/1_places/hillcity-hotel-002.jpg",
+    "../assets/1_places/hillcity-hotel-003.jpg",
+    "../assets/1_places/hillcity-hotel-004.jpg"
   ],
   rating: 8.8, // Agoda genel puan (yaklaşık)
   price: "₺₺₺",
@@ -5446,11 +5489,11 @@ Yarımadada manzara ve sakinlik isteyenlere uygun butik otel.`
   title: "Sea View Otel",
   description: "Kaş sahil hattına yakın, özel güneşlenme terası/iskeleyi vurgulayan deniz kıyısı oteli.",
   category: ["hotels"],
-  image: '../assets/1_places/sea-view-otel/sea-view-otel-001.jpg',
+  image: "../assets/1_places/sea-view-otel-001.jpg",
   images: [
-    '../assets/1_places/sea-view-otel/sea-view-otel-002.jpg',
-    '../assets/1_places/sea-view-otel/sea-view-otel-003.jpg',
-    '../assets/1_places/sea-view-otel/sea-view-otel-004.jpg'
+    "../assets/1_places/sea-view-otel-002.jpg",
+    "../assets/1_places/sea-view-otel-003.jpg",
+    "../assets/1_places/sea-view-otel-004.jpg"
   ],
   rating: 8.8, // Agoda puanı
   price: "₺₺",
@@ -5488,11 +5531,11 @@ Denize yakın ve merkeze yakın; “deniz günü + çarşı akşamı” planı i
   title: "Novva Hotel Kaş (Novva Hotels Kaş)",
   description: "Çukurbağ Yarımadası’nda, süit/özel havuz gibi seçenekleriyle öne çıkan modern konaklama.",
   category: ["hotels"],
-  image: '../assets/1_places/novva-hotel-kas/novva-hotel-kas-001.jpg',
+  image: "../assets/1_places/novva-hotel-kas-001.jpg",
   images: [
-    '../assets/1_places/novva-hotel-kas/novva-hotel-kas-002.jpg',
-    '../assets/1_places/novva-hotel-kas/novva-hotel-kas-003.jpg',
-    '../assets/1_places/novva-hotel-kas/novva-hotel-kas-004.jpg'
+    "../assets/1_places/novva-hotel-kas-002.jpg",
+    "../assets/1_places/novva-hotel-kas-003.jpg",
+    "../assets/1_places/novva-hotel-kas-004.jpg"
   ],
   rating: 8.0, // Booking yorum sayfasında görünen genel skor
   price: "₺₺₺",
@@ -5530,11 +5573,11 @@ Modern süit konsepti ve yarımada sakinliği arayanlar için güçlü bir seçe
   title: "Rhapsody Hotel Kaş",
   description: "Kaş merkez çevresinde, Küçük Çakıl’a yakın konumuyla öne çıkan butik otel.",
   category: ["hotels"],
-  image: '../assets/1_places/rhapsody-hotel-kas/rhapsody-hotel-kas-001.jpg',
+  image: "../assets/1_places/rhapsody-hotel-kas-001.jpg",
   images: [
-    '../assets/1_places/rhapsody-hotel-kas/rhapsody-hotel-kas-002.jpg',
-    '../assets/1_places/rhapsody-hotel-kas/rhapsody-hotel-kas-003.jpg',
-    '../assets/1_places/rhapsody-hotel-kas/rhapsody-hotel-kas-004.jpg'
+    "../assets/1_places/rhapsody-hotel-kas-002.jpg",
+    "../assets/1_places/rhapsody-hotel-kas-003.jpg",
+    "../assets/1_places/rhapsody-hotel-kas-004.jpg"
   ],
   rating: 8.7, // HotelsCombined (10 üzerinden)
   price: "₺₺",
@@ -5572,11 +5615,11 @@ Merkez-plaj dengesini isteyenler için pratik, butik bir konaklama.`
   title: "Hotel Marsala",
   description: "Çukurbağ Yarımadası’nda, deniz terası ve sakin ortamıyla bilinen butik otel.",
   category: ["hotels"],
-  image: '../assets/1_places/hotel-marsala/hotel-marsala-001.jpg',
+  image: "../assets/1_places/hotel-marsala-001.jpg",
   images: [
-    '../assets/1_places/hotel-marsala/hotel-marsala-002.jpg',
-    '../assets/1_places/hotel-marsala/hotel-marsala-003.jpg',
-    '../assets/1_places/hotel-marsala/hotel-marsala-004.jpg'
+    "../assets/1_places/hotel-marsala-002.jpg",
+    "../assets/1_places/hotel-marsala-003.jpg",
+    "../assets/1_places/hotel-marsala-004.jpg"
   ],
   rating: 8.6, // Booking genel skor
   price: "₺₺₺",
@@ -5614,11 +5657,11 @@ Yarımadada sakin, deniz odaklı bir butik otel.`
   title: "Aquarius Hotel (Cappari Hotels Aquarius)",
   description: "Çukurbağ Yarımadası’nda, denize sıfır konum ve kendi plaj alanını vurgulayan otel.",
   category: ["hotels", "beaches"],
-  image: '../assets/1_places/aquarius-hotel/aquarius-hotel-001.jpg',
+  image: "../assets/1_places/aquarius-hotel-001.jpg",
   images: [
-    '../assets/1_places/aquarius-hotel/aquarius-hotel-002.jpg',
-    '../assets/1_places/aquarius-hotel/aquarius-hotel-003.jpg',
-    '../assets/1_places/aquarius-hotel/aquarius-hotel-004.jpg'
+    "../assets/1_places/aquarius-hotel-002.jpg",
+    "../assets/1_places/aquarius-hotel-003.jpg",
+    "../assets/1_places/aquarius-hotel-004.jpg"
   ],
   rating: 4.0, // Tripadvisor (5 üzerinden) sayfa özetinde
   price: "₺₺₺",
@@ -5656,11 +5699,11 @@ Yarımadada denize sıfır, plaj alanı olan, konfor odaklı bir otel.`
   title: "Nur Beach Hotel",
   description: "Kaş merkezde Küçük Çakıl’a yakın, deniz kenarı restoran/barı ve manzarasıyla bilinen otel.",
   category: ["hotels", "beaches", "food", "bar"],
-  image: '../assets/1_places/nur-beach-hotel/nur-beach-hotel-001.jpg',
+  image: "../assets/1_places/nur-beach-hotel-001.jpg",
   images: [
-    '../assets/1_places/nur-beach-hotel/nur-beach-hotel-002.jpg',
-    '../assets/1_places/nur-beach-hotel/nur-beach-hotel-003.jpg',
-    '../assets/1_places/nur-beach-hotel/nur-beach-hotel-004.jpg'
+    "../assets/1_places/nur-beach-hotel-002.jpg",
+    "../assets/1_places/nur-beach-hotel-003.jpg",
+    "../assets/1_places/nur-beach-hotel-004.jpg"
   ],
   rating: 4.0, // Tripadvisor (5 üzerinden)
   price: "₺₺₺",
@@ -5698,11 +5741,11 @@ Merkezde, denize yakın; hem konaklama hem deniz kenarı vakti isteyenler için 
   title: "La Kumsal Hotel",
   description: "Çukurbağ Yarımadası’nda, manzara ve sakinlik odaklı butik otel.",
   category: ["hotels"],
-  image: '../assets/1_places/la-kumsal-hotel/la-kumsal-hotel-001.jpg',
+  image: "../assets/1_places/la-kumsal-hotel-001.jpg",
   images: [
-    '../assets/1_places/la-kumsal-hotel/la-kumsal-hotel-002.jpg',
-    '../assets/1_places/la-kumsal-hotel/la-kumsal-hotel-003.jpg',
-    '../assets/1_places/la-kumsal-hotel/la-kumsal-hotel-004.jpg'
+    "../assets/1_places/la-kumsal-hotel-002.jpg",
+    "../assets/1_places/la-kumsal-hotel-003.jpg",
+    "../assets/1_places/la-kumsal-hotel-004.jpg"
   ],
   rating: 9.3, // Expedia/Agoda puanları üzerinden (10 üzerinden)
   price: "₺₺₺",
@@ -5740,11 +5783,11 @@ Yarımadada, sakin ve manzaralı bir butik otel arayanlara uygun.`
   title: "Upper House Hotel",
   description: "Kaş merkezde, çarşı ve sahile yakın konumda butik konaklama.",
   category: ["hotels"],
-  image: '../assets/1_places/upper-house-hotel/upper-house-hotel-001.jpg',
+  image: "../assets/1_places/upper-house-hotel-001.jpg",
   images: [
-    '../assets/1_places/upper-house-hotel/upper-house-hotel-002.jpg',
-    '../assets/1_places/upper-house-hotel/upper-house-hotel-003.jpg',
-    '../assets/1_places/upper-house-hotel/upper-house-hotel-004.jpg'
+    "../assets/1_places/upper-house-hotel-002.jpg",
+    "../assets/1_places/upper-house-hotel-003.jpg",
+    "../assets/1_places/upper-house-hotel-004.jpg"
   ],
   rating: 7.2, // Expedia (10 üzerinden)
   price: "₺₺",
@@ -5782,11 +5825,11 @@ Kaş merkezde, yürüyerek yaşamak isteyenler için pratik bir butik otel.`
   title: "Talay Otel",
   description: "Küçük Çakıl’a çok yakın, merkezde konum avantajı olan, uzun yıllardır hizmet veren otel/pansiyon.",
   category: ["hotels"],
-  image: '../assets/1_places/talay-otel/talay-otel-001.jpg',
+  image: "../assets/1_places/talay-otel-001.jpg",
   images: [
-    '../assets/1_places/talay-otel/talay-otel-002.jpg',
-    '../assets/1_places/talay-otel/talay-otel-003.jpg',
-    '../assets/1_places/talay-otel/talay-otel-004.jpg'
+    "../assets/1_places/talay-otel-002.jpg",
+    "../assets/1_places/talay-otel-003.jpg",
+    "../assets/1_places/talay-otel-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -5824,11 +5867,11 @@ Merkez + Küçük Çakıl yakınlığıyla, Kaş’ı yürüyerek yaşamak istey
   title: "Çakıl Pansiyon",
   description: "Küçük Çakıl mevkiinde denize çok yakın, kahvaltı konseptiyle bilinen pansiyon.",
   category: ["hotels"],
-  image: '../assets/1_places/cakil-pansiyon/cakil-pansiyon-001.jpg',
+  image: "../assets/1_places/cakil-pansiyon-001.jpg",
   images: [
-    '../assets/1_places/cakil-pansiyon/cakil-pansiyon-002.jpg',
-    '../assets/1_places/cakil-pansiyon/cakil-pansiyon-003.jpg',
-    '../assets/1_places/cakil-pansiyon/cakil-pansiyon-004.jpg'
+    "../assets/1_places/cakil-pansiyon-002.jpg",
+    "../assets/1_places/cakil-pansiyon-003.jpg",
+    "../assets/1_places/cakil-pansiyon-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -5866,11 +5909,11 @@ Küçük Çakıl mevkiinde, denize çok yakın ve merkez odaklı bir pansiyon.`
   title: "Nautilus Diving",
   description: "Kaş Limanı çıkışlı, tekne dalışları ve eğitimler sunan PADI odaklı dalış merkezi.",
   category: ["diving", "activities"],
-  image: '../assets/1_places/nautilus-diving/nautilus-diving-001.jpg',
+  image: "../assets/1_places/nautilus-diving-001.jpg",
   images: [
-    '../assets/1_places/nautilus-diving/nautilus-diving-002.jpg',
-    '../assets/1_places/nautilus-diving/nautilus-diving-003.jpg',
-    '../assets/1_places/nautilus-diving/nautilus-diving-004.jpg'
+    "../assets/1_places/nautilus-diving-002.jpg",
+    "../assets/1_places/nautilus-diving-003.jpg",
+    "../assets/1_places/nautilus-diving-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -5908,11 +5951,11 @@ Kaş Limanı çıkışlı, eğitim ve tekne dalışları yapan köklü dalış m
   title: "Kaş Diving (Kas Diving®)",
   description: "Merkezde konumlanan, dalış turları ve kurslarıyla bilinen dalış okulu.",
   category: ["diving", "activities"],
-  image: '../assets/1_places/kas-diving/kas-diving-001.jpg',
+  image: "../assets/1_places/kas-diving-001.jpg",
   images: [
-    '../assets/1_places/kas-diving/kas-diving-002.jpg',
-    '../assets/1_places/kas-diving/kas-diving-003.jpg',
-    '../assets/1_places/kas-diving/kas-diving-004.jpg'
+    "../assets/1_places/kas-diving-002.jpg",
+    "../assets/1_places/kas-diving-003.jpg",
+    "../assets/1_places/kas-diving-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -5950,11 +5993,11 @@ Merkez çıkışlı, kurs ve tekne dalışlarıyla öne çıkan bir dalış okul
   title: "Ege Barakuda Dalış Merkezi",
   description: "Kaş’ta tekne dalışları ve eğitimler sunan, bilinen dalış merkezlerinden biri.",
   category: ["diving", "activities"],
-  image: '../assets/1_places/ege-barakuda-dalis-merkezi/ege-barakuda-dalis-merkezi-001.jpg',
+  image: "../assets/1_places/ege-barakuda-dalis-merkezi-001.jpg",
   images: [
-    '../assets/1_places/ege-barakuda-dalis-merkezi/ege-barakuda-dalis-merkezi-002.jpg',
-    '../assets/1_places/ege-barakuda-dalis-merkezi/ege-barakuda-dalis-merkezi-003.jpg',
-    '../assets/1_places/ege-barakuda-dalis-merkezi/ege-barakuda-dalis-merkezi-004.jpg'
+    "../assets/1_places/ege-barakuda-dalis-merkezi-002.jpg",
+    "../assets/1_places/ege-barakuda-dalis-merkezi-003.jpg",
+    "../assets/1_places/ege-barakuda-dalis-merkezi-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -5992,11 +6035,11 @@ Kaş’ta tekne dalışları ve eğitimler sunan bilinen bir dalış merkezi.`
   title: "SubAQUA Dalış Merkezi",
   description: "Kaş Limanı çıkışlı, PADI eğitimleri ve tekne dalışları yapan dalış merkezi.",
   category: ["diving", "activities"],
-  image: '../assets/1_places/subaqua-dalis-merkezi/subaqua-dalis-merkezi-001.jpg',
+  image: "../assets/1_places/subaqua-dalis-merkezi-001.jpg",
   images: [
-    '../assets/1_places/subaqua-dalis-merkezi/subaqua-dalis-merkezi-002.jpg',
-    '../assets/1_places/subaqua-dalis-merkezi/subaqua-dalis-merkezi-003.jpg',
-    '../assets/1_places/subaqua-dalis-merkezi/subaqua-dalis-merkezi-004.jpg'
+    "../assets/1_places/subaqua-dalis-merkezi-002.jpg",
+    "../assets/1_places/subaqua-dalis-merkezi-003.jpg",
+    "../assets/1_places/subaqua-dalis-merkezi-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -6034,11 +6077,11 @@ Kaş Limanı çıkışlı, PADI kursları ve tekne dalışları yapan dalış me
   title: "Oceanids Dalış Merkezi",
   description: "Kaş merkezde, tekne dalışları ve eğitimler sunan dalış okulu.",
   category: ["diving", "activities"],
-  image: '../assets/1_places/oceanids-dalis-merkezi/oceanids-dalis-merkezi-001.jpg',
+  image: "../assets/1_places/oceanids-dalis-merkezi-001.jpg",
   images: [
-    '../assets/1_places/oceanids-dalis-merkezi/oceanids-dalis-merkezi-002.jpg',
-    '../assets/1_places/oceanids-dalis-merkezi/oceanids-dalis-merkezi-003.jpg',
-    '../assets/1_places/oceanids-dalis-merkezi/oceanids-dalis-merkezi-004.jpg'
+    "../assets/1_places/oceanids-dalis-merkezi-002.jpg",
+    "../assets/1_places/oceanids-dalis-merkezi-003.jpg",
+    "../assets/1_places/oceanids-dalis-merkezi-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -6076,11 +6119,11 @@ Merkezde, eğitim ve tekne dalışlarını birlikte sunan bir dalış merkezi.`
   title: "Kanyon Diving",
   description: "Kaş’ta tüplü dalış turları ve kurslar sunan, yerel dalış merkezlerinden biri.",
   category: ["diving", "activities"],
-  image: '../assets/1_places/kanyon-diving/kanyon-diving-001.jpg',
+  image: "../assets/1_places/kanyon-diving-001.jpg",
   images: [
-    '../assets/1_places/kanyon-diving/kanyon-diving-002.jpg',
-    '../assets/1_places/kanyon-diving/kanyon-diving-003.jpg',
-    '../assets/1_places/kanyon-diving/kanyon-diving-004.jpg'
+    "../assets/1_places/kanyon-diving-002.jpg",
+    "../assets/1_places/kanyon-diving-003.jpg",
+    "../assets/1_places/kanyon-diving-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -6118,11 +6161,11 @@ Kaş’ta günlük tekne dalışları ve kurslar sunan yerel bir dalış merkezi
   title: "Life Aquatic (Serbest Dalış & Yoga)",
   description: "Kaş merkezde serbest dalış (freediving) eğitimleri ve yoga derslerini bir arada sunan okul.",
   category: ["activities", "diving", "nature"],
-  image: '../assets/1_places/life-aquatic/life-aquatic-001.jpg',
+  image: "../assets/1_places/life-aquatic-001.jpg",
   images: [
-    '../assets/1_places/life-aquatic/life-aquatic-002.jpg',
-    '../assets/1_places/life-aquatic/life-aquatic-003.jpg',
-    '../assets/1_places/life-aquatic/life-aquatic-004.jpg'
+    "../assets/1_places/life-aquatic-002.jpg",
+    "../assets/1_places/life-aquatic-003.jpg",
+    "../assets/1_places/life-aquatic-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -6160,11 +6203,11 @@ Kaş’ta serbest dalış + yoga kombinasyonu isteyenler için güçlü bir adre
   title: "Freedive Cosmos",
   description: "Kaş’ta serbest dalış (freediving) odaklı eğitim ve antrenmanlar sunan ekip/okul.",
   category: ["activities", "diving", "nature"],
-  image: '../assets/1_places/freedive-cosmos/freedive-cosmos-001.jpg',
+  image: "../assets/1_places/freedive-cosmos-001.jpg",
   images: [
-    '../assets/1_places/freedive-cosmos/freedive-cosmos-002.jpg',
-    '../assets/1_places/freedive-cosmos/freedive-cosmos-003.jpg',
-    '../assets/1_places/freedive-cosmos/freedive-cosmos-004.jpg'
+    "../assets/1_places/freedive-cosmos-002.jpg",
+    "../assets/1_places/freedive-cosmos-003.jpg",
+    "../assets/1_places/freedive-cosmos-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -6202,11 +6245,11 @@ Kaş’ta serbest dalış odaklı eğitim/antrenman arayanlara yönelik bir seç
   title: "Likya Dalış Merkezi (Bougainville Travel)",
   description: "Kaş’ta dalış turları ve eğitimler sunan, Bougainville Travel çatısı altında geçen dalış hizmeti/organizasyonu.",
   category: ["diving", "activities"],
-  image: '../assets/1_places/likya-dalis-merkezi/likya-dalis-merkezi-001.jpg',
+  image: "../assets/1_places/likya-dalis-merkezi-001.jpg",
   images: [
-    '../assets/1_places/likya-dalis-merkezi/likya-dalis-merkezi-002.jpg',
-    '../assets/1_places/likya-dalis-merkezi/likya-dalis-merkezi-003.jpg',
-    '../assets/1_places/likya-dalis-merkezi/likya-dalis-merkezi-004.jpg'
+    "../assets/1_places/likya-dalis-merkezi-002.jpg",
+    "../assets/1_places/likya-dalis-merkezi-003.jpg",
+    "../assets/1_places/likya-dalis-merkezi-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -6244,11 +6287,11 @@ Bougainville bağlantılı, dalış programını “organizasyon” gibi yönete
   title: "Boat Trips by Captain Ergun",
   description: "Kaş çıkışlı, günlük tekne turları ve koy molalarıyla deniz günü planlayan tekne turu işletmesi.",
   category: ["activities", "places", "nature"],
-  image: '../assets/1_places/boat-trips-by-captain-ergun/boat-trips-by-captain-ergun-001.jpg',
+  image: "../assets/1_places/boat-trips-by-captain-ergun-001.jpg",
   images: [
-    '../assets/1_places/boat-trips-by-captain-ergun/boat-trips-by-captain-ergun-002.jpg',
-    '../assets/1_places/boat-trips-by-captain-ergun/boat-trips-by-captain-ergun-003.jpg',
-    '../assets/1_places/boat-trips-by-captain-ergun/boat-trips-by-captain-ergun-004.jpg'
+    "../assets/1_places/boat-trips-by-captain-ergun-002.jpg",
+    "../assets/1_places/boat-trips-by-captain-ergun-003.jpg",
+    "../assets/1_places/boat-trips-by-captain-ergun-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -6286,11 +6329,11 @@ Kaş’ta “bir gün full deniz” planı için tekne turu; Captain Ergun tarz�
   title: "Xanthos Travel",
   description: "Kaş’ta tekne turları, günlük geziler ve transfer gibi hizmetler sunan yerel tur acentesi.",
   category: ["activities", "places"],
-  image: '../assets/1_places/xanthos-travel/xanthos-travel-001.jpg',
+  image: "../assets/1_places/xanthos-travel-001.jpg",
   images: [
-    '../assets/1_places/xanthos-travel/xanthos-travel-002.jpg',
-    '../assets/1_places/xanthos-travel/xanthos-travel-003.jpg',
-    '../assets/1_places/xanthos-travel/xanthos-travel-004.jpg'
+    "../assets/1_places/xanthos-travel-002.jpg",
+    "../assets/1_places/xanthos-travel-003.jpg",
+    "../assets/1_places/xanthos-travel-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6328,11 +6371,11 @@ Kaş’ta tur ve aktiviteleri tek yerden organize etmek için yerel acente.`
   title: "Tatil Sihirbazı",
   description: "Kaş ve çevresine yönelik turlar, aktiviteler ve rezervasyonlar sunan tur/organizasyon firması.",
   category: ["activities", "places"],
-  image: '../assets/1_places/tatil-sihirbazi/tatil-sihirbazi-001.jpg',
+  image: "../assets/1_places/tatil-sihirbazi-001.jpg",
   images: [
-    '../assets/1_places/tatil-sihirbazi/tatil-sihirbazi-002.jpg',
-    '../assets/1_places/tatil-sihirbazi/tatil-sihirbazi-003.jpg',
-    '../assets/1_places/tatil-sihirbazi/tatil-sihirbazi-004.jpg'
+    "../assets/1_places/tatil-sihirbazi-002.jpg",
+    "../assets/1_places/tatil-sihirbazi-003.jpg",
+    "../assets/1_places/tatil-sihirbazi-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6370,11 +6413,11 @@ Kaş’ta tur/aktivite planını hızlandıran organizasyon seçeneği.`
   title: "Aslar Travel",
   description: "Kaş merkezde, günlük turlar ve tekne turları dahil çeşitli gezi/aktivite satışları yapan acente.",
   category: ["activities", "places"],
-  image: '../assets/1_places/aslar-travel/aslar-travel-001.jpg',
+  image: "../assets/1_places/aslar-travel-001.jpg",
   images: [
-    '../assets/1_places/aslar-travel/aslar-travel-002.jpg',
-    '../assets/1_places/aslar-travel/aslar-travel-003.jpg',
-    '../assets/1_places/aslar-travel/aslar-travel-004.jpg'
+    "../assets/1_places/aslar-travel-002.jpg",
+    "../assets/1_places/aslar-travel-003.jpg",
+    "../assets/1_places/aslar-travel-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6412,11 +6455,11 @@ Merkezden tur/aktivite organize etmeye yarayan yerel acente.`
   title: "Eroğlu Boat Tours",
   description: "Kaş Limanı’ndan kalkan günlük tekne turlarıyla koy gezileri ve yüzme molaları sunan işletme.",
   category: ["activities", "nature", "places"],
-  image: '../assets/1_places/eroglu-boat-tours/eroglu-boat-tours-001.jpg',
+  image: "../assets/1_places/eroglu-boat-tours-001.jpg",
   images: [
-    '../assets/1_places/eroglu-boat-tours/eroglu-boat-tours-002.jpg',
-    '../assets/1_places/eroglu-boat-tours/eroglu-boat-tours-003.jpg',
-    '../assets/1_places/eroglu-boat-tours/eroglu-boat-tours-004.jpg'
+    "../assets/1_places/eroglu-boat-tours-002.jpg",
+    "../assets/1_places/eroglu-boat-tours-003.jpg",
+    "../assets/1_places/eroglu-boat-tours-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺₺",
@@ -6454,11 +6497,11 @@ Kaş Limanı çıkışlı klasik bir “koy koy yüzme” tekne turu.`
   title: "Kaş Cuma Pazarı (Kaş Pazar Yeri)",
   description: "Cuma günleri kurulan, sebze-meyve, yerel ürünler, giyim ve hediyelik bulabileceğin Kaş’ın en canlı pazarı.",
   category: ["shopping", "places"],
-  image: '../assets/1_places/kas-cuma-pazari/kas-cuma-pazari-001.jpg',
+  image: "../assets/1_places/kas-cuma-pazari-001.jpg",
   images: [
-    '../assets/1_places/kas-cuma-pazari/kas-cuma-pazari-002.jpg',
-    '../assets/1_places/kas-cuma-pazari/kas-cuma-pazari-003.jpg',
-    '../assets/1_places/kas-cuma-pazari/kas-cuma-pazari-004.jpg'
+    "../assets/1_places/kas-cuma-pazari-002.jpg",
+    "../assets/1_places/kas-cuma-pazari-003.jpg",
+    "../assets/1_places/kas-cuma-pazari-004.jpg"
   ],
   rating: 4.6,
   price: "₺",
@@ -6496,11 +6539,11 @@ Cuma günü Kaş’ın en canlı noktası: yerel ürün, giyim ve hediyelik içi
   title: "Rabia Ucuzluk Pazarı",
   description: "Kaş merkezde, günlük ihtiyaçlar ve uygun fiyatlı ürünler bulabileceğin yerel ‘ucuzluk’ mağazası.",
   category: ["shopping"],
-  image: '../assets/1_places/rabia-ucuzluk-pazari/rabia-ucuzluk-pazari-001.jpg',
+  image: "../assets/1_places/rabia-ucuzluk-pazari-001.jpg",
   images: [
-    '../assets/1_places/rabia-ucuzluk-pazari/rabia-ucuzluk-pazari-002.jpg',
-    '../assets/1_places/rabia-ucuzluk-pazari/rabia-ucuzluk-pazari-003.jpg',
-    '../assets/1_places/rabia-ucuzluk-pazari/rabia-ucuzluk-pazari-004.jpg'
+    "../assets/1_places/rabia-ucuzluk-pazari-002.jpg",
+    "../assets/1_places/rabia-ucuzluk-pazari-003.jpg",
+    "../assets/1_places/rabia-ucuzluk-pazari-004.jpg"
   ],
   rating: 0.0,
   price: "₺",
@@ -6538,11 +6581,11 @@ Merkezde pratik ve uygun fiyatlı alışveriş noktası.`
   title: "Feraye Store & Atelier",
   description: "Kaş’ta tasarım/atelier çizgisinde, seçki kıyafet-aksesuar ve el işi ürünler bulabileceğin butik mağaza.",
   category: ["shopping"],
-  image: '../assets/1_places/feraye-store-atelier/feraye-store-atelier-001.jpg',
+  image: "../assets/1_places/feraye-store-atelier-001.jpg",
   images: [
-    '../assets/1_places/feraye-store-atelier/feraye-store-atelier-002.jpg',
-    '../assets/1_places/feraye-store-atelier/feraye-store-atelier-003.jpg',
-    '../assets/1_places/feraye-store-atelier/feraye-store-atelier-004.jpg'
+    "../assets/1_places/feraye-store-atelier-002.jpg",
+    "../assets/1_places/feraye-store-atelier-003.jpg",
+    "../assets/1_places/feraye-store-atelier-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6580,11 +6623,11 @@ Kaş çarşısında seçki ve tasarım butik tarzı bir durak.`
   title: "Kash Cosmetics",
   description: "Kaş merkezde kozmetik ve kişisel bakım ürünleri bulabileceğin mağaza.",
   category: ["shopping"],
-  image: '../assets/1_places/kash-cosmetics/kash-cosmetics-001.jpg',
+  image: "../assets/1_places/kash-cosmetics-001.jpg",
   images: [
-    '../assets/1_places/kash-cosmetics/kash-cosmetics-002.jpg',
-    '../assets/1_places/kash-cosmetics/kash-cosmetics-003.jpg',
-    '../assets/1_places/kash-cosmetics/kash-cosmetics-004.jpg'
+    "../assets/1_places/kash-cosmetics-002.jpg",
+    "../assets/1_places/kash-cosmetics-003.jpg",
+    "../assets/1_places/kash-cosmetics-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6622,11 +6665,11 @@ Merkezde pratik kozmetik/bakım alışverişi için bir durak.`
   title: "Minelli Butik",
   description: "Kaş çarşı içinde, kadın giyim ve aksesuar ağırlıklı seçkisiyle bilinen butik mağaza.",
   category: ["shopping"],
-  image: '../assets/1_places/minelli-butik/minelli-butik-001.jpg',
+  image: "../assets/1_places/minelli-butik-001.jpg",
   images: [
-    '../assets/1_places/minelli-butik/minelli-butik-002.jpg',
-    '../assets/1_places/minelli-butik/minelli-butik-003.jpg',
-    '../assets/1_places/minelli-butik/minelli-butik-004.jpg'
+    "../assets/1_places/minelli-butik-002.jpg",
+    "../assets/1_places/minelli-butik-003.jpg",
+    "../assets/1_places/minelli-butik-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6664,11 +6707,11 @@ Kaş çarşıda giyim-aksesuar için butik bir durak.`
   title: "Tuğra Art Gallery",
   description: "Kaş’ta yerel/çağdaş eserlerin sergilendiği, çarşı içinde gezilebilen sanat galerisi.",
   category: ["shopping", "places", "articles"],
-  image: '../assets/1_places/tugra-art-gallery/tugra-art-gallery-001.jpg',
+  image: "../assets/1_places/tugra-art-gallery-001.jpg",
   images: [
-    '../assets/1_places/tugra-art-gallery/tugra-art-gallery-002.jpg',
-    '../assets/1_places/tugra-art-gallery/tugra-art-gallery-003.jpg',
-    '../assets/1_places/tugra-art-gallery/tugra-art-gallery-004.jpg'
+    "../assets/1_places/tugra-art-gallery-002.jpg",
+    "../assets/1_places/tugra-art-gallery-003.jpg",
+    "../assets/1_places/tugra-art-gallery-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6706,11 +6749,11 @@ Açılış saatleri sezon dışı değişebilir; kapalıysa hemen yakında başk
   title: "Atelier Thalia",
   description: "Kaş’ta atölye/butik çizgisinde, el işi ve tasarım ürünler görebileceğin sanat odaklı mekân.",
   category: ["shopping", "places", "articles"],
-  image: '../assets/1_places/atelier-thalia/atelier-thalia-001.jpg',
+  image: "../assets/1_places/atelier-thalia-001.jpg",
   images: [
-    '../assets/1_places/atelier-thalia/atelier-thalia-002.jpg',
-    '../assets/1_places/atelier-thalia/atelier-thalia-003.jpg',
-    '../assets/1_places/atelier-thalia/atelier-thalia-004.jpg'
+    "../assets/1_places/atelier-thalia-002.jpg",
+    "../assets/1_places/atelier-thalia-003.jpg",
+    "../assets/1_places/atelier-thalia-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6748,11 +6791,11 @@ Tasarım/atölye dokusunu sevenlere çarşı içinde alternatif mola.`
   title: "Gallery Anatolia",
   description: "Kaş çarşı içinde, resim/seramik gibi Anadolu temalı eserler görebileceğin sanat galerisi/butik.",
   category: ["shopping", "places", "articles"],
-  image: '../assets/1_places/gallery-anatolia/gallery-anatolia-001.jpg',
+  image: "../assets/1_places/gallery-anatolia-001.jpg",
   images: [
-    '../assets/1_places/gallery-anatolia/gallery-anatolia-002.jpg',
-    '../assets/1_places/gallery-anatolia/gallery-anatolia-003.jpg',
-    '../assets/1_places/gallery-anatolia/gallery-anatolia-004.jpg'
+    "../assets/1_places/gallery-anatolia-002.jpg",
+    "../assets/1_places/gallery-anatolia-003.jpg",
+    "../assets/1_places/gallery-anatolia-004.jpg"
   ],
   rating: 0.0,
   price: "₺₺",
@@ -6790,11 +6833,11 @@ Açılış saatleri sezon dışı değişebilir.
   title: "Antiphellos Antik Tiyatrosu",
   description: "Kaş’ın simge noktası; deniz manzarasına karşı oturan antik tiyatro, özellikle gün batımında çok etkileyici.",
   category: ["history", "places"],
-  image: '../assets/1_places/antiphellos-antik-tiyatrosu/antiphellos-antik-tiyatrosu-001.jpg',
+  image: "../assets/1_places/antiphellos-antik-tiyatrosu-001.jpg",
   images: [
-    '../assets/1_places/antiphellos-antik-tiyatrosu/antiphellos-antik-tiyatrosu-002.jpg',
-    '../assets/1_places/antiphellos-antik-tiyatrosu/antiphellos-antik-tiyatrosu-003.jpg',
-    '../assets/1_places/antiphellos-antik-tiyatrosu/antiphellos-antik-tiyatrosu-004.jpg'
+    "../assets/1_places/antiphellos-antik-tiyatrosu-002.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatrosu-003.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatrosu-004.jpg"
   ],
   rating: 4.8,
   price: "₺",
@@ -6832,11 +6875,11 @@ Kaş’ın simge tarih noktası; deniz manzaralı antik tiyatro ve en iyi zaman�
   title: "Aslanlı Lahit (Kral Mezarı)",
   description: "Kaş Uzun Çarşı içinde yer alan, Likya dönemine ait ikonik lahit; Kaş’ın en fotoğraflanan simgelerinden.",
   category: ["history", "places"],
-  image: '../assets/1_places/aslanli-lahit/aslanli-lahit-001.jpg',
+  image: "../assets/1_places/aslanli-lahit-001.jpg",
   images: [
-    '../assets/1_places/aslanli-lahit/aslanli-lahit-002.jpg',
-    '../assets/1_places/aslanli-lahit/aslanli-lahit-003.jpg',
-    '../assets/1_places/aslanli-lahit/aslanli-lahit-004.jpg'
+    "../assets/1_places/aslanli-lahit-002.jpg",
+    "../assets/1_places/aslanli-lahit-003.jpg",
+    "../assets/1_places/aslanli-lahit-004.jpg"
   ],
   rating: 4.7,
   price: "₺",
@@ -6874,11 +6917,11 @@ Kaş’ın çarşı içindeki ikonik Likya eseri; kısa dur, bak, fotoğraf çek
   title: "Kaleköy (Simena Kalesi)",
   description: "Kaş yakınlarında, tekneyle ulaşılan tarihi köy; Simena Kalesi’nden Kekova manzarasıyla ünlü.",
   category: ["history", "nature", "places"],
-  image: '../assets/1_places/kalekoy-simena-kalesi/kalekoy-simena-kalesi-001.jpg',
+  image: "../assets/1_places/kalekoy-simena-kalesi-001.jpg",
   images: [
-    '../assets/1_places/kalekoy-simena-kalesi/kalekoy-simena-kalesi-002.jpg',
-    '../assets/1_places/kalekoy-simena-kalesi/kalekoy-simena-kalesi-003.jpg',
-    '../assets/1_places/kalekoy-simena-kalesi/kalekoy-simena-kalesi-004.jpg'
+    "../assets/1_places/kalekoy-simena-kalesi-002.jpg",
+    "../assets/1_places/kalekoy-simena-kalesi-003.jpg",
+    "../assets/1_places/kalekoy-simena-kalesi-004.jpg"
   ],
   rating: 4.8,
   price: "₺₺",
@@ -6916,11 +6959,11 @@ Tekneyle ulaşılan tarihi köy + kale manzarası: Kekova rotasının en sevilen
   title: "Aperlai Antik Kenti",
   description: "Kekova hattında, daha sakin kalan Likya antik yerleşimi; karadan yürüyüş veya tekne rotalarıyla görülebilir.",
   category: ["history", "nature", "places"],
-  image: '../assets/1_places/aperlai-antik-kenti/aperlai-antik-kenti-001.jpg',
+  image: "../assets/1_places/aperlai-antik-kenti-001.jpg",
   images: [
-    '../assets/1_places/aperlai-antik-kenti/aperlai-antik-kenti-002.jpg',
-    '../assets/1_places/aperlai-antik-kenti/aperlai-antik-kenti-003.jpg',
-    '../assets/1_places/aperlai-antik-kenti/aperlai-antik-kenti-004.jpg'
+    "../assets/1_places/aperlai-antik-kenti-002.jpg",
+    "../assets/1_places/aperlai-antik-kenti-003.jpg",
+    "../assets/1_places/aperlai-antik-kenti-004.jpg"
   ],
   rating: 4.6,
   price: "₺",
@@ -6958,11 +7001,11 @@ Kekova hattında daha sakin, doğa içinde bir Likya antik kenti.`
   title: "Patara Plajı",
   description: "Türkiye’nin en uzun ve en geniş kumsallarından; kum tepeleri ve gün batımıyla ünlü, Kaş çevresinin ikonik plajı.",
   category: ["beaches", "nature", "places"],
-  image: '../assets/1_places/patara-plaji/patara-plaji-001.jpg',
+  image: "../assets/1_places/patara-plaji-001.jpg",
   images: [
-    '../assets/1_places/patara-plaji/patara-plaji-002.jpg',
-    '../assets/1_places/patara-plaji/patara-plaji-003.jpg',
-    '../assets/1_places/patara-plaji/patara-plaji-004.jpg'
+    "../assets/1_places/patara-plaji-002.jpg",
+    "../assets/1_places/patara-plaji-003.jpg",
+    "../assets/1_places/patara-plaji-004.jpg"
   ],
   rating: 4.8,
   price: "₺₺",
@@ -7000,11 +7043,11 @@ Kaş çevresinin en ikonik kumsalı: dev gibi sahil, kum tepeleri ve efsane gün
   title: "Patara Antik Kenti",
   description: "Likya’nın önemli kentlerinden; tiyatro, meclis binası ve anıtsal kapı gibi yapılarıyla öne çıkan büyük arkeolojik alan.",
   category: ["history", "places", "nature"],
-  image: '../assets/1_places/patara-antik-kenti/patara-antik-kenti-001.jpg',
+  image: "../assets/1_places/patara-antik-kenti-001.jpg",
   images: [
-    '../assets/1_places/patara-antik-kenti/patara-antik-kenti-002.jpg',
-    '../assets/1_places/patara-antik-kenti/patara-antik-kenti-003.jpg',
-    '../assets/1_places/patara-antik-kenti/patara-antik-kenti-004.jpg'
+    "../assets/1_places/patara-antik-kenti-002.jpg",
+    "../assets/1_places/patara-antik-kenti-003.jpg",
+    "../assets/1_places/patara-antik-kenti-004.jpg"
   ],
   rating: 4.7,
   price: "₺₺",
