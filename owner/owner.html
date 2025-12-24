@@ -40,10 +40,10 @@
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #ffffff;
       color: var(--gray-800);
       min-height: 100vh;
-      padding: 2rem 1rem;
+      padding: 0;
     }
 
     .container {
@@ -52,52 +52,40 @@
     }
 
     .form-card {
-      background: white;
+      background: linear-gradient(180deg, rgba(8, 145, 178, 0.06), #ffffff 40%);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-lg);
       overflow: hidden;
+      border: 1px solid rgba(8, 145, 178, 0.18);
     }
 
     .form-header {
-      background: linear-gradient(to right, var(--primary-cyan), var(--primary-blue));
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
       padding: 2rem;
       text-align: center;
-      color: white;
+      color: #ffffff;
     }
 
     .form-header h1 {
       font-size: 2rem;
       font-weight: 800;
       margin-bottom: 0.5rem;
+      color: #ffffff;
     }
 
     .form-header p {
-      opacity: 0.9;
       font-size: 1rem;
+      opacity: 0.95;
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .form-body {
       padding: 2rem;
     }
 
-    .form-section {
-      margin-bottom: 2rem;
-    }
-
-    .section-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-icon {
-      font-size: 1.5rem;
-    }
-
+    
+    
+    
     .form-group {
       margin-bottom: 1.5rem;
     }
@@ -110,7 +98,7 @@
       font-size: 0.95rem;
     }
 
-    .form-label .required {
+    .form-label . {
       color: var(--primary-red);
       margin-left: 0.25rem;
     }
@@ -145,79 +133,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
-    }
-
-    .photo-upload {
-      border: 3px dashed var(--gray-300);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      background: var(--gray-50);
-    }
-
-    .photo-upload:hover {
-      border-color: var(--primary-blue);
-      background: rgba(8, 145, 178, 0.05);
-    }
-
-    .photo-upload-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .photo-upload-text {
-      color: var(--gray-600);
-      font-weight: 500;
-    }
-
-    .photo-upload input[type="file"] {
-      display: none;
-    }
-
-    .photo-preview {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .photo-preview-item {
-      position: relative;
-      aspect-ratio: 1;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 2px solid var(--gray-200);
-    }
-
-    .photo-preview-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .photo-remove {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background: var(--primary-red);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 28px;
-      height: 28px;
-      cursor: pointer;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s;
-    }
-
-    .photo-remove:hover {
-      transform: scale(1.1);
     }
 
     .category-grid {
@@ -272,8 +187,8 @@
     .submit-button {
       width: 100%;
       padding: 1rem 2rem;
-      background: linear-gradient(to right, var(--primary-cyan), var(--primary-blue));
-      color: white;
+      background: #ffffff;
+      color: var(--gray-800);
       border: none;
       border-radius: var(--radius-full);
       font-size: 1.1rem;
@@ -350,9 +265,120 @@
         padding: 1.5rem;
       }
     }
+
+/* Header (copied markup from faq.html, styled locally for owner page) */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--gray-200);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 1rem;
+}
+.home-link {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: var(--gray-700);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.home-link:hover { background: var(--gray-100); color: var(--gray-900); }
+.home-icon { width: 22px; height: 22px; }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  user-select: none;
+}
+.logo-img { width: 36px; height: 36px; object-fit: contain; }
+.logo-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, var(--primary-blue), #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-wrap {
+  padding: 2rem 1rem;
+}
+
+/* Section cards (use existing palette vars) */
+.form-section {
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--gray-200);
+  background: transparent;
+}
+
+.section-card {
+  background: #ffffff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.14), rgba(6, 182, 212, 0.10));
+  border: 1px solid rgba(8, 145, 178, 0.22);
+  border-radius: var(--radius-lg);
+  color: var(--gray-900);
+}
+
+.section-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(8, 145, 178, 0.18);
+  color: var(--primary-blue);
+  font-size: 1.1rem;
+  flex: 0 0 auto;
+}
   </style>
 </head>
 <body>
+  <header class="header">
+    <div class="container header-content">
+      <a class="home-link" href="../index.html" aria-label="Ana Sayfa">
+        <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 10.5L12 3l9 7.5"/>
+          <path d="M5 10v10h14V10"/>
+          <path d="M9 20v-6h6v6"/>
+        </svg>
+      </a>
+      <div class="logo">
+        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
   <div class="container">
     <div class="form-card">
       <div class="form-header">
@@ -370,24 +396,25 @@
         <form id="venueForm">
           <!-- Temel Bilgiler -->
           <div class="form-section">
-            <h3 class="section-title">
+  <div class="section-card">
+<h3 class="section-title">
               <span class="section-icon">📍</span>
               Temel Bilgiler
             </h3>
 
             <div class="form-group">
               <label class="form-label">
-                Mekan Adı<span class="required">*</span>
+                Mekan Adı<span class="">*</span>
               </label>
-              <input type="text" class="form-input" name="title" required placeholder="Örn: Kaputaş Plajı">
+              <input type="text" class="form-input" name="title"  placeholder="Örn: Kaputaş Plajı" required>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">
-                  Konum<span class="required">*</span>
+                  Konum<span class="">*</span>
                 </label>
-                <input type="text" class="form-input" name="location" required placeholder="Örn: Kaş Merkez">
+                <input type="text" class="form-input" name="location"  placeholder="Örn: Kaş Merkez">
               </div>
 
               <div class="form-group">
@@ -400,9 +427,9 @@
 
             <div class="form-group">
               <label class="form-label">
-                Kısa Açıklama<span class="required">*</span>
+                Kısa Açıklama<span class="">*</span>
               </label>
-              <textarea class="form-textarea" name="description" required placeholder="Mekanınızı kısaca tanıtın (1-2 cümle)"></textarea>
+              <textarea class="form-textarea" name="description"  placeholder="Mekanınızı kısaca tanıtın (1-2 cümle)"></textarea>
               <p class="form-hint">Bu metin kart görünümünde gösterilecek</p>
             </div>
 
@@ -410,108 +437,145 @@
               <label class="form-label">
                 Detaylı Açıklama
               </label>
-              <textarea class="form-textarea" name="longText" placeholder="Mekanınız hakkında detaylı bilgi verin (özellikler, hizmetler, öneriler vb.)" style="min-height: 180px;"></textarea>
+              <textarea class="form-textarea" name="longText" placeholder="Mekanınız hakkında detaylı bilgi verin (özellikler, hizmetler, öneriler vb.)" style="min-height: 180px;" required></textarea>
             </div>
-          </div>
+  </div>
+</div>
+
 
           <!-- Kategoriler -->
           <div class="form-section">
-            <h3 class="section-title">
+  <div class="section-card">
+<h3 class="section-title">
               <span class="section-icon">🏷️</span>
-              Kategoriler<span class="required">*</span>
+              Kategoriler<span class="">*</span>
             </h3>
             <p class="form-hint" style="margin-bottom: 1rem;">Mekanınız için uygun kategorileri seçin (birden fazla seçebilirsiniz)</p>
 
             <div class="category-grid">
-              <div class="category-option">
-                <input type="checkbox" id="cat-plaj" name="category" value="plaj" class="category-checkbox">
-                <label for="cat-plaj" class="category-label">
-                  <span class="category-icon">🏖️</span>
-                  <span class="category-name">Plaj</span>
-                </label>
-              </div>
 
-              <div class="category-option">
-                <input type="checkbox" id="cat-restoran" name="category" value="restoran" class="category-checkbox">
-                <label for="cat-restoran" class="category-label">
-                  <span class="category-icon">🍽️</span>
-                  <span class="category-name">Restoran</span>
-                </label>
-              </div>
+      <div class="category-option">
+        <input type="checkbox" id="cat-bar" name="category" value="bar" class="category-checkbox">
+        <label for="cat-bar" class="category-label">
+          <span class="category-icon">🍸</span>
+          <span class="category-name">Bar</span>
+        </label>
+      </div>
 
-              <div class="category-option">
-                <input type="checkbox" id="cat-kafe" name="category" value="kafe" class="category-checkbox">
-                <label for="cat-kafe" class="category-label">
-                  <span class="category-icon">☕</span>
-                  <span class="category-name">Kafe</span>
-                </label>
-              </div>
+      <div class="category-option">
+        <input type="checkbox" id="cat-meyhane" name="category" value="meyhane" class="category-checkbox">
+        <label for="cat-meyhane" class="category-label">
+          <span class="category-icon">🥂</span>
+          <span class="category-name">Meyhane</span>
+        </label>
+      </div>
 
-              <div class="category-option">
-                <input type="checkbox" id="cat-otel" name="category" value="otel" class="category-checkbox">
-                <label for="cat-otel" class="category-label">
-                  <span class="category-icon">🏨</span>
-                  <span class="category-name">Otel</span>
-                </label>
-              </div>
+      <div class="category-option">
+        <input type="checkbox" id="cat-canli-muzik" name="category" value="canli-muzik" class="category-checkbox">
+        <label for="cat-canli-muzik" class="category-label">
+          <span class="category-icon">🎤</span>
+          <span class="category-name">Canlı Müzik</span>
+        </label>
+      </div>
 
-              <div class="category-option">
-                <input type="checkbox" id="cat-muzik" name="category" value="muzik" class="category-checkbox">
-                <label for="cat-muzik" class="category-label">
-                  <span class="category-icon">🎵</span>
-                  <span class="category-name">Müzik</span>
-                </label>
-              </div>
+      <div class="category-option">
+        <input type="checkbox" id="cat-otel" name="category" value="otel" class="category-checkbox">
+        <label for="cat-otel" class="category-label">
+          <span class="category-icon">🏨</span>
+          <span class="category-name">Otel</span>
+        </label>
+      </div>
 
-              <div class="category-option">
-                <input type="checkbox" id="cat-gezi" name="category" value="gezi" class="category-checkbox">
-                <label for="cat-gezi" class="category-label">
-                  <span class="category-icon">⛵</span>
-                  <span class="category-name">Gezi</span>
-                </label>
-              </div>
+      <div class="category-option">
+        <input type="checkbox" id="cat-kahvalti" name="category" value="kahvalti" class="category-checkbox">
+        <label for="cat-kahvalti" class="category-label">
+          <span class="category-icon">🥐</span>
+          <span class="category-name">Kahvaltı</span>
+        </label>
+      </div>
 
-              <div class="category-option">
-                <input type="checkbox" id="cat-aktivite" name="category" value="aktivite" class="category-checkbox">
-                <label for="cat-aktivite" class="category-label">
-                  <span class="category-icon">🤿</span>
-                  <span class="category-name">Aktivite</span>
-                </label>
-              </div>
+      <div class="category-option">
+        <input type="checkbox" id="cat-muzik" name="category" value="muzik" class="category-checkbox">
+        <label for="cat-muzik" class="category-label">
+          <span class="category-icon">🎵</span>
+          <span class="category-name">Müzik</span>
+        </label>
+      </div>
 
-              <div class="category-option">
-                <input type="checkbox" id="cat-kamp" name="category" value="kamp" class="category-checkbox">
-                <label for="cat-kamp" class="category-label">
-                  <span class="category-icon">🏕️</span>
-                  <span class="category-name">Kamp</span>
-                </label>
-              </div>
-            </div>
-          </div>
+      <div class="category-option">
+        <input type="checkbox" id="cat-kafe" name="category" value="kafe" class="category-checkbox">
+        <label for="cat-kafe" class="category-label">
+          <span class="category-icon">☕</span>
+          <span class="category-name">Kafe</span>
+        </label>
+      </div>
+
+      <div class="category-option">
+        <input type="checkbox" id="cat-plaj" name="category" value="plaj" class="category-checkbox">
+        <label for="cat-plaj" class="category-label">
+          <span class="category-icon">🏖️</span>
+          <span class="category-name">Plaj</span>
+        </label>
+      </div>
+
+      <div class="category-option">
+        <input type="checkbox" id="cat-kamp" name="category" value="kamp" class="category-checkbox">
+        <label for="cat-kamp" class="category-label">
+          <span class="category-icon">🏕️</span>
+          <span class="category-name">Kamp</span>
+        </label>
+      </div>
+
+      <div class="category-option">
+        <input type="checkbox" id="cat-aktivite" name="category" value="aktivite" class="category-checkbox">
+        <label for="cat-aktivite" class="category-label">
+          <span class="category-icon">🧗</span>
+          <span class="category-name">Aktivite</span>
+        </label>
+      </div>
+
+      <div class="category-option">
+        <input type="checkbox" id="cat-dalis" name="category" value="dalis" class="category-checkbox">
+        <label for="cat-dalis" class="category-label">
+          <span class="category-icon">🤿</span>
+          <span class="category-name">Dalış</span>
+        </label>
+      </div>
+
+      <div class="category-option">
+        <input type="checkbox" id="cat-alisveris" name="category" value="alisveris" class="category-checkbox">
+        <label for="cat-alisveris" class="category-label">
+          <span class="category-icon">🛍️</span>
+          <span class="category-name">Alışveriş</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
 
           <!-- Fotoğraflar -->
-          <div class="form-section">
-            <h3 class="section-title">
-              <span class="section-icon">📸</span>
-              Fotoğraflar<span class="required">*</span>
-            </h3>
-            
-            <label class="photo-upload" for="photoInput">
-              <div class="photo-upload-icon">📷</div>
-              <div class="photo-upload-text">
-                <strong>Fotoğraf eklemek için tıklayın</strong>
-                <br>
-                <small>veya sürükleyip bırakın (En az 1, en fazla 10 fotoğraf)</small>
-              </div>
-              <input type="file" id="photoInput" accept="image/*" multiple>
-            </label>
+      <div class="form-section">
+  <div class="section-card">
+<h3 class="section-title">
+          <span class="section-icon">📸</span>
+          Fotoğraflar (Opsiyonel)
+        </h3>
 
-            <div class="photo-preview" id="photoPreview"></div>
-          </div>
+        <div class="form-group">
+          <label class="form-label">Fotoğraf Seç</label>
+          <input type="file" id="photoInput" class="form-input" accept="image/*" multiple>
+          <p class="form-hint">İsterseniz birden fazla fotoğraf seçebilirsiniz. Sürükle-bırak yok.</p>
+        </div>
+  </div>
+</div>
 
-          <!-- Ek Bilgiler -->
+
+      <!-- Ek Bilgiler -->
+
           <div class="form-section">
-            <h3 class="section-title">
+  <div class="section-card">
+<h3 class="section-title">
               <span class="section-icon">ℹ️</span>
               Ek Bilgiler
             </h3>
@@ -546,11 +610,14 @@
               <input type="text" class="form-input" name="googleMapsQuery" placeholder="Örn: Kaputaş Plajı Kaş">
               <p class="form-hint">Mekanınızın Google Maps'te nasıl aranacağını yazın</p>
             </div>
-          </div>
+  </div>
+</div>
+
 
           <!-- İletişim Bilgileri -->
           <div class="form-section">
-            <h3 class="section-title">
+  <div class="section-card">
+<h3 class="section-title">
               <span class="section-icon">📞</span>
               İletişim Bilgileri
             </h3>
@@ -558,9 +625,9 @@
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">
-                  Telefon<span class="required">*</span>
+                  Telefon<span class="">*</span>
                 </label>
-                <input type="tel" class="form-input" name="phone" required placeholder="0532 123 45 67">
+                <input type="tel" class="form-input" name="phone"  placeholder="0532 123 45 67">
               </div>
 
               <div class="form-group">
@@ -586,7 +653,9 @@
                 <input type="url" class="form-input" name="booking" placeholder="https://booking.com/...">
               </div>
             </div>
-          </div>
+  </div>
+</div>
+
 
           <!-- Submit -->
           <div class="submit-section">
@@ -601,152 +670,57 @@
       </div>
     </div>
   </div>
+</main>
 
   <script>
-    const form = document.getElementById('venueForm');
-    const photoInput = document.getElementById('photoInput');
-    const photoPreview = document.getElementById('photoPreview');
-    const successMessage = document.getElementById('successMessage');
-    let selectedPhotos = [];
+  const form = document.getElementById('venueForm');
+  const photoInput = document.getElementById('photoInput');
+  const successMessage = document.getElementById('successMessage');
 
-    // Photo upload handling
-    photoInput.addEventListener('change', (e) => {
-      const files = Array.from(e.target.files);
-      
-      if (selectedPhotos.length + files.length > 10) {
-        alert('En fazla 10 fotoğraf yükleyebilirsiniz.');
-        return;
-      }
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-      files.forEach(file => {
-        if (file.type.startsWith('image/')) {
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            selectedPhotos.push({
-              url: e.target.result,
-              file: file
-            });
-            renderPhotos();
-          };
-          reader.readAsDataURL(file);
-        }
-      });
-    });
-
-    function renderPhotos() {
-      photoPreview.innerHTML = selectedPhotos.map((photo, index) => `
-        <div class="photo-preview-item">
-          <img src="${photo.url}" alt="Preview ${index + 1}">
-          <button type="button" class="photo-remove" onclick="removePhoto(${index})">×</button>
-        </div>
-      `).join('');
+    // Validate categories
+    const categories = form.querySelectorAll('input[name="category"]:checked');
+    if (categories.length === 0) {
+      alert('Lütfen en az bir kategori seçin.');
+      return;
     }
 
-    window.removePhoto = (index) => {
-      selectedPhotos.splice(index, 1);
-      renderPhotos();
+    const formData = new FormData(form);
+
+    const data = {
+      title: formData.get('title'),
+      location: formData.get('location'),
+      distance: formData.get('distance'),
+      description: formData.get('description'),
+      longText: formData.get('longText'),
+      categories: Array.from(categories).map(c => c.value),
+      price: formData.get('price'),
+      duration: formData.get('duration'),
+      access: formData.get('access'),
+      googleMapsQuery: formData.get('googleMapsQuery'),
+      phone: formData.get('phone'),
+      instagram: formData.get('instagram'),
+      website: formData.get('website'),
+      booking: formData.get('booking'),
+      photosSelected: photoInput?.files?.length || 0
     };
 
-    // Form submission
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    console.log('Form data:', data);
 
-      // Validate categories
-      const categories = form.querySelectorAll('input[name="category"]:checked');
-      if (categories.length === 0) {
-        alert('Lütfen en az bir kategori seçin.');
-        return;
-      }
+    // Show success message
+    successMessage.classList.add('show');
+    form.reset();
 
-      // Validate photos
-      if (selectedPhotos.length === 0) {
-        alert('Lütfen en az bir fotoğraf ekleyin.');
-        return;
-      }
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Collect form data
-      const formData = new FormData(form);
-      const data = {
-        title: formData.get('title'),
-        location: formData.get('location'),
-        distance: formData.get('distance'),
-        description: formData.get('description'),
-        longText: formData.get('longText'),
-        categories: Array.from(categories).map(c => c.value),
-        price: formData.get('price'),
-        duration: formData.get('duration'),
-        access: formData.get('access'),
-        googleMapsQuery: formData.get('googleMapsQuery'),
-        phone: formData.get('phone'),
-        instagram: formData.get('instagram'),
-        website: formData.get('website'),
-        booking: formData.get('booking'),
-        photos: selectedPhotos.length
-      };
-
-      console.log('Form data:', data);
-      console.log('Photos:', selectedPhotos);
-
-      // Show success message
-      successMessage.classList.add('show');
-      form.reset();
-      selectedPhotos = [];
-      renderPhotos();
-
-      // Scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        successMessage.classList.remove('show');
-      }, 5000);
-    });
-
-    // Drag and drop for photos
-    const uploadArea = document.querySelector('.photo-upload');
-    
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-      uploadArea.addEventListener(eventName, (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-      });
-    });
-
-    ['dragenter', 'dragover'].forEach(eventName => {
-      uploadArea.addEventListener(eventName, () => {
-        uploadArea.style.borderColor = 'var(--primary-blue)';
-        uploadArea.style.background = 'rgba(8, 145, 178, 0.1)';
-      });
-    });
-
-    ['dragleave', 'drop'].forEach(eventName => {
-      uploadArea.addEventListener(eventName, () => {
-        uploadArea.style.borderColor = 'var(--gray-300)';
-        uploadArea.style.background = 'var(--gray-50)';
-      });
-    });
-
-    uploadArea.addEventListener('drop', (e) => {
-      const files = Array.from(e.dataTransfer.files);
-      const imageFiles = files.filter(f => f.type.startsWith('image/'));
-      
-      if (selectedPhotos.length + imageFiles.length > 10) {
-        alert('En fazla 10 fotoğraf yükleyebilirsiniz.');
-        return;
-      }
-
-      imageFiles.forEach(file => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          selectedPhotos.push({
-            url: e.target.result,
-            file: file
-          });
-          renderPhotos();
-        };
-        reader.readAsDataURL(file);
-      });
-    });
-  </script>
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      successMessage.classList.remove('show');
+    }, 5000);
+  });
+</script>
 </body>
 </html>

@@ -207,8 +207,7 @@ Bunbun Kaş; iyi kahve, pratik kahvaltı ve rahat kafe atmosferi arayanlar için
   images: [
     '../assets/1_places/manos-greek-tavern-002.jpg',
     '../assets/1_places/manos-greek-tavern-003.jpg',
-    '../assets/1_places/manos-greek-tavern-004.jpg',
-    '../assets/1_places/manos-greek-tavern-005.jpg'
+    '../assets/1_places/manos-greek-tavern-004.jpg'
   ],
 
   rating: 4.6,
