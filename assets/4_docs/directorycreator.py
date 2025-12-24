@@ -133,7 +133,7 @@ def rename_in_place(folder: str, slug: str, limit: int = 999) -> FolderReport:
     return FolderReport(slug, before, renamed, skipped, errors, note=note)
 
 
-def process_all_folders(base_dir: str, min_required: int = 5) -> Tuple[List[FolderReport], List[str]]:
+def process_all_folders(base_dir: str, min_required: int = 4) -> Tuple[List[FolderReport], List[str]]:
     reports: List[FolderReport] = []
     low_photo_slugs: List[str] = []
 
@@ -171,7 +171,7 @@ def run_gui():
 
     base_var = tk.StringVar(value=DEFAULT_BASE_DIR)
     data_var = tk.StringVar(value=DEFAULT_DATA_FILE)
-    min_var = tk.StringVar(value="5")
+    min_var = tk.StringVar(value="4")
 
     def log(msg: str):
         output.configure(state="normal")
@@ -207,7 +207,7 @@ def run_gui():
         try:
             min_required = int(min_var.get().strip())
         except Exception:
-            min_required = 5
+            min_required = 4
 
         reports, low = process_all_folders(base_dir, min_required=min_required)
         total_renamed = sum(r.renamed for r in reports)
@@ -258,7 +258,7 @@ def main():
     parser = argparse.ArgumentParser(description="Create place folders + rename photos inside each folder (no moving).")
     parser.add_argument("--base", default=DEFAULT_BASE_DIR, help="assets/1_places path")
     parser.add_argument("--data", default=DEFAULT_DATA_FILE, help="places-data.js path")
-    parser.add_argument("--min", type=int, default=5, help="min required photos per place folder")
+    parser.add_argument("--min", type=int, default=4, help="min required photos per place folder")
     parser.add_argument("--create-folders", action="store_true", help="create folders from places-data.js ids")
     parser.add_argument("--process", action="store_true", help="rename photos inside each folder + report")
     parser.add_argument("--gui", action="store_true", help="run GUI")
@@ -296,7 +296,7 @@ def main():
     if not args.create_folders and not args.process and not args.gui:
         print("Nothing to do. Examples:")
         print("  python kas_photos_manager.py --create-folders")
-        print("  python kas_photos_manager.py --process --min 5")
+        print("  python kas_photos_manager.py --process --min 4")
         print("  python kas_photos_manager.py --gui")
 
 
