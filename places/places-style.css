@@ -491,3 +491,57 @@
     background: rgba(0,0,0,.72);
   }
 }
+
+
+/* =========================
+   BADGE UI FIX (pill-style)
+   ========================= */
+
+/* Ensure badge card content aligns nicely */
+.detail-meta.meta-badge .detail-meta-value{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Badge wrapper (if used in HTML) */
+.badge-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Emoji badge as a pill (supports 1+ emoji) */
+.kg-badge-emoji{
+  width: auto;
+  height: auto;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  font-size: 1.55rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Inline explain (mobile tap) */
+.badge-explain{
+  display: none;
+  margin-top: 8px;
+  font-size: .86rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--gray-700);
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(15,23,42,.10);
+}
+.badge-explain.is-open{ display: block; }

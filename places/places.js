@@ -360,6 +360,7 @@ function render(place) {
     const rating = fmt(place.rating);
     const price = fmt(place.price);
     const location = fmt(place.location);
+    const konum = fmt(place.distance) || location;
 
     root.innerHTML = `
       <article class="detail-card">
@@ -389,7 +390,7 @@ function render(place) {
           <div class="detail-meta-grid">
             ${metaItem("Puan", rating, "meta-rating")}
             ${metaItem("Fiyat", price, "meta-price")}
-            ${metaItem("Konum", location, "meta-location")}
+            ${metaItem("Konum", konum, "meta-location")}
             ${badgeMetaItem(place)}
           </div>
 
