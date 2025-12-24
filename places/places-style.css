@@ -443,13 +443,8 @@
 }
 
 /* =========================
-   META GRID TUNING (PUAN/FIYAT/KONUM) + REMOVE EXTRA CARDS
+   META GRID TUNING (PUAN/FIYAT/KONUM/BADGE)
    ========================= */
-
-/* Hide Mesafe / Süre / Erişim cards (4-6) */
-.detail-meta-grid .detail-meta:nth-child(n+4){
-  display:none;
-}
 
 /* Give first three cards colored translucent backgrounds from palette */
 .detail-meta-grid .detail-meta:nth-child(1){
@@ -465,6 +460,13 @@
   border-color: rgba(159,18,57,0.26);
 }
 
+/* 4th card = Kaş Guide Badge (soft slate tint) */
+.detail-meta-grid .detail-meta:nth-child(4){
+  background: rgba(100,116,139,0.12); /* --primary-slate */
+  border-color: rgba(100,116,139,0.26);
+  box-shadow: var(--shadow-sm);
+}
+
 /* Slightly refine typography for better contrast on tinted backgrounds */
 .detail-meta-grid .detail-meta:nth-child(-n+3) .detail-meta-label{
   color: rgba(17,24,39,0.62); /* gray-900 with opacity */
@@ -476,4 +478,16 @@
 /* Soft polish: consistent subtle shadow */
 .detail-meta-grid .detail-meta:nth-child(-n+3){
   box-shadow: var(--shadow-sm);
+}
+
+/* Fix tooltip rgba typos (older block had missing dots) */
+@media (hover: hover) and (pointer: fine){
+  .kg-badge-emoji[data-tooltip]:hover::after{
+    background: rgba(0,0,0,.72);
+    color: rgba(255,255,255,.96);
+    box-shadow: 0 10px 24px rgba(0,0,0,.22);
+  }
+  .kg-badge-emoji[data-tooltip]:hover::before{
+    background: rgba(0,0,0,.72);
+  }
 }
