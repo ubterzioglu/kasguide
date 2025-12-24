@@ -4247,45 +4247,6 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 },
 
 {
-  id: "antiphellos-antik-tiyatro",
-  badgeId: 'tourist',
-
-  title: "Antiphellos Antik Tiyatrosu",
-  description: "Deniz manzaralı, Likya döneminden kalma tarihi bir açık hava tiyatrosu.",
-  category: ["history"],
-  image: "../assets/1_places/antiphellos-antik-tiyatro-001.jpg",
-  images: [
-    "../assets/1_places/antiphellos-antik-tiyatro-002.jpg",
-    "../assets/1_places/antiphellos-antik-tiyatro-003.jpg",
-    "../assets/1_places/antiphellos-antik-tiyatro-004.jpg"
-  ],
-  rating: 4.3,
-  price: "₺",
-  selected: false,
-  location: "Kaş – Andifli",
-  distance: "Merkez",
-  coordinates: { lat: 36.200030, lng: 29.634850 },
-  website: "",
-  phone: "",
-  duration: "1 saat",
-  facilities: ["oturma basamakları"],
-  features: ["tarihî kalıntı", "deniz manzarası", "gün batımı noktası"],
-  tags: ["Likya tarihi", "müze kart gerektirmez", "ücretsiz"],
-  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
-  longText: `
-**Atmosfer:** Kaş Antiphellos Antik Tiyatrosu, milattan önce 1. yüzyıla tarihlenen Likya döneminden kalma etkileyici bir yapıdır. Yarımadanın kıyısında, denize bakan bir yamaç üzerinde konumlandığı için Anadolu’da deniz manzaralı tek antik tiyatro unvanına sahiptir:contentReference[oaicite:5]{index=5}. Oturma basamaklarına adım attığınızda, hemen aşağıda uzanan Kaş koyu ve Meis Adası manzarası sizi selamlar. Gün içinde sakin ve huzurlu bir atmosferi vardır; öğleden sonraları birkaç ziyaretçi gölgeliklerde oturup dinlenirken, akşamüstü saatlerinde altın turuncu gün batımı ışıkları antik taşları boyar ve ortamı büyülü bir havaya sokar.
-
-**Kimler için uygun:** Tarihe meraklı gezginler ve antik kalıntıları görmek isteyenler için ideal bir durak. Özellikle Likya uygarlığı hakkında bilgi sahibi olmak isteyenler, bu tiyatroya hayran kalacak. Aynı zamanda Kaş’ta romantik bir gün batımı noktası arayan çiftler veya sakin bir manzara keyfi yaşamak isteyen herkes burada vakit geçirebilir. Yürüyüş mesafesinde olduğundan çocuklu aileler de bebek arabasıyla rahatça ulaşabilir (tiyatro içinde merdivenler olduğunu unutmayarak).
-
-**Ne alınır-ne yapılır:** Tiyatroya giriş ücretsiz; herhangi bir bilet veya MüzeKart gerekmiyor. Gündüz saatlerinde tarihi taş basamaklarda dolaşıp Akdeniz’in ve karşı kıyıdaki Meis Adası’nın manzarasını fotoğraflayabilirsiniz. Bu antik yapı yaklaşık 4 bin kişilik kapasitesiyle geçmişteki gösterilere ev sahipliği yapmış. Basamakların en üst sırasına çıkıp oturarak deniz meltemi eşliğinde manzaranın tadını çıkarmak çok keyifli. Yaz aylarında bazen burada yoga seansları veya küçük konserler de düzenleniyor – eğer şanslıysanız tarihi atmosferde müzik dinleme imkanınız olabilir. Akşam üstü ise bir içeceğinizi yanınıza alıp gün batımını izlemek yapabileceğiniz en unutulmaz aktivitelerden.
-
-**Pratik ipuçları:** Özellikle yazın öğle sıcağında antik tiyatronun taşları epey ısınabilir; bu yüzden sabah erken veya akşamüzeri ziyaret etmek daha konforlu olacaktır. Basamaklar yüksek ve dar olduğundan tırmanırken dikkat edin, sağlam sandalet veya spor ayakkabı tercih edin. Tiyatroda bilgilendirici tabelalar sınırlı, bu nedenle biraz tarih bilgisiyle gelirseniz gezerken daha anlamlı hale gelir. Gün batımında fotoğraf çekmek isterseniz yanınıza tripod alabilir veya biraz erken gelip en üst sırada kendinize güzel bir yer bulabilirsiniz. Etraf açık alan olduğundan yaz akşamları sivrisinek spreyi bulundurmak da iyi bir fikir.
-
-**Kısa özet:** Antiphellos Antik Tiyatrosu, Kaş merkezine yürüme mesafesinde ulaşabileceğiniz, denize nazır muhteşem bir tarihi miras. Hem gündüz hem de gün batımında farklı güzellikler sunan bu tiyatro, Kaş’ın sakinliğinde tarih ve manzarayı bir arada deneyimlemek isteyen herkesin görmesi gereken bir nokta. Ücretsiz olarak ziyaret edebileceğiniz bu açık hava tiyatrosu, Kaş tatiline kültürel bir dokunuş katıyor.
-`
-},
-
-{
   id: "kekova-batik-sehir",
   badgeId: 'tourist',
 
@@ -6827,17 +6788,17 @@ Açılış saatleri sezon dışı değişebilir.
 },
 
 {
-  id: "antiphellos-antik-tiyatrosu",
+  id: "antiphellos-antik-tiyatro",
   badgeId: 'tourist',
 
-  title: "Antiphellos Antik Tiyatrosu",
+  title: "Antiphellos Antik Tiyatro",
   description: "Kaş’ın simge noktası; deniz manzarasına karşı oturan antik tiyatro, özellikle gün batımında çok etkileyici.",
   category: ["history", "places"],
-  image: "../assets/1_places/antiphellos-antik-tiyatrosu-001.jpg",
+  image: "../assets/1_places/antiphellos-antik-tiyatro-001.jpg",
   images: [
-    "../assets/1_places/antiphellos-antik-tiyatrosu-002.jpg",
-    "../assets/1_places/antiphellos-antik-tiyatrosu-003.jpg",
-    "../assets/1_places/antiphellos-antik-tiyatrosu-004.jpg"
+    "../assets/1_places/antiphellos-antik-tiyatro-002.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatro-003.jpg",
+    "../assets/1_places/antiphellos-antik-tiyatro-004.jpg"
   ],
   rating: 4.8,
   price: "₺",

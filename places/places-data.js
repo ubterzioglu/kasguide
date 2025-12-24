@@ -6783,47 +6783,7 @@ Açılış saatleri sezon dışı değişebilir.
 Çarşı içinde Anadolu temalı sanat/hediyelik için galeri durağı.`
 },
 
-{
-  id: "antiphellos-antik-tiyatrosu",
-  badgeId: 'tourist',
 
-  title: "Antiphellos Antik Tiyatrosu",
-  description: "Kaş’ın simge noktası; deniz manzarasına karşı oturan antik tiyatro, özellikle gün batımında çok etkileyici.",
-  category: ["history", "places"],
-  image: '../assets/1_places/antiphellos-antik-tiyatrosu/antiphellos-antik-tiyatrosu-001.jpg',
-  images: [
-    '../assets/1_places/antiphellos-antik-tiyatrosu/antiphellos-antik-tiyatrosu-002.jpg',
-    '../assets/1_places/antiphellos-antik-tiyatrosu/antiphellos-antik-tiyatrosu-003.jpg',
-    '../assets/1_places/antiphellos-antik-tiyatrosu/antiphellos-antik-tiyatrosu-004.jpg'
-  ],
-  rating: 4.8,
-  price: "₺",
-  selected: false,
-  location: "Andifli, Kaş/Antalya (Tiyatro Yolu/Çevresi)",
-  distance: "Merkez",
-  coordinates: { lat: 36.19696, lng: 29.63669 },
-  website: "",
-  phone: "",
-  duration: "30–60 dk",
-  facilities: ["oturma basamakları", "manzara noktası"],
-  features: ["gün batımı", "tarih", "Meis manzarası (hava açıksa)"],
-  tags: ["antik", "tiyatro", "sunset"],
-  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
-  longText: `**Atmosfer**
-Antiphellos Tiyatrosu Kaş’ın “sessiz ama çok etkileyici” yerlerinden. Basamaklara oturunca önünde deniz, karşıda ufuk ve çoğu zaman Meis silueti. Gün batımında ışık yumuşayınca tiyatronun taş dokusu başka bir havaya bürünür.
-
-**Kimler için uygun**
-Tarih sevenler, manzara avcıları, fotoğraf çekmeyi sevenler ve “Kaş’ta kısa ama anlamlı bir yürüyüş” arayanlar için ideal. Çocuklu aileler için de uygun; sadece basamaklar nedeniyle dikkat gerek.
-
-**Ne alınır-ne yapılır**
-Gün batımı izlemek klasik. Tiyatronun etrafında kısa bir yürüyüş yapıp Kaş’ın taş sokaklarına geri dönmek de güzel bir mini rota. Etkinlik denk gelirse (konser vb.) deneyimi farklılaşır.
-
-**Pratik ipuçları**
-Akşamüstü kalabalık olabilir; biraz daha erken gidip yer seçmek iyi olur. Basamaklar taş olduğu için rahat ayakkabı önerilir. Yazın güneş sertse su götür.
-
-**Kısa özet**
-Kaş’ın simge tarih noktası; deniz manzaralı antik tiyatro ve en iyi zamanı gün batımı.`
-},
 
 {
   id: "aslanli-lahit",
