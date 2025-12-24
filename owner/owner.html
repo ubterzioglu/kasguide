@@ -302,14 +302,18 @@
       user-select: none;
     }
     .logo-img { width: 36px; height: 36px; object-fit: contain; }
-    .logo-text {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(to right, var(--primary-blue), #2563eb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+   .logo-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+
+  background: linear-gradient(to right, var(--primary-blue), #2563eb);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
 
     .page-wrap {
       padding: 2rem 1rem;

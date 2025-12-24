@@ -19,7 +19,7 @@ Yazılar : articles
 
 const allPlaces = [
 
-{
+  {
   id: 'frida-pub',
   title: 'Frida Pub',
   description: 'Canlı müzik, rock ağırlıklı playlist ve pub havasıyla; Kaş’ta akşamları enerjik geçirmek isteyenlerin sık uğradığı bar.',
@@ -103,6 +103,10 @@ Kısa özet:
 Frida Pub; Kaş’ta rock müzik, canlı performans ve pub atmosferini bir arada arayanlar için doğru adres. Sessiz bir akşam yemeğinden sonra geceyi hareketlendirmek isteyenlerin listesinde olması gereken duraklardan.
   `
 },
+
+
+
+
 
 {
   id: 'bunbun-kas',
@@ -189,9 +193,12 @@ Pratik ipuçları:
 Kısa özet:
 Bunbun Kaş; iyi kahve, pratik kahvaltı ve rahat kafe atmosferi arayanlar için güvenli bir durak. Günün herhangi bir anında “bir uğrayıp çıkayım” dediğinde seni yormayan, Kaş merkezde işini iyi yapan kafelerden biri.
   `
-},
+}
 
-{
+,
+
+
+  {
   id: 'manos-greek-tavern',
   title: 'Manos Greek Tavern',
   description: 'Samimi bir aile işletmesi havasında, Yunan mutfağının taze ve sade lezzetlerini Kaş’ta sunan tavern; özellikle deniz mahsulleri ve mezeleriyle keyifli akşamlar için tercih ediliyor.',
@@ -273,7 +280,8 @@ Manos Greek Tavern, Kaş’ta Yunan mutfağının sade ve taze lezzetlerini, sam
   `
 },
 
-{
+
+  {
   id: 'ci-neo-cucina-by-mezetaryen',
   title: 'Çi Neo Cucina by Mezetaryen',
   description: 'Modern Akdeniz esintileriyle İtalyan mutfağını buluşturan rahat ama özenli bir restoran; özellikle taze malzemeler, ev yapımı lezzetler ve iyi şarap eşleşmeleri arayanlar için.',
@@ -358,7 +366,8 @@ Kısa özet:
   `
 },
 
-{
+
+  {
   id: 'dragoman-bahce',
   title: 'Dragoman Bahçe',
   description: 'Barlar sokağına yakın, yeşillikler içinde “bahçe bar” hissi veren; kokteyl, bira ve atıştırmalıkla uzayan akşamlar için rahat bir buluşma noktası.',
@@ -448,6 +457,7 @@ Kısa özet:
 Dragoman Bahçe; Kaş merkezde, yeşillikler içinde, kokteyl-bira-atıştırmalık üçlüsüyle akşamı uzatmak için sevilen bir bahçe bar. İster gün batımı sonrası “ilk tur”, ister geceye doğru “son durak” olarak rahat çalışıyor.
   `
 },
+
 
 {
   id: 'nereid-meyhanesi',
@@ -541,6 +551,7 @@ Kısa özet:
 Nereid Meyhanesi, Kaş’ta klasik meyhane hissini modern bir “sahne” dokunuşuyla birleştiren bir akşam yemeği noktası. Meze ağırlıklı bir masa kurup, Kaş gecesini uzatmak istiyorsan güçlü bir aday.
   `
 },
+
 
 {
   id: 'dragoman-diving-and-outdoor',
@@ -714,6 +725,94 @@ The Shotlar Terminali; Kaş gece hayatında kısa sürede tempo yakalamak isteye
   `
 },
 
+
+{
+  id: "mavi-bar",
+  title: "Mavi Bar",
+  description: "Kaş merkezde, deniz kenarında sakin atmosferi ve gün batımı manzarasıyla öne çıkan rahat bir bar.",
+  category: ["bar"],
+
+  image: "../assets/1_places/mavi-bar-001.jpg",
+  images: [
+    "../assets/1_places/mavi-bar-002.jpg",
+    "../assets/1_places/mavi-bar-003.jpg",
+    "../assets/1_places/mavi-bar-004.jpg"
+  ],
+
+  rating: 4.3,
+  price: "₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (liman tarafı, denize sıfır)",
+  distance: "Merkez",
+  coordinates: { lat: 36.2019, lng: 29.6377 },
+
+  website: "",
+  phone: "",
+  duration: "1–3 saat",
+
+  facilities: [
+    "Deniz kenarı oturma",
+    "Açık alan",
+    "Bar servisi",
+    "Bira & kokteyl",
+    "Masa servisi",
+    "Kart ile ödeme"
+  ],
+
+  features: [
+    "Gün batımı manzarası",
+    "Sakin ve rahat atmosfer",
+    "Merkezde ama gürültüden uzak",
+    "Uzun sohbetlere uygun",
+    "Akşam saatlerinde keyifli ambiyans"
+  ],
+
+  tags: [
+    "deniz kenarı bar",
+    "gün batımı",
+    "sakin akşam",
+    "kaş merkez",
+    "manzara",
+    "sohbet"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Mavi Bar, Kaş’ta akşamı sakin bir tempoyla karşılamak isteyenlerin yolunun sık düştüğü, deniz kenarında yer alan bir bar. Gösterişten uzak yapısı ve manzarayı öne çıkaran düzeniyle, Kaş’ın “yavaşla ve etrafına bak” ruhunu iyi yansıtıyor. Gün batımına doğru geldiğinde, denizin rengiyle birlikte ortamın havası da yumuşuyor.
+
+Atmosfer nasıl?
+- Genel olarak sakin, rahat ve sohbet odaklı.
+- Müzik arka planda; konuşmayı bastırmıyor.
+- Deniz kenarında oturmak mekânın en güçlü tarafı.
+- Gece ilerledikçe hareket artsa da hiçbir zaman kulüp havasına bürünmüyor.
+
+Kimler için uygun?
+- İki kişi ya da küçük arkadaş gruplarıyla uzun sohbet etmek isteyenler.
+- Gün batımını izleyerek bir şeyler içmek isteyenler.
+- Gürültülü, kalabalık barlardan hoşlanmayanlar.
+- Kaş’ta günü yavaş yavaş kapatmayı sevenler.
+
+Ne içilir?
+Menü genelde klasik bar çizgisinde ilerliyor. Bira ve temel kokteyller ön planda. “Özel imza kokteyl” iddiası yok; burada amaç manzara eşliğinde keyifli ve sade bir içim. Uzun süre oturacaksan hafif içeceklerle ilerlemek mantıklı.
+
+Pratik ipuçları:
+- Gün batımı saatlerinde denize en yakın masalar hızlı doluyor; biraz erken gelmek avantaj sağlar.
+- Akşam saatlerinde rüzgâr serinleyebiliyor, ince bir üst almak iyi olur.
+- Uzun oturmak için uygun bir yer olduğu için acele planı olanlar yerine zamanı olanlara daha çok hitap ediyor.
+- Merkezde olduğu için yürüyerek ulaşım en rahat seçenek.
+
+Kısa özet:
+Mavi Bar, Kaş’ta yüksek sesli eğlence değil; manzara, sakinlik ve sohbet arayanların tercih ettiği bir bar. Gün batımında başlayıp geceyi yormadan bitirmek isteyenler için güvenli ve keyifli bir durak.
+  `
+},
+
+
 {
   id: "oxygen-pub",
   title: "Oxygen Pub",
@@ -801,7 +900,6 @@ Kısa özet:
 Oxygen Pub, Kaş’ta “marina manzarasında oturalım” fikrini en net veren yerlerden. Bar kimliği var ama gün içi kahve/yemek tarafıyla da çalışan, gün batımında en çok anlam kazanan bir marina mekânı.
   `
 },
-
 {
   id: "zaika-ocakbasi",
   title: "Zaika Ocakbaşı",
@@ -1050,6 +1148,173 @@ L’Apéro’nun atmosferi büyük oranda **sakin, şık ama samimi** olarak tan
 L’Apéro, Kaş merkezde **Fransız ve Akdeniz lezzetlerini birleştiren**, bahçe atmosferiyle öne çıkan ve çoğu yorumda **nazik servis ve dikkatli sunum** ile tavsiye edilen bir restoran-bardır. Akşam yemekleri ve kokteyller için sakin ama keyifli bir durak arayanlara özellikle uygun. :contentReference[oaicite:5]{index=5}
   `
 },
+{
+  id: "oburus-momus",
+  title: "Oburus Momus",
+  description: "Kaş merkezde vegan/vejetaryen odaklı, Akdeniz-füzyon tarzı modern restoran; deniz manzarasına yakın konumuyla akşamüstü ve akşam yemekleri için popüler.",
+  category: ["food"],
+
+  image: "../assets/1_places/oburus-momus-001.jpg",
+  images: [
+    "../assets/1_places/oburus-momus-002.jpg",
+    "../assets/1_places/oburus-momus-003.jpg",
+    "../assets/1_places/oburus-momus-004.jpg"
+  ],
+
+  rating: 4.7,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Adil Akba Sk. No:13, Andifli Mah., Kaş/Antalya",
+  distance: "Merkez",
+  coordinates: { lat: 36.2008, lng: 29.6405 },
+
+  website: "",
+  phone: "+90 507 704 20 32",
+
+  duration: "1.5–3 saat",
+
+  facilities: [
+    "Vegan/vejetaryen menü",
+    "Gluten-free ve sağlıklı seçenekler",
+    "Kokteyl & şarap servisi",
+    "Dış mekan oturma",
+    "Masa servis",
+    "Rezervasyon önerisi"
+  ],
+
+  features: [
+    "Modern ve Akdeniz-füzyon tarzı yemekler",
+    "Deniz/liman yakın yürüyüş mesafesi",
+    "İçeceklerle eşleşen hafif lezzetler",
+    "Gün batımı sonrası akşam molası için uygun",
+    "Yerel ve yabancı konuklar arasında popüler"
+  ],
+
+  tags: [
+    "vegan",
+    "vejetaryen",
+    "Akdeniz mutfağı",
+    "sağlıklı",
+    "kaş",
+    "akşam yemeği"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+**Konum ve kimlik**  
+Oburus Momus, Kaş merkezde Adil Akba Sokak üzerinde yer alır ve özellikle **vegan/vejetaryen odaklı modern yemekler** sunmasıyla bilinir; bu, Kaş’taki “klasik kebap/deniz ürünleri” rotasından farklı bir durak oluşturur. :contentReference[oaicite:1]{index=1}
+
+**Atmosfer & tarz**  
+Mekân merkeze oldukça yakın olduğundan yürüyerek ulaşmak kolaydır. İç mekân ve dış oturma alanı karışımıyla sakin ama **çağdaş bir his** verir; masalarda deniz ya da liman yerine dar sokakların hafif akışı hissedilir. Akşamüstü ve akşam yemekleri için tercih edilen bir yer; bazı ziyaretçiler gün batımına doğru daha yoğun bir kalabalık olduğunu bildiriyor. :contentReference[oaicite:2]{index=2}
+
+**Menü ve lezzet odakları**  
+Oburus Momus’un menüsü genel olarak vegan ve vejetaryen seçeneklere yoğunlaşır; örneğin humus, falafel, sebzeli makarnalar, salatalar ve yer yer dünya mutfağı dokunuşlu sunumlar göze çarpar. Bazı yorumlarda makarna ve mezelerin başarılı bulunduğu, bazı yorumlarda ise porsiyon büyüklüklerinin tatmin edici olduğu belirtilmiş. Menüsü et odaklı olmadığından, bu mekân et arayanlar için ilk seçenek değildir. :contentReference[oaicite:3]{index=3}
+
+**Kimler için uygun?**  
+- Vegan/vejetaryen veya hafif yemek arayanlar. :contentReference[oaicite:4]{index=4}  
+- Akşamüstü ya da akşam yemeğini merkezi bir yerde geçirmek isteyenler. :contentReference[oaicite:5]{index=5}  
+- Deniz kenarı manzarası yerine **sokak içi modern restoran** havası isteyenler.
+
+**Pratik ipuçları**  
+- Yaz sezonunda rezervasyon yapmak akıllıca olabilir çünkü popüler bir durak. :contentReference[oaicite:6]{index=6}  
+- Menüde gluten-free ve sağlıklı seçenekler olduğu için farklı diyetlere uygun alternatifler bulunabiliyor. :contentReference[oaicite:7]{index=7}  
+- İç mekân bazı günlerde dolabiliyor; dış alanı özellikle akşamüstü tercih etmek ferah bir deneyim sağlar.
+
+**Kısa özet**  
+Oburus Momus, Kaş’ta klasik lezzetlerin dışında, **modern, vegan/vejetaryen odaklı Akdeniz-eşleşimi mutfağı** sunan, merkezde konumlanmış hoş bir restoran; özellikle farklı tatlar arayan gezginlerin listesinde sıkça yer alıyor. :contentReference[oaicite:8]{index=8}
+  `
+}
+,
+{
+  id: "l-apero",
+  title: "L’Apéro",
+  description: "Kaş merkezde, eski bir evin bahçesinde modern Fransız-Akdeniz mutfağı ve şarap/kokteyl eşliğinde akşam yemekleri için öne çıkan restoran.",
+  category: ["food", "bar"],
+
+  image: "../assets/1_places/l-apero-001.jpg",
+  images: [
+    "../assets/1_places/l-apero-002.jpg",
+    "../assets/1_places/l-apero-003.jpg",
+    "../assets/1_places/l-apero-004.jpg"
+  ],
+
+  rating: 4.4,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Doğruyol Cd. No:1, Andifli Mah., Kaş/Antalya",
+  distance: "Merkez",
+  coordinates: { lat: 36.1995, lng: 29.6429 },
+
+  website: "",
+  phone: "+90 537 789 20 85",
+
+  duration: "1.5–3 saat",
+
+  facilities: [
+    "Açık/şık bahçe oturma",
+    "Fransız & Akdeniz mutfağı",
+    "Kurgu kokteyller & şarap",
+    "Tatlı & aperitif",
+    "Rezervasyon önerisi"
+  ],
+
+  features: [
+    "Eski Kaş evinin bahçesinde atmosfer",
+    "Akşam yemeği odaklı servis",
+    "Deniz ürünleri & et seçenekleri",
+    "Vejetaryen/vegan alternatifler",
+    "Arkadaş ve çift akşamları"
+  ],
+
+  tags: [
+    "fransız mutfağı",
+    "akdeniz",
+    "şarap",
+    "bahçe restoran",
+    "dinner",
+    "aperitif"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+**Konum & genel hissiyat**  
+L’Apéro, Kaş merkezinde Doğruyol Caddesi üzerinde, **150 yıllık eski bir Kaş evinin geniş bahçesinde** hizmet veren Fransız-Akdeniz mutfağı sunan bir restoran-bardır. Mekân bahçesi ve ağaç gölgesiyle yaz akşamlarında özellikle romantik ya da sakin bir akşam yemeği için tercih ediliyor; aynı zamanda kokteyl ve şarap eşliğinde “aperitif” deneyimi için de popüler. :contentReference[oaicite:0]{index=0}
+
+**Yemek & içecek dünyası**  
+Menü ağırlıklı olarak **Fransız mutfağı etkisiyle hazırlanmış yemekler** içeriyor: soğan çorbası, keçi peynirli kiş, steak tartare, escargot, salmon ve profiterol gibi klasikler Kaş’ta nadir tatlar arasında. Şarap ve kokteyller de öne çıkıyor; özellikle akşamüstü ve gece yemeklerinde şarap-kokteyl eşleştirmeleri sıkça öneriliyor. Vejetaryen/vegan arkadaşlara yönelik bazı seçenekler ve tatlı alternatifleri de mevcut. :contentReference[oaicite:1]{index=1}
+
+**Atmosfer & müşteri deneyimi**  
+L’Apéro’nun atmosferi büyük oranda **sakin, şık ama samimi** olarak tanımlanıyor. Bahçe kısmı özellikle akşamüstü rüzgârı ve ışıklandırmayla güzel oluyor; iç mekân ise daha dingin ve sofistike bir hissiyat veriyor. Personel çoğu yorumda nazik ve yardımcı olarak anılıyor. :contentReference[oaicite:2]{index=2}
+
+**Kimler için uygun?**  
+- Fransız ve Akdeniz füzyon mutfağını deneyimlemek isteyenler.  
+- Akşam yemeği için atmosferik, romantik bir durak arayan çiftler.  
+- Şarap/kokteyl eşliğinde uzun sohbet-yemek akışı isteyenler.  
+- Vejetaryen/vegan ya da dünya mutfağından farklı lezzetler arayan gezginler. :contentReference[oaicite:3]{index=3}
+
+**Pratik ipuçları**  
+- Mekân sezonda akşam saatlerinde **yoğunlaşıyor**, rezervasyon yapmanız önerilir.  
+- Menü fiyatları Kaş ortalamasının üzerinde olabilir; birkaç kişilik deneyim birkaç içkiyle birlikte daha maliyetli olabilir.  
+- Bahçe alanı rüzgârlı akşam saatlerinde serin olabilir; üst kıyafet bulundurmak konfor artırır.  
+- Başlangıç olarak soğan çorbası ve ardından ana yemeklerde steak/deniz ürünleri kombinasyonu iyi denge sağlar. :contentReference[oaicite:4]{index=4}
+
+**Kısa özet**  
+L’Apéro, Kaş merkezde **Fransız ve Akdeniz lezzetlerini birleştiren**, bahçe atmosferiyle öne çıkan ve çoğu yorumda **nazik servis ve dikkatli sunum** ile tavsiye edilen bir restoran-bardır. Akşam yemekleri ve kokteyller için sakin ama keyifli bir durak arayanlara özellikle uygun. :contentReference[oaicite:5]{index=5}
+  `
+}
+,
 
 {
   id: "ruhi-bey-meyhanesi",
@@ -1125,8 +1390,8 @@ Pratik ipuçları:
 Kısa özet:
 Ruhi Bey Meyhanesi, Kaş’ta klasik meyhane deneyimini sade ve sohbet odaklı yaşamak isteyenler için güvenli bir tercih.
   `
-},
-
+}
+,
 {
   id: "voyn-meyhane",
   title: "Voyn Meyhane",
@@ -1201,8 +1466,8 @@ Pratik ipuçları:
 Kısa özet:
 Voyn Meyhane, Kaş merkezde modern meyhane tarzında, meze ve deniz ürünü ağırlıklı bir akşam geçirmek isteyenler için güçlü bir alternatif.
   `
-},
-
+}
+,
 {
   id: "demeti-meyhane",
   title: "Demeti Meyhane",
@@ -1277,8 +1542,8 @@ Pratik ipuçları:
 Kısa özet:
 Demeti Meyhane, Kaş’ta sakin, samimi ve ev sıcaklığında bir meyhane deneyimi arayanlar için ideal bir durak.
   `
-},
-
+}
+,
 {
   id: "zuhtu-meze-cocktails",
   title: "Zühtü Meze & Cocktails",
@@ -1353,8 +1618,8 @@ Pratik ipuçları:
 Kısa özet:
 Zühtü, Kaş’ta meyhane ile kokteyl bar arasında dengeli bir yerde duran, modern ve akşam odaklı bir mekân.
   `
-},
-
+}
+,
 {
   id: "beyhude-meyhane",
   title: "Beyhude Meyhane",
@@ -1429,8 +1694,8 @@ Pratik ipuçları:
 Kısa özet:
 Beyhude Meyhane, Kaş’ta “abartısız ama düzgün” bir meyhane akşamı arayanlar için güvenli bir durak.
   `
-},
-
+}
+,
 {
   id: "uzum-kizi-meyhanesi",
   title: "Üzüm Kızı Meyhanesi",
@@ -1505,8 +1770,8 @@ Pratik ipuçları:
 Kısa özet:
 Üzüm Kızı Meyhanesi, Kaş’ta sakin, samimi ve ev sıcaklığında bir meyhane deneyimi arayanlar için doğru adreslerden biri.
   `
-},
-
+}
+,
 {
   id: "mupptela-ocakbasi",
   title: "Müpptela Ocakbaşı",
@@ -1581,8 +1846,8 @@ Pratik ipuçları:
 Kısa özet:
 Müpptela Ocakbaşı, Kaş’ta klasik ocakbaşı çizgisinde, et odaklı ve akşam yemeği için güvenli bir adres.
   `
-},
-
+}
+,
 {
   id: "pisekar-restoran",
   title: "Pişekar Restoran",
@@ -1658,8 +1923,9 @@ Pratik ipuçları:
 Kısa özet:
 Pişekar Restoran, Kaş’ta ev yemeği tadında, sade ve güvenilir bir öğün arayanlar için doğru adreslerden biri.
   `
-},
+}
 
+,
 {
   id: "meydan-restaurant-cafe",
   title: "Meydan Restaurant & Cafe",
@@ -1734,7 +2000,85 @@ Pratik ipuçları:
 Kısa özet:
 Meydan Restaurant & Cafe, Kaş’ta gün boyu çalışan, merkezi ve çok amaçlı bir kafe-restoran olarak pratik bir seçenek.
   `
-},
+}
+,
+
+{
+  id: "keyf-i-dem-meyhane",
+  title: "Keyf-i Dem Meyhane",
+  description: "Kaş merkezde, klasik meyhane düzeninde, rakı–meze ağırlıklı uzun akşam sofraları için tercih edilen bir meyhane.",
+  category: ["meyhane", "food"],
+
+  image: "../assets/1_places/keyf-i-dem-meyhane-001.jpg",
+  images: [
+    "../assets/1_places/keyf-i-dem-meyhane-002.jpg",
+    "../assets/1_places/keyf-i-dem-meyhane-003.jpg",
+    "../assets/1_places/keyf-i-dem-meyhane-004.jpg"
+  ],
+
+  rating: 4.4,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.1996, lng: 29.6420 },
+
+  website: "",
+  phone: "",
+
+  duration: "2–3 saat",
+
+  facilities: [
+    "Masa servisi",
+    "Soğuk & sıcak mezeler",
+    "Alkollü servis",
+    "Sakin müzik",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Klasik meyhane atmosferi",
+    "Sohbet odaklı masa düzeni",
+    "Akşam yemeği temposu",
+    "Merkezde kolay ulaşım"
+  ],
+
+  tags: [
+    "meyhane",
+    "rakı",
+    "meze",
+    "sakin akşam",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Keyf-i Dem Meyhane, Kaş’ta meyhane denince beklenen “yavaş akşam” hissini veren yerlerden biri. Burada amaç hızlı servis ya da yüksek sesli eğlence değil; masaya oturup rakı–meze eşliğinde uzun uzun sohbet etmek.
+
+Atmosfer:
+Ortam sade ve dengeli. Müzik arka planda, sohbet ön planda. Akşam saatlerinde doluluk artıyor ama mekân genelde kontrolünü kaybetmiyor.
+
+Kimler için uygun?
+- Klasik meyhane kültürünü sevenler
+- Gürültülü barlardan hoşlanmayanlar
+- Çiftler ve küçük arkadaş grupları
+
+Pratik ipuçları:
+- Yaz akşamlarında rezervasyon rahat ettirir.
+- Meze seçimini garsonla konuşmak masayı daha iyi kurmayı sağlar.
+- Merkezde olduğu için yürüyerek ulaşım ideal.
+
+Kısa özet:
+Keyf-i Dem Meyhane, Kaş’ta sakin, klasik ve sohbet odaklı bir meyhane akşamı arayanlar için güvenli bir durak.
+  `
+}
+,
 
 {
   id: "fici-restaurant",
@@ -1810,7 +2154,8 @@ Pratik ipuçları:
 Kısa özet:
 Fıçı Restaurant, Kaş’ta deniz ürünü ağırlıklı, sade ve akşam yemeğine odaklı bir restoran arayanlar için makul bir seçenek.
   `
-},
+}
+,
 
 {
   id: "smileys-restaurant",
@@ -1886,8 +2231,8 @@ Pratik ipuçları:
 Kısa özet:
 Smileys Restaurant, Kaş’ta geniş menülü, rahat ve gün boyu çalışan bir restoran olarak pratik bir durak.
   `
-},
-
+}
+,
 {
   id: "bi-lokma",
   title: "Bi’Lokma",
@@ -1964,8 +2309,85 @@ Menü geniş: kahvaltı, mezeler, ana yemekler, tatlılar ve içecekler. Site me
 - Menü geniş olduğu için hızlı karar vermek zor olabilir; aç gidiyorsan önce “küçük bir başlangıç + ana” diye plan yapmak iyi oluyor.  
 - Saat bilgisi ve iletişim için en güvenlisi mekânın kendi sitesi. :contentReference[oaicite:3]{index=3}
   `
-},
+}
+,
+{
+  id: "dudu-mutfak",
+  title: "Dudu Mutfak",
+  description: "Kaş merkezde, küçük ve samimi bahçe ortamında kahvaltı ve ev işi lezzetleriyle öne çıkan popüler bir mutfak.",
+  category: ["breakfast", "food", "cafe"],
 
+  image: "../assets/1_places/dudu-mutfak-001.jpg",
+  images: [
+    "../assets/1_places/dudu-mutfak-002.jpg",
+    "../assets/1_places/dudu-mutfak-003.jpg",
+    "../assets/1_places/dudu-mutfak-004.jpg"
+  ],
+
+  rating: 4.6,
+  price: "₺₺",
+  selected: false,
+
+  location: "Andifli Mahallesi Süleyman Sandıkçı Sokak No:1/3, Kaş 07580",
+  distance: "Merkez",
+  coordinates: { lat: 36.1997, lng: 29.6422 },
+
+  website: "",
+  phone: "+90 537 431 00 09",
+
+  duration: "45 dk – 1.5 saat (yoğunlukta daha uzun)",
+
+  facilities: [
+    "Açık havada oturma",
+    "Kahvaltı",
+    "Masaya servis",
+    "Kredi kartı geçerli",
+    "Ücretsiz Wi-Fi"
+  ],
+
+  features: [
+    "Küçük mekân, sıra ihtimali",
+    "Kahvaltı + gün içi yemek akışı",
+    "Vejetaryen/vegan seçenekler",
+    "Samimi servis"
+  ],
+
+  tags: [
+    "kahvaltı",
+    "samimi",
+    "küçük bahçe",
+    "ev yapımı",
+    "kaş"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+**Genel**  
+Dudu Mutfak, Kaş merkezde küçük ölçekli, samimi bir yer. Tripadvisor’da puanı yüksek ve “küçük ama sıcak” yorumları sık geliyor; mekânın adresi ve telefonu da aynı sayfada net görünüyor. :contentReference[oaicite:4]{index=4}
+
+**Atmosfer**  
+Burası “bahçede gölgede oturup kahvaltı yapalım” kafasında. Masa sayısı sınırlı olduğu için özellikle sabah saatlerinde sıra olabiliyor; bu da Dudu’nun en belirgin gerçeği. :contentReference[oaicite:5]{index=5}
+
+**Ne yenir / ne içilir**  
+Kahvaltı güçlü tarafı; bunun yanında gün içinde daha doyurucu tabaklar da var. Tripadvisor’daki işletme bilgilerinde öğün türleri “kahvaltı, öğle, akşam ve içecekler” olarak geçiyor; yani sadece sabahçı değil. :contentReference[oaicite:6]{index=6}
+
+**Kimler için uygun?**  
+- Kahvaltıda “ev işi” hissi sevenler  
+- Küçük ve samimi mekân arayanlar  
+- Vejetaryen/vegan opsiyon görmek isteyenler  
+
+**Pratik ipuçları**  
+- Mekân küçük: yoğun saatte gidersen 10–20 dakika bekleme ihtimalini hesaba kat.  
+- Kahvaltı hedefse çok geç saate bırakmamak daha iyi; kalabalık dalgasını yakalamak kolay.  
+- Adres/telefon/özellik gibi net bilgileri Tripadvisor üzerinden teyit etmek güvenli. :contentReference[oaicite:7]{index=7}
+  `
+}
+,
 {
   id: "sempati-turkish-cuisine",
   title: "Sempati Turkish Cuisine",
@@ -2041,8 +2463,8 @@ Burası “akşam yemeği için gidelim, masada biraz oturalım” temposunda. K
 - Menü geniş olduğu için “her şeyi söyleyelim” yerine önce 2–3 net tabak seçmek daha iyi oluyor.  
 - Konum olarak çarşı içi yürüyüşte çok rahat; araçla geliyorsan park konusu ayrı dert olabilir (Kaş klasiği).
   `
-},
-
+}
+,
 {
   id: "panorama-restaurant",
   title: "Panorama Restaurant",
@@ -2117,8 +2539,8 @@ Pratik ipuçları:
 Kısa özet:
 Panorama Restaurant, Kaş’ta manzara eşliğinde sakin ve uzun bir akşam yemeği geçirmek isteyenler için doğru adreslerden biri.
   `
-},
-
+}
+,
 {
   id: "luna-restaurant-bar",
   title: "Luna Restaurant & Bar",
@@ -2193,8 +2615,8 @@ Pratik ipuçları:
 Kısa özet:
 Luna, Kaş’ta restoran ve bar arasında geçiş yapan, akşamı tek noktada değerlendirmek isteyenler için pratik bir mekân.
   `
-},
-
+}
+,
 {
   id: "lilys-corner",
   title: "Lily’s Corner",
@@ -2268,8 +2690,8 @@ Pratik ipuçları:
 Kısa özet:
 Lily’s Corner, Kaş’ta küçük, samimi ve rahat bir kafe-restoran arayanlar için sade ama keyifli bir durak.
   `
-},
-
+}
+,
 {
   id: "memedin-yeri",
   title: "Memed’in Yeri",
@@ -2345,8 +2767,8 @@ Pratik ipuçları:
 Kısa özet:
 Memed’in Yeri, Kaş’ta sade, yerel ve fiyat–performans odaklı bir lokanta arayanlar için güvenilir bir durak.
   `
-},
-
+}
+,
 {
   id: "tasra-restoran",
   title: "Taşra Restoran",
@@ -2420,8 +2842,8 @@ Pratik ipuçları:
 Kısa özet:
 Taşra Restoran, Kaş’ta sade, rahat ve tanıdık lezzetlerle yemek yemek isteyenler için pratik bir seçenek.
   `
-},
-
+}
+,
 {
   id: "yelken-restaurant-meyhane",
   title: "Yelken Restaurant & Meyhane",
@@ -2496,8 +2918,843 @@ Pratik ipuçları:
 Kısa özet:
 Yelken Restaurant & Meyhane, Kaş’ta deniz ürünü ve meze odaklı, sakin ama dolu bir meyhane akşamı arayanlar için uygun bir adres.
   `
-},
+}
+,
 
+{
+  id: "sardelaki-greek-tavern",
+  title: "Sardelaki Greek Tavern",
+  description: "Kaş merkezde, Yunan mutfağı odaklı mezeleri ve deniz ürünü ağırlıklı menüsüyle sakin akşam sofraları sunan bir taverna.",
+  category: ["meyhane", "food"],
+
+  image: "../assets/1_places/sardelaki-greek-tavern-001.jpg",
+  images: [
+    "../assets/1_places/sardelaki-greek-tavern-002.jpg",
+    "../assets/1_places/sardelaki-greek-tavern-003.jpg",
+    "../assets/1_places/sardelaki-greek-tavern-004.jpg"
+  ],
+
+  rating: 4.6,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.2001, lng: 29.6408 },
+
+  website: "",
+  phone: "",
+
+  duration: "2–3 saat",
+
+  facilities: [
+    "Masa servisi",
+    "Yunan mezeleri",
+    "Deniz ürünleri",
+    "Alkollü servis",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Yunan mutfağı ağırlıklı menü",
+    "Sakin ve sohbet odaklı atmosfer",
+    "Akşam yemeği temposu",
+    "Merkezde kolay ulaşım"
+  ],
+
+  tags: [
+    "yunan mutfağı",
+    "taverna",
+    "meze",
+    "deniz ürünleri",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Sardelaki Greek Tavern, Kaş’ta Yunan mutfağına özgü meze ve deniz ürünü lezzetlerini sakin bir taverna atmosferinde sunan yerlerden biri. Menü ve servis anlayışı hızlı tüketimden çok, masada uzun süre kalmaya uygun şekilde ilerliyor.
+
+Atmosfer:
+Genel hava sakin ve dengeli. Müzik geri planda, sohbet masanın merkezinde. Akşam saatlerinde doluluk artıyor ama ortam genellikle kontrolünü koruyor.
+
+Kimler için uygun?
+- Yunan mutfağı ve mezelerini sevenler
+- Rakı ya da uzo eşliğinde uzun masa kurmak isteyenler
+- Gürültülü eğlence yerine sohbet arayanlar
+
+Pratik ipuçları:
+- Akşam saatleri için rezervasyon iyi olur.
+- Meze çeşitlerini karışık söylemek masayı daha keyifli kılıyor.
+- Merkezde olduğu için yürüyerek ulaşım rahat.
+
+Kısa özet:
+Sardelaki, Kaş’ta Yunan mutfağı tadında, sakin ve uzun akşam sofraları arayanlar için güçlü bir taverna seçeneği.
+  `
+}
+,
+{
+  id: "bella-vita-pizza",
+  title: "Bella Vita Pizza",
+  description: "Kaş merkezde, odun fırın pizzalarıyla bilinen, hızlı ama kaliteli yemek arayanlara hitap eden İtalyan tarzı pizza mekânı.",
+  category: ["food"],
+
+  image: "../assets/1_places/bella-vita-pizza-001.jpg",
+  images: [
+    "../assets/1_places/bella-vita-pizza-002.jpg",
+    "../assets/1_places/bella-vita-pizza-003.jpg",
+    "../assets/1_places/bella-vita-pizza-004.jpg"
+  ],
+
+  rating: 4.5,
+  price: "₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1995, lng: 29.6424 },
+
+  website: "",
+  phone: "",
+
+  duration: "30 dk – 1.5 saat",
+
+  facilities: [
+    "Odun fırını",
+    "Pizza & makarna",
+    "Masa servisi",
+    "Take-away",
+    "Alkollü & alkolsüz içecek"
+  ],
+
+  features: [
+    "Odun fırın pizza",
+    "Hızlı servis",
+    "Merkez konum",
+    "Rahat ve gündelik ortam"
+  ],
+
+  tags: [
+    "pizza",
+    "italyan mutfağı",
+    "odun fırını",
+    "hızlı yemek",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Bella Vita Pizza, Kaş’ta “bir akşam pizza yiyelim ama düzgün olsun” diyenlerin uğradığı merkez pizza adreslerinden biri. Odun fırın pizzalar menünün ana omurgasını oluşturuyor ve servis temposu genelde hızlı.
+
+Atmosfer:
+Gündelik ve rahat. Uzun akşam sofralarından ziyade, pizza yiyip devam etmeye uygun bir düzen var. Turistik ama bunaltıcı olmayan bir hareketlilik hâkim.
+
+Kimler için uygun?
+- Pizza ve İtalyan mutfağı sevenler
+- Uzun meyhane akşamı istemeyenler
+- Hızlı ama kaliteli bir öğün arayanlar
+
+Pratik ipuçları:
+- Akşam yoğunluğu oluşabiliyor; pizza çıkış süreleri uzayabilir.
+- Take-away seçeneği pratik bir alternatif.
+- Uzun süreli oturma planı için değil, yemek odaklı düşünülmeli.
+
+Kısa özet:
+Bella Vita Pizza, Kaş’ta odun fırın pizzasıyla öne çıkan, hızlı ve net bir pizza durağı.
+  `
+}
+,
+{
+  id: "oburus-notos",
+  title: "Oburus Notos",
+  description: "Kaş’ta, Oburus mutfak anlayışını daha modern ve yaratıcı tabaklarla sunan, akşam yemeği odaklı bir restoran.",
+  category: ["food"],
+
+  image: "../assets/1_places/oburus-notos-001.jpg",
+  images: [
+    "../assets/1_places/oburus-notos-002.jpg",
+    "../assets/1_places/oburus-notos-003.jpg",
+    "../assets/1_places/oburus-notos-004.jpg"
+  ],
+
+  rating: 4.7,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.2002, lng: 29.6406 },
+
+  website: "",
+  phone: "",
+
+  duration: "2–3 saat",
+
+  facilities: [
+    "Modern mutfak",
+    "Masa servisi",
+    "Şarap & kokteyl",
+    "Akşam yemeği servisi",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Modern ve yaratıcı tabaklar",
+    "Akşam yemeği odaklı konsept",
+    "Sunum ön planda",
+    "Daha butik restoran deneyimi"
+  ],
+
+  tags: [
+    "modern mutfak",
+    "fine dining",
+    "yaratıcı tabaklar",
+    "akşam yemeği",
+    "kaş"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Oburus Notos, Oburus mutfak çizgisinin Kaş’taki daha modern ve deneysel yorumunu sunan bir restoran. Menü, klasik ev yemeklerinden ziyade daha yaratıcı ve sunum odaklı tabaklar etrafında şekilleniyor.
+
+Atmosfer:
+Şık ama kasıntısız. Akşam yemeğine odaklı bir düzen var; masa başında geçirilen süre daha uzun. Gürültülü bir ortam yok, daha çok yemek deneyimi ön planda.
+
+Kimler için uygun?
+- Modern mutfak ve farklı tabaklar denemek isteyenler
+- Klasik restoranlardan sıkılanlar
+- Akşam yemeğini deneyim olarak görenler
+
+Pratik ipuçları:
+- Rezervasyon özellikle yaz sezonunda faydalı.
+- Menüde porsiyonlar paylaşmaya uygun olabilir.
+- Acele bir yemek planı için değil, yavaş akşamlar için düşünülmeli.
+
+Kısa özet:
+Oburus Notos, Kaş’ta modern ve yaratıcı mutfak deneyimi arayanlar için öne çıkan, butik bir akşam yemeği adresi.
+  `
+}
+,
+{
+  id: "emre-restaurant",
+  title: "Emre Restaurant",
+  description: "Kaş merkezde, deniz ürünü ve Türk mutfağı ağırlıklı menüsüyle uzun yıllardır hizmet veren klasik bir restoran.",
+  category: ["food"],
+
+  image: "../assets/1_places/emre-restaurant-001.jpg",
+  images: [
+    "../assets/1_places/emre-restaurant-002.jpg",
+    "../assets/1_places/emre-restaurant-003.jpg",
+    "../assets/1_places/emre-restaurant-004.jpg"
+  ],
+
+  rating: 4.5,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, liman/çarşı çevresi",
+  distance: "Merkez",
+  coordinates: { lat: 36.1992, lng: 29.6430 },
+
+  website: "",
+  phone: "",
+
+  duration: "1.5–3 saat",
+
+  facilities: [
+    "Deniz ürünleri",
+    "Masa servisi",
+    "Alkollü servis",
+    "Açık oturma",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Balık ve deniz ürünü ağırlıklı menü",
+    "Uzun süredir hizmet veren işletme",
+    "Akşam yemeği odaklı",
+    "Merkez konum"
+  ],
+
+  tags: [
+    "balık",
+    "deniz ürünleri",
+    "restoran",
+    "akşam yemeği",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Emre Restaurant, Kaş’ta uzun süredir hizmet veren, özellikle balık ve deniz ürünü ile bilinen merkez restoranlardan biri. Menü Türk mutfağı ve deniz ürünleri etrafında dönüyor; klasik çizgiden şaşmıyor.
+
+Atmosfer:
+Restoran havası net. Akşam saatlerinde doluluk artıyor, masa başı sohbet ve yemek temposu öne çıkıyor.
+
+Kimler için uygun?
+- Balık ve deniz ürünü sevenler
+- Akşam yemeğini merkezde geçirmek isteyenler
+- Klasik restoran deneyimi arayanlar
+
+Pratik ipuçları:
+- Balık çeşitleri günlük duruma göre değişebilir.
+- Akşam için rezervasyon iyi olur.
+- Uzun oturmalı bir akşam planına uygun.
+
+Kısa özet:
+Emre Restaurant, Kaş’ta balık ve deniz ürünü ağırlıklı, güvenilir ve klasik bir akşam yemeği adresi.
+  `
+}
+,
+{
+  id: "ora-kebap-restaurant",
+  title: "Ora Kebap Restaurant",
+  description: "Kaş merkezde, kebap ve ızgara et odaklı menüsüyle klasik ocakbaşı çizgisinde hizmet veren bir restoran.",
+  category: ["food"],
+
+  image: "../assets/1_places/ora-kebap-restaurant-001.jpg",
+  images: [
+    "../assets/1_places/ora-kebap-restaurant-002.jpg",
+    "../assets/1_places/ora-kebap-restaurant-003.jpg",
+    "../assets/1_places/ora-kebap-restaurant-004.jpg"
+  ],
+
+  rating: 4.3,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1996, lng: 29.6424 },
+
+  website: "",
+  phone: "",
+
+  duration: "1–2.5 saat",
+
+  facilities: [
+    "Kebap & ızgara",
+    "Masa servisi",
+    "Alkollü & alkolsüz içecek",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Kebap odaklı menü",
+    "Akşam yemeği temposu",
+    "Merkezde kolay ulaşım",
+    "Klasik restoran düzeni"
+  ],
+
+  tags: [
+    "kebap",
+    "ızgara",
+    "ocakbaşı",
+    "akşam yemeği",
+    "kaş"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Ora Kebap Restaurant, Kaş’ta kebap ve ızgara et yemek isteyenlerin tercih ettiği merkez restoranlardan biri. Menü klasik kebap çizgisinde; fazla deneysellik yok, tanıdık tatlar ön planda.
+
+Atmosfer:
+Restoran düzeni hâkim. Akşam saatlerinde doluluk artıyor ama ortam genelde yemek odaklı kalıyor.
+
+Kimler için uygun?
+- Kebap ve ızgara sevenler
+- Akşam yemeğini merkezde planlayanlar
+- Klasik restoran düzenini tercih edenler
+
+Pratik ipuçları:
+- Akşam yoğunluğu için rezervasyon rahat ettirir.
+- Meze beklentisini düşük tutup ana yemeğe odaklanmak daha iyi sonuç verir.
+- Merkez konum yürüyerek ulaşımı kolaylaştırır.
+
+Kısa özet:
+Ora Kebap Restaurant, Kaş’ta kebap odaklı, sade ve net bir akşam yemeği seçeneği.
+  `
+}
+,
+{
+  id: "kasik-manti-ev-yemekleri",
+  title: "Kaşık Mantı & Ev Yemekleri",
+  description: "Kaş merkezde, mantı ve ev yemeği odaklı menüsüyle sade, hızlı ve doyurucu öğünler sunan küçük bir lokanta.",
+  category: ["food"],
+
+  image: "../assets/1_places/kasik-manti-ev-yemekleri-001.jpg",
+  images: [
+    "../assets/1_places/kasik-manti-ev-yemekleri-002.jpg",
+    "../assets/1_places/kasik-manti-ev-yemekleri-003.jpg",
+    "../assets/1_places/kasik-manti-ev-yemekleri-004.jpg"
+  ],
+
+  rating: 4.4,
+  price: "₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.1998, lng: 29.6421 },
+
+  website: "",
+  phone: "",
+
+  duration: "30 dk – 1.25 saat",
+
+  facilities: [
+    "Ev yemeği",
+    "Mantı çeşitleri",
+    "Masa servisi",
+    "Alkolsüz servis",
+    "Hızlı mutfak"
+  ],
+
+  features: [
+    "Mantı odaklı menü",
+    "Ev yemeği hissi",
+    "Öğle yemeğine uygun",
+    "Fiyat–performans dengesi"
+  ],
+
+  tags: [
+    "mantı",
+    "ev yemeği",
+    "lokanta",
+    "öğle yemeği",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Kaşık Mantı & Ev Yemekleri, Kaş’ta mantı ve ev yemeği denince akla gelen sade lokantalardan biri. Menü çok geniş değil; zaten mekânın iddiası da bu değil. Buraya gelenler mantı ve günlük çıkan ev yemekleri için geliyor.
+
+Atmosfer:
+Klasik lokanta havası hâkim. Uzun oturmalar veya akşam eğlencesi yok. Daha çok öğle saatlerinde hareketli, akşamları ise sakin.
+
+Kimler için uygun?
+- Mantı sevenler
+- Ev yemeği arayanlar
+- Öğle yemeğini hızlı ama doyurucu geçirmek isteyenler
+
+Pratik ipuçları:
+- Günlük yemekleri sormak avantaj sağlar.
+- Öğle saatlerinde yoğunluk olabilir.
+- Uzun oturmalı bir plan için değil, yemek odaklı düşünülmeli.
+
+Kısa özet:
+Kaşık Mantı & Ev Yemekleri, Kaş’ta mantı ve ev yemeği için net, sade ve güvenilir bir lokanta.
+  `
+}
+,
+{
+  id: "bay-kofte",
+  title: "Bay Köfte",
+  description: "Kaş merkezde, köfte ve ızgara odaklı menüsüyle sade, doyurucu ve yemek merkezli bir köfteci.",
+  category: ["food"],
+
+  image: "../assets/1_places/bay-kofte-001.jpg",
+  images: [
+    "../assets/1_places/bay-kofte-002.jpg",
+    "../assets/1_places/bay-kofte-003.jpg",
+    "../assets/1_places/bay-kofte-004.jpg"
+  ],
+
+  rating: 4.4,
+  price: "₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1994, lng: 29.6420 },
+
+  website: "",
+  phone: "",
+
+  duration: "30–75 dk",
+
+  facilities: [
+    "Izgara köfte",
+    "Masa servisi",
+    "Alkolsüz servis",
+    "Hızlı mutfak"
+  ],
+
+  features: [
+    "Köfte odaklı menü",
+    "Sade lokanta havası",
+    "Öğle ve erken akşam için uygun",
+    "Fiyat–performans dengesi"
+  ],
+
+  tags: [
+    "köfte",
+    "ızgara",
+    "lokanta",
+    "hızlı yemek",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Bay Köfte, Kaş’ta köfte üzerine yoğunlaşan, süsü olmayan ama net bir beklentiye cevap veren bir köfteci. Menüde köfte ve ızgara çeşitleri ön planda; karmaşık tabaklar ya da uzun menüler yok.
+
+Atmosfer:
+Lokanta havası baskın. Uzun akşam sofraları için değil, yemek odaklı kısa oturmalar için uygun. Öğle saatlerinde daha hareketli.
+
+Kimler için uygun?
+- Köfte sevenler
+- Öğle yemeğinde hızlı ama doyurucu bir şey isteyenler
+- Alkollü mekân aramayanlar
+
+Pratik ipuçları:
+- Öğle saatlerinde yoğunluk oluşabiliyor.
+- Uzun uzun oturmak için değil, yemek için gelmek daha doğru.
+- Menü sade olduğu için karar vermek kolay.
+
+Kısa özet:
+Bay Köfte, Kaş’ta köfte odaklı, sade ve doyurucu bir öğün arayanlar için pratik bir adres.
+  `
+}
+,
+{
+  id: "hold-and-bite",
+  title: "Hold&Bite",
+  description: "Kaş merkezde, burger ve sandviç odaklı menüsüyle modern street food anlayışını sunan küçük ve hızlı servisli bir mekân.",
+  category: ["food"],
+
+  image: "../assets/1_places/hold-and-bite-001.jpg",
+  images: [
+    "../assets/1_places/hold-and-bite-002.jpg",
+    "../assets/1_places/hold-and-bite-003.jpg",
+    "../assets/1_places/hold-and-bite-004.jpg"
+  ],
+
+  rating: 4.4,
+  price: "₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.1997, lng: 29.6429 },
+
+  website: "",
+  phone: "",
+
+  duration: "30–60 dk",
+
+  facilities: [
+    "Burger & sandviç",
+    "Hızlı servis",
+    "Take-away",
+    "Alkolsüz servis"
+  ],
+
+  features: [
+    "Burger odaklı menü",
+    "Modern street food yaklaşımı",
+    "Kısa sürede servis",
+    "Merkez konum"
+  ],
+
+  tags: [
+    "burger",
+    "street food",
+    "sandviç",
+    "hızlı yemek",
+    "kaş"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Hold&Bite, Kaş’ta burger ve sandviç üzerine odaklanan, modern street food çizgisinde bir mekân. Menü sade; amaç çok seçenekten ziyade net birkaç ürünü düzgün yapmak.
+
+Atmosfer:
+Küçük, hızlı ve gündelik. Uzun oturmaya değil, yiyip devam etmeye uygun. Genç kitle ve hızlı yemek arayanlar ağırlıkta.
+
+Kimler için uygun?
+- Burger sevenler
+- Akşam yemeğini kısa tutmak isteyenler
+- Uzun restoran oturması istemeyenler
+
+Pratik ipuçları:
+- Take-away sık tercih ediliyor.
+- Yoğun saatlerde servis süresi biraz uzayabilir.
+- Büyük grup yemekleri için uygun değil.
+
+Kısa özet:
+Hold&Bite, Kaş’ta burger ve sandviçle hızlı ama düzgün bir öğün arayanlar için net bir seçenek.
+  `
+}
+,
+{
+  id: "zoka-street-food",
+  title: "Zoka Street Food",
+  description: "Kaş merkezde, sokak lezzetleri odaklı menüsüyle hızlı, doyurucu ve pratik yemekler sunan küçük ölçekli bir street food noktası.",
+  category: ["food"],
+
+  image: "../assets/1_places/zoka-street-food-001.jpg",
+  images: [
+    "../assets/1_places/zoka-street-food-002.jpg",
+    "../assets/1_places/zoka-street-food-003.jpg",
+    "../assets/1_places/zoka-street-food-004.jpg"
+  ],
+
+  rating: 4.5,
+  price: "₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1996, lng: 29.6427 },
+
+  website: "",
+  phone: "",
+
+  duration: "20–45 dk",
+
+  facilities: [
+    "Hızlı servis",
+    "Ayakta/yüksek masa",
+    "Take-away",
+    "Alkolsüz servis"
+  ],
+
+  features: [
+    "Street food konsepti",
+    "Kısa sürede servis",
+    "Gece yemeğine uygun",
+    "Merkez konum"
+  ],
+
+  tags: [
+    "street food",
+    "hızlı yemek",
+    "gece yemeği",
+    "pratik",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Zoka Street Food, Kaş’ta “acıkınca hızlıca bir şeyler yiyelim” ihtiyacına net cevap veren yerlerden biri. Uzun masa, servis ritüeli ya da akşam yemeği temposu yok; burada amaç kısa sürede doyurucu bir şeyler yemek.
+
+Atmosfer:
+Street food mantığı hâkim. Otur–kalk hızlı, ortam hareketli. Özellikle akşam geç saatlerde ve bar çıkışlarında daha canlı.
+
+Kimler için uygun?
+- Hızlı ve pratik yemek arayanlar
+- Uzun restoran oturması istemeyenler
+- Gece acıkanlar
+
+Pratik ipuçları:
+- Ayakta veya yüksek masada yemek normal.
+- Take-away en sık kullanılan seçenek.
+- Yoğun saatlerde sıra oluşabilir ama hızlı ilerler.
+
+Kısa özet:
+Zoka Street Food, Kaş’ta hızlı, net ve doyurucu sokak lezzetleri arayanlar için ideal bir kısa durak.
+  `
+}
+,
+
+{
+  id: "oburus-notos",
+  title: "Oburus Notos",
+  description: "Kaş’ta, Oburus mutfak anlayışını daha modern ve yaratıcı tabaklarla sunan, akşam yemeği odaklı bir restoran.",
+  category: ["food"],
+
+  image: "../assets/1_places/oburus-notos-001.jpg",
+  images: [
+    "../assets/1_places/oburus-notos-002.jpg",
+    "../assets/1_places/oburus-notos-003.jpg",
+    "../assets/1_places/oburus-notos-004.jpg"
+  ],
+
+  rating: 4.7,
+  price: "₺₺₺",
+  selected: false,
+
+  location: "Andifli Mah., Kaş/Antalya (merkez)",
+  distance: "Merkez",
+  coordinates: { lat: 36.2002, lng: 29.6406 },
+
+  website: "",
+  phone: "",
+
+  duration: "2–3 saat",
+
+  facilities: [
+    "Modern mutfak",
+    "Masa servisi",
+    "Şarap & kokteyl",
+    "Akşam yemeği servisi",
+    "Rezervasyon önerilir"
+  ],
+
+  features: [
+    "Modern ve yaratıcı tabaklar",
+    "Akşam yemeği odaklı konsept",
+    "Sunum ön planda",
+    "Daha butik restoran deneyimi"
+  ],
+
+  tags: [
+    "modern mutfak",
+    "fine dining",
+    "yaratıcı tabaklar",
+    "akşam yemeği",
+    "kaş"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Oburus Notos, Oburus mutfak çizgisinin Kaş’taki daha modern ve deneysel yorumunu sunan bir restoran. Menü, klasik ev yemeklerinden ziyade daha yaratıcı ve sunum odaklı tabaklar etrafında şekilleniyor.
+
+Atmosfer:
+Şık ama kasıntısız. Akşam yemeğine odaklı bir düzen var; masa başında geçirilen süre daha uzun. Gürültülü bir ortam yok, daha çok yemek deneyimi ön planda.
+
+Kimler için uygun?
+- Modern mutfak ve farklı tabaklar denemek isteyenler
+- Klasik restoranlardan sıkılanlar
+- Akşam yemeğini deneyim olarak görenler
+
+Pratik ipuçları:
+- Rezervasyon özellikle yaz sezonunda faydalı.
+- Menüde porsiyonlar paylaşmaya uygun olabilir.
+- Acele bir yemek planı için değil, yavaş akşamlar için düşünülmeli.
+
+Kısa özet:
+Oburus Notos, Kaş’ta modern ve yaratıcı mutfak deneyimi arayanlar için öne çıkan, butik bir akşam yemeği adresi.
+  `
+}
+,
+
+{
+  id: "bella-vita-pizza",
+  title: "Bella Vita Pizza",
+  description: "Kaş merkezde, odun fırın pizzalarıyla bilinen, hızlı ama kaliteli yemek arayanlara hitap eden İtalyan tarzı pizza mekânı.",
+  category: ["food"],
+
+  image: "../assets/1_places/bella-vita-pizza-001.jpg",
+  images: [
+    "../assets/1_places/bella-vita-pizza-002.jpg",
+    "../assets/1_places/bella-vita-pizza-003.jpg",
+    "../assets/1_places/bella-vita-pizza-004.jpg"
+  ],
+
+  rating: 4.5,
+  price: "₺₺",
+  selected: false,
+
+  location: "Kaş Merkez, Andifli Mah.",
+  distance: "Merkez",
+  coordinates: { lat: 36.1995, lng: 29.6424 },
+
+  website: "",
+  phone: "",
+
+  duration: "30 dk – 1.5 saat",
+
+  facilities: [
+    "Odun fırını",
+    "Pizza & makarna",
+    "Masa servisi",
+    "Take-away",
+    "Alkollü & alkolsüz içecek"
+  ],
+
+  features: [
+    "Odun fırın pizza",
+    "Hızlı servis",
+    "Merkez konum",
+    "Rahat ve gündelik ortam"
+  ],
+
+  tags: [
+    "pizza",
+    "italyan mutfağı",
+    "odun fırını",
+    "hızlı yemek",
+    "kaş merkez"
+  ],
+
+  trust: {
+    verified: true,
+    infoDate: "2025-12-23",
+    disclaimer: true
+  },
+
+  longText: `
+Bella Vita Pizza, Kaş’ta “bir akşam pizza yiyelim ama düzgün olsun” diyenlerin uğradığı merkez pizza adreslerinden biri. Odun fırın pizzalar menünün ana omurgasını oluşturuyor ve servis temposu genelde hızlı.
+
+Atmosfer:
+Gündelik ve rahat. Uzun akşam sofralarından ziyade, pizza yiyip devam etmeye uygun bir düzen var. Turistik ama bunaltıcı olmayan bir hareketlilik hâkim.
+
+Kimler için uygun?
+- Pizza ve İtalyan mutfağı sevenler
+- Uzun meyhane akşamı istemeyenler
+- Hızlı ama kaliteli bir öğün arayanlar
+
+Pratik ipuçları:
+- Akşam yoğunluğu oluşabiliyor; pizza çıkış süreleri uzayabilir.
+- Take-away seçeneği pratik bir alternatif.
+- Uzun süreli oturma planı için değil, yemek odaklı düşünülmeli.
+
+Kısa özet:
+Bella Vita Pizza, Kaş’ta odun fırın pizzasıyla öne çıkan, hızlı ve net bir pizza durağı.
+  `
+}
+,
 {
   id: "sardelaki-greek-tavern",
   title: "Sardelaki Greek Tavern",
@@ -2648,8 +3905,8 @@ Pratik ipuçları:
 Kısa özet:
 Bella Vita Pizza, Kaş’ta odun fırın pizzasıyla öne çıkan, hızlı ve net bir pizza durağı.
   `
-},
-
+}
+,
 {
   id: "oburus-notos",
   title: "Oburus Notos",
@@ -2724,8 +3981,8 @@ Pratik ipuçları:
 Kısa özet:
 Oburus Notos, Kaş’ta modern ve yaratıcı mutfak deneyimi arayanlar için öne çıkan, butik bir akşam yemeği adresi.
   `
-},
-
+}
+,
 {
   id: "zoka-street-food",
   title: "Zoka Street Food",
@@ -2799,8 +4056,8 @@ Pratik ipuçları:
 Kısa özet:
 Zoka Street Food, Kaş’ta hızlı, net ve doyurucu sokak lezzetleri arayanlar için ideal bir kısa durak.
   `
-},
-
+}
+,
 {
   id: "hold-and-bite",
   title: "Hold&Bite",
@@ -2874,8 +4131,8 @@ Pratik ipuçları:
 Kısa özet:
 Hold&Bite, Kaş’ta burger ve sandviçle hızlı ama düzgün bir öğün arayanlar için net bir seçenek.
   `
-},
-
+}
+,
 {
   id: "bay-kofte",
   title: "Bay Köfte",
@@ -2949,8 +4206,8 @@ Pratik ipuçları:
 Kısa özet:
 Bay Köfte, Kaş’ta köfte odaklı, sade ve doyurucu bir öğün arayanlar için pratik bir adres.
   `
-},
-
+}
+,
 {
   id: "kasik-manti-ev-yemekleri",
   title: "Kaşık Mantı & Ev Yemekleri",
@@ -3025,8 +4282,8 @@ Pratik ipuçları:
 Kısa özet:
 Kaşık Mantı & Ev Yemekleri, Kaş’ta mantı ve ev yemeği için net, sade ve güvenilir bir lokanta.
   `
-},
-
+}
+,
 {
   id: "ora-kebap-restaurant",
   title: "Ora Kebap Restaurant",
@@ -3100,8 +4357,8 @@ Pratik ipuçları:
 Kısa özet:
 Ora Kebap Restaurant, Kaş’ta kebap odaklı, sade ve net bir akşam yemeği seçeneği.
   `
-},
-
+}
+,
 {
   id: "emre-restaurant",
   title: "Emre Restaurant",
@@ -3176,8 +4433,8 @@ Pratik ipuçları:
 Kısa özet:
 Emre Restaurant, Kaş’ta balık ve deniz ürünü ağırlıklı, güvenilir ve klasik bir akşam yemeği adresi.
   `
-},
-
+}
+,
 {
   id: "pells-cafe",
   title: "Pell’s Cafe",
@@ -3218,8 +4475,8 @@ Merkezde olduğu için yürüyerek ulaşım kolay. Yoğun saatlerde yer bulmak z
 ## Kısa özet
 Kaş merkezde, sade ve pratik bir kahve molası noktası.
 `
-},
-
+}
+,
 {
   id: "pika-coffee",
   title: "Pika Coffee",
@@ -3260,8 +4517,9 @@ Oturma alanı sınırlı olabilir. Take-away için de uygun bir durak.
 ## Kısa özet
 Kaş’ta nitelikli kahve arayanlar için sade ve net bir adres.
 `
-},
+}
 
+,
 {
   id: "godo-coffee-and-more",
   title: "Godo Coffee & More",
@@ -3302,8 +4560,9 @@ Merkezde olduğu için ulaşım kolay. Öğleden sonra saatlerinde daha sakin ol
 ## Kısa özet
 Kahve odaklı ama esnek kullanıma açık, rahat bir Kaş kafesi.
 `
-},
+}
 
+,
 {
   id: "nur-pastanesi",
   title: "Nur Pastanesi",
@@ -3344,8 +4603,9 @@ Genellikle hızlı gir-çık yapılan bir yer. Uzun oturum beklentisiyle gitmeme
 ## Kısa özet
 Kaş merkezde, klasik ve pratik bir pastane durağı.
 `
-},
+}
 
+,
 {
   id: "chayote-cafe",
   title: "Chayote Cafe",
@@ -3386,8 +4646,8 @@ Yoğun olmayan saatlerde daha keyifli. Uzun süre oturmayı planlayanlar için i
 ## Kısa özet
 Kaş’ta sakinlik arayanlar için rahat bir kafe alternatifi.
 `
-},
-
+}
+,
 {
   id: "panu-kas",
   title: "Panu Kaş",
@@ -3428,8 +4688,8 @@ Akşam saatlerinde yoğun olabiliyor. Gitmeden önce plan yapmak faydalı olabil
 ## Kısa özet
 Kaş’ta daha özenli bir akşam yemeği arayanlar için modern bir adres.
 `
-},
-
+}
+,
 {
   id: "hideaway-bar-and-cafe",
   title: "Hideaway Bar & Cafe",
@@ -3470,8 +4730,9 @@ Akşam saatlerinde bar kimliği daha baskın. Sessiz bir ortam arayanlar için g
 ## Kısa özet
 Kaş’ta gün ve akşam temposuna uyum sağlayan, rahat bir bar-kafe.
 `
-},
+}
 
+,
 {
   id: "menta-coffee",
   title: "Menta Coffee",
@@ -3512,8 +4773,8 @@ Oturma alanı sınırlı olabilir. Yoğun saatlerde hızlı gir-çık daha yayg�
 ## Kısa özet
 Kaş’ta sade, kahve odaklı ve pratik bir durak.
 `
-},
-
+}
+,
 {
   id: "huseyinin-yeri-cafe-white",
   title: "Hüseyin’in Yeri (Cafe White)",
@@ -3554,8 +4815,8 @@ Yoğun sezonlarda manzaralı masalar çabuk dolabiliyor. Daha sakin saatler terc
 ## Kısa özet
 Kaş’ta manzarasıyla öne çıkan, sade ve yerel bir kafe.
 `
-},
-
+}
+,
 {
   id: "dejavu-cafe-and-bar",
   title: "Dejavu Cafe & Bar",
@@ -3596,8 +4857,8 @@ Akşam saatlerinde daha kalabalık olabiliyor. Daha sakin bir deneyim için gün
 ## Kısa özet
 Kaş’ta gün ve geceye uyum sağlayan, sosyal bir bar-kafe.
 `
-},
-
+}
+,
 {
   id: "echo-bar",
   title: "Echo Bar",
@@ -3638,8 +4899,8 @@ Gece saatlerinde kalabalık olabilir. Daha rahat bir ortam için erken saatler t
 ## Kısa özet
 Kaş’ta akşam ve gece saatlerine yönelik, müzik odaklı bir bar.
 `
-},
-
+}
+,
 {
   id: "red-point-bar",
   title: "Red Point Bar",
@@ -3680,8 +4941,8 @@ Gece ilerledikçe yoğunluk artabilir. Daha sakin saatler için erken gelmek ava
 ## Kısa özet
 Kaş’ta sade, bar odaklı ve akşam saatlerine uygun bir adres.
 `
-},
-
+}
+,
 {
   id: "quanta-rock-bar",
   title: "Quanta Rock Bar (Quanta Rock Cafe)",
@@ -3722,8 +4983,8 @@ Gece saatlerinde ses seviyesi yüksek olabilir. Daha sakin bir ortam için erken
 ## Kısa özet
 Kaş’ta rock müzik sevenler için akşamları tercih edilen bir bar-kafe.
 `
-},
-
+}
+,
 {
   id: "barboon-bar",
   title: "Barboon Bar",
@@ -3764,8 +5025,8 @@ Gece ilerledikçe kalabalık artabiliyor. Daha rahat bir ortam için erken saatl
 ## Kısa özet
 Kaş’ta sosyal ve akşam odaklı bir bar alternatifi.
 `
-},
-
+}
+,
 {
   id: "ara-bar",
   title: "Ara Bar",
@@ -3806,8 +5067,8 @@ Oturma alanı sınırlı olabilir. Kalabalık saatlerde ayakta vakit geçirmek g
 ## Kısa özet
 Kaş’ta sade, samimi ve bar odaklı bir durak.
 `
-},
-
+}
+,
 {
   id: "no-11-bar",
   title: "No.11 Bar",
@@ -3848,8 +5109,8 @@ Gece ilerledikçe kalabalık artabiliyor. Daha sakin bir deneyim için erken saa
 ## Kısa özet
 Kaş’ta akşam saatlerine uygun, sade bir bar alternatifi.
 `
-},
-
+}
+,
 {
   id: "hijazz-bar",
   title: "HiJazz Bar",
@@ -3890,8 +5151,8 @@ Müzik saatlerinde ortam daha canlı olabilir. Daha sakin bir deneyim için erke
 ## Kısa özet
 Kaş’ta müzik odaklı, akşamları tercih edilen bir bar.
 `
-},
-
+}
+,
 {
   id: "old-house-bar",
   title: "Old House Bar",
@@ -3932,8 +5193,8 @@ Gece ilerledikçe yoğunluk artabilir. Daha rahat bir deneyim için erken saatle
 ## Kısa özet
 Kaş’ta sakin, klasik bar havası arayanlar için bir seçenek.
 `
-},
-
+}
+,
 {
   id: "gagarin-bar",
   title: "Gagarin Bar",
@@ -3974,8 +5235,8 @@ Gece ilerledikçe kalabalık artabiliyor. Daha sakin bir ortam için erken saatl
 ## Kısa özet
 Kaş’ta müzik ve sosyal atmosfer arayanlar için akşamları tercih edilen bir bar.
 `
-},
-
+}
+,
 {
   id: "botanik-garden-bar",
   title: "Botanik Garden Bar",
@@ -4017,6 +5278,12 @@ Yoğun sezonda bahçe alanı hızlı dolabiliyor. Erken gitmek yer bulmayı kola
 Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternatifi.
 `
 },
+
+
+
+
+
+
 
 {
   id: "kaputas-plaji",
@@ -4388,6 +5655,12 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 `
 },
 
+
+
+
+// 2. onluk (10/72)
+
+// 11) Büyük Çakıl Plajı
 {
   id: "buyuk-cakil-plaji",
   title: "Büyük Çakıl Plajı",
@@ -4428,6 +5701,7 @@ Gün boyu denize girip çıkmak, kıyıda güneşlenmek ve sakin bir zamanda şn
 Merkeze yakın, berrak su, çakıllı sahil ve hızlı derinleşen deniz: Büyük Çakıl’ın özeti bu. “Kısa sürede denize gireyim” diyenler için güçlü bir seçenek.`
 },
 
+// 12) Küçük Çakıl Plajı (Çınarlar Plajı)
 {
   id: "kucuk-cakil-plaji",
   title: "Küçük Çakıl Plajı (Çınarlar Plajı)",
@@ -4468,6 +5742,7 @@ Deniz ayakkabısı konfor sağlar. Sabah erken veya akşamüstü daha nefes ald�
 Küçük, merkezde, pratik ve berrak: Küçük Çakıl tam olarak bu. “Kaş’tayım ve şimdi denize girmek istiyorum” cümlesinin en hızlı cevabı.`
 },
 
+// 13) Kaş Belediyesi Halk Plajı
 {
   id: "kas-belediyesi-halk-plaji",
   title: "Kaş Belediyesi Halk Plajı",
@@ -4508,6 +5783,7 @@ Sezonda yoğun olabiliyor; erken gitmek yer seçimini kolaylaştırır. Platform
 Merkeze yakın, temel imkanları olan, düzenli bir halk plajı: Kaş Belediyesi Halk Plajı. “Konfor + pratiklik” dengesini sevenlere iyi gider.`
 },
 
+// 14) İnceboğaz Plajı
 {
   id: "incebogaz-plaji",
   title: "İnceboğaz Plajı",
@@ -4548,6 +5824,7 @@ Deniz ayakkabısı ve su gözlüğü faydalı. Rüzgâr yönü deniz deneyimini 
 Yarımada tarafında, koy hissi veren, sakinlik arayana iyi gelen bir Kaş plajı: İnceboğaz.`
 },
 
+// 15) Narr Plajı
 {
   id: "narr-plaji",
   title: "Narr Plajı",
@@ -4588,6 +5865,7 @@ Kayalık/merdivenli giriş olasılığı için deniz ayakkabısı iyi fikir. Sez
 Narr, Kaş’ta deniz keyfini “oturmalı-kalkmalı” bir beach-cafe düzeninde yaşamak isteyenlere uygun, merkez çevresi bir seçenek.`
 },
 
+// 16) Derya Beach Club
 {
   id: "derya-beach-club",
   title: "Derya Beach Club",
@@ -4628,6 +5906,7 @@ Sezonda yoğun olabiliyor; erken gitmek yer bulmayı kolaylaştırır. Harcama/�
 Derya, Kaş merkez çevresinde beach club gününü “yüzme + yeme-içme” şeklinde yaşamak isteyenler için pratik bir seçenek.`
 },
 
+// 17) Leymona Beach Club
 {
   id: "leymona-beach-club",
   title: "Leymona Beach Club",
@@ -4668,6 +5947,7 @@ Sezonda yoğunluk artabilir; erken saatler daha rahat eder. Harcama limiti/rezer
 Leymona, Kaş merkez çevresinde beach günü + yeme-içme kombinini, görece daha “rahat oturmalı” bir tonda yaşamak isteyenlere uygun bir seçenek.`
 },
 
+// 18) Asma6 Beach & Restaurant
 {
   id: "asma6-beach-restaurant",
   title: "Asma6 Beach & Restaurant",
@@ -4708,6 +5988,7 @@ Sezonda yer bulmak zorlaşabilir; erken saatler avantaj. Harcama/rezervasyon gib
 Merkezde beach-restoran düzeni: deniz + yeme-içme + uzun oturma. Asma6 bu kombinasyonu sevenlere iyi gider.`
 },
 
+// 19) Nuri’s Beach (Limanağzı)
 {
   id: "nuris-beach",
   title: "Nuri’s Beach (Limanağzı)",
@@ -4748,6 +6029,7 @@ Ulaşım genelde Kaş’tan kalkan tekne/su taksiyle olur; saatler sezona göre 
 Limanağzı’nda tekneyle ulaşılan, doğa hissi yüksek bir deniz günü: Nuri’s Beach, “Kaş’ta bir günlüğüne kaçış” arayanlara çok uygun.`
 },
 
+// 20) Bilal’in Yeri (Limanağzı)
 {
   id: "bilalin-yeri",
   title: "Bilal’in Yeri (Limanağzı)",
@@ -4788,6 +6070,13 @@ Ulaşım çoğunlukla Kaş’tan kalkan tekne/su taksiyle; dönüş saatini baş
 Bilal’in Yeri, Limanağzı’nda tekneyle gidilen bir deniz gününü, yeme-içmeyle birlikte “tüm güne” yaymak isteyenler için uygun bir durak.`
 },
 
+
+
+
+
+// 3. onluk (21–30 / 72)
+
+// 21) La Moda Beach (Limanağzı)
 {
   id: "la-moda-beach",
   title: "La Moda Beach (Limanağzı)",
@@ -4828,6 +6117,7 @@ Ulaşım su taksiyle; dönüş saatini baştan netleştir. Deniz ayakkabısı pl
 Limanağzı’nda sakin bir deniz günü arayanlara uygun, pratik bir beach durağı.`
 },
 
+// 22) Hakiliki Beach Club
 {
   id: "hakiliki-beach-club",
   title: "Hakiliki Beach Club",
@@ -4868,6 +6158,7 @@ Sezonda yoğunluk ve uygulamalar değişebilir; gittiğinde sor.
 Merkez yakınında pratik bir beach club seçeneği.`
 },
 
+// 23) Lures Hotel Beach Club
 {
   id: "lures-hotel-beach-club",
   title: "Lures Hotel Beach Club",
@@ -4908,6 +6199,7 @@ Dışarıdan kabul ve uygulamalar sezona göre değişebilir.
 Yarımadada konforlu bir beach günü.`
 },
 
+// 24) Mavi Kıyı Suites
 {
   id: "mavi-kiyi-suites",
   title: "Mavi Kıyı Suites",
@@ -4948,6 +6240,7 @@ Oda tipleri ve sezon fiyatları değişken.
 Denize yakın, modern bir butik konaklama.`
 },
 
+// 25) Lures Hotel & Beach Club
 {
   id: "lures-hotel",
   title: "Lures Hotel & Beach Club",
@@ -4988,6 +6281,7 @@ Rezervasyonları erken yapmak avantajlı.
 Konforlu yarımada oteli.`
 },
 
+// 26) Luvi Kaş Otel
 {
   id: "luvi-kas-otel",
   title: "Luvi Kaş Otel",
@@ -5028,6 +6322,7 @@ Yazın erken rezervasyon önerilir.
 Merkezde butik ve manzaralı.`
 },
 
+// 27) Payam Hotel
 {
   id: "payam-hotel",
   title: "Payam Hotel",
@@ -5068,6 +6363,7 @@ Sezonluk doluluk yüksek olabilir.
 Merkezde sade butik otel.`
 },
 
+// 28) Kaş Marin Hotel
 {
   id: "kas-marin-hotel",
   title: "Kaş Marin Hotel",
@@ -5108,6 +6404,7 @@ Manzaralı oda tercih edilebilir.
 Deniz manzaralı konaklama.`
 },
 
+// 29) Hideaway Hotel
 {
   id: "hideaway-hotel",
   title: "Hideaway Hotel",
@@ -5148,6 +6445,7 @@ Yüksek sezonda erken rezervasyon.
 Merkezde huzurlu butik otel.`
 },
 
+// 30) Hotel Sonne
 {
   id: "hotel-sonne",
   title: "Hotel Sonne",
@@ -5188,6 +6486,9 @@ Manzaralı oda tercih edilebilir.
 Merkezde klasik bir Kaş oteli.`
 },
 
+// 4. onluk (31–40 / 72)
+
+// 31) Sardunya Otel
 {
   id: "sardunya-otel",
   title: "Sardunya Otel",
@@ -5228,6 +6529,7 @@ Merkezde otopark her zaman kolay değil; konaklama öncesi park/valet durumunu n
 Merkeze yakın, Kaş’ı yürüyerek yaşamak isteyenlere uygun, denize yakın bir otel.`
 },
 
+// 32) HillCity Hotel
 {
   id: "hillcity-hotel",
   title: "HillCity Hotel",
@@ -5268,6 +6570,7 @@ Yarımada rotalarında taksi/araç planını baştan yapmak rahat ettirir. Oda t
 Yarımadada manzara ve sakinlik isteyenlere uygun butik otel.`
 },
 
+// 33) Sea View Otel
 {
   id: "sea-view-otel",
   title: "Sea View Otel",
@@ -5308,6 +6611,7 @@ Deniz erişimi iskele/teras düzeninde olabiliyor; denize giriş tipini (merdive
 Denize yakın ve merkeze yakın; “deniz günü + çarşı akşamı” planı için pratik.`
 },
 
+// 34) Novva Hotel Kaş (Novva Hotels Kaş)
 {
   id: "novva-hotel-kas",
   title: "Novva Hotel Kaş (Novva Hotels Kaş)",
@@ -5348,6 +6652,7 @@ Yarımada tarafında araç/transfer planı önem kazanır. Oda tipleri (havuz, m
 Modern süit konsepti ve yarımada sakinliği arayanlar için güçlü bir seçenek.`
 },
 
+// 35) Rhapsody Hotel Kaş
 {
   id: "rhapsody-hotel-kas",
   title: "Rhapsody Hotel Kaş",
@@ -5388,6 +6693,7 @@ Merkezde otopark değişken olabilir; araçla geliyorsan önceden sor. Oda konum
 Merkez-plaj dengesini isteyenler için pratik, butik bir konaklama.`
 },
 
+// 36) Hotel Marsala
 {
   id: "hotel-marsala",
   title: "Hotel Marsala",
@@ -5428,6 +6734,7 @@ Yarımada rotasında taksi/araç planı rahat ettirir. Oda tiplerinde teras/öze
 Yarımadada sakin, deniz odaklı bir butik otel.`
 },
 
+// 37) Aquarius Hotel (Cappari Hotels Aquarius)
 {
   id: "aquarius-hotel",
   title: "Aquarius Hotel (Cappari Hotels Aquarius)",
@@ -5468,6 +6775,7 @@ Denize giriş çoğu zaman platform/merdiven düzeninde olabilir; deniz ayakkab�
 Yarımadada denize sıfır, plaj alanı olan, konfor odaklı bir otel.`
 },
 
+// 38) Nur Beach Hotel
 {
   id: "nur-beach-hotel",
   title: "Nur Beach Hotel",
@@ -5508,6 +6816,7 @@ Merkezde otopark ve trafik sezonda değişken olabilir. Deniz alanı ve masa dü
 Merkezde, denize yakın; hem konaklama hem deniz kenarı vakti isteyenler için pratik.`
 },
 
+// 39) La Kumsal Hotel
 {
   id: "la-kumsal-hotel",
   title: "La Kumsal Hotel",
@@ -5548,6 +6857,7 @@ Yarımada tarafında araç/taksi planını baştan yapmak iyi olur. Oda tipleri 
 Yarımadada, sakin ve manzaralı bir butik otel arayanlara uygun.`
 },
 
+// 40) Upper House Hotel
 {
   id: "upper-house-hotel",
   title: "Upper House Hotel",
@@ -5588,6 +6898,9 @@ Merkezde bazı otellerde merdiven ve asansör durumu önemli olabiliyor; mobilit
 Kaş merkezde, yürüyerek yaşamak isteyenler için pratik bir butik otel.`
 },
 
+// 5. onluk (41–50 / 72)
+
+// 41) Talay Otel
 {
   id: "talay-otel",
   title: "Talay Otel",
@@ -5628,6 +6941,7 @@ Merkezde otopark sezon yoğunluğunda değişken olabilir; araçla geliyorsan ö
 Merkez + Küçük Çakıl yakınlığıyla, Kaş’ı yürüyerek yaşamak isteyenlere pratik konaklama.`
 },
 
+// 42) Çakıl Pansiyon
 {
   id: "cakil-pansiyon",
   title: "Çakıl Pansiyon",
@@ -5668,6 +6982,7 @@ Merkezde araç/park işi sezon yoğunluğuna göre değişir. Oda seçerken balk
 Küçük Çakıl mevkiinde, denize çok yakın ve merkez odaklı bir pansiyon.`
 },
 
+// 43) Nautilus Diving
 {
   id: "nautilus-diving",
   title: "Nautilus Diving",
@@ -5708,6 +7023,7 @@ Sezonda yer hızlı dolabilir; bir gün önceden yazmak/aramak iyi olur. Hangi s
 Kaş Limanı çıkışlı, eğitim ve tekne dalışları yapan köklü dalış merkezi.`
 },
 
+// 44) Kaş Diving (Kas Diving®)
 {
   id: "kas-diving",
   title: "Kaş Diving (Kas Diving®)",
@@ -5748,6 +7064,7 @@ Kurs/tekne programı ve dahil olanlar (ekipman, transfer, foto/video) netleştir
 Merkez çıkışlı, kurs ve tekne dalışlarıyla öne çıkan bir dalış okulu.`
 },
 
+// 45) Ege Barakuda Dalış Merkezi
 {
   id: "ege-barakuda-dalis-merkezi",
   title: "Ege Barakuda Dalış Merkezi",
@@ -5788,6 +7105,7 @@ Program saatlerini ve fiyata dahil olanları (ekipman, transfer, foto/video) ba�
 Kaş’ta tekne dalışları ve eğitimler sunan bilinen bir dalış merkezi.`
 },
 
+// 46) SubAQUA Dalış Merkezi
 {
   id: "subaqua-dalis-merkezi",
   title: "SubAQUA Dalış Merkezi",
@@ -5828,6 +7146,7 @@ Kurs seviyeni ve beklentini (kaç dalış, kaç gün) netleştir. Sezonda yoğun
 Kaş Limanı çıkışlı, PADI kursları ve tekne dalışları yapan dalış merkezi.`
 },
 
+// 47) Oceanids Dalış Merkezi
 {
   id: "oceanids-dalis-merkezi",
   title: "Oceanids Dalış Merkezi",
@@ -5868,6 +7187,7 @@ Hangi saat çıkış olduğunu ve dalış sayısını baştan konuş. Dalış ya
 Merkezde, eğitim ve tekne dalışlarını birlikte sunan bir dalış merkezi.`
 },
 
+// 48) Kanyon Diving
 {
   id: "kanyon-diving",
   title: "Kanyon Diving",
@@ -5908,6 +7228,7 @@ Kayıt öncesi sağlık beyanı ve seviyene uygun program detaylarını sor. Fiy
 Kaş’ta günlük tekne dalışları ve kurslar sunan yerel bir dalış merkezi.`
 },
 
+// 49) Life Aquatic (Serbest Dalış & Yoga)
 {
   id: "life-aquatic",
   title: "Life Aquatic (Serbest Dalış & Yoga)",
@@ -5948,6 +7269,7 @@ Seviye ve hedefini (ilk kez mi, gelişim mi) baştan söyle. Ders süresi, ekipm
 Kaş’ta serbest dalış + yoga kombinasyonu isteyenler için güçlü bir adres.`
 },
 
+// 50) Freedive Cosmos
 {
   id: "freedive-cosmos",
   title: "Freedive Cosmos",
@@ -5988,6 +7310,9 @@ Program, buluşma yeri ve ekipman dahil mi gibi detayları mutlaka netleştir. �
 Kaş’ta serbest dalış odaklı eğitim/antrenman arayanlara yönelik bir seçenek.`
 },
 
+// 6.... onluk (51–60 / 72)
+
+// 51) Likya Dalış Merkezi (Bougainville Travel)
 {
   id: "likya-dalis-merkezi",
   title: "Likya Dalış Merkezi (Bougainville Travel)",
@@ -6028,6 +7353,7 @@ Kayıt olmadan önce: fiyata neler dahil, kaç dalış var, ekipman dahil mi, ç
 Bougainville bağlantılı, dalış programını “organizasyon” gibi yöneten bir seçenek.`
 },
 
+// 52) Boat Trips by Captain Ergun
 {
   id: "boat-trips-by-captain-ergun",
   title: "Boat Trips by Captain Ergun",
@@ -6068,6 +7394,7 @@ Güneş koruması, havlu, deniz ayakkabısı ve su şart. Rüzgâr/deniz durumu 
 Kaş’ta “bir gün full deniz” planı için tekne turu; Captain Ergun tarzı işletmeler bu günü paketler.`
 },
 
+// 53) Xanthos Travel
 {
   id: "xanthos-travel",
   title: "Xanthos Travel",
@@ -6108,6 +7435,7 @@ Tekne turları, günlük gezi rotaları, bazen özel transferler. Hangi gün han
 Kaş’ta tur ve aktiviteleri tek yerden organize etmek için yerel acente.`
 },
 
+// 54) Tatil Sihirbazı
 {
   id: "tatil-sihirbazi",
   title: "Tatil Sihirbazı",
@@ -6148,6 +7476,7 @@ Fiyata dahil olanlar ve iptal koşulları mutlaka sorulmalı.
 Kaş’ta tur/aktivite planını hızlandıran organizasyon seçeneği.`
 },
 
+// 55) Aslar Travel
 {
   id: "aslar-travel",
   title: "Aslar Travel",
@@ -6188,6 +7517,7 @@ Turun dahil olmayan masraflarını (giriş ücreti vb.) baştan öğren.
 Merkezden tur/aktivite organize etmeye yarayan yerel acente.`
 },
 
+// 56) Eroğlu Boat Tours
 {
   id: "eroglu-boat-tours",
   title: "Eroğlu Boat Tours",
@@ -6228,6 +7558,7 @@ Güneş koruması şart. Rota rüzgâr/deniz durumuna göre değişebilir.
 Kaş Limanı çıkışlı klasik bir “koy koy yüzme” tekne turu.`
 },
 
+// 57) Kaş Cuma Pazarı (Kaş Pazar Yeri)
 {
   id: "kas-cuma-pazari",
   title: "Kaş Cuma Pazarı (Kaş Pazar Yeri)",
@@ -6268,6 +7599,7 @@ Erken saatler daha rahat; öğlene doğru kalabalık artar. Nakit taşımak işi
 Cuma günü Kaş’ın en canlı noktası: yerel ürün, giyim ve hediyelik için hızlı bir tur.`
 },
 
+// 58) Rabia Ucuzluk Pazarı
 {
   id: "rabia-ucuzluk-pazari",
   title: "Rabia Ucuzluk Pazarı",
@@ -6308,6 +7640,7 @@ Yoğun saatlerde kasa sırası olabilir; hızlı gir-çık için kısa listeyle 
 Merkezde pratik ve uygun fiyatlı alışveriş noktası.`
 },
 
+// 59) Feraye Store & Atelier
 {
   id: "feraye-store-atelier",
   title: "Feraye Store & Atelier",
@@ -6348,6 +7681,7 @@ Uzun Çarşı çevresinde yürürken uğramalık; açılış saatleri sezon dı�
 Kaş çarşısında seçki ve tasarım butik tarzı bir durak.`
 },
 
+// 60) Kash Cosmetics
 {
   id: "kash-cosmetics",
   title: "Kash Cosmetics",
@@ -6388,6 +7722,9 @@ Marka/ürün çeşitliliği dönemsel değişebilir; ihtiyacın spesifikse önce
 Merkezde pratik kozmetik/bakım alışverişi için bir durak.`
 },
 
+// 7. onluk (61–70 / 72)
+
+// 61) Minelli Butik
 {
   id: "minelli-butik",
   title: "Minelli Butik",
@@ -6428,6 +7765,48 @@ Elbise, üst giyim, aksesuar gibi ürünler; seçki sezonluk değişebilir.
 Kaş çarşıda giyim-aksesuar için butik bir durak.`
 },
 
+// 62) Uzun Çarşı
+{
+  id: "uzun-carsi",
+  title: "Uzun Çarşı",
+  description: "Kaş’ın en ikonik yürüyüş hattı; butik dükkânlar, hediyelikçiler, kafeler ve Aslanlı Lahit çevresini birleştiren çarşı bölgesi.",
+  category: ["shopping", "places"],
+  image: "../assets/1_places/uzun-carsi-001.jpg",
+  images: [
+    "../assets/1_places/uzun-carsi-002.jpg",
+    "../assets/1_places/uzun-carsi-003.jpg",
+    "../assets/1_places/uzun-carsi-004.jpg"
+  ],
+  rating: 4.7,
+  price: "₺₺",
+  selected: false,
+  location: "Andifli, Kaş Merkez, Kaş/Antalya",
+  distance: "",
+  coordinates: { lat: 36.2010, lng: 29.6406 }, // çarşı hattı genel nokta
+  website: "",
+  phone: "",
+  duration: "1–2 saat",
+  facilities: ["kafe/restoran", "butikler", "hediyelikçiler", "bankamatik (yakın çevre)"],
+  features: ["çarşı yürüyüşü", "hediyelik", "fotoğraf noktaları", "tarihle iç içe rota"],
+  tags: ["kas-merkez", "shopping-walk", "iconic"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Uzun Çarşı, Kaş’ın “en Kaş” yürüyüş rotası. Dar sokak dokusu, küçük butik dükkânlar, taş duvarlar ve aralara serpiştirilmiş kafe/restoranlar… Üstüne bir de Aslanlı Lahit gibi tarihi bir simgeyle iç içe olunca, burada yürümek sadece alışveriş değil, atmosfer turu.
+
+**Kimler için uygun**
+Çarşı gezmeyi seven herkes. Hediyelik arayanlar, fotoğraf çekmek isteyenler, “biraz dolaşayım, sonra bir kahve içeyim” diyenler için birebir. Akşamüstü ve akşam saatlerinde daha hareketli.
+
+**Ne alınır-ne yapılır**
+El yapımı takılar, tekstil/keten ürünler, küçük tasarım objeler, magnet/hediyelikler… Bir de tabii yürürken arada kafe molası verilir. Aslanlı Lahit’in çevresinde kısa durup hikâyesini okumak (ya da fotoğraf çekmek) klasik.
+
+**Pratik ipuçları**
+Yaz akşamları kalabalık olur; daha sakin gezmek için sabah veya öğle saatleri iyi. Rahat ayakkabı önemli; sokaklar taşlık ve dar. Pazarlık bazı dükkânlarda mümkün, ama her yerde değil.
+
+**Kısa özet**
+Kaş merkezde butik, tarih ve “sokak ruhu”nu aynı hatta yaşatan ikonik çarşı yürüyüşü.`
+},
+
+// 63) Tuğra Art Gallery
 {
   id: "tugra-art-gallery",
   title: "Tuğra Art Gallery",
@@ -6468,6 +7847,7 @@ Açılış saatleri sezon dışı değişebilir; kapalıysa hemen yakında başk
 Çarşı içinde kısa bir sanat molası için galeri durağı.`
 },
 
+// 64) Atelier Thalia
 {
   id: "atelier-thalia",
   title: "Atelier Thalia",
@@ -6508,6 +7888,7 @@ Bazı atölyeler belli gün/saat açık olur; denk gelmezsen üzülme, Kaş çar
 Tasarım/atölye dokusunu sevenlere çarşı içinde alternatif mola.`
 },
 
+// 65) Gallery Anatolia
 {
   id: "gallery-anatolia",
   title: "Gallery Anatolia",
@@ -6548,6 +7929,7 @@ Açılış saatleri sezon dışı değişebilir.
 Çarşı içinde Anadolu temalı sanat/hediyelik için galeri durağı.`
 },
 
+// 66) Antiphellos Antik Tiyatrosu
 {
   id: "antiphellos-antik-tiyatrosu",
   title: "Antiphellos Antik Tiyatrosu",
@@ -6588,6 +7970,7 @@ Akşamüstü kalabalık olabilir; biraz daha erken gidip yer seçmek iyi olur. B
 Kaş’ın simge tarih noktası; deniz manzaralı antik tiyatro ve en iyi zamanı gün batımı.`
 },
 
+// 67) Aslanlı Lahit (Kral Mezarı)
 {
   id: "aslanli-lahit",
   title: "Aslanlı Lahit (Kral Mezarı)",
@@ -6628,6 +8011,7 @@ Akşamüstü ve akşam kalabalık olur; sakin fotoğraf için sabah daha iyi. Ç
 Kaş’ın çarşı içindeki ikonik Likya eseri; kısa dur, bak, fotoğraf çek, devam et.`
 },
 
+// 68) Kaleköy (Simena Kalesi)
 {
   id: "kalekoy-simena-kalesi",
   title: "Kaleköy (Simena Kalesi)",
@@ -6668,6 +8052,48 @@ Kale çıkışı için rahat ayakkabı şart. Yazın güneş sert; su ve şapka 
 Tekneyle ulaşılan tarihi köy + kale manzarası: Kekova rotasının en sevilen duraklarından.`
 },
 
+// 69) Kekova Batık Şehir
+{
+  id: "kekova-batik-sehir",
+  title: "Kekova Batık Şehir",
+  description: "Kekova adası çevresinde, kıyı boyunca su altında kalan antik kalıntıları tekneyle izleyebileceğin koruma alanı.",
+  category: ["history", "nature", "places"],
+  image: "../assets/1_places/kekova-batik-sehir-001.jpg",
+  images: [
+    "../assets/1_places/kekova-batik-sehir-002.jpg",
+    "../assets/1_places/kekova-batik-sehir-003.jpg",
+    "../assets/1_places/kekova-batik-sehir-004.jpg"
+  ],
+  rating: 4.7,
+  price: "₺₺",
+  selected: false,
+  location: "Kekova, Demre/Antalya",
+  distance: "Kaş merkezden ~35–45 km (tekne/rota ile)",
+  coordinates: { lat: 36.1737, lng: 29.8733 },
+  website: "",
+  phone: "",
+  duration: "1–2 saat (tur planına göre)",
+  facilities: ["tekne turu", "rehber anlatımı (tura göre)"],
+  features: ["batık kalıntılar", "berrak su", "tarihle denizin birleşimi"],
+  tags: ["batik-sehir", "kekova", "tekne-turu"],
+  trust: { verified: true, infoDate: "2025-12-23", disclaimer: true },
+  longText: `**Atmosfer**
+Kekova Batık Şehir’de atmosfer biraz “müze gibi” ama açık havada. Tekne yavaşlar, herkes suyun altına bakar; bazen taş duvar çizgileri, basamaklar, yapı izleri seçilir. Berrak günlerde görüntü çok daha etkileyici.
+
+**Kimler için uygun**
+Tarihle ilgilenenler, tekne turuna anlam katmak isteyenler, “suda tarih görmek” fikrini sevenler.
+
+**Ne alınır-ne yapılır**
+Teknede sakin bir izleme. Bazı turlarda kano/SUP gibi alternatifler de olur ama batık şehir bölgesinde kurallar sıkı olabilir; operatör ne diyorsa ona uymak gerekir.
+
+**Pratik ipuçları**
+Cam gibi deniz günlerinde görüntü harika olur; rüzgâr varsa su dalgalanır, görünürlük düşer. Polarize güneş gözlüğü su altını seçmeyi kolaylaştırır.
+
+**Kısa özet**
+Tekneyle geçerken su altındaki antik izleri gördüğün, Kekova rotasının “en farklı” noktası.`
+},
+
+// 70) Aperlai Antik Kenti
 {
   id: "aperlai-antik-kenti",
   title: "Aperlai Antik Kenti",
@@ -6706,8 +8132,11 @@ Yürüyüş zemini taşlık olabilir; rahat ayakkabı şart. Güneş ve su hazı
 
 **Kısa özet**
 Kekova hattında daha sakin, doğa içinde bir Likya antik kenti.`
-},
+}
+,
+// 8. onluk (71–72 / 72)  ✅ son parça
 
+// 71) Patara Plajı
 {
   id: "patara-plaji",
   title: "Patara Plajı",
@@ -6748,6 +8177,7 @@ Güneş burada çok yakar; şapka, güneş kremi, su şart. Rüzgâr varsa kum u
 Kaş çevresinin en ikonik kumsalı: dev gibi sahil, kum tepeleri ve efsane gün batımı.`
 },
 
+// 72) Patara Antik Kenti
 {
   id: "patara-antik-kenti",
   title: "Patara Antik Kenti",
@@ -6787,6 +8217,7 @@ Rahat ayakkabı, su ve güneş koruması şart. Yazın öğle sıcağında gezme
 **Kısa özet**
 Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla mükemmel ikili.`
 }
+
 
 ];
 
