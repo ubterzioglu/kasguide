@@ -61,17 +61,40 @@
     return s || "";
   }
 
-  function metaItem(label, value) {
+  function metaItem(label, value, extraClass = "") {
     const v = fmt(value) || PLACEHOLDER;
+    const cls = extraClass ? ` ${extraClass}` : "";
     return `
-      <div class="detail-meta">
+      <div class="detail-meta${cls}">
         <div class="detail-meta-label">${escapeHtml(label)}</div>
         <div class="detail-meta-value">${escapeHtml(v)}</div>
       </div>
     `;
   }
 
-  function renderTrust(place) {
+  function badgeMetaItem(place) {
+    const defs = (typeof badgeDefinitions !== "undefined" && badgeDefinitions && typeof badgeDefinitions === "object")
+      ? badgeDefinitions
+      : {};
+    const badgeId = String(place?.badgeId || place?.badge || "tourist").trim() || "tourist";
+    const def = defs[badgeId] || {};
+    const emoji = String(def.emoji || place?.badgeEmoji || "🧑‍🧳");
+    const title = String(def.title || def.label || "Turist Dostu");
+    const description = String(def.description || "");
+    // emoji-only, legend via tooltip (desktop) / tap-to-explain (mobile)
+    return `
+      <div class="detail-meta meta-badge" data-badge-id="${escapeHtml(badgeId)}">
+        <div class="detail-meta-label">Kaş Guide Badge</div>
+        <div class="detail-meta-value">
+          <button type="button" class="kg-badge-emoji" aria-label="${escapeHtml(title)}" data-tooltip="${escapeHtml(title)}" data-desc="${escapeHtml(description)}">
+            ${escapeHtml(emoji)}
+          </button>
+          <div class="kg-badge-help" aria-live="polite"></div>
+        </div>
+      </div>
+    `;
+  }
+function renderTrust(place) {
     const t = (place && typeof place.trust === "object") ? place.trust : {};
     const verified = !!t.verified;
     const infoDate = String(t.infoDate ?? "").trim();
@@ -260,7 +283,60 @@
     `;
   }
 
-  function render(place) {
+  
+  function initBadges(root){
+    const btns = Array.from(root.querySelectorAll(".kg-badge-emoji"));
+    if (!btns.length) return;
+
+    const isTouch = window.matchMedia && window.matchMedia("(hover: none)").matches;
+
+    function closeAll(exceptBtn){
+      btns.forEach((b) => {
+        if (exceptBtn && b === exceptBtn) return;
+        b.classList.remove("is-open");
+        const card = b.closest(".detail-meta");
+        const help = card?.querySelector(".kg-badge-help");
+        if (help) help.textContent = "";
+      });
+    }
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        // On desktop: do nothing special (tooltip handles)
+        if (!isTouch) return;
+
+        e.preventDefault();
+        const card = btn.closest(".detail-meta");
+        const help = card?.querySelector(".kg-badge-help");
+        if (!help) return;
+
+        const title = btn.getAttribute("data-tooltip") || "";
+        const desc = btn.getAttribute("data-desc") || "";
+        const text = (desc || title).trim();
+
+        const opening = !btn.classList.contains("is-open");
+        closeAll(opening ? btn : null);
+
+        if (opening) {
+          btn.classList.add("is-open");
+          help.textContent = text || "";
+        } else {
+          btn.classList.remove("is-open");
+          help.textContent = "";
+        }
+      });
+    });
+
+    // tap outside closes
+    document.addEventListener("click", (e) => {
+      if (!isTouch) return;
+      const inside = e.target.closest(".meta-badge");
+      if (inside) return;
+      closeAll();
+    });
+  }
+
+function render(place) {
     const root = document.getElementById("detailRoot");
     if (!root) return;
 
@@ -284,9 +360,6 @@
     const rating = fmt(place.rating);
     const price = fmt(place.price);
     const location = fmt(place.location);
-    const distance = fmt(place.distance);
-    const duration = fmt(place.duration);
-    const access = fmt(place.access);
 
     root.innerHTML = `
       <article class="detail-card">
@@ -314,12 +387,10 @@
           ${desc ? `<div class="detail-kisaca"><strong>🟢 Kısaca:</strong> ${escapeHtml(desc)}</div>` : ""}
 
           <div class="detail-meta-grid">
-            ${metaItem("Puan", rating)}
-            ${metaItem("Fiyat", price)}
-            ${metaItem("Konum", location)}
-            ${metaItem("Mesafe", distance)}
-            ${metaItem("Süre", duration)}
-            ${metaItem("Erişim", access)}
+            ${metaItem("Puan", rating, "meta-rating")}
+            ${metaItem("Fiyat", price, "meta-price")}
+            ${metaItem("Konum", location, "meta-location")}
+            ${badgeMetaItem(place)}
           </div>
 
           ${renderTrust(place)}
@@ -344,6 +415,9 @@
 
     // after render: init slider
     initHeroSlider(root, photos, title);
+    // badges: tooltip on desktop, tap-to-explain on mobile
+    initBadges(root);
+
   }
 
 

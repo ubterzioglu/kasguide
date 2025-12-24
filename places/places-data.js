@@ -17,10 +17,42 @@ Yazılar : articles
 */
 
 
+
+// Kaş Guide Badge Definitions (emoji-only on UI; legend/meaning below)
+const badgeDefinitions = {
+  // Default (for now: applied to all places)
+  tourist: {
+    emoji: "🧑‍🧳",
+    title: "Turist Dostu",
+    description: "İlk kez gelenler için anlaşılır, rahat ve pratik bir tercih."
+  },
+
+  // 🌟 Genel / Editoryal
+  recommend: { emoji: "⭐", title: "Kaş Guide Önerir", description: "Kaş Guide ekibinin net önerisi." },
+  localFav: { emoji: "❤️", title: "Yerel Favori", description: "Kaşlıların sık gittiği, sevdiği yer." },
+  classic: { emoji: "🏛️", title: "Kaş Klasiği", description: "Yıllardır bilinen, adı oturmuş klasik durak." },
+  newFind: { emoji: "🌱", title: "Yeni Keşif", description: "Yeni açılan/yeniden parlayan, keşiflik yer." },
+  editorsPick: { emoji: "🖊️", title: "Editör Seçimi", description: "Detaylarıyla öne çıkan, seçilmiş deneyim." },
+
+  surprise: { emoji: "🎯", title: "Sürpriz Nokta", description: "Beklenenden iyi çıkan, hoş sürpriz." },
+  hidden: { emoji: "👀", title: "Gizli Kalmış", description: "Çok bilinmeyen ama değerli bir köşe." },
+  again: { emoji: "🔁", title: "Tekrar Gidilir", description: "Bir kez gidince listede kalan yer." },
+  kasSoul: { emoji: "🌊", title: "Kaş Ruhu Var", description: "Kaş’ın o rahat, gerçek hissini veren yer." },
+  firstTimers: { emoji: "🧭", title: "İlk Kez Gelenlere Uygun", description: "Kaş’a ilk gelişte risksiz, net tercih." },
+  timeless: { emoji: "🕰️", title: "Yıllardır Değişmeyen", description: "İstikrarı ve çizgisiyle güven veren." },
+  chattyOwner: { emoji: "🤝", title: "Sahibiyle Muhabbetlik", description: "Sıcakkanlı, iletişimi güçlü işletme hissi." },
+  sunsetStart: { emoji: "🌅", title: "Akşam Başlangıcı", description: "Gün batımı sonrası akşamı başlatmalık." },
+  nightCarrier: { emoji: "🌙", title: "Geceyi Taşıyan Mekân", description: "Gece ilerledikçe temposu yükselen durak." },
+  must: { emoji: "💎", title: "Kaş’ta Olmazsa Olmaz", description: "Kaş deneyiminin imza duraklarından." }
+};
+
+
 const allPlaces = [
 
 {
   id: 'frida-pub',
+  badgeId: 'tourist',
+
   title: 'Frida Pub',
   description: 'Canlı müzik, rock ağırlıklı playlist ve pub havasıyla; Kaş’ta akşamları enerjik geçirmek isteyenlerin sık uğradığı bar.',
   category: ['bar', 'cafe'],
@@ -106,6 +138,8 @@ Frida Pub; Kaş’ta rock müzik, canlı performans ve pub atmosferini bir arada
 
 {
   id: 'bunbun-kas',
+  badgeId: 'tourist',
+
   title: 'Bunbun Kaş',
   description: 'Taze kahve, iyi sandviçler ve tatlılarla; günün her saati uğranabilen, rahat ve modern bir kafe.',
   category: ['cafe', 'breakfast', 'food'],
@@ -193,6 +227,8 @@ Bunbun Kaş; iyi kahve, pratik kahvaltı ve rahat kafe atmosferi arayanlar için
 
 {
   id: 'manos-greek-tavern',
+  badgeId: 'tourist',
+
   title: 'Manos Greek Tavern',
   description: 'Samimi bir aile işletmesi havasında, Yunan mutfağının taze ve sade lezzetlerini Kaş’ta sunan tavern; özellikle deniz mahsulleri ve mezeleriyle keyifli akşamlar için tercih ediliyor.',
   category: ['food','meyhane'],
@@ -275,6 +311,8 @@ Manos Greek Tavern, Kaş’ta Yunan mutfağının sade ve taze lezzetlerini, sam
 
 {
   id: 'ci-neo-cucina-by-mezetaryen',
+  badgeId: 'tourist',
+
   title: 'Çi Neo Cucina by Mezetaryen',
   description: 'Modern Akdeniz esintileriyle İtalyan mutfağını buluşturan rahat ama özenli bir restoran; özellikle taze malzemeler, ev yapımı lezzetler ve iyi şarap eşleşmeleri arayanlar için.',
   category: ['food'],
@@ -360,6 +398,8 @@ Kısa özet:
 
 {
   id: 'dragoman-bahce',
+  badgeId: 'tourist',
+
   title: 'Dragoman Bahçe',
   description: 'Barlar sokağına yakın, yeşillikler içinde “bahçe bar” hissi veren; kokteyl, bira ve atıştırmalıkla uzayan akşamlar için rahat bir buluşma noktası.',
   category: ['bar', 'food'],
@@ -451,6 +491,8 @@ Dragoman Bahçe; Kaş merkezde, yeşillikler içinde, kokteyl-bira-atıştırmal
 
 {
   id: 'nereid-meyhanesi',
+  badgeId: 'tourist',
+
   title: 'Nereid Meyhanesi',
   description: 'Kaş merkezde, Ege & Akdeniz meyhane mutfağını “sahne” atmosferiyle birleştiren; meze, deniz ürünleri ve uzun sohbet sofralarıyla öne çıkan akşam yemeği noktası.',
   category: ['meyhane', 'food'],
@@ -544,6 +586,8 @@ Nereid Meyhanesi, Kaş’ta klasik meyhane hissini modern bir “sahne” dokunu
 
 {
   id: 'dragoman-diving-and-outdoor',
+  badgeId: 'tourist',
+
   title: 'Dragoman Diving and Outdoor',
   description: 'Kaş’ta dalış başta olmak üzere doğa ve deniz odaklı aktiviteler sunan, güven veren ve tecrübeli bir outdoor & dalış merkezi.',
   category: ['diving', 'activities'],
@@ -631,6 +675,8 @@ Dragoman Diving and Outdoor, Kaş’ta dalışı güvenli, sakin ve keyifli şek
 
 {
   id: 'the-shotlar-terminali',
+  badgeId: 'tourist',
+
   title: 'The Shotlar Terminali',
   description: 'Shot odaklı konsepti, yüksek enerjisi ve eğlenceli atmosferiyle; Kaş’ta geceyi hızlandırmak isteyenlerin uğradığı küçük ama hareketli bir bar.',
   category: ['bar'],
@@ -716,6 +762,8 @@ The Shotlar Terminali; Kaş gece hayatında kısa sürede tempo yakalamak isteye
 
 {
   id: "oxygen-pub",
+  badgeId: 'tourist',
+
   title: "Oxygen Pub",
   description: "Kaş Marina içinde, tekne manzarası eşliğinde gün batımına oturmalık; kahve–yemek–içki hattında çalışan bir pub/bar.",
   category: ["bar", "food", "breakfast", "cafe"],
@@ -804,6 +852,8 @@ Oxygen Pub, Kaş’ta “marina manzarasında oturalım” fikrini en net veren 
 
 {
   id: "zaika-ocakbasi",
+  badgeId: 'tourist',
+
   title: "Zaika Ocakbaşı",
   description: "Kaş’ın Çukurbağ Yarımadası’nda, ocakbaşı ve geleneksel kebap odaklı lezzetler sunan uzun yıllardır yerel ve turist tarafından bilinen restoran.",
   category: ["food"],
@@ -886,6 +936,8 @@ Zaika Ocakbaşı, Çukurbağ Yarımadası’nda **geleneksel ocakbaşı lezzetle
 
 {
   id: "oburus-momus",
+  badgeId: 'tourist',
+
   title: "Oburus Momus",
   description: "Kaş merkezde vegan/vejetaryen odaklı, Akdeniz-füzyon tarzı modern restoran; deniz manzarasına yakın konumuyla akşamüstü ve akşam yemekleri için popüler.",
   category: ["food"],
@@ -969,6 +1021,8 @@ Oburus Momus, Kaş’ta klasik lezzetlerin dışında, **modern, vegan/vejetarye
 
 {
   id: "l-apero",
+  badgeId: 'tourist',
+
   title: "L’Apéro",
   description: "Kaş merkezde, eski bir evin bahçesinde modern Fransız-Akdeniz mutfağı ve şarap/kokteyl eşliğinde akşam yemekleri için öne çıkan restoran.",
   category: ["food", "bar"],
@@ -1053,6 +1107,8 @@ L’Apéro, Kaş merkezde **Fransız ve Akdeniz lezzetlerini birleştiren**, bah
 
 {
   id: "ruhi-bey-meyhanesi",
+  badgeId: 'tourist',
+
   title: "Ruhi Bey Meyhanesi",
   description: "Kaş merkezde, klasik meyhane düzeninde, meze ve rakı eşliğinde uzun sofralara odaklanan sakin bir akşam yemeği mekânı.",
   category: ["meyhane", "food"],
@@ -1129,6 +1185,8 @@ Ruhi Bey Meyhanesi, Kaş’ta klasik meyhane deneyimini sade ve sohbet odaklı y
 
 {
   id: "voyn-meyhane",
+  badgeId: 'tourist',
+
   title: "Voyn Meyhane",
   description: "Kaş merkezde, modern meyhane çizgisinde, meze ve deniz ürünü ağırlıklı menüsüyle akşamları tercih edilen bir rakı-balık mekânı.",
   category: ["meyhane", "food"],
@@ -1205,6 +1263,8 @@ Voyn Meyhane, Kaş merkezde modern meyhane tarzında, meze ve deniz ürünü ağ
 
 {
   id: "demeti-meyhane",
+  badgeId: 'tourist',
+
   title: "Demeti Meyhane",
   description: "Kaş’ta ev sıcaklığı hissi veren, küçük ölçekli ve samimi yapısıyla öne çıkan, meze ve rakı odaklı bir meyhane.",
   category: ["meyhane", "food"],
@@ -1281,6 +1341,8 @@ Demeti Meyhane, Kaş’ta sakin, samimi ve ev sıcaklığında bir meyhane deney
 
 {
   id: "zuhtu-meze-cocktails",
+  badgeId: 'tourist',
+
   title: "Zühtü Meze & Cocktails",
   description: "Kaş merkezde, meze odaklı mutfağı ve imza kokteylleriyle meyhane ile bar çizgisini birleştiren akşam mekânı.",
   category: ["meyhane", "bar", "food"],
@@ -1357,6 +1419,8 @@ Zühtü, Kaş’ta meyhane ile kokteyl bar arasında dengeli bir yerde duran, mo
 
 {
   id: "beyhude-meyhane",
+  badgeId: 'tourist',
+
   title: "Beyhude Meyhane",
   description: "Kaş merkezde, klasik meyhane kültürünü sade ve samimi bir ortamda sunan, meze ve rakı odaklı akşam mekânı.",
   category: ["meyhane", "food"],
@@ -1433,6 +1497,8 @@ Beyhude Meyhane, Kaş’ta “abartısız ama düzgün” bir meyhane akşamı a
 
 {
   id: "uzum-kizi-meyhanesi",
+  badgeId: 'tourist',
+
   title: "Üzüm Kızı Meyhanesi",
   description: "Kaş merkezde, ev mutfağı hissi veren mezeleri ve sakin ortamıyla öne çıkan, küçük ölçekli bir meyhane.",
   category: ["meyhane", "food"],
@@ -1509,6 +1575,8 @@ Kısa özet:
 
 {
   id: "mupptela-ocakbasi",
+  badgeId: 'tourist',
+
   title: "Müpptela Ocakbaşı",
   description: "Kaş merkezde, klasik ocakbaşı düzeninde kebap ve ızgara etlere odaklanan, akşam yemeği için tercih edilen restoran.",
   category: ["food"],
@@ -1585,6 +1653,8 @@ Müpptela Ocakbaşı, Kaş’ta klasik ocakbaşı çizgisinde, et odaklı ve ak�
 
 {
   id: "pisekar-restoran",
+  badgeId: 'tourist',
+
   title: "Pişekar Restoran",
   description: "Kaş merkezde, ev yemeği ve Türk mutfağı ağırlıklı menüsüyle öğle ve akşam yemeklerinde tercih edilen sade bir restoran.",
   category: ["food"],
@@ -1662,6 +1732,8 @@ Pişekar Restoran, Kaş’ta ev yemeği tadında, sade ve güvenilir bir öğün
 
 {
   id: "meydan-restaurant-cafe",
+  badgeId: 'tourist',
+
   title: "Meydan Restaurant & Cafe",
   description: "Kaş merkezde, gün boyu açık yapısıyla kahvaltıdan akşam yemeğine kadar geniş bir menü sunan merkezi bir kafe-restoran.",
   category: ["food", "cafe", "breakfast"],
@@ -1738,6 +1810,8 @@ Meydan Restaurant & Cafe, Kaş’ta gün boyu çalışan, merkezi ve çok amaçl
 
 {
   id: "fici-restaurant",
+  badgeId: 'tourist',
+
   title: "Fıçı Restaurant",
   description: "Kaş merkezde, deniz ürünü ve Akdeniz mutfağı ağırlıklı menüsüyle akşam yemekleri için tercih edilen restoran.",
   category: ["food"],
@@ -1814,6 +1888,8 @@ Fıçı Restaurant, Kaş’ta deniz ürünü ağırlıklı, sade ve akşam yeme�
 
 {
   id: "smileys-restaurant",
+  badgeId: 'tourist',
+
   title: "Smileys Restaurant",
   description: "Kaş merkezde, uluslararası mutfak seçenekleri ve rahat ortamıyla gün boyu hizmet veren bir restoran.",
   category: ["food"],
@@ -1890,6 +1966,8 @@ Smileys Restaurant, Kaş’ta geniş menülü, rahat ve gün boyu çalışan bir
 
 {
   id: "bi-lokma",
+  badgeId: 'tourist',
+
   title: "Bi’Lokma",
   description: "Kaş merkezde, bahçeli ortamda kahvaltıdan akşam yemeğine uzanan Türk mutfağı menüsüyle gün boyu çalışan bir restoran.",
   category: ["food", "breakfast", "cafe"],
@@ -1968,6 +2046,8 @@ Menü geniş: kahvaltı, mezeler, ana yemekler, tatlılar ve içecekler. Site me
 
 {
   id: "sempati-turkish-cuisine",
+  badgeId: 'tourist',
+
   title: "Sempati Turkish Cuisine",
   description: "Uzun Çarşı civarında, ev yemekleri ve deniz ürünü seçenekleriyle bilinen, akşamları yoğunlaşan popüler bir Kaş restoranı.",
   category: ["food"],
@@ -2045,6 +2125,8 @@ Burası “akşam yemeği için gidelim, masada biraz oturalım” temposunda. K
 
 {
   id: "panorama-restaurant",
+  badgeId: 'tourist',
+
   title: "Panorama Restaurant",
   description: "Kaş merkezde, yüksek konumu sayesinde geniş manzaraya sahip, Akdeniz ve Türk mutfağı ağırlıklı akşam yemeği restoranı.",
   category: ["food"],
@@ -2121,6 +2203,8 @@ Panorama Restaurant, Kaş’ta manzara eşliğinde sakin ve uzun bir akşam yeme
 
 {
   id: "luna-restaurant-bar",
+  badgeId: 'tourist',
+
   title: "Luna Restaurant & Bar",
   description: "Kaş merkezde, akşam yemekleri sonrası bar havasına dönen, restoran ve bar konseptini bir arada sunan mekân.",
   category: ["food", "bar"],
@@ -2197,6 +2281,8 @@ Luna, Kaş’ta restoran ve bar arasında geçiş yapan, akşamı tek noktada de
 
 {
   id: "lilys-corner",
+  badgeId: 'tourist',
+
   title: "Lily’s Corner",
   description: "Kaş merkezde, küçük ölçekli, kahve ve hafif yemeklere odaklanan, samimi bir köşe kafe-restoran.",
   category: ["cafe", "food"],
@@ -2272,6 +2358,8 @@ Lily’s Corner, Kaş’ta küçük, samimi ve rahat bir kafe-restoran arayanlar
 
 {
   id: "memedin-yeri",
+  badgeId: 'tourist',
+
   title: "Memed’in Yeri",
   description: "Kaş merkezde, ev yemeği ve ızgara ağırlıklı menüsüyle bilinen, sade ve yerel bir lokanta.",
   category: ["food"],
@@ -2349,6 +2437,8 @@ Memed’in Yeri, Kaş’ta sade, yerel ve fiyat–performans odaklı bir lokanta
 
 {
   id: "tasra-restoran",
+  badgeId: 'tourist',
+
   title: "Taşra Restoran",
   description: "Kaş merkezde, Türk mutfağı ağırlıklı menüsü ve rahat ortamıyla öğle ve akşam yemeklerinde tercih edilen restoran.",
   category: ["food"],
@@ -2424,6 +2514,8 @@ Taşra Restoran, Kaş’ta sade, rahat ve tanıdık lezzetlerle yemek yemek iste
 
 {
   id: "yelken-restaurant-meyhane",
+  badgeId: 'tourist',
+
   title: "Yelken Restaurant & Meyhane",
   description: "Kaş merkezde, deniz ürünü ve meze ağırlıklı menüsüyle restoran ve meyhane çizgisini birleştiren akşam mekânı.",
   category: ["meyhane", "food"],
@@ -2500,6 +2592,8 @@ Yelken Restaurant & Meyhane, Kaş’ta deniz ürünü ve meze odaklı, sakin ama
 
 {
   id: "sardelaki-greek-tavern",
+  badgeId: 'tourist',
+
   title: "Sardelaki Greek Tavern",
   description: "Kaş merkezde, Yunan mutfağı odaklı mezeleri ve deniz ürünü ağırlıklı menüsüyle sakin akşam sofraları sunan bir taverna.",
   category: ["meyhane", "food"],
@@ -2576,6 +2670,8 @@ Sardelaki, Kaş’ta Yunan mutfağı tadında, sakin ve uzun akşam sofraları a
 
 {
   id: "bella-vita-pizza",
+  badgeId: 'tourist',
+
   title: "Bella Vita Pizza",
   description: "Kaş merkezde, odun fırın pizzalarıyla bilinen, hızlı ama kaliteli yemek arayanlara hitap eden İtalyan tarzı pizza mekânı.",
   category: ["food"],
@@ -2652,6 +2748,8 @@ Bella Vita Pizza, Kaş’ta odun fırın pizzasıyla öne çıkan, hızlı ve ne
 
 {
   id: "oburus-notos",
+  badgeId: 'tourist',
+
   title: "Oburus Notos",
   description: "Kaş’ta, Oburus mutfak anlayışını daha modern ve yaratıcı tabaklarla sunan, akşam yemeği odaklı bir restoran.",
   category: ["food"],
@@ -2728,6 +2826,8 @@ Oburus Notos, Kaş’ta modern ve yaratıcı mutfak deneyimi arayanlar için ön
 
 {
   id: "zoka-street-food",
+  badgeId: 'tourist',
+
   title: "Zoka Street Food",
   description: "Kaş merkezde, sokak lezzetleri odaklı menüsüyle hızlı, doyurucu ve pratik yemekler sunan küçük ölçekli bir street food noktası.",
   category: ["food"],
@@ -2803,6 +2903,8 @@ Zoka Street Food, Kaş’ta hızlı, net ve doyurucu sokak lezzetleri arayanlar 
 
 {
   id: "hold-and-bite",
+  badgeId: 'tourist',
+
   title: "Hold&Bite",
   description: "Kaş merkezde, burger ve sandviç odaklı menüsüyle modern street food anlayışını sunan küçük ve hızlı servisli bir mekân.",
   category: ["food"],
@@ -2878,6 +2980,8 @@ Hold&Bite, Kaş’ta burger ve sandviçle hızlı ama düzgün bir öğün araya
 
 {
   id: "bay-kofte",
+  badgeId: 'tourist',
+
   title: "Bay Köfte",
   description: "Kaş merkezde, köfte ve ızgara odaklı menüsüyle sade, doyurucu ve yemek merkezli bir köfteci.",
   category: ["food"],
@@ -2953,6 +3057,8 @@ Bay Köfte, Kaş’ta köfte odaklı, sade ve doyurucu bir öğün arayanlar iç
 
 {
   id: "kasik-manti-ev-yemekleri",
+  badgeId: 'tourist',
+
   title: "Kaşık Mantı & Ev Yemekleri",
   description: "Kaş merkezde, mantı ve ev yemeği odaklı menüsüyle sade, hızlı ve doyurucu öğünler sunan küçük bir lokanta.",
   category: ["food"],
@@ -3029,6 +3135,8 @@ Kaşık Mantı & Ev Yemekleri, Kaş’ta mantı ve ev yemeği için net, sade ve
 
 {
   id: "ora-kebap-restaurant",
+  badgeId: 'tourist',
+
   title: "Ora Kebap Restaurant",
   description: "Kaş merkezde, kebap ve ızgara et odaklı menüsüyle klasik ocakbaşı çizgisinde hizmet veren bir restoran.",
   category: ["food"],
@@ -3104,6 +3212,8 @@ Ora Kebap Restaurant, Kaş’ta kebap odaklı, sade ve net bir akşam yemeği se
 
 {
   id: "emre-restaurant",
+  badgeId: 'tourist',
+
   title: "Emre Restaurant",
   description: "Kaş merkezde, deniz ürünü ve Türk mutfağı ağırlıklı menüsüyle uzun yıllardır hizmet veren klasik bir restoran.",
   category: ["food"],
@@ -3180,6 +3290,8 @@ Emre Restaurant, Kaş’ta balık ve deniz ürünü ağırlıklı, güvenilir ve
 
 {
   id: "pells-cafe",
+  badgeId: 'tourist',
+
   title: "Pell’s Cafe",
   description: "Kaş merkezde, kahve ve hafif yiyeceklerle günün her saatine uyum sağlayan bir kafe.",
   category: ["cafe"],
@@ -3222,6 +3334,8 @@ Kaş merkezde, sade ve pratik bir kahve molası noktası.
 
 {
   id: "pika-coffee",
+  badgeId: 'tourist',
+
   title: "Pika Coffee",
   description: "Kaş’ta nitelikli kahveye odaklanan, modern ve sade bir kahve dükkanı.",
   category: ["cafe"],
@@ -3264,6 +3378,8 @@ Kaş’ta nitelikli kahve arayanlar için sade ve net bir adres.
 
 {
   id: "godo-coffee-and-more",
+  badgeId: 'tourist',
+
   title: "Godo Coffee & More",
   description: "Kahve merkezli menüsünü farklı içecek ve atıştırmalıklarla tamamlayan bir kafe.",
   category: ["cafe"],
@@ -3306,6 +3422,8 @@ Kahve odaklı ama esnek kullanıma açık, rahat bir Kaş kafesi.
 
 {
   id: "nur-pastanesi",
+  badgeId: 'tourist',
+
   title: "Nur Pastanesi",
   description: "Kaş merkezde, klasik pastane ürünleri ve tatlılarıyla bilinen yerel bir pastane.",
   category: ["cafe", "breakfast"],
@@ -3348,6 +3466,8 @@ Kaş merkezde, klasik ve pratik bir pastane durağı.
 
 {
   id: "chayote-cafe",
+  badgeId: 'tourist',
+
   title: "Chayote Cafe",
   description: "Kaş’ta kahve, hafif yemekler ve rahat oturum sunan sakin bir kafe.",
   category: ["cafe"],
@@ -3390,6 +3510,8 @@ Kaş’ta sakinlik arayanlar için rahat bir kafe alternatifi.
 
 {
   id: "panu-kas",
+  badgeId: 'tourist',
+
   title: "Panu Kaş",
   description: "Kaş merkezde, Akdeniz mutfağı odaklı modern bir restoran.",
   category: ["food"],
@@ -3432,6 +3554,8 @@ Kaş’ta daha özenli bir akşam yemeği arayanlar için modern bir adres.
 
 {
   id: "hideaway-bar-and-cafe",
+  badgeId: 'tourist',
+
   title: "Hideaway Bar & Cafe",
   description: "Kaş’ta gün içinde kafe, akşam saatlerinde bar olarak kullanılan rahat bir mekân.",
   category: ["bar", "cafe"],
@@ -3474,6 +3598,8 @@ Kaş’ta gün ve akşam temposuna uyum sağlayan, rahat bir bar-kafe.
 
 {
   id: "menta-coffee",
+  badgeId: 'tourist',
+
   title: "Menta Coffee",
   description: "Kaş’ta kahve odaklı, küçük ve sade bir kafe.",
   category: ["cafe"],
@@ -3516,6 +3642,8 @@ Kaş’ta sade, kahve odaklı ve pratik bir durak.
 
 {
   id: "huseyinin-yeri-cafe-white",
+  badgeId: 'tourist',
+
   title: "Hüseyin’in Yeri (Cafe White)",
   description: "Kaş’ta deniz manzarasıyla bilinen, sade ve yerel bir kafe.",
   category: ["cafe"],
@@ -3558,6 +3686,8 @@ Kaş’ta manzarasıyla öne çıkan, sade ve yerel bir kafe.
 
 {
   id: "dejavu-cafe-and-bar",
+  badgeId: 'tourist',
+
   title: "Dejavu Cafe & Bar",
   description: "Kaş’ta gündüz kafe, akşam bar olarak kullanılan sosyal ve canlı bir mekân.",
   category: ["cafe", "bar"],
@@ -3600,6 +3730,8 @@ Kaş’ta gün ve geceye uyum sağlayan, sosyal bir bar-kafe.
 
 {
   id: "echo-bar",
+  badgeId: 'tourist',
+
   title: "Echo Bar",
   description: "Kaş’ta akşam saatlerinde hareketlenen, müzik ve içki odaklı bir bar.",
   category: ["bar"],
@@ -3642,6 +3774,8 @@ Kaş’ta akşam ve gece saatlerine yönelik, müzik odaklı bir bar.
 
 {
   id: "red-point-bar",
+  badgeId: 'tourist',
+
   title: "Red Point Bar",
   description: "Kaş’ta akşamları tercih edilen, sade ve bar odaklı bir mekân.",
   category: ["bar"],
@@ -3684,6 +3818,8 @@ Kaş’ta sade, bar odaklı ve akşam saatlerine uygun bir adres.
 
 {
   id: "quanta-rock-bar",
+  badgeId: 'tourist',
+
   title: "Quanta Rock Bar (Quanta Rock Cafe)",
   description: "Kaş’ta rock müzik ağırlıklı, akşamları canlanan bar-kafe.",
   category: ["bar", "cafe"],
@@ -3726,6 +3862,8 @@ Kaş’ta rock müzik sevenler için akşamları tercih edilen bir bar-kafe.
 
 {
   id: "barboon-bar",
+  badgeId: 'tourist',
+
   title: "Barboon Bar",
   description: "Kaş’ta akşam ve gece saatlerinde tercih edilen, sosyal bir bar.",
   category: ["bar"],
@@ -3768,6 +3906,8 @@ Kaş’ta sosyal ve akşam odaklı bir bar alternatifi.
 
 {
   id: "ara-bar",
+  badgeId: 'tourist',
+
   title: "Ara Bar",
   description: "Kaş’ta küçük ölçekli, samimi ve bar odaklı bir mekân.",
   category: ["bar"],
@@ -3810,6 +3950,8 @@ Kaş’ta sade, samimi ve bar odaklı bir durak.
 
 {
   id: "no-11-bar",
+  badgeId: 'tourist',
+
   title: "No.11 Bar",
   description: "Kaş’ta akşam saatlerinde hareketlenen, bar odaklı bir mekân.",
   category: ["bar"],
@@ -3852,6 +3994,8 @@ Kaş’ta akşam saatlerine uygun, sade bir bar alternatifi.
 
 {
   id: "hijazz-bar",
+  badgeId: 'tourist',
+
   title: "HiJazz Bar",
   description: "Kaş’ta caz ve benzeri müziklerle öne çıkan, akşam odaklı bir bar.",
   category: ["bar"],
@@ -3894,6 +4038,8 @@ Kaş’ta müzik odaklı, akşamları tercih edilen bir bar.
 
 {
   id: "old-house-bar",
+  badgeId: 'tourist',
+
   title: "Old House Bar",
   description: "Kaş’ta eski ev dokusu hissi veren, akşam saatlerinde tercih edilen bir bar.",
   category: ["bar"],
@@ -3936,6 +4082,8 @@ Kaş’ta sakin, klasik bar havası arayanlar için bir seçenek.
 
 {
   id: "gagarin-bar",
+  badgeId: 'tourist',
+
   title: "Gagarin Bar",
   description: "Kaş’ta alternatif müzik ve sosyal atmosferiyle bilinen akşam odaklı bir bar.",
   category: ["bar"],
@@ -3978,6 +4126,8 @@ Kaş’ta müzik ve sosyal atmosfer arayanlar için akşamları tercih edilen bi
 
 {
   id: "botanik-garden-bar",
+  badgeId: 'tourist',
+
   title: "Botanik Garden Bar",
   description: "Kaş’ta açık alanı ve bahçe hissiyle öne çıkan, akşamları tercih edilen bir bar.",
   category: ["bar"],
@@ -4020,6 +4170,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "kaputas-plaji",
+  badgeId: 'tourist',
+
   title: "Kaputaş Plajı",
   description: "Turkuaz rengi denizi ve kanyon ağzındaki konumuyla ünlü, küçük ve fotojenik bir plaj.",
   category: ["beaches"],
@@ -4057,6 +4209,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "hidayet-koyu",
+  badgeId: 'tourist',
+
   title: "Hidayet Koyu (Blanca Beach)",
   description: "Akvaryum gibi berrak deniziyle ünlü, tesisli ve popüler bir koy.",
   category: ["beaches"],
@@ -4094,6 +4248,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "antiphellos-antik-tiyatro",
+  badgeId: 'tourist',
+
   title: "Antiphellos Antik Tiyatrosu",
   description: "Deniz manzaralı, Likya döneminden kalma tarihi bir açık hava tiyatrosu.",
   category: ["history"],
@@ -4131,6 +4287,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "kekova-batik-sehir",
+  badgeId: 'tourist',
+
   title: "Kekova Batık Şehir",
   description: "Tekneyle gezilebilen, deniz altındaki Likya dönemi kalıntılarıyla ünlü tarihi bir bölge.",
   category: ["history", "nature"],
@@ -4168,6 +4326,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "kas-dalis",
+  badgeId: 'tourist',
+
   title: "Kaş Dalış Deneyimi",
   description: "Türkiye’nin en zengin sualtı yaşamına sahip bölgelerinden birinde unutulmaz dalış deneyimi.",
   category: ["diving", "activities"],
@@ -4205,6 +4365,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "keyf-i-dem-meyhane",
+  badgeId: 'tourist',
+
   title: "Keyf-i Dem Meyhane",
   description: "Marina manzaralı, mezeleri ve canlı atmosferiyle ünlü geleneksel bir meyhane.",
   category: ["meyhane", "food"],
@@ -4242,6 +4404,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "dudu-mutfak",
+  badgeId: 'tourist',
+
   title: "Dudu Mutfak",
   description: "Eski bir Kaş evinde, zengin serpme kahvaltısıyla ünlü sıcak ve samimi bir kafe-restoran.",
   category: ["breakfast", "food"],
@@ -4279,6 +4443,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "mavi-bar",
+  badgeId: 'tourist',
+
   title: "Mavi Bar",
   description: "Kaş’ın en eski barı; alternatif müzikleri, salaş ortamı ve gün batımı manzarasıyla meşhur buluşma noktası.",
   category: ["bar"],
@@ -4316,6 +4482,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "uzun-carsi",
+  badgeId: 'tourist',
+
   title: "Uzun Çarşı & Aslanlı Lahit",
   description: "Tarihi Kaş çarşısı; otantik dükkanları ve sonunda yer alan 2400 yıllık Aslanlı Lahit ile ünlü sokak.",
   category: ["shopping", "history"],
@@ -4353,6 +4521,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "lukka-exclusive-hotel",
+  badgeId: 'tourist',
+
   title: "Lukka Exclusive Hotel",
   description: "Çukurbağ Yarımadası’nda, denize sıfır konumu ve lüks olanaklarıyla tanınan, yetişkinlere yönelik butik otel.",
   category: ["hotels"],
@@ -4390,6 +4560,8 @@ Kaş’ta açık hava ve bahçe atmosferi arayanlar için rahat bir bar alternat
 
 {
   id: "buyuk-cakil-plaji",
+  badgeId: 'tourist',
+
   title: "Büyük Çakıl Plajı",
   description: "Kaş merkeze yürünebilir mesafede, çakıllı yapısı ve hızlı derinleşen deniziyle bilinen popüler bir halk plajı.",
   category: ["beaches"],
@@ -4430,6 +4602,8 @@ Merkeze yakın, berrak su, çakıllı sahil ve hızlı derinleşen deniz: Büyü
 
 {
   id: "kucuk-cakil-plaji",
+  badgeId: 'tourist',
+
   title: "Küçük Çakıl Plajı (Çınarlar Plajı)",
   description: "Kaş merkezde küçük bir koy hissi veren, çakıllı ve berrak suya sahip, yürüyerek kolay ulaşılan plaj.",
   category: ["beaches"],
@@ -4470,6 +4644,8 @@ Küçük, merkezde, pratik ve berrak: Küçük Çakıl tam olarak bu. “Kaş’
 
 {
   id: "kas-belediyesi-halk-plaji",
+  badgeId: 'tourist',
+
   title: "Kaş Belediyesi Halk Plajı",
   description: "Kaş merkezde platform/çakıl karışımı yapısıyla, duş–WC gibi temel imkanları bulunan popüler belediye plajı.",
   category: ["beaches"],
@@ -4510,6 +4686,8 @@ Merkeze yakın, temel imkanları olan, düzenli bir halk plajı: Kaş Belediyesi
 
 {
   id: "incebogaz-plaji",
+  badgeId: 'tourist',
+
   title: "İnceboğaz Plajı",
   description: "Kaş yarımada tarafında, daha korunaklı koy hissi veren, çakıllı ve sakin deniziyle bilinen plaj.",
   category: ["beaches"],
@@ -4550,6 +4728,8 @@ Yarımada tarafında, koy hissi veren, sakinlik arayana iyi gelen bir Kaş plaj�
 
 {
   id: "narr-plaji",
+  badgeId: 'tourist',
+
   title: "Narr Plajı",
   description: "Merkeze yakın, iskele/rocky shore tarzı denize giriş sunan ve yeme-içmeyle birleşen beach-cafe konseptli nokta.",
   category: ["beaches", "cafe"],
@@ -4590,6 +4770,8 @@ Narr, Kaş’ta deniz keyfini “oturmalı-kalkmalı” bir beach-cafe düzenind
 
 {
   id: "derya-beach-club",
+  badgeId: 'tourist',
+
   title: "Derya Beach Club",
   description: "Küçük Çakıl hattında, denize girme ve kokteyl/yeme-içmeyi birleştiren beach club konseptli işletme.",
   category: ["beaches", "bar", "food"],
@@ -4630,6 +4812,8 @@ Derya, Kaş merkez çevresinde beach club gününü “yüzme + yeme-içme” ş
 
 {
   id: "leymona-beach-club",
+  badgeId: 'tourist',
+
   title: "Leymona Beach Club",
   description: "Kaş merkezde, deniz günü ile yeme-içmeyi birleştiren ve sakin bir atmosfer hedefleyen beach restoran/bar konsepti.",
   category: ["beaches", "food", "bar"],
@@ -4670,6 +4854,8 @@ Leymona, Kaş merkez çevresinde beach günü + yeme-içme kombinini, görece da
 
 {
   id: "asma6-beach-restaurant",
+  badgeId: 'tourist',
+
   title: "Asma6 Beach & Restaurant",
   description: "Kaş merkez sahil hattında, denize girme alanı ve gün boyu yeme-içmeyi bir arada sunan beach restoran/bar.",
   category: ["beaches", "food", "bar", "cafe"],
@@ -4710,6 +4896,8 @@ Merkezde beach-restoran düzeni: deniz + yeme-içme + uzun oturma. Asma6 bu komb
 
 {
   id: "nuris-beach",
+  badgeId: 'tourist',
+
   title: "Nuri’s Beach (Limanağzı)",
   description: "Limanağzı’nda, karayolu olmayan bölgede tekneyle ulaşılan, deniz günü ve konaklamayı birleştirebilen sahil işletmesi.",
   category: ["beaches", "food", "hotels"],
@@ -4750,6 +4938,8 @@ Limanağzı’nda tekneyle ulaşılan, doğa hissi yüksek bir deniz günü: Nur
 
 {
   id: "bilalin-yeri",
+  badgeId: 'tourist',
+
   title: "Bilal’in Yeri (Limanağzı)",
   description: "Limanağzı’nda tekneyle ulaşılan, denize girme alanı ve yeme-içmeyi birleştiren klasik duraklardan biri.",
   category: ["beaches", "food", "cafe"],
@@ -4790,6 +4980,8 @@ Bilal’in Yeri, Limanağzı’nda tekneyle gidilen bir deniz gününü, yeme-i�
 
 {
   id: "la-moda-beach",
+  badgeId: 'tourist',
+
   title: "La Moda Beach (Limanağzı)",
   description: "Limanağzı’nda tekneyle ulaşılan, denize giriş platformu ve yeme-içmeyi birleştiren popüler beach noktası.",
   category: ["beaches", "food", "bar"],
@@ -4830,6 +5022,8 @@ Limanağzı’nda sakin bir deniz günü arayanlara uygun, pratik bir beach dura
 
 {
   id: "hakiliki-beach-club",
+  badgeId: 'tourist',
+
   title: "Hakiliki Beach Club",
   description: "Kaş merkez çevresinde, denize giriş ve yeme-içmeyi bir araya getiren beach club.",
   category: ["beaches", "food", "bar"],
@@ -4870,6 +5064,8 @@ Merkez yakınında pratik bir beach club seçeneği.`
 
 {
   id: "lures-hotel-beach-club",
+  badgeId: 'tourist',
+
   title: "Lures Hotel Beach Club",
   description: "Çukurbağ Yarımadası’nda, denize sıfır konumda, otel misafirlerine ve dışarıdan gelenlere açık beach alanı.",
   category: ["beaches", "hotels", "food"],
@@ -4910,6 +5106,8 @@ Yarımadada konforlu bir beach günü.`
 
 {
   id: "mavi-kiyi-suites",
+  badgeId: 'tourist',
+
   title: "Mavi Kıyı Suites",
   description: "Denize yakın konumu ve modern süitleriyle bilinen butik konaklama tesisi.",
   category: ["hotels"],
@@ -4950,6 +5148,8 @@ Denize yakın, modern bir butik konaklama.`
 
 {
   id: "lures-hotel",
+  badgeId: 'tourist',
+
   title: "Lures Hotel & Beach Club",
   description: "Çukurbağ Yarımadası’nda, otel konaklaması ile beach club deneyimini birleştiren tesis.",
   category: ["hotels", "beaches"],
@@ -4990,6 +5190,8 @@ Konforlu yarımada oteli.`
 
 {
   id: "luvi-kas-otel",
+  badgeId: 'tourist',
+
   title: "Luvi Kaş Otel",
   description: "Kaş merkezde, manzaralı ve butik yapısıyla öne çıkan otel.",
   category: ["hotels"],
@@ -5030,6 +5232,8 @@ Merkezde butik ve manzaralı.`
 
 {
   id: "payam-hotel",
+  badgeId: 'tourist',
+
   title: "Payam Hotel",
   description: "Kaş merkezde, küçük ölçekli ve samimi bir butik otel.",
   category: ["hotels"],
@@ -5070,6 +5274,8 @@ Merkezde sade butik otel.`
 
 {
   id: "kas-marin-hotel",
+  badgeId: 'tourist',
+
   title: "Kaş Marin Hotel",
   description: "Deniz manzaralı odaları ve merkezi konumuyla bilinen otel.",
   category: ["hotels"],
@@ -5110,6 +5316,8 @@ Deniz manzaralı konaklama.`
 
 {
   id: "hideaway-hotel",
+  badgeId: 'tourist',
+
   title: "Hideaway Hotel",
   description: "Merkezde, yetişkinlere yönelik, sessiz ve butik bir otel.",
   category: ["hotels"],
@@ -5150,6 +5358,8 @@ Merkezde huzurlu butik otel.`
 
 {
   id: "hotel-sonne",
+  badgeId: 'tourist',
+
   title: "Hotel Sonne",
   description: "Merkezde, teras manzarası ve klasik Kaş oteli atmosferiyle bilinen tesis.",
   category: ["hotels"],
@@ -5190,6 +5400,8 @@ Merkezde klasik bir Kaş oteli.`
 
 {
   id: "sardunya-otel",
+  badgeId: 'tourist',
+
   title: "Sardunya Otel",
   description: "Kaş merkezde denize çok yakın konumda, bahçe/terası ve deniz erişimiyle öne çıkan otel.",
   category: ["hotels"],
@@ -5230,6 +5442,8 @@ Merkeze yakın, Kaş’ı yürüyerek yaşamak isteyenlere uygun, denize yakın 
 
 {
   id: "hillcity-hotel",
+  badgeId: 'tourist',
+
   title: "HillCity Hotel",
   description: "Çukurbağ Yarımadası tarafında, manzara ve havuz odağında butik otel.",
   category: ["hotels"],
@@ -5270,6 +5484,8 @@ Yarımadada manzara ve sakinlik isteyenlere uygun butik otel.`
 
 {
   id: "sea-view-otel",
+  badgeId: 'tourist',
+
   title: "Sea View Otel",
   description: "Kaş sahil hattına yakın, özel güneşlenme terası/iskeleyi vurgulayan deniz kıyısı oteli.",
   category: ["hotels"],
@@ -5310,6 +5526,8 @@ Denize yakın ve merkeze yakın; “deniz günü + çarşı akşamı” planı i
 
 {
   id: "novva-hotel-kas",
+  badgeId: 'tourist',
+
   title: "Novva Hotel Kaş (Novva Hotels Kaş)",
   description: "Çukurbağ Yarımadası’nda, süit/özel havuz gibi seçenekleriyle öne çıkan modern konaklama.",
   category: ["hotels"],
@@ -5350,6 +5568,8 @@ Modern süit konsepti ve yarımada sakinliği arayanlar için güçlü bir seçe
 
 {
   id: "rhapsody-hotel-kas",
+  badgeId: 'tourist',
+
   title: "Rhapsody Hotel Kaş",
   description: "Kaş merkez çevresinde, Küçük Çakıl’a yakın konumuyla öne çıkan butik otel.",
   category: ["hotels"],
@@ -5390,6 +5610,8 @@ Merkez-plaj dengesini isteyenler için pratik, butik bir konaklama.`
 
 {
   id: "hotel-marsala",
+  badgeId: 'tourist',
+
   title: "Hotel Marsala",
   description: "Çukurbağ Yarımadası’nda, deniz terası ve sakin ortamıyla bilinen butik otel.",
   category: ["hotels"],
@@ -5430,6 +5652,8 @@ Yarımadada sakin, deniz odaklı bir butik otel.`
 
 {
   id: "aquarius-hotel",
+  badgeId: 'tourist',
+
   title: "Aquarius Hotel (Cappari Hotels Aquarius)",
   description: "Çukurbağ Yarımadası’nda, denize sıfır konum ve kendi plaj alanını vurgulayan otel.",
   category: ["hotels", "beaches"],
@@ -5470,6 +5694,8 @@ Yarımadada denize sıfır, plaj alanı olan, konfor odaklı bir otel.`
 
 {
   id: "nur-beach-hotel",
+  badgeId: 'tourist',
+
   title: "Nur Beach Hotel",
   description: "Kaş merkezde Küçük Çakıl’a yakın, deniz kenarı restoran/barı ve manzarasıyla bilinen otel.",
   category: ["hotels", "beaches", "food", "bar"],
@@ -5510,6 +5736,8 @@ Merkezde, denize yakın; hem konaklama hem deniz kenarı vakti isteyenler için 
 
 {
   id: "la-kumsal-hotel",
+  badgeId: 'tourist',
+
   title: "La Kumsal Hotel",
   description: "Çukurbağ Yarımadası’nda, manzara ve sakinlik odaklı butik otel.",
   category: ["hotels"],
@@ -5550,6 +5778,8 @@ Yarımadada, sakin ve manzaralı bir butik otel arayanlara uygun.`
 
 {
   id: "upper-house-hotel",
+  badgeId: 'tourist',
+
   title: "Upper House Hotel",
   description: "Kaş merkezde, çarşı ve sahile yakın konumda butik konaklama.",
   category: ["hotels"],
@@ -5590,6 +5820,8 @@ Kaş merkezde, yürüyerek yaşamak isteyenler için pratik bir butik otel.`
 
 {
   id: "talay-otel",
+  badgeId: 'tourist',
+
   title: "Talay Otel",
   description: "Küçük Çakıl’a çok yakın, merkezde konum avantajı olan, uzun yıllardır hizmet veren otel/pansiyon.",
   category: ["hotels"],
@@ -5630,6 +5862,8 @@ Merkez + Küçük Çakıl yakınlığıyla, Kaş’ı yürüyerek yaşamak istey
 
 {
   id: "cakil-pansiyon",
+  badgeId: 'tourist',
+
   title: "Çakıl Pansiyon",
   description: "Küçük Çakıl mevkiinde denize çok yakın, kahvaltı konseptiyle bilinen pansiyon.",
   category: ["hotels"],
@@ -5670,6 +5904,8 @@ Küçük Çakıl mevkiinde, denize çok yakın ve merkez odaklı bir pansiyon.`
 
 {
   id: "nautilus-diving",
+  badgeId: 'tourist',
+
   title: "Nautilus Diving",
   description: "Kaş Limanı çıkışlı, tekne dalışları ve eğitimler sunan PADI odaklı dalış merkezi.",
   category: ["diving", "activities"],
@@ -5710,6 +5946,8 @@ Kaş Limanı çıkışlı, eğitim ve tekne dalışları yapan köklü dalış m
 
 {
   id: "kas-diving",
+  badgeId: 'tourist',
+
   title: "Kaş Diving (Kas Diving®)",
   description: "Merkezde konumlanan, dalış turları ve kurslarıyla bilinen dalış okulu.",
   category: ["diving", "activities"],
@@ -5750,6 +5988,8 @@ Merkez çıkışlı, kurs ve tekne dalışlarıyla öne çıkan bir dalış okul
 
 {
   id: "ege-barakuda-dalis-merkezi",
+  badgeId: 'tourist',
+
   title: "Ege Barakuda Dalış Merkezi",
   description: "Kaş’ta tekne dalışları ve eğitimler sunan, bilinen dalış merkezlerinden biri.",
   category: ["diving", "activities"],
@@ -5790,6 +6030,8 @@ Kaş’ta tekne dalışları ve eğitimler sunan bilinen bir dalış merkezi.`
 
 {
   id: "subaqua-dalis-merkezi",
+  badgeId: 'tourist',
+
   title: "SubAQUA Dalış Merkezi",
   description: "Kaş Limanı çıkışlı, PADI eğitimleri ve tekne dalışları yapan dalış merkezi.",
   category: ["diving", "activities"],
@@ -5830,6 +6072,8 @@ Kaş Limanı çıkışlı, PADI kursları ve tekne dalışları yapan dalış me
 
 {
   id: "oceanids-dalis-merkezi",
+  badgeId: 'tourist',
+
   title: "Oceanids Dalış Merkezi",
   description: "Kaş merkezde, tekne dalışları ve eğitimler sunan dalış okulu.",
   category: ["diving", "activities"],
@@ -5870,6 +6114,8 @@ Merkezde, eğitim ve tekne dalışlarını birlikte sunan bir dalış merkezi.`
 
 {
   id: "kanyon-diving",
+  badgeId: 'tourist',
+
   title: "Kanyon Diving",
   description: "Kaş’ta tüplü dalış turları ve kurslar sunan, yerel dalış merkezlerinden biri.",
   category: ["diving", "activities"],
@@ -5910,6 +6156,8 @@ Kaş’ta günlük tekne dalışları ve kurslar sunan yerel bir dalış merkezi
 
 {
   id: "life-aquatic",
+  badgeId: 'tourist',
+
   title: "Life Aquatic (Serbest Dalış & Yoga)",
   description: "Kaş merkezde serbest dalış (freediving) eğitimleri ve yoga derslerini bir arada sunan okul.",
   category: ["activities", "diving", "nature"],
@@ -5950,6 +6198,8 @@ Kaş’ta serbest dalış + yoga kombinasyonu isteyenler için güçlü bir adre
 
 {
   id: "freedive-cosmos",
+  badgeId: 'tourist',
+
   title: "Freedive Cosmos",
   description: "Kaş’ta serbest dalış (freediving) odaklı eğitim ve antrenmanlar sunan ekip/okul.",
   category: ["activities", "diving", "nature"],
@@ -5990,6 +6240,8 @@ Kaş’ta serbest dalış odaklı eğitim/antrenman arayanlara yönelik bir seç
 
 {
   id: "likya-dalis-merkezi",
+  badgeId: 'tourist',
+
   title: "Likya Dalış Merkezi (Bougainville Travel)",
   description: "Kaş’ta dalış turları ve eğitimler sunan, Bougainville Travel çatısı altında geçen dalış hizmeti/organizasyonu.",
   category: ["diving", "activities"],
@@ -6030,6 +6282,8 @@ Bougainville bağlantılı, dalış programını “organizasyon” gibi yönete
 
 {
   id: "boat-trips-by-captain-ergun",
+  badgeId: 'tourist',
+
   title: "Boat Trips by Captain Ergun",
   description: "Kaş çıkışlı, günlük tekne turları ve koy molalarıyla deniz günü planlayan tekne turu işletmesi.",
   category: ["activities", "places", "nature"],
@@ -6070,6 +6324,8 @@ Kaş’ta “bir gün full deniz” planı için tekne turu; Captain Ergun tarz�
 
 {
   id: "xanthos-travel",
+  badgeId: 'tourist',
+
   title: "Xanthos Travel",
   description: "Kaş’ta tekne turları, günlük geziler ve transfer gibi hizmetler sunan yerel tur acentesi.",
   category: ["activities", "places"],
@@ -6110,6 +6366,8 @@ Kaş’ta tur ve aktiviteleri tek yerden organize etmek için yerel acente.`
 
 {
   id: "tatil-sihirbazi",
+  badgeId: 'tourist',
+
   title: "Tatil Sihirbazı",
   description: "Kaş ve çevresine yönelik turlar, aktiviteler ve rezervasyonlar sunan tur/organizasyon firması.",
   category: ["activities", "places"],
@@ -6150,6 +6408,8 @@ Kaş’ta tur/aktivite planını hızlandıran organizasyon seçeneği.`
 
 {
   id: "aslar-travel",
+  badgeId: 'tourist',
+
   title: "Aslar Travel",
   description: "Kaş merkezde, günlük turlar ve tekne turları dahil çeşitli gezi/aktivite satışları yapan acente.",
   category: ["activities", "places"],
@@ -6190,6 +6450,8 @@ Merkezden tur/aktivite organize etmeye yarayan yerel acente.`
 
 {
   id: "eroglu-boat-tours",
+  badgeId: 'tourist',
+
   title: "Eroğlu Boat Tours",
   description: "Kaş Limanı’ndan kalkan günlük tekne turlarıyla koy gezileri ve yüzme molaları sunan işletme.",
   category: ["activities", "nature", "places"],
@@ -6230,6 +6492,8 @@ Kaş Limanı çıkışlı klasik bir “koy koy yüzme” tekne turu.`
 
 {
   id: "kas-cuma-pazari",
+  badgeId: 'tourist',
+
   title: "Kaş Cuma Pazarı (Kaş Pazar Yeri)",
   description: "Cuma günleri kurulan, sebze-meyve, yerel ürünler, giyim ve hediyelik bulabileceğin Kaş’ın en canlı pazarı.",
   category: ["shopping", "places"],
@@ -6270,6 +6534,8 @@ Cuma günü Kaş’ın en canlı noktası: yerel ürün, giyim ve hediyelik içi
 
 {
   id: "rabia-ucuzluk-pazari",
+  badgeId: 'tourist',
+
   title: "Rabia Ucuzluk Pazarı",
   description: "Kaş merkezde, günlük ihtiyaçlar ve uygun fiyatlı ürünler bulabileceğin yerel ‘ucuzluk’ mağazası.",
   category: ["shopping"],
@@ -6310,6 +6576,8 @@ Merkezde pratik ve uygun fiyatlı alışveriş noktası.`
 
 {
   id: "feraye-store-atelier",
+  badgeId: 'tourist',
+
   title: "Feraye Store & Atelier",
   description: "Kaş’ta tasarım/atelier çizgisinde, seçki kıyafet-aksesuar ve el işi ürünler bulabileceğin butik mağaza.",
   category: ["shopping"],
@@ -6350,6 +6618,8 @@ Kaş çarşısında seçki ve tasarım butik tarzı bir durak.`
 
 {
   id: "kash-cosmetics",
+  badgeId: 'tourist',
+
   title: "Kash Cosmetics",
   description: "Kaş merkezde kozmetik ve kişisel bakım ürünleri bulabileceğin mağaza.",
   category: ["shopping"],
@@ -6390,6 +6660,8 @@ Merkezde pratik kozmetik/bakım alışverişi için bir durak.`
 
 {
   id: "minelli-butik",
+  badgeId: 'tourist',
+
   title: "Minelli Butik",
   description: "Kaş çarşı içinde, kadın giyim ve aksesuar ağırlıklı seçkisiyle bilinen butik mağaza.",
   category: ["shopping"],
@@ -6430,6 +6702,8 @@ Kaş çarşıda giyim-aksesuar için butik bir durak.`
 
 {
   id: "tugra-art-gallery",
+  badgeId: 'tourist',
+
   title: "Tuğra Art Gallery",
   description: "Kaş’ta yerel/çağdaş eserlerin sergilendiği, çarşı içinde gezilebilen sanat galerisi.",
   category: ["shopping", "places", "articles"],
@@ -6470,6 +6744,8 @@ Açılış saatleri sezon dışı değişebilir; kapalıysa hemen yakında başk
 
 {
   id: "atelier-thalia",
+  badgeId: 'tourist',
+
   title: "Atelier Thalia",
   description: "Kaş’ta atölye/butik çizgisinde, el işi ve tasarım ürünler görebileceğin sanat odaklı mekân.",
   category: ["shopping", "places", "articles"],
@@ -6510,6 +6786,8 @@ Tasarım/atölye dokusunu sevenlere çarşı içinde alternatif mola.`
 
 {
   id: "gallery-anatolia",
+  badgeId: 'tourist',
+
   title: "Gallery Anatolia",
   description: "Kaş çarşı içinde, resim/seramik gibi Anadolu temalı eserler görebileceğin sanat galerisi/butik.",
   category: ["shopping", "places", "articles"],
@@ -6550,6 +6828,8 @@ Açılış saatleri sezon dışı değişebilir.
 
 {
   id: "antiphellos-antik-tiyatrosu",
+  badgeId: 'tourist',
+
   title: "Antiphellos Antik Tiyatrosu",
   description: "Kaş’ın simge noktası; deniz manzarasına karşı oturan antik tiyatro, özellikle gün batımında çok etkileyici.",
   category: ["history", "places"],
@@ -6590,6 +6870,8 @@ Kaş’ın simge tarih noktası; deniz manzaralı antik tiyatro ve en iyi zaman�
 
 {
   id: "aslanli-lahit",
+  badgeId: 'tourist',
+
   title: "Aslanlı Lahit (Kral Mezarı)",
   description: "Kaş Uzun Çarşı içinde yer alan, Likya dönemine ait ikonik lahit; Kaş’ın en fotoğraflanan simgelerinden.",
   category: ["history", "places"],
@@ -6630,6 +6912,8 @@ Kaş’ın çarşı içindeki ikonik Likya eseri; kısa dur, bak, fotoğraf çek
 
 {
   id: "kalekoy-simena-kalesi",
+  badgeId: 'tourist',
+
   title: "Kaleköy (Simena Kalesi)",
   description: "Kaş yakınlarında, tekneyle ulaşılan tarihi köy; Simena Kalesi’nden Kekova manzarasıyla ünlü.",
   category: ["history", "nature", "places"],
@@ -6670,6 +6954,8 @@ Tekneyle ulaşılan tarihi köy + kale manzarası: Kekova rotasının en sevilen
 
 {
   id: "aperlai-antik-kenti",
+  badgeId: 'tourist',
+
   title: "Aperlai Antik Kenti",
   description: "Kekova hattında, daha sakin kalan Likya antik yerleşimi; karadan yürüyüş veya tekne rotalarıyla görülebilir.",
   category: ["history", "nature", "places"],
@@ -6710,6 +6996,8 @@ Kekova hattında daha sakin, doğa içinde bir Likya antik kenti.`
 
 {
   id: "patara-plaji",
+  badgeId: 'tourist',
+
   title: "Patara Plajı",
   description: "Türkiye’nin en uzun ve en geniş kumsallarından; kum tepeleri ve gün batımıyla ünlü, Kaş çevresinin ikonik plajı.",
   category: ["beaches", "nature", "places"],
@@ -6750,6 +7038,8 @@ Kaş çevresinin en ikonik kumsalı: dev gibi sahil, kum tepeleri ve efsane gün
 
 {
   id: "patara-antik-kenti",
+  badgeId: 'tourist',
+
   title: "Patara Antik Kenti",
   description: "Likya’nın önemli kentlerinden; tiyatro, meclis binası ve anıtsal kapı gibi yapılarıyla öne çıkan büyük arkeolojik alan.",
   category: ["history", "places", "nature"],
