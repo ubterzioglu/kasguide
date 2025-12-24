@@ -29,11 +29,17 @@
       --radius-lg: 1rem;
       --radius-xl: 1.5rem;
       --radius-full: 9999px;
-      --office-blue: #00A4EF;
-      --office-red: #F25022;
-      --office-green: #7FBA00;
-      --office-yellow: #FFB900;
-      --office-purple: #742774;
+      --kas-orange: #FF7A18;
+      --kas-cyan: #06B6D4;
+      --kas-green: #16C172;
+      --kas-lime: #8CD211;
+      --kas-red: #F04444;
+      --kas-purple: #9B5CF6;
+      --kas-indigo: #6366F1;
+      --kas-teal: #0EA5A4;
+      --kas-burgundy: #9C1235;
+      --kas-pink: #EC4899;
+      --kas-dark-gray: #4B5563;
     }
 
     * {
@@ -57,15 +63,15 @@
     }
 
     .form-card {
-      background: linear-gradient(180deg, rgba(8, 145, 178, 0.06), #ffffff 40%);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--kas-indigo) 10%, transparent), #ffffff 45%);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-lg);
       overflow: hidden;
-      border: 1px solid rgba(8, 145, 178, 0.18);
+      border: 1px solid color-mix(in srgb, var(--kas-indigo) 22%, var(--gray-200));
     }
 
     .form-header {
-      background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+      background: linear-gradient(135deg, var(--kas-indigo), var(--kas-cyan));
       padding: 2rem;
       text-align: center;
       color: #ffffff;
@@ -192,7 +198,7 @@
     .submit-button {
   width: 100%;
   padding: 1rem 1.25rem;
-  background: linear-gradient(135deg, var(--office-blue), var(--office-green));
+  background: linear-gradient(135deg, var(--kas-purple), var(--kas-pink));
   color: #ffffff;
   border: none;
   border-radius: var(--radius-lg);
@@ -422,6 +428,92 @@
 .section-card, .form-label, .form-hint, .category-name, .category-label, .form-input, .form-textarea {
   color: var(--gray-900);
 }
+
+/* Required star */
+.required {
+  color: var(--kas-red);
+  font-weight: 900;
+  margin-left: 0.35rem;
+}
+
+/* Kaş Guide palette cards */
+.section-card--orange {
+  border-color: color-mix(in srgb, var(--kas-orange) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-orange) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--cyan {
+  border-color: color-mix(in srgb, var(--kas-cyan) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-cyan) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--green {
+  border-color: color-mix(in srgb, var(--kas-green) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-green) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--red {
+  border-color: color-mix(in srgb, var(--kas-red) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-red) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--purple {
+  border-color: color-mix(in srgb, var(--kas-purple) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-purple) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--indigo {
+  border-color: color-mix(in srgb, var(--kas-indigo) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-indigo) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--teal {
+  border-color: color-mix(in srgb, var(--kas-teal) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-teal) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--burgundy {
+  border-color: color-mix(in srgb, var(--kas-burgundy) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-burgundy) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--pink {
+  border-color: color-mix(in srgb, var(--kas-pink) 32%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-pink) 18%, transparent),
+    #ffffff 60%);
+}
+.section-card--dark {
+  border-color: color-mix(in srgb, var(--kas-dark-gray) 35%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--kas-dark-gray) 16%, transparent),
+    #ffffff 60%);
+}
+
+/* Title badges inherit the card color */
+.section-card--orange .section-title { border-color: color-mix(in srgb, var(--kas-orange) 34%, transparent); background: color-mix(in srgb, var(--kas-orange) 12%, transparent); }
+.section-card--cyan .section-title   { border-color: color-mix(in srgb, var(--kas-cyan) 34%, transparent);   background: color-mix(in srgb, var(--kas-cyan) 12%, transparent); }
+.section-card--green .section-title  { border-color: color-mix(in srgb, var(--kas-green) 34%, transparent);  background: color-mix(in srgb, var(--kas-green) 12%, transparent); }
+.section-card--red .section-title    { border-color: color-mix(in srgb, var(--kas-red) 34%, transparent);    background: color-mix(in srgb, var(--kas-red) 12%, transparent); }
+.section-card--purple .section-title { border-color: color-mix(in srgb, var(--kas-purple) 34%, transparent); background: color-mix(in srgb, var(--kas-purple) 12%, transparent); }
+.section-card--indigo .section-title { border-color: color-mix(in srgb, var(--kas-indigo) 34%, transparent); background: color-mix(in srgb, var(--kas-indigo) 12%, transparent); }
+.section-card--teal .section-title   { border-color: color-mix(in srgb, var(--kas-teal) 34%, transparent);   background: color-mix(in srgb, var(--kas-teal) 12%, transparent); }
+.section-card--burgundy .section-title { border-color: color-mix(in srgb, var(--kas-burgundy) 34%, transparent); background: color-mix(in srgb, var(--kas-burgundy) 12%, transparent); }
+.section-card--pink .section-title   { border-color: color-mix(in srgb, var(--kas-pink) 34%, transparent);   background: color-mix(in srgb, var(--kas-pink) 12%, transparent); }
+.section-card--dark .section-title   { border-color: color-mix(in srgb, var(--kas-dark-gray) 34%, transparent); background: color-mix(in srgb, var(--kas-dark-gray) 12%, transparent); }
+
+/* Keep everything readable */
+.section-card, .form-label, .form-hint, .category-name, .category-label, .form-input, .form-textarea {
+  color: var(--gray-900);
+}
   </style>
 </head>
 <body>
@@ -645,7 +737,7 @@
       <!-- Ek Bilgiler -->
 
           <div class="form-section">
-  <div class="section-card section-card--purple">
+  <div class="section-card section-card--red">
 <h3 class="section-title">
               <span class="section-icon">ℹ️</span>
               Ek Bilgiler
