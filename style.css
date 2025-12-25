@@ -1,5 +1,5 @@
 /* =====================================================
-   Kaş Rehberi - Ana Stil Dosyası
+   Kaş Guide - Ana Stil Dosyası
    ===================================================== */
 
 :root {
@@ -11,7 +11,16 @@
   --primary-purple: #a855f7;
   --primary-pink: #ec4899;
   
-  --gray-50: #f9fafb;
+  
+  --primary-teal: #14b8a6;
+  --primary-indigo: #6366f1;
+  --primary-amber: #f59e0b;
+  --primary-lime: #84cc16;
+  --primary-slate: #64748b;
+  --primary-violet: #8b5cf6;
+  --primary-wine: #9f1239;
+
+--gray-50: #f9fafb;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
   --gray-300: #d1d5db;
@@ -79,6 +88,15 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.logo-img{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
 }
 
 .logo-icon {
@@ -172,3 +190,75 @@ body {
   color: var(--primary-blue);
 }
 
+/* =====================================================
+   Shared components
+   ===================================================== */
+
+/* Round icon button link (used by many pages) */
+.home-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  background: rgba(0,0,0,0.06);
+  text-decoration:none;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.home-link:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  background: rgba(0,0,0,0.08);
+}
+.home-icon{
+  width:22px;
+  height:22px;
+  color: var(--gray-800);
+}
+
+/* Back link (header) */
+.back-link{
+  text-decoration:none;
+  color: var(--gray-800);
+  font-weight:700;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.back-link:hover{
+  background: rgba(0,0,0,.05);
+}
+
+
+/* === Shared Header Left Actions === */
+.header-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.action-btn{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  background: rgba(255,255,255,0.92);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  padding:0;
+  cursor:pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.action-btn img{
+  width:22px;
+  height:22px;
+}
+.action-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.12);
+}
+.action-btn:active{
+  transform: scale(0.96);
+}
