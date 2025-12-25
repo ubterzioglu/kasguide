@@ -75,14 +75,14 @@ export default async function handler(req, res) {
       if (!allowedTypes.includes(file.mimetype)) {
         return res.status(400).json({
           success: false,
-          message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
+          message: "Sadece JPG, PNG veya WEBP fotoaaaaaaaağraflar kabul edilir",
         });
       }
 
       if (file.size > 2 * 1024 * 1024) {
         return res.status(400).json({
           success: false,
-          message: `"${file.originalFilename}" 2 MB sınırını aşıyor`,
+          message: `"${file.originalFilename}" 2 MB sınırını aşıyorueia`,
         });
       }
 
