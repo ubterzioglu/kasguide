@@ -726,25 +726,29 @@
     e.preventDefault();
 
     const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerText;
+
     submitBtn.disabled = true;
     submitBtn.innerText = 'Gönderiliyor...';
 
-    const formData = new FormData(form);
+    // FormData -> JSON (checkbox array fix dahil)
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries());
+
+    // category çoklu seçimi array yap
+    data.category = fd.getAll('category');
 
     try {
       const res = await fetch('/api/venue-submit', {
         method: 'POST',
-        body: formData
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
       });
 
-      if (!res.ok) {
-        const text = await res.text().catch(() => '');
-        throw new Error(text || `HTTP ${res.status}`);
-      }
-
       const json = await res.json().catch(() => ({}));
-      if (!json.success) {
-        throw new Error(json.message || 'Mail gönderilemedi');
+
+      if (!res.ok || json.success !== true) {
+        throw new Error(json.message || `Mail gönderilemedi (HTTP ${res.status})`);
       }
 
       successMessage.classList.add('show');
@@ -752,16 +756,14 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
     } catch (err) {
-      alert(
-        'Başvuru gönderilemedi.\n\n' +
-        (err.message || 'Sunucu hatası')
-      );
+      alert('Başvuru gönderilemedi.\n\n' + (err.message || 'Sunucu hatası'));
     } finally {
       submitBtn.disabled = false;
-      submitBtn.innerText = '🚀 Başvuruyu Gönder';
+      submitBtn.innerText = originalBtnText;
     }
   });
 </script>
+
 
 </body>
 </html>
