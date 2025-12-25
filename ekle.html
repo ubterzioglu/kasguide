@@ -426,6 +426,13 @@
   gap:12px;
   flex-wrap:wrap;
 }
+
+.file-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
 .file-input{
   position:absolute;
   left:-9999px;
@@ -456,6 +463,32 @@
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+}
+
+.file-feedback{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:0;
+}
+.file-summary{
+  font-weight:700;
+  color: rgba(0,0,0,0.78);
+}
+.file-list{
+  font-weight:600;
+  color: rgba(0,0,0,0.65);
+  font-size: 0.9rem;
+  line-height:1.4;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.form-error{
+  margin-top: 4px;
+  color: var(--kas-red);
+  font-weight:700;
+  line-height:1.35;
 }
 
 /* --- Details/summary look (photo guide) --- */
@@ -801,12 +834,12 @@ details li{ margin: 6px 0; }
 
 <div class="file-upload">
   <div class="file-row">
-    <input
-      type="file"
+    <input type="file"
       id="photoInput"
       name="photos"
       accept="image/*"
       multiple
+      class="file-input"
     >
     <label for="photoInput" class="file-btn">Fotoğraf seç</label>
   </div>
@@ -1085,7 +1118,8 @@ details li{ margin: 6px 0; }
       const totalBytes = files.reduce((sum, f) => sum + (f.size || 0), 0);
       const fileNames = files.map(f => f.name).join(" • ");
 
-      namesEl.textContent = `${files.length} fotoğraf seçildi • Toplam: ${formatBytes(totalBytes)} — ${fileNames}`;
+      namesEl.innerHTML = `<div class="file-summary">${files.length} fotoğraf seçildi • Toplam: ${formatBytes(totalBytes)}</div>` +
+        `<div class="file-list">${fileNames}</div>`;
 
       // if errors: show and optionally clear selection
       if (errors.length && errEl) {
