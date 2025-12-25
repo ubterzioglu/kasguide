@@ -485,6 +485,58 @@ details ul{
 }
 details li{ margin: 6px 0; }
 
+/* --- Accordion (top info cards) --- */
+.accordion{
+  transition: box-shadow .2s ease;
+}
+.accordion summary{
+  cursor:pointer;
+  list-style:none;
+  user-select:none;
+}
+.accordion summary::-webkit-details-marker{ display:none; }
+.accordion summary::after{
+  content:"⌄";
+  margin-left:auto;
+  font-size:1.25rem;
+  opacity:.65;
+  transition: transform .25s ease;
+}
+.accordion[open] summary::after{ transform: rotate(180deg); }
+
+.accordion-content{
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--gray-800);
+  line-height: 1.75;
+}
+.accordion-content li{ margin: 0.55rem 0; }
+
+/* icon pop */
+.icon-glow{
+  font-size: 1.25rem;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.35));
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.32), 0 10px 18px rgba(0,0,0,0.14);
+}
+
+/* --- Photo guide: more breathing room --- */
+.photo-guide{
+  margin-top: 0.85rem;
+  padding: 12px 14px;
+}
+.photo-guide > summary{
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.photo-guide ul{
+  margin-top: 12px;
+  padding-left: 1.3rem;
+  line-height: 1.8;
+}
+.photo-guide li{ margin: 0.65rem 0; }
+
 </style>
 </head>
 <body>
@@ -516,13 +568,13 @@ details li{ margin: 6px 0; }
 
 <!-- Kaş Guide Tanıtım -->
 <div class="form-section">
-  <div class="section-card section-card--indigo">
-    <h3 class="section-title">
-      <span class="section-icon">🌿</span>
+  <details class="section-card section-card--indigo accordion" open>
+    <summary class="section-title">
+      <span class="section-icon icon-glow">🌿</span>
       Kaş Guide
-    </h3>
+    </summary>
 
-    <ul style="margin: 0; padding-left: 1.25rem; color: var(--gray-800); line-height: 1.6;">
+    <ul class="accordion-content">
       <li>Kaş Guide, Kaş’ı gerçekten bilenler ve yaşayanlar için hazırlanıyor.</li>
       <li>Sezona kadar hazır, düzenli ve güvenilir bir rehber oluşturuyoruz.</li>
       <li>İçerikler, sizin katkılarınızla zamanla oturacak ve zenginleşecek.</li>
@@ -530,7 +582,7 @@ details li{ margin: 6px 0; }
       <li>Birlikte Kaş için kalıcı ve faydalı bir rehber oluşturuyoruz.</li>
       <li>1 Ocak’ta yayındayız. </li>
     </ul>
-  </div>
+  </details>
 </div>
 
 
@@ -541,13 +593,13 @@ details li{ margin: 6px 0; }
 
       <!-- Önemli Bilgilendirme -->
       <div class="form-section">
-        <div class="section-card section-card--cyan">
-          <h3 class="section-title">
-            <span class="section-icon">ℹ️</span>
-            Önemli Bilgilendirme
-          </h3>
+  <details class="section-card section-card--cyan accordion">
+    <summary class="section-title">
+      <span class="section-icon icon-glow">📢</span>
+      Önemli Bilgilendirme
+    </summary>
 
-          <ul style="margin: 0; padding-left: 1.25rem; color: var(--gray-800); line-height: 1.6;">
+    <ul class="accordion-content">
             <li>Bu platform Kaş'ı sevenler için hazırlanmış gönüllü bir rehberdir.</li>
             <li>Tüm içerikler tamamen ücretsizdir, hiçbir ücret talep edilmez.</li>
             <li>Amacımız mekân sahiplerinin kendi bilgilerini doğrudan paylaşabilmesidir.</li>
@@ -555,18 +607,18 @@ details li{ margin: 6px 0; }
             <li>Paylaşımlar Kaş rehberini daha güncel ve faydalı hale getirir.</li>
             <li>Mekanınızla ilgili yanlış bilgiler için bize mekan@kasguide.de adresinden ulaşabilirsiniz.</li>
           </ul>
-        </div>
-      </div>
+  </details>
+</div>
 
       <!-- Önemli Bilgilendirme -->
       <div class="form-section">
-        <div class="section-card section-card--green">
-          <h3 class="section-title">
-            <span class="section-icon">ℹ️</span>
-            Sayfa Hakkında Ufak Bilgiler
-          </h3>
+  <details class="section-card section-card--green accordion">
+    <summary class="section-title">
+      <span class="section-icon icon-glow">🧭</span>
+      Sayfa Hakkında Ufak Bilgiler
+    </summary>
 
-      <ul style="margin: 0; padding-left: 1.25rem; color: var(--gray-800); line-height: 1.6;">
+    <ul class="accordion-content">
   <li>Girdiğiniz bilgiler incelendikten sonra sitede yayınlanır.</li>
   <li>Bilgileri ne kadar eksiksiz doldurursanız o kadar çok kişiye ulaşırsınız.</li>
   <li>Sorun olması durumunda, verdiğiniz iletişim bilgileri üzerinden size ulaşabiliriz.</li>
@@ -574,8 +626,8 @@ details li{ margin: 6px 0; }
   <li>Fotoğraflar önizlemede görünmeyebilir; yayınlandıktan sonra görünür.</li>
   <li>Desteğiniz için teşekkür ederiz!</li>
 </ul>
-        </div>
-      </div>
+  </details>
+</div>
 
       <div class="form-body">
         <div class="success-message" id="successMessage">
