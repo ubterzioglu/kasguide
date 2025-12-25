@@ -419,7 +419,73 @@
     .section-card, .form-label, .form-hint, .category-name, .category-label, .form-input, .form-textarea {
       color: var(--gray-900);
     }
-  </style>
+  /* --- File upload (nicer than default browser control) --- */
+.file-upload{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.file-input{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.file-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 10px 15px -10px rgba(0,0,0,.25);
+  user-select:none;
+}
+.file-btn:hover{
+  transform: translateY(-1px);
+}
+.file-names{
+  font-weight:600;
+  color: rgba(0,0,0,0.65);
+  max-width: 100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* --- Details/summary look (photo guide) --- */
+details{
+  border:1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.65);
+  border-radius:14px;
+  padding: 10px 12px;
+}
+details > summary{
+  cursor:pointer;
+  font-weight:800;
+  list-style:none;
+}
+details > summary::-webkit-details-marker{ display:none; }
+details > summary:after{
+  content:"▾";
+  float:right;
+  opacity:.7;
+}
+details[open] > summary:after{
+  content:"▴";
+}
+details ul{
+  margin:10px 0 0;
+  padding-left: 18px;
+}
+details li{ margin: 6px 0; }
+
+</style>
 </head>
 <body>
   <header class="header">
@@ -631,14 +697,18 @@
               <div class="form-group">
                 <label class="form-label">Fotoğraf Seç</label>
                 
-<input
-  type="file"
-  id="photoInput"
-  name="photos"
-  class="form-input"
-  accept="image/*"
-  multiple
->
+<div class="file-upload">
+  <input
+    type="file"
+    id="photoInput"
+    name="photos"
+    class="form-input file-input"
+    accept="image/*"
+    multiple
+  >
+  <label for="photoInput" class="file-btn">Fotoğraf seç</label>
+  <span id="photoFileNames" class="file-names">Henüz dosya seçilmedi</span>
+</div>
 
 <p class="form-hint">
   Max <b>5</b> foto • <b>2 MB</b>/foto • <b>16:9</b> yatay • Yazı/logo yok • Kadraj ortalı (bazı cihazlarda kırpılabilir)
@@ -734,6 +804,11 @@
             <button type="submit" class="submit-button">
               🚀 Başvuruyu Gönder
             </button>
+
+<button type="button" class="submit-button" id="previewBtn" style="margin-top:12px; background: linear-gradient(135deg, var(--kas-cyan), var(--kas-indigo));">
+  👀 Önizleme (Mekanım sayfada nasıl gözükecek?)
+</button>
+
             <p class="form-hint" style="text-align: center; margin-top: 1rem;">
               Başvurunuzu gönderdikten sonra 1-2 iş günü içinde size DÖN BEBEGİM yapacağız.
             </p>
@@ -786,6 +861,51 @@
       submitBtn.disabled = false;
       submitBtn.innerText = '🚀 Başvuruyu Gönder';
     }
+  });
+</script>
+
+<script>
+  const previewBtn = document.getElementById('previewBtn');
+
+  function formToObject(formEl) {
+    const fd = new FormData(formEl);
+    const obj = {};
+    for (const [k, v] of fd.entries()) {
+      if (k === "category") {
+        obj.category ??= [];
+        obj.category.push(v);
+      } else if (k === "photos") {
+        // dosyaları preview'da taşımıyoruz (offline preview için sadece isim gösterebiliriz)
+      } else {
+        obj[k] = (v ?? "").toString().trim();
+      }
+    }
+    return obj;
+  }
+
+  previewBtn?.addEventListener('click', () => {
+    const formEl = document.getElementById('venueForm') || document.querySelector('form');
+    const data = formToObject(formEl);
+
+    // preview için alanları normalize et
+    const previewPlace = {
+      title: data.title || data.name || "Mekan Adı",
+      location: data.location || "Kaş",
+      distance: data.distance || "",
+      description: data.description || "",
+      longText: data.longText || data.long_text || "",
+      price: data.price || "",
+      duration: data.duration || "",
+      access: data.access || "",
+      instagram: data.instagram || "",
+      website: data.website || "",
+      booking: data.booking || "",
+      phone: data.phone || "",
+      categories: data.category || []
+    };
+
+    localStorage.setItem("kasguide_preview_place", JSON.stringify(previewPlace));
+    window.open("./example.html", "_blank");
   });
 </script>
 
