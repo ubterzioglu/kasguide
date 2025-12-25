@@ -485,6 +485,58 @@ details ul{
 }
 details li{ margin: 6px 0; }
 
+/* --- Accordion (top info cards) --- */
+.accordion{
+  transition: box-shadow .2s ease;
+}
+.accordion summary{
+  cursor:pointer;
+  list-style:none;
+  user-select:none;
+}
+.accordion summary::-webkit-details-marker{ display:none; }
+.accordion summary::after{
+  content:"⌄";
+  margin-left:auto;
+  font-size:1.25rem;
+  opacity:.65;
+  transition: transform .25s ease;
+}
+.accordion[open] summary::after{ transform: rotate(180deg); }
+
+.accordion-content{
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--gray-800);
+  line-height: 1.75;
+}
+.accordion-content li{ margin: 0.55rem 0; }
+
+/* icon pop */
+.icon-glow{
+  font-size: 1.25rem;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.35));
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.32), 0 10px 18px rgba(0,0,0,0.14);
+}
+
+/* --- Photo guide: more breathing room --- */
+.photo-guide{
+  margin-top: 0.85rem;
+  padding: 12px 14px;
+}
+.photo-guide > summary{
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.photo-guide ul{
+  margin-top: 12px;
+  padding-left: 1.3rem;
+  line-height: 1.8;
+}
+.photo-guide li{ margin: 0.65rem 0; }
+
 </style>
 </head>
 <body>
@@ -513,23 +565,69 @@ details li{ margin: 6px 0; }
         <p>Kaş'taki işletmenizi rehberimize ekleyin ve binlerce gezgine ulaşın</p>
       </div>
 
+
+<!-- Kaş Guide Tanıtım -->
+<div class="form-section">
+  <details class="section-card section-card--indigo accordion" open>
+    <summary class="section-title">
+      <span class="section-icon icon-glow">🌿</span>
+      Kaş Guide
+    </summary>
+
+    <ul class="accordion-content">
+      <li>Kaş Guide, Kaş’ı gerçekten bilenler ve yaşayanlar için hazırlanıyor.</li>
+      <li>Sezona kadar hazır, düzenli ve güvenilir bir rehber oluşturuyoruz.</li>
+      <li>İçerikler, sizin katkılarınızla zamanla oturacak ve zenginleşecek.</li>
+      <li>Esnafla iç içe, yereli destekleyen bir anlayışla hareket ediyoruz.</li>
+      <li>Birlikte Kaş için kalıcı ve faydalı bir rehber oluşturuyoruz.</li>
+      <li>1 Ocak’ta yayındayız. </li>
+    </ul>
+  </details>
+</div>
+
+
+
+
+
+
+
       <!-- Önemli Bilgilendirme -->
       <div class="form-section">
-        <div class="section-card section-card--cyan">
-          <h3 class="section-title">
-            <span class="section-icon">ℹ️</span>
-            Önemli Bilgilendirme
-          </h3>
+  <details class="section-card section-card--cyan accordion">
+    <summary class="section-title">
+      <span class="section-icon icon-glow">📢</span>
+      Önemli Bilgilendirme
+    </summary>
 
-          <ul style="margin: 0; padding-left: 1.25rem; color: var(--gray-800); line-height: 1.6;">
+    <ul class="accordion-content">
             <li>Bu platform Kaş'ı sevenler için hazırlanmış gönüllü bir rehberdir.</li>
             <li>Tüm içerikler tamamen ücretsizdir, hiçbir ücret talep edilmez.</li>
             <li>Amacımız mekân sahiplerinin kendi bilgilerini doğrudan paylaşabilmesidir.</li>
             <li>Gönderilen bilgiler ticari bir taahhüt veya reklam zorunluluğu içermez.</li>
             <li>Paylaşımlar Kaş rehberini daha güncel ve faydalı hale getirir.</li>
+            <li>Mekanınızla ilgili yanlış bilgiler için bize mekan@kasguide.de adresinden ulaşabilirsiniz.</li>
           </ul>
-        </div>
-      </div>
+  </details>
+</div>
+
+      <!-- Önemli Bilgilendirme -->
+      <div class="form-section">
+  <details class="section-card section-card--green accordion">
+    <summary class="section-title">
+      <span class="section-icon icon-glow">🧭</span>
+      Sayfa Hakkında Ufak Bilgiler
+    </summary>
+
+    <ul class="accordion-content">
+  <li>Girdiğiniz bilgiler incelendikten sonra sitede yayınlanır.</li>
+  <li>Bilgileri ne kadar eksiksiz doldurursanız o kadar çok kişiye ulaşırsınız.</li>
+  <li>Sorun olması durumunda, verdiğiniz iletişim bilgileri üzerinden size ulaşabiliriz.</li>
+  <li>Önizleme butonuyla sayfanızın sitede nasıl görüneceğini görebilirsiniz.</li>
+  <li>Fotoğraflar önizlemede görünmeyebilir; yayınlandıktan sonra görünür.</li>
+  <li>Desteğiniz için teşekkür ederiz!</li>
+</ul>
+  </details>
+</div>
 
       <div class="form-body">
         <div class="success-message" id="successMessage">
@@ -537,6 +635,10 @@ details li{ margin: 6px 0; }
           <h3>Başvurunuz Alındı!</h3>
           <p>Mekan bilgilerinizi inceliyoruz. En kısa sürede sizinle iletişime geçeceğiz.</p>
         </div>
+
+
+
+
 
         <form id="venueForm">
           <!-- Temel Bilgiler -->
@@ -805,12 +907,12 @@ details li{ margin: 6px 0; }
               🚀 Başvuruyu Gönder
             </button>
 
-<button type="button" class="submit-button" id="previewBtn" style="margin-top:12px; background: linear-gradient(135deg, var(--kas-cyan), var(--kas-indigo));">
-  👀 Önizleme (Mekanım sayfada nasıl gözükecek?)
-</button>
+<button type="button" class="submit-button" id="previewBtn" style="margin-top:12px; background: linear-gradient(135deg, var(--kas-cyan), var(--kas-indigo)); padding: 1.05rem 1.25rem;">
+  <span style="display:block; font-size:1.15rem; font-weight:900; letter-spacing:-0.01em;">👀 Önizleme</span>
+ </button>
 
-            <p class="form-hint" style="text-align: center; margin-top: 1rem;">
-              Başvurunuzu gönderdikten sonra 1-2 iş günü içinde size DÖN BEBEGİM yapacağız.
+                        <p class="form-hint" style="text-align: center; margin-top: 0.25rem;">
+              Başvurunuzu gönderdikten sonra en geç 5 iş günü içinde size dönüş yapacağız.
             </p>
           </div>
         </form>
@@ -865,48 +967,72 @@ details li{ margin: 6px 0; }
 </script>
 
 <script>
-  const previewBtn = document.getElementById('previewBtn');
-
-  function formToObject(formEl) {
-    const fd = new FormData(formEl);
-    const obj = {};
-    for (const [k, v] of fd.entries()) {
-      if (k === "category") {
-        obj.category ??= [];
-        obj.category.push(v);
-      } else if (k === "photos") {
-        // dosyaları preview'da taşımıyoruz (offline preview için sadece isim gösterebiliriz)
-      } else {
-        obj[k] = (v ?? "").toString().trim();
-      }
-    }
-    return obj;
-  }
-
-  previewBtn?.addEventListener('click', () => {
+  (function () {
+    const previewBtn = document.getElementById('previewBtn');
     const formEl = document.getElementById('venueForm') || document.querySelector('form');
-    const data = formToObject(formEl);
+    if (!formEl) return;
 
-    // preview için alanları normalize et
-    const previewPlace = {
-      title: data.title || data.name || "Mekan Adı",
-      location: data.location || "Kaş",
-      distance: data.distance || "",
-      description: data.description || "",
-      longText: data.longText || data.long_text || "",
-      price: data.price || "",
-      duration: data.duration || "",
-      access: data.access || "",
-      instagram: data.instagram || "",
-      website: data.website || "",
-      booking: data.booking || "",
-      phone: data.phone || "",
-      categories: data.category || []
-    };
+    function formToObject(formEl) {
+      const fd = new FormData(formEl);
+      const obj = {};
+      for (const [k, v] of fd.entries()) {
+        if (k === "category") {
+          obj.category ??= [];
+          obj.category.push(v);
+        } else if (k === "photos") {
+          // Fotoğraflar preview'da gösterilmez (örnek görseller gösterilir).
+        } else {
+          obj[k] = (v ?? "").toString().trim();
+        }
+      }
+      return obj;
+    }
 
-    localStorage.setItem("kasguide_preview_place", JSON.stringify(previewPlace));
-    window.open("./example.html", "_blank");
-  });
+    function buildPreviewPlace(data) {
+      return {
+        title: data.title || "Mekan Adı",
+        location: data.location || "Kaş",
+        distance: data.distance || "",
+        description: data.description || "",
+        longText: data.longText || "",
+        price: data.price || "",
+        duration: data.duration || "",
+        access: data.access || "",
+        instagram: data.instagram || "",
+        website: data.website || "",
+        booking: data.booking || "",
+        phone: data.phone || "",
+        categories: data.category || [],
+        googleMapsQuery: data.googleMapsQuery || ""
+      };
+    }
+
+    function persistDraft() {
+      const data = formToObject(formEl);
+      const previewPlace = buildPreviewPlace(data);
+      try {
+        localStorage.setItem("kasguide_preview_place", JSON.stringify(previewPlace));
+      } catch (e) {}
+    }
+
+    // Live update: whenever user types / changes fields, keep draft fresh
+    const liveEvents = ["input", "change"];
+    liveEvents.forEach(evt => {
+      formEl.addEventListener(evt, (e) => {
+        // avoid spamming for file input; we don't store files anyway
+        if (e?.target?.type === "file") return;
+        persistDraft();
+      });
+    });
+
+    previewBtn?.addEventListener('click', () => {
+      persistDraft();
+      window.open("./example/example.html", "_blank");
+    });
+
+    // initial seed (helps if user opens preview early)
+    persistDraft();
+  })();
 </script>
 
 </body>
