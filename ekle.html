@@ -718,45 +718,50 @@
   </div>
 </main>
 
-  <script>
+ <script>
   const form = document.getElementById('venueForm');
-  const photoInput = document.getElementById('photoInput');
   const successMessage = document.getElementById('successMessage');
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Gönderiliyor...';
+
     const formData = new FormData(form);
-    const categories = form.querySelectorAll('input[name="category"]:checked');
 
-    const data = {
-      title: formData.get('title'),
-      location: formData.get('location'),
-      distance: formData.get('distance'),
-      description: formData.get('description'),
-      longText: formData.get('longText'),
-      categories: Array.from(categories).map(c => c.value),
-      price: formData.get('price'),
-      duration: formData.get('duration'),
-      access: formData.get('access'),
-      googleMapsQuery: formData.get('googleMapsQuery'),
-      phone: formData.get('phone'),
-      instagram: formData.get('instagram'),
-      website: formData.get('website'),
-      booking: formData.get('booking'),
-      photosSelected: photoInput?.files?.length || 0
-    };
+    try {
+      const res = await fetch('/api/venue-submit', {
+        method: 'POST',
+        body: formData
+      });
 
-    console.log('Form data:', data);
+      if (!res.ok) {
+        const text = await res.text().catch(() => '');
+        throw new Error(text || `HTTP ${res.status}`);
+      }
 
-    successMessage.classList.add('show');
-    form.reset();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+      const json = await res.json().catch(() => ({}));
+      if (!json.success) {
+        throw new Error(json.message || 'Mail gönderilemedi');
+      }
 
-    setTimeout(() => {
-      successMessage.classList.remove('show');
-    }, 5000);
+      successMessage.classList.add('show');
+      form.reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    } catch (err) {
+      alert(
+        'Başvuru gönderilemedi.\n\n' +
+        (err.message || 'Sunucu hatası')
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerText = '🚀 Başvuruyu Gönder';
+    }
   });
 </script>
+
 </body>
 </html>
