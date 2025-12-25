@@ -19,11 +19,13 @@ export default async function handler(req, res) {
 
   const form = formidable({
     multiples: true,
+    allowEmptyFiles: true,
+    minFileSize: 0,
     maxFileSize: 10 * 1024 * 1024, // 10MB
     keepExtensions: true,
   });
 
-  try {
+try {
     const { fields, files } = await new Promise((resolve, reject) => {
       form.parse(req, (err, fields, files) => {
         if (err) return reject(err);
@@ -98,20 +100,27 @@ export default async function handler(req, res) {
       </div>
     `;
 
-    // Attach photos if provided
+    // Attach photos if provided (ignore empty/0-byte files)
     const photoFiles = [];
-    const maybePhotos = files.photos;
-    const photoArray = toArray(maybePhotos);
+    const candidateFiles = [
+      ...toArray(files.photos),
+      ...toArray(files.photoInput),
+      ...toArray(files.photo),
+      ...toArray(files.files),
+      ...toArray(files.file),
+    ].filter(Boolean);
 
-    for (const f of photoArray) {
-      if (!f) continue;
-      // formidable v2/v3: file has filepath + originalFilename
+    for (const f of candidateFiles) {
+      const size = Number(f.size || 0);
+      if (!size) continue; // skip empty uploads
       const filepath = f.filepath || f.path;
-      const filename = f.originalFilename || "photo";
+      const filename = f.originalFilename || f.newFilename || "photo";
       if (!filepath) continue;
+
       photoFiles.push({
         filename,
         content: fs.readFileSync(filepath),
+        contentType: f.mimetype,
       });
     }
 

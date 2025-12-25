@@ -630,7 +630,7 @@
 
               <div class="form-group">
                 <label class="form-label">Fotoğraf Seç</label>
-                <input type="file" id="photoInput" name="photos" class="form-input" accept="image/*" multiple>
+                <input type="file" id="photoInput" class="form-input" accept="image/*" multiple>
                 <p class="form-hint">İsterseniz birden fazla fotoğraf seçebilirsiniz. Sürükle-bırak yok.</p>
               </div>
             </div>
@@ -718,61 +718,45 @@
   </div>
 </main>
 
-  
-<script>
+  <script>
   const form = document.getElementById('venueForm');
+  const photoInput = document.getElementById('photoInput');
   const successMessage = document.getElementById('successMessage');
-  const submitButton = form.querySelector('button[type="submit"]');
 
-  function setSubmitting(isSubmitting) {
-    if (!submitButton) return;
-    submitButton.disabled = isSubmitting;
-    submitButton.style.opacity = isSubmitting ? '0.75' : '1';
-    submitButton.style.cursor = isSubmitting ? 'not-allowed' : 'pointer';
-    submitButton.textContent = isSubmitting ? 'Gönderiliyor...' : '🚀 Başvuruyu Gönder';
-  }
-
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // En az 1 kategori seçildi mi? (UI'da * var)
-    const checkedCategories = form.querySelectorAll('input[name="category"]:checked');
-    if (!checkedCategories.length) {
-      alert('Lütfen en az 1 kategori seçin.');
-      return;
-    }
+    const formData = new FormData(form);
+    const categories = form.querySelectorAll('input[name="category"]:checked');
 
-    setSubmitting(true);
+    const data = {
+      title: formData.get('title'),
+      location: formData.get('location'),
+      distance: formData.get('distance'),
+      description: formData.get('description'),
+      longText: formData.get('longText'),
+      categories: Array.from(categories).map(c => c.value),
+      price: formData.get('price'),
+      duration: formData.get('duration'),
+      access: formData.get('access'),
+      googleMapsQuery: formData.get('googleMapsQuery'),
+      phone: formData.get('phone'),
+      instagram: formData.get('instagram'),
+      website: formData.get('website'),
+      booking: formData.get('booking'),
+      photosSelected: photoInput?.files?.length || 0
+    };
 
-    try {
-      const formData = new FormData(form);
+    console.log('Form data:', data);
 
-      // FormData çoklu checkboxları zaten gönderir; ayrıca debug için JSON'a çevirmiyoruz (dosya var)
-      const res = await fetch('/api/venue-submit', {
-        method: 'POST',
-        body: formData
-      });
+    successMessage.classList.add('show');
+    form.reset();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      if (!res.ok) {
-        const msg = await res.text().catch(() => '');
-        throw new Error(msg || 'Başvuru gönderilemedi.');
-      }
-
-      successMessage.classList.add('show');
-      form.reset();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      setTimeout(() => {
-        successMessage.classList.remove('show');
-      }, 5000);
-    } catch (err) {
-      console.error(err);
-      alert('Bir hata oldu. Lütfen tekrar deneyin. (Detay: ' + (err?.message || 'unknown') + ')');
-    } finally {
-      setSubmitting(false);
-    }
+    setTimeout(() => {
+      successMessage.classList.remove('show');
+    }, 5000);
   });
 </script>
 </body>
-
 </html>
