@@ -426,6 +426,13 @@
   gap:12px;
   flex-wrap:wrap;
 }
+
+.file-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
 .file-input{
   position:absolute;
   left:-9999px;
@@ -456,6 +463,32 @@
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+}
+
+.file-feedback{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:0;
+}
+.file-summary{
+  font-weight:700;
+  color: rgba(0,0,0,0.78);
+}
+.file-list{
+  font-weight:600;
+  color: rgba(0,0,0,0.65);
+  font-size: 0.9rem;
+  line-height:1.4;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.form-error{
+  margin-top: 4px;
+  color: var(--kas-red);
+  font-weight:700;
+  line-height:1.35;
 }
 
 /* --- Details/summary look (photo guide) --- */
@@ -565,13 +598,6 @@ details li{ margin: 6px 0; }
         <p>Kaş'taki işletmenizi rehberimize ekleyin ve binlerce gezgine ulaşın</p>
       </div>
 
-        <div class="success-message" id="successMessage">
-          <div class="success-icon">✅</div>
-          <h3>Başvurunuz Alındı!</h3>
-          <p>Mekan bilgilerinizi inceliyoruz. En kısa sürede sizinle iletişime geçeceğiz.</p>
-        </div>
-
-
 
 <!-- Kaş Guide Tanıtım -->
 <div class="form-section">
@@ -617,7 +643,7 @@ details li{ margin: 6px 0; }
   </details>
 </div>
 
-      <!-- Önemli Bilgilendirme -->
+      <!-- Sayfa Hakkında Ufak Bilgiler -->
       <div class="form-section">
   <details class="section-card section-card--green accordion">
     <summary class="section-title">
@@ -636,7 +662,63 @@ details li{ margin: 6px 0; }
   </details>
 </div>
 
+
+
+
+ <!-- Biz kimiz ? -->
+<div class="form-section">
+  <details class="section-card section-card--orange accordion">
+    <summary class="section-title">
+      <span class="section-icon icon-glow">👥</span>
+      Biz kimiz ?
+    </summary>
+
+    <div class="accordion-content">
+      <p style="margin: 0 0 0.75rem 0;">
+        Biz, uzun yıllardır Kaş’ta yaşayan; Kaş’ı seven, Kaş’a gönül vermiş, Kaş’ın sorunlarına duyarlı,
+        hayvansever ve doğasever küçük bir ekibiz. Kaş Guide’ın ilk yılında, tarafsızlığımızı ve objektifliğimizi
+        korumak adına anonim kalmayı tercih ediyoruz. Bu sayfayı doldurarak bize destek olduğunuz için teşekkür ederiz.
+      </p>
+
+      <div class="contact-line" style="margin: 0.35rem 0;">
+        <span>📸 Instagram:</span>
+        <a href="https://instagram.com/guidekas" target="_blank" rel="noopener">@guidekas</a>
+      </div>
+
+      <div class="contact-line" style="margin: 0.35rem 0 0.75rem 0;">
+        <span>✉️ E-posta:</span>
+        <a href="mailto:mekan@kasguide.de">mekan@kasguide.de</a>
+      </div>
+
+      <div><strong>Kaş Guide Ekibi</strong></div>
+    </div>
+  </details>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="form-body">
+        <div class="success-message" id="successMessage">
+          <div class="success-icon">✅</div>
+          <h3>Başvurunuz Alındı!</h3>
+          <p>Mekan bilgilerinizi inceliyoruz. En kısa sürede sizinle iletişime geçeceğiz.</p>
+        </div>
+
 
 
 
@@ -794,30 +876,33 @@ details li{ margin: 6px 0; }
             <div class="section-card section-card--orange">
               <h3 class="section-title">
                 <span class="section-icon">📸</span>
-                Fotoğraflar (Opsiyonel)
+                Fotoğraflar 
               </h3>
 
               <div class="form-group">
                 <label class="form-label">Fotoğraf Seç</label>
-                
+
 <div class="file-upload">
-  <input
-    type="file"
-    id="photoInput"
-    name="photos"
-    class="form-input file-input"
-    accept="image/*"
-    multiple
-  >
-  <label for="photoInput" class="file-btn">Fotoğraf seç</label>
-  <span id="photoFileNames" class="file-names">Henüz dosya seçilmedi</span>
+  <div class="file-row">
+    <input type="file"
+      id="photoInput"
+      name="photos"
+      accept="image/*"
+      multiple
+      class="file-input"
+    >
+    <label for="photoInput" class="file-btn">Fotoğraf seç</label>
+  </div>
+
+  <div class="file-feedback">
+    <div id="photoFileNames" class="file-names">Henüz dosya seçilmedi</div>
+    <div id="photoError" class="form-error"></div>
+  </div>
 </div>
 
 <p class="form-hint">
   Max <b>5</b> foto • <b>2 MB</b>/foto • <b>16:9</b> yatay • Yazı/logo yok • Kadraj ortalı (bazı cihazlarda kırpılabilir)
 </p>
-
-<p id="photoError" class="form-error"></p>
 
 <details class="photo-guide">
   <summary>Detayları göster (Fotoğraf rehberi)</summary>
@@ -830,6 +915,7 @@ details li{ margin: 6px 0; }
     <li><b>Not:</b> Kapak alanında “cover” mantığıyla sığdırma olduğundan üst/alt kırpılabilir</li>
   </ul>
 </details>
+
 
              </div>
             </div>
@@ -902,6 +988,30 @@ details li{ margin: 6px 0; }
             </div>
           </div>
 
+
+          <!-- Özel Notlar -->
+          <div class="form-section">
+            <div class="section-card section-card--dark">
+              <h3 class="section-title">
+                <span class="section-icon">📝</span>
+                Bize iletmek istediğiniz özel notlar
+              </h3>
+
+              <div class="form-group">
+                <textarea
+                  class="form-textarea"
+                  name="extraNotes"
+                  placeholder="Mekanınızla ilgili özellikle belirtmek istediğiniz detaylar, talepleriniz veya ek notlar..."
+                  style="min-height: 160px;"
+                ></textarea>
+
+                <p class="form-hint">
+                  Bu alan isteğe bağlıdır.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <!-- Submit -->
           <div class="submit-section">
             <button type="submit" class="submit-button">
@@ -941,17 +1051,19 @@ details li{ margin: 6px 0; }
         body: formData
       });
 
+      // API bazen JSON, bazen text döndürebilir; önce güvenli parse edelim
+      const raw = await res.text().catch(() => '');
+      let payload = null;
+      try { payload = JSON.parse(raw); } catch {}
+
       if (!res.ok) {
-        const text = await res.text().catch(() => '');
-        throw new Error(text || `HTTP ${res.status}`);
+        throw new Error(payload?.message || raw || `HTTP ${res.status}`);
       }
 
-      const json = await res.json().catch(() => ({}));
-      if (!json.success) {
-        throw new Error(json.message || 'Mail gönderilemedi');
+      if (payload && payload.success === false) {
+        throw new Error(payload.message || 'Mail gönderilemedi');
       }
-
-      successMessage.classList.add('show');
+successMessage.classList.add('show');
       form.reset();
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -1031,10 +1143,83 @@ details li{ margin: 6px 0; }
       window.open("./example/example.html", "_blank");
     });
 
-    // initial seed a(helps if user opens preview early)
+    // initial seed (helps if user opens preview early)
     persistDraft();
   })();
 </script>
+
+<script>
+  (function () {
+    const input = document.getElementById("photoInput");
+    const namesEl = document.getElementById("photoFileNames");
+    const errEl = document.getElementById("photoError");
+    const formEl = document.getElementById("venueForm");
+
+    if (!input || !namesEl) return;
+
+    const MAX_FILES = 5;
+    const MAX_MB_PER_FILE = 2;
+    const MAX_BYTES_PER_FILE = MAX_MB_PER_FILE * 1024 * 1024;
+
+    function formatBytes(bytes) {
+      if (!Number.isFinite(bytes)) return "";
+      const mb = bytes / (1024 * 1024);
+      if (mb >= 1) return `${mb.toFixed(2)} MB`;
+      const kb = bytes / 1024;
+      return `${kb.toFixed(0)} KB`;
+    }
+
+    function updateUI() {
+      const files = Array.from(input.files || []);
+      if (errEl) errEl.textContent = "";
+
+      if (files.length === 0) {
+        namesEl.textContent = "Henüz dosya seçilmedi";
+        return;
+      }
+
+      // validations
+      const errors = [];
+      if (files.length > MAX_FILES) {
+        errors.push(`En fazla ${MAX_FILES} fotoğraf seçebilirsiniz.`);
+      }
+
+      const tooBig = files.filter(f => (f.size || 0) > MAX_BYTES_PER_FILE);
+      if (tooBig.length) {
+        const list = tooBig.map(f => f.name).slice(0, 3).join(", ");
+        errors.push(`2 MB sınırını aşan fotoğraf(lar) var: ${list}${tooBig.length > 3 ? "..." : ""}`);
+      }
+
+      // totals + names
+      const totalBytes = files.reduce((sum, f) => sum + (f.size || 0), 0);
+      const fileNames = files.map(f => f.name).join(" • ");
+
+      namesEl.innerHTML = `<div class="file-summary">${files.length} fotoğraf seçildi • Toplam: ${formatBytes(totalBytes)}</div>` +
+        `<div class="file-list">${fileNames}</div>`;
+
+      // if errors: show and optionally clear selection
+      if (errors.length && errEl) {
+        errEl.textContent = errors.join(" ");
+        // İstersen kural dışı seçimde input'u temizleyelim:
+        // input.value = "";
+        // namesEl.textContent = "Henüz dosya seçilmedi";
+      }
+    }
+
+    input.addEventListener("change", updateUI);
+
+    // form reset sonrası metni düzelt
+    formEl?.addEventListener("reset", () => {
+      // reset bazen async olur; bir tick bekleyelim
+      setTimeout(() => {
+        namesEl.textContent = "Henüz dosya seçilmedi";
+        if (errEl) errEl.textContent = "";
+      }, 0);
+    });
+  })();
+</script>
+
+
 
 </body>
 </html>
