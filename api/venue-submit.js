@@ -146,7 +146,7 @@ Erişim: ${access || "-"}
 Google Maps: ${googleMapsQuery || "-"}
 
 Özel Notlar:
-${extraNotes && String(extraNotes).trim() ? extraNotes : \"-\"}
+${extraNotes && String(extraNotes).trim() ? extraNotes : "-"}
 `;
 
     await transporter.sendMail({
