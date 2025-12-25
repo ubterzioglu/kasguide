@@ -1,6 +1,7 @@
 ## 🔖 My Notes - Kaş Guide
 
 23.12.25 The main structure of the site was completed. We started entering content. In the first phase, proceeding with the list provided by ChatGPT will also increase visibility.
+25.12.25 Challenging day! Trying to resolve the issue for mail form sending!
 
 ## -------------------------------------------------------------------
 
