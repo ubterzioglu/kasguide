@@ -565,6 +565,13 @@ details li{ margin: 6px 0; }
         <p>Kaş'taki işletmenizi rehberimize ekleyin ve binlerce gezgine ulaşın</p>
       </div>
 
+        <div class="success-message" id="successMessage">
+          <div class="success-icon">✅</div>
+          <h3>Başvurunuz Alındı!</h3>
+          <p>Mekan bilgilerinizi inceliyoruz. En kısa sürede sizinle iletişime geçeceğiz.</p>
+        </div>
+
+
 
 <!-- Kaş Guide Tanıtım -->
 <div class="form-section">
@@ -630,12 +637,6 @@ details li{ margin: 6px 0; }
 </div>
 
       <div class="form-body">
-        <div class="success-message" id="successMessage">
-          <div class="success-icon">✅</div>
-          <h3>Başvurunuz Alındı!</h3>
-          <p>Mekan bilgilerinizi inceliyoruz. En kısa sürede sizinle iletişime geçeceğiz.</p>
-        </div>
-
 
 
 
@@ -932,18 +933,7 @@ details li{ margin: 6px 0; }
     submitBtn.disabled = true;
     submitBtn.innerText = 'Gönderiliyor...';
 
-    // IMPORTANT: Fotoğraflar opsiyonel. Bazı backend parser'lar (örn. formidable)
-    // dosya seçilmemiş file input'u bile "0 byte file" olarak algılayıp hata verebiliyor.
-    // Bu yüzden dosya seçilmemişse input'u geçici olarak disable edip FormData oluşturuyoruz.
-    const photoInput = document.getElementById('photoInput');
-    let formData;
-    if (photoInput && photoInput.files && photoInput.files.length === 0) {
-      photoInput.disabled = true;
-      formData = new FormData(form);
-      photoInput.disabled = false;
-    } else {
-      formData = new FormData(form);
-    }
+    const formData = new FormData(form);
 
     try {
       const res = await fetch('/api/venue-submit', {
