@@ -4,38 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Önizleme - Kaş Guide</title>
-  <link rel="stylesheet" href="../places/places-style.css">
+  <link rel="stylesheet" href="./example.css">
 </head>
-<body>
-  <header class="header">
-    <div class="container header-content">
+<body class="is-preview">
 
-      <!-- LEFT ACTIONS -->
-      <div class="header-actions">
-        <a href="../ekle.html" class="action-btn" aria-label="Ana Sayfa">
-          <img src="../assets/0_img/clip_home.png" alt="Home">
-        </a>
-
-        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button">
-          <img src="../assets/0_img/clip_up.png" alt="Up">
-        </button>
-      </div>
-
-      <!-- LOGO -->
-      <div class="logo">
-        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
-        <h1 class="logo-text">Kaş Guide</h1>
-      </div>
-
-      <div style="width:48px"></div>
-    </div>
-  </header>
+  <!-- Preview top bar (only for preview) -->
+  <div class="preview-bar">
+    <button type="button" class="preview-back" id="closePreviewBtn" aria-label="Forma geri dön">
+      ← Forma geri dön
+    </button>
+    <span class="preview-chip" aria-label="Önizleme">Önizleme</span>
+  </div>
 
   <main class="detail-page">
     <div class="container">
       <div id="detailRoot" class="detail-root"></div>
     </div>
   </main>
+
+  <script>
+    // Close if opened via window.open; otherwise fall back to ekle.html
+    (function () {
+      const btn = document.getElementById("closePreviewBtn");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        try { window.opener && window.opener.focus && window.opener.focus(); } catch(e) {}
+        try { window.close(); } catch(e) {}
+        setTimeout(() => { window.location.href = "../ekle.html"; }, 120);
+      });
+    })();
+  </script>
 
   <script src="../places/places-data.js"></script>
   <script src="./example.js"></script>
