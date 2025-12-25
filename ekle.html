@@ -1051,19 +1051,17 @@ details li{ margin: 6px 0; }
         body: formData
       });
 
-      // API bazen JSON, bazen text döndürebilir; önce güvenli parse edelim
-      const raw = await res.text().catch(() => '');
-      let payload = null;
-      try { payload = JSON.parse(raw); } catch {}
-
       if (!res.ok) {
-        throw new Error(payload?.message || raw || `HTTP ${res.status}`);
+        const text = await res.text().catch(() => '');
+        throw new Error(text || `HTTP ${res.status}`);
       }
 
-      if (payload && payload.success === false) {
-        throw new Error(payload.message || 'Mail gönderilemedi');
+      const json = await res.json().catch(() => ({}));
+      if (!json.success) {
+        throw new Error(json.message || 'Mail gönderilemedi');
       }
-successMessage.classList.add('show');
+
+      successMessage.classList.add('show');
       form.reset();
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
