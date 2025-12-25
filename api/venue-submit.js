@@ -40,7 +40,7 @@ export default async function handler(req, res) {
       });
     }
 
-    // SMTP transport la değişiklikleri niye almıon
+    // SMTP transport la değişiuieauieaklikleri niye almıon
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
