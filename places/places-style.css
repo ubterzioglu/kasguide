@@ -475,6 +475,15 @@
 }
 
 
+/* Önizleme sayfasında global header KAPALI */
+body.is-preview header.header {
+  display: none !important;
+}
+
+/* Header kalkınca üstte boşluk kalmasın */
+body.is-preview {
+  padding-top: 0 !important;
+}
 
 
 
