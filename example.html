@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kaş Guide - Önizleme</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; background:#FAFBFB; color:#111827; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px 48px; }
+    .top { display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:16px; }
+    .pill { padding:10px 12px; border-radius: 9999px; background: #fff; border:1px solid #e5e7eb; font-weight:800; }
+    .btn { border:0; border-radius:12px; padding:10px 12px; font-weight:800; cursor:pointer; }
+    .btn-primary { background: linear-gradient(135deg,#07A4C3,#6367F0); color:#fff; }
+    .card { background:#fff; border:1px solid #e5e7eb; border-radius: 18px; box-shadow: 0 20px 25px -5px rgba(0,0,0,.08); overflow:hidden; }
+    .cover { height: 220px; background: linear-gradient(135deg,#9A59F6,#EB4999); display:flex; align-items:flex-end; padding:18px; color:#fff; }
+    .title { font-size: 28px; font-weight: 800; margin:0; line-height:1.1; }
+    .meta { opacity:.95; margin-top:8px; font-weight:600; }
+    .content { padding: 18px; }
+    .desc { margin: 0 0 12px; color:#374151; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0 16px; }
+    .chip { background:#f3f4f6; border:1px solid #e5e7eb; padding:6px 10px; border-radius:9999px; font-weight:600; font-size: 13px; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    .box { border:1px solid #e5e7eb; border-radius: 14px; padding: 12px; background:#fff; }
+    .label { font-size: 12px; color:#6b7280; font-weight:800; margin-bottom:6px; }
+    .value { font-weight:600; color:#111827; word-break: break-word; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .cover { height: 200px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="pill">👀 Mekan Sayfası Önizleme</div>
+      <button class="btn btn-primary" onclick="returnToForm()">↩️ Geri dön</button>
+    </div>
+
+    <div class="card" id="card"></div>
+  </div>
+
+  <script>
+    
+    function returnToForm() {
+      // If opened from ekle.html via window.open, focus the opener tab and close this preview tab.
+      try {
+        if (window.opener && !window.opener.closed) {
+          window.opener.focus();
+          window.close();
+          return;
+        }
+      } catch (e) {}
+      // Fallback: navigate back to ekle.html in the same tab
+      window.location.href = "./ekle.html";
+    }
+
+const raw = localStorage.getItem("kasguide_preview_place");
+    const p = raw ? JSON.parse(raw) : null;
+
+    const safe = (v) => (v ?? "").toString().trim();
+    const esc = (s) => safe(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+    const card = document.getElementById("card");
+
+    if (!p) {
+      card.innerHTML = '<div class="content"><b>Preview verisi bulunamadı.</b><div style="margin-top:8px;color:#6b7280">Önce ekle.html üzerinden “Önizleme”ye bas.</div></div>';
+    } else {
+      const cats = Array.isArray(p.categories) ? p.categories : [];
+      const chips = cats.map(c => `<span class="chip">${esc(c)}</span>`).join("");
+
+      card.innerHTML = `
+        <div class="cover">
+          <div>
+            <h1 class="title">${esc(p.title) || "Mekan Adı"}</h1>
+            <div class="meta">${esc(p.location)} ${p.distance ? "• " + esc(p.distance) : ""}</div>
+          </div>
+        </div>
+        <div class="content">
+          ${p.description ? `<p class="desc">${esc(p.description)}</p>` : ""}
+          ${chips ? `<div class="chips">${chips}</div>` : ""}
+
+          <div class="box" style="margin-bottom:12px">
+            <div class="label">Detaylı Açıklama</div>
+            <div class="value" style="white-space:pre-line">${esc(p.longText) || "Detaylı açıklama burada görünecek."}</div>
+          </div>
+
+          <div class="grid">
+            <div class="box">
+              <div class="label">Ortalama Fiyat</div>
+              <div class="value">${esc(p.price) || "-"}</div>
+            </div>
+            <div class="box">
+              <div class="label">Ortalama Süre</div>
+              <div class="value">${esc(p.duration) || "-"}</div>
+            </div>
+            <div class="box">
+              <div class="label">Erişim</div>
+              <div class="value">${esc(p.access) || "-"}</div>
+            </div>
+            <div class="box">
+              <div class="label">İletişim</div>
+              <div class="value">
+                ${p.phone ? "☎️ " + esc(p.phone) + "<br/>" : ""}
+                ${p.instagram ? "📷 " + esc(p.instagram) + "<br/>" : ""}
+                ${p.website ? "🌐 " + esc(p.website) + "<br/>" : ""}
+                ${p.booking ? "🔗 " + esc(p.booking) : ""}
+                ${(!p.phone && !p.instagram && !p.website && !p.booking) ? "-" : ""}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
