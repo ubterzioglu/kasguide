@@ -565,10 +565,8 @@ details li{ margin: 6px 0; }
           <p>Mekan bilgilerinizi inceliyoruz. En kısa sürede sizinle iletişime geçeceğiz.</p>
         </div>
 
-<button type="button" class="submit-button" id="previewBtn" style="margin-top:12px; background: linear-gradient(135deg, var(--kas-cyan), var(--kas-indigo));">
-  👀 Önizleme 
-  (Mekanım sayfada nasıl gözükecek? Bilgileri doldurdukça güncellenir!)
-</button>
+
+
 
 
         <form id="venueForm">
@@ -838,8 +836,9 @@ details li{ margin: 6px 0; }
               🚀 Başvuruyu Gönder
             </button>
 
-<button type="button" class="submit-button" id="previewBtn" style="margin-top:12px; background: linear-gradient(135deg, var(--kas-cyan), var(--kas-indigo));">
-  👀 Önizleme (Mekanım sayfada nasıl gözükecek?)
+<button type="button" class="submit-button" id="previewBtn" style="margin-top:12px; background: linear-gradient(135deg, var(--kas-cyan), var(--kas-indigo)); padding: 1.05rem 1.25rem;">
+  <span style="display:block; font-size:1.15rem; font-weight:900; letter-spacing:-0.01em;">👀 ÖNİZLEME</span>
+  <span style="display:block; margin-top:6px; font-size:0.9rem; font-weight:650; opacity:0.92;">(Mekan sayfan, doldurduğun bilgilerle anında güncellenir. Fotoğraflar, sitede yayınlandığında burada görünecek.)</span>
 </button>
 
             <p class="form-hint" style="text-align: center; margin-top: 1rem;">
@@ -898,48 +897,72 @@ details li{ margin: 6px 0; }
 </script>
 
 <script>
-  const previewBtn = document.getElementById('previewBtn');
-
-  function formToObject(formEl) {
-    const fd = new FormData(formEl);
-    const obj = {};
-    for (const [k, v] of fd.entries()) {
-      if (k === "category") {
-        obj.category ??= [];
-        obj.category.push(v);
-      } else if (k === "photos") {
-        // dosyaları preview'da taşımıyoruz (offline preview için sadece isim gösterebiliriz)
-      } else {
-        obj[k] = (v ?? "").toString().trim();
-      }
-    }
-    return obj;
-  }
-
-  previewBtn?.addEventListener('click', () => {
+  (function () {
+    const previewBtn = document.getElementById('previewBtn');
     const formEl = document.getElementById('venueForm') || document.querySelector('form');
-    const data = formToObject(formEl);
+    if (!formEl) return;
 
-    // preview için alanları normalize et
-    const previewPlace = {
-      title: data.title || data.name || "Mekan Adı",
-      location: data.location || "Kaş",
-      distance: data.distance || "",
-      description: data.description || "",
-      longText: data.longText || data.long_text || "",
-      price: data.price || "",
-      duration: data.duration || "",
-      access: data.access || "",
-      instagram: data.instagram || "",
-      website: data.website || "",
-      booking: data.booking || "",
-      phone: data.phone || "",
-      categories: data.category || []
-    };
+    function formToObject(formEl) {
+      const fd = new FormData(formEl);
+      const obj = {};
+      for (const [k, v] of fd.entries()) {
+        if (k === "category") {
+          obj.category ??= [];
+          obj.category.push(v);
+        } else if (k === "photos") {
+          // Fotoğraflar preview'da gösterilmez (örnek görseller gösterilir).
+        } else {
+          obj[k] = (v ?? "").toString().trim();
+        }
+      }
+      return obj;
+    }
 
-    localStorage.setItem("kasguide_preview_place", JSON.stringify(previewPlace));
-    window.open("./example.html", "_blank");
-  });
+    function buildPreviewPlace(data) {
+      return {
+        title: data.title || "Mekan Adı",
+        location: data.location || "Kaş",
+        distance: data.distance || "",
+        description: data.description || "",
+        longText: data.longText || "",
+        price: data.price || "",
+        duration: data.duration || "",
+        access: data.access || "",
+        instagram: data.instagram || "",
+        website: data.website || "",
+        booking: data.booking || "",
+        phone: data.phone || "",
+        categories: data.category || [],
+        googleMapsQuery: data.googleMapsQuery || ""
+      };
+    }
+
+    function persistDraft() {
+      const data = formToObject(formEl);
+      const previewPlace = buildPreviewPlace(data);
+      try {
+        localStorage.setItem("kasguide_preview_place", JSON.stringify(previewPlace));
+      } catch (e) {}
+    }
+
+    // Live update: whenever user types / changes fields, keep draft fresh
+    const liveEvents = ["input", "change"];
+    liveEvents.forEach(evt => {
+      formEl.addEventListener(evt, (e) => {
+        // avoid spamming for file input; we don't store files anyway
+        if (e?.target?.type === "file") return;
+        persistDraft();
+      });
+    });
+
+    previewBtn?.addEventListener('click', () => {
+      persistDraft();
+      window.open("./example/example.html", "_blank");
+    });
+
+    // initial seed (helps if user opens preview early)
+    persistDraft();
+  })();
 </script>
 
 </body>
