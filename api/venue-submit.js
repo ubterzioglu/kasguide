@@ -136,7 +136,7 @@ try {
       to: MAIL_TO,
       subject: emailSubject,
       html,
-      attachments: photoFiles.slice(0, 6), // avoid huge emuieauieaails
+      attachments: photoFiles.slice(0, 6), // avoid huge emuieauieauieauieaails
     });
 
     return res.status(200).json({ ok: true });
