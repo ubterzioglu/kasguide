@@ -745,12 +745,16 @@
         body: JSON.stringify(data)
       });
 
+
       const json = await res.json().catch(() => ({}));
 
-      if (!res.ok || json.success !== true) {
-        throw new Error(json.message || `Mail gönderilemedi (HTTP ${res.status})`);
-      }
+const isSuccess = res.ok && (json.ok === true || json.success === true);
 
+if (!isSuccess) {
+  throw new Error(json.message || `Mail gönderilemedi (HTTP ${res.status})`);
+}
+
+     
       successMessage.classList.add('show');
       form.reset();
       window.scrollTo({ top: 0, behavior: 'smooth' });
