@@ -677,7 +677,7 @@ details li{ margin: 6px 0; }
       <p style="margin: 0 0 0.75rem 0;">
         Biz, uzun yıllardır Kaş’ta yaşayan; Kaş’ı seven, Kaş’a gönül vermiş, Kaş’ın sorunlarına duyarlı,
         hayvansever ve doğasever küçük bir ekibiz. Kaş Guide’ın ilk yılında, tarafsızlığımızı ve objektifliğimizi
-        korumak adına anonim kalmayı tercih ediyoruz. Bu sayfayı doldurarak bize destek olduğunuz için teşekkür ederiz!
+        korumak adına anonim kalmayı tercih ediyoruz. Bu sayfayı doldurarak bize destek olduğunuz için teşekkür ederiz.
       </p>
 
       <div class="contact-line" style="margin: 0.35rem 0;">
@@ -1012,9 +1012,7 @@ details li{ margin: 6px 0; }
             </p>
           </div>
         </form>
-      
       </div>
-</div>
     </div>
   </div>
 </main>
@@ -1051,9 +1049,9 @@ details li{ margin: 6px 0; }
         throw new Error(payload.message || 'Mail gönderilemedi');
       }
 successMessage.classList.add('show');
-            document.getElementById('venueFormWrap').style.display = 'none';
-form.reset();
+      form.reset();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      
 
     } catch (err) {
       alert(
