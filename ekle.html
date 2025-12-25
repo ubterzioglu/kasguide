@@ -1048,15 +1048,10 @@ details li{ margin: 6px 0; }
       if (payload && payload.success === false) {
         throw new Error(payload.message || 'Mail gönderilemedi');
       }
-
-
 successMessage.classList.add('show');
-form.style.display = "none";
-form.reset();
-window.scrollTo({ top: 0, behavior: 'smooth' });
-
-
-
+      form.reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
 
     } catch (err) {
       alert(
