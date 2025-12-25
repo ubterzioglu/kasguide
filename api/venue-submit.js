@@ -1,22 +1,31 @@
 import nodemailer from "nodemailer";
 import formidable from "formidable";
+import fs from "fs";
 
 export const config = {
   api: { bodyParser: false },
 };
 
 function first(v) {
-  // formidable fields bazen array döndürüyor
   return Array.isArray(v) ? v[0] : v;
 }
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(405).send("Method Not Allowed");
+  if (req.method !== "POST") {
+    return res.status(405).send("Method Not Allowed");
+  }
 
   try {
-    const form = formidable({ multiples: true });
-    const [fields] = await form.parse(req);
+    const form = formidable({
+      multiples: true,
+      maxFileSize: 2 * 1024 * 1024, // 2MB (tek dosya)
+    });
 
+    const [fields, files] = await form.parse(req);
+
+    /* --------------------
+       TEXT FIELDS
+    -------------------- */
     const title = first(fields.title);
     const location = first(fields.location);
     const distance = first(fields.distance);
@@ -32,9 +41,60 @@ export default async function handler(req, res) {
     const booking = first(fields.booking);
 
     if (!title || !longText || !phone) {
-      return res.status(400).json({ success: false, message: "Zorunlu alanlar eksik" });
+      return res.status(400).json({
+        success: false,
+        message: "Zorunlu alanlar eksik",
+      });
     }
 
+    /* --------------------
+       FILES (PHOTOS)
+    -------------------- */
+    let photos = files.photos || [];
+    if (!Array.isArray(photos)) photos = [photos];
+
+    if (photos.length > 5) {
+      return res.status(400).json({
+        success: false,
+        message: "En fazla 5 foto yüklenebilir",
+      });
+    }
+
+    const allowedTypes = [
+      "image/jpeg",
+      "image/png",
+      "image/webp",
+    ];
+
+    const attachments = [];
+
+    for (const file of photos) {
+      if (!file) continue;
+
+      if (!allowedTypes.includes(file.mimetype)) {
+        return res.status(400).json({
+          success: false,
+          message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
+        });
+      }
+
+      if (file.size > 2 * 1024 * 1024) {
+        return res.status(400).json({
+          success: false,
+          message: `"${file.originalFilename}" 2 MB sınırını aşıyor`,
+        });
+      }
+
+      attachments.push({
+        filename: file.originalFilename,
+        content: fs.readFileSync(file.filepath),
+        contentType: file.mimetype,
+      });
+    }
+
+    /* --------------------
+       SMTP
+    -------------------- */
     const smtpHost = process.env.SMTP_HOST;
     const smtpPort = Number(process.env.SMTP_PORT || 465);
     const smtpUser = process.env.SMTP_USER;
@@ -43,7 +103,7 @@ export default async function handler(req, res) {
     if (!smtpHost || !smtpUser || !smtpPass) {
       return res.status(500).json({
         success: false,
-        message: "SMTP env eksik (SMTP_HOST/SMTP_USER/SMTP_PASS)",
+        message: "SMTP env eksik",
       });
     }
 
@@ -53,10 +113,8 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: smtpPort === 465, // 465 = SSL
+      secure: smtpPort === 465,
       auth: { user: smtpUser, pass: smtpPass },
-
-      // Zoho + serverless ortamlar için sık gerekli
       tls: {
         rejectUnauthorized: false,
         servername: smtpHost,
@@ -92,9 +150,11 @@ Google Maps: ${googleMapsQuery || "-"}
       to: mailTo,
       subject: `Yeni Mekan Başvurusu – ${title}`,
       text: mailText,
+      attachments, // ✅ FOTOĞRAFLAR BURADA
     });
 
     return res.status(200).json({ success: true });
+
   } catch (err) {
     console.error("MAIL ERROR:", err);
     return res.status(500).json({
