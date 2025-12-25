@@ -798,25 +798,28 @@ details li{ margin: 6px 0; }
 
               <div class="form-group">
                 <label class="form-label">Fotoğraf Seç</label>
-                
+
 <div class="file-upload">
-  <input
-    type="file"
-    id="photoInput"
-    name="photos"
-    class="form-input file-input"
-    accept="image/*"
-    multiple
-  >
-  <label for="photoInput" class="file-btn">Fotoğraf seç</label>
-  <span id="photoFileNames" class="file-names">Henüz dosya seçilmedi</span>
+  <div class="file-row">
+    <input
+      type="file"
+      id="photoInput"
+      name="photos"
+      accept="image/*"
+      multiple
+    >
+    <label for="photoInput" class="file-btn">Fotoğraf seç</label>
+  </div>
+
+  <div class="file-feedback">
+    <div id="photoFileNames" class="file-names">Henüz dosya seçilmedi</div>
+    <div id="photoError" class="form-error"></div>
+  </div>
 </div>
 
 <p class="form-hint">
   Max <b>5</b> foto • <b>2 MB</b>/foto • <b>16:9</b> yatay • Yazı/logo yok • Kadraj ortalı (bazı cihazlarda kırpılabilir)
 </p>
-
-<p id="photoError" class="form-error"></p>
 
 <details class="photo-guide">
   <summary>Detayları göster (Fotoğraf rehberi)</summary>
@@ -829,6 +832,7 @@ details li{ margin: 6px 0; }
     <li><b>Not:</b> Kapak alanında “cover” mantığıyla sığdırma olduğundan üst/alt kırpılabilir</li>
   </ul>
 </details>
+
 
              </div>
             </div>
