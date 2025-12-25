@@ -630,9 +630,35 @@
 
               <div class="form-group">
                 <label class="form-label">Fotoğraf Seç</label>
-                <input type="file" id="photoInput" class="form-input" accept="image/*" multiple>
-                <p class="form-hint">İsterseniz birden fazla fotoğraf seçebilirsiniz. Sürükle-bırak yok.</p>
-              </div>
+                
+<input
+  type="file"
+  id="photoInput"
+  name="photos"
+  class="form-input"
+  accept="image/*"
+  multiple
+>
+
+<p class="form-hint">
+  Max <b>5</b> foto • <b>2 MB</b>/foto • <b>16:9</b> yatay • Yazı/logo yok • Kadraj ortalı (bazı cihazlarda kırpılabilir)
+</p>
+
+<p id="photoError" class="form-error"></p>
+
+<details class="photo-guide">
+  <summary>Detayları göster (Fotoğraf rehberi)</summary>
+  <ul>
+    <li><b>Boyut:</b> 1600×900 px (ideal) / 1200×675 px (minimum)</li>
+    <li><b>Oran:</b> 16:9 (yatay)</li>
+    <li><b>Kadro:</b> Ana konu ortada veya biraz üstte</li>
+    <li><b>Yasak:</b> Yazı, logo, filigran, kolaj, ekran görüntüsü</li>
+    <li><b>Kalite:</b> Net, güncel, gece çok karanlık olmayan</li>
+    <li><b>Not:</b> Kapak alanında “cover” mantığıyla sığdırma olduğundan üst/alt kırpılabilir</li>
+  </ul>
+</details>
+
+             </div>
             </div>
           </div>
 
@@ -669,7 +695,7 @@
             </div>
           </div>
 
-          <!-- İletişim Bilguieauieaileri -->
+          <!-- İletişaim Bilgileri -->
           <div class="form-section">
             <div class="section-card section-card--indigo">
               <h3 class="section-title">
@@ -709,7 +735,7 @@
               🚀 Başvuruyu Gönder
             </button>
             <p class="form-hint" style="text-align: center; margin-top: 1rem;">
-              Başvurunuzu gönderdikten sonra 1-2 iş günü içinde size dönüş yapacağız.
+              Başvurunuzu gönderdikten sonra 1-2 iş günü içinde size DÖN BEBEGİM yapacağız.
             </p>
           </div>
         </form>
@@ -726,48 +752,42 @@
     e.preventDefault();
 
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalBtnText = submitBtn.innerText;
-
     submitBtn.disabled = true;
     submitBtn.innerText = 'Gönderiliyor...';
 
-    // FormData -> JSON (checkbox array fix dahil)
-    const fd = new FormData(form);
-    const data = Object.fromEntries(fd.entries());
-
-    // category çoklu seçimi array yap
-    data.category = fd.getAll('category');
+    const formData = new FormData(form);
 
     try {
       const res = await fetch('/api/venue-submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: formData
       });
 
+      if (!res.ok) {
+        const text = await res.text().catch(() => '');
+        throw new Error(text || `HTTP ${res.status}`);
+      }
 
       const json = await res.json().catch(() => ({}));
+      if (!json.success) {
+        throw new Error(json.message || 'Mail gönderilemedi');
+      }
 
-const isSuccess = res.ok && (json.ok === true || json.success === true);
-
-if (!isSuccess) {
-  throw new Error(json.message || `Mail gönderilemedi (HTTP ${res.status})`);
-}
-
-     
       successMessage.classList.add('show');
       form.reset();
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
     } catch (err) {
-      alert('Başvuru gönderilemedi.\n\n' + (err.message || 'Sunucu hatası'));
+      alert(
+        'Başvuru gönderilemedi.\n\n' +
+        (err.message || 'Sunucu hatası')
+      );
     } finally {
       submitBtn.disabled = false;
-      submitBtn.innerText = originalBtnText;
+      submitBtn.innerText = '🚀 Başvuruyu Gönder';
     }
   });
 </script>
-
 
 </body>
 </html>
