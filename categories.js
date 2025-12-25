@@ -31,15 +31,21 @@ const categories = [
     </svg>`,
     color: 'category-green'
   },
-  {
-    id: 'food',
-    name: 'Yeme-İçme',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/>
-      <circle cx="17" cy="7" r="5"/>
-    </svg>`,
-    color: 'category-red'
-  },
+{
+  id: 'food',
+  name: 'Yeme-İçme',
+  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Çatal -->
+    <path d="M4 3v7"/>
+    <path d="M6 3v7"/>
+    <path d="M8 3v7"/>
+    <path d="M6 10v11"/>
+    <!-- Bıçak -->
+    <path d="M14 3c2 3 2 6 0 9v9"/>
+  </svg>`,
+  color: 'category-red'
+},
+
   {
     id: 'hotels',
     name: 'Otel',
