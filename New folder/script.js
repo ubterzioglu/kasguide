@@ -27,11 +27,6 @@ const totalWordsEl = document.getElementById('totalWords');
 const activeFiltersCountEl = document.getElementById('activeFiltersCount');
 const filteredCountBigEl = document.getElementById('filteredCountBig');
 
-const miniTotalPlacesEl = document.getElementById('miniTotalPlaces');
-const miniTotalCategoriesEl = document.getElementById('miniTotalCategories');
-const miniShownEl = document.getElementById('miniShown');
-const miniActiveFiltersEl = document.getElementById('miniActiveFilters');
-
 const filterJumpBtn = document.getElementById('filterJump');
 
 function updateFilterJumpVisibility() {
@@ -120,8 +115,6 @@ function loadStats() {
 
   if (totalPlacesEl) totalPlacesEl.textContent = String(totalPlaces);
   if (totalCategoriesEl) totalCategoriesEl.textContent = String(totalCats);
-  if (miniTotalPlacesEl) miniTotalPlacesEl.textContent = String(totalPlaces);
-  if (miniTotalCategoriesEl) miniTotalCategoriesEl.textContent = String(totalCats);
 
   const stats = calculateStats(typeof allPlaces !== 'undefined' ? allPlaces : []);
   if (averageRatingEl) averageRatingEl.textContent = stats.avg;
@@ -132,7 +125,6 @@ function setActiveFilterText() {
   const txt = `${activeCount} aktif filtre`;
   if (activeFilterCountEl) activeFilterCountEl.textContent = txt;
   if (activeFiltersCountEl) activeFiltersCountEl.textContent = String(activeCount);
-  if (miniActiveFiltersEl) miniActiveFiltersEl.textContent = String(activeCount);
 }
 
 // ---------- render categories ----------
@@ -276,7 +268,6 @@ function renderCards() {
 function updateStats() {
   const count = String(filteredItems.length);
   if (filteredCountBigEl) filteredCountBigEl.textContent = count;
-  if (miniShownEl) miniShownEl.textContent = count;
 
   const s = calculateStats(filteredItems);
   if (averageRatingEl && filteredItems.length) averageRatingEl.textContent = s.avg;
