@@ -150,7 +150,7 @@ Google Maps: ${googleMapsQuery || "-"}
       to: mailTo,
       subject: `Yeni Mekan Başvurusu – ${title}`,
       text: mailText,
-      attachments, // ✅ FOTOĞRAFLAR BURADA
+      attachments, // ✅ FOTOĞRAaFLAR BURADA
     });
 
     return res.status(200).json({ success: true });
