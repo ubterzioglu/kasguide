@@ -630,9 +630,35 @@
 
               <div class="form-group">
                 <label class="form-label">Fotoğraf Seç</label>
-                <input type="file" id="photoInput" class="form-input" accept="image/*" multiple>
-                <p class="form-hint">İsterseniz birden fazla fotoğraf seçebilirsiniz. Sürükle-bırak yok.</p>
-              </div>
+                
+<input
+  type="file"
+  id="photoInput"
+  name="photos"
+  class="form-input"
+  accept="image/*"
+  multiple
+>
+
+<p class="form-hint">
+  Max <b>5</b> foto • <b>2 MB</b>/foto • <b>16:9</b> yatay • Yazı/logo yok • Kadraj ortalı (bazı cihazlarda kırpılabilir)
+</p>
+
+<p id="photoError" class="form-error"></p>
+
+<details class="photo-guide">
+  <summary>Detayları göster (Fotoğraf rehberi)</summary>
+  <ul>
+    <li><b>Boyut:</b> 1600×900 px (ideal) / 1200×675 px (minimum)</li>
+    <li><b>Oran:</b> 16:9 (yatay)</li>
+    <li><b>Kadro:</b> Ana konu ortada veya biraz üstte</li>
+    <li><b>Yasak:</b> Yazı, logo, filigran, kolaj, ekran görüntüsü</li>
+    <li><b>Kalite:</b> Net, güncel, gece çok karanlık olmayan</li>
+    <li><b>Not:</b> Kapak alanında “cover” mantığıyla sığdırma olduğundan üst/alt kırpılabilir</li>
+  </ul>
+</details>
+
+             </div>
             </div>
           </div>
 
