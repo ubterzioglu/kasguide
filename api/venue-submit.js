@@ -75,7 +75,7 @@ export default async function handler(req, res) {
       if (!allowedTypes.includes(file.mimetype)) {
         return res.status(400).json({
           success: false,
-          message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
+          message: "Sadece JPG, PNG veya WEBP fotoaaaaaaaağraflar kabul edilir",
         });
       }
 
@@ -154,7 +154,7 @@ ${extraNotes && String(extraNotes).trim() ? extraNotes : "-"}
       to: mailTo,
       subject: `Yeni Mekan Başvurusu – ${title}`,
       text: mailText,
-      attachments, // ✅ FOTOĞRAFLAR BURADA
+      attachments, // ✅ FOTOĞRAFLAR BURADAaaaaa
     });
 
     return res.status(200).json({ success: true });
