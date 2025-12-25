@@ -19,6 +19,8 @@ export default async function handler(req, res) {
     const form = formidable({
       multiples: true,
       maxFileSize: 2 * 1024 * 1024, // 2MB (tek dosya)
+      allowEmptyFiles: true,
+      minFileSize: 0,
     });
 
     const [fields, files] = await form.parse(req);
@@ -54,6 +56,9 @@ export default async function handler(req, res) {
     let photos = files.photos || [];
     if (!Array.isArray(photos)) photos = [photos];
 
+
+    // Boş dosyaları (0 byte) filtrele
+    photos = photos.filter(f => f && f.size && f.size > 0);
     if (photos.length > 5) {
       return res.status(400).json({
         success: false,
@@ -75,7 +80,7 @@ export default async function handler(req, res) {
       if (!allowedTypes.includes(file.mimetype)) {
         return res.status(400).json({
           success: false,
-          message: "Sadece JPG, PNG veya WEBP fotoaaaaaaaağraflar kabul edilir",
+          message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
         });
       }
 
@@ -154,7 +159,7 @@ ${extraNotes && String(extraNotes).trim() ? extraNotes : "-"}
       to: mailTo,
       subject: `Yeni Mekan Başvurusu – ${title}`,
       text: mailText,
-      attachments, // ✅ FOTOĞRAFLAR BURADAaaaaa
+      attachments, // ✅ FOTOĞRAFLAR BURADA
     });
 
     return res.status(200).json({ success: true });
