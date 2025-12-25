@@ -475,6 +475,87 @@
 }
 
 
+/* Önizleme sayfasında global header KAPALI */
+body.is-preview header.header {
+  display: none !important;
+}
+
+/* Header kalkınca üstte boşluk kalmasın */
+body.is-preview {
+  padding-top: 0 !important;
+}
+
+
+
+
+
+/* Preview üst bar */
+body.is-preview .preview-bar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 12px 16px;
+  margin: 0 auto;
+  max-width: 1100px;
+
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+/* Şirin geri dön butonu */
+body.is-preview .preview-back{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--gray-900);
+
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+body.is-preview .preview-back:hover{
+  background: var(--gray-200);
+  border-color: var(--gray-300);
+  transform: translateY(-1px);
+}
+
+body.is-preview .preview-back:active{
+  transform: translateY(0);
+}
+
+/* Sağdaki küçük “Önizleme” etiketi */
+body.is-preview .preview-chip{
+  font-size: .85rem;
+  font-weight: 900;
+  color: var(--gray-700);
+
+  padding: 8px 10px;
+  border-radius: 999px;
+
+  background: rgba(0,0,0,0.05);
+  border: 1px solid var(--gray-200);
+}
+
+/* Mobilde biraz sıkılaştır */
+@media (max-width: 520px){
+  body.is-preview .preview-bar{ padding: 10px 12px; }
+  body.is-preview .preview-back{ padding: 9px 10px; font-weight: 900; }
+  body.is-preview .preview-chip{ display:none; } /* istersek kalsın da */
+}
 
 
 
