@@ -39,6 +39,7 @@ export default async function handler(req, res) {
     const instagram = first(fields.instagram);
     const website = first(fields.website);
     const booking = first(fields.booking);
+    const extraNotes = first(fields.extraNotes);
 
     if (!title || !longText || !phone) {
       return res.status(400).json({
@@ -143,6 +144,9 @@ Fiyat: ${price || "-"}
 Süre: ${duration || "-"}
 Erişim: ${access || "-"}
 Google Maps: ${googleMapsQuery || "-"}
+
+Özel Notlar:
+${extraNotes && String(extraNotes).trim() ? extraNotes : \"-\"}
 `;
 
     await transporter.sendMail({
