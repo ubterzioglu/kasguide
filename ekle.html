@@ -1035,5 +1035,77 @@ details li{ margin: 6px 0; }
   })();
 </script>
 
+<script>
+  (function () {
+    const input = document.getElementById("photoInput");
+    const namesEl = document.getElementById("photoFileNames");
+    const errEl = document.getElementById("photoError");
+    const formEl = document.getElementById("venueForm");
+
+    if (!input || !namesEl) return;
+
+    const MAX_FILES = 5;
+    const MAX_MB_PER_FILE = 2;
+    const MAX_BYTES_PER_FILE = MAX_MB_PER_FILE * 1024 * 1024;
+
+    function formatBytes(bytes) {
+      if (!Number.isFinite(bytes)) return "";
+      const mb = bytes / (1024 * 1024);
+      if (mb >= 1) return `${mb.toFixed(2)} MB`;
+      const kb = bytes / 1024;
+      return `${kb.toFixed(0)} KB`;
+    }
+
+    function updateUI() {
+      const files = Array.from(input.files || []);
+      if (errEl) errEl.textContent = "";
+
+      if (files.length === 0) {
+        namesEl.textContent = "Henüz dosya seçilmedi";
+        return;
+      }
+
+      // validations
+      const errors = [];
+      if (files.length > MAX_FILES) {
+        errors.push(`En fazla ${MAX_FILES} fotoğraf seçebilirsiniz.`);
+      }
+
+      const tooBig = files.filter(f => (f.size || 0) > MAX_BYTES_PER_FILE);
+      if (tooBig.length) {
+        const list = tooBig.map(f => f.name).slice(0, 3).join(", ");
+        errors.push(`2 MB sınırını aşan fotoğraf(lar) var: ${list}${tooBig.length > 3 ? "..." : ""}`);
+      }
+
+      // totals + names
+      const totalBytes = files.reduce((sum, f) => sum + (f.size || 0), 0);
+      const fileNames = files.map(f => f.name).join(" • ");
+
+      namesEl.textContent = `${files.length} fotoğraf seçildi • Toplam: ${formatBytes(totalBytes)} — ${fileNames}`;
+
+      // if errors: show and optionally clear selection
+      if (errors.length && errEl) {
+        errEl.textContent = errors.join(" ");
+        // İstersen kural dışı seçimde input'u temizleyelim:
+        // input.value = "";
+        // namesEl.textContent = "Henüz dosya seçilmedi";
+      }
+    }
+
+    input.addEventListener("change", updateUI);
+
+    // form reset sonrası metni düzelt
+    formEl?.addEventListener("reset", () => {
+      // reset bazen async olur; bir tick bekleyelim
+      setTimeout(() => {
+        namesEl.textContent = "Henüz dosya seçilmedi";
+        if (errEl) errEl.textContent = "";
+      }, 0);
+    });
+  })();
+</script>
+
+
+
 </body>
 </html>
