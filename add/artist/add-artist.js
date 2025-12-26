@@ -190,7 +190,7 @@ btnClearDraft?.addEventListener("click", () => {
 btnPreview?.addEventListener("click", async () => {
   writeDraft();
   await syncImagesToSession();
-  window.open("./example-artist.html", "_blank", "noopener");
+  window.open("./example-artist/example-artist.html", "_blank", "noopener");
 });
 
 form?.addEventListener("submit", (e) => {
