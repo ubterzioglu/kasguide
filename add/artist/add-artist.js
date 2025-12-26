@@ -1,7 +1,3 @@
-/* artists-ekle.js
-   Modüler: sadece form + taslak + tam sayfa önizleme
-   Önizleme: example/artists/artists-example.html
-*/
 
 const LS_KEY = "artistsDraft_v1";
 
@@ -17,7 +13,8 @@ const shortText = $("shortText");
 const shortCount = $("shortCount");
 
 function setPreview(){
-  // Mini preview (sayfanın sağındaki)
+
+
   const d = readDraft() || buildDraft();
 
   const pvName = document.getElementById("pvName");
@@ -48,7 +45,7 @@ function setPreview(){
     });
   }
 
-  // Foto önizleme (sessionStorage dataURL)
+  
   try{
     const av = sessionStorage.getItem("artistsDraft_profileDataUrl");
     const bn = sessionStorage.getItem("artistsDraft_bannerDataUrl");
@@ -156,7 +153,7 @@ async function syncImagesToSession(){
       sessionStorage.removeItem("artistsDraft_bannerDataUrl");
     }
   }catch{
-    // Sessiz geç: preview'da görseller görünmeyebilir.
+  
   }
 }
 

@@ -1,8 +1,4 @@
-/* artists-example.js
-   Okur:
-   - localStorage: artistsDraft_v1 (text/link alanları)
-   - sessionStorage: artistsDraft_profileDataUrl / artistsDraft_bannerDataUrl (foto önizleme)
-*/
+
 
 const LS_KEY = "artistsDraft_v1";
 
@@ -25,7 +21,7 @@ function setImgOrFallback(imgEl, dataUrl, fallbackText){
     imgEl.src = dataUrl;
     return;
   }
-  // fallback: basit placeholder (solid)
+
   imgEl.alt = fallbackText;
 }
 
