@@ -85,7 +85,8 @@ function buildDraft(){
     musicLink: $("musicLink").value.trim(),
     website: $("website").value.trim(),
     phone: $("phone").value.trim(),
-    email: $("email").value.trim()
+    email: $("email").value.trim(),
+    notes: $("notes") ? $("notes").value.trim() : ""
   };
 }
 
@@ -117,7 +118,8 @@ function fillForm(d){
     musicLink: "musicLink",
     website: "website",
     phone: "phone",
-    email: "email"
+    email: "email",
+    notes: "notes"
   };
   Object.entries(map).forEach(([k, id]) => {
     const el = $(id);
@@ -159,7 +161,7 @@ async function syncImagesToSession(){
 }
 
 function attachLive(){
-  const ids = ["artistName","artistCategory","shortText","longText","instagram","youtube","musicLink","website","phone","email"];
+  const ids = ["artistName","artistCategory","shortText","longText","instagram","youtube","musicLink","website","phone","email","notes"];
   ids.forEach((id) => {
     const el = $(id);
     if(!el) return;
