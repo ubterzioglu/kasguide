@@ -300,3 +300,33 @@ textarea{ resize: vertical; }
 input, select, textarea{ max-width: 100%; }
 .topbar__actions{ flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
 .topbar__actions .btn{ white-space: nowrap; }
+
+
+/* ===== Additions for add-artist.html ===== */
+.topbar .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+  padding: 12px 12px;
+}
+
+.brand{
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.brand__title{ white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
+.brand__subtitle{ white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
+
+.page-head{ padding: 14px 0 6px; }
+.page-head h1{ margin: 0; font-size: 1.6rem; font-weight: 900; letter-spacing: -0.01em; }
+.page-head .muted{ max-width: 70ch; }
+
+.help{
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
