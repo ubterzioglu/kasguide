@@ -33,8 +33,8 @@
           const p = JSON.parse(raw);
 
           // Placeholder images for preview (promotional)
-          const placeholder = "./example1.png";
-          const gallery = ["./example1.png","./example2.png","./example3.png","./example4.png","./example5.png"];
+          const placeholder = "./example1-place.png";
+          const gallery = ["./example1-place.png","./example2-place.png","./example3-place.png","./example4-place.png","./example5-place.png"];
 
           // Minimal shape that the renderer expects
           return {
