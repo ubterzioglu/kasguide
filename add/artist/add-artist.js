@@ -131,7 +131,7 @@ btnClearDraft?.addEventListener("click", () => {
 btnPreview?.addEventListener("click", async () => {
   writeDraft();
   await syncImagesToSession();
-  window.open("./example/artists/artists-example.html", "_blank", "noopener");
+  window.open("./add/example/example-artist.html", "_blank", "noopener");
 });
 
 form?.addEventListener("submit", () => {

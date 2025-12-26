@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Önizleme - Kaş Guide</title>
-  <link rel="stylesheet" href="./example.css">
+  <link rel="stylesheet" href="./example-place.css">
 </head>
 <body class="is-preview">
 
@@ -30,12 +30,12 @@
       btn.addEventListener("click", () => {
         try { window.opener && window.opener.focus && window.opener.focus(); } catch(e) {}
         try { window.close(); } catch(e) {}
-        setTimeout(() => { window.location.href = "../ekle.html"; }, 120);
+        setTimeout(() => { window.location.href = "../add-place.html"; }, 120);
       });
     })();
   </script>
 
   <script src="../places/places-data.js"></script>
-  <script src="./example.js"></script>
+  <script src="../example-place/example-place.js"></script>
 </body>
 </html>
