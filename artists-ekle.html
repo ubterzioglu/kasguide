@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaş Guide - Sanatçı Profili Ekle</title>
+  <link rel="stylesheet" href="./artists-ekle.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">
+        <div class="brand__title">Kaş Guide</div>
+        <div class="brand__subtitle">Sanatçı Profili Ekle</div>
+      </div>
+
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="/" aria-label="Ana sayfa">Ana Sayfa</a>
+        <button id="btnPreview" class="btn btn--primary" type="button">Önizleme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <section class="card">
+      <h2 class="card__title">Önemli Bilgilendirme</h2>
+      <ul class="info">
+        <li>Bu platform Kaş'ı sevenler için hazırlanmış gönüllü bir rehberdir.</li>
+        <li>Tüm içerikler ücretsizdir; hiçbir ücret talep edilmez.</li>
+        <li>Sanatçı profilleri incelendikten sonra sitede yayınlanır.</li>
+        <li>Yakında haftalık sahne / program bilgilerini de paylaşabileceğiz.</li>
+        <li>Sorun yaşarsanız: <a href="mailto:sanat@kasguide.de">sanat@kasguide.de</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="card__title">Sanatçı Bilgileri</h2>
+
+      <form id="artistsForm" class="form" method="post" action="/api/artists-submit" enctype="multipart/form-data" novalidate>
+        <div class="grid">
+          <label class="field">
+            <span class="field__label">Sahne Adı / İsim <span class="req">*</span></span>
+            <input name="artistName" id="artistName" type="text" required maxlength="80" placeholder="Örn: Duo Kaş / DJ X / Tattoo by Y" />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Kategori</span>
+            <select name="artistCategory" id="artistCategory">
+              <option value="sanat-sahne" selected>Sanat & Sahne</option>
+              <option value="canli-muzik">Canlı Müzik</option>
+              <option value="dj">DJ</option>
+              <option value="dovme">Dövme</option>
+              <option value="performans">Performans</option>
+              <option value="diger">Diğer</option>
+            </select>
+          </label>
+
+          <label class="field field--full">
+            <span class="field__label">Kısa Tanıtım <span class="req">*</span></span>
+            <textarea name="shortText" id="shortText" required maxlength="220" rows="3"
+              placeholder="Kartlarda gözükecek kısa tanıtım (maks 220 karakter)"></textarea>
+            <span class="field__hint"><span id="shortCount">0</span>/220</span>
+          </label>
+
+          <label class="field field--full">
+            <span class="field__label">Detaylı Tanıtım <span class="req">*</span></span>
+            <textarea name="longText" id="longText" required rows="7"
+              placeholder="Kendinizi daha detaylı anlatın (isteğe göre çok uzun olabilir)"></textarea>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Instagram</span>
+            <input name="instagram" id="instagram" type="url" placeholder="https://instagram.com/..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">YouTube</span>
+            <input name="youtube" id="youtube" type="url" placeholder="https://youtube.com/..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Spotify / SoundCloud</span>
+            <input name="musicLink" id="musicLink" type="url" placeholder="https://open.spotify.com/..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Web Sitesi</span>
+            <input name="website" id="website" type="url" placeholder="https://..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">WhatsApp / Telefon (opsiyonel)</span>
+            <input name="phone" id="phone" type="tel" placeholder="+90 ..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">E-posta (opsiyonel)</span>
+            <input name="email" id="email" type="email" placeholder="ornek@mail.com" />
+          </label>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 class="section-title">Fotoğraflar</h3>
+        <p class="muted">
+          2 adet fotoğraf: <b>profil</b> + <b>banner</b>. Maks. <b>2MB</b> (her dosya). JPG/PNG önerilir.
+        </p>
+
+        <div class="grid">
+          <label class="field">
+            <span class="field__label">Profil Fotoğrafı <span class="req">*</span></span>
+            <input name="profilePhoto" id="profilePhoto" type="file" accept="image/*" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Banner Fotoğrafı <span class="req">*</span></span>
+            <input name="bannerPhoto" id="bannerPhoto" type="file" accept="image/*" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--primary" type="submit">Profili Gönder</button>
+          <button id="btnSaveDraft" class="btn btn--ghost" type="button">Taslağı Kaydet</button>
+          <button id="btnClearDraft" class="btn btn--ghost" type="button">Taslağı Temizle</button>
+        </div>
+
+        <div id="submitMsg" class="submit-msg" hidden></div>
+      </form>
+    </section>
+
+    <aside class="card preview">
+      <div class="preview__header">
+        <h2 class="card__title">Önizleme</h2>
+        <div class="chip">Sanat & Sahne</div>
+      </div>
+
+      <div class="preview__frame">
+        <img id="pvBanner" class="pv__banner" alt="Banner Önizleme" />
+        <div class="pv__body">
+          <img id="pvAvatar" class="pv__avatar" alt="Profil Önizleme" />
+          <div class="pv__meta">
+            <div id="pvName" class="pv__name">Sahne Adı</div>
+            <div id="pvShort" class="pv__short">Kısa tanıtım burada gözükecek.</div>
+            <div class="pv__social" id="pvSocial"></div>
+          </div>
+        </div>
+
+        <div class="pv__note">
+          <b>Not:</b> Yakında haftalık sahne / program bilgilerini de burada göstereceğiz.
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:12px;">
+        Tam sayfa önizleme için üstteki <b>Önizleme</b> butonunu kullanın.
+      </p>
+    </aside>
+  </main>
+
+  <script src="./artists-ekle.js"></script>
+</body>
+</html>
