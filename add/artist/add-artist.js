@@ -16,6 +16,64 @@ const submitMsg = $("submitMsg");
 const shortText = $("shortText");
 const shortCount = $("shortCount");
 
+function setPreview(){
+  // Mini preview (sayfanın sağındaki)
+  const d = readDraft() || buildDraft();
+
+  const pvName = document.getElementById("pvName");
+  const pvShort = document.getElementById("pvShort");
+  const pvSocial = document.getElementById("pvSocial");
+  const pvAvatar = document.getElementById("pvAvatar");
+  const pvBanner = document.getElementById("pvBanner");
+
+  if(pvName) pvName.textContent = d.artistName || "—";
+  if(pvShort) pvShort.textContent = d.shortText || "Kısa tanım burada görünecek.";
+
+  if(pvSocial){
+    pvSocial.innerHTML = "";
+    const links = [
+      ["Instagram", d.instagram],
+      ["YouTube", d.youtube],
+      ["Müzik", d.musicLink],
+      ["Web", d.website],
+    ].filter(([,v]) => !!(v && v.trim()));
+
+    links.slice(0, 4).forEach(([label, href]) => {
+      const a = document.createElement("a");
+      a.href = href.trim();
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = label;
+      pvSocial.appendChild(a);
+    });
+  }
+
+  // Foto önizleme (sessionStorage dataURL)
+  try{
+    const av = sessionStorage.getItem("artistsDraft_profileDataUrl");
+    const bn = sessionStorage.getItem("artistsDraft_bannerDataUrl");
+    if(pvAvatar){
+      if(av){
+        pvAvatar.style.backgroundImage = `url(${av})`;
+        pvAvatar.style.backgroundSize = "cover";
+        pvAvatar.style.backgroundPosition = "center";
+      }else{
+        pvAvatar.style.backgroundImage = "";
+      }
+    }
+    if(pvBanner){
+      if(bn){
+        pvBanner.style.backgroundImage = `url(${bn})`;
+        pvBanner.style.backgroundSize = "cover";
+        pvBanner.style.backgroundPosition = "center";
+      }else{
+        pvBanner.style.backgroundImage = "";
+      }
+    }
+  }catch{ /* ignore */ }
+}
+
+
 function buildDraft(){
   return {
     artistName: $("artistName").value.trim(),
@@ -34,6 +92,7 @@ function buildDraft(){
 function writeDraft(){
   const draft = buildDraft();
   try{ localStorage.setItem(LS_KEY, JSON.stringify(draft)); }catch{}
+  setPreview();
   return draft;
 }
 
@@ -131,12 +190,14 @@ btnClearDraft?.addEventListener("click", () => {
 btnPreview?.addEventListener("click", async () => {
   writeDraft();
   await syncImagesToSession();
-  window.open("../add/artist/example-artist/example-artist.html", "_blank", "noopener");
+  window.open("./example-artist.html", "_blank", "noopener");
 });
 
-form?.addEventListener("submit", () => {
+form?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  writeDraft();
   submitMsg.hidden = false;
-  submitMsg.textContent = "Gönderiliyor... (Başvurunuz incelendikten sonra yayınlanır.)";
+  submitMsg.textContent = "Başvurunuz alındı. (İncelendikten sonra yayınlanır.)";
 });
 
 (function init(){
@@ -144,4 +205,5 @@ form?.addEventListener("submit", () => {
   if(saved) fillForm(saved);
   updateCounter();
   attachLive();
+  setPreview();
 })();
