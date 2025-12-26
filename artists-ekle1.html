@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaş Guide - Sanatçı Profili Ekle</title>
+  <link rel="stylesheet" href="./artists-ekle.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">
+        <div class="brand__title">Kaş Guide</div>
+        <div class="brand__subtitle">Sanatçı Profili Ekle</div>
+      </div>
+
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="/" aria-label="Ana sayfa">Ana Sayfa</a>
+        <button id="btnPreview" class="btn btn--primary" type="button">Önizleme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+    
+    <section class="card">
+      <h2 class="card__title">Bilgilendirme</h2>
+
+      <details class="accordion-item" open>
+        <summary class="section-title">
+          <span class="section-icon icon-glow">✨</span>
+          Kaş Guide Hakkında
+        </summary>
+        <ul class="accordion-content">
+          <li>Kaş Guide, Kaş’ı gerçekten bilenler ve yaşayanlar için hazırlanıyor.</li>
+          <li>Sezona kadar hazır, düzenli ve güvenilir bir rehber oluşturuyoruz.</li>
+          <li>İçerikler, sizin katkılarınızla zamanla oturacak ve zenginleşecek.</li>
+          <li>Esnafla iç içe, yereli destekleyen bir anlayışla hareket ediyoruz.</li>
+          <li>Birlikte Kaş için kalıcı ve faydalı bir rehber oluşturuyoruz.</li>
+          <li>1 Ocak’ta yayındayız.</li>
+        </ul>
+      </details>
+
+      <details class="accordion-item">
+        <summary class="section-title">
+          <span class="section-icon icon-glow">📢</span>
+          Önemli Bilgilendirme
+        </summary>
+        <ul class="accordion-content">
+          <li>Bu platform Kaş'ı sevenler için hazırlanmış gönüllü bir rehberdir.</li>
+          <li>Tüm içerikler tamamen ücretsizdir, hiçbir ücret talep edilmez.</li>
+          <li>Amacımız mekân sahiplerinin kendi bilgilerini doğrudan paylaşabilmesidir.</li>
+          <li>Gönderilen bilgiler ticari bir taahhüt veya reklam zorunluluğu içermez.</li>
+          <li>Paylaşımlar Kaş rehberini daha güncel ve faydalı hale getirir.</li>
+          <li>Mekanınızla ilgili yanlış bilgiler için bize mekan@kasguide.de adresinden ulaşabilirsiniz.</li>
+        </ul>
+      </details>
+
+      <details class="accordion-item">
+        <summary class="section-title">
+          <span class="section-icon icon-glow">🧭</span>
+          Sayfa Hakkında Ufak Bilgiler
+        </summary>
+        <ul class="accordion-content">
+          <li>Girdiğiniz bilgiler incelendikten sonra sitede yayınlanır.</li>
+          <li>Bilgileri ne kadar eksiksiz doldurursanız o kadar çok kişiye ulaşırsınız.</li>
+          <li>Sorun olması durumunda, verdiğiniz iletişim bilgileri üzerinden size ulaşabiliriz.</li>
+          <li>Önizleme butonuyla sayfanızın sitede nasıl görüneceğini görebilirsiniz.</li>
+          <li>Fotoğraflar önizlemede görünmeyebilir; yayınlandıktan sonra görünür.</li>
+          <li>Desteğiniz için teşekkür ederiz!</li>
+        </ul>
+      </details>
+
+      <details class="accordion-item">
+        <summary class="section-title">
+          <span class="section-icon icon-glow">👥</span>
+          Biz kimiz ?
+        </summary>
+        <div class="accordion-content">
+          <p style="margin: 0 0 0.75rem 0;">
+            Biz, uzun yıllardır Kaş’ta yaşayan; Kaş’ı seven, Kaş’a gönül vermiş, Kaş’ın sorunlarına duyarlı,
+            hayvansever ve doğasever küçük bir ekibiz. Kaş Guide’ın ilk yılında, tarafsızlığımızı ve objektifliğimizi
+            korumak adına anonim kalmayı tercih ediyoruz. Bu sayfayı doldurarak bize destek olduğunuz için teşekkür ederiz.
+          </p>
+
+          <div class="contact-line" style="margin: 0.35rem 0;">
+            <span>📸 Instagram:</span>
+            <a href="https://instagram.com/guidekas" target="_blank" rel="noopener">@guidekas</a>
+          </div>
+
+          <div class="contact-line" style="margin: 0.35rem 0 0.75rem 0;">
+            <span>✉️ E-posta:</span>
+            <a href="mailto:mekan@kasguide.de">mekan@kasguide.de</a>
+          </div>
+
+          <div><strong>Kaş Guide Ekibi</strong></div>
+        </div>
+      </details>
+    </section>
+
+<section class="card">
+      <h2 class="card__title">Sanatçı Bilgileri</h2>
+
+      <form id="artistsForm" class="form" method="post" action="/api/artists-submit" enctype="multipart/form-data" novalidate>
+        <div class="grid">
+          <label class="field">
+            <span class="field__label">Sahne Adı / İsim <span class="req">*</span></span>
+            <input name="artistName" id="artistName" type="text" required maxlength="80" placeholder="Örn: Duo Kaş / DJ X / Tattoo by Y" />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Kategori</span>
+            <select name="artistCategory" id="artistCategory">
+              <option value="sanat-sahne" selected>Sanat & Sahne</option>
+              <option value="canli-muzik">Canlı Müzik</option>
+              <option value="dj">DJ</option>
+              <option value="dovme">Dövme</option>
+              <option value="performans">Performans</option>
+              <option value="diger">Diğer</option>
+            </select>
+          </label>
+
+          <label class="field field--full">
+            <span class="field__label">Kısa Tanıtım <span class="req">*</span></span>
+            <textarea name="shortText" id="shortText" required maxlength="220" rows="3"
+              placeholder="Kartlarda gözükecek kısa tanıtım (maks 220 karakter)"></textarea>
+            <span class="field__hint"><span id="shortCount">0</span>/220</span>
+          </label>
+
+          <label class="field field--full">
+            <span class="field__label">Detaylı Tanıtım <span class="req">*</span></span>
+            <textarea name="longText" id="longText" required rows="7"
+              placeholder="Kendinizi daha detaylı anlatın (isteğe göre çok uzun olabilir)"></textarea>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Instagram</span>
+            <input name="instagram" id="instagram" type="url" placeholder="https://instagram.com/..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">YouTube</span>
+            <input name="youtube" id="youtube" type="url" placeholder="https://youtube.com/..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Spotify / SoundCloud</span>
+            <input name="musicLink" id="musicLink" type="url" placeholder="https://open.spotify.com/..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Web Sitesi</span>
+            <input name="website" id="website" type="url" placeholder="https://..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">WhatsApp / Telefon (opsiyonel)</span>
+            <input name="phone" id="phone" type="tel" placeholder="+90 ..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">E-posta (opsiyonel)</span>
+            <input name="email" id="email" type="email" placeholder="ornek@mail.com" />
+          </label>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 class="section-title">Fotoğraflar</h3>
+        <p class="muted">
+          2 adet fotoğraf: <b>profil</b> + <b>banner</b>. Maks. <b>2MB</b> (her dosya). JPG/PNG önerilir.
+        </p>
+
+        <div class="grid">
+          <label class="field">
+            <span class="field__label">Profil Fotoğrafı <span class="req">*</span></span>
+            <input name="profilePhoto" id="profilePhoto" type="file" accept="image/*" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Banner Fotoğrafı <span class="req">*</span></span>
+            <input name="bannerPhoto" id="bannerPhoto" type="file" accept="image/*" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--primary" type="submit">Profili Gönder</button>
+          <button id="btnSaveDraft" class="btn btn--ghost" type="button">Taslağı Kaydet</button>
+          <button id="btnClearDraft" class="btn btn--ghost" type="button">Taslağı Temizle</button>
+        </div>
+
+        <div id="submitMsg" class="submit-msg" hidden></div>
+      </form>
+    </section>
+</main>
+
+  <script src="./artists-ekle.js"></script>
+</body>
+</html>

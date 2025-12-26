@@ -1,3 +1,5 @@
+@import url("./style.css");
+
 /* artists-ekle.css
    Amaç: Modüler, kısa, okunur. Renk/palet daha sonra Kaş Guide paletine göre güncellenebilir. */
 
@@ -24,7 +26,7 @@ body{
 }
 
 a{ color: #fff; }
-.container{ width:min(1100px, 92vw); margin:0 auto; }
+.container{ width: min(1100px, 96vw); margin: 0 auto; padding: 0 12px; }
 
 .topbar{
   position: sticky;
@@ -34,21 +36,15 @@ a{ color: #fff; }
   background: rgba(0,0,0,0.12);
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-.topbar .container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 0;
-  gap: 14px;
-}
+.topbar .container{ width: min(1100px, 96vw); margin: 0 auto; padding: 0 12px; }
 .brand__title{ font-weight:800; font-size: 1.2rem; }
 .brand__subtitle{ opacity:0.9; font-size:0.95rem; margin-top:2px; }
 
 .topbar__actions{ display:flex; gap:10px; flex-wrap:wrap; }
 
 .layout{
-  display:grid;
-  grid-template-columns: 1fr 420px;
+  display:flex;
+  flex-direction:column;
   gap: 18px;
   padding: 18px 0 40px;
 }
@@ -78,7 +74,7 @@ a{ color: #fff; }
 .form{ display:block; }
 .grid{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
   gap: 12px;
 }
 .field{ display:flex; flex-direction:column; gap:6px; }
@@ -215,3 +211,9 @@ textarea{ resize: vertical; }
 @media (max-width: 640px){
   .grid{ grid-template-columns: 1fr; }
 }
+
+/* Overflow fixes */
+.grid > *{ min-width: 0; }
+input, select, textarea{ max-width: 100%; }
+.topbar__actions{ flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+.topbar__actions .btn{ white-space: nowrap; }

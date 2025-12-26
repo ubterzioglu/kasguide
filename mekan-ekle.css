@@ -51,10 +51,7 @@
       padding: 0;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+    .container{ width: min(1100px, 96vw); margin: 0 auto; padding: 0 12px; }
 
     .form-card {
       background: linear-gradient(180deg, color-mix(in srgb, var(--kas-indigo) 10%, transparent), #ffffff 45%);
@@ -243,10 +240,10 @@
       .page-wrap { padding: 1.25rem 0.75rem; }
 
       .form-header { padding: 1.5rem; }
-      .form-header h1 { font-size: 1.5rem; }
+      .form-header h1 { font-size: 1.45rem; }
 
       .form-body { padding: 1.25rem; }
-      .form-section { padding: 0.9rem 0; }
+      .form-section { padding: 0.6rem 0; }
     }
 
     .header {
@@ -587,16 +584,35 @@ details.photo-guide li{ margin: 6px 0; }
 
 .accordion-outer .accordion-content{
   margin: 0;
-  padding: 0 1.25rem 1.1rem 3.2rem;
+  padding: 0 1.15rem 1.0rem 3.0rem;
   color: var(--gray-800);
-  line-height: 1.75;
+  line-height: 1.65;
+  font-size: 0.98rem;
 }
 
 @media (max-width: 640px){
+  /* Accordion: daha ferah + daha küçük tipografi */
   .accordion-outer .section-title{
-    padding: 0.95rem 1rem;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.98rem;
+    line-height: 1.25;
   }
+  .accordion-outer .section-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  .accordion-outer summary::after{
+    font-size: 1.1rem;
+  }
+
   .accordion-outer .accordion-content{
-    padding: 0 1rem 1rem 2.8rem;
+    padding: 0 0.9rem 0.85rem 2.55rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  .accordion-outer .accordion-content li{
+    margin: 0.38rem 0;
   }
 }
