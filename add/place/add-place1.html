@@ -1,0 +1,388 @@
+<!-- add-place.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mekanınızı Ekleyin - Kaş Guide</title>
+  <link rel="stylesheet" href="add-place1.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <div class="container">
+      <div class="form-card">
+        <div class="form-header">
+          <h1>Mekanınızı Ekleyin!</h1>
+          <p>Kaş'taki işletmenizi rehberimize ekleyin ve binlerce gezgine ulaşın.</p>
+        </div>
+
+        <div class="form-body">
+
+          <!-- Important Info Accordion -->
+          <details class="accordion-item accordion info-acc" open>
+            <summary class="section-title">
+              <span class="section-icon icon-glow">📢</span>
+              Önemli Bilgilendirme
+            </summary>
+
+            <div class="accordion-content">
+              <ul class="info-list">
+                <li>Bu platform Kaş'ı sevenler için hazırlanmış gönüllü bir rehberdir.</li>
+                <li>Tüm içerikler tamamen ücretsizdir, hiçbir ücret talep edilmez.</li>
+                <li>Amacımız mekân sahiplerinin kendi bilgilerini doğrudan paylaşabilmesidir.</li>
+                <li>Gönderilen bilgiler ticari bir taahhüt veya reklam zorunluluğu içermez.</li>
+                <li>Paylaşımlar Kaş rehberini daha güncel ve faydalı hale getirir.</li>
+                <li>Mekanınızla ilgili yanlış bilgiler için bize mekan@kasguide.de adresinden ulaşabilirsiniz.</li>
+              </ul>
+
+              <div class="info-note">
+                <strong>Not:</strong> Girdiğiniz bilgiler tarafımızda incelendikten sonra sitede yayınlanır.
+                Bilgilerinizi ne kadar eksiksiz doldurursanız o kadar çok kişiye ulaşırsınız.
+              </div>
+            </div>
+          </details>
+
+          <form id="venueForm" class="venue-form" enctype="multipart/form-data">
+
+            <!-- Temel Bilgiler -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon">📝</span>
+                Temel Bilgiler
+              </h3>
+
+              <div class="form-group">
+                <label class="form-label">Mekan Adı<span class="required">*</span></label>
+                <input type="text" class="form-input" name="title" placeholder="Örn: Kaputaş Plajı" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Konum</label>
+                  <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Mesafe (Kaş'a)</label>
+                  <input type="text" class="form-input" name="distance" placeholder="Örn: 7 km">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kısa Açıklama</label>
+                <textarea class="form-textarea" name="description" placeholder="Mekanınızı kısaca tanıtın (1-2 cümle)"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Detaylı Açıklama<span class="required">*</span></label>
+                <textarea class="form-textarea" name="longText" placeholder="Mekanınız hakkında detaylı bilgi verin (özellikler, hizmetler, öneriler vb.)" style="min-height: 180px;" required></textarea>
+              </div>
+            </div>
+
+            <hr class="form-sep">
+
+            <!-- Kategoriler -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon">🏷️</span>
+                Kategoriler<span class="required">*</span>
+              </h3>
+              <p class="form-hint" style="margin-bottom: 1rem;">Mekanınız için uygun kategorileri seçin (birden fazla seçebilirsiniz)</p>
+
+              <div class="category-grid">
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-places" name="category" value="places" class="category-checkbox">
+                  <label for="cat-places" class="category-label">
+                    <span class="category-icon">📍</span>
+                    <span class="category-name">Gezi</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-beaches" name="category" value="beaches" class="category-checkbox">
+                  <label for="cat-beaches" class="category-label">
+                    <span class="category-icon">🏖️</span>
+                    <span class="category-name">Plaj</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-activities" name="category" value="activities" class="category-checkbox">
+                  <label for="cat-activities" class="category-label">
+                    <span class="category-icon">🧗</span>
+                    <span class="category-name">Aktivite</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-food" name="category" value="food" class="category-checkbox">
+                  <label for="cat-food" class="category-label">
+                    <span class="category-icon">🍽️</span>
+                    <span class="category-name">Restoran</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-hotels" name="category" value="hotels" class="category-checkbox">
+                  <label for="cat-hotels" class="category-label">
+                    <span class="category-icon">🏨</span>
+                    <span class="category-name">Otel</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-history" name="category" value="history" class="category-checkbox">
+                  <label for="cat-history" class="category-label">
+                    <span class="category-icon">🏛️</span>
+                    <span class="category-name">Tarih</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-nature" name="category" value="nature" class="category-checkbox">
+                  <label for="cat-nature" class="category-label">
+                    <span class="category-icon">🌿</span>
+                    <span class="category-name">Doğa</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-shopping" name="category" value="shopping" class="category-checkbox">
+                  <label for="cat-shopping" class="category-label">
+                    <span class="category-icon">🛍️</span>
+                    <span class="category-name">Çarşı</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-breakfast" name="category" value="breakfast" class="category-checkbox">
+                  <label for="cat-breakfast" class="category-label">
+                    <span class="category-icon">🥐</span>
+                    <span class="category-name">Kahvaltı</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-faqspecial" name="category" value="faqspecial" class="category-checkbox">
+                  <label for="cat-faqspecial" class="category-label">
+                    <span class="category-icon">❓</span>
+                    <span class="category-name">Özel Soru Serileri</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-meyhane" name="category" value="meyhane" class="category-checkbox">
+                  <label for="cat-meyhane" class="category-label">
+                    <span class="category-icon">🥂</span>
+                    <span class="category-name">Meyhane</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-bar" name="category" value="bar" class="category-checkbox">
+                  <label for="cat-bar" class="category-label">
+                    <span class="category-icon">🍸</span>
+                    <span class="category-name">Bar</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-cafe" name="category" value="cafe" class="category-checkbox">
+                  <label for="cat-cafe" class="category-label">
+                    <span class="category-icon">☕</span>
+                    <span class="category-name">Cafe</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-diving" name="category" value="diving" class="category-checkbox">
+                  <label for="cat-diving" class="category-label">
+                    <span class="category-icon">🤿</span>
+                    <span class="category-name">Dalış</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-articles" name="category" value="articles" class="category-checkbox">
+                  <label for="cat-articles" class="category-label">
+                    <span class="category-icon">📰</span>
+                    <span class="category-name">Yazılar</span>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+
+            <hr class="form-sep">
+
+            <!-- Fotoğraflar -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon">📸</span>
+                Fotoğraflar
+              </h3>
+
+              <div class="form-group">
+                <label class="form-label">Fotoğraf Yükle (maks. 5 adet, her biri max 2 MB)</label>
+                <input type="file" class="form-input" name="photos" accept="image/*" multiple>
+                <p class="form-hint">Fotoğraflar incelendikten sonra sitede yayınlanır. İsterseniz daha sonra tekrar güncelleyebilirsiniz.</p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kapak Fotoğrafı Seçimi</label>
+                <select class="form-select" name="coverIndex">
+                  <option value="">Otomatik seçilsin</option>
+                  <option value="0">1. fotoğraf</option>
+                  <option value="1">2. fotoğraf</option>
+                  <option value="2">3. fotoğraf</option>
+                  <option value="3">4. fotoğraf</option>
+                  <option value="4">5. fotoğraf</option>
+                </select>
+              </div>
+            </div>
+
+            <hr class="form-sep">
+
+            <!-- Ek Bilgiler -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon">ℹ️</span>
+                Ek Bilgiler
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Ortalama Fiyat</label>
+                  <input type="text" class="form-input" name="price" placeholder="Örn: 250₺">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Çalışma Saatleri</label>
+                  <input type="text" class="form-input" name="hours" placeholder="Örn: 09:00 - 23:00">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Telefon</label>
+                  <input type="text" class="form-input" name="phone" placeholder="+90 ...">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Website</label>
+                  <input type="url" class="form-input" name="website" placeholder="https://...">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Instagram</label>
+                  <input type="text" class="form-input" name="instagram" placeholder="@...">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Google Maps Link</label>
+                  <input type="url" class="form-input" name="maps" placeholder="https://maps.google.com/...">
+                </div>
+              </div>
+            </div>
+
+            <hr class="form-sep">
+
+            <!-- İletişaim Bilgileri -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon">📞</span>
+                İletişim Bilgileri
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Ad Soyad</label>
+                  <input type="text" class="form-input" name="ownerName" placeholder="Örn: Ahmet Yılmaz">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">E-posta<span class="required">*</span></label>
+                  <input type="email" class="form-input" name="email" placeholder="ornek@mail.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Not (opsiyonel)</label>
+                <textarea class="form-textarea" name="contactNote" placeholder="Sizinle nasıl iletişime geçelim?"></textarea>
+              </div>
+            </div>
+
+            <hr class="form-sep">
+
+            <!-- Özel Notlar -->
+            <div class="form-section">
+              <h3 class="section-title">
+                <span class="section-icon">📝</span>
+                Bize iletmek istediğiniz ek notlar
+              </h3>
+
+              <div class="form-group">
+                <label class="form-label">Notlar</label>
+                <textarea class="form-textarea" name="notes" placeholder="Örn: Haftalık programlarımızı ayrıca paylaşmak isteriz..." style="min-height: 140px;"></textarea>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="submit-section">
+              <button type="submit" class="submit-button">
+                🚀 Başvuruyu Gönder
+              </button>
+
+              <p class="form-hint" style="text-align: center; margin-top: 0.25rem;">
+                Başvurunuzu gönderdikten sonra en geç 5 iş günü içinde size dönüş yapacağız.
+              </p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('venueForm');
+
+    // basic, existing submit behavior (no changes intended here)
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch('/api/venue-submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!res.ok) throw new Error('Submit failed');
+
+        alert('Başvurunuz alındı! Teşekkürler.');
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+      }
+    });
+  </script>
+
+</body>
+</html>
