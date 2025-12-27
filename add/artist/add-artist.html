@@ -107,15 +107,6 @@
 
     <!-- FORM -->
     <section class="card">
-
-      <div class="success-message" id="successMessage">
-        <div class="success-icon">✅</div>
-        <h3>Başvurunuz Alındı!</h3>
-        <p>Sanatçı profilinizi inceliyoruz. Uygun görüldüğünde sitede yayınlayacağız.</p>
-        <p>Desteğiniz için teşekkür ederiz. Saygılarımızla.</p>
-        <p>Kaş Guide</p>
-      </div>
-
       <form id="artistsForm" class="form" novalidate>
 
         <!-- Temel Bilgiler -->
@@ -250,15 +241,7 @@
                   </label>
                 </div>
 
-                
                 <div class="category-option">
-                  <input type="checkbox" id="cat-fotograf" name="artistCategory" value="Fotoğraf" class="category-checkbox">
-                  <label for="cat-fotograf" class="category-label">
-                    <span class="category-icon">📷</span>
-                    <span class="category-name">Fotoğraf</span>
-                  </label>
-                </div>
-<div class="category-option">
                   <input type="checkbox" id="cat-diger" name="artistCategory" value="Diğer" class="category-checkbox">
                   <label for="cat-diger" class="category-label">
                     <span class="category-icon">✨</span>
@@ -278,9 +261,9 @@
             </div>
 
             <div class="field field--full">
-              <label for="longText">Detaylı Açıklama <span class="muted">(isteğe bağlı)</span></label>
-              <textarea id="longText" name="longText" rows="6"
-                placeholder="İsterseniz kendinizi daha detaylı anlatın (tarzınız, repertuvarınız, hizmetleriniz, sahne/çalışma düzeniniz vb.)"></textarea>
+              <label for="longText">Detaylı Açıklama <span class="req">*</span></label>
+              <textarea id="longText" name="longText" rows="6" required
+                placeholder="Mekanınız hakkında detaylı bilgi verin (özellikler, hizmetler, öneriler vb.)"></textarea>
             </div>
           </div>
         </section>
@@ -338,8 +321,8 @@
 
           <div class="grid">
             <div class="field">
-              <label for="instagram">Instagram <span class="req">*</span></label>
-              <input id="instagram" name="instagram" type="url" inputmode="url" placeholder="https://instagram.com/..." / required >
+              <label for="instagram">Instagram</label>
+              <input id="instagram" name="instagram" type="url" inputmode="url" placeholder="https://instagram.com/..." />
             </div>
 
             <div class="field">
@@ -400,10 +383,7 @@
           <button type="submit" class="btn btn--wide btn--submit">🚀 Başvuruyu Gönder</button>
         </div>
 
-        <div class="form-footnote">Başvurunuzu gönderdikten sonra en geç 5 iş günü içinde size dönüş yapacağız. </div>
-
-
-        <div class="form-footnote">build by kasguideteam-2712251237-v5.0-stable </div>
+        <div class="form-footnote">Başvurunuzu gönderdikten sonra en geç 5 iş günü< içinde size dönüş yapacağız.</div>
 
         <div id="submitMsg" class="submit-msg" hidden></div>
       </form>

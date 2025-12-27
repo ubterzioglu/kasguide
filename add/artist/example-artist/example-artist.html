@@ -11,39 +11,35 @@
     <section class="card">
       <div class="hero">
         <img id="banner" class="hero__banner" alt="Banner" />
-        <div class="hero__overlay"></div>
-        <div class="hero__content">
-          <img id="avatar" class="hero__avatar" alt="Profil" />
-          <div class="hero__meta">
-            <div id="cats" class="cats"></div>
-            <h1 id="name" class="hero__name">Sahne Adı</h1>
-            <p id="shortText" class="hero__short">Kısa tanıtım burada gözükecek.</p>
-            <div class="social">
-              <a id="sInstagram" class="social-btn" href="#" target="_blank" rel="noopener" aria-label="Instagram" aria-disabled="true">
-                <span class="social-ico" aria-hidden="true">📷</span>
-              </a>
-              <a id="sYouTube" class="social-btn" href="#" target="_blank" rel="noopener" aria-label="YouTube" aria-disabled="true">
-                <span class="social-ico" aria-hidden="true">▶️</span>
-              </a>
-              <a id="sMusic" class="social-btn" href="#" target="_blank" rel="noopener" aria-label="Müzik Linki" aria-disabled="true">
-                <span class="social-ico" aria-hidden="true">🎵</span>
-              </a>
-              <a id="sWeb" class="social-btn" href="#" target="_blank" rel="noopener" aria-label="Web Sitesi" aria-disabled="true">
-                <span class="social-ico" aria-hidden="true">🌐</span>
-              </a>
-            </div>
+        <div class="hero__frame">
+          <div class="hero__avatar-wrap">
+            <img id="avatar" class="hero__avatar" alt="Profil" />
           </div>
+        </div>
+      </div>
+
+      <!-- Banner altı bilgi (Hakkımda'nın üstünde) -->
+      <div class="info">
+        <h1 id="name" class="info__name">Sahne Adı</h1>
+        <div id="tags" class="tags" aria-label="Kategoriler"></div>
+        <p id="shortText" class="info__short">Kısa tanıtım burada gözükecek.</p>
+
+        <div class="social" aria-label="Sosyal bağlantılar">
+          <a id="socialInstagram" class="social-btn" href="#" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a id="socialYoutube" class="social-btn" href="#" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+          <a id="socialMusic" class="social-btn" href="#" target="_blank" rel="noopener" aria-label="Müzik">♪</a>
+          <a id="socialWeb" class="social-btn" href="#" target="_blank" rel="noopener" aria-label="Web">🌐</a>
         </div>
       </div>
 
       <div class="content">
         <h2>Hakkımda</h2>
         <p id="longText" class="long">Detaylı tanıtım burada gözükecek.</p>
-        <div id="notesWrap" class="notes" hidden>
-          <h3>Notlar</h3>
-          <p id="notes" class="notes__text"></p>
-        </div>
 
+        <div id="notesWrap" class="notes" hidden>
+          <h2>Notlar</h2>
+          <p id="notes" class="long">Notlar burada gözükecek.</p>
+        </div>
 
         <div class="note">
           <b>Yakında:</b> Haftalık sahne / program bilgilerini de burada göstereceğiz.
