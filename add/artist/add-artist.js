@@ -12,6 +12,7 @@ const btnPreview = $("btnPreview");
 const btnSaveDraft = $("btnSaveDraft");
 const btnClearDraft = $("btnClearDraft");
 const submitMsg = $("submitMsg");
+const successMessage = $("successMessage");
 
 const shortText = $("shortText");
 const shortCount = $("shortCount");
@@ -241,27 +242,80 @@ btnPreview?.addEventListener("click", async () => {
   window.open("./example-artist/example-artist.html", "_blank", "noopener");
 });
 
-form?.addEventListener("submit", (e) => {
+form?.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  // 1) Zorunlu: en az 1 kategori
   const cats = getSelectedCategories();
   const catError = document.getElementById("catError");
 
-  if(!cats.length){
-    if(catError) catError.textContent = "Lütfen en az 1 kategori seçin.";
-    submitMsg.hidden = false;
-    submitMsg.textContent = "Kategori seçimi eksik. Lütfen en az 1 kategori seçin.";
+  if (!cats.length) {
+    if (catError) catError.textContent = "Lütfen en az 1 kategori seçin.";
+    if (submitMsg) {
+      submitMsg.hidden = false;
+      submitMsg.textContent = "Kategori seçimi eksik. Lütfen en az 1 kategori seçin.";
+    }
     document.getElementById("artistCategories")?.scrollIntoView({ behavior: "smooth", block: "center" });
     return;
-  }else{
-    if(catError) catError.textContent = "";
+  } else {
+    if (catError) catError.textContent = "";
   }
 
-  writeDraft();
-  submitMsg.hidden = false;
-  submitMsg.textContent = "Başvurunuz alındı. (İncelendikten sonra yayınlanır.)";
-});
+  // 2) UI: butonu kilitle
+  const submitBtn = form.querySelector('button[type="submit"]');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.dataset.originalText = submitBtn.innerText;
+    submitBtn.innerText = "Gönderiliyor...";
+  }
 
+  // 3) Draft kaydet (kullanıcı geri dönerse form dolu kalsın)
+  writeDraft();
+
+  // 4) Backend'e gönder
+  const formData = new FormData(form);
+
+  try {
+    const res = await fetch("/api/artists-submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    // Vercel API bazen text döner; güvenli okuyalım
+    const text = await res.text();
+    let data = null;
+    try { data = JSON.parse(text); } catch {}
+
+    if (!res.ok) {
+      const msg = (data && (data.error || data.message)) || text || "Sunucu hatası";
+      throw new Error(msg);
+    }
+
+    // 5) Başarılı: üstte mesaj + scroll up + formu gizle
+    if (successMessage) successMessage.classList.add("show");
+    if (submitMsg) submitMsg.hidden = true;
+
+    form.classList.add("is-hidden"); // CSS'de display:none vereceğiz
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // İstersen draft'ı temizle (başarıyla gönderildiyse mantıklı)
+    try { localStorage.removeItem(LS_KEY); } catch {}
+  } catch (err) {
+    // Hata: kullanıcıya net göster
+    if (submitMsg) {
+      submitMsg.hidden = false;
+      submitMsg.textContent =
+        "Başvuru gönderilemedi. " + (err?.message || "Sunucu hatası");
+    } else {
+      alert("Başvuru gönderilemedi.\n\n" + (err?.message || "Sunucu hatası"));
+    }
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerText = submitBtn.dataset.originalText || "🚀 Başvuruyu Gönder";
+    }
+  }
+});
 (function init(){
   const saved = readDraft();
   if(saved) fillForm(saved);
