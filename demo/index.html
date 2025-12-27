@@ -415,6 +415,64 @@
         line-height: 1.35;
       }
     }
+
+@media (max-width: 768px) {
+
+  /* Detay linki küçük, ama tıklanabilir */
+  .cta-details {
+    width: 100%;
+  }
+
+  .cta-more {
+    list-style: none;
+    cursor: pointer;
+    font-size: 0.72rem;
+    font-weight: 700;
+    opacity: 0.9;
+    margin-top: -4px; /* ekstra yer yemesin */
+  }
+
+  /* default: açıklama 1 satır teaser */
+  .cta-details .cta-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;      /* 1 satır */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* açılınca: clamp kalksın, tam metin görünsün */
+  .cta-details[open] .cta-description {
+    display: block;
+    overflow: visible;
+    margin-top: 6px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </style>
 </head>
 
@@ -448,10 +506,27 @@
         <a href="https://kasguide.de/add/place/add-place.html" class="cta-btn">
           🪸 Mekan Ekle
         </a>
+<details class="cta-details">
+  <summary class="cta-more">Detay</summary>
+
+
         <div class="cta-description">
           Kendi mekanını ekle! Başkasının mekanını öner! Desteğin için teşekkürler!
         </div>
+</details>
+
       </div>
+
+
+
+
+
+
+
+
+
+
+
 
       <div class="cta-item">
         <a href="https://kasguide.de/add/artist/add-artist.html" class="cta-btn">
