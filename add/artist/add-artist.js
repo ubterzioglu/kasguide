@@ -74,10 +74,16 @@ function setPreview(){
 }
 
 
+function getSelectedCategories(){
+  return Array.from(document.querySelectorAll('input[name="artistCategory"]:checked'))
+    .map((el) => (el.value || "").toString().trim())
+    .filter(Boolean);
+}
+
 function buildDraft(){
   return {
     artistName: $("artistName").value.trim(),
-    artistCategory: $("artistCategory").value,
+    artistCategory: getSelectedCategories(), // artık dropdown değil, çoklu seçim
     shortText: $("shortText").value.trim(),
     longText: $("longText").value.trim(),
     instagram: $("instagram").value.trim(),
@@ -108,9 +114,10 @@ function readDraft(){
 
 function fillForm(d){
   if(!d) return;
+
+  // normal alanlar
   const map = {
     artistName: "artistName",
-    artistCategory: "artistCategory",
     shortText: "shortText",
     longText: "longText",
     instagram: "instagram",
@@ -121,9 +128,19 @@ function fillForm(d){
     email: "email",
     notes: "notes"
   };
+
   Object.entries(map).forEach(([k, id]) => {
     const el = $(id);
     if(el && d[k] !== undefined) el.value = d[k];
+  });
+
+  // kategoriler (checkbox)
+  const selected = Array.isArray(d.artistCategory)
+    ? d.artistCategory
+    : (d.artistCategory ? [String(d.artistCategory)] : []);
+
+  document.querySelectorAll('input[name="artistCategory"]').forEach((el) => {
+    el.checked = selected.includes(el.value);
   });
 }
 
@@ -171,11 +188,17 @@ async function syncImagesToSession(){
 }
 
 function attachLive(){
-  const ids = ["artistName","artistCategory","shortText","longText","instagram","youtube","musicLink","website","phone","email","notes"];
+  const ids = ["artistName","shortText","longText","instagram","youtube","musicLink","website","phone","email","notes"];
   ids.forEach((id) => {
     const el = $(id);
     if(!el) return;
     el.addEventListener("input", () => { updateCounter(); writeDraft(); });
+    el.addEventListener("change", () => { writeDraft(); });
+  });
+
+
+  // kategori checkbox'ları
+  document.querySelectorAll('input[name="artistCategory"]').forEach((el) => {
     el.addEventListener("change", () => { writeDraft(); });
   });
 
@@ -200,6 +223,19 @@ btnClearDraft?.addEventListener("click", () => {
 });
 
 btnPreview?.addEventListener("click", async () => {
+  // Önizleme için de kategori şartı koyalım (add-place gibi)
+  const cats = getSelectedCategories();
+  const catError = document.getElementById("catError");
+  if(!cats.length){
+    if(catError) catError.textContent = "Lütfen en az 1 kategori seçin.";
+    submitMsg.hidden = false;
+    submitMsg.textContent = "Önizleme için kategori seçimi gerekli.";
+    document.getElementById("artistCategories")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }else{
+    if(catError) catError.textContent = "";
+  }
+
   writeDraft();
   await syncImagesToSession();
   window.open("./example-artist/example-artist.html", "_blank", "noopener");
@@ -207,6 +243,20 @@ btnPreview?.addEventListener("click", async () => {
 
 form?.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  const cats = getSelectedCategories();
+  const catError = document.getElementById("catError");
+
+  if(!cats.length){
+    if(catError) catError.textContent = "Lütfen en az 1 kategori seçin.";
+    submitMsg.hidden = false;
+    submitMsg.textContent = "Kategori seçimi eksik. Lütfen en az 1 kategori seçin.";
+    document.getElementById("artistCategories")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }else{
+    if(catError) catError.textContent = "";
+  }
+
   writeDraft();
   submitMsg.hidden = false;
   submitMsg.textContent = "Başvurunuz alındı. (İncelendikten sonra yayınlanır.)";

@@ -122,19 +122,135 @@
               <input id="artistName" name="artistName" type="text" autocomplete="organization" required placeholder="Örn: Kas Acoustic Trio" />
             </div>
 
-            <div class="field">
-              <label for="artistCategory">Kategori <span class="req">*</span></label>
-              <select id="artistCategory" name="artistCategory" required>
-                <option value="" selected disabled>Seçiniz…</option>
-                <option value="Müzisyen">Müzisyen</option>
-                <option value="Grup">Grup</option>
-                <option value="DJ">DJ</option>
-                <option value="Tiyatro">Tiyatro</option>
-                <option value="Stand-up">Stand-up</option>
-                <option value="Dans">Dans</option>
-                <option value="Koro">Koro</option>
-                <option value="Diğer">Diğer</option>
-              </select>
+            <div class="field field--full">
+              <div class="cats-head">
+                <div class="cats-title">Kategoriler <span class="req">*</span></div>
+                <div class="cats-hint">En az 1 kategori seçin.</div>
+              </div>
+
+              <div class="category-grid" id="artistCategories">
+                <div class="category-option">
+                  <input type="checkbox" id="cat-muzisyen" name="artistCategory" value="Müzisyen" class="category-checkbox">
+                  <label for="cat-muzisyen" class="category-label">
+                    <span class="category-icon">🎤</span>
+                    <span class="category-name">Müzisyen</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-grup" name="artistCategory" value="Grup" class="category-checkbox">
+                  <label for="cat-grup" class="category-label">
+                    <span class="category-icon">👥</span>
+                    <span class="category-name">Grup</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-dj" name="artistCategory" value="DJ" class="category-checkbox">
+                  <label for="cat-dj" class="category-label">
+                    <span class="category-icon">🎧</span>
+                    <span class="category-name">DJ</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-tiyatro" name="artistCategory" value="Tiyatro" class="category-checkbox">
+                  <label for="cat-tiyatro" class="category-label">
+                    <span class="category-icon">🎭</span>
+                    <span class="category-name">Tiyatro</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-standup" name="artistCategory" value="Stand-Up" class="category-checkbox">
+                  <label for="cat-standup" class="category-label">
+                    <span class="category-icon">🎙️</span>
+                    <span class="category-name">Stand-Up</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-dans" name="artistCategory" value="Dans" class="category-checkbox">
+                  <label for="cat-dans" class="category-label">
+                    <span class="category-icon">💃</span>
+                    <span class="category-name">Dans</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-koro" name="artistCategory" value="Koro" class="category-checkbox">
+                  <label for="cat-koro" class="category-label">
+                    <span class="category-icon">🎶</span>
+                    <span class="category-name">Koro</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-dovme" name="artistCategory" value="Dövme" class="category-checkbox">
+                  <label for="cat-dovme" class="category-label">
+                    <span class="category-icon">🖋️</span>
+                    <span class="category-name">Dövme</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-karikatur" name="artistCategory" value="Karikatür" class="category-checkbox">
+                  <label for="cat-karikatur" class="category-label">
+                    <span class="category-icon">✏️</span>
+                    <span class="category-name">Karikatür</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-resim" name="artistCategory" value="Resim" class="category-checkbox">
+                  <label for="cat-resim" class="category-label">
+                    <span class="category-icon">🎨</span>
+                    <span class="category-name">Resim</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-sinema" name="artistCategory" value="Sinema" class="category-checkbox">
+                  <label for="cat-sinema" class="category-label">
+                    <span class="category-icon">🎬</span>
+                    <span class="category-name">Sinema</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-seramik" name="artistCategory" value="Seramik" class="category-checkbox">
+                  <label for="cat-seramik" class="category-label">
+                    <span class="category-icon">🏺</span>
+                    <span class="category-name">Seramik</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-taki" name="artistCategory" value="Takı Tasarımı" class="category-checkbox">
+                  <label for="cat-taki" class="category-label">
+                    <span class="category-icon">💍</span>
+                    <span class="category-name">Takı Tasarımı</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-sosyalmedya" name="artistCategory" value="Sosyal Medya" class="category-checkbox">
+                  <label for="cat-sosyalmedya" class="category-label">
+                    <span class="category-icon">📱</span>
+                    <span class="category-name">Sosyal Medya</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-diger" name="artistCategory" value="Diğer" class="category-checkbox">
+                  <label for="cat-diger" class="category-label">
+                    <span class="category-icon">✨</span>
+                    <span class="category-name">Diğer</span>
+                  </label>
+                </div>
+              </div>
+
+              <div id="catError" class="cat-error" aria-live="polite"></div>
             </div>
 
             <div class="field field--full">
