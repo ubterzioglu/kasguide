@@ -44,7 +44,7 @@ function setImgOrPlaceholder(imgEl, dataUrl, variant){
   }
 
   if(variant === "banner"){
-    imgEl.src = "./example-artist-banner.jpg";
+    imgEl.src = "./example-artist-banner.png";
     return;
   }
 
