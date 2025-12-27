@@ -97,7 +97,7 @@
 
           <div class="contact-line" style="margin: 0.35rem 0 0.75rem 0;">
             <span>✉️ E-posta:</span>
-            <a href="mailto:mekan@kasguide.de">mekan@kasguide.de</a>
+            <a href="mailto:sanat@kasguide.de">sanat@kasguide.de</a>
           </div>
 
           <div><strong>Kaş Guide Ekibi</strong></div>
@@ -107,6 +107,15 @@
 
     <!-- FORM -->
     <section class="card">
+
+      <div class="success-message" id="successMessage">
+        <div class="success-icon">✅</div>
+        <h3>Başvurunuz Alındı!</h3>
+        <p>Sanatçı profilinizi inceliyoruz. Uygun görüldüğünde sitede yayınlayacağız.</p>
+        <p>Desteğiniz için teşekkür ederiz. Saygılarımızla.</p>
+        <p>Kaş Guide</p>
+      </div>
+
       <form id="artistsForm" class="form" novalidate>
 
         <!-- Temel Bilgiler -->
@@ -240,6 +249,30 @@
                     <span class="category-name">Sosyal Medya</span>
                   </label>
                 </div>
+                <div class="category-option">
+                  <input type="checkbox" id="cat-fotograf" name="artistCategory" value="Fotoğraf" class="category-checkbox">
+                  <label for="cat-fotograf" class="category-label">
+                    <span class="category-icon">📷</span>
+                    <span class="category-name">Fotoğraf</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-produksiyon" name="artistCategory" value="Produksiyon" class="category-checkbox">
+                  <label for="cat-produksiyon" class="category-label">
+                    <span class="category-icon">🎬</span>
+                    <span class="category-name">Produksiyon</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-dijital" name="artistCategory" value="Dijital" class="category-checkbox">
+                  <label for="cat-dijital" class="category-label">
+                    <span class="category-icon">💻</span>
+                    <span class="category-name">Dijital</span>
+                  </label>
+                </div>
+
 
                 <div class="category-option">
                   <input type="checkbox" id="cat-diger" name="artistCategory" value="Diğer" class="category-checkbox">
@@ -383,7 +416,10 @@
           <button type="submit" class="btn btn--wide btn--submit">🚀 Başvuruyu Gönder</button>
         </div>
 
-        <div class="form-footnote">Başvurunuzu gönderdikten sonra en geç 5 iş günü< içinde size dönüş yapacağız.</div>
+        <div class="form-footnote">Başvurunuzu gönderdikten sonra en geç 5 iş günü içinde size dönüş yapacağız.</div>
+
+
+        <div class="build-note">build 2712251516 by borntobewild</div>
 
         <div id="submitMsg" class="submit-msg" hidden></div>
       </form>
