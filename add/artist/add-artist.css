@@ -456,3 +456,9 @@ textarea{ resize: vertical; }
   display: none !important;
 }
 
+.build-note{
+  text-align:center;
+  margin: 10px 0 2px;
+  font-size: 0.75rem;
+  color: rgba(11,18,32,0.78);
+}
