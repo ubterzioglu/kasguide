@@ -1,3 +1,7 @@
+/* artists-ekle.js
+   Modüler: sadece form + taslak + tam sayfa önizleme
+   Önizleme: example/artists/artists-example.html
+*/
 
 const LS_KEY = "artistsDraft_v1";
 
@@ -13,8 +17,7 @@ const shortText = $("shortText");
 const shortCount = $("shortCount");
 
 function setPreview(){
-
-
+  // Mini preview (sayfanın sağındaki)
   const d = readDraft() || buildDraft();
 
   const pvName = document.getElementById("pvName");
@@ -45,7 +48,7 @@ function setPreview(){
     });
   }
 
-  
+  // Foto önizleme (sessionStorage dataURL)
   try{
     const av = sessionStorage.getItem("artistsDraft_profileDataUrl");
     const bn = sessionStorage.getItem("artistsDraft_bannerDataUrl");
@@ -128,6 +131,16 @@ function updateCounter(){
   if(shortText && shortCount) shortCount.textContent = String(shortText.value.length);
 }
 
+
+function setFileNameLabel(inputId, labelId){
+  const input = $(inputId);
+  const out = document.getElementById(labelId);
+  if(!input || !out) return;
+
+  const files = Array.from(input.files || []);
+  out.textContent = files.length ? files.map(f => f.name).join(", ") : "Henüz dosya seçilmedi";
+}
+
 function fileToDataURL(file){
   return new Promise((resolve, reject) => {
     const r = new FileReader();
@@ -153,7 +166,7 @@ async function syncImagesToSession(){
       sessionStorage.removeItem("artistsDraft_bannerDataUrl");
     }
   }catch{
-  
+    // Sessiz geç: preview'da görseller görünmeyebilir.
   }
 }
 
@@ -166,8 +179,8 @@ function attachLive(){
     el.addEventListener("change", () => { writeDraft(); });
   });
 
-  $("profilePhoto")?.addEventListener("change", async () => { await syncImagesToSession(); writeDraft(); });
-  $("bannerPhoto")?.addEventListener("change", async () => { await syncImagesToSession(); writeDraft(); });
+  $("profilePhoto")?.addEventListener("change", async () => { setFileNameLabel("profilePhoto","profilePhotoNames"); await syncImagesToSession(); writeDraft(); });
+  $("bannerPhoto")?.addEventListener("change", async () => { setFileNameLabel("bannerPhoto","bannerPhotoNames"); await syncImagesToSession(); writeDraft(); });
 }
 
 btnSaveDraft?.addEventListener("click", () => {
@@ -204,5 +217,7 @@ form?.addEventListener("submit", (e) => {
   if(saved) fillForm(saved);
   updateCounter();
   attachLive();
+  setFileNameLabel("profilePhoto","profilePhotoNames");
+  setFileNameLabel("bannerPhoto","bannerPhotoNames");
   setPreview();
 })();

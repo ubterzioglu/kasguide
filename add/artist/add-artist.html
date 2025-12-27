@@ -161,19 +161,39 @@
 
           <div class="grid">
             <div class="field">
-              <label for="profilePhoto">Profil Fotoğrafı</label>
-              <input id="profilePhoto" name="profilePhoto" type="file" accept="image/*" />
+              <label>Profil Fotoğrafı</label>
+
+              <div class="file-upload">
+                <div class="file-row">
+                  <input id="profilePhoto" name="profilePhoto" type="file" accept="image/*" class="file-input" />
+                  <label for="profilePhoto" class="file-btn">Fotoğraf seç</label>
+                </div>
+
+                <div class="file-feedback">
+                  <div id="profilePhotoNames" class="file-names">Henüz dosya seçilmedi</div>
+                </div>
+              </div>
+
               <div class="help">Öneri: Kare (1:1), net, yüz/isim görünür.</div>
             </div>
 
-            
-
             <div class="field">
-              <label for="bannerPhoto">Kapak / Banner</label>
-              <input id="bannerPhoto" name="bannerPhoto" type="file" accept="image/*" />
+              <label>Kapak / Banner</label>
+
+              <div class="file-upload">
+                <div class="file-row">
+                  <input id="bannerPhoto" name="bannerPhoto" type="file" accept="image/*" class="file-input" />
+                  <label for="bannerPhoto" class="file-btn">Fotoğraf seç</label>
+                </div>
+
+                <div class="file-feedback">
+                  <div id="bannerPhotoNames" class="file-names">Henüz dosya seçilmedi</div>
+                </div>
+              </div>
+
               <div class="help">Öneri: Yatay (16:9), sahneden/etkinlikten.</div>
             </div>
-          </div>
+</div>
         </section>
 
         <!-- Sosyal & Linkler -->
