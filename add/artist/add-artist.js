@@ -245,6 +245,60 @@ btnPreview?.addEventListener("click", async () => {
 form?.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  // Zorunlu alan kontrolleri (telefon + e-posta zorunlu değil)
+  const artistNameEl = $("artistName");
+  const instagramEl = $("instagram");
+
+  // Mesaj alanını temizle
+  if (submitMsg) {
+    submitMsg.hidden = true;
+    submitMsg.textContent = "";
+  }
+
+  if (!artistNameEl?.value?.trim()) {
+    if (submitMsg) {
+      submitMsg.hidden = false;
+      submitMsg.textContent = "Lütfen Sanatçı/Grup Adı alanını doldurun.";
+    }
+    artistNameEl?.scrollIntoView({ behavior: "smooth", block: "center" });
+    artistNameEl?.focus?.();
+    return;
+  }
+
+  if (!shortText?.value?.trim()) {
+    if (submitMsg) {
+      submitMsg.hidden = false;
+      submitMsg.textContent = "Lütfen Kısa Tanım alanını doldurun.";
+    }
+    shortText?.scrollIntoView({ behavior: "smooth", block: "center" });
+    shortText?.focus?.();
+    return;
+  }
+
+  const igVal = instagramEl?.value?.trim();
+  if (!igVal) {
+    if (submitMsg) {
+      submitMsg.hidden = false;
+      submitMsg.textContent = "Lütfen Instagram alanını doldurun.";
+    }
+    instagramEl?.scrollIntoView({ behavior: "smooth", block: "center" });
+    instagramEl?.focus?.();
+    return;
+  }
+  try {
+    // URL doğrulama (https önerilir)
+    new URL(igVal);
+  } catch {
+    if (submitMsg) {
+      submitMsg.hidden = false;
+      submitMsg.textContent = "Instagram bağlantısı geçerli bir link olmalı. Örn: https://instagram.com/kullanici";
+    }
+    instagramEl?.scrollIntoView({ behavior: "smooth", block: "center" });
+    instagramEl?.focus?.();
+    return;
+  }
+
+
   // 1) Zorunlu: en az 1 kategori
   const cats = getSelectedCategories();
   const catError = document.getElementById("catError");
