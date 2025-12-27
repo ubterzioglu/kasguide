@@ -37,32 +37,20 @@ function setImgOrPlaceholder(imgEl, dataUrl, variant){
     return;
   }
 
-  // Lightweight embedded SVG placeholders
-  const svg = (variant === "avatar")
-    ? `<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'>
-         <defs>
-           <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-             <stop offset='0' stop-color='#e2e8f0'/>
-             <stop offset='1' stop-color='#cbd5e1'/>
-           </linearGradient>
-         </defs>
-         <rect width='100%' height='100%' rx='34' fill='url(#g)'/>
-         <circle cx='130' cy='110' r='46' fill='#94a3b8' opacity='0.55'/>
-         <rect x='60' y='170' width='140' height='60' rx='30' fill='#94a3b8' opacity='0.38'/>
-       </svg>`
-    : `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'>
-         <defs>
-           <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-             <stop offset='0' stop-color='#cbd5e1'/>
-             <stop offset='1' stop-color='#94a3b8'/>
-           </linearGradient>
-         </defs>
-         <rect width='100%' height='100%' fill='url(#g)'/>
-         <text x='50%' y='52%' text-anchor='middle' font-family='Segoe UI, Arial' font-size='92' fill='#0f172a' opacity='0.18'>BANNER</text>
-       </svg>`;
+  // JPEG placeholders (shown until user uploads)
+  if(variant === "avatar"){
+    imgEl.src = "./example-artist-profile.png";
+    return;
+  }
 
-  imgEl.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  if(variant === "banner"){
+    imgEl.src = "./example-artist-banner.jpg";
+    return;
+  }
+
+  imgEl.removeAttribute("src");
 }
+
 
 function setSocialButton(aEl, url){
   const u = strip(url);

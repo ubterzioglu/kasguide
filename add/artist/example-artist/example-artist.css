@@ -150,6 +150,12 @@ body{
   user-select:none;
 }
 
+.social-btn svg{
+  width: 20px;
+  height: 20px;
+  display:block;
+}
+
 .social-btn.is-active{
   background: var(--green);
   border-color: var(--green);
