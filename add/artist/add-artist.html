@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kaş Guide • Sanatçı Ekle</title>
+  <title>Sanatçı Ekle • Kaş Guide</title>
+  <link rel="icon" type="image/png" href="../../assets/0_img/logokasguide.png">
   <link rel="stylesheet" href="./add-artist.css" />
   <script src="./add-artist.js" defer></script>
 </head>
@@ -15,88 +16,307 @@
         <div class="brand__title">Kaş Guide</div>
         <div class="brand__subtitle">Sanat &amp; Sahne • Sanatçı Ekle</div>
       </a>
-
-      <div class="topbar__actions">
-        <button type="button" id="btnSaveDraft" class="btn btn--ghost">Taslağı Kaydet</button>
-        <button type="button" id="btnClearDraft" class="btn btn--ghost">Taslağı Temizle</button>
-        <button type="button" id="btnPreview" class="btn btn--primary">Önizleme</button>
-      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="page-head">
-      <h1>Sanatçı / Grup ekle</h1>
-      <p class="muted">
-        Doldurdukça taslak otomatik kaydolur. Başvurular incelendikten sonra yayınlanır.
-      </p>
+      <h1>Sanatçı Ekleyin!</h1>
+      <p class="muted">Sanatın ne olursa olsun, Kaş’ta seni tanıtacak bir yer var.</p>
+      <p class="muted"> Müzik, dövme, karikatür, seramik, gümüş ve daha fazlası… Üreten herkese açığız.</p>
     </section>
 
-    <div class="layout">
-      <!-- FORM -->
-      <section class="card">
-        <form id="artistsForm" class="form" novalidate>
-          <div class="section-title">
-            <span class="section-icon">🧑‍🎤</span>
+    <!-- INFO / ACCORDIONS -->
+    <section class="info-section">
+      <details class="accordion-item info-acc">
+        <summary class="section-title">
+          <span class="section-icon">🌿</span>
+          Kaş Guide
+          <span class="chev">˅</span>
+        </summary>
+        <div class="liste-small">
+          <p>🌿 En iyi deneyim için masaüstü/laptop üzerinden ekleme yapmanızı öneririz.</p>
+          <p>🌿 Kaş Guide, Kaş’ı gerçekten bilenler ve yaşayanlar için hazırlanıyor.</p>
+          <p>🌿 Sezona kadar hazır, düzenli ve güvenilir bir rehber oluşturuyoruz.</p>
+          <p>🌿 İçerikler, sizin katkılarınızla zamanla oturacak ve zenginleşecek.</p>
+          <p>🌿 Esnafla iç içe, yereli destekleyen bir anlayışla hareket ediyoruz.</p>
+          <p>🌿 Birlikte Kaş için kalıcı ve faydalı bir rehber oluşturuyoruz.</p>
+          <p>🌿 1 Ocak’ta yayındayız.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item info-acc">
+        <summary class="section-title">
+          <span class="section-icon">📢</span>
+          Önemli Bilgilendirme
+          <span class="chev">˅</span>
+        </summary>
+        <div class="liste-small">
+          <p>📢 Bu platform Kaş'ı sevenler için hazırlanmış gönüllü bir rehberdir.</p>
+          <p>📢 Tüm içerikler tamamen ücretsizdir, hiçbir ücret talep edilmez.</p>
+          <p>📢 Amacımız sanatçıların kendi bilgilerini doğrudan paylaşabilmesidir.</p>
+          <p>📢 Gönderilen bilgiler ticari bir taahhüt veya reklam zorunluluğu içermez.</p>
+          <p>📢 Paylaşımlar Kaş rehberini daha güncel ve faydalı hale getirir.</p>
+          <p>📢 Şahsınızla ilgili yanlış bilgiler için bize sanat@kasguide.de adresinden ulaşabilirsiniz.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item info-acc">
+        <summary class="section-title">
+          <span class="section-icon">🧭</span>
+          Sayfa Hakkında Ufak Bilgiler
+          <span class="chev">˅</span>
+        </summary>
+        <div class="liste-small">
+          <p>🧭 Girdiğiniz bilgiler incelendikten sonra sitede yayınlanır.</p>
+          <p>🧭 Bilgileri ne kadar eksiksiz doldurursanız o kadar çok kişiye ulaşırsınız.</p>
+          <p>🧭 Sorun olması durumunda, verdiğiniz iletişim bilgileri üzerinden size ulaşabiliriz.</p>
+          <p>🧭 Önizleme butonuyla sayfanızın sitede nasıl görüneceğini görebilirsiniz.</p>
+          <p>🧭 Fotoğraflar önizlemede görünmeyebilir; yayınlandıktan sonra görünür.</p>
+          <p>🧭 Desteğiniz için teşekkür ederiz!</p>
+        </div>
+      </details>
+
+      <details class="accordion-item info-acc">
+        <summary class="section-title">
+          <span class="section-icon">👥</span>
+          Biz kimiz ?
+          <span class="chev">˅</span>
+        </summary>
+        <div class="liste-small">
+          <p style="margin: 0 0 0.75rem 0;">
+            Biz, uzun yıllardır Kaş’ta yaşayan; Kaş’ı seven, Kaş’a gönül vermiş, Kaş’ın sorunlarına duyarlı,
+            hayvansever ve doğasever küçük bir ekibiz. Kaş Guide’ın ilk yılında, tarafsızlığımızı ve objektifliğimizi
+            korumak adına anonim kalmayı tercih ediyoruz. Bu sayfayı doldurarak bize destek olduğunuz için teşekkür ederiz.
+          </p>
+
+          <div class="contact-line" style="margin: 0.35rem 0;">
+            <span>📸 Instagram:</span>
+            <a href="https://instagram.com/guidekas" target="_blank" rel="noopener">@guidekas</a>
+          </div>
+
+          <div class="contact-line" style="margin: 0.35rem 0 0.75rem 0;">
+            <span>✉️ E-posta:</span>
+            <a href="mailto:mekan@kasguide.de">mekan@kasguide.de</a>
+          </div>
+
+          <div><strong>Kaş Guide Ekibi</strong></div>
+        </div>
+      </details>
+    </section>
+
+    <!-- FORM -->
+    <section class="card">
+      <form id="artistsForm" class="form" novalidate>
+
+        <!-- Temel Bilgiler -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">🧑‍🎤</span>
             <span>Temel Bilgiler</span>
           </div>
 
           <div class="grid">
             <div class="field">
               <label for="artistName">Sanatçı / Grup Adı <span class="req">*</span></label>
-              <input id="artistName" name="artistName" type="text" autocomplete="organization" required placeholder="Örn. Kas Acoustic Trio" />
+              <input id="artistName" name="artistName" type="text" autocomplete="organization" required placeholder="Örn: Kas Acoustic Trio" />
             </div>
 
-            <div class="field">
-              <label for="artistCategory">Kategori <span class="req">*</span></label>
-              <select id="artistCategory" name="artistCategory" required>
-                <option value="" selected disabled>Seçiniz…</option>
-                <option value="Müzisyen">Müzisyen</option>
-                <option value="Grup">Grup</option>
-                <option value="DJ">DJ</option>
-                <option value="Tiyatro">Tiyatro</option>
-                <option value="Stand-up">Stand-up</option>
-                <option value="Dans">Dans</option>
-                <option value="Koro">Koro</option>
-                <option value="Diğer">Diğer</option>
-              </select>
+            <div class="field field--full">
+              <div class="cats-head">
+                <div class="cats-title">Kategoriler <span class="req">*</span></div>
+                <div class="cats-hint">En az 1 kategori seçin.</div>
+              </div>
+
+              <div class="category-grid" id="artistCategories">
+                <div class="category-option">
+                  <input type="checkbox" id="cat-muzisyen" name="artistCategory" value="Müzisyen" class="category-checkbox">
+                  <label for="cat-muzisyen" class="category-label">
+                    <span class="category-icon">🎤</span>
+                    <span class="category-name">Müzisyen</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-grup" name="artistCategory" value="Grup" class="category-checkbox">
+                  <label for="cat-grup" class="category-label">
+                    <span class="category-icon">👥</span>
+                    <span class="category-name">Grup</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-dj" name="artistCategory" value="DJ" class="category-checkbox">
+                  <label for="cat-dj" class="category-label">
+                    <span class="category-icon">🎧</span>
+                    <span class="category-name">DJ</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-tiyatro" name="artistCategory" value="Tiyatro" class="category-checkbox">
+                  <label for="cat-tiyatro" class="category-label">
+                    <span class="category-icon">🎭</span>
+                    <span class="category-name">Tiyatro</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-standup" name="artistCategory" value="Stand-Up" class="category-checkbox">
+                  <label for="cat-standup" class="category-label">
+                    <span class="category-icon">🎙️</span>
+                    <span class="category-name">Stand-Up</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-dans" name="artistCategory" value="Dans" class="category-checkbox">
+                  <label for="cat-dans" class="category-label">
+                    <span class="category-icon">💃</span>
+                    <span class="category-name">Dans</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-koro" name="artistCategory" value="Koro" class="category-checkbox">
+                  <label for="cat-koro" class="category-label">
+                    <span class="category-icon">🎶</span>
+                    <span class="category-name">Koro</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-dovme" name="artistCategory" value="Dövme" class="category-checkbox">
+                  <label for="cat-dovme" class="category-label">
+                    <span class="category-icon">🖋️</span>
+                    <span class="category-name">Dövme</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-karikatur" name="artistCategory" value="Karikatür" class="category-checkbox">
+                  <label for="cat-karikatur" class="category-label">
+                    <span class="category-icon">✏️</span>
+                    <span class="category-name">Karikatür</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-resim" name="artistCategory" value="Resim" class="category-checkbox">
+                  <label for="cat-resim" class="category-label">
+                    <span class="category-icon">🎨</span>
+                    <span class="category-name">Resim</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-sinema" name="artistCategory" value="Sinema" class="category-checkbox">
+                  <label for="cat-sinema" class="category-label">
+                    <span class="category-icon">🎬</span>
+                    <span class="category-name">Sinema</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-seramik" name="artistCategory" value="Seramik" class="category-checkbox">
+                  <label for="cat-seramik" class="category-label">
+                    <span class="category-icon">🏺</span>
+                    <span class="category-name">Seramik</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-taki" name="artistCategory" value="Takı Tasarımı" class="category-checkbox">
+                  <label for="cat-taki" class="category-label">
+                    <span class="category-icon">💍</span>
+                    <span class="category-name">Takı Tasarımı</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-sosyalmedya" name="artistCategory" value="Sosyal Medya" class="category-checkbox">
+                  <label for="cat-sosyalmedya" class="category-label">
+                    <span class="category-icon">📱</span>
+                    <span class="category-name">Sosyal Medya</span>
+                  </label>
+                </div>
+
+                <div class="category-option">
+                  <input type="checkbox" id="cat-diger" name="artistCategory" value="Diğer" class="category-checkbox">
+                  <label for="cat-diger" class="category-label">
+                    <span class="category-icon">✨</span>
+                    <span class="category-name">Diğer</span>
+                  </label>
+                </div>
+              </div>
+
+              <div id="catError" class="cat-error" aria-live="polite"></div>
             </div>
 
             <div class="field field--full">
               <label for="shortText">Kısa Tanım <span class="req">*</span> <span class="muted">(<span id="shortCount">0</span>/140)</span></label>
               <textarea id="shortText" name="shortText" rows="3" maxlength="140" required
-                placeholder="Örn. Akustik pop/rock, canlı sahne performansları. Kaş ve çevresinde etkinliklere uygun."></textarea>
+                placeholder="Mekanınızı kısaca tanıtın (1-2 cümle)"></textarea>
+              <div class="field__hint">Bu metin kart görünümünde gösterilecek</div>
             </div>
 
             <div class="field field--full">
-              <label for="longText">Detaylı Anlatım</label>
-              <textarea id="longText" name="longText" rows="6"
-                placeholder="Repertuvar, sahne deneyimi, ekipman, istek seti, ücret/iletişim notları vb."></textarea>
+              <label for="longText">Detaylı Açıklama <span class="req">*</span></label>
+              <textarea id="longText" name="longText" rows="6" required
+                placeholder="Mekanınız hakkında detaylı bilgi verin (özellikler, hizmetler, öneriler vb.)"></textarea>
             </div>
           </div>
+        </section>
 
-          <div class="section-title" style="margin-top:16px;">
-            <span class="section-icon">📸</span>
+        <!-- Fotoğraflar -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">📸</span>
             <span>Fotoğraflar</span>
           </div>
 
           <div class="grid">
             <div class="field">
-              <label for="profilePhoto">Profil Fotoğrafı</label>
-              <input id="profilePhoto" name="profilePhoto" type="file" accept="image/*" />
+              <label>Profil Fotoğrafı</label>
+
+              <div class="file-upload">
+                <div class="file-row">
+                  <input id="profilePhoto" name="profilePhoto" type="file" accept="image/*" class="file-input" />
+                  <label for="profilePhoto" class="file-btn">Fotoğraf seç</label>
+                </div>
+
+                <div class="file-feedback">
+                  <div id="profilePhotoNames" class="file-names">Henüz dosya seçilmedi</div>
+                </div>
+              </div>
+
               <div class="help">Öneri: Kare (1:1), net, yüz/isim görünür.</div>
             </div>
 
             <div class="field">
-              <label for="bannerPhoto">Kapak / Banner</label>
-              <input id="bannerPhoto" name="bannerPhoto" type="file" accept="image/*" />
+              <label>Kapak / Banner</label>
+
+              <div class="file-upload">
+                <div class="file-row">
+                  <input id="bannerPhoto" name="bannerPhoto" type="file" accept="image/*" class="file-input" />
+                  <label for="bannerPhoto" class="file-btn">Fotoğraf seç</label>
+                </div>
+
+                <div class="file-feedback">
+                  <div id="bannerPhotoNames" class="file-names">Henüz dosya seçilmedi</div>
+                </div>
+              </div>
+
               <div class="help">Öneri: Yatay (16:9), sahneden/etkinlikten.</div>
             </div>
-          </div>
+</div>
+        </section>
 
-          <div class="section-title" style="margin-top:16px;">
-            <span class="section-icon">🔗</span>
-            <span>Sosyal &amp; Linkler</span>
+        <!-- Sosyal & Linkler -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">🔗</span>
+            <span>Sosyal / Linkler</span>
           </div>
 
           <div class="grid">
@@ -120,9 +340,12 @@
               <input id="website" name="website" type="url" inputmode="url" placeholder="https://..." />
             </div>
           </div>
+        </section>
 
-          <div class="section-title" style="margin-top:16px;">
-            <span class="section-icon">☎️</span>
+        <!-- İletişim -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">☎️</span>
             <span>İletişim</span>
           </div>
 
@@ -137,40 +360,35 @@
               <input id="email" name="email" type="email" inputmode="email" placeholder="ornek@mail.com" />
             </div>
           </div>
+        </section>
 
-          <div class="actions" style="margin-top:18px;">
-            <button type="submit" class="btn btn--primary">Başvuruyu Gönder</button>
+        <!-- Özel notlar -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">📝</span>
+            <span>Bize iletmek istediğiniz özel notlar</span>
           </div>
 
-          <div id="submitMsg" class="submit-msg" hidden></div>
-        </form>
-      </section>
-
-      <!-- PREVIEW -->
-      <aside class="card preview" aria-label="Önizleme">
-        <div class="preview__header">
-          <div class="section-title" style="margin:0;">
-            <span class="section-icon">👀</span>
-            <span>Hızlı Önizleme</span>
-          </div>
-          <span class="chip">Taslak</span>
-        </div>
-
-        <div class="preview__frame">
-          <div class="pv__banner" id="pvBanner"></div>
-          <div class="pv__body">
-            <div class="pv__avatar" id="pvAvatar"></div>
-            <div class="pv__name" id="pvName">—</div>
-            <div class="pv__short" id="pvShort">Kısa tanım burada görünecek.</div>
-            <div class="pv__social" id="pvSocial"></div>
-
-            <div class="pv__note">
-              <b>Not:</b> Haftalık sahne / program bilgilerini de yakında burada göstereceğiz.
+          <div class="grid">
+            <div class="field field--full">
+              <textarea id="notes" name="notes" rows="4"
+                placeholder="Mekanınızla ilgili özellikle belirtmek istediğiniz detaylar, talepleriniz veya ek notlar..."></textarea>
+              <div class="help">Bu alan isteğe bağlıdır.</div>
             </div>
           </div>
+        </section>
+
+        <div class="actions actions--stack">
+          <button type="button" id="btnPreview" class="btn btn--wide btn--preview">👀 Önizleme</button>
+          <button type="submit" class="btn btn--wide btn--submit">🚀 Başvuruyu Gönder</button>
         </div>
-      </aside>
-    </div>
+
+        <div class="form-footnote">Başvurunuzu gönderdikten sonra en geç 5 iş günü< içinde size dönüş yapacağız.</div>
+
+        <div id="submitMsg" class="submit-msg" hidden></div>
+      </form>
+    </section>
+
   </main>
 
 </body>
