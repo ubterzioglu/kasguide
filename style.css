@@ -1294,3 +1294,17 @@ body {
     font-size: 0.65rem;
   }
 }
+
+
+/* =====================================================
+   Articles (placeholder card template)
+   ===================================================== */
+.card-article .card-badge-article{
+  background: var(--primary-wine);
+}
+.card-article .article-meta{
+  gap: .6rem;
+}
+.card-article .card-meta.article-meta{
+  margin-top: .75rem;
+}

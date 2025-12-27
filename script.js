@@ -214,9 +214,39 @@ function renderCards() {
     const badgeColor = categoryObj ? categoryObj.color.replace('category-', '') : 'blue';
 
     const href = getItemHref(item);
-    const img = item.image || 'assets/0_img/placeholder.jpg';
+    const isArticle = item.type === 'article';
+    const img = item.image || (isArticle ? 'assets/0_img/article-placeholder.jpg' : 'assets/0_img/placeholder.jpg');
 
-    card.innerHTML = `
+    // Simple placeholder template for articles (can be improved later)
+    if (isArticle) {
+      card.className = 'card card-article';
+      const readTime = item.readTime || item.duration || '';
+      const author = item.author || '';
+      card.innerHTML = `
+        <div class="card-image-wrapper">
+          <img src="${img}" alt="${item.title || ''}" class="card-image" loading="lazy">
+          <div class="card-badge card-badge-article">Yazı</div>
+        </div>
+
+        <div class="card-content">
+          <h4 class="card-title">
+            <a class="card-title-link" href="${href}">${item.title || ''}</a>
+          </h4>
+          <p class="card-description">${item.description || ''}</p>
+
+          <div class="card-meta article-meta">
+            ${author ? `<div class="meta-item"><span>✍️ ${author}</span></div>` : ''}
+            ${readTime ? `<div class="meta-item"><span>⏱️ ${readTime}</span></div>` : ''}
+          </div>
+
+          <div class="card-actions">
+            <a class="card-detail" href="${href}">Oku</a>
+          </div>
+        </div>
+      `;
+    } else {
+      card.className = 'card';
+      card.innerHTML = `
       <div class="card-image-wrapper">
         <img src="${img}" alt="${item.title || ''}" class="card-image" loading="lazy">
         <div class="card-badge" style="background: var(--primary-${badgeColor})">
@@ -263,6 +293,7 @@ function renderCards() {
         </div>
       </div>
     `;
+    }
 
     card.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
@@ -290,12 +321,31 @@ function updateStats() {
 function applyFilters() {
   let filtered = [...allItems];
 
-  // category filter: item.category intersects selectedCategories
-  if (selectedCategories.size > 0) {
-    filtered = filtered.filter((it) =>
-      safeArr(it.category).some((c) => selectedCategories.has(c))
-    );
+  const hasArticles = selectedCategories.has('articles');
+  if (hasArticles) {
+    // Articles are always included when "articles" filter is active.
+    const otherCats = new Set([...selectedCategories].filter((c) => c !== 'articles'));
+
+    const articleItems = filtered.filter((it) => it.type === 'article');
+
+    let otherItems = [];
+    if (otherCats.size > 0) {
+      // Keep the existing OR behavior for non-article items
+      otherItems = filtered.filter((it) =>
+        it.type !== 'article' && safeArr(it.category).some((c) => otherCats.has(c))
+      );
+    }
+
+    filtered = [...articleItems, ...otherItems];
+  } else {
+    // category filter: item.category intersects selectedCategories (OR behavior)
+    if (selectedCategories.size > 0) {
+      filtered = filtered.filter((it) =>
+        safeArr(it.category).some((c) => selectedCategories.has(c))
+      );
+    }
   }
+
 
   // search
   if ((searchQuery || '').trim()) {

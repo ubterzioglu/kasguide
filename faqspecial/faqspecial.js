@@ -1,88 +1,65 @@
-/* faqspecial-selection.js
-   Detail renderer for one special series (faqspecial-selection.html?id=SERIES_ID)
-*/
+// faqspecial.js
 (function () {
-  const DASH = '—';
+  const PLACEHOLDER = "—";
 
   function escapeHtml(str) {
-    return String(str ?? '')
-      .replaceAll('&', '&amp;')
-      .replaceAll('<', '&lt;')
-      .replaceAll('>', '&gt;')
-      .replaceAll('"', '&quot;')
-      .replaceAll("'", '&#39;');
+    return String(str ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
   }
 
   function getId() {
-    return new URLSearchParams(window.location.search).get('id');
+    return new URLSearchParams(window.location.search).get("id");
   }
 
-  function findItem(id) {
-    const list = (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries)) ? faqspecialSeries : [];
+  function getById(id) {
+    const list = (typeof faqspecialSeries !== "undefined" && Array.isArray(faqspecialSeries)) ? faqspecialSeries : [];
     return list.find((x) => String(x.id) === String(id));
   }
 
-  function renderNotFound(root) {
-    root.innerHTML = `
-      <article class="detail-card">
-        <div class="detail-body">
-          <h2 class="detail-title">Bulunamadı</h2>
-          <p class="detail-muted">Bu id ile bir özel seri bulunamadı.</p>
-          <div class="detail-actions">
-            <a class="detail-action secondary" href="../index.html">Ana sayfaya dön</a>
-          </div>
-        </div>
-      </article>
-    `;
+  function initBackToTop() {
+    const btn = document.querySelector(".back-to-top");
+    if (!btn) return;
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
-  function render(item) {
-    const root = document.getElementById('detailRoot');
+  function render() {
+    const root = document.getElementById("faqRoot");
     if (!root) return;
-    if (!item) return renderNotFound(root);
 
-    const title = escapeHtml(item.title || 'Özel Seri');
-    const img = item.image ? `<img class="detail-hero-img" src="${escapeHtml(item.image)}" alt="${title}">` : '';
-    const excerpt = item.excerpt ? `<div class="detail-muted" style="margin-top:.5rem">${escapeHtml(item.excerpt)}</div>` : '';
+    const id = getId();
+    const item = getById(id);
 
-    const meta = [item.source, item.date].filter(Boolean).join(' • ');
-    const urlBtn = item.url ? `<a class="detail-action" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Kaynağı aç</a>` : '';
-
-    const contentRaw = String(item.content || item.longText || '').trim();
-    const content = contentRaw ? escapeHtml(contentRaw).replaceAll('\n','<br>') : DASH;
-
-    root.innerHTML = `
-      <article class="detail-card">
-        ${img ? `
-          <div class="detail-hero">
-            ${img}
-            <div class="detail-hero-overlay"></div>
-            <div class="detail-hero-content">
-              <h2 class="detail-title">${title}</h2>
-            </div>
+    if (!id || !item) {
+      root.innerHTML = `
+        <div class="faq-card">
+          <div class="faq-hero">
+            <h2 class="faq-title">İçerik bulunamadı</h2>
           </div>
-        ` : `
-          <div class="detail-body">
-            <h2 class="detail-title">${title}</h2>
-          </div>
-        `}
-
-        <div class="detail-body">
-          ${excerpt}
-          ${meta ? `<div class="detail-cats" style="margin-top:.5rem">${escapeHtml(meta)}</div>` : ''}
-          ${urlBtn ? `<div class="detail-actions" style="margin-top:1rem">${urlBtn}</div>` : ''}
-
-          <div class="detail-divider"></div>
-
-          <div class="detail-longtext">${content}</div>
-
-          <div class="detail-actions" style="margin-top:1rem">
-            <a class="detail-action secondary" href="../index.html">Ana sayfaya dön</a>
+          <div class="faq-body muted">
+            ${PLACEHOLDER}
           </div>
         </div>
-      </article>
+      `;
+      return;
+    }
+
+    root.innerHTML = `
+      <div class="faq-card">
+        <div class="faq-hero">
+          <h2 class="faq-title">${escapeHtml(item.title || PLACEHOLDER)}</h2>
+          ${item.description ? `<p class="muted" style="margin-top:.35rem">${escapeHtml(item.description)}</p>` : ""}
+        </div>
+        <div class="faq-body">${escapeHtml(item.longText || PLACEHOLDER)}</div>
+      </div>
     `;
   }
 
-  render(findItem(getId()));
+  document.addEventListener("DOMContentLoaded", () => {
+    initBackToTop();
+    render();
+  });
 })();
