@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     // ---- SMTP ENV (same convention as venue-submit.js) ----
     const smtpHost = process.env.SMTP_HOST || process.env.MAIL_HOST;
-    const smtpPort = Number(process.env.SMTP_PORT || process.env.MAIL_PORT || 587);
+    const smtpPort = Number(process.env.SMTP_PORT || process.env.MAIL_PORT || 465);
     const smtpUser = process.env.SMTP_USER || process.env.MAIL_USER;
     const smtpPass = process.env.SMTP_PASS || process.env.MAIL_PASS;
 
