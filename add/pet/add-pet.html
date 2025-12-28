@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kedi / Köpek Ekle • Kaş Guide</title>
+  <link rel="icon" type="image/png" href="../../assets/0_img/logokasguide.png">
+  <link rel="stylesheet" href="./add-pet.css" />
+  <script src="./add-pet.js" defer></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../index.html" aria-label="Kaş Guide">
+        <div class="brand__title">Kaş Guide</div>
+        <div class="brand__sub">Kedi / Köpek Ekle</div>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="../index.html">Ana Sayfa</a>
+        <a class="nav__link" href="../../pet/pet.html">Pet Sayfası</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero container">
+      <h1>Kedi / Köpek Ekle</h1>
+      <p class="muted">
+        Fotoğraflarınız ve bilgileriniz incelendikten sonra uygun görülenler sitede yayınlanır.
+        Gönderimler <strong>pet@kasguide.de</strong> adresine iletilir.
+      </p>
+    </section>
+
+    <!-- INFO / ACCORDIONS -->
+    <section class="info-section container">
+      <details class="accordion-item info-acc" open>
+        <summary class="section-title">
+          <span class="section-icon">🐾</span>
+          Kısa Bilgi
+          <span class="chev">˅</span>
+        </summary>
+        <div class="liste-small">
+          <p>🐾 En az 1, en fazla 5 fotoğraf yükleyebilirsin.</p>
+          <p>🐾 Kısa not alanı maksimum 500 karakterdir.</p>
+          <p>🐾 Yaş ve cins (varsa) bilgisi eklemen çok yardımcı olur.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item info-acc">
+        <summary class="section-title">
+          <span class="section-icon">📌</span>
+          Önemli Not
+          <span class="chev">˅</span>
+        </summary>
+        <div class="liste-small">
+          <p>📌 Lütfen gerçek ve doğrulanabilir bilgiler gir.</p>
+          <p>📌 Acil durumlar için bu form uygun değildir; yerel destek/kurumlarla da iletişime geç.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- SUCCESS MESSAGE -->
+    <section class="container" id="successWrap" hidden>
+      <div class="success-card">
+        <h2>Başvurun alındı ✅</h2>
+        <p class="muted">
+          Çok teşekkürler! Bilgiler incelendikten sonra uygun görülenler yayınlanacak.
+        </p>
+        <p class="muted">
+          Ek bilgi gerekiyorsa <strong>pet@kasguide.de</strong> üzerinden dönüş yapabiliriz.
+        </p>
+        <a class="btn" href="../../pet/pet.html">Pet sayfasını aç</a>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="container" id="formWrap">
+      <form id="petForm" class="form-card" novalidate>
+        <div class="form-header">
+          <h2>Bilgiler</h2>
+          <p class="muted">Zorunlu alanlar * ile işaretlidir.</p>
+        </div>
+
+        <div class="grid">
+          <label class="field">
+            <span class="label">Tür *</span>
+            <select id="petType" name="petType" required>
+              <option value="" selected disabled>Seçiniz…</option>
+              <option value="kedi">Kedi</option>
+              <option value="kopek">Köpek</option>
+            </select>
+            <span class="hint">Kedi mi köpek mi?</span>
+          </label>
+
+          <label class="field">
+            <span class="label">Yaş</span>
+            <input id="age" name="age" type="text" placeholder="Örn: 2 yaş / 6 aylık" />
+            <span class="hint">Bilmiyorsan boş bırakabilirsin.</span>
+          </label>
+
+          <label class="field">
+            <span class="label">Cins</span>
+            <input id="breed" name="breed" type="text" placeholder="Örn: Tekir, Golden, Mix..." />
+            <span class="hint">Bilmiyorsan “Bilinmiyor” yazabilirsin.</span>
+          </label>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="grid">
+          <label class="field field--full">
+            <span class="label">Kısa Not (max 500) *</span>
+            <textarea id="shortNote" name="shortNote" rows="4" maxlength="500" required
+              placeholder="Örn: Nerede görüldü? Karakteri nasıl? Sağlık durumu hakkında bilgin var mı?"></textarea>
+            <div class="charline">
+              <span class="hint">Kısa ve net yazman yeterli.</span>
+              <span class="counter"><span id="noteCount">0</span>/500</span>
+            </div>
+          </label>
+
+          <label class="field field--full">
+            <span class="label">Bize iletmek istediğiniz notlar</span>
+            <textarea id="extraNotes" name="extraNotes" rows="4"
+              placeholder="Varsa ek detaylar… (iletişim, konum tarifi, saatler, vb.)"></textarea>
+          </label>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="grid">
+          <div class="field field--full">
+            <span class="label">Fotoğraflar (1–5) *</span>
+
+            <div class="upload-row">
+              <input id="photos" name="photos" type="file" accept="image/*" multiple required />
+              <div class="upload-meta">
+                <div class="muted" id="photoMeta">Henüz foto seçilmedi.</div>
+                <div class="hint">En fazla 5 foto. JPG/PNG/WebP önerilir.</div>
+              </div>
+            </div>
+
+            <div class="thumbs" id="thumbs" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="error" id="formError" hidden></div>
+
+        <div class="actions">
+          <button type="submit" class="btn" id="submitBtn">Gönder</button>
+          <button type="button" class="btn btn--ghost" id="clearBtn">Temizle</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="muted">© Kaş Guide</div>
+    </div>
+  </footer>
+
+</body>
+</html>
