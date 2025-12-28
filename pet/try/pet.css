@@ -1,0 +1,337 @@
+@import url("../style.css");
+
+/* faqspecial-style.css mantığıyla: sade, data-driven kart listeleme */
+
+.pet-page{ padding: 2rem 0 3rem; }
+.pet-hero{ margin-bottom: 1rem; }
+.pet-root{ display:flex; justify-content:center; }
+
+.pet-wrap{
+  width:100%;
+  max-width: 980px;
+  display:grid;
+  gap: 14px;
+}
+
+.pet-card{
+  width:100%;
+  background:white;
+  border-radius: var(--radius-xl);
+  overflow:hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.pet-card:hover{
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.pet-head{
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+  background: linear-gradient(to bottom, var(--gray-50), white);
+}
+
+.pet-header-row{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.pet-title-group{
+  flex: 1;
+}
+
+.pet-type-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pet-type-badge.cat{
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.pet-type-badge.dog{
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.pet-title{
+  margin:0;
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  letter-spacing: -0.02em;
+}
+
+.pet-meta{
+  color: var(--gray-600);
+  font-size: .875rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pet-meta::before{
+  content: "📅";
+  font-size: 0.9em;
+}
+
+.pet-body{
+  padding: 1.5rem;
+  display:grid;
+  gap: 1.25rem;
+}
+
+.pet-info-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.pet-info-item{
+  padding: 12px;
+  background: var(--gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.pet-info-label{
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-600);
+  margin-bottom: 4px;
+}
+
+.pet-info-value{
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.pet-note{
+  margin:0;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  padding: 1rem;
+  background: var(--gray-50);
+  border-radius: 8px;
+  border-left: 3px solid var(--gray-300);
+  font-size: 0.9375rem;
+}
+
+.pet-note strong{
+  color: var(--gray-900);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pet-grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pet-photo{
+  border-radius: 12px;
+  overflow:hidden;
+  border: 2px solid var(--gray-200);
+  background: var(--gray-100);
+  aspect-ratio: 1 / 1;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.pet-photo:hover{
+  transform: scale(1.05);
+  border-color: var(--gray-400);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pet-photo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+.pet-tags{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pet-tag{
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--gray-300);
+  background: white;
+  color: var(--gray-800);
+  font-weight: 700;
+  font-size: .875rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.pet-empty{
+  width:100%;
+  max-width: 980px;
+  background:white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  padding: 1.25rem;
+  color: var(--gray-800);
+}
+
+@media (max-width: 860px){
+  .pet-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 420px){
+  .pet-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+
+/* --- Header (topbar) modern design --- */
+.topbar{
+  background: white;
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  gap: 1.5rem;
+}
+
+.brand{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.brand:hover{ opacity: 0.7; }
+
+.brand__title{
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  letter-spacing: -0.02em;
+}
+
+.brand__sub{
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.brand__sub::before{
+  content: "🐾";
+  font-size: 0.9em;
+}
+
+.nav{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav__link{
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.nav__link:hover{
+  background: var(--gray-50);
+  color: var(--gray-900);
+}
+
+.nav__link:last-child{
+  background: var(--gray-900);
+  color: white;
+  border-color: var(--gray-900);
+}
+
+.nav__link:last-child:hover{
+  background: var(--gray-800);
+  border-color: var(--gray-800);
+}
+
+@media (max-width: 640px){
+  .topbar .container{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .nav{
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav__link{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* --- Example card --- */
+.pet-example-card{ margin: 10px 0 16px; }
+.pet-example{
+  width:100%;
+  max-width: 980px;
+  background:white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  overflow:hidden;
+}
+.pet-example__summary{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 1rem 1.25rem;
+  cursor:pointer;
+  font-weight: 800;
+}
+.pet-example__icon{ font-size: 1.05rem; }
+.pet-example__chev{ margin-left:auto; opacity:.7; }
+.pet-example__body{
+  padding: 0 1.25rem 1.1rem;
+}
+.pet-example__list{
+  margin: .6rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--gray-800);
+  line-height: 1.65;
+}
+.pet-example__note{ margin: .75rem 0 0; }

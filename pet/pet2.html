@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet İlanları • Kaş Guide</title>
+  <link rel="icon" type="image/png" href="../assets/0_img/logokasguide.png">
+  <style>
+:root {
+  --bg: #0b1020;
+  --card: #ffffff;
+  --text: #0f172a;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --brand: #0ea5e9;
+  --brand-2: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-card: 0 10px 30px rgba(0,0,0,.15);
+  --shadow-hover: 0 20px 40px rgba(0,0,0,.25);
+  --container: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% -10%, rgba(34,197,94,.35), transparent 55%),
+    radial-gradient(1200px 700px at 80% 0%, rgba(14,165,233,.38), transparent 55%),
+    radial-gradient(1200px 900px at 50% 110%, rgba(255,255,255,.08), transparent 60%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+.container { 
+  width: min(var(--container), calc(100% - 32px)); 
+  margin: 0 auto; 
+}
+
+/* Topbar */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(10,15,30,.6);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.topbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+.brand__title {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.3rem;
+  letter-spacing: .3px;
+}
+.brand__sub {
+  font-size: .85rem;
+  color: rgba(255,255,255,.7);
+  margin-top: 2px;
+}
+.nav {
+  display: flex;
+  gap: 12px;
+}
+.nav__link {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.85);
+  border: 1px solid rgba(255,255,255,.12);
+  font-size: .9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.nav__link:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.25);
+}
+.nav__link--primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border: none;
+  color: #fff;
+}
+.nav__link--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14,165,233,.35);
+}
+
+/* Hero */
+.hero {
+  padding: 40px 0 30px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #fff;
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+.hero p {
+  color: rgba(255,255,255,.8);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Filter Tabs */
+.filter-section {
+  padding: 20px 0 30px;
+}
+.filter-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filter-tab {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+  border: 2px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.85);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: .95rem;
+}
+.filter-tab:hover {
+  background: rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.25);
+}
+.filter-tab.active {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(14,165,233,.4);
+}
+.filter-tab .icon {
+  margin-right: 6px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  padding: 12px 20px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  color: rgba(255,255,255,.9);
+  font-weight: 600;
+  font-size: .9rem;
+}
+.stat-number {
+  color: var(--brand-2);
+  font-weight: 800;
+  margin-right: 4px;
+}
+
+/* Pet Grid */
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 20px 0 60px;
+}
+
+/* Pet Card */
+.pet-card {
+  background: rgba(255,255,255,.95);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,.4);
+  position: relative;
+}
+.pet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+.pet-card[data-type="Kayıp"] .pet-badge {
+  background: linear-gradient(135deg, #f59e0b, #dc2626);
+}
+.pet-card[data-type="Sahiplendirilecek"] .pet-badge {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+}
+
+.pet-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 800;
+  font-size: .8rem;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  backdrop-filter: blur(4px);
+}
+
+.pet-image {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+.pet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.pet-card:hover .pet-image img {
+  transform: scale(1.08);
+}
+
+.pet-gallery {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.gallery-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--gray-200);
+}
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-thumb:hover {
+  transform: scale(1.1);
+  border-color: var(--brand);
+}
+
+.pet-content {
+  padding: 20px;
+}
+
+.pet-header {
+  margin-bottom: 14px;
+}
+.pet-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 6px;
+}
+.pet-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: .85rem;
+  color: var(--gray-600);
+}
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.meta-icon {
+  font-size: 1rem;
+}
+
+.pet-description {
+  color: var(--gray-700);
+  font-size: .95rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pet-footer {
+  display: flex;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-200);
+}
+.btn {
+  flex: 1;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  font-size: .9rem;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(14,165,233,.3);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14,165,233,.45);
+}
+.btn-secondary {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+}
+.btn-secondary:hover {
+  background: var(--gray-200);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: rgba(255,255,255,.7);
+}
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  opacity: .5;
+}
+.empty-state h3 {
+  color: rgba(255,255,255,.9);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+  padding: 30px 0;
+  text-align: center;
+  color: rgba(255,255,255,.6);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pets-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .filter-tabs {
+    flex-direction: column;
+  }
+  .filter-tab {
+    width: 100%;
+  }
+}
+
+/* Hidden utility */
+.hidden {
+  display: none !important;
+}
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <a href="../index.html" class="brand">
+        <div class="brand__title">🐾 Kaş Guide</div>
+        <div class="brand__sub">Pet İlanları</div>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav__link">Ana Sayfa</a>
+        <a href="./add-pet/add-pet.html" class="nav__link nav__link--primary">+ Pet Ekle</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>🐶🐱 Pet İlanları</h1>
+        <p>Kayıp dostlarımızı bulalım, yeni dostlar sahiplenelim</p>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">
+            <span class="icon">🌟</span> Tüm İlanlar
+          </button>
+          <button class="filter-tab" data-filter="Kayıp">
+            <span class="icon">🔍</span> Kayıp
+          </button>
+          <button class="filter-tab" data-filter="Sahiplendirilecek">
+            <span class="icon">🏠</span> Sahiplendirilecek
+          </button>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-number" id="totalCount">0</span> Toplam İlan
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="lostCount">0</span> Kayıp
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="adoptCount">0</span> Sahiplendirilecek
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pets-section">
+      <div class="container">
+        <div class="pets-grid" id="petsGrid">
+          
+          <!-- ÖRNEK PET CARD 1 - KAYIP -->
+          <article class="pet-card" data-type="Kayıp">
+            <div class="pet-badge">🔍 Kayıp</div>
+            <div class="pet-image">
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600" alt="Minnoş">
+              <div class="pet-gallery">
+                <div class="gallery-thumb">
+                  <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=100" alt="Thumb 1">
+                </div>
+                <div class="gallery-thumb">
+                  <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=100" alt="Thumb 2">
+                </div>
+                <div class="gallery-thumb">
+                  <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=100" alt="Thumb 3">
+                </div>
+              </div>
+            </div>
+            <div class="pet-content">
+              <div class="pet-header">
+                <h3 class="pet-name">Minnoş</h3>
+                <div class="pet-meta">
+                  <span class="meta-item">
+                    <span class="meta-icon">🐱</span> Kedi
+                  </span>
+                  <span class="meta-item">
+                    <span class="meta-icon">📅</span> 2-3 yaş
+                  </span>
+                  <span class="meta-item">
+                    <span class="meta-icon">🧬</span> Tekir
+                  </span>
+                </div>
+              </div>
+              <p class="pet-description">
+                Kaş merkez Hükümet Caddesi'nde görüldü. Çok ürkek, yeşil gözlü tekir kedi. Beyaz pati ve göğsü var. Lütfen görürseniz haber verin.
+              </p>
+              <div class="pet-footer">
+                <a href="tel:+4917012345678" class="btn btn-primary">📞 İletişim</a>
+                <button class="btn btn-secondary">📝 Detay</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ÖRNEK PET CARD 2 - SAHİPLENDİRİLECEK -->
+          <article class="pet-card" data-type="Sahiplendirilecek">
+            <div class="pet-badge">🏠 Sahiplendirme</div>
+            <div class="pet-image">
+              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600" alt="Çıtır">
+              <div class="pet-gallery">
+                <div class="gallery-thumb">
+                  <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=100" alt="Thumb 1">
+                </div>
+                <div class="gallery-thumb">
+                  <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=100" alt="Thumb 2">
+                </div>
+              </div>
+            </div>
+            <div class="pet-content">
+              <div class="pet-header">
+                <h3 class="pet-name">Çıtır</h3>
+                <div class="pet-meta">
+                  <span class="meta-item">
+                    <span class="meta-icon">🐶</span> Köpek
+                  </span>
+                  <span class="meta-item">
+                    <span class="meta-icon">📅</span> 6 ay
+                  </span>
+                  <span class="meta-item">
+                    <span class="meta-icon">🧬</span> Mix
+                  </span>
+                </div>
+              </div>
+              <p class="pet-description">
+                Çok oyuncu, insanlarla iyi geçinen, aşıları tam genç dişi köpek. Bahçeli eve uygun. Çok sevecen ve akıllı.
+              </p>
+              <div class="pet-footer">
+                <a href="tel:+4917087654321" class="btn btn-primary">📞 İletişim</a>
+                <button class="btn btn-secondary">📝 Detay</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ÖRNEK PET CARD 3 - SAHİPLENDİRİLECEK -->
+          <article class="pet-card" data-type="Sahiplendirilecek">
+            <div class="pet-badge">🏠 Sahiplendirme</div>
+            <div class="pet-image">
+              <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=600" alt="Pamuk">
+              <div class="pet-gallery">
+                <div class="gallery-thumb">
+                  <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=100" alt="Thumb 1">
+                </div>
+              </div>
+            </div>
+            <div class="pet-content">
+              <div class="pet-header">
+                <h3 class="pet-name">Pamuk</h3>
+                <div class="pet-meta">
+                  <span class="meta-item">
+                    <span class="meta-icon">🐱</span> Kedi
+                  </span>
+                  <span class="meta-item">
+                    <span class="meta-icon">📅</span> 4 yaş
+                  </span>
+                  <span class="meta-item">
+                    <span class="meta-icon">🧬</span> Van kedisi
+                  </span>
+                </div>
+              </div>
+              <p class="pet-description">
+                Beyaz, uzun tüylü, mavi gözlü Van kedisi. Çok sakin, evde yaşamaya alışkın. Kısırlaştırılmış, aşıları tam.
+              </p>
+              <div class="pet-footer">
+                <a href="tel:+4917011223344" class="btn btn-primary">📞 İletişim</a>
+                <button class="btn btn-secondary">📝 Detay</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="empty-state hidden" id="emptyState">
+          <div class="empty-state-icon">🐾</div>
+          <h3>Henüz ilan yok</h3>
+          <p>Bu kategoride henüz pet ilanı bulunmuyor.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Kaş Guide • Pet İlanları 2024</p>
+    </div>
+  </footer>
+
+  <script>
+    // Filter functionality
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const petCards = document.querySelectorAll('.pet-card');
+    const petsGrid = document.getElementById('petsGrid');
+    const emptyState = document.getElementById('emptyState');
+    
+    // Stats
+    const totalCount = document.getElementById('totalCount');
+    const lostCount = document.getElementById('lostCount');
+    const adoptCount = document.getElementById('adoptCount');
+
+    function updateStats() {
+      const total = petCards.length;
+      const lost = document.querySelectorAll('[data-type="Kayıp"]').length;
+      const adopt = document.querySelectorAll('[data-type="Sahiplendirilecek"]').length;
+      
+      totalCount.textContent = total;
+      lostCount.textContent = lost;
+      adoptCount.textContent = adopt;
+    }
+
+    function filterPets(filterType) {
+      let visibleCount = 0;
+
+      petCards.forEach(card => {
+        if (filterType === 'all' || card.dataset.type === filterType) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Show/hide empty state
+      if (visibleCount === 0) {
+        petsGrid.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+      } else {
+        petsGrid.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+      }
+    }
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update active state
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Filter pets
+        const filter = tab.dataset.filter;
+        filterPets(filter);
+      });
+    });
+
+    // Initialize
+    updateStats();
+    filterPets('all');
+  </script>
+
+</body>
+</html>
