@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     const smtpUser = pickEnv("SMTP_USER", pickEnv("MAIL_USER", ""));
     const smtpPass = pickEnv("SMTP_PASS", pickEnv("MAIL_PASS", ""));
 
-    const mailFrom = pickEnv("MAIL_FROM", smtpUser || "no-reply@kasguide.de");
+    const mailFrom = pickEnv("MAIL_FROM", smtpUser || "feedback@kasguide.de");
     const mailTo =
       pickEnv("FEEDBACK_MAIL_TO", "") ||
       pickEnv("MAIL_TO", "") ||
