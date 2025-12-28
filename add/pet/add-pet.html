@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pet Ekle • Kaş Guide</title>
+  <link rel="icon" type="image/png" href="../../assets/0_img/logokasguide.png">
+  <link rel="stylesheet" href="./add-pet.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../../index.html" aria-label="Kaş Guide">
+        <div class="brand__title">Kaş Guide</div>
+        <div class="brand__sub">Pet Ekle</div>
+      </a>
+      <nav class="nav">
+        <a class="nav__link" href="../../index.html">Ana Sayfa</a>
+        <a class="nav__link" href="../../pet/pet.html">Pet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+
+      <section class="hero">
+        <h1>🐶🐱 Pet Ekle</h1>
+        <p class="muted">
+          Kedi veya köpek bildirimini buradan ekleyebilirsin.
+          Fotoğraflar <strong>1–5</strong> arası olmalı, “Kısa Bilgi” alanı <strong>500 karakter</strong> ile sınırlı.
+        </p>
+      </section>
+
+      <section class="info-section">
+        <details class="accordion-item">
+          <summary class="section-title">
+            <span class="section-icon">📌</span>
+            Küçük not
+            <span class="chev">▾</span>
+          </summary>
+          <div class="liste-small">
+            <p>Paylaştığın bilgiler ve fotoğraflar değerlendirilip uygun görüldüğünde yayınlanır.</p>
+            <p>İletişim için WhatsApp/Tel yeterli. Lütfen mümkünse doğru ve ulaşılabilir bir numara yaz.</p>
+          </div>
+        </details>
+      </section>
+
+      <div id="success" class="success-card" hidden>
+        <h2>✅ Başvurun alındı</h2>
+        <p class="muted">Teşekkürler! Ekibimiz inceleyip uygun görüldüğünde yayınlayacak.</p>
+      </div>
+
+      <section class="form-card">
+        <div class="form-header">
+          <h2>Form</h2>
+          <p class="muted">Alanları mümkün olduğunca net doldurursan daha hızlı ilerleriz.</p>
+        </div>
+
+        <form id="petForm" novalidate>
+          <div class="grid">
+
+            <div class="field">
+              <div class="label">Pet Adı <span class="hint">(zorunlu)</span></div>
+              <input name="petName" required autocomplete="off" />
+            </div>
+
+            <div class="field">
+              <div class="label">Tür <span class="hint">(zorunlu)</span></div>
+              <select name="petType" required>
+                <option value="">Seçiniz</option>
+                <option value="Kedi">Kedi</option>
+                <option value="Köpek">Köpek</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <div class="label">Yaş</div>
+              <input name="age" placeholder="Örn: 1-2 yaş" autocomplete="off" />
+            </div>
+
+            <div class="field">
+              <div class="label">Cins</div>
+              <input name="breed" placeholder="Örn: Tekir (mix)" autocomplete="off" />
+            </div>
+
+            <div class="field field--full">
+              <div class="charline">
+                <div class="label">Kısa Bilgi <span class="hint">(max 500, zorunlu)</span></div>
+                <div class="counter"><span id="shortCounter">0</span>/500</div>
+              </div>
+              <textarea id="shortNote" name="shortNote" maxlength="500" required
+                placeholder="Örn: Nerede görüldü, karakteri nasıl, tasma var mı, ürkek mi..."></textarea>
+            </div>
+
+            <div class="field field--full">
+              <div class="label">İletişim (WhatsApp / Tel) <span class="hint">(zorunlu)</span></div>
+              <input name="phone" required placeholder="Örn: +49 17X XXX XXXX" autocomplete="off" />
+            </div>
+
+            <div class="field field--full">
+              <div class="label">Bize iletmek istediğiniz notlar</div>
+              <textarea name="notes" placeholder="Ek bilgi, saat aralığı, dikkat edilmesi gerekenler..."></textarea>
+            </div>
+
+            <div class="field field--full">
+              <div class="label">Fotoğraflar <span class="hint">(1–5, zorunlu)</span></div>
+              <div class="upload-row">
+                <input id="photosInput" type="file" name="photos" multiple accept="image/*" required />
+                <div class="upload-meta">
+                  <div class="hint">İpucu: Net yüz/beden görünüyorsa tanımlama kolaylaşır.</div>
+                  <div id="photoThumbs" class="thumbs" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="formError" class="error" hidden></div>
+
+          <div class="actions">
+            <button class="btn" type="submit">Gönder</button>
+            <a class="btn btn--ghost" href="../../pet/pet.html">Pet sayfasına git</a>
+          </div>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="muted">Kaş Guide • Pet</div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="./add-pet.js"></script>
+
+</body>
+</html>

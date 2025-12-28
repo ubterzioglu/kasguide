@@ -4,94 +4,140 @@ import fs from "fs";
 
 export const config = { api: { bodyParser: false } };
 
+function asArray(v) {
+  if (!v) return [];
+  return Array.isArray(v) ? v : [v];
+}
 function first(v) {
   return Array.isArray(v) ? v[0] : v;
 }
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(405).send("Method Not Allowed");
+  if (req.method !== "POST") {
+    return res.status(405).send("Method Not Allowed");
+  }
 
   try {
     const form = formidable({
       multiples: false,
-      maxFileSize: 2 * 1024 * 1024, // 2MB per file
+      maxFileSize: 2 * 1024 * 1024, // 2MB
       allowEmptyFiles: true,
       minFileSize: 0,
     });
 
     const [fields, files] = await form.parse(req);
 
-    const artistName = (first(fields.artistName) || "").toString().trim();
-    const shortText = (first(fields.shortText) || "").toString().trim();
-    const longText = (first(fields.longText) || "").toString().trim();
+    // ---- SMTP ENV (same convention as venue-submit.js) ----
+    const smtpHost = process.env.SMTP_HOST || process.env.MAIL_HOST;
+    const smtpPort = Number(process.env.SMTP_PORT || process.env.MAIL_PORT || 465);
+    const smtpUser = process.env.SMTP_USER || process.env.MAIL_USER;
+    const smtpPass = process.env.SMTP_PASS || process.env.MAIL_PASS;
 
-    if (!artistName || !shortText || !longText) {
-      return res.status(400).send("Eksik alan: İsim + Kısa Tanıtım + Detaylı Tanıtım zorunludur.");
+    if (!smtpHost || !smtpUser || !smtpPass) {
+      return res.status(500).json({
+        success: false,
+        message: "SMTP env eksik (SMTP_HOST/SMTP_USER/SMTP_PASS)",
+      });
     }
 
-    const profilePhoto = files.profilePhoto ? first(files.profilePhoto) : null;
-    const bannerPhoto = files.bannerPhoto ? first(files.bannerPhoto) : null;
+    const mailTo = process.env.MAIL_TO || process.env.ARTISTS_MAIL_TO || "sanat@kasguide.de";
+    const mailFrom = process.env.MAIL_FROM || `Kaş Guide <${smtpUser}>`;
 
-    const attachments = [];
-    const pushFile = (file, label) => {
-      if (!file) return;
-      // formidable v3 file has: filepath, originalFilename, mimetype
-      const mime = (file.mimetype || "").toLowerCase();
-      if (!mime.startsWith("image/")) return;
-
-      try {
-        attachments.push({
-          filename: file.originalFilename || label,
-          content: fs.readFileSync(file.filepath),
-        });
-      } catch {}
-    };
-
-    pushFile(profilePhoto, "profile-photo.jpg");
-    pushFile(bannerPhoto, "banner-photo.jpg");
-
-    // Transporter (ENV ile)
     const transporter = nodemailer.createTransport({
-      host: process.env.MAIL_HOST,
-      port: Number(process.env.MAIL_PORT || 587),
-      secure: false,
-      auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      auth: { user: smtpUser, pass: smtpPass },
+      tls: {
+        rejectUnauthorized: false,
+        servername: smtpHost,
       },
     });
 
-    const to = process.env.MAIL_TO || "sanat@kasguide.de";
+    // ---- Text fields ----
+    const artistName = first(fields.artistName) || "-";
+    const categories = asArray(fields.artistCategory).filter(Boolean);
+    const shortText = first(fields.shortText) || "-";
+    const longText = first(fields.longText) || "-";
+
+    const instagram = first(fields.instagram) || "-";
+    const youtube = first(fields.youtube) || "-";
+    const musicLink = first(fields.musicLink) || "-";
+    const website = first(fields.website) || "-";
+
+    const phone = first(fields.phone) || "-";
+    const email = first(fields.email) || "-";
+    const notes = first(fields.notes) || "-";
+    const viewport = first(fields.viewport) || "-";
+
+    // ---- Attachments (optional) ----
+    const attachments = [];
+    const pushFile = (file, fallbackName) => {
+      if (!file) return;
+      const f = Array.isArray(file) ? file[0] : file;
+      if (!f?.filepath) return;
+      const mime = (f.mimetype || "").toLowerCase();
+      if (mime && !mime.startsWith("image/")) return;
+
+      try {
+        attachments.push({
+          filename: f.originalFilename || fallbackName,
+          content: fs.readFileSync(f.filepath),
+        });
+      } catch (err) {
+        // ignore attachment read errors
+      }
+    };
+
+    pushFile(files.profilePhoto, "profile-photo.jpg");
+    pushFile(files.bannerPhoto, "banner-photo.jpg");
+
+    // ---- Mail body ----
     const subject = `Yeni Sanatçı Profili - ${artistName}`;
 
-    // Basit, okunur mail body (ileride HTML mail yapılabilir)
-    const lines = [];
-    const add = (k, v) => lines.push(`${k}: ${v || "-"}`);
+    const mailText =
+`Yeni Sanatçı Başvurusu
 
-    add("İsim", artistName);
-    add("Kategori", first(fields.artistCategory));
-    add("Kısa Tanıtım", shortText);
-    lines.push("");
-    lines.push("Detaylı Tanıtım:");
-    lines.push(longText);
-    lines.push("");
-    add("Instagram", first(fields.instagram));
-    add("YouTube", first(fields.youtube));
-    add("Müzik Linki", first(fields.musicLink));
-    add("Web", first(fields.website));
-    add("Telefon", first(fields.phone));
-    add("E-posta", first(fields.email));
+İsim: ${artistName}
+Kategori: ${categories.length ? categories.join(", ") : "-"}
+
+Kısa Tanıtım:
+${shortText}
+
+Detaylı Tanıtım:
+${longText}
+
+Linkler:
+- Instagram: ${instagram}
+- YouTube: ${youtube}
+- Müzik Linki: ${musicLink}
+- Website: ${website}
+
+İletişim:
+- Telefon: ${phone}
+- E-posta: ${email}
+
+Notlar:
+${notes}
+
+Meta:
+- viewport: ${viewport}
+`;
 
     await transporter.sendMail({
-      from: process.env.MAIL_FROM || process.env.MAIL_USER,
-      to,
+      from: mailFrom,
+      to: mailTo,
       subject,
-      text: lines.join("\n"),
+      text: mailText,
       attachments,
     });
 
-    return res.status(200).send("Başvurunuz alındı. İnceledikten sonra yayınlayacağız.");
-  } catch (e) {
-    return res.status(500).send("Server error");
+    return res.status(200).json({ success: true });
+  } catch (err) {
+    console.error("ARTISTS MAIL ERROR:", err);
+    return res.status(500).json({
+      success: false,
+      message: err?.message || "Sunucu hatası",
+    });
   }
 }
