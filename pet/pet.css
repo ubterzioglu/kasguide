@@ -105,3 +105,51 @@
 @media (max-width: 420px){
   .pet-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+
+/* --- Header (topbar) responsive fix --- */
+.topbar .container{
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.nav{
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+@media (max-width: 520px){
+  .topbar .container{ align-items: flex-start; }
+  .nav{ width: 100%; justify-content: flex-start; }
+}
+
+/* --- Example card --- */
+.pet-example-card{ margin: 10px 0 16px; }
+.pet-example{
+  width:100%;
+  max-width: 980px;
+  background:white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  overflow:hidden;
+}
+.pet-example__summary{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 1rem 1.25rem;
+  cursor:pointer;
+  font-weight: 800;
+}
+.pet-example__icon{ font-size: 1.05rem; }
+.pet-example__chev{ margin-left:auto; opacity:.7; }
+.pet-example__body{
+  padding: 0 1.25rem 1.1rem;
+}
+.pet-example__list{
+  margin: .6rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--gray-800);
+  line-height: 1.65;
+}
+.pet-example__note{ margin: .75rem 0 0; }

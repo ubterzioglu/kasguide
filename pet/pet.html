@@ -1,42 +1,61 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pet • Kaş Guide</title>
-  <link rel="icon" type="image/png" href="../assets/0_img/logokasguide.png">
-  <link rel="stylesheet" href="./pet.css" />
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pet • Kaş Guide</title>
+<link href="../assets/0_img/logokasguide.png" rel="icon" type="image/png"/>
+<link href="./pet.css" rel="stylesheet">
+</link></head>
 <body>
-
-  <header class="topbar">
-    <div class="container">
-      <a class="brand" href="../index.html" aria-label="Kaş Guide">
-        <div class="brand__title">Kaş Guide</div>
-        <div class="brand__sub">Pet</div>
-      </a>
-      <nav class="nav">
-        <a class="nav__link" href="../index.html">Ana Sayfa</a>
-        <a class="nav__link" href="../add/pet/add-pet.html">Pet Ekle</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="pet-page">
-    <div class="container">
-      <section class="pet-hero">
-        <h1>🐾 Pet</h1>
-        <p class="muted">
+<header class="topbar">
+<div class="container">
+<a aria-label="Kaş Guide" class="brand" href="../index.html">
+<div class="brand__title">Kaş Guide</div>
+<div class="brand__sub">Pet</div>
+</a>
+<nav class="nav">
+<a class="nav__link" href="../index.html">Ana Sayfa</a>
+<a class="nav__link" href="../add/pet/add-pet.html">Pet Ekle</a>
+</nav>
+</div>
+</header>
+<main class="pet-page">
+<div class="container">
+<section class="pet-hero">
+<h1>🐾 Pet</h1>
+<p class="muted">
           Burada, bize iletilen kedi/köpek paylaşımlarını listeliyoruz.
           İçerikler derlenmiş bir dataset üzerinden gösterilir.
         </p>
-      </section>
+</section>
+<section aria-label="Örnek paylaşım" class="pet-example-card">
+<details class="pet-example" open="">
+<summary class="pet-example__summary">
+<span class="pet-example__icon">📌</span>
+      Örnek paylaşım (nasıl görünecek?)
+      <span class="pet-example__chev">▾</span>
+</summary>
+<div class="pet-example__body">
+<p><strong>Kedi</strong> • <span class="muted">Çukurbağ</span></p>
+<ul class="pet-example__list">
+<li><strong>Kısa bilgi:</strong> “Çukurbağ tarafında görüldü. Sakin, insanlara alışık gibi. Tasma yoktu.”</li>
+<li><strong>Yaş / Cins:</strong> “1–2 yaş • Tekir (mix)”</li>
+<li><strong>Fotoğraf:</strong> 1–5 arası net fotoğraf</li>
+<li><strong>İletişim:</strong> WhatsApp/Tel yeterli</li>
+</ul>
+<p class="muted pet-example__note">
+        Not: Paylaşımlar ekip tarafından incelenip uygun görüldüğünde yayınlanır.
+      </p>
+</div>
+</details>
+</section>
 
-      <div id="petRoot" class="pet-root" aria-live="polite"></div>
-    </div>
-  </main>
-
-  <script src="./pet-data.js"></script>
-  <script src="./pet.js"></script>
+<div aria-live="polite" class="pet-root" id="petRoot"></div>
+</div>
+</main>
+<script src="./pet-data.js"></script>
+<script src="./pet.js"></script>
 </body>
 </html>
