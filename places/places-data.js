@@ -6981,7 +6981,7 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   id: 'keyf-i-dem-restaurant-meyhane-kas',
   badgeId: 'new',
   title: 'Keyf-i Dem Restaurant Meyhane Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/keyf-i-dem-restaurant-meyhane-kas/keyf-i-dem-restaurant-meyhane-kas-001.jpg',
   images: [
@@ -6992,14 +6992,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'fichi-restaurant',
   badgeId: 'new',
   title: 'Fıchı Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/fichi-restaurant/fichi-restaurant-001.jpg',
   images: [
@@ -7010,14 +7010,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'meydan-restaurant-and-cafe-bistro',
   badgeId: 'new',
   title: 'Meydan Restaurant & Cafe - Bistro',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/meydan-restaurant-and-cafe-bistro/meydan-restaurant-and-cafe-bistro-001.jpg',
   images: [
@@ -7028,14 +7028,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'luna-restaurant-and-bar',
   badgeId: 'new',
   title: 'Luna Restaurant & Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/luna-restaurant-and-bar/luna-restaurant-and-bar-001.jpg',
   images: [
@@ -7046,14 +7046,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'yelken-restaurant-and-meyhane',
   badgeId: 'new',
   title: 'Yelken Restaurant & Meyhane',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/yelken-restaurant-and-meyhane/yelken-restaurant-and-meyhane-001.jpg',
   images: [
@@ -7064,14 +7064,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'manos-greek-tavern-kas',
   badgeId: 'new',
   title: 'Manos Greek Tavern Kas',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/manos-greek-tavern-kas/manos-greek-tavern-kas-001.jpg',
   images: [
@@ -7082,14 +7082,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'sidera-restaurant',
   badgeId: 'new',
   title: 'Sidera Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/sidera-restaurant/sidera-restaurant-001.jpg',
   images: [
@@ -7100,14 +7100,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tasra',
   badgeId: 'new',
   title: 'Tasra',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/tasra/tasra-001.jpg',
   images: [
@@ -7118,14 +7118,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-diva-residence-hotel-restaurant',
   badgeId: 'new',
   title: 'Kas Diva Residence Hotel Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-diva-residence-hotel-restaurant/kas-diva-residence-hotel-restaurant-001.jpg',
   images: [
@@ -7136,14 +7136,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kaya-korugu',
   badgeId: 'new',
   title: 'Kaya Koruğu',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kaya-korugu/kaya-korugu-001.jpg',
   images: [
@@ -7154,14 +7154,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'sushi-kashi',
   badgeId: 'new',
   title: 'Sushi Kashi',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/sushi-kashi/sushi-kashi-001.jpg',
   images: [
@@ -7172,14 +7172,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'menta-coffee-co',
   badgeId: 'new',
   title: 'Menta Coffee.co',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/menta-coffee-co/menta-coffee-co-001.jpg',
   images: [
@@ -7190,14 +7190,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'volk-by-hera-hotel',
   badgeId: 'new',
   title: 'VOLK by Hera Hotel',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/volk-by-hera-hotel/volk-by-hera-hotel-001.jpg',
   images: [
@@ -7208,14 +7208,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'gaia-kas',
   badgeId: 'new',
   title: 'Gaia Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/gaia-kas/gaia-kas-001.jpg',
   images: [
@@ -7226,14 +7226,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'mupptela-ocakbasi-meyhane',
   badgeId: 'new',
   title: 'Müpptela Ocakbaşi Meyhane',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/mupptela-ocakbasi-meyhane/mupptela-ocakbasi-meyhane-001.jpg',
   images: [
@@ -7244,14 +7244,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'cafe-corner-restaurant',
   badgeId: 'new',
   title: 'Cafe Corner Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/cafe-corner-restaurant/cafe-corner-restaurant-001.jpg',
   images: [
@@ -7262,14 +7262,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'allys-restaurant',
   badgeId: 'new',
   title: 'Allys Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/allys-restaurant/allys-restaurant-001.jpg',
   images: [
@@ -7280,14 +7280,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kasik-manti-and-ev-yemekleri',
   badgeId: 'new',
   title: 'Kaşık Mantı & Ev Yemekleri',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kasik-manti-and-ev-yemekleri/kasik-manti-and-ev-yemekleri-001.jpg',
   images: [
@@ -7298,14 +7298,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'cinarlar-garden-restaurant-grill-and-seafood',
   badgeId: 'new',
   title: 'Cinarlar Garden Restaurant Grill & Seafood',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/cinarlar-garden-restaurant-grill-and-seafood/cinarlar-garden-restaurant-grill-and-seafood-001.jpg',
   images: [
@@ -7316,14 +7316,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'bunbun',
   badgeId: 'new',
   title: 'Bunbun',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/bunbun/bunbun-001.jpg',
   images: [
@@ -7334,14 +7334,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'biugra-restoran-and-meyhane',
   badgeId: 'new',
   title: 'Biugra Restoran & Meyhane',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/biugra-restoran-and-meyhane/biugra-restoran-and-meyhane-001.jpg',
   images: [
@@ -7352,14 +7352,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'pizza-porto',
   badgeId: 'new',
   title: 'Pizza Porto',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/pizza-porto/pizza-porto-001.jpg',
   images: [
@@ -7370,14 +7370,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'giant-stride-shop-and-cafe-and-bar',
   badgeId: 'new',
   title: 'Giant Stride Shop & Cafe & Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar','cafe'],
   image: '../assets/1_places/giant-stride-shop-and-cafe-and-bar/giant-stride-shop-and-cafe-and-bar-001.jpg',
   images: [
@@ -7388,14 +7388,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'vera-veranda-rooftop-restaurant',
   badgeId: 'new',
   title: 'Vera Veranda Rooftop Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/vera-veranda-rooftop-restaurant/vera-veranda-rooftop-restaurant-001.jpg',
   images: [
@@ -7406,14 +7406,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'nazende-restaurant',
   badgeId: 'new',
   title: 'Nazende Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/nazende-restaurant/nazende-restaurant-001.jpg',
   images: [
@@ -7424,14 +7424,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'salkim-ocakbasi-meyhane-kas',
   badgeId: 'new',
   title: 'Salkım Ocakbaşı Meyhane Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/salkim-ocakbasi-meyhane-kas/salkim-ocakbasi-meyhane-kas-001.jpg',
   images: [
@@ -7442,14 +7442,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'maya-steakhouse',
   badgeId: 'new',
   title: 'Maya Steakhouse',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/maya-steakhouse/maya-steakhouse-001.jpg',
   images: [
@@ -7460,14 +7460,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ruhibey-meyhanesi',
   badgeId: 'new',
   title: 'Ruhibey Meyhanesi',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/ruhibey-meyhanesi/ruhibey-meyhanesi-001.jpg',
   images: [
@@ -7478,14 +7478,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'masuk-meyhane-kas',
   badgeId: 'new',
   title: 'Maşuk Meyhane Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/masuk-meyhane-kas/masuk-meyhane-kas-001.jpg',
   images: [
@@ -7496,14 +7496,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'bella-vita',
   badgeId: 'new',
   title: 'Bella Vita',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/bella-vita/bella-vita-001.jpg',
   images: [
@@ -7514,14 +7514,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ehl-i-keyf-meyhanesi-kas',
   badgeId: 'new',
   title: 'Ehl-i Keyf Meyhanesi Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/ehl-i-keyf-meyhanesi-kas/ehl-i-keyf-meyhanesi-kas-001.jpg',
   images: [
@@ -7532,14 +7532,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-kurukopru-corbacisi',
   badgeId: 'new',
   title: 'Kaş Kuruköprü Çorbacısı',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-kurukopru-corbacisi/kas-kurukopru-corbacisi-001.jpg',
   images: [
@@ -7550,14 +7550,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'dogal-anne-eli',
   badgeId: 'new',
   title: 'Doğal Anne Eli',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/dogal-anne-eli/dogal-anne-eli-001.jpg',
   images: [
@@ -7568,14 +7568,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-gurme-falafel',
   badgeId: 'new',
   title: 'Kaş Gurme Falafel',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-gurme-falafel/kas-gurme-falafel-001.jpg',
   images: [
@@ -7586,14 +7586,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'mumi-cafe-and-beach',
   badgeId: 'new',
   title: 'Mumi Cafe & Beach',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe','beach'],
   image: '../assets/1_places/mumi-cafe-and-beach/mumi-cafe-and-beach-001.jpg',
   images: [
@@ -7604,14 +7604,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kervan-pide-ve-kebap-salonu',
   badgeId: 'new',
   title: 'Kervan Pide ve Kebap Salonu',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kervan-pide-ve-kebap-salonu/kervan-pide-ve-kebap-salonu-001.jpg',
   images: [
@@ -7622,14 +7622,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'the-kitchen-by-korsan',
   badgeId: 'new',
   title: 'The Kitchen by Korsan',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/the-kitchen-by-korsan/the-kitchen-by-korsan-001.jpg',
   images: [
@@ -7640,14 +7640,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'bi-lokma-restaurant',
   badgeId: 'new',
   title: 'Bi Lokma Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/bi-lokma-restaurant/bi-lokma-restaurant-001.jpg',
   images: [
@@ -7658,14 +7658,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'pirzula-meyhane',
   badgeId: 'new',
   title: 'Pirzula Meyhane',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/pirzula-meyhane/pirzula-meyhane-001.jpg',
   images: [
@@ -7676,14 +7676,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'pells-gece-gunduz-lezzet',
   badgeId: 'new',
   title: 'Pell’s Gece / Gündüz / Lezzet',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/pells-gece-gunduz-lezzet/pells-gece-gunduz-lezzet-001.jpg',
   images: [
@@ -7694,14 +7694,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'lapero',
   badgeId: 'new',
   title: 'L’apero',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/lapero/lapero-001.jpg',
   images: [
@@ -7712,14 +7712,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ata-cafe-and-bar',
   badgeId: 'new',
   title: 'Ata Cafe & Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar','cafe'],
   image: '../assets/1_places/ata-cafe-and-bar/ata-cafe-and-bar-001.jpg',
   images: [
@@ -7730,14 +7730,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'bahce-restaurant',
   badgeId: 'new',
   title: 'Bahçe Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/bahce-restaurant/bahce-restaurant-001.jpg',
   images: [
@@ -7748,14 +7748,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'passarella-restaurant',
   badgeId: 'new',
   title: 'Passarella Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/passarella-restaurant/passarella-restaurant-001.jpg',
   images: [
@@ -7766,14 +7766,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'leymona-beach-and-restaurant-and-bar',
   badgeId: 'new',
   title: 'Leymona Beach & Restaurant & Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar','beach'],
   image: '../assets/1_places/leymona-beach-and-restaurant-and-bar/leymona-beach-and-restaurant-and-bar-001.jpg',
   images: [
@@ -7784,14 +7784,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'helios-meyhane',
   badgeId: 'new',
   title: 'Helios Meyhane',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/helios-meyhane/helios-meyhane-001.jpg',
   images: [
@@ -7802,14 +7802,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'bekos-kitchen',
   badgeId: 'new',
   title: 'Bekos Kitchen',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/bekos-kitchen/bekos-kitchen-001.jpg',
   images: [
@@ -7820,14 +7820,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'butka',
   badgeId: 'new',
   title: 'Butka',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/butka/butka-001.jpg',
   images: [
@@ -7838,14 +7838,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'adana-kebap-restaurant',
   badgeId: 'new',
   title: 'Adana Kebap Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/adana-kebap-restaurant/adana-kebap-restaurant-001.jpg',
   images: [
@@ -7856,14 +7856,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'spaghettici',
   badgeId: 'new',
   title: 'SpaghettiCi',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/spaghettici/spaghettici-001.jpg',
   images: [
@@ -7874,14 +7874,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ege-restaurant-taner-usta',
   badgeId: 'new',
   title: 'Ege Restaurant Taner Usta',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/ege-restaurant-taner-usta/ege-restaurant-taner-usta-001.jpg',
   images: [
@@ -7892,14 +7892,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'marina-restaurant',
   badgeId: 'new',
   title: 'Marina Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/marina-restaurant/marina-restaurant-001.jpg',
   images: [
@@ -7910,14 +7910,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'aperatif',
   badgeId: 'new',
   title: 'Aperatif',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/aperatif/aperatif-001.jpg',
   images: [
@@ -7928,14 +7928,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tas-bahce',
   badgeId: 'new',
   title: 'Taş Bahçe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/tas-bahce/tas-bahce-001.jpg',
   images: [
@@ -7946,14 +7946,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'koi-sushi-bar-and-cocktail',
   badgeId: 'new',
   title: 'Koi Sushi Bar & Cocktail',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/koi-sushi-bar-and-cocktail/koi-sushi-bar-and-cocktail-001.jpg',
   images: [
@@ -7964,14 +7964,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'sisci-ahmet-kas',
   badgeId: 'new',
   title: 'Şişçi Ahmet Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/sisci-ahmet-kas/sisci-ahmet-kas-001.jpg',
   images: [
@@ -7982,14 +7982,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'noel-baba-cafe-and-bistro',
   badgeId: 'new',
   title: 'Noel Baba Cafe & Bistro',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/noel-baba-cafe-and-bistro/noel-baba-cafe-and-bistro-001.jpg',
   images: [
@@ -8000,14 +8000,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'manzara-restaurant',
   badgeId: 'new',
   title: 'Manzara Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/manzara-restaurant/manzara-restaurant-001.jpg',
   images: [
@@ -8018,14 +8018,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'demeti-kas',
   badgeId: 'new',
   title: 'Demeti Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/demeti-kas/demeti-kas-001.jpg',
   images: [
@@ -8036,14 +8036,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tzatziki-meyhane',
   badgeId: 'new',
   title: 'Tzatziki Meyhane',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/tzatziki-meyhane/tzatziki-meyhane-001.jpg',
   images: [
@@ -8054,14 +8054,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'atom-cafe-bufe',
   badgeId: 'new',
   title: 'Atom Cafe Büfe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/atom-cafe-bufe/atom-cafe-bufe-001.jpg',
   images: [
@@ -8072,14 +8072,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kasim-restaurant',
   badgeId: 'new',
   title: 'Kaşım Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kasim-restaurant/kasim-restaurant-001.jpg',
   images: [
@@ -8090,14 +8090,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'uzum-kizi-meyhane',
   badgeId: 'new',
   title: 'Üzüm Kızı Meyhane',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/uzum-kizi-meyhane/uzum-kizi-meyhane-001.jpg',
   images: [
@@ -8108,14 +8108,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'dolphin-restaurant',
   badgeId: 'new',
   title: 'Dolphin Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/dolphin-restaurant/dolphin-restaurant-001.jpg',
   images: [
@@ -8126,14 +8126,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'derya-beach-restaurant',
   badgeId: 'new',
   title: 'Derya Beach Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['beach'],
   image: '../assets/1_places/derya-beach-restaurant/derya-beach-restaurant-001.jpg',
   images: [
@@ -8144,14 +8144,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'oz-nazilli-restaurant',
   badgeId: 'new',
   title: 'Öz Nazilli Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/oz-nazilli-restaurant/oz-nazilli-restaurant-001.jpg',
   images: [
@@ -8162,14 +8162,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-gulsen',
   badgeId: 'new',
   title: 'Kaş Gülşen',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-gulsen/kas-gulsen-001.jpg',
   images: [
@@ -8180,14 +8180,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'naturel-restaurant',
   badgeId: 'new',
   title: 'Naturel Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/naturel-restaurant/naturel-restaurant-001.jpg',
   images: [
@@ -8198,14 +8198,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'hayta-meyhane-restaurant',
   badgeId: 'new',
   title: 'Hayta Meyhane Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/hayta-meyhane-restaurant/hayta-meyhane-restaurant-001.jpg',
   images: [
@@ -8216,14 +8216,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'divas-restaurant-and-bar',
   badgeId: 'new',
   title: 'Diva’s Restaurant & Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/divas-restaurant-and-bar/divas-restaurant-and-bar-001.jpg',
   images: [
@@ -8234,14 +8234,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-asma6-beach-restaurant-and-garden-cafe',
   badgeId: 'new',
   title: 'Kaş Asma6 Beach Restaurant & Garden Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe','beach'],
   image: '../assets/1_places/kas-asma6-beach-restaurant-and-garden-cafe/kas-asma6-beach-restaurant-and-garden-cafe-001.jpg',
   images: [
@@ -8252,14 +8252,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kaptan-pide-pizza-salonu',
   badgeId: 'new',
   title: 'Kaptan Pide Pizza Salonu',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kaptan-pide-pizza-salonu/kaptan-pide-pizza-salonu-001.jpg',
   images: [
@@ -8270,14 +8270,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'yesil-restaurant',
   badgeId: 'new',
   title: 'Yeşil Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/yesil-restaurant/yesil-restaurant-001.jpg',
   images: [
@@ -8288,14 +8288,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'bijout-boutique-cafe',
   badgeId: 'new',
   title: 'Bijout Boutique Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/bijout-boutique-cafe/bijout-boutique-cafe-001.jpg',
   images: [
@@ -8306,14 +8306,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'fika-garden-kas',
   badgeId: 'new',
   title: 'Fika Garden Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/fika-garden-kas/fika-garden-kas-001.jpg',
   images: [
@@ -8324,14 +8324,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'yali-restaurant',
   badgeId: 'new',
   title: 'Yalı Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/yali-restaurant/yali-restaurant-001.jpg',
   images: [
@@ -8342,14 +8342,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'vira-liman-cafe-and-beach',
   badgeId: 'new',
   title: 'Vira Liman Cafe & Beach',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe','beach'],
   image: '../assets/1_places/vira-liman-cafe-and-beach/vira-liman-cafe-and-beach-001.jpg',
   images: [
@@ -8360,14 +8360,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'arabin-yeri-kas',
   badgeId: 'new',
   title: 'Arabın Yeri Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/arabin-yeri-kas/arabin-yeri-kas-001.jpg',
   images: [
@@ -8378,14 +8378,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'belmuar-restaurant',
   badgeId: 'new',
   title: 'Belmuar Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/belmuar-restaurant/belmuar-restaurant-001.jpg',
   images: [
@@ -8396,14 +8396,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-belediyesi-aile-cay-bahcesi',
   badgeId: 'new',
   title: 'Kaş Belediyesi Aile Çay Bahçesi',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-belediyesi-aile-cay-bahcesi/kas-belediyesi-aile-cay-bahcesi-001.jpg',
   images: [
@@ -8414,14 +8414,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kalimera',
   badgeId: 'new',
   title: 'Kalimera',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kalimera/kalimera-001.jpg',
   images: [
@@ -8432,14 +8432,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'maaide-restaurant',
   badgeId: 'new',
   title: 'Maaide Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/maaide-restaurant/maaide-restaurant-001.jpg',
   images: [
@@ -8450,14 +8450,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'boom-kitchen-kas',
   badgeId: 'new',
   title: 'Boom Kitchen Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/boom-kitchen-kas/boom-kitchen-kas-001.jpg',
   images: [
@@ -8468,14 +8468,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'pisekar-vegan-food',
   badgeId: 'new',
   title: 'Pisekar Vegan Food',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/pisekar-vegan-food/pisekar-vegan-food-001.jpg',
   images: [
@@ -8486,14 +8486,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'meyhane-myra',
   badgeId: 'new',
   title: 'Meyhane Myra',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/meyhane-myra/meyhane-myra-001.jpg',
   images: [
@@ -8504,14 +8504,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'cosdum-pide-ve-kebap-salonu',
   badgeId: 'new',
   title: 'Coşdum Pide ve Kebap Salonu',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/cosdum-pide-ve-kebap-salonu/cosdum-pide-ve-kebap-salonu-001.jpg',
   images: [
@@ -8522,14 +8522,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'lukka-dining',
   badgeId: 'new',
   title: 'Lukka Dining',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/lukka-dining/lukka-dining-001.jpg',
   images: [
@@ -8540,14 +8540,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'la-moda-beach-hotel',
   badgeId: 'new',
   title: 'La Moda Beach Hotel',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['beach'],
   image: '../assets/1_places/la-moda-beach-hotel/la-moda-beach-hotel-001.jpg',
   images: [
@@ -8558,14 +8558,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'refresh-vegan-kitchen',
   badgeId: 'new',
   title: 'Refresh Vegan Kitchen',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/refresh-vegan-kitchen/refresh-vegan-kitchen-001.jpg',
   images: [
@@ -8576,14 +8576,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tellina-restaurant',
   badgeId: 'new',
   title: 'Tellina Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/tellina-restaurant/tellina-restaurant-001.jpg',
   images: [
@@ -8594,14 +8594,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'nereid-gurme',
   badgeId: 'new',
   title: 'Nereid Gurme',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/nereid-gurme/nereid-gurme-001.jpg',
   images: [
@@ -8612,14 +8612,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'yakamoz-beach-restaurant',
   badgeId: 'new',
   title: 'Yakamoz Beach Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['beach'],
   image: '../assets/1_places/yakamoz-beach-restaurant/yakamoz-beach-restaurant-001.jpg',
   images: [
@@ -8630,14 +8630,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'rolling-rolls',
   badgeId: 'new',
   title: 'Rolling Rolls',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/rolling-rolls/rolling-rolls-001.jpg',
   images: [
@@ -8648,14 +8648,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: '2000-restaurant',
   badgeId: 'new',
   title: '2000 Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/2000-restaurant/2000-restaurant-001.jpg',
   images: [
@@ -8666,14 +8666,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'burgermeister-kas',
   badgeId: 'new',
   title: 'Burgermeister Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/burgermeister-kas/burgermeister-kas-001.jpg',
   images: [
@@ -8684,14 +8684,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'hills-cafe-and-bistro',
   badgeId: 'new',
   title: 'Hills Cafe & Bistro',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/hills-cafe-and-bistro/hills-cafe-and-bistro-001.jpg',
   images: [
@@ -8702,14 +8702,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-gurme-ev-yemekleri',
   badgeId: 'new',
   title: 'Kaş Gurme Ev Yemekleri',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-gurme-ev-yemekleri/kas-gurme-ev-yemekleri-001.jpg',
   images: [
@@ -8720,14 +8720,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'picasa-pizza',
   badgeId: 'new',
   title: 'Pi’casa Pizza',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/picasa-pizza/picasa-pizza-001.jpg',
   images: [
@@ -8738,14 +8738,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'red-box-meze-and-cafe',
   badgeId: 'new',
   title: 'Red Box Meze & Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/red-box-meze-and-cafe/red-box-meze-and-cafe-001.jpg',
   images: [
@@ -8756,14 +8756,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'no-37-teras',
   badgeId: 'new',
   title: 'No 37 Teras',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/no-37-teras/no-37-teras-001.jpg',
   images: [
@@ -8774,14 +8774,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'likya-gozleme-evi',
   badgeId: 'new',
   title: 'Likya Gözleme Evi',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/likya-gozleme-evi/likya-gozleme-evi-001.jpg',
   images: [
@@ -8792,14 +8792,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'asar-restaurant-kas',
   badgeId: 'new',
   title: 'Asar Restaurant Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/asar-restaurant-kas/asar-restaurant-kas-001.jpg',
   images: [
@@ -8810,14 +8810,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'durum-evi-mehmet-usta',
   badgeId: 'new',
   title: 'Dürüm Evi Mehmet Usta',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/durum-evi-mehmet-usta/durum-evi-mehmet-usta-001.jpg',
   images: [
@@ -8828,14 +8828,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'sul-kas-restaurant',
   badgeId: 'new',
   title: 'Sul-Kaş Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/sul-kas-restaurant/sul-kas-restaurant-001.jpg',
   images: [
@@ -8846,14 +8846,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kalkan-pasta-house',
   badgeId: 'new',
   title: 'Kalkan Pasta House',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kalkan-pasta-house/kalkan-pasta-house-001.jpg',
   images: [
@@ -8864,14 +8864,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'asmali-bahce',
   badgeId: 'new',
   title: 'Asmalı Bahçe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/asmali-bahce/asmali-bahce-001.jpg',
   images: [
@@ -8882,14 +8882,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'barbarossa-restaurant',
   badgeId: 'new',
   title: 'Barbarossa Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/barbarossa-restaurant/barbarossa-restaurant-001.jpg',
   images: [
@@ -8900,14 +8900,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ustalar-pide-and-kebap',
   badgeId: 'new',
   title: 'Ustalar Pide & Kebap',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/ustalar-pide-and-kebap/ustalar-pide-and-kebap-001.jpg',
   images: [
@@ -8918,14 +8918,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'akropol',
   badgeId: 'new',
   title: 'Akropol',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/akropol/akropol-001.jpg',
   images: [
@@ -8936,14 +8936,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'dost-cafe',
   badgeId: 'new',
   title: 'Dost Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/dost-cafe/dost-cafe-001.jpg',
   images: [
@@ -8954,14 +8954,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'oburus-notos-gastropub',
   badgeId: 'new',
   title: 'Oburus Notos Gastropub',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/oburus-notos-gastropub/oburus-notos-gastropub-001.jpg',
   images: [
@@ -8972,14 +8972,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kushane-tencere-yemekleri',
   badgeId: 'new',
   title: 'Kuşhane Tencere Yemekleri',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kushane-tencere-yemekleri/kushane-tencere-yemekleri-001.jpg',
   images: [
@@ -8990,14 +8990,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'food-mest',
   badgeId: 'new',
   title: 'Food Mest',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/food-mest/food-mest-001.jpg',
   images: [
@@ -9008,14 +9008,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'dondurma-dukkani',
   badgeId: 'new',
   title: 'Dondurma Dükkanı',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/dondurma-dukkani/dondurma-dukkani-001.jpg',
   images: [
@@ -9026,14 +9026,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'deniz-restaurant',
   badgeId: 'new',
   title: 'Deniz Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/deniz-restaurant/deniz-restaurant-001.jpg',
   images: [
@@ -9044,14 +9044,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'pisi-kahvalti-kas',
   badgeId: 'new',
   title: 'Pişi Kahvaltı Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/pisi-kahvalti-kas/pisi-kahvalti-kas-001.jpg',
   images: [
@@ -9062,14 +9062,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'myra-cikolata-evim-kas',
   badgeId: 'new',
   title: 'Myra Çikolata Evim Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/myra-cikolata-evim-kas/myra-cikolata-evim-kas-001.jpg',
   images: [
@@ -9080,14 +9080,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'the-kas-lounge',
   badgeId: 'new',
   title: 'The Kaş Lounge',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/the-kas-lounge/the-kas-lounge-001.jpg',
   images: [
@@ -9098,14 +9098,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'papyon-fast-food',
   badgeId: 'new',
   title: 'Papyon Fast Food',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/papyon-fast-food/papyon-fast-food-001.jpg',
   images: [
@@ -9116,14 +9116,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'noel-baba-cafe-pastanesi',
   badgeId: 'new',
   title: 'Noel Baba Cafe Pastanesi',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/noel-baba-cafe-pastanesi/noel-baba-cafe-pastanesi-001.jpg',
   images: [
@@ -9134,14 +9134,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'za-likya-fast-food',
   badgeId: 'new',
   title: 'Za Likya Fast Food',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/za-likya-fast-food/za-likya-fast-food-001.jpg',
   images: [
@@ -9152,14 +9152,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'quanta-rock',
   badgeId: 'new',
   title: 'Quanta Rock',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/quanta-rock/quanta-rock-001.jpg',
   images: [
@@ -9170,14 +9170,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'midyeci-aziz',
   badgeId: 'new',
   title: 'Midyeci Aziz',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/midyeci-aziz/midyeci-aziz-001.jpg',
   images: [
@@ -9188,14 +9188,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'aya-mutfak',
   badgeId: 'new',
   title: 'AYA Mutfak',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/aya-mutfak/aya-mutfak-001.jpg',
   images: [
@@ -9206,14 +9206,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'trinity-wine-house',
   badgeId: 'new',
   title: 'Trinity Wine House',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/trinity-wine-house/trinity-wine-house-001.jpg',
   images: [
@@ -9224,14 +9224,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'alis-35-kumru',
   badgeId: 'new',
   title: 'Ali’s 35 Kumru',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/alis-35-kumru/alis-35-kumru-001.jpg',
   images: [
@@ -9242,14 +9242,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'oh-be-kahvalti-and-mutfak',
   badgeId: 'new',
   title: 'Oh Be Kahvaltı & Mutfak',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/oh-be-kahvalti-and-mutfak/oh-be-kahvalti-and-mutfak-001.jpg',
   images: [
@@ -9260,14 +9260,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'mermaid-beach-restaurant',
   badgeId: 'new',
   title: 'Mermaid Beach Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['beach'],
   image: '../assets/1_places/mermaid-beach-restaurant/mermaid-beach-restaurant-001.jpg',
   images: [
@@ -9278,14 +9278,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'napitaly',
   badgeId: 'new',
   title: 'Napitaly',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/napitaly/napitaly-001.jpg',
   images: [
@@ -9296,14 +9296,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'bozoglu-et-balik-restaurant',
   badgeId: 'new',
   title: 'Bozoğlu Et Balık Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/bozoglu-et-balik-restaurant/bozoglu-et-balik-restaurant-001.jpg',
   images: [
@@ -9314,14 +9314,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'feride-et-lokantasi',
   badgeId: 'new',
   title: 'Feride Et Lokantası',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/feride-et-lokantasi/feride-et-lokantasi-001.jpg',
   images: [
@@ -9332,14 +9332,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-komagene',
   badgeId: 'new',
   title: 'Kaş Komagene',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-komagene/kas-komagene-001.jpg',
   images: [
@@ -9350,14 +9350,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'hatay-ocakbasi',
   badgeId: 'new',
   title: 'Hatay Ocakbaşı',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/hatay-ocakbasi/hatay-ocakbasi-001.jpg',
   images: [
@@ -9368,14 +9368,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ziizi-pizza-shop',
   badgeId: 'new',
   title: 'Ziizi Pizza Shop',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/ziizi-pizza-shop/ziizi-pizza-shop-001.jpg',
   images: [
@@ -9386,14 +9386,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kucuk-ev-restaurant',
   badgeId: 'new',
   title: 'Küçük Ev Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kucuk-ev-restaurant/kucuk-ev-restaurant-001.jpg',
   images: [
@@ -9404,14 +9404,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'guney-antakya-sofrasi',
   badgeId: 'new',
   title: 'Güney Antakya Sofrası',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/guney-antakya-sofrasi/guney-antakya-sofrasi-001.jpg',
   images: [
@@ -9422,14 +9422,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'talaylar-restaurant',
   badgeId: 'new',
   title: 'Talaylar Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/talaylar-restaurant/talaylar-restaurant-001.jpg',
   images: [
@@ -9440,14 +9440,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'manu-cocktail-bar',
   badgeId: 'new',
   title: 'Manu Cocktail Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/manu-cocktail-bar/manu-cocktail-bar-001.jpg',
   images: [
@@ -9458,14 +9458,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kor-sis-and-piyaz-restaurant',
   badgeId: 'new',
   title: 'Kor Şiş & Piyaz Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kor-sis-and-piyaz-restaurant/kor-sis-and-piyaz-restaurant-001.jpg',
   images: [
@@ -9476,14 +9476,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'panu',
   badgeId: 'new',
   title: 'Panu',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/panu/panu-001.jpg',
   images: [
@@ -9494,14 +9494,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'misti-drinks-and-cocktails',
   badgeId: 'new',
   title: 'Misti Drinks & Cocktails',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/misti-drinks-and-cocktails/misti-drinks-and-cocktails-001.jpg',
   images: [
@@ -9512,14 +9512,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tropic-garden-aile-cay-bahcesi',
   badgeId: 'new',
   title: 'Tropic Garden Aile Çay Bahçesi',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/tropic-garden-aile-cay-bahcesi/tropic-garden-aile-cay-bahcesi-001.jpg',
   images: [
@@ -9530,14 +9530,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'elit-restaurant',
   badgeId: 'new',
   title: 'Elit Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/elit-restaurant/elit-restaurant-001.jpg',
   images: [
@@ -9548,14 +9548,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kuslu-meyhane',
   badgeId: 'new',
   title: 'Kuşlu Meyhane',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/kuslu-meyhane/kuslu-meyhane-001.jpg',
   images: [
@@ -9566,14 +9566,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'firnaz-restaurant',
   badgeId: 'new',
   title: 'Firnaz Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/firnaz-restaurant/firnaz-restaurant-001.jpg',
   images: [
@@ -9584,14 +9584,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'medusa-hotel-and-restaurant',
   badgeId: 'new',
   title: 'Medusa Hotel & Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/medusa-hotel-and-restaurant/medusa-hotel-and-restaurant-001.jpg',
   images: [
@@ -9602,14 +9602,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'oz-hatay',
   badgeId: 'new',
   title: 'Öz Hatay',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/oz-hatay/oz-hatay-001.jpg',
   images: [
@@ -9620,14 +9620,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'sunrise-breakfast-kas',
   badgeId: 'new',
   title: 'Sunrise Breakfast Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/sunrise-breakfast-kas/sunrise-breakfast-kas-001.jpg',
   images: [
@@ -9638,14 +9638,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'gazkesmez-margaz-cuisine-and-camping',
   badgeId: 'new',
   title: 'Gazkesmez Margaz Cuisine & Camping',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/gazkesmez-margaz-cuisine-and-camping/gazkesmez-margaz-cuisine-and-camping-001.jpg',
   images: [
@@ -9656,14 +9656,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'cardak-cafe-and-restaurant',
   badgeId: 'new',
   title: 'Çardak Cafe & Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/cardak-cafe-and-restaurant/cardak-cafe-and-restaurant-001.jpg',
   images: [
@@ -9674,14 +9674,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'hikaye-fine-dining-cuisine',
   badgeId: 'new',
   title: 'Hikaye Fine Dining Cuisine',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/hikaye-fine-dining-cuisine/hikaye-fine-dining-cuisine-001.jpg',
   images: [
@@ -9692,14 +9692,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kled-burger-and-sandwich',
   badgeId: 'new',
   title: 'Kled Burger & Sandwich',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kled-burger-and-sandwich/kled-burger-and-sandwich-001.jpg',
   images: [
@@ -9710,14 +9710,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'nox-pub',
   badgeId: 'new',
   title: 'Nox Pub',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/nox-pub/nox-pub-001.jpg',
   images: [
@@ -9728,14 +9728,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'chachamma',
   badgeId: 'new',
   title: 'Chacha’mma',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/chachamma/chachamma-001.jpg',
   images: [
@@ -9746,14 +9746,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ata-cafe-kumpir-and-sarpedons-burger',
   badgeId: 'new',
   title: 'Ata Cafe Kumpir & Sarpedons Burger',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/ata-cafe-kumpir-and-sarpedons-burger/ata-cafe-kumpir-and-sarpedons-burger-001.jpg',
   images: [
@@ -9764,14 +9764,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-bistro',
   badgeId: 'new',
   title: 'Kaş Bistro',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-bistro/kas-bistro-001.jpg',
   images: [
@@ -9782,14 +9782,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'mumi-beach-club',
   badgeId: 'new',
   title: 'Mumi Beach Club',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['beach'],
   image: '../assets/1_places/mumi-beach-club/mumi-beach-club-001.jpg',
   images: [
@@ -9800,14 +9800,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'heyz',
   badgeId: 'new',
   title: 'Hey’z',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/heyz/heyz-001.jpg',
   images: [
@@ -9818,14 +9818,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tostcu-mesut',
   badgeId: 'new',
   title: 'Tostçu Mesut',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/tostcu-mesut/tostcu-mesut-001.jpg',
   images: [
@@ -9836,14 +9836,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'bi-duble-meze',
   badgeId: 'new',
   title: 'Bi Duble Meze',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/bi-duble-meze/bi-duble-meze-001.jpg',
   images: [
@@ -9854,14 +9854,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'palmiye-cafe',
   badgeId: 'new',
   title: 'Palmiye Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/palmiye-cafe/palmiye-cafe-001.jpg',
   images: [
@@ -9872,14 +9872,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'lycian-corner-bistro',
   badgeId: 'new',
   title: 'Lycian Corner Bistro',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/lycian-corner-bistro/lycian-corner-bistro-001.jpg',
   images: [
@@ -9890,14 +9890,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'muazzo-pizza-cafe',
   badgeId: 'new',
   title: 'Muazzo Pizza Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/muazzo-pizza-cafe/muazzo-pizza-cafe-001.jpg',
   images: [
@@ -9908,14 +9908,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kirinti-cafe',
   badgeId: 'new',
   title: 'Kırıntı Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/kirinti-cafe/kirinti-cafe-001.jpg',
   images: [
@@ -9926,14 +9926,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'atilgan-cafe',
   badgeId: 'new',
   title: 'Atılgan Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/atilgan-cafe/atilgan-cafe-001.jpg',
   images: [
@@ -9944,14 +9944,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'pebble-beach-bar',
   badgeId: 'new',
   title: 'Pebble Beach Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar','beach'],
   image: '../assets/1_places/pebble-beach-bar/pebble-beach-bar-001.jpg',
   images: [
@@ -9962,14 +9962,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'gubba',
   badgeId: 'new',
   title: 'Gubba',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/gubba/gubba-001.jpg',
   images: [
@@ -9980,14 +9980,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'giannis-coffee-house',
   badgeId: 'new',
   title: 'Gianni’s Coffee House',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/giannis-coffee-house/giannis-coffee-house-001.jpg',
   images: [
@@ -9998,14 +9998,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tedavi-beer-house',
   badgeId: 'new',
   title: 'Tedavi Beer House',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/tedavi-beer-house/tedavi-beer-house-001.jpg',
   images: [
@@ -10016,14 +10016,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-park-restaurant',
   badgeId: 'new',
   title: 'Kaş Park Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-park-restaurant/kas-park-restaurant-001.jpg',
   images: [
@@ -10034,14 +10034,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tobys-restaurant',
   badgeId: 'new',
   title: 'Toby’s Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/tobys-restaurant/tobys-restaurant-001.jpg',
   images: [
@@ -10052,14 +10052,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'cedre',
   badgeId: 'new',
   title: 'Cèdre',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/cedre/cedre-001.jpg',
   images: [
@@ -10070,14 +10070,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'alarga-dine-kas',
   badgeId: 'new',
   title: 'Alarga Dine Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/alarga-dine-kas/alarga-dine-kas-001.jpg',
   images: [
@@ -10088,14 +10088,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'mamma-mia-cafe-kas',
   badgeId: 'new',
   title: 'Mamma Mia Cafe Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/mamma-mia-cafe-kas/mamma-mia-cafe-kas-001.jpg',
   images: [
@@ -10106,14 +10106,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'muhtarin-yeri',
   badgeId: 'new',
   title: 'Muhtarın Yeri',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/muhtarin-yeri/muhtarin-yeri-001.jpg',
   images: [
@@ -10124,14 +10124,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ai-sushi-and-asian-cuisine',
   badgeId: 'new',
   title: 'Ai Sushi & Asian Cuisine',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/ai-sushi-and-asian-cuisine/ai-sushi-and-asian-cuisine-001.jpg',
   images: [
@@ -10142,14 +10142,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'hop',
   badgeId: 'new',
   title: 'HOP',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/hop/hop-001.jpg',
   images: [
@@ -10160,14 +10160,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'modo-likya-beach-club-and-restaurant',
   badgeId: 'new',
   title: 'Modo Likya Beach Club & Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['beach'],
   image: '../assets/1_places/modo-likya-beach-club-and-restaurant/modo-likya-beach-club-and-restaurant-001.jpg',
   images: [
@@ -10178,14 +10178,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'olea-nova-restaurant',
   badgeId: 'new',
   title: 'Olea Nova Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/olea-nova-restaurant/olea-nova-restaurant-001.jpg',
   images: [
@@ -10196,14 +10196,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'sangria-kas',
   badgeId: 'new',
   title: 'Sangria Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/sangria-kas/sangria-kas-001.jpg',
   images: [
@@ -10214,14 +10214,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'romeos-pizza-kalkan',
   badgeId: 'new',
   title: 'Romeo’s Pizza Kalkan',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/romeos-pizza-kalkan/romeos-pizza-kalkan-001.jpg',
   images: [
@@ -10232,14 +10232,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'defne-restaurant',
   badgeId: 'new',
   title: 'Defne Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/defne-restaurant/defne-restaurant-001.jpg',
   images: [
@@ -10250,14 +10250,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kokorecci-mehmet-usta',
   badgeId: 'new',
   title: 'Kokoreççi Mehmet Usta',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kokorecci-mehmet-usta/kokorecci-mehmet-usta-001.jpg',
   images: [
@@ -10268,14 +10268,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'sandro-pizza-burger',
   badgeId: 'new',
   title: 'Sandro Pizza Burger',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/sandro-pizza-burger/sandro-pizza-burger-001.jpg',
   images: [
@@ -10286,14 +10286,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'alley-sunset-restaurant',
   badgeId: 'new',
   title: 'Alley Sunset Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/alley-sunset-restaurant/alley-sunset-restaurant-001.jpg',
   images: [
@@ -10304,14 +10304,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'can-mocamp-and-livorno-pizza',
   badgeId: 'new',
   title: 'Can Mocamp & Livorno Pizza',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/can-mocamp-and-livorno-pizza/can-mocamp-and-livorno-pizza-001.jpg',
   images: [
@@ -10322,14 +10322,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kas-belediyesi-sosyal-tesisler',
   badgeId: 'new',
   title: 'Kaş Belediyesi Sosyal Tesisler',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kas-belediyesi-sosyal-tesisler/kas-belediyesi-sosyal-tesisler-001.jpg',
   images: [
@@ -10340,14 +10340,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'calimera',
   badgeId: 'new',
   title: 'Calimera',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/calimera/calimera-001.jpg',
   images: [
@@ -10358,14 +10358,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'asmali-bahce-kas',
   badgeId: 'new',
   title: 'Asmalı Bahçe Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/asmali-bahce-kas/asmali-bahce-kas-001.jpg',
   images: [
@@ -10376,14 +10376,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'maya-steakhouse-and-wineshop',
   badgeId: 'new',
   title: 'Maya Steakhouse & Wineshop',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/maya-steakhouse-and-wineshop/maya-steakhouse-and-wineshop-001.jpg',
   images: [
@@ -10394,14 +10394,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'paninaro-kas',
   badgeId: 'new',
   title: 'Paninaro Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/paninaro-kas/paninaro-kas-001.jpg',
   images: [
@@ -10412,14 +10412,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'deniz-kizi-restaurant',
   badgeId: 'new',
   title: 'Deniz Kızı Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/deniz-kizi-restaurant/deniz-kizi-restaurant-001.jpg',
   images: [
@@ -10430,14 +10430,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'demirci-turizm',
   badgeId: 'new',
   title: 'Demirci Turizm',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/demirci-turizm/demirci-turizm-001.jpg',
   images: [
@@ -10448,14 +10448,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'marquis-asian-restaurant',
   badgeId: 'new',
   title: 'Marquis Asian Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/marquis-asian-restaurant/marquis-asian-restaurant-001.jpg',
   images: [
@@ -10466,14 +10466,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'chin-dian-restaurant',
   badgeId: 'new',
   title: 'Chin Dian Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/chin-dian-restaurant/chin-dian-restaurant-001.jpg',
   images: [
@@ -10484,14 +10484,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'olivegardenkas',
   badgeId: 'new',
   title: 'Olivegardenkas',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/olivegardenkas/olivegardenkas-001.jpg',
   images: [
@@ -10502,14 +10502,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'mc-sandwhich',
   badgeId: 'new',
   title: 'Mc Sandwhich',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/mc-sandwhich/mc-sandwhich-001.jpg',
   images: [
@@ -10520,14 +10520,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'dominos-pizza',
   badgeId: 'new',
   title: 'Dominos Pizza',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/dominos-pizza/dominos-pizza-001.jpg',
   images: [
@@ -10538,14 +10538,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'agora-restaurant-and-pool-bar',
   badgeId: 'new',
   title: 'Agora Restaurant & Pool Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/agora-restaurant-and-pool-bar/agora-restaurant-and-pool-bar-001.jpg',
   images: [
@@ -10556,14 +10556,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'meri-garden',
   badgeId: 'new',
   title: 'Meri Garden',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/meri-garden/meri-garden-001.jpg',
   images: [
@@ -10574,14 +10574,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'mola-caffe-oliver-garden',
   badgeId: 'new',
   title: 'Mola Caffe Oliver Garden',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/mola-caffe-oliver-garden/mola-caffe-oliver-garden-001.jpg',
   images: [
@@ -10592,14 +10592,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'public-food-and-drink',
   badgeId: 'new',
   title: 'Public Food & Drink',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/public-food-and-drink/public-food-and-drink-001.jpg',
   images: [
@@ -10610,14 +10610,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'pilav-check-kas',
   badgeId: 'new',
   title: 'Pilav Check Kaş',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/pilav-check-kas/pilav-check-kas-001.jpg',
   images: [
@@ -10628,14 +10628,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'cafe-granda',
   badgeId: 'new',
   title: 'Cafe Granda',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/cafe-granda/cafe-granda-001.jpg',
   images: [
@@ -10646,14 +10646,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'sardelaki',
   badgeId: 'new',
   title: 'Sardelaki',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/sardelaki/sardelaki-001.jpg',
   images: [
@@ -10664,14 +10664,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'tuluhan-gokalp',
   badgeId: 'new',
   title: 'Tuluhan Gökalp',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/tuluhan-gokalp/tuluhan-gokalp-001.jpg',
   images: [
@@ -10682,14 +10682,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'karadeniz-pide-salonu',
   badgeId: 'new',
   title: 'Karadeniz Pide Salonu',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/karadeniz-pide-salonu/karadeniz-pide-salonu-001.jpg',
   images: [
@@ -10700,14 +10700,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'yelken-tatli-and-kunefe-and-dondurma',
   badgeId: 'new',
   title: 'Yelken Tatlı & Künefe & Dondurma',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/yelken-tatli-and-kunefe-and-dondurma/yelken-tatli-and-kunefe-and-dondurma-001.jpg',
   images: [
@@ -10718,14 +10718,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'buburger',
   badgeId: 'new',
   title: 'Bu’burger',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/buburger/buburger-001.jpg',
   images: [
@@ -10736,14 +10736,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'meshur-adiyaman-cig-kofteci',
   badgeId: 'new',
   title: 'Meşhur Adıyaman Çiğ Köfteci',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/meshur-adiyaman-cig-kofteci/meshur-adiyaman-cig-kofteci-001.jpg',
   images: [
@@ -10754,14 +10754,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'balik-adam-kokorec-tavuk-balikcilik',
   badgeId: 'new',
   title: 'Balık Adam Kokoreç Tavuk Balıkçılık',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/balik-adam-kokorec-tavuk-balikcilik/balik-adam-kokorec-tavuk-balikcilik-001.jpg',
   images: [
@@ -10772,14 +10772,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'kippis',
   badgeId: 'new',
   title: 'Kippis',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/kippis/kippis-001.jpg',
   images: [
@@ -10790,14 +10790,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'deja-vu',
   badgeId: 'new',
   title: 'Deja Vu',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/deja-vu/deja-vu-001.jpg',
   images: [
@@ -10808,14 +10808,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'queen-bar',
   badgeId: 'new',
   title: 'Queen Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/queen-bar/queen-bar-001.jpg',
   images: [
@@ -10826,14 +10826,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'biralama',
   badgeId: 'new',
   title: 'Biralama',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/biralama/biralama-001.jpg',
   images: [
@@ -10844,14 +10844,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'deco-stop-bar',
   badgeId: 'new',
   title: 'Deco Stop Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/deco-stop-bar/deco-stop-bar-001.jpg',
   images: [
@@ -10862,14 +10862,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'maaide-kahvalti-restaurant',
   badgeId: 'new',
   title: 'Maaide Kahvaltı Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/maaide-kahvalti-restaurant/maaide-kahvalti-restaurant-001.jpg',
   images: [
@@ -10880,14 +10880,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'wapiano-restaurant',
   badgeId: 'new',
   title: 'Wapiano Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/wapiano-restaurant/wapiano-restaurant-001.jpg',
   images: [
@@ -10898,14 +10898,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'del-mare-kas-bistro-cafe',
   badgeId: 'new',
   title: 'Del Mare Kaş Bistro Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/del-mare-kas-bistro-cafe/del-mare-kas-bistro-cafe-001.jpg',
   images: [
@@ -10916,14 +10916,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'muptela-kahvalti',
   badgeId: 'new',
   title: 'Müptela Kahvaltı',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/muptela-kahvalti/muptela-kahvalti-001.jpg',
   images: [
@@ -10934,14 +10934,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'turunc-firin-and-cafe',
   badgeId: 'new',
   title: 'Turunç Fırın & Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/turunc-firin-and-cafe/turunc-firin-and-cafe-001.jpg',
   images: [
@@ -10952,14 +10952,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'eski-kent-bilardo',
   badgeId: 'new',
   title: 'Eski Kent Bilardo',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/eski-kent-bilardo/eski-kent-bilardo-001.jpg',
   images: [
@@ -10970,14 +10970,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'mustafa',
   badgeId: 'new',
   title: 'Mustafa',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/mustafa/mustafa-001.jpg',
   images: [
@@ -10988,14 +10988,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'our-home-restaurant-and-cafe',
   badgeId: 'new',
   title: 'Our Home Restaurant & Cafe',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/our-home-restaurant-and-cafe/our-home-restaurant-and-cafe-001.jpg',
   images: [
@@ -11006,14 +11006,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'hideaway-bar',
   badgeId: 'new',
   title: 'Hideaway Bar',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/hideaway-bar/hideaway-bar-001.jpg',
   images: [
@@ -11024,14 +11024,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'woon-terrace',
   badgeId: 'new',
   title: 'Woon Terrace',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/woon-terrace/woon-terrace-001.jpg',
   images: [
@@ -11042,14 +11042,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'friends-pub-kalkan',
   badgeId: 'new',
   title: 'Friends Pub Kalkan',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['bar'],
   image: '../assets/1_places/friends-pub-kalkan/friends-pub-kalkan-001.jpg',
   images: [
@@ -11060,14 +11060,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'the-one',
   badgeId: 'new',
   title: 'The One',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/the-one/the-one-001.jpg',
   images: [
@@ -11078,14 +11078,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ehlikeyf-butik-kahve',
   badgeId: 'new',
   title: 'Ehlikeyf Butik Kahve',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['cafe'],
   image: '../assets/1_places/ehlikeyf-butik-kahve/ehlikeyf-butik-kahve-001.jpg',
   images: [
@@ -11096,14 +11096,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'zaika',
   badgeId: 'new',
   title: 'Zaika',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/zaika/zaika-001.jpg',
   images: [
@@ -11114,14 +11114,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'ehl-i-keyf-kas-restaurant',
   badgeId: 'new',
   title: 'Ehl-i Keyf Kaş Restaurant',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/ehl-i-keyf-kas-restaurant/ehl-i-keyf-kas-restaurant-001.jpg',
   images: [
@@ -11132,14 +11132,14 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ,
 {
   id: 'hikaye-fine-dining-cousine',
   badgeId: 'new',
   title: 'Hikaye Fine Dining Cousine',
-  description: 'TODO',
+  description: 'Yakında...',
   category: ['food'],
   image: '../assets/1_places/hikaye-fine-dining-cousine/hikaye-fine-dining-cousine-001.jpg',
   images: [
@@ -11150,7 +11150,7 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `TODO`
+  longText: `Yakında...`
 }
 ];
 
