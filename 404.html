@@ -5,16 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sayfa Bulunamadı - Kaş Guide</title>
   <style>
-    :root {
-      --primary-blue: #0891b2;
-      --primary-cyan: #06b6d4;
-      --primary-orange: #f97316;
-      --primary-amber: #f59e0b;
-      --gray-800: #1f2937;
-      --gray-600: #4b5563;
-      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -28,180 +18,69 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
-      overflow: hidden;
-      position: relative;
+      padding: 2rem;
     }
 
-    /* Animasyonlu güneş ışıkları */
-    .sun-rays {
-      position: absolute;
-      top: -50%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200%;
-      height: 200%;
-      opacity: 0.15;
-      animation: rotate 30s linear infinite;
-    }
-
-    .ray {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 4px;
-      height: 40%;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
-      transform-origin: top center;
-    }
-
-    .ray:nth-child(1) { transform: rotate(0deg); }
-    .ray:nth-child(2) { transform: rotate(45deg); }
-    .ray:nth-child(3) { transform: rotate(90deg); }
-    .ray:nth-child(4) { transform: rotate(135deg); }
-    .ray:nth-child(5) { transform: rotate(180deg); }
-    .ray:nth-child(6) { transform: rotate(225deg); }
-    .ray:nth-child(7) { transform: rotate(270deg); }
-    .ray:nth-child(8) { transform: rotate(315deg); }
-
-    /* Dalgalar */
-    .waves {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 150px;
-      opacity: 0.3;
-    }
-
-    .wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200%;
-      height: 100%;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,50 Q300,10 600,50 T1200,50 L1200,120 L0,120 Z' fill='%2306b6d4'/%3E%3C/svg%3E") repeat-x;
-      animation: wave 15s linear infinite;
-    }
-
-    .wave:nth-child(2) {
-      opacity: 0.5;
-      animation: wave 20s linear infinite;
-      bottom: 10px;
-    }
-
-    /* Ana container */
-   .container {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  max-width: 600px;
-  width: 100%;                              /* EKLE */
-  margin: 0 auto;                           /* EKLE */
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 2rem;
-  padding: 3rem 2rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  animation: fadeInUp 0.6s ease-out forwards; /* forwards EKLE */
-}
-
-    /* Logo */
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .logo-img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--primary-orange);
-      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    .logo-text {
-      font-size: 1.75rem;
-      font-weight: bold;
-      background: linear-gradient(135deg, var(--primary-orange), var(--primary-amber));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Büyük logo (Kaş Guide ile 404 arasına) */
-    .big-logo-wrapper {
-      display: flex;
-      justify-content: center;
-      margin: 0.75rem 0 1.75rem;
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
 
     .big-logo {
-      width: 300px;          /* 1.5x */
-      height: 300px;         /* 1.5x */
+      width: 200px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 50%;    /* logo yuvarlaksa frame de yuvarlak */
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22); /* daha belirgin gölge */
-      border: 3px solid rgba(245, 158, 11, 0.35);
-      background: transparent; /* logo etrafında "içi görünen" alanı azaltır */
+      border-radius: 50%;
+      margin: 0 auto 2rem;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 3px solid rgba(245, 158, 11, 0.4);
     }
 
-    /* 404 numarası */
     .error-code {
-      font-size: 1.625rem;
+      font-size: 4rem;
       font-weight: 900;
-      line-height: 1;
       background: linear-gradient(135deg, #f97316, #fb923c, #fbbf24);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      animation: bounce 1s ease-in-out infinite;
-    }
-
-    /* Icon */
-    .icon-wrapper {
-      display: flex;
-      justify-content: center;
       margin-bottom: 1.5rem;
     }
 
     .icon {
-      width: 20px;
-      height: 20px;
-      color: var(--primary-orange);
-      animation: float 3s ease-in-out infinite;
+      width: 64px;
+      height: 64px;
+      color: #f97316;
+      margin: 0 auto 1.5rem;
+      display: block;
     }
 
-    /* Başlık ve açıklama */
     .title {
       font-size: 2rem;
       font-weight: bold;
-      color: var(--gray-800);
+      color: #1f2937;
       margin-bottom: 1rem;
     }
 
     .description {
       font-size: 1.125rem;
-      color: var(--gray-600);
-      margin-bottom: 2rem;
+      color: #4b5563;
+      margin-bottom: 2.5rem;
       line-height: 1.6;
     }
 
-    /* Butonlar */
     .buttons {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       align-items: center;
       justify-content: center;
-      width: 100%;
     }
 
     .btn {
@@ -215,29 +94,15 @@
       font-weight: 700;
       font-size: 1rem;
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-lg);
       min-width: 200px;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary-orange), var(--primary-amber));
+      background: linear-gradient(135deg, #f97316, #f59e0b);
       color: white;
+      box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.3);
     }
 
-    .btn-primary:hover {
+    .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.4);
-    }
-
-    .btn-secondary {
-      background: linear-gradient(135deg, var(--primary-orange), var(--primary-amber));
-      color: white;
-      border: none;
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.4);
+      box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.4);
     }
 
     .btn svg {
@@ -245,67 +110,9 @@
       height: 20px;
     }
 
-    /* Animasyonlar */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-15px);
-      }
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-    }
-
-    @keyframes rotate {
-      from {
-        transform: translateX(-50%) rotate(0deg);
-      }
-      to {
-        transform: translateX(-50%) rotate(360deg);
-      }
-    }
-
-    @keyframes wave {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Responsive */
     @media (max-width: 640px) {
       .error-code {
-        font-size: 1.05rem;
+        font-size: 3rem;
       }
 
       .title {
@@ -319,54 +126,34 @@
       .container {
         padding: 2rem 1.5rem;
       }
+
+      .big-logo {
+        width: 150px;
+        height: 150px;
+      }
     }
 
     @media (min-width: 640px) {
       .buttons {
         flex-direction: row;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Güneş ışıkları -->
-  <div class="sun-rays">
-    <div class="ray"></div>
-    <div class="ray"></div>
-    <div class="ray"></div>
-    <div class="ray"></div>
-    <div class="ray"></div>
-    <div class="ray"></div>
-    <div class="ray"></div>
-    <div class="ray"></div>
-  </div>
-
-  <!-- Dalgalar -->
-  <div class="waves">
-    <div class="wave"></div>
-    <div class="wave"></div>
-  </div>
-
-  <!-- Ana içerik -->
   <div class="container">
-   
     <!-- Büyük Logo -->
-    <div class="big-logo-wrapper">
-      <img class="big-logo" src="jpgkasguidelogo.jpg" alt="Kaş Guide Logo">
-    </div>
+    <img class="big-logo" src="jpgkasguidelogo.jpg" alt="Kaş Guide Logo">
 
     <!-- 404 -->
     <div class="error-code">404</div>
 
     <!-- Icon -->
-    <div class="icon-wrapper">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-        <circle cx="12" cy="10" r="3"/>
-        <path d="M12 2v4"/>
-        <path d="M12 14v4"/>
-      </svg>
-    </div>
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
 
     <!-- Metin -->
     <h2 class="title">Sayfayı bulamadık!</h2>
@@ -377,7 +164,7 @@
 
     <!-- Butonlar -->
     <div class="buttons">
-      <a href="/" class="btn btn-primary">
+      <a href="/" class="btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
           <polyline points="9 22 9 12 15 12 15 22"/>
@@ -385,7 +172,7 @@
         Ana Sayfaya Dön
       </a>
       
-      <a href="/#categories" class="btn btn-secondary">
+      <a href="/#categories" class="btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"/>
           <path d="m21 21-4.35-4.35"/>
@@ -395,11 +182,10 @@
     </div>
   </div>
 
-<script
+  <script
     data-goatcounter="https://kasguidede.goatcounter.com/count"
     async
     src="//gc.zgo.at/count.js">
   </script>
-
 </body>
 </html>
