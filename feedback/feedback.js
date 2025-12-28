@@ -55,8 +55,9 @@
       if (!res.ok) throw new Error('Request failed');
 
       // Başarılı: formu gizle, mesajı göster
-      form.hidden = true;
-      success.hidden = false;
+      form.classList.add('is-hidden');
+      success.removeAttribute('hidden');
+      success.classList.add('show');
 
       // Scroll to top of card for visibility
       success.scrollIntoView({ behavior: 'smooth', block: 'start' });
