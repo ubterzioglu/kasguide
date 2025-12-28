@@ -27,8 +27,7 @@ export default async function handler(req, res) {
 
     const [fields, files] = await form.parse(req);
 
-    // --- Fieaalds (fraaom add-pet.html) ---
-    const listingType = (first(fields.listingType) || "").toString().trim();
+    // --- Fields (from add-pet.html) ---
     const petName = (first(fields.petName) || "").toString().trim();
     const petType = (first(fields.petType) || "").toString().trim();
     const age = (first(fields.age) || "").toString().trim();
@@ -43,10 +42,10 @@ export default async function handler(req, res) {
     );
 
     // Basic validation (matches UI expectations)
-    if (!listingType || !petName || !petType || !shortNote || !phone) {
+    if (!petName || !petType || !shortNote || !phone) {
       return res.status(400).json({
         success: false,
-        message: "Zorunlu alanlar eksik (listingType, petName, petType, shortNote, phone).",
+        message: "Zorunlu alanlar eksik (petName, petType, shortNote, phone).",
       });
     }
     if (photos.length < 1 || photos.length > 5) {
@@ -92,28 +91,20 @@ export default async function handler(req, res) {
       auth: { user: smtpUser, pass: smtpPass },
     });
 
-    // Enhanced email content with listing type
-    const listingTypeIcon = listingType === "Kayıp" ? "🔍" : "🏠";
     const mailText =
       [
-        `${listingTypeIcon} Yeni ${listingType} Pet Başvurusu`,
-        "=".repeat(40),
+        "Yeni Patili Başvurusu",
+        "----------------------",
+        `Pet Adı: ${petName}`,
+        `Tür: ${petType}`,
+        age ? `Yaş: ${age}` : null,
+        breed ? `Irk/Cins: ${breed}` : null,
         "",
-        `📋 İlan Tipi: ${listingType}`,
-        `🐾 Pet Adı: ${petName}`,
-        `🔖 Tür: ${petType}`,
-        age ? `📅 Yaş: ${age}` : null,
-        breed ? `🧬 Irk/Cins: ${breed}` : null,
+        `Kısa Not: ${shortNote}`,
         "",
-        `📝 Kısa Not:`,
-        shortNote,
+        `İletişim: ${phone}`,
         "",
-        `📞 İletişim: ${phone}`,
-        "",
-        notes ? `💬 Ek Notlar:\n${notes}` : null,
-        "",
-        "─".repeat(40),
-        `📸 ${photos.length} fotoğraf eklendi`,
+        notes ? `Ek Notlar: ${notes}` : null,
       ]
         .filter(Boolean)
         .join("\n") + "\n";
@@ -126,9 +117,9 @@ export default async function handler(req, res) {
     }));
 
     await transporter.sendMail({
-      from: `Kaş Guide Pet <${smtpUser}>`,
+      from: `Kaş Guide <${smtpUser}>`,
       to: mailTo,
-      subject: `${listingTypeIcon} ${listingType} — ${petName} (${petType})`,
+      subject: `Yeni Patili – ${petName}`,
       text: mailText,
       attachments,
     });
