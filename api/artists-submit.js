@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 
     const [fields, files] = await form.parse(req);
 
-    // ---- SMTP ENV (same convention as venue-submit.js) ----
+    // ---- SaaMTP ENV (same convention as venue-submit.js) ----
     const smtpHost = process.env.SMTP_HOST || process.env.MAIL_HOST;
     const smtpPort = Number(process.env.SMTP_PORT || process.env.MAIL_PORT || 465);
     const smtpUser = process.env.SMTP_USER || process.env.MAIL_USER;
