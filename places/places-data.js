@@ -109,29 +109,13 @@ const allPlaces = [
   },
 
   longText: `
-Frida Pub, Kaş’ta “akşam sakin başlayıp geceyi müzikle bitirelim” diyenlerin yolu mutlaka düşen yerlerden biri. Barlar sokağı çevresindeki konumuyla, özellikle gün batımı sonrası hızlıca dolmaya başlıyor. Mekânın kimliği net: pub ruhu, rock ağırlıklı müzik ve enerjisi yüksek bir gece atmosferi.
+Kaş merkezinde, kalabalıktan birkaç adım uzak bir sokakta yer alan Frida Pub, pub kültürünü Kaş’ın rahat temposuyla birleştiren duraklardan biri olarak öne çıkar. İçeri girildiğinde loş ama bunaltmayan bir atmosferle karşılaşılır; masalar birbirine çok sıkışık değildir, sohbet edenler birbirini rahatsız etmeden zaman geçirir. Günün farklı saatlerinde farklı bir ritim yakalanır: öğleden sonra daha sakin bir ortam bulunur, akşamüstü ve geceye doğru hareket yavaş yavaş artar. Ortamda hem Kaş’ta yaşayanlara hem de yolu buraya düşen gezginlere sıkça rastlanır; bu da mekâna doğal ve samimi bir hava katar.
 
-Atmosfer nasıl?
-- Akşam erken saatlerde daha rahat, gece ilerledikçe kalabalık ve hareketli.
-- Canlı müzik olan gecelerde ortam belirgin şekilde ısınıyor; eşlik edenler, şarkılara katılanlar eksik olmuyor.
-- Oturup uzun sohbet etmekten çok, ayakta durup müziğe eşlik etmeye uygun bir düzen var.
+Yemek tarafında pub mutfağının klasiklerine odaklanılır. Burger çeşitleri menünün öne çıkanları arasındadır; porsiyonların doyurucu olduğu, lezzetin ise genel olarak beklentiyi karşıladığı sıkça dile getirilir. Patates eşlikleri ve atıştırmalıklar uzun sohbetler için pratik seçenekler sunar. İçecek menüsünde bira ağırlıklı bir yapı görülür; klasik pub içecekleri tercih edenler için yeterli bir çeşitlilik bulunur. Müzik seviyesi sohbeti bastırmaz, bu da Frida Pub’ı sadece içki içilen bir yerden ziyade oturup vakit geçirilen bir mekân haline getirir.
 
-Kimler için uygun?
-- Rock ve alternatif müzik sevenler.
-- Arkadaş grubuyla eğlenmek isteyenler.
-- “Sessiz bar” değil, enerjik ve gürültülü ortam arayanlar.
-- Kaş gece hayatını yerel tadında yaşamak isteyen gezginler.
+Hizmet tarafında hızlı ve ilgili bir yaklaşım beklenir; personelin iletişimi genellikle rahat ve mesafelidir. Fiyatlar Kaş genel ortalamasıyla uyumlu kabul edilir; büyük beklentilerle değil, dengeli bir pub deneyimi arayanlar için uygun bir durak olarak değerlendirilir. Gösterişli bir gece hayatı ya da yüksek sesli eğlence arayanlara değil, sakin bir ortamda yemek yiyip içkisini yudumlamak isteyenlere hitap eder. Kaş’ta pub tarzı bir mola vermek isteyenler için Frida Pub, merkezi konumu ve sade yaklaşımıyla güvenli bir seçenek olarak öne çıkar.
 
-Ne içilir?
-Bira ve klasik pub kokteylleri ön planda. Menü karmaşık değil; hızlı servis ve akışı bozmayan içecek seçenekleri var. Amaç “içkiyi al, müziğe dön” düzeni.
-
-Pratik ipuçları:
-- Canlı müzik gecelerinde erken gitmek, içeride yer bulmayı kolaylaştırır.
-- Ayakta durma süresi uzun olabileceği için rahat ayakkabı işe yarar.
-- Kalabalıktan hoşlanmıyorsan 21:00 civarı, enerjiyi seviyorsan 22:30 sonrası daha uygun.
-
-Kısa özet:
-Frida Pub; Kaş’ta rock müzik, canlı performans ve pub atmosferini bir arada arayanlar için doğru adres. Sessiz bir akşam yemeğinden sonra geceyi hareketlendirmek isteyenlerin listesinde olması gereken duraklardan.
+Bazı özel etkinlik günleri, güncel menü detayları ya da dönemsel uygulamalarla ilgili şu an net bilgi bulunmamaktadır. Güncel bilgisi olan ya da ekleme yapmak isteyenler bize yazabilir.
   `
 },
 
