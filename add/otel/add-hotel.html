@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oteli Ekle • Kaş Guide Hotels</title>
+  <link rel="icon" type="image/png" href="../../assets/0_img/logokasguide.png">
+  <link rel="stylesheet" href="./add-hotel.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="../index.html" aria-label="Kaş Guide">
+        <div class="brand__title">Kaş Guide Hotels</div>
+        <div class="brand__subtitle">Otelinizi Ekleyin</div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>🏨 Otelinizi Kaş Guide'a Ekleyin</h1>
+      <p class="muted">Kaş'taki otelinizi binlerce gezgine tanıtın, rezervasyon linklerinizi paylaşın</p>
+    </section>
+
+    <!-- INFO / ACCORDIONS -->
+    <section class="info-section">
+      <details class="accordion-item accordion info-acc" open>
+        <summary class="section-title">
+          <span class="section-icon icon-glow">🏨</span>
+          Kaş Guide Hotels Hakkında
+        </summary>
+
+        <div class="liste-small">
+          <p>🏨 Kaş'taki otellerin resmi rehberi olmayı hedefliyoruz.</p>
+          <p>🏨 Tamamen ücretsiz listeleme - hiçbir ücret ödemezsiniz.</p>
+          <p>🏨 Direkt rezervasyon linklerinizi (Booking, Airbnb vb.) paylaşabilirsiniz.</p>
+          <p>🏨 Instagram ve web sitenize doğrudan yönlendirme.</p>
+          <p>🏨 Tesis özelliklerinizi detaylıca tanıtın.</p>
+          <p>🏨 Bilgilerinizi istediğiniz zaman güncelleyebilirsiniz.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item accordion info-acc">
+        <summary class="section-title">
+          <span class="section-icon icon-glow">⭐</span>
+          Neden Kaş Guide'da Olmalısınız?
+        </summary>
+
+        <div class="liste-small">
+          <p>⭐ Kaş'a gelen gezginlerin ilk uğrak noktası oluyoruz.</p>
+          <p>⭐ Lokal ve otantik bir platform - büyük OTA'lara alternatif.</p>
+          <p>⭐ Doğrudan rezervasyon linklerinizle komisyon kaybını azaltın.</p>
+          <p>⭐ Tesisinizin hikayesini ve özelliklerini anlatın.</p>
+          <p>⭐ Fotoğraflarınızla misafirlerinizi cezbedebilirsiniz.</p>
+          <p>⭐ Yerel işletmeleri destekleyen bir topluluk.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item accordion info-acc">
+        <summary class="section-title">
+          <span class="section-icon icon-glow">📝</span>
+          Form Doldurma Rehberi
+        </summary>
+
+        <div class="liste-small">
+          <p>📝 Tüm alanları eksiksiz doldurun - daha fazla görünürlük.</p>
+          <p>📝 Otelinizin özelliklerini detaylı açıklayın.</p>
+          <p>📝 En iyi fotoğraflarınızı seçin (maksimum 5 adet, 2MB).</p>
+          <p>📝 Rezervasyon linkleri için tam URL kullanın.</p>
+          <p>📝 Önizleme butonuyla sayfanızın nasıl görüneceğini kontrol edin.</p>
+          <p>📝 Başvurunuz 1-3 iş günü içinde incelenir ve yayınlanır.</p>
+        </div>
+      </details>
+
+      <details class="accordion-item accordion info-acc">
+        <summary class="section-title">
+          <span class="section-icon icon-glow">👥</span>
+          Biz Kimiz?
+        </summary>
+        <div class="liste-small">
+          <p style="margin: 0 0 0.75rem 0;">
+            Biz, Kaş'ı seven ve Kaş'ta yaşayan küçük bir ekibiz. Amacımız, Kaş'ı ziyaret eden gezginlere 
+            en güncel ve güvenilir bilgileri sunmak. Otellere %100 ücretsiz listeleme sunarak, 
+            yerel turizmi destekliyoruz.
+          </p>
+
+          <div class="contact-line" style="margin: 0.35rem 0;">
+            <span>📸 Instagram:</span>
+            <a href="https://instagram.com/guidekas" target="_blank" rel="noopener">@guidekas</a>
+          </div>
+
+          <div class="contact-line" style="margin: 0.35rem 0 0.75rem 0;">
+            <span>✉️ E-posta:</span>
+            <a href="mailto:hotels@kasguide.de">hotels@kasguide.de</a>
+          </div>
+
+          <div><strong>Kaş Guide Hotels Ekibi</strong></div>
+        </div>
+      </details>
+    </section>
+
+    <!-- FORM -->
+    <section class="card">
+      <div class="success-message" id="successMessage">
+        <div class="success-icon">✅</div>
+        <h3>Başvurunuz Alındı!</h3>
+        <p>Oteliniz hakkındaki bilgileri inceliyoruz.</p>
+        <p>1-3 iş günü içinde size dönüş yapacağız.</p>
+        <p>Desteğiniz için teşekkür ederiz!</p>
+        <p><strong>Kaş Guide Hotels</strong></p>
+      </div>
+
+      <form id="hotelForm" class="form" novalidate>
+
+        <!-- TEMEL BİLGİLER -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">🏨</span>
+            <span>Temel Bilgiler</span>
+          </div>
+          <div>
+            <div class="form-group">
+              <label class="form-label">Otel Adı<span class="required">*</span></label>
+              <input type="text" class="form-input" name="title" placeholder="Örn: Mavi Deniz Butik Otel" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Otel Tipi<span class="required">*</span></label>
+                <select class="form-input" name="hotelType" required>
+                  <option value="">Seçiniz...</option>
+                  <option value="butik">Butik Otel</option>
+                  <option value="aile">Aile Oteli</option>
+                  <option value="luks">Lüks Otel</option>
+                  <option value="pansiyon">Pansiyon</option>
+                  <option value="apart">Apart Otel</option>
+                  <option value="hostel">Hostel</option>
+                  <option value="villa">Villa</option>
+                  <option value="diger">Diğer</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Yıldız Sayısı</label>
+                <select class="form-input" name="starRating">
+                  <option value="">Seçiniz...</option>
+                  <option value="5">⭐⭐⭐⭐⭐ (5 Yıldız)</option>
+                  <option value="4">⭐⭐⭐⭐ (4 Yıldız)</option>
+                  <option value="3">⭐⭐⭐ (3 Yıldız)</option>
+                  <option value="2">⭐⭐ (2 Yıldız)</option>
+                  <option value="1">⭐ (1 Yıldız)</option>
+                  <option value="yok">Belirtilmemiş</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Oda Sayısı</label>
+                <input type="number" class="form-input" name="roomCount" placeholder="Örn: 12" min="1">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Toplam Kapasite</label>
+                <input type="number" class="form-input" name="capacity" placeholder="Örn: 30 kişi" min="1">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Konum<span class="required">*</span></label>
+              <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez / Kalkan" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Denize Uzaklık</label>
+              <input type="text" class="form-input" name="distanceToSea" placeholder="Örn: 50 metre / Yürüme mesafesi / Sahilde">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Kısa Açıklama<span class="required">*</span></label>
+              <textarea class="form-textarea" name="description" placeholder="Otelinizi 1-2 cümle ile tanıtın (kart görünümünde gösterilecek)" required></textarea>
+              <p class="form-hint">Bu metin arama sonuçlarında gösterilecek</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Detaylı Açıklama<span class="required">*</span></label>
+              <textarea class="form-textarea" name="longText" placeholder="Oteliniz hakkında detaylı bilgi verin: konsept, odalar, hizmetler, çevre, özel özellikler..." style="min-height: 200px;" required></textarea>
+              <p class="form-hint">Misafirlerinizin en çok merak ettiği bilgileri paylaşın</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- TESİSLER & HİZMETLER -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">🏊</span>
+            <span>Tesisler & Hizmetler</span>
+          </div>
+          <div>
+            <label class="form-label">Otelinizde Bulunan Tesisler</label>
+            <p class="form-hint" style="margin-bottom: 1rem;">Tesisinizde mevcut olan tüm özellikleri işaretleyin</p>
+
+            <div class="category-grid">
+              <div class="category-option">
+                <input type="checkbox" id="fac-pool" name="facilities" value="pool" class="category-checkbox">
+                <label for="fac-pool" class="category-label">
+                  <span class="category-icon">🏊</span>
+                  <span class="category-name">Havuz</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-spa" name="facilities" value="spa" class="category-checkbox">
+                <label for="fac-spa" class="category-label">
+                  <span class="category-icon">💆</span>
+                  <span class="category-name">Spa</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-gym" name="facilities" value="gym" class="category-checkbox">
+                <label for="fac-gym" class="category-label">
+                  <span class="category-icon">💪</span>
+                  <span class="category-name">Gym</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-restaurant" name="facilities" value="restaurant" class="category-checkbox">
+                <label for="fac-restaurant" class="category-label">
+                  <span class="category-icon">🍽️</span>
+                  <span class="category-name">Restoran</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-bar" name="facilities" value="bar" class="category-checkbox">
+                <label for="fac-bar" class="category-label">
+                  <span class="category-icon">🍹</span>
+                  <span class="category-name">Bar</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-beach" name="facilities" value="beach" class="category-checkbox">
+                <label for="fac-beach" class="category-label">
+                  <span class="category-icon">🏖️</span>
+                  <span class="category-name">Plaj</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-wifi" name="facilities" value="wifi" class="category-checkbox">
+                <label for="fac-wifi" class="category-label">
+                  <span class="category-icon">📶</span>
+                  <span class="category-name">WiFi</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-ac" name="facilities" value="ac" class="category-checkbox">
+                <label for="fac-ac" class="category-label">
+                  <span class="category-icon">❄️</span>
+                  <span class="category-name">Klima</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-parking" name="facilities" value="parking" class="category-checkbox">
+                <label for="fac-parking" class="category-label">
+                  <span class="category-icon">🅿️</span>
+                  <span class="category-name">Otopark</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-garden" name="facilities" value="garden" class="category-checkbox">
+                <label for="fac-garden" class="category-label">
+                  <span class="category-icon">🌳</span>
+                  <span class="category-name">Bahçe</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-seaview" name="facilities" value="seaview" class="category-checkbox">
+                <label for="fac-seaview" class="category-label">
+                  <span class="category-icon">🌊</span>
+                  <span class="category-name">Deniz Manzarası</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-breakfast" name="facilities" value="breakfast" class="category-checkbox">
+                <label for="fac-breakfast" class="category-label">
+                  <span class="category-icon">🍳</span>
+                  <span class="category-name">Kahvaltı</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-pet" name="facilities" value="petfriendly" class="category-checkbox">
+                <label for="fac-pet" class="category-label">
+                  <span class="category-icon">🐕</span>
+                  <span class="category-name">Pet-Friendly</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-transfer" name="facilities" value="transfer" class="category-checkbox">
+                <label for="fac-transfer" class="category-label">
+                  <span class="category-icon">🚗</span>
+                  <span class="category-name">Transfer</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-terrace" name="facilities" value="terrace" class="category-checkbox">
+                <label for="fac-terrace" class="category-label">
+                  <span class="category-icon">🏡</span>
+                  <span class="category-name">Teras</span>
+                </label>
+              </div>
+
+              <div class="category-option">
+                <input type="checkbox" id="fac-kids" name="facilities" value="kids" class="category-checkbox">
+                <label for="fac-kids" class="category-label">
+                  <span class="category-icon">👶</span>
+                  <span class="category-name">Çocuk Dostu</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FİYAT & REZERVASYON -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">💰</span>
+            <span>Fiyat & Rezervasyon</span>
+          </div>
+          <div>
+            <div class="form-group">
+              <label class="form-label">Fiyat Aralığı (Gecelik)</label>
+              <select class="form-input" name="priceRange">
+                <option value="">Seçiniz...</option>
+                <option value="budget">₺ - Ekonomik (0-1000₺)</option>
+                <option value="mid">₺₺ - Orta (1000-2500₺)</option>
+                <option value="high">₺₺₺ - Üst (2500-5000₺)</option>
+                <option value="luxury">₺₺₺₺ - Lüks (5000₺+)</option>
+              </select>
+              <p class="form-hint">Ortalama çift kişilik oda fiyatı (sezon içi)</p>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Check-in Saati</label>
+                <input type="time" class="form-input" name="checkinTime" placeholder="14:00">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Check-out Saati</label>
+                <input type="time" class="form-input" name="checkoutTime" placeholder="11:00">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Rezervasyon Linki</label>
+              <input type="url" class="form-input" name="booking" placeholder="https://booking.com/... veya https://airbnb.com/...">
+              <p class="form-hint">Booking.com, Airbnb veya kendi rezervasyon sisteminizin linki</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Web Sitesi</label>
+              <input type="url" class="form-input" name="website" placeholder="https://otelim.com">
+            </div>
+          </div>
+        </section>
+
+        <!-- İLETİŞİM -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">📞</span>
+            <span>İletişim Bilgileri</span>
+          </div>
+          <div>
+            <div class="form-group">
+              <label class="form-label">Telefon<span class="required">*</span></label>
+              <input type="tel" class="form-input" name="phone" placeholder="+90 555 123 45 67" required>
+              <p class="form-hint">Misafirlerinizin sizi arayabileceği numara</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">E-posta<span class="required">*</span></label>
+              <input type="email" class="form-input" name="email" placeholder="info@otelim.com" required>
+              <p class="form-hint">Size ulaşabileceğimiz e-posta adresi</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Instagram</label>
+              <input type="text" class="form-input" name="instagram" placeholder="@oteliniz">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Google Maps Arama Sorgusu</label>
+              <input type="text" class="form-input" name="googleMapsQuery" placeholder="Mavi Deniz Butik Otel Kaş">
+              <p class="form-hint">Google Maps'te nasıl aranmalı? (Tam adınızı yazın)</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FOTOĞRAFLAR -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">📸</span>
+            <span>Fotoğraflar</span>
+          </div>
+          <div>
+            <div class="form-group">
+              <label class="form-label">Otel Fotoğrafları (Maksimum 5 adet)<span class="required">*</span></label>
+              <input 
+                type="file" 
+                id="photoInput"
+                class="form-input" 
+                name="photos" 
+                accept="image/jpeg,image/png,image/webp" 
+                multiple
+                required
+              >
+              <p class="form-hint">
+                JPG, PNG veya WEBP formatında, her biri maksimum 2 MB. 
+                İlk fotoğraf kapak fotoğrafı olarak kullanılacak.
+              </p>
+              <div id="photoFileNames" class="file-names">Henüz dosya seçilmedi</div>
+              <div id="photoError" class="error-text"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EK NOTLAR -->
+        <section class="form-box">
+          <div class="form-box__head">
+            <span class="form-ico">📌</span>
+            <span>Ek Notlar</span>
+          </div>
+          <div>
+            <div class="form-group">
+              <textarea
+                class="form-textarea"
+                name="extraNotes"
+                placeholder="Özellikle belirtmek istediğiniz detaylar, özel kampanyalar, sezonluk bilgiler veya istekleriniz..."
+                style="min-height: 120px;"
+              ></textarea>
+              <p class="form-hint">Bu alan isteğe bağlıdır</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BUTONLAR -->
+        <div class="actions actions--stack">
+          <button type="button" class="btn btn--wide btn--preview" id="previewBtn">👀 Önizleme</button>
+          <button type="submit" class="btn btn--wide btn--submit">🚀 Başvuruyu Gönder</button>
+        </div>
+
+        <p class="form-footnote">
+          Başvurunuzu gönderdikten sonra 1-3 iş günü içinde size dönüş yapacağız.
+        </p>
+      </form>
+
+      <div class="build-note">build 2812251820 - hotels by borntobewild</div>
+    </section>
+  </main>
+
+<script>
+  // Form submission
+  const form = document.getElementById('hotelForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Gönderiliyor...';
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch('/api/hotel-submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const raw = await res.text().catch(() => '');
+      let payload = null;
+      try { payload = JSON.parse(raw); } catch {}
+
+      if (!res.ok) {
+        throw new Error(payload?.message || raw || `HTTP ${res.status}`);
+      }
+
+      if (payload && payload.success === false) {
+        throw new Error(payload.message || 'Mail gönderilemedi');
+      }
+
+      successMessage.classList.add('show');
+      form.reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    } catch (err) {
+      alert(
+        'Başvuru gönderilemedi.\n\n' +
+        (err.message || 'Sunucu hatası')
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerText = '🚀 Başvuruyu Gönder';
+    }
+  });
+</script>
+
+<script>
+  // Preview functionality
+  (function () {
+    const previewBtn = document.getElementById('previewBtn');
+    const formEl = document.getElementById('hotelForm');
+    if (!formEl) return;
+
+    function formToObject(formEl) {
+      const fd = new FormData(formEl);
+      const obj = {};
+      for (const [k, v] of fd.entries()) {
+        if (k === "facilities") {
+          obj.facilities ??= [];
+          obj.facilities.push(v);
+        } else if (k === "photos") {
+          // Skip files in preview
+        } else {
+          obj[k] = (v ?? "").toString().trim();
+        }
+      }
+      return obj;
+    }
+
+    function buildPreviewHotel(data) {
+      return {
+        title: data.title || "Otel Adı",
+        hotelType: data.hotelType || "",
+        starRating: data.starRating || "",
+        roomCount: data.roomCount || "",
+        capacity: data.capacity || "",
+        location: data.location || "Kaş",
+        distanceToSea: data.distanceToSea || "",
+        description: data.description || "",
+        longText: data.longText || "",
+        facilities: data.facilities || [],
+        priceRange: data.priceRange || "",
+        checkinTime: data.checkinTime || "",
+        checkoutTime: data.checkoutTime || "",
+        booking: data.booking || "",
+        website: data.website || "",
+        phone: data.phone || "",
+        email: data.email || "",
+        instagram: data.instagram || "",
+        googleMapsQuery: data.googleMapsQuery || ""
+      };
+    }
+
+    function persistDraft() {
+      const data = formToObject(formEl);
+      const previewHotel = buildPreviewHotel(data);
+      try {
+        localStorage.setItem("kasguide_preview_hotel", JSON.stringify(previewHotel));
+      } catch (e) {}
+    }
+
+    const liveEvents = ["input", "change"];
+    liveEvents.forEach(evt => {
+      formEl.addEventListener(evt, (e) => {
+        if (e?.target?.type === "file") return;
+        persistDraft();
+      });
+    });
+
+    previewBtn?.addEventListener('click', () => {
+      persistDraft();
+      window.open("./example-hotel/example-hotel.html", "_blank");
+    });
+
+    persistDraft();
+  })();
+</script>
+
+<script>
+  // File input handler
+  (function () {
+    const input = document.getElementById("photoInput");
+    const namesEl = document.getElementById("photoFileNames");
+    const errEl = document.getElementById("photoError");
+    const formEl = document.getElementById("hotelForm");
+
+    if (!input || !namesEl) return;
+
+    const MAX_FILES = 5;
+    const MAX_MB_PER_FILE = 2;
+    const MAX_BYTES_PER_FILE = MAX_MB_PER_FILE * 1024 * 1024;
+
+    function formatBytes(bytes) {
+      if (!Number.isFinite(bytes)) return "";
+      const mb = bytes / (1024 * 1024);
+      if (mb >= 1) return `${mb.toFixed(2)} MB`;
+      const kb = bytes / 1024;
+      return `${kb.toFixed(0)} KB`;
+    }
+
+    function updateUI() {
+      const files = Array.from(input.files || []);
+      if (errEl) errEl.textContent = "";
+
+      if (files.length === 0) {
+        namesEl.textContent = "Henüz dosya seçilmedi";
+        return;
+      }
+
+      const errors = [];
+      if (files.length > MAX_FILES) {
+        errors.push(`En fazla ${MAX_FILES} fotoğraf seçebilirsiniz.`);
+      }
+
+      const tooBig = files.filter(f => (f.size || 0) > MAX_BYTES_PER_FILE);
+      if (tooBig.length) {
+        const list = tooBig.map(f => f.name).slice(0, 3).join(", ");
+        errors.push(`2 MB sınırını aşan fotoğraf(lar) var: ${list}${tooBig.length > 3 ? "..." : ""}`);
+      }
+
+      const totalBytes = files.reduce((sum, f) => sum + (f.size || 0), 0);
+      const fileNames = files.map(f => f.name).join(" • ");
+
+      namesEl.innerHTML = `<div class="file-summary">${files.length} fotoğraf seçildi • Toplam: ${formatBytes(totalBytes)}</div>` +
+        `<div class="file-list">${fileNames}</div>`;
+
+      if (errors.length && errEl) {
+        errEl.textContent = errors.join(" ");
+      }
+    }
+
+    input.addEventListener("change", updateUI);
+
+    formEl?.addEventListener("reset", () => {
+      setTimeout(() => {
+        namesEl.textContent = "Henüz dosya seçilmedi";
+        if (errEl) errEl.textContent = "";
+      }, 50);
+    });
+  })();
+</script>
+
+</body>
+</html>
