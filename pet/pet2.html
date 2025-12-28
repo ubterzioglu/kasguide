@@ -299,12 +299,14 @@ a { color: inherit; text-decoration: none; }
 
 .pet-description {
   color: var(--gray-700);
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 16px;
+  
+  /* Modern line-clamp (webkit öneki yok) */
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  line-clamp: 3;
   overflow: hidden;
 }
 
