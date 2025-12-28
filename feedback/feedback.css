@@ -1,0 +1,20 @@
+/* Mevcut add-artist.css kullanılıyor. Burada sadece sayfaya özel minik ayarlar var. */
+
+.feedback-grid {
+  grid-template-columns: 1fr;
+}
+
+.success-message[hidden] {
+  display: none;
+}
+
+/* textarea biraz daha rahat */
+#message {
+  min-height: 220px;
+  resize: vertical;
+}
+
+/* Buton genişliği mobilde daha iyi dursun */
+.actions .btn {
+  width: 100%;
+}
