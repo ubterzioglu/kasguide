@@ -91,18 +91,20 @@
     }
 
     /* Ana container */
-    .container {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 2rem;
-      padding: 3rem 2rem;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      animation: fadeInUp 0.6s ease-out;
-    }
+   .container {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;                              /* EKLE */
+  margin: 0 auto;                           /* EKLE */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.6s ease-out forwards; /* forwards EKLE */
+}
 
     /* Logo */
     .logo {
