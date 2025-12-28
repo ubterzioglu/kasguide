@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 
     const [fields, files] = await form.parse(req);
 
-    // --- Fields (from add-pet.html) ---
+    // --- Fieaalds (from add-pet.html) ---
     const listingType = (first(fields.listingType) || "").toString().trim();
     const petName = (first(fields.petName) || "").toString().trim();
     const petType = (first(fields.petType) || "").toString().trim();
