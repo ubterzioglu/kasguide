@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Geri Bildirim • Kaş Guide</title>
+
+  <link rel="icon" type="image/png" href="../../assets/0_img/logokasguide.png">
+  <!-- Mevcut görünümü aynen kullan -->
+  <link rel="stylesheet" href="../add-artist/add-artist.css" />
+  <!-- Bu sayfaya özel minik düzenlemeler -->
+  <link rel="stylesheet" href="./feedback.css" />
+
+  <script src="./feedback.js" defer></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../index.html" aria-label="Kaş Guide">
+        <div class="brand__title">Kaş Guide</div>
+        <div class="brand__subtitle">Geri Bildirim</div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Geri Bildirim</h1>
+      <p class="muted">Bir hata mı gördün, bir fikir mi var, bir şey mi ekleyelim? Yaz, biz bakalım.</p>
+    </section>
+
+    <section class="card">
+
+      <div class="success-message" id="successMessage" hidden>
+        <div class="success-icon">✅</div>
+        <h3>Mesajın Alındı!</h3>
+        <p>Okuyoruz ve mümkün olduğunca hızlı şekilde aksiyon almaya çalışıyoruz.</p>
+        <p>Teşekkürler.</p>
+        <p>Kaş Guide</p>
+      </div>
+
+      <form id="feedbackForm" class="form" novalidate>
+        <div class="grid feedback-grid">
+
+          <div class="field field--full">
+            <label for="title">Başlık <span class="req">*</span></label>
+            <input
+              id="title"
+              name="title"
+              type="text"
+              autocomplete="off"
+              placeholder="Örn: Haritada yanlış kategori / Yeni bölüm önerisi / Hata bildirimi"
+              required
+              maxlength="120"
+            />
+            <div class="hint">Kısa ve net bir başlık yeterli.</div>
+          </div>
+
+          <div class="field field--full">
+            <label for="message">Bizimle Paylaşın! <span class="req">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="10"
+              placeholder="Detayı yazın… Ne oldu? Nerede oldu? Varsa ekran görüntüsü / link / örnek paylaşın."
+              required
+              maxlength="5000"
+            ></textarea>
+            <div class="hint"><span id="charCount">0</span>/5000</div>
+          </div>
+
+          <div class="actions field--full">
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              Gönder
+            </button>
+          </div>
+
+        </div>
+      </form>
+
+    </section>
+  </main>
+</body>
+</html>
