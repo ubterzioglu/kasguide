@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İçerik Ekle • Kaş Guide</title>
+  <link rel="icon" type="image/png" href="../../assets/0_img/logokasguide.png">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="../shared/layout.css">
+  <link rel="stylesheet" href="../shared/components.css">
+
+  <style>
+    /* Type Selection Cards */
+    .type-selection {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .type-card {
+      background: var(--card-bg, #fff);
+      border: 2px solid var(--border-color, #e0e0e0);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .type-card:hover {
+      border-color: var(--primary-color, #4CAF50);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .type-card.selected {
+      border-color: var(--primary-color, #4CAF50);
+      background: var(--primary-light, #f1f8f4);
+    }
+
+    .type-card__icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .type-card__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .type-card__desc {
+      font-size: 0.875rem;
+      color: var(--text-muted, #666);
+    }
+
+    /* Step Progress */
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+      gap: 1rem;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--border-color, #e0e0e0);
+      color: var(--text-muted, #666);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .step.active .step-number {
+      background: var(--primary-color, #4CAF50);
+      color: white;
+    }
+
+    .step.completed .step-number {
+      background: var(--success-color, #2196F3);
+      color: white;
+    }
+
+    /* Form Sections */
+    .form-section {
+      display: none;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+
+    /* Type-specific fields */
+    .type-fields {
+      display: none;
+    }
+
+    .type-fields.active {
+      display: block;
+    }
+
+    /* Navigation Buttons */
+    .form-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary-color, #4CAF50);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark, #45a049);
+    }
+
+    .btn-secondary {
+      background: var(--border-color, #e0e0e0);
+      color: var(--text-color, #333);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border-hover, #d0d0d0);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Hide initially */
+    #mainForm {
+      display: none;
+    }
+
+    #mainForm.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../../index.html" aria-label="Kaş Guide">
+        <div class="brand__title">Kaş Guide</div>
+        <div class="brand__subtitle">İçerik Ekle</div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Kaş Guide'a Katkıda Bulunun!</h1>
+      <p class="muted">Mekan, otel, sanatçı bilgisi ekleyin veya kayıp hayvan ilanı verin</p>
+    </section>
+
+    <!-- TYPE SELECTION -->
+    <section id="typeSelection" class="card">
+      <h2 style="text-align: center; margin-bottom: 1.5rem;">Ne Eklemek İstersiniz?</h2>
+
+      <div class="type-selection">
+        <div class="type-card" data-type="place">
+          <div class="type-card__icon">🏪</div>
+          <div class="type-card__title">Mekan</div>
+          <div class="type-card__desc">Restoran, kafe, plaj, aktivite</div>
+        </div>
+
+        <div class="type-card" data-type="pet">
+          <div class="type-card__icon">🐾</div>
+          <div class="type-card__title">Hayvan</div>
+          <div class="type-card__desc">Kayıp/bulunan hayvan ilanı</div>
+        </div>
+
+        <div class="type-card" data-type="hotel">
+          <div class="type-card__icon">🏨</div>
+          <div class="type-card__title">Otel</div>
+          <div class="type-card__desc">Otel, pansiyon, apart, villa</div>
+        </div>
+
+        <div class="type-card" data-type="artist">
+          <div class="type-card__icon">🎨</div>
+          <div class="type-card__title">Sanatçı</div>
+          <div class="type-card__desc">Müzisyen, DJ, sahne sanatçısı</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN FORM -->
+    <section id="mainForm" class="card">
+      <!-- Success Message -->
+      <div class="success-message" id="successMessage" style="display:none;">
+        <div class="success-icon">✅</div>
+        <h3>Başvurunuz Alındı!</h3>
+        <p id="successText">Bilgilerinizi inceliyoruz. En kısa sürede size dönüş yapacağız.</p>
+        <p>Desteğiniz için teşekkür ederiz.</p>
+        <p><strong>Kaş Guide</strong></p>
+      </div>
+
+      <!-- Step Indicator -->
+      <div class="step-indicator" id="stepIndicator">
+        <div class="step active" data-step="1">
+          <span class="step-number">1</span>
+          <span class="step-label">Temel Bilgiler</span>
+        </div>
+        <div class="step" data-step="2">
+          <span class="step-number">2</span>
+          <span class="step-label">Özel Alanlar</span>
+        </div>
+        <div class="step" data-step="3">
+          <span class="step-number">3</span>
+          <span class="step-label">Fotoğraflar</span>
+        </div>
+        <div class="step" data-step="4">
+          <span class="step-number">4</span>
+          <span class="step-label">Önizleme</span>
+        </div>
+      </div>
+
+      <form id="itemForm" class="form" novalidate>
+        <input type="hidden" name="itemType" id="itemType">
+
+        <!-- STEP 1: Common Fields -->
+        <section class="form-section active" data-step="1">
+          <div class="form-box">
+            <div class="form-box__head">
+              <span class="form-ico">📝</span>
+              <span>Temel Bilgiler</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Başlık<span class="required">*</span></label>
+              <input type="text" class="form-input" name="title" id="title" placeholder="Başlık girin" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Kısa Açıklama</label>
+              <textarea class="form-textarea" name="description" id="description" placeholder="Kısa açıklama (1-2 cümle)"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Detaylı Açıklama</label>
+              <textarea class="form-textarea" name="longText" id="longText" placeholder="Detaylı bilgi" style="min-height: 150px;"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Telefon<span class="required">*</span></label>
+                <input type="tel" class="form-input" name="phone" id="phone" placeholder="+90 555 123 4567" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">E-posta</label>
+                <input type="email" class="form-input" name="email" id="email" placeholder="ornek@email.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Website</label>
+                <input type="url" class="form-input" name="website" id="website" placeholder="https://...">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Instagram</label>
+                <input type="text" class="form-input" name="instagram" id="instagram" placeholder="@kullaniciadi">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 2: Type-Specific Fields -->
+        <section class="form-section" data-step="2">
+
+          <!-- PLACE FIELDS -->
+          <div id="placeFields" class="type-fields">
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">🏪</span>
+                <span>Mekan Bilgileri</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Konum</label>
+                  <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Mesafe (Kaş'a)</label>
+                  <input type="text" class="form-input" name="distance" placeholder="Örn: 2 km">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Fiyat Aralığı</label>
+                  <select class="form-input" name="price">
+                    <option value="">Seçiniz</option>
+                    <option value="₺">₺ - Ekonomik</option>
+                    <option value="₺₺">₺₺ - Orta</option>
+                    <option value="₺₺₺">₺₺₺ - Lüks</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Tahmini Süre</label>
+                  <input type="text" class="form-input" name="duration" placeholder="Örn: 2-3 saat">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Google Maps Link</label>
+                <input type="url" class="form-input" name="googleMapsQuery" placeholder="https://maps.google.com/...">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Rezervasyon Linki</label>
+                <input type="url" class="form-input" name="booking" placeholder="https://...">
+              </div>
+            </div>
+          </div>
+
+          <!-- PET FIELDS -->
+          <div id="petFields" class="type-fields">
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">🐾</span>
+                <span>Hayvan Bilgileri</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Hayvan Tipi<span class="required">*</span></label>
+                  <select class="form-input" name="petType" required>
+                    <option value="">Seçiniz</option>
+                    <option value="kedi">🐱 Kedi</option>
+                    <option value="kopek">🐶 Köpek</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">İlan Tipi<span class="required">*</span></label>
+                  <select class="form-input" name="listingType" required>
+                    <option value="">Seçiniz</option>
+                    <option value="kayip">Kayıp</option>
+                    <option value="bulundu">Bulundu</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Yaş</label>
+                  <input type="text" class="form-input" name="age" placeholder="Örn: 2 yaşında">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Cins</label>
+                  <input type="text" class="form-input" name="breed" placeholder="Örn: Golden Retriever">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kısa Not<span class="required">*</span></label>
+                <textarea class="form-textarea" name="shortNote" placeholder="Kısa bilgi..." required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- HOTEL FIELDS -->
+          <div id="hotelFields" class="type-fields">
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">🏨</span>
+                <span>Otel Bilgileri</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Otel Tipi<span class="required">*</span></label>
+                  <select class="form-input" name="hotelType" required>
+                    <option value="">Seçiniz</option>
+                    <option value="butik">Butik Otel</option>
+                    <option value="aile">Aile Oteli</option>
+                    <option value="luks">Lüks Otel</option>
+                    <option value="pansiyon">Pansiyon</option>
+                    <option value="apart">Apart Otel</option>
+                    <option value="hostel">Hostel</option>
+                    <option value="villa">Villa</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Yıldız</label>
+                  <select class="form-input" name="starRating">
+                    <option value="">Seçiniz</option>
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Oda Sayısı</label>
+                  <input type="number" class="form-input" name="roomCount" placeholder="20">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Kapasite</label>
+                  <input type="number" class="form-input" name="capacity" placeholder="40">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Check-in</label>
+                  <input type="time" class="form-input" name="checkinTime">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Check-out</label>
+                  <input type="time" class="form-input" name="checkoutTime">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Konum<span class="required">*</span></label>
+                <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Denize Mesafe</label>
+                <input type="text" class="form-input" name="distanceToSea" placeholder="Örn: 200m">
+              </div>
+            </div>
+          </div>
+
+          <!-- ARTIST FIELDS -->
+          <div id="artistFields" class="type-fields">
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">🎨</span>
+                <span>Sanatçı Bilgileri</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">YouTube Kanalı</label>
+                <input type="url" class="form-input" name="youtube" placeholder="https://youtube.com/...">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Müzik Linki (Spotify, SoundCloud vb.)</label>
+                <input type="url" class="form-input" name="musicLink" placeholder="https://...">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kategori</label>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                  <label><input type="checkbox" name="categories" value="musician"> Müzisyen</label>
+                  <label><input type="checkbox" name="categories" value="dj"> DJ</label>
+                  <label><input type="checkbox" name="categories" value="singer"> Şarkıcı</label>
+                  <label><input type="checkbox" name="categories" value="band"> Grup</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- STEP 3: Photos -->
+        <section class="form-section" data-step="3">
+          <div class="form-box">
+            <div class="form-box__head">
+              <span class="form-ico">📸</span>
+              <span>Fotoğraflar</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Fotoğraf Yükle (Maks. 5 adet)</label>
+              <input type="file" class="form-input" name="photos" accept="image/*" multiple>
+              <p class="form-hint">JPG, PNG veya WEBP formatında, her biri max 2MB</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 4: Review -->
+        <section class="form-section" data-step="4">
+          <div class="form-box">
+            <div class="form-box__head">
+              <span class="form-ico">👀</span>
+              <span>Önizleme ve Gönder</span>
+            </div>
+
+            <div id="reviewContent">
+              <p style="text-align: center; color: #666;">Bilgileriniz burada görünecek...</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Ek Notlar</label>
+              <textarea class="form-textarea" name="extraNotes" placeholder="Eklemek istediğiniz başka bir şey var mı?"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="form-nav">
+          <button type="button" class="btn btn-secondary" id="prevBtn" style="display:none;">⬅ Geri</button>
+          <button type="button" class="btn btn-primary" id="nextBtn">İleri ➡</button>
+          <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">
+            <span id="submitBtnText">Gönder</span>
+            <span id="submitSpinner" style="display:none;">⏳ Gönderiliyor...</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="./add-item.js"></script>
+</body>
+</html>

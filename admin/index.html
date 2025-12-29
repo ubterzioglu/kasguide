@@ -345,16 +345,19 @@
 
       <!-- Content Type Selection -->
       <div class="content-type-tabs">
-        <button class="content-type-tab active" onclick="switchContentType('places')">
+        <button class="content-type-tab active" onclick="switchContentType('all')">
+          🌟 All (Hepsi)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('place')">
           🏪 Places (Mekanlar)
         </button>
-        <button class="content-type-tab" onclick="switchContentType('pets')">
+        <button class="content-type-tab" onclick="switchContentType('pet')">
           🐾 Pets (Hayvanlar)
         </button>
-        <button class="content-type-tab" onclick="switchContentType('hotels')">
+        <button class="content-type-tab" onclick="switchContentType('hotel')">
           🏨 Hotels (Oteller)
         </button>
-        <button class="content-type-tab" onclick="switchContentType('artists')">
+        <button class="content-type-tab" onclick="switchContentType('artist')">
           🎨 Artists (Sanatçılar)
         </button>
       </div>
@@ -374,7 +377,7 @@
 
   <script>
     let apiKey = '';
-    let currentContentType = 'places';
+    let currentContentType = 'all';
     let currentStatus = 'pending';
 
     // Check if already logged in
@@ -439,7 +442,9 @@
       container.innerHTML = '';
 
       try {
-        const response = await fetch(`/api/admin/${currentContentType}?status=${currentStatus}`, {
+        // Use unified items endpoint
+        const typeParam = currentContentType !== 'all' ? `&type=${currentContentType}` : '';
+        const response = await fetch(`/api/admin/items?status=${currentStatus}${typeParam}`, {
           headers: {
             'X-API-Key': apiKey
           }
@@ -456,15 +461,16 @@
 
         loading.style.display = 'none';
 
-        // Get the correct data array based on content type
-        const items = data[currentContentType] || [];
+        // Get items from unified response
+        const items = data.items || [];
 
         if (items.length === 0) {
           container.innerHTML = '<div class="empty">Başvuru bulunamadı</div>';
           return;
         }
 
-        container.innerHTML = items.map(item => renderSubmission(item, currentContentType)).join('');
+        // Render items based on their item_type
+        container.innerHTML = items.map(item => renderItem(item)).join('');
 
       } catch (error) {
         loading.style.display = 'none';
@@ -472,67 +478,80 @@
       }
     }
 
-    function renderSubmission(item, type) {
+    function renderItem(item) {
       const statusClass = `status-${item.status}`;
       const createdDate = new Date(item.created_at).toLocaleString('tr-TR');
 
-      switch (type) {
-        case 'places':
-          return renderPlace(item, statusClass, createdDate);
-        case 'pets':
-          return renderPet(item, statusClass, createdDate);
-        case 'hotels':
-          return renderHotel(item, statusClass, createdDate);
-        case 'artists':
-          return renderArtist(item, statusClass, createdDate);
+      // Parse photos and attributes from JSONB
+      const photos = item.photos ? (typeof item.photos === 'string' ? JSON.parse(item.photos) : item.photos) : [];
+      const attributes = item.attributes ? (typeof item.attributes === 'string' ? JSON.parse(item.attributes) : item.attributes) : {};
+
+      switch (item.item_type) {
+        case 'place':
+          return renderPlace(item, attributes, photos, statusClass, createdDate);
+        case 'pet':
+          return renderPet(item, attributes, photos, statusClass, createdDate);
+        case 'hotel':
+          return renderHotel(item, attributes, photos, statusClass, createdDate);
+        case 'artist':
+          return renderArtist(item, attributes, photos, statusClass, createdDate);
         default:
           return '';
       }
     }
 
-    function renderPlace(place, statusClass, createdDate) {
-      const images = place.images || [];
-      const categories = place.categories || [];
+    function renderPlace(item, attributes, photos, statusClass, createdDate) {
+      const photoUrls = photos.map(p => p.url || p);
+      const categories = attributes.categories || [];
 
       return `
         <div class="submission-card">
           <div class="submission-header">
             <div>
-              <div class="submission-title">🏪 ${place.title}</div>
+              <div class="submission-title">🏪 ${item.title} <span style="color:#999;font-size:0.85em;">#${item.item_number}</span></div>
               <div class="submission-meta">
-                ID: ${place.id} • ${createdDate} • <span class="status-badge ${statusClass}">${place.status}</span>
+                ID: ${item.id} • ${createdDate} • <span class="status-badge ${statusClass}">${item.status}</span>
               </div>
             </div>
           </div>
 
           <div class="submission-content">
-            ${place.description ? `
+            ${item.description ? `
               <div class="field">
                 <div class="field-label">Kısa Açıklama:</div>
-                <div class="field-value">${place.description}</div>
+                <div class="field-value">${item.description}</div>
               </div>
             ` : ''}
 
-            <div class="field">
-              <div class="field-label">Detaylı Açıklama:</div>
-              <div class="field-value">${place.long_text.substring(0, 200)}${place.long_text.length > 200 ? '...' : ''}</div>
-            </div>
+            ${item.long_text ? `
+              <div class="field">
+                <div class="field-label">Detaylı Açıklama:</div>
+                <div class="field-value">${item.long_text.substring(0, 200)}${item.long_text.length > 200 ? '...' : ''}</div>
+              </div>
+            ` : ''}
 
-            ${place.location ? `
+            ${item.location ? `
               <div class="field">
                 <div class="field-label">Konum:</div>
-                <div class="field-value">${place.location} ${place.distance ? `(${place.distance})` : ''}</div>
+                <div class="field-value">${item.location} ${attributes.distance ? `(${attributes.distance})` : ''}</div>
               </div>
             ` : ''}
 
             <div class="field">
               <div class="field-label">İletişim:</div>
               <div class="field-value">
-                📞 ${place.phone}
-                ${place.instagram ? ` • 📸 ${place.instagram}` : ''}
-                ${place.website ? ` • 🌐 ${place.website}` : ''}
+                ${item.phone ? `📞 ${item.phone}` : ''}
+                ${item.instagram ? ` • 📸 ${item.instagram}` : ''}
+                ${item.website ? ` • 🌐 ${item.website}` : ''}
               </div>
             </div>
+
+            ${attributes.price ? `
+              <div class="field">
+                <div class="field-label">Fiyat:</div>
+                <div class="field-value">${attributes.price}</div>
+              </div>
+            ` : ''}
 
             ${categories.length > 0 ? `
               <div class="field">
@@ -541,32 +560,32 @@
               </div>
             ` : ''}
 
-            ${images.length > 0 ? `
+            ${photoUrls.length > 0 ? `
               <div class="field">
-                <div class="field-label">Fotoğraflar (${images.length}):</div>
+                <div class="field-label">Fotoğraflar (${photoUrls.length}):</div>
                 <div class="images">
-                  ${images.map(img => `<img src="${img}" alt="Photo">`).join('')}
+                  ${photoUrls.map(img => `<img src="${img}" alt="Photo">`).join('')}
                 </div>
               </div>
             ` : ''}
           </div>
 
-          ${renderActions(place.id, place.status, place.title, 'places')}
+          ${renderActions(item.id, item.status, item.title)}
         </div>
       `;
     }
 
-    function renderPet(pet, statusClass, createdDate) {
-      const photos = pet.photos || [];
-      const listingIcon = pet.listing_type === 'Kayıp' ? '🔍' : '🏠';
+    function renderPet(item, attributes, photos, statusClass, createdDate) {
+      const photoUrls = photos.map(p => p.url || p);
+      const listingIcon = attributes.listing_type === 'kayip' ? '🔍' : '🏠';
 
       return `
         <div class="submission-card">
           <div class="submission-header">
             <div>
-              <div class="submission-title">${listingIcon} ${pet.listing_type} - ${pet.pet_name || pet.pet_type}</div>
+              <div class="submission-title">${listingIcon} ${item.title} <span style="color:#999;font-size:0.85em;">#${item.item_number}</span></div>
               <div class="submission-meta">
-                ID: ${pet.id} • ${createdDate} • <span class="status-badge ${statusClass}">${pet.status}</span>
+                ID: ${item.id} • ${createdDate} • <span class="status-badge ${statusClass}">${item.status}</span>
               </div>
             </div>
           </div>
@@ -574,52 +593,59 @@
           <div class="submission-content">
             <div class="field">
               <div class="field-label">Tür:</div>
-              <div class="field-value">${pet.pet_type} ${pet.breed ? `- ${pet.breed}` : ''} ${pet.age ? `(${pet.age})` : ''}</div>
+              <div class="field-value">${attributes.pet_type || ''} ${attributes.breed ? `- ${attributes.breed}` : ''} ${attributes.age ? `(${attributes.age})` : ''}</div>
             </div>
 
             <div class="field">
-              <div class="field-label">Kısa Not:</div>
-              <div class="field-value">${pet.short_note}</div>
+              <div class="field-label">İlan Tipi:</div>
+              <div class="field-value">${attributes.listing_type || ''}</div>
             </div>
 
-            ${pet.extra_notes ? `
+            ${attributes.short_note ? `
+              <div class="field">
+                <div class="field-label">Kısa Not:</div>
+                <div class="field-value">${attributes.short_note}</div>
+              </div>
+            ` : ''}
+
+            ${attributes.extra_notes ? `
               <div class="field">
                 <div class="field-label">Ek Notlar:</div>
-                <div class="field-value">${pet.extra_notes}</div>
+                <div class="field-value">${attributes.extra_notes}</div>
               </div>
             ` : ''}
 
             <div class="field">
               <div class="field-label">İletişim:</div>
-              <div class="field-value">📞 ${pet.phone}</div>
+              <div class="field-value">📞 ${item.phone || ''}</div>
             </div>
 
-            ${photos.length > 0 ? `
+            ${photoUrls.length > 0 ? `
               <div class="field">
-                <div class="field-label">Fotoğraflar (${photos.length}):</div>
+                <div class="field-label">Fotoğraflar (${photoUrls.length}):</div>
                 <div class="images">
-                  ${photos.map(img => `<img src="${img}" alt="Pet photo">`).join('')}
+                  ${photoUrls.map(img => `<img src="${img}" alt="Pet photo">`).join('')}
                 </div>
               </div>
             ` : ''}
           </div>
 
-          ${renderActions(pet.id, pet.status, pet.pet_name || pet.pet_type, 'pets')}
+          ${renderActions(item.id, item.status, item.title)}
         </div>
       `;
     }
 
-    function renderHotel(hotel, statusClass, createdDate) {
-      const images = hotel.images || [];
-      const facilities = hotel.facilities || [];
+    function renderHotel(item, attributes, photos, statusClass, createdDate) {
+      const photoUrls = photos.map(p => p.url || p);
+      const facilities = attributes.facilities || [];
 
       return `
         <div class="submission-card">
           <div class="submission-header">
             <div>
-              <div class="submission-title">🏨 ${hotel.title}</div>
+              <div class="submission-title">🏨 ${item.title} <span style="color:#999;font-size:0.85em;">#${item.item_number}</span></div>
               <div class="submission-meta">
-                ID: ${hotel.id} • ${createdDate} • <span class="status-badge ${statusClass}">${hotel.status}</span>
+                ID: ${item.id} • ${createdDate} • <span class="status-badge ${statusClass}">${item.status}</span>
               </div>
             </div>
           </div>
@@ -627,34 +653,36 @@
           <div class="submission-content">
             <div class="field">
               <div class="field-label">Tip:</div>
-              <div class="field-value">${hotel.hotel_type} ${hotel.star_rating ? `⭐ ${hotel.star_rating}` : ''}</div>
+              <div class="field-value">${attributes.hotel_type || ''} ${attributes.star_rating ? `⭐ ${attributes.star_rating}` : ''}</div>
             </div>
 
-            ${hotel.room_count || hotel.capacity ? `
+            ${attributes.room_count || attributes.capacity ? `
               <div class="field">
                 <div class="field-label">Kapasite:</div>
                 <div class="field-value">
-                  ${hotel.room_count ? `${hotel.room_count} oda` : ''}
-                  ${hotel.capacity ? ` • ${hotel.capacity} kişi` : ''}
+                  ${attributes.room_count ? `${attributes.room_count} oda` : ''}
+                  ${attributes.capacity ? ` • ${attributes.capacity} kişi` : ''}
                 </div>
               </div>
             ` : ''}
 
             <div class="field">
               <div class="field-label">Konum:</div>
-              <div class="field-value">${hotel.location} ${hotel.distance_to_sea ? `(Deniz: ${hotel.distance_to_sea})` : ''}</div>
+              <div class="field-value">${item.location} ${attributes.distance_to_sea ? `(Deniz: ${attributes.distance_to_sea})` : ''}</div>
             </div>
 
-            <div class="field">
-              <div class="field-label">Açıklama:</div>
-              <div class="field-value">${hotel.description}</div>
-            </div>
+            ${item.description ? `
+              <div class="field">
+                <div class="field-label">Açıklama:</div>
+                <div class="field-value">${item.description}</div>
+              </div>
+            ` : ''}
 
             <div class="field">
               <div class="field-label">İletişim:</div>
               <div class="field-value">
-                📞 ${hotel.phone} • 📧 ${hotel.email}
-                ${hotel.website ? ` • 🌐 ${hotel.website}` : ''}
+                ${item.phone ? `📞 ${item.phone}` : ''} ${item.email ? `• 📧 ${item.email}` : ''}
+                ${item.website ? ` • 🌐 ${item.website}` : ''}
               </div>
             </div>
 
@@ -665,31 +693,32 @@
               </div>
             ` : ''}
 
-            ${images.length > 0 ? `
+            ${photoUrls.length > 0 ? `
               <div class="field">
-                <div class="field-label">Fotoğraflar (${images.length}):</div>
+                <div class="field-label">Fotoğraflar (${photoUrls.length}):</div>
                 <div class="images">
-                  ${images.map(img => `<img src="${img}" alt="Hotel photo">`).join('')}
+                  ${photoUrls.map(img => `<img src="${img}" alt="Hotel photo">`).join('')}
                 </div>
               </div>
             ` : ''}
           </div>
 
-          ${renderActions(hotel.id, hotel.status, hotel.title, 'hotels')}
+          ${renderActions(item.id, item.status, item.title)}
         </div>
       `;
     }
 
-    function renderArtist(artist, statusClass, createdDate) {
-      const categories = artist.categories || [];
+    function renderArtist(item, attributes, photos, statusClass, createdDate) {
+      const photoUrls = photos.map(p => p.url || p);
+      const categories = attributes.categories || [];
 
       return `
         <div class="submission-card">
           <div class="submission-header">
             <div>
-              <div class="submission-title">🎨 ${artist.artist_name}</div>
+              <div class="submission-title">🎨 ${item.title} <span style="color:#999;font-size:0.85em;">#${item.item_number}</span></div>
               <div class="submission-meta">
-                ID: ${artist.id} • ${createdDate} • <span class="status-badge ${statusClass}">${artist.status}</span>
+                ID: ${item.id} • ${createdDate} • <span class="status-badge ${statusClass}">${item.status}</span>
               </div>
             </div>
           </div>
@@ -702,76 +731,80 @@
               </div>
             ` : ''}
 
-            ${artist.short_text ? `
+            ${attributes.short_text || item.description ? `
               <div class="field">
                 <div class="field-label">Kısa Tanıtım:</div>
-                <div class="field-value">${artist.short_text}</div>
+                <div class="field-value">${attributes.short_text || item.description}</div>
               </div>
             ` : ''}
 
-            <div class="field">
-              <div class="field-label">Detaylı Tanıtım:</div>
-              <div class="field-value">${artist.long_text.substring(0, 200)}${artist.long_text.length > 200 ? '...' : ''}</div>
-            </div>
+            ${item.long_text ? `
+              <div class="field">
+                <div class="field-label">Detaylı Tanıtım:</div>
+                <div class="field-value">${item.long_text.substring(0, 200)}${item.long_text.length > 200 ? '...' : ''}</div>
+              </div>
+            ` : ''}
 
             <div class="field">
               <div class="field-label">Sosyal Medya:</div>
               <div class="field-value">
-                ${artist.instagram ? `📸 ${artist.instagram}` : ''}
-                ${artist.youtube ? ` • 📺 ${artist.youtube}` : ''}
-                ${artist.website ? ` • 🌐 ${artist.website}` : ''}
+                ${item.instagram ? `📸 ${item.instagram}` : ''}
+                ${attributes.youtube ? ` • 📺 ${attributes.youtube}` : ''}
+                ${item.website ? ` • 🌐 ${item.website}` : ''}
+                ${attributes.music_link ? ` • 🎵 ${attributes.music_link}` : ''}
               </div>
             </div>
 
-            ${artist.phone || artist.email ? `
+            ${item.phone || item.email ? `
               <div class="field">
                 <div class="field-label">İletişim:</div>
                 <div class="field-value">
-                  ${artist.phone ? `📞 ${artist.phone}` : ''}
-                  ${artist.email ? ` • 📧 ${artist.email}` : ''}
+                  ${item.phone ? `📞 ${item.phone}` : ''}
+                  ${item.email ? ` • 📧 ${item.email}` : ''}
                 </div>
               </div>
             ` : ''}
 
-            <div class="field">
-              <div class="field-label">Fotoğraflar:</div>
-              <div class="images">
-                ${artist.profile_photo ? `<img src="${artist.profile_photo}" alt="Profile">` : ''}
-                ${artist.banner_photo ? `<img src="${artist.banner_photo}" alt="Banner">` : ''}
+            ${photoUrls.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Fotoğraflar:</div>
+                <div class="images">
+                  ${photoUrls.map(img => `<img src="${img}" alt="Photo">`).join('')}
+                </div>
               </div>
-            </div>
+            ` : ''}
           </div>
 
-          ${renderActions(artist.id, artist.status, artist.artist_name, 'artists')}
+          ${renderActions(item.id, item.status, item.title)}
         </div>
       `;
     }
 
-    function renderActions(id, status, title, type) {
+    function renderActions(id, status, title) {
       return `
         <div class="actions">
           ${status === 'pending' ? `
-            <button class="btn btn-approve" onclick="updateStatus(${id}, 'approved', '${type}')">
+            <button class="btn btn-approve" onclick="updateStatus(${id}, 'approved')">
               ✅ Onayla
             </button>
-            <button class="btn btn-reject" onclick="updateStatus(${id}, 'rejected', '${type}')">
+            <button class="btn btn-reject" onclick="updateStatus(${id}, 'rejected')">
               ❌ Reddet
             </button>
           ` : ''}
-          <button class="btn btn-delete" onclick="confirmDelete(${id}, '${title.replace(/'/g, "\\'")}', '${type}')">
+          <button class="btn btn-delete" onclick="confirmDelete(${id}, '${title.replace(/'/g, "\\'")}')">
             🗑️ Sil
           </button>
         </div>
       `;
     }
 
-    async function updateStatus(id, status, type) {
+    async function updateStatus(id, status) {
       if (!confirm(`Bu başvuruyu ${status === 'approved' ? 'onaylamak' : 'reddetmek'} istediğinize emin misiniz?`)) {
         return;
       }
 
       try {
-        const response = await fetch(`/api/admin/${type}`, {
+        const response = await fetch(`/api/admin/items`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -793,15 +826,15 @@
       }
     }
 
-    function confirmDelete(id, title, type) {
+    function confirmDelete(id, title) {
       if (confirm(`"${title}" başvurusunu kalıcı olarak silmek istediğinize emin misiniz?`)) {
-        deleteSubmission(id, type);
+        deleteSubmission(id);
       }
     }
 
-    async function deleteSubmission(id, type) {
+    async function deleteSubmission(id) {
       try {
-        const response = await fetch(`/api/admin/${type}?id=${id}`, {
+        const response = await fetch(`/api/admin/items?id=${id}`, {
           method: 'DELETE',
           headers: {
             'X-API-Key': apiKey
