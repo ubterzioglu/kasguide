@@ -18,7 +18,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
@@ -70,14 +70,13 @@
     }
 
     button {
-      width: 100%;
-      padding: 12px;
+      padding: 12px 24px;
       background: #4CAF50;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
     }
 
@@ -85,24 +84,54 @@
       background: #45a049;
     }
 
-    .tabs {
+    .content-type-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .content-type-tab {
+      padding: 12px 24px;
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .content-type-tab:hover {
+      border-color: #4CAF50;
+    }
+
+    .content-type-tab.active {
+      background: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+
+    .status-tabs {
       display: flex;
       gap: 10px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
-    .tab {
+    .status-tab {
       padding: 10px 20px;
       background: white;
-      border: none;
+      border: 1px solid #ddd;
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
     }
 
-    .tab.active {
-      background: #4CAF50;
+    .status-tab.active {
+      background: #2196F3;
       color: white;
+      border-color: #2196F3;
     }
 
     .submissions {
@@ -159,6 +188,7 @@
       display: flex;
       gap: 10px;
       margin-top: 15px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -212,6 +242,11 @@
       color: #C62828;
     }
 
+    .status-active {
+      background: #E3F2FD;
+      color: #1976D2;
+    }
+
     .error {
       background: #ffebee;
       color: #c62828;
@@ -257,6 +292,33 @@
     #mainContent {
       display: none;
     }
+
+    .stats {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      min-width: 120px;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
   </style>
 </head>
 <body>
@@ -277,14 +339,31 @@
   <div id="mainContent">
     <div class="container">
       <header>
-        <h1>🏝️ Kaş Guide - Admin Panel</h1>
-        <p style="color: #666; font-size: 14px;">Başvuruları yönetin ve onaylayın</p>
+        <h1>🏝️ Kaş Guide - Unified Admin Panel</h1>
+        <p style="color: #666; font-size: 14px;">Tüm başvuruları tek panelden yönetin</p>
       </header>
 
-      <div class="tabs">
-        <button class="tab active" onclick="switchTab('pending')">Bekleyenler</button>
-        <button class="tab" onclick="switchTab('approved')">Onaylananlar</button>
-        <button class="tab" onclick="switchTab('rejected')">Reddedilenler</button>
+      <!-- Content Type Selection -->
+      <div class="content-type-tabs">
+        <button class="content-type-tab active" onclick="switchContentType('places')">
+          🏪 Places (Mekanlar)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('pets')">
+          🐾 Pets (Hayvanlar)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('hotels')">
+          🏨 Hotels (Oteller)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('artists')">
+          🎨 Artists (Sanatçılar)
+        </button>
+      </div>
+
+      <!-- Status Tabs -->
+      <div class="status-tabs">
+        <button class="status-tab active" onclick="switchStatus('pending')">Bekleyenler</button>
+        <button class="status-tab" onclick="switchStatus('approved')">Onaylananlar</button>
+        <button class="status-tab" onclick="switchStatus('rejected')">Reddedilenler</button>
       </div>
 
       <div id="message" style="display:none;"></div>
@@ -295,7 +374,8 @@
 
   <script>
     let apiKey = '';
-    let currentTab = 'pending';
+    let currentContentType = 'places';
+    let currentStatus = 'pending';
 
     // Check if already logged in
     const savedKey = localStorage.getItem('adminApiKey');
@@ -309,11 +389,9 @@
       event.preventDefault();
       const key = document.getElementById('apiKey').value;
 
-      // Simple validation - just try to use the key
       apiKey = key;
       localStorage.setItem('adminApiKey', key);
 
-      // Try to load submissions
       showMainContent();
       loadSubmissions();
     }
@@ -329,11 +407,23 @@
       errorDiv.style.display = 'block';
     }
 
-    function switchTab(tab) {
-      currentTab = tab;
+    function switchContentType(type) {
+      currentContentType = type;
 
       // Update active tab
-      document.querySelectorAll('.tab').forEach(t => {
+      document.querySelectorAll('.content-type-tab').forEach(t => {
+        t.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      loadSubmissions();
+    }
+
+    function switchStatus(status) {
+      currentStatus = status;
+
+      // Update active tab
+      document.querySelectorAll('.status-tab').forEach(t => {
         t.classList.remove('active');
       });
       event.target.classList.add('active');
@@ -349,7 +439,7 @@
       container.innerHTML = '';
 
       try {
-        const response = await fetch(`/api/admin/places?status=${currentTab}`, {
+        const response = await fetch(`/api/admin/${currentContentType}?status=${currentStatus}`, {
           headers: {
             'X-API-Key': apiKey
           }
@@ -366,12 +456,15 @@
 
         loading.style.display = 'none';
 
-        if (!data.places || data.places.length === 0) {
+        // Get the correct data array based on content type
+        const items = data[currentContentType] || [];
+
+        if (items.length === 0) {
           container.innerHTML = '<div class="empty">Başvuru bulunamadı</div>';
           return;
         }
 
-        container.innerHTML = data.places.map(place => renderSubmission(place)).join('');
+        container.innerHTML = items.map(item => renderSubmission(item, currentContentType)).join('');
 
       } catch (error) {
         loading.style.display = 'none';
@@ -379,11 +472,25 @@
       }
     }
 
-    function renderSubmission(place) {
-      const statusClass = `status-${place.status}`;
-      const createdDate = new Date(place.created_at).toLocaleString('tr-TR');
+    function renderSubmission(item, type) {
+      const statusClass = `status-${item.status}`;
+      const createdDate = new Date(item.created_at).toLocaleString('tr-TR');
 
-      // Images and categories are already arrays from the API (json_agg in SQL)
+      switch (type) {
+        case 'places':
+          return renderPlace(item, statusClass, createdDate);
+        case 'pets':
+          return renderPet(item, statusClass, createdDate);
+        case 'hotels':
+          return renderHotel(item, statusClass, createdDate);
+        case 'artists':
+          return renderArtist(item, statusClass, createdDate);
+        default:
+          return '';
+      }
+    }
+
+    function renderPlace(place, statusClass, createdDate) {
       const images = place.images || [];
       const categories = place.categories || [];
 
@@ -391,7 +498,7 @@
         <div class="submission-card">
           <div class="submission-header">
             <div>
-              <div class="submission-title">${place.title}</div>
+              <div class="submission-title">🏪 ${place.title}</div>
               <div class="submission-meta">
                 ID: ${place.id} • ${createdDate} • <span class="status-badge ${statusClass}">${place.status}</span>
               </div>
@@ -434,10 +541,127 @@
               </div>
             ` : ''}
 
-            ${place.submission_notes ? `
+            ${images.length > 0 ? `
               <div class="field">
-                <div class="field-label">Notlar:</div>
-                <div class="field-value">${place.submission_notes}</div>
+                <div class="field-label">Fotoğraflar (${images.length}):</div>
+                <div class="images">
+                  ${images.map(img => `<img src="${img}" alt="Photo">`).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          ${renderActions(place.id, place.status, place.title, 'places')}
+        </div>
+      `;
+    }
+
+    function renderPet(pet, statusClass, createdDate) {
+      const photos = pet.photos || [];
+      const listingIcon = pet.listing_type === 'Kayıp' ? '🔍' : '🏠';
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">${listingIcon} ${pet.listing_type} - ${pet.pet_name || pet.pet_type}</div>
+              <div class="submission-meta">
+                ID: ${pet.id} • ${createdDate} • <span class="status-badge ${statusClass}">${pet.status}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            <div class="field">
+              <div class="field-label">Tür:</div>
+              <div class="field-value">${pet.pet_type} ${pet.breed ? `- ${pet.breed}` : ''} ${pet.age ? `(${pet.age})` : ''}</div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">Kısa Not:</div>
+              <div class="field-value">${pet.short_note}</div>
+            </div>
+
+            ${pet.extra_notes ? `
+              <div class="field">
+                <div class="field-label">Ek Notlar:</div>
+                <div class="field-value">${pet.extra_notes}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">İletişim:</div>
+              <div class="field-value">📞 ${pet.phone}</div>
+            </div>
+
+            ${photos.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Fotoğraflar (${photos.length}):</div>
+                <div class="images">
+                  ${photos.map(img => `<img src="${img}" alt="Pet photo">`).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          ${renderActions(pet.id, pet.status, pet.pet_name || pet.pet_type, 'pets')}
+        </div>
+      `;
+    }
+
+    function renderHotel(hotel, statusClass, createdDate) {
+      const images = hotel.images || [];
+      const facilities = hotel.facilities || [];
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">🏨 ${hotel.title}</div>
+              <div class="submission-meta">
+                ID: ${hotel.id} • ${createdDate} • <span class="status-badge ${statusClass}">${hotel.status}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            <div class="field">
+              <div class="field-label">Tip:</div>
+              <div class="field-value">${hotel.hotel_type} ${hotel.star_rating ? `⭐ ${hotel.star_rating}` : ''}</div>
+            </div>
+
+            ${hotel.room_count || hotel.capacity ? `
+              <div class="field">
+                <div class="field-label">Kapasite:</div>
+                <div class="field-value">
+                  ${hotel.room_count ? `${hotel.room_count} oda` : ''}
+                  ${hotel.capacity ? ` • ${hotel.capacity} kişi` : ''}
+                </div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">Konum:</div>
+              <div class="field-value">${hotel.location} ${hotel.distance_to_sea ? `(Deniz: ${hotel.distance_to_sea})` : ''}</div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">Açıklama:</div>
+              <div class="field-value">${hotel.description}</div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">İletişim:</div>
+              <div class="field-value">
+                📞 ${hotel.phone} • 📧 ${hotel.email}
+                ${hotel.website ? ` • 🌐 ${hotel.website}` : ''}
+              </div>
+            </div>
+
+            ${facilities.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Tesisler:</div>
+                <div class="field-value">${facilities.join(', ')}</div>
               </div>
             ` : ''}
 
@@ -445,36 +669,109 @@
               <div class="field">
                 <div class="field-label">Fotoğraflar (${images.length}):</div>
                 <div class="images">
-                  ${images.map(img => `<img src="${img}" alt="Place photo">`).join('')}
+                  ${images.map(img => `<img src="${img}" alt="Hotel photo">`).join('')}
                 </div>
               </div>
             ` : ''}
           </div>
 
-          <div class="actions">
-            ${place.status === 'pending' ? `
-              <button class="btn btn-approve" onclick="updateStatus(${place.id}, 'approved')">
-                ✅ Onayla
-              </button>
-              <button class="btn btn-reject" onclick="updateStatus(${place.id}, 'rejected')">
-                ❌ Reddet
-              </button>
-            ` : ''}
-            <button class="btn btn-delete" onclick="confirmDelete(${place.id}, '${place.title}')">
-              🗑️ Sil
-            </button>
-          </div>
+          ${renderActions(hotel.id, hotel.status, hotel.title, 'hotels')}
         </div>
       `;
     }
 
-    async function updateStatus(id, status) {
+    function renderArtist(artist, statusClass, createdDate) {
+      const categories = artist.categories || [];
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">🎨 ${artist.artist_name}</div>
+              <div class="submission-meta">
+                ID: ${artist.id} • ${createdDate} • <span class="status-badge ${statusClass}">${artist.status}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            ${categories.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Kategoriler:</div>
+                <div class="field-value">${categories.join(', ')}</div>
+              </div>
+            ` : ''}
+
+            ${artist.short_text ? `
+              <div class="field">
+                <div class="field-label">Kısa Tanıtım:</div>
+                <div class="field-value">${artist.short_text}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">Detaylı Tanıtım:</div>
+              <div class="field-value">${artist.long_text.substring(0, 200)}${artist.long_text.length > 200 ? '...' : ''}</div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">Sosyal Medya:</div>
+              <div class="field-value">
+                ${artist.instagram ? `📸 ${artist.instagram}` : ''}
+                ${artist.youtube ? ` • 📺 ${artist.youtube}` : ''}
+                ${artist.website ? ` • 🌐 ${artist.website}` : ''}
+              </div>
+            </div>
+
+            ${artist.phone || artist.email ? `
+              <div class="field">
+                <div class="field-label">İletişim:</div>
+                <div class="field-value">
+                  ${artist.phone ? `📞 ${artist.phone}` : ''}
+                  ${artist.email ? ` • 📧 ${artist.email}` : ''}
+                </div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">Fotoğraflar:</div>
+              <div class="images">
+                ${artist.profile_photo ? `<img src="${artist.profile_photo}" alt="Profile">` : ''}
+                ${artist.banner_photo ? `<img src="${artist.banner_photo}" alt="Banner">` : ''}
+              </div>
+            </div>
+          </div>
+
+          ${renderActions(artist.id, artist.status, artist.artist_name, 'artists')}
+        </div>
+      `;
+    }
+
+    function renderActions(id, status, title, type) {
+      return `
+        <div class="actions">
+          ${status === 'pending' ? `
+            <button class="btn btn-approve" onclick="updateStatus(${id}, 'approved', '${type}')">
+              ✅ Onayla
+            </button>
+            <button class="btn btn-reject" onclick="updateStatus(${id}, 'rejected', '${type}')">
+              ❌ Reddet
+            </button>
+          ` : ''}
+          <button class="btn btn-delete" onclick="confirmDelete(${id}, '${title.replace(/'/g, "\\'")}', '${type}')">
+            🗑️ Sil
+          </button>
+        </div>
+      `;
+    }
+
+    async function updateStatus(id, status, type) {
       if (!confirm(`Bu başvuruyu ${status === 'approved' ? 'onaylamak' : 'reddetmek'} istediğinize emin misiniz?`)) {
         return;
       }
 
       try {
-        const response = await fetch('/api/admin/places', {
+        const response = await fetch(`/api/admin/${type}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -496,15 +793,15 @@
       }
     }
 
-    function confirmDelete(id, title) {
+    function confirmDelete(id, title, type) {
       if (confirm(`"${title}" başvurusunu kalıcı olarak silmek istediğinize emin misiniz?`)) {
-        deleteSubmission(id);
+        deleteSubmission(id, type);
       }
     }
 
-    async function deleteSubmission(id) {
+    async function deleteSubmission(id, type) {
       try {
-        const response = await fetch(`/api/admin/places?id=${id}`, {
+        const response = await fetch(`/api/admin/${type}?id=${id}`, {
           method: 'DELETE',
           headers: {
             'X-API-Key': apiKey
