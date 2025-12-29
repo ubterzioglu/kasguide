@@ -444,8 +444,14 @@ async function main() {
   }
 }
 
-// Run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Run if called directly (works on both Unix and Windows)
+const isMainModule = () => {
+  const scriptPath = fileURLToPath(import.meta.url);
+  const argPath = process.argv[1];
+  return scriptPath === argPath || scriptPath.replace(/\\/g, '/') === argPath.replace(/\\/g, '/');
+};
+
+if (isMainModule()) {
   main();
 }
 
