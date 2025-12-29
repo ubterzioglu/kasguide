@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaş Guide - Admin Panel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .login-form {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 100px auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .login-form h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      background: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .tab.active {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .submissions {
+      display: grid;
+      gap: 20px;
+    }
+
+    .submission-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .submission-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 15px;
+    }
+
+    .submission-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .submission-meta {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
+    }
+
+    .submission-content {
+      margin: 15px 0;
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+
+    .field-label {
+      font-weight: 600;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .field-value {
+      color: #333;
+      margin-top: 3px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .btn-approve {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .btn-reject {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-delete {
+      background: #ff9800;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .status-pending {
+      background: #FFF3E0;
+      color: #F57C00;
+    }
+
+    .status-approved {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    .status-rejected {
+      background: #FFEBEE;
+      color: #C62828;
+    }
+
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .success {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #999;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .images img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    #mainContent {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Form -->
+  <div id="loginForm" class="login-form">
+    <h2>🔐 Admin Girişi</h2>
+    <div id="loginError" class="error" style="display:none;"></div>
+    <form onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label>API Key</label>
+        <input type="password" id="apiKey" placeholder="Admin API anahtarınızı girin" required>
+      </div>
+      <button type="submit">Giriş Yap</button>
+    </form>
+  </div>
+
+  <!-- Main Content (hidden until logged in) -->
+  <div id="mainContent">
+    <div class="container">
+      <header>
+        <h1>🏝️ Kaş Guide - Admin Panel</h1>
+        <p style="color: #666; font-size: 14px;">Başvuruları yönetin ve onaylayın</p>
+      </header>
+
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('pending')">Bekleyenler</button>
+        <button class="tab" onclick="switchTab('approved')">Onaylananlar</button>
+        <button class="tab" onclick="switchTab('rejected')">Reddedilenler</button>
+      </div>
+
+      <div id="message" style="display:none;"></div>
+      <div id="loading" class="loading">Yükleniyor...</div>
+      <div id="submissions" class="submissions"></div>
+    </div>
+  </div>
+
+  <script>
+    let apiKey = '';
+    let currentTab = 'pending';
+
+    // Check if already logged in
+    const savedKey = localStorage.getItem('adminApiKey');
+    if (savedKey) {
+      apiKey = savedKey;
+      showMainContent();
+      loadSubmissions();
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const key = document.getElementById('apiKey').value;
+
+      // Simple validation - just try to use the key
+      apiKey = key;
+      localStorage.setItem('adminApiKey', key);
+
+      // Try to load submissions
+      showMainContent();
+      loadSubmissions();
+    }
+
+    function showMainContent() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+    }
+
+    function showLoginError(message) {
+      const errorDiv = document.getElementById('loginError');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+    }
+
+    function switchTab(tab) {
+      currentTab = tab;
+
+      // Update active tab
+      document.querySelectorAll('.tab').forEach(t => {
+        t.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      loadSubmissions();
+    }
+
+    async function loadSubmissions() {
+      const loading = document.getElementById('loading');
+      const container = document.getElementById('submissions');
+
+      loading.style.display = 'block';
+      container.innerHTML = '';
+
+      try {
+        const response = await fetch(`/api/admin/places?status=${currentTab}`, {
+          headers: {
+            'X-API-Key': apiKey
+          }
+        });
+
+        if (response.status === 401) {
+          showLoginError('Geçersiz API anahtarı');
+          localStorage.removeItem('adminApiKey');
+          location.reload();
+          return;
+        }
+
+        const data = await response.json();
+
+        loading.style.display = 'none';
+
+        if (!data.places || data.places.length === 0) {
+          container.innerHTML = '<div class="empty">Başvuru bulunamadı</div>';
+          return;
+        }
+
+        container.innerHTML = data.places.map(place => renderSubmission(place)).join('');
+
+      } catch (error) {
+        loading.style.display = 'none';
+        container.innerHTML = `<div class="error">Hata: ${error.message}</div>`;
+      }
+    }
+
+    function renderSubmission(place) {
+      const statusClass = `status-${place.status}`;
+      const createdDate = new Date(place.created_at).toLocaleString('tr-TR');
+
+      const images = place.images ? JSON.parse(place.images) : [];
+      const categories = place.categories ? JSON.parse(place.categories) : [];
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">${place.title}</div>
+              <div class="submission-meta">
+                ID: ${place.id} • ${createdDate} • <span class="status-badge ${statusClass}">${place.status}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            ${place.description ? `
+              <div class="field">
+                <div class="field-label">Kısa Açıklama:</div>
+                <div class="field-value">${place.description}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">Detaylı Açıklama:</div>
+              <div class="field-value">${place.long_text.substring(0, 200)}${place.long_text.length > 200 ? '...' : ''}</div>
+            </div>
+
+            ${place.location ? `
+              <div class="field">
+                <div class="field-label">Konum:</div>
+                <div class="field-value">${place.location} ${place.distance ? `(${place.distance})` : ''}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">İletişim:</div>
+              <div class="field-value">
+                📞 ${place.phone}
+                ${place.instagram ? ` • 📸 ${place.instagram}` : ''}
+                ${place.website ? ` • 🌐 ${place.website}` : ''}
+              </div>
+            </div>
+
+            ${categories.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Kategoriler:</div>
+                <div class="field-value">${categories.join(', ')}</div>
+              </div>
+            ` : ''}
+
+            ${place.submission_notes ? `
+              <div class="field">
+                <div class="field-label">Notlar:</div>
+                <div class="field-value">${place.submission_notes}</div>
+              </div>
+            ` : ''}
+
+            ${images.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Fotoğraflar (${images.length}):</div>
+                <div class="images">
+                  ${images.map(img => `<img src="${img}" alt="Place photo">`).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="actions">
+            ${place.status === 'pending' ? `
+              <button class="btn btn-approve" onclick="updateStatus(${place.id}, 'approved')">
+                ✅ Onayla
+              </button>
+              <button class="btn btn-reject" onclick="updateStatus(${place.id}, 'rejected')">
+                ❌ Reddet
+              </button>
+            ` : ''}
+            <button class="btn btn-delete" onclick="confirmDelete(${place.id}, '${place.title}')">
+              🗑️ Sil
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    async function updateStatus(id, status) {
+      if (!confirm(`Bu başvuruyu ${status === 'approved' ? 'onaylamak' : 'reddetmek'} istediğinize emin misiniz?`)) {
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/admin/places', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({ id, status })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          showMessage('Başarıyla güncellendi!', 'success');
+          loadSubmissions();
+        } else {
+          showMessage('Hata: ' + data.error, 'error');
+        }
+      } catch (error) {
+        showMessage('Hata: ' + error.message, 'error');
+      }
+    }
+
+    function confirmDelete(id, title) {
+      if (confirm(`"${title}" başvurusunu kalıcı olarak silmek istediğinize emin misiniz?`)) {
+        deleteSubmission(id);
+      }
+    }
+
+    async function deleteSubmission(id) {
+      try {
+        const response = await fetch(`/api/admin/places?id=${id}`, {
+          method: 'DELETE',
+          headers: {
+            'X-API-Key': apiKey
+          }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          showMessage('Başarıyla silindi!', 'success');
+          loadSubmissions();
+        } else {
+          showMessage('Hata: ' + data.error, 'error');
+        }
+      } catch (error) {
+        showMessage('Hata: ' + error.message, 'error');
+      }
+    }
+
+    function showMessage(text, type) {
+      const messageDiv = document.getElementById('message');
+      messageDiv.className = type;
+      messageDiv.textContent = text;
+      messageDiv.style.display = 'block';
+
+      setTimeout(() => {
+        messageDiv.style.display = 'none';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
