@@ -4,41 +4,18 @@
  */
 
 import pg from 'pg';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
 const { Pool } = pg;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// On Vercel, environment variables are automatically injected into process.env
+// On local dev, they should be in .env.local or set manually
+// No need to read .env.local file - Vercel CLI and Node already handle this
 
-// Load environment variables from .env.local if not already set
-const envPath = path.join(__dirname, '..', '.env.local');
-if (fs.existsSync(envPath)) {
-  const envContent = fs.readFileSync(envPath, 'utf8');
-  const lines = envContent.split('\n');
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (trimmed && !trimmed.startsWith('#')) {
-      const match = trimmed.match(/^([^=]+)=(.*)$/);
-      if (match) {
-        const key = match[1].trim();
-        const value = match[2].trim().replace(/^["']|["']$/g, '');
-        if (!process.env[key]) {
-          process.env[key] = value;
-        }
-      }
-    }
-  }
-}
-
-// Use DATABASE_URL if POSTGRES_URL is not set (Neon compatibility)
+// Use POSTGRES_URL (Vercel/Neon standard) or DATABASE_URL as fallback
 const connectionString = process.env.POSTGRES_URL || process.env.DATABASE_URL;
 
 if (!connectionString) {
-  throw new Error('No database connection string found. Please set POSTGRES_URL or DATABASE_URL in .env.local');
+  throw new Error('No database connection string found. Please set POSTGRES_URL or DATABASE_URL environment variable');
 }
 
 // Create connection pool
