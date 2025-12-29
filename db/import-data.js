@@ -378,16 +378,21 @@ async function importFAQs() {
   }
 
   const fileContent = fs.readFileSync(dataPath, 'utf8');
-  const match = fileContent.match(/window\.faqData\s*=\s*(\[[\s\S]*?\]);/);
+
+  // Extract the array - handle both inline and newline formats
+  let match = fileContent.match(/window\.faqData\s*=\s*(\[[\s\S]*$)/m);
 
   if (!match) {
     console.log('⚠️  Could not parse faqData, skipping...');
     return;
   }
 
+  // Extract just the array part (everything after the =)
+  let arrayText = match[1].trim();
+
   let faqData;
   try {
-    faqData = eval(match[1]);
+    faqData = eval(arrayText);
   } catch (error) {
     console.error('❌ Error parsing FAQ data:', error.message);
     return;
