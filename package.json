@@ -20,7 +20,8 @@
     "@vercel/blob": "^2.0.0",
     "@vercel/postgres": "^0.10.0",
     "formidable": "^3.5.2",
-    "nodemailer": "^6.9.16"
+    "nodemailer": "^6.9.16",
+    "pg": "^8.16.3"
   },
   "engines": {
     "node": ">=18.0.0"

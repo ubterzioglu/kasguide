@@ -1,9 +1,89 @@
 /**
  * Database Connection Helper
- * Manages Vercel Postgres connections for kasguide
+ * Manages Postgres connections (Neon/Vercel compatible)
  */
 
-import { sql } from '@vercel/postgres';
+import pg from 'pg';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const { Pool } = pg;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load environment variables from .env.local if not already set
+const envPath = path.join(__dirname, '..', '.env.local');
+if (fs.existsSync(envPath)) {
+  const envContent = fs.readFileSync(envPath, 'utf8');
+  const lines = envContent.split('\n');
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#')) {
+      const match = trimmed.match(/^([^=]+)=(.*)$/);
+      if (match) {
+        const key = match[1].trim();
+        const value = match[2].trim().replace(/^["']|["']$/g, '');
+        if (!process.env[key]) {
+          process.env[key] = value;
+        }
+      }
+    }
+  }
+}
+
+// Use DATABASE_URL if POSTGRES_URL is not set (Neon compatibility)
+const connectionString = process.env.POSTGRES_URL || process.env.DATABASE_URL;
+
+if (!connectionString) {
+  throw new Error('No database connection string found. Please set POSTGRES_URL or DATABASE_URL in .env.local');
+}
+
+// Create connection pool
+const pool = new Pool({
+  connectionString,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+/**
+ * SQL template tag for queries (similar to @vercel/postgres)
+ */
+const sql = async (strings, ...values) => {
+  // Simple template tag implementation
+  let query = '';
+  let params = [];
+
+  for (let i = 0; i < strings.length; i++) {
+    query += strings[i];
+    if (i < values.length) {
+      params.push(values[i]);
+      query += `$${params.length}`;
+    }
+  }
+
+  const client = await pool.connect();
+  try {
+    const result = await client.query(query, params);
+    return result;
+  } finally {
+    client.release();
+  }
+};
+
+// Add query method for compatibility
+sql.query = async (text, params = []) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(text, params);
+    return result;
+  } finally {
+    client.release();
+  }
+};
 
 /**
  * Execute a database query
@@ -34,8 +114,10 @@ export function getClient() {
  */
 export async function testConnection() {
   try {
-    await sql`SELECT 1 as test`;
+    const result = await sql`SELECT NOW() as current_time, version() as pg_version`;
     console.log('✅ Database connection successful');
+    console.log(`   Time: ${result.rows[0].current_time}`);
+    console.log(`   PostgreSQL: ${result.rows[0].pg_version.split(' ')[0]}`);
     return true;
   } catch (error) {
     console.error('❌ Database connection failed:', error.message);
@@ -49,12 +131,18 @@ export async function testConnection() {
  * @returns {Promise<any>} Result from callback
  */
 export async function transaction(callback) {
+  const client = await pool.connect();
   try {
-    const result = await callback(sql);
+    await client.query('BEGIN');
+    const result = await callback(client);
+    await client.query('COMMIT');
     return result;
   } catch (error) {
+    await client.query('ROLLBACK');
     console.error('Transaction error:', error);
     throw error;
+  } finally {
+    client.release();
   }
 }
 
