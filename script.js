@@ -65,6 +65,10 @@ function normalizeItem(item, type) {
     base.category = ['articles'];
   } else if (type === 'faqspecial') {
     base.category = ['faqspecial'];
+  } else if (type === 'hotel') {
+    base.category = safeArr(base.category);
+  } else if (type === 'pet') {
+    base.category = safeArr(base.category);
   } else {
     base.category = safeArr(base.category);
   }
@@ -72,25 +76,155 @@ function normalizeItem(item, type) {
   return base;
 }
 
-// Build one unified list: places + articles + faqspecial
-function buildAllItems() {
-  const places =
-    (typeof allPlaces !== 'undefined' && Array.isArray(allPlaces))
-      ? allPlaces.map((p) => normalizeItem(p, 'place'))
-      : [];
+// ========== API LOADING FUNCTIONS ==========
 
-  const articlesList =
-    (typeof articles !== 'undefined' && Array.isArray(articles))
-      ? articles.map((a) => normalizeItem(a, 'article'))
-      : [];
+async function loadPlacesFromAPI() {
+  try {
+    const response = await fetch('/api/places');
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    const data = await response.json();
+    return (data.places || []).map(convertAPIPlace);
+  } catch (error) {
+    console.error('Error loading places:', error);
+    return [];
+  }
+}
 
-  const faqs =
-    (typeof faqspecialSeries !== 'undefined' && Array.isArray(faqspecialSeries))
-      ? faqspecialSeries.map((f) => normalizeItem(f, 'faqspecial'))
-      : [];
+async function loadArticlesFromAPI() {
+  try {
+    const response = await fetch('/api/articles');
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    const data = await response.json();
+    return (data.articles || []).map(convertAPIArticle);
+  } catch (error) {
+    console.error('Error loading articles:', error);
+    return [];
+  }
+}
 
-  allItems = [...places, ...articlesList, ...faqs];
-  filteredItems = [...allItems];
+async function loadFaqSeriesFromAPI() {
+  try {
+    const response = await fetch('/api/faqspecial');
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    const data = await response.json();
+    return (data.faqSeries || []).map(convertAPIFaqSeries);
+  } catch (error) {
+    console.error('Error loading FAQ series:', error);
+    return [];
+  }
+}
+
+async function loadHotelsFromAPI() {
+  try {
+    const response = await fetch('/api/hotels');
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    const data = await response.json();
+    return (data.hotels || []).map(convertAPIHotel);
+  } catch (error) {
+    console.error('Error loading hotels:', error);
+    return [];
+  }
+}
+
+async function loadPetsFromAPI() {
+  try {
+    const response = await fetch('/api/pets');
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    const data = await response.json();
+    return (data.pets || []).map(convertAPIPet);
+  } catch (error) {
+    console.error('Error loading pets:', error);
+    return [];
+  }
+}
+
+// Convert API data to match static data format
+function convertAPIPlace(apiData) {
+  return {
+    id: apiData.id,
+    title: apiData.title,
+    description: apiData.description,
+    longText: apiData.long_text,
+    category: apiData.categories || [],
+    images: apiData.images || [],
+    rating: apiData.rating,
+    price: apiData.price,
+    badge: apiData.badge_emoji ? { emoji: apiData.badge_emoji, title: apiData.badge_title } : null,
+    tags: apiData.tags || []
+  };
+}
+
+function convertAPIArticle(apiData) {
+  return {
+    id: apiData.id,
+    title: apiData.title,
+    description: apiData.content ? apiData.content.substring(0, 200) : '',
+    content: apiData.content,
+    category: ['articles'],
+    images: apiData.images || [],
+    tags: apiData.tags || []
+  };
+}
+
+function convertAPIFaqSeries(apiData) {
+  return {
+    id: apiData.id,
+    title: apiData.title,
+    description: apiData.description,
+    category: ['faqspecial'],
+    faqs: apiData.faqs || []
+  };
+}
+
+function convertAPIHotel(apiData) {
+  return {
+    id: apiData.id,
+    title: apiData.title,
+    description: apiData.description,
+    category: apiData.categories || [],
+    images: apiData.images || [],
+    rating: apiData.rating,
+    facilities: apiData.facilities || []
+  };
+}
+
+function convertAPIPet(apiData) {
+  return {
+    id: apiData.id,
+    title: apiData.title,
+    description: apiData.description,
+    category: apiData.categories || [],
+    images: apiData.images || []
+  };
+}
+
+// Build one unified list: places + articles + faqspecial + hotels + pets
+async function buildAllItems() {
+  try {
+    // Load all data in parallel
+    const [placesData, articlesData, faqSeriesData, hotelsData, petsData] = await Promise.all([
+      loadPlacesFromAPI(),
+      loadArticlesFromAPI(),
+      loadFaqSeriesFromAPI(),
+      loadHotelsFromAPI(),
+      loadPetsFromAPI()
+    ]);
+
+    const places = placesData.map((p) => normalizeItem(p, 'place'));
+    const articlesList = articlesData.map((a) => normalizeItem(a, 'article'));
+    const faqs = faqSeriesData.map((f) => normalizeItem(f, 'faqspecial'));
+    const hotels = hotelsData.map((h) => normalizeItem(h, 'hotel'));
+    const pets = petsData.map((p) => normalizeItem(p, 'pet'));
+
+    allItems = [...places, ...articlesList, ...faqs, ...hotels, ...pets];
+    filteredItems = [...allItems];
+
+    console.log(`✅ Loaded ${allItems.length} items from database`);
+  } catch (error) {
+    console.error('Error building items:', error);
+    allItems = [];
+    filteredItems = [];
+  }
 }
 
 // Stats helpers
@@ -382,12 +516,21 @@ if (clearFiltersBtn) {
 }
 
 // Init
-function initKasGuide() {
-  buildAllItems();
+async function initKasGuide() {
+  console.log('🚀 Initializing Kaş Guide...');
+
+  // Show loading state
+  if (cardsGrid) {
+    cardsGrid.innerHTML = '<div style="text-align: center; padding: 3rem; font-size: 1.2rem;">📡 Veriler yükleniyor...</div>';
+  }
+
+  await buildAllItems();
   loadStats();
   renderCategories();
   applyFilters();
   updateFilterJumpVisibility();
+
+  console.log('✅ Kaş Guide initialized successfully!');
 }
 
 document.addEventListener('DOMContentLoaded', initKasGuide);
