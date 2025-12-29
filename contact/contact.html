@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İletişim - Kaş Guide</title>
+  <link rel="stylesheet" href="contact-style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a class="home-link" href="../index.html" aria-label="Ana Sayfa">
+        <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 10.5L12 3l9 7.5"/>
+          <path d="M5 10v10h14V10"/>
+          <path d="M9 20v-6h6v6"/>
+        </svg>
+      </a>
+
+      <div class="logo">
+        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <div class="container">
+      <section class="contact-hero">
+        <div class="contact-hero-badge">İLETİŞİM</div>
+        <h2>Kaş Guide’ni birlikte büyütelim.</h2>
+        <p>
+          Bu sayfa ilk sürüm. İleride formu aktif ederiz, sosyal linkleri netleştiririz.
+          Şimdilik en hızlı yol: bir mail at.
+        </p>
+        <div class="contact-cta">
+          <a class="btn-primary" href="mailto:hello@example.com">E-posta gönder</a>
+          <a class="btn-secondary" href="../index.html">Ana sayfaya dön</a>
+        </div>
+      </section>
+
+      <section class="contact-grid">
+        <article class="contact-card">
+          <div class="contact-card-top">
+            <div class="contact-ico" aria-hidden="true">✉️</div>
+            <div>
+              <h3>E-posta</h3>
+              <p>Öneri, düzeltme, iş birliği.</p>
+            </div>
+          </div>
+          <a class="contact-link" href="mailto:hello@example.com">hello@example.com</a>
+          <div class="contact-note">Placeholder — kendi adresinle değiştir.</div>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-top">
+            <div class="contact-ico" aria-hidden="true">📍</div>
+            <div>
+              <h3>Yeni yer ekleme</h3>
+              <p>Bir mekan/yol/rota eklemek istersen şu bilgileri yolla:</p>
+            </div>
+          </div>
+          <ul class="contact-list">
+            <li>İsim + kategori</li>
+            <li>Google Maps arama cümlesi</li>
+            <li>Instagram / web / telefon (varsa)</li>
+            <li>Kısaca + Uzunca (varsa)</li>
+          </ul>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-top">
+            <div class="contact-ico" aria-hidden="true">🧾</div>
+            <div>
+              <h3>Yazı fikri</h3>
+              <p>Kaş’la ilgili yazıları burada toparlayacağız.</p>
+            </div>
+          </div>
+          <div class="contact-mini">
+            <div class="contact-mini-row"><span>Başlık</span><span>Kaynak</span></div>
+            <div class="contact-mini-row"><span>Kısa özet</span><span>Tarih</span></div>
+            <div class="contact-mini-row"><span>Görsel (ops.)</span><span>Link</span></div>
+          </div>
+          <div class="contact-note">İstersen sadece link at; kalanını beraber toplarız.</div>
+        </article>
+
+        <article class="contact-card contact-card-wide">
+          <div class="contact-card-top">
+            <div class="contact-ico" aria-hidden="true">💬</div>
+            <div>
+              <h3>Hızlı mesaj</h3>
+              <p>Form şimdilik pasif. Yakında aktif ederiz.</p>
+            </div>
+          </div>
+          <form class="contact-form" onsubmit="return false;">
+            <label>
+              Ad
+              <input type="text" placeholder="İsmin" />
+            </label>
+            <label>
+              Mesaj
+              <textarea rows="4" placeholder="Mesajın..."></textarea>
+            </label>
+            <button class="btn-disabled" type="button" disabled>Gönder (yakında)</button>
+          </form>
+        </article>
+      </section>
+
+      <footer class="contact-footer">
+        <div class="contact-footer-inner">
+          <span>Kaş Guide • v0</span>
+          <span class="dot">•</span>
+          <span>İçerik: sen + biz</span>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,472 @@
+@import url("../style.css");
+
+/* Kaş Guide - Planner (standalone) */
+
+:root{
+  --primary-blue:#0891b2;
+  --primary-cyan:#06b6d4;
+  --primary-green:#10b981;
+  --primary-teal:#14b8a6;
+
+  --gray-50:#f9fafb;
+  --gray-100:#f3f4f6;
+  --gray-200:#e5e7eb;
+  --gray-300:#d1d5db;
+  --gray-400:#9ca3af;
+  --gray-500:#6b7280;
+  --gray-600:#4b5563;
+  --gray-700:#374151;
+  --gray-800:#1f2937;
+  --gray-900:#111827;
+
+  --shadow-sm:0 1px 2px 0 rgba(0,0,0,.05);
+  --shadow:0 4px 6px -1px rgba(0,0,0,.1);
+  --shadow-md:0 10px 15px -3px rgba(0,0,0,.1);
+  --shadow-lg:0 20px 25px -5px rgba(0,0,0,.1);
+
+  --radius:0.5rem;
+  --radius-md:0.75rem;
+  --radius-lg:1rem;
+}
+
+/* Reset */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+  line-height:1.6;
+  background:linear-gradient(to bottom,#f0f9ff,#ffffff);
+  color:var(--gray-800);
+  min-height:100vh;
+}
+
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===== Planner ===== */
+.questionnaire-section{
+  padding: 3rem 0;
+}
+
+.questionnaire-container{
+  max-width: 880px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+}
+
+.questionnaire-header{
+  background: linear-gradient(to right, var(--primary-blue), var(--primary-cyan));
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.questionnaire-title{
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: .4rem;
+  letter-spacing: .2px;
+}
+
+.questionnaire-subtitle{
+  opacity: .92;
+  font-size: 1.05rem;
+}
+
+.progress-bar{
+  height: 6px;
+  background: rgba(255,255,255,.3);
+  border-radius: 999px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill{
+  height: 100%;
+  background: #fff;
+  width: 0%;
+  transition: width .45s ease;
+}
+
+.questionnaire-content{
+  padding: 2rem;
+  /* Keep card height stable so the UI doesn't jump between questions */
+  height: var(--planner-question-height, auto);
+  max-height: calc(100vh - 260px);
+  overflow-y: auto;
+}
+
+.question-container{
+  margin-bottom: 1.75rem;
+}
+
+.question-number{
+  display:inline-grid;
+  place-items:center;
+  width:32px;height:32px;
+  background: var(--primary-blue);
+  color:#fff;
+  border-radius: 999px;
+  font-weight: 800;
+  margin-right: 10px;
+}
+
+.question-text{
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.options-container{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 640px){
+  .questionnaire-header{ padding: 1.5rem; }
+  .questionnaire-title{ font-size: 1.7rem; }
+  .questionnaire-content{ padding: 1.25rem; }
+  .options-container{ grid-template-columns: 1fr; }
+}
+
+.option-btn{
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  font-weight: 600;
+}
+
+.option-btn:hover{
+  background: var(--gray-200);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.option-btn.selected{
+  background: linear-gradient(to right, var(--primary-cyan), var(--primary-blue));
+  color: #fff;
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.checkbox-options{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+}
+@media (max-width: 640px){
+  .checkbox-options{ grid-template-columns: 1fr; }
+}
+
+.checkbox-option{
+  display:flex;
+  align-items:center;
+  padding: .75rem;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+  cursor:pointer;
+  transition: background .15s ease;
+  border: 1px solid var(--gray-200);
+}
+.checkbox-option:hover{ background: var(--gray-200); }
+.checkbox-option input{ margin-right: .75rem; }
+
+/* Actions (moved in from edges) */
+.questionnaire-actions{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 1.5rem 1.5rem;   /* inward + upward vs edges */
+  margin-top: .25rem;
+}
+
+.btn{
+  padding: .8rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  cursor:pointer;
+  border:none;
+  font-size: 1rem;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease;
+  min-width: 130px;
+}
+
+.btn:active{ transform: scale(.98); }
+
+.btn-prev{
+  background: var(--gray-200);
+  color: var(--gray-800);
+}
+.btn-prev:hover{ background: var(--gray-300); }
+
+.btn-next{
+  background: linear-gradient(to right, var(--primary-cyan), var(--primary-blue));
+  color:#fff;
+}
+.btn-next:hover{ box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+
+.btn-submit{
+  background: linear-gradient(to right, var(--primary-green), var(--primary-teal));
+  color:#fff;
+}
+.btn-submit:hover{ box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+
+@media (max-width: 520px){
+  .questionnaire-actions{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn{ width: 100%; min-width: 0; }
+}
+
+.hidden{ display:none !important; }
+
+/* ===== Results ===== */
+.results-section{
+  background: linear-gradient(135deg, #f0fdfa, #e0f2fe);
+  padding: 3rem 0;
+}
+
+.results-container{
+  max-width: 880px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+}
+
+.results-header{
+  background: linear-gradient(to right, var(--primary-green), var(--primary-teal));
+  color:#fff;
+  padding: 2rem;
+  text-align:center;
+}
+
+.results-title{
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: .4rem;
+}
+
+.results-content{ padding: 2rem; }
+
+.itinerary{
+  display:flex;
+  flex-direction:column;
+  gap: 1.25rem;
+}
+
+.time-slot{
+  border-left: 4px solid var(--primary-blue);
+  padding-left: 1rem;
+  animation: slideIn .5s ease-out;
+}
+
+.time-header{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: .35rem;
+}
+.time{ font-weight: 900; color: var(--primary-blue); font-size: 1.05rem; }
+.activity{ font-size: 1.2rem; font-weight: 800; margin-bottom: .25rem; }
+.description{ color: var(--gray-600); }
+
+.recommendations{
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+.recommendations-title{
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+.recommendation-list{ list-style:none; }
+.recommendation-list li{
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  display:flex;
+  align-items:flex-start;
+}
+.recommendation-list li:last-child{ border-bottom:none; }
+.recommendation-list li::before{
+  content: "✓";
+  color: var(--primary-green);
+  font-weight: 900;
+  margin-right: .75rem;
+  flex-shrink:0;
+}
+
+@keyframes slideIn{
+  from{ opacity:0; transform: translateY(18px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+
+
+/* ===== Visual polish / color accents (Planner only) ===== */
+
+/* Slightly tighter container on planner pages while keeping global .container behavior */
+.questionnaire-section .container,
+.results-section .container{
+  max-width: 980px;
+}
+
+/* Add subtle background texture */
+body{
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(8,145,178,.16), transparent 60%),
+    radial-gradient(900px 500px at 90% 0%, rgba(16,185,129,.14), transparent 55%),
+    radial-gradient(900px 600px at 50% 110%, rgba(168,85,247,.10), transparent 55%),
+    linear-gradient(to bottom, #f0f9ff, #ffffff);
+}
+
+/* Card border glow */
+.questionnaire-container,
+.results-container{
+  position: relative;
+}
+
+.questionnaire-container::before,
+.results-container::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius: var(--radius-lg);
+  padding:1px;
+  background: linear-gradient(135deg,
+    rgba(8,145,178,.55),
+    rgba(6,182,212,.45),
+    rgba(16,185,129,.45),
+    rgba(99,102,241,.35)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events:none;
+}
+
+/* Nicer option buttons */
+.option-btn{
+  position: relative;
+  overflow:hidden;
+}
+.option-btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(280px 120px at 30% 10%, rgba(255,255,255,.28), transparent 55%);
+  opacity:0;
+  transition: opacity .2s ease;
+  pointer-events:none;
+}
+.option-btn:hover::after{ opacity:1; }
+
+.option-btn.selected{
+  background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+}
+
+/* Progress bar sheen */
+.progress-fill{
+  position:relative;
+}
+.progress-fill::after{
+  content:"";
+  position:absolute;
+  top:0; bottom:0;
+  left:-40%;
+  width:40%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,.55), transparent);
+  transform: skewX(-18deg);
+  animation: progressSheen 1.6s ease-in-out infinite;
+}
+@keyframes progressSheen{
+  0%{ left:-40%; opacity:0; }
+  15%{ opacity:.55; }
+  55%{ left:110%; opacity:.35; }
+  100%{ left:110%; opacity:0; }
+}
+
+/* Results slots: alternate accent colors */
+.itinerary .time-slot{
+  border-left-width: 5px;
+  padding-left: 1.15rem;
+  border-radius: 12px;
+}
+.itinerary .time-slot:nth-child(1){ border-left-color: var(--primary-cyan); }
+.itinerary .time-slot:nth-child(2){ border-left-color: var(--primary-blue); }
+.itinerary .time-slot:nth-child(3){ border-left-color: var(--primary-green); }
+.itinerary .time-slot:nth-child(4){ border-left-color: var(--primary-purple); }
+.itinerary .time-slot:nth-child(5){ border-left-color: var(--primary-orange); }
+.itinerary .time-slot:nth-child(6){ border-left-color: var(--primary-pink); }
+
+.itinerary .time-slot{
+  background: rgba(255,255,255,.75);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 1rem 1rem 1.15rem;
+}
+
+/* Recommendation list = mini cards */
+.recommendation-list li{
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: .9rem .9rem;
+  margin-bottom: .65rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Give questionnaire header a richer gradient */
+.questionnaire-header{
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan), #2563eb);
+}
+
+/* Prevent planner content from sticking under sticky header */
+.questionnaire-section{
+  padding-top: 2.5rem;
+}
+
+
+/* ===== Mandatory validation UX ===== */
+.validation-error{
+  margin-top: .9rem;
+  padding: .75rem .9rem;
+  border-radius: var(--radius-md);
+  background: rgba(239,68,68,.08);
+  border: 1px solid rgba(239,68,68,.25);
+  color: #991b1b;
+  font-weight: 800;
+}
+
+@keyframes shakeX{
+  0%{ transform: translateX(0); }
+  15%{ transform: translateX(-6px); }
+  30%{ transform: translateX(6px); }
+  45%{ transform: translateX(-5px); }
+  60%{ transform: translateX(5px); }
+  75%{ transform: translateX(-3px); }
+  100%{ transform: translateX(0); }
+}
+
+.questionnaire-container.shake{
+  animation: shakeX .52s ease-in-out;
+}
+

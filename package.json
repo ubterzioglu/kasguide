@@ -1,6 +1,41 @@
 {
+  "name": "kasguide",
+  "version": "2.0.0",
+  "description": "Kaş Guide - Local guide platform with database-backed submissions",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db:migrate": "node db/migrate.js",
+    "db:seed": "node db/migrate.js seeds",
+    "db:import": "node db/import-data.js",
+    "db:import:places": "node db/import-data.js places",
+    "db:import:hotels": "node db/import-data.js hotels",
+    "db:import:pets": "node db/import-data.js pets",
+    "db:import:articles": "node db/import-data.js articles",
+    "db:import:faqspecial": "node db/import-data.js faqspecial",
+    "db:import:faqs": "node db/import-data.js faqs",
+    "db:setup": "node db/migrate.js && node db/import-data.js",
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "start": "vercel dev"
+  },
   "dependencies": {
-    "formidable": "^3.5.4",
-    "nodemailer": "^7.0.12"
-  }
+    "@vercel/blob": "^2.0.0",
+    "@vercel/postgres": "^0.10.0",
+    "formidable": "^3.5.2",
+    "nodemailer": "^6.9.16",
+    "pg": "^8.16.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "kas",
+    "guide",
+    "turkey",
+    "travel",
+    "database"
+  ],
+  "author": "Kaş Guide Team",
+  "license": "UNLICENSED"
 }

@@ -1,0 +1,1035 @@
+<!--
+============================================================
+Kaş Guide Planner – Places Merge & Scoring Mantığı (Özet)
+============================================================
+Amaç:
+- Anket cevaplarını (answers) → bir "profil"e (profile) çevir.
+- data.js içindeki places-data (allPlaces vb.) ile MERGE et.
+- Her time-slot için (kahvaltı / sabah aktivitesi / öğle / ...) uygun kategoriden yerleri seç.
+- Aday yerleri puanla (score) ve en yüksek puanlıları sonuçlarda göster.
+
+Akış:
+1) getPlacesData()
+   - data.js’in global array’ini bulur: allPlaces / places / PLACES_DATA ... (toleranslı).
+2) buildProfile(answers)
+   - Answers → küçük bir profil çıkarır:
+     - tags: Set (örn: 'fish', 'history', 'party', 'family' ...)
+     - budget, group, alcoholPref, wants.breakfast/lunch/dinner vb.
+   - TAG_MAP ile anket seçenekleri, normalize tag'lere çevrilir.
+3) SLOT_TO_CATEGORIES
+   - Her slot’un hangi categoryId’lerden besleneceğini belirler.
+   - Örn: breakfast slot → ['breakfast','cafe','food']
+4) normalizePlace(place)
+   - Dataset şeması değişse bile planner bozulmasın diye:
+     - name, categoryId, tags, budget, rating, links gibi alanları normalize eder.
+5) scorePlace(placeN, profile)
+   - Puan formülü "ayar düğmeleri" (WEIGHTS) ile kontrol edilir.
+   - Örn:
+     - tagMatch: profile.tags ile place.tags kesişimi
+     - budgetMatch: kullanıcı bütçesi ile place budget yakınlığı
+     - ratingBoost: rating varsa küçük bir katkı
+   - Yarın puanlamayı değiştirmek için:
+     - WEIGHTS, TAG_MAP, SLOT_TO_CATEGORIES üzerinde oynarsın; geri kalan akış aynı kalır.
+6) pickTopPlacesForSlot(slotKey, profile)
+   - Slot için adayları filtreler (categoryId)
+   - scorePlace ile puanlar
+   - Sıralar ve en iyi N yeri döndürür
+7) Sonuç render
+   - Planner "Önerilerimiz" kısmına slot başlıklarıyla yer isimlerini basar.
+   - Eğer data.js yoksa → güvenli fallback öneriler gösterir.
+
+Notlar:
+- Dataset’te eksik bilgi varsa planner patlamasın diye her yerde "guard / fallback" var.
+- Geliştirme önerisi (ilerisi):
+  - place içine features (wifi, familyFriendly, freeEntry, liveMusic...) ekleyip WEIGHTS.featureMatch ile güçlendirebilirsin.
+============================================================
+-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaş Guide - Planlayıcı</title>
+  <link rel="stylesheet" href="planner.css" />
+</head>
+<body>
+<!-- Shared Header -->
+<header class="header">
+  <div class="container header-content">
+
+    <!-- LEFT ACTIONS -->
+    <div class="header-actions">
+      <a href="../index.html" class="action-btn" aria-label="Ana Sayfa">
+        <img src="../assets/0_img/clip_home.png" alt="Home">
+      </a>
+
+      <button class="action-btn back-to-top" aria-label="Başa Dön" type="button">
+        <img src="../assets/0_img/clip_up.png" alt="Up">
+      </button>
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
+      <h1 class="logo-text">Kaş Guide</h1>
+    </div>
+
+    <div style="width:48px"></div>
+  </div>
+</header>
+
+<!-- Planner -->
+  <section class="questionnaire-section" id="questionnaire">
+    <div class="container">
+      <div class="questionnaire-container">
+        <div class="questionnaire-header">
+          <h1 class="questionnaire-title">25 Soruda Kaş'ta Bir Gününü Planla!</h1>
+          <p class="questionnaire-subtitle">Yerli ve yabancı turistler için özelleştirilmiş günlük plan</p>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <div class="questionnaire-content" id="questionnaireContent"></div>
+
+        <div class="questionnaire-actions">
+          <button class="btn btn-prev" id="prevBtn" disabled>Önceki</button>
+          <button class="btn btn-next" id="nextBtn">Sonraki Soru</button>
+          <button class="btn btn-submit hidden" id="submitBtn">Planımı Oluştur</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="results-section hidden" id="resultsSection">
+    <div class="container">
+      <div class="results-container">
+        <div class="results-header">
+          <h2 class="results-title">Özelleştirilmiş Kaş Günü</h2>
+          <p class="results-subtitle">İşte senin için hazırladığımız günlük plan</p>
+        </div>
+
+        <div class="results-content">
+          <div class="itinerary" id="itinerary"></div>
+
+          <div class="recommendations">
+            <h3 class="recommendations-title">Önerilerimiz</h3>
+            <ul class="recommendation-list" id="recommendationsList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Places dataset: data.js should define a global array like `allPlaces` -->
+  <script src="data.js"></script>
+
+  <script>
+// Questionnaire data
+    const questions = [
+      {
+        id: 1,
+        text: "Bugün özel bir gün mü?",
+        type: "multiple",
+        options: ["Hayır, normal bir gün", "Evet, doğum günü", "Evet, yıl dönümü", "Evet, özel tatil"]
+      },
+      {
+        id: 2,
+        text: "Alkol tüketimiyle ilgili tercihiniz?",
+        type: "multiple",
+        options: ["Hiç tüketmem", "Ara sıra hafif içki", "Rakı severim", "Bira severim", "Şarap severim"]
+      },
+      {
+        id: 3,
+        text: "Bugün enerjik misiniz?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 4,
+        text: "Akşamdan kalmış mısınız?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 5,
+        text: "Kaldığınız yer nerede?",
+        type: "multiple",
+        options: ["Kaş Merkez", "Kalkan", "Kaleköy", "Çıralı", "Patara", "Fethiye", "Diğer"]
+      },
+      {
+        id: 6,
+        text: "Arabanız var mı?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 7,
+        text: "Taksi tercih eder misiniz?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 8,
+        text: "Yürümeyi tercih eder misiniz?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 9,
+        text: "Hangi tür yemekleri tercih edersiniz?",
+        type: "checkbox",
+        options: ["Balık", "Et", "Vejetaryen", "Deniz ürünleri", "Yerel mutfak"]
+      },
+      {
+        id: 10,
+        text: "Hangi öğünleri planlamak istersiniz?",
+        type: "checkbox",
+        options: ["Kahvaltı", "Öğle Yemeği", "Akşam Yemeği"]
+      },
+      {
+        id: 11,
+        text: "Deniz aktiviteleriyle ilgili tercihiniz?",
+        type: "checkbox",
+        options: ["Beach", "Sessiz Koy", "Ucuz Beach", "Merkezi Beach", "Kop Kop Beach"]
+      },
+      {
+        id: 12,
+        text: "Hangi aktiviteleri tercih edersiniz?",
+        type: "checkbox",
+        options: ["Deniz", "Tarihi Gezi", "Doğa Sporu", "Alışveriş", "Kültür Sanat"]
+      },
+      {
+        id: 13,
+        text: "Sabah kahvaltı tercihiniz?",
+        type: "multiple",
+        options: ["Evde kahvaltı", "Restoranda kahvaltı", "Kahvaltı restoranı", "Brunch", "Atlayacağım"]
+      },
+      {
+        id: 14,
+        text: "Siesta (öğle uykusu) yapıyor musunuz?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 15,
+        text: "Gece aktiviteleri tercihiniz?",
+        type: "multiple",
+        options: ["Bar", "Uzun Yemek", "Sessiz Akşam", "Canlı Müzik", "Dans"]
+      },
+      {
+        id: 16,
+        text: "Dans etmeyi sever misiniz?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 17,
+        text: "Kaç kişiyle birliktesiniz?",
+        type: "multiple",
+        options: ["Tek başıma", "Çift olarak", "Aile ile", "Arkadaş grubu (3-5 kişi)", "Büyük grup (6+ kişi)"]
+      },
+      {
+        id: 18,
+        text: "Bütçe tercihiniz?",
+        type: "multiple",
+        options: ["Ekonomik", "Orta seviye", "Lüks", "Sınırsız"]
+      },
+      {
+        id: 19,
+        text: "Dil tercihiniz?",
+        type: "multiple",
+        options: ["Türkçe", "İngilizce", "Almanca", "Rusça", "Diğer"]
+      },
+      {
+        id: 20,
+        text: "Önceki Kaş ziyaretiniz oldu mu?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 21,
+        text: "Fotoğraf çekmeyi sever misiniz?",
+        type: "binary",
+        options: ["Evet", "Hayır"]
+      },
+      {
+        id: 22,
+        text: "Kaş'ı daha çok?",
+        type: "multiple",
+        options: ["Deniz için", "Tarih için", "Yemek için", "Rahatlama için", "Macera için"]
+      },
+      {
+        id: 23,
+        text: "En çok neyi merak ediyorsunuz?",
+        type: "multiple",
+        options: ["Antik kentler", "Gizli koylar", "Yerel lezzetler", "Denizaltı aktiviteleri", "Doğa yürüyüşleri"]
+      },
+      {
+        id: 24,
+        text: "Hava durumu tercihiniz?",
+        type: "multiple",
+        options: ["Güneşli", "Bulutlu", "Rüzgarlı", "Yağmurlu", "Önemli değil"]
+      },
+      {
+        id: 25,
+        text: "Planınızda mutlaka olması gereken?",
+        type: "checkbox",
+        options: ["Tarih", "Deniz", "Yemek", "Doğa", "Alışveriş", "Kültür", "Rahatlama"]
+      }
+    ];
+
+    // DOM elements
+    const questionnaireContent = document.getElementById('questionnaireContent');
+    const progressFill = document.getElementById('progressFill');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const resultsSection = document.getElementById('resultsSection');
+    const itinerary = document.getElementById('itinerary');
+    const recommendationsList = document.getElementById('recommendationsList');
+
+    // State
+    let currentQuestionIndex = 0;
+    let answers = {};
+
+    /* ============================================================
+       Fixed card height (prevents layout jumping between questions)
+       ------------------------------------------------------------
+       Problem:
+       - Question cards change height depending on option count / text,
+         which makes the UI "jump" and feels chaotic.
+
+       Solution:
+       - Measure the tallest possible question once on load.
+       - Lock the .questionnaire-content height to that value using:
+           --planner-question-height
+       - On small screens, CSS max-height caps it and the content area
+         scrolls internally (still stable; no page jump).
+       ============================================================ */
+
+    function buildQuestionHTMLForMeasure(question) {
+      // Minimal HTML for measurement only (no selected states needed)
+      let html = `
+        <div class="question-container">
+          <div class="question-header">
+            <span class="question-number">${question.id}</span>
+            <h3 class="question-text">${question.text}</h3>
+          </div>
+      `;
+
+      if (question.type === 'checkbox') {
+        html += `<div class="checkbox-options">`;
+        question.options.forEach((option, index) => {
+          html += `
+            <label class="checkbox-option">
+              <input type="checkbox" data-value="${index}">
+              ${option}
+            </label>
+          `;
+        });
+        html += `</div>`;
+      } else {
+        html += `<div class="options-container">`;
+        question.options.forEach((option, index) => {
+          html += `
+            <button class="option-btn" data-value="${index}">
+              ${option}
+            </button>
+          `;
+        });
+        html += `</div>`;
+      }
+
+      // Reserve space for the validation line too
+      html += `<div class="validation-error" style="visibility:hidden">Bu soru zorunlu.</div>`;
+      html += `</div>`;
+      return html;
+    }
+
+    function setFixedQuestionHeight() {
+      const target = document.getElementById('questionnaireContent');
+      if (!target) return;
+
+      // Create hidden measurement node with the same width as the live container
+      const measure = document.createElement('div');
+      measure.className = 'questionnaire-content';
+      measure.style.position = 'absolute';
+      measure.style.visibility = 'hidden';
+      measure.style.pointerEvents = 'none';
+      measure.style.left = '-9999px';
+      measure.style.top = '0';
+      measure.style.width = `${target.getBoundingClientRect().width}px`;
+
+      document.body.appendChild(measure);
+
+      let maxH = 0;
+      for (const q of questions) {
+        measure.innerHTML = buildQuestionHTMLForMeasure(q);
+        maxH = Math.max(maxH, measure.scrollHeight);
+      }
+
+      document.body.removeChild(measure);
+
+      if (maxH > 0) {
+        document.documentElement.style.setProperty('--planner-question-height', `${maxH}px`);
+      }
+    }
+
+    // Debounced resize so fixed height stays correct when layout width changes
+    let __qhResizeTimer = null;
+    function scheduleFixedHeightRecalc() {
+      clearTimeout(__qhResizeTimer);
+      __qhResizeTimer = setTimeout(() => setFixedQuestionHeight(), 120);
+    }
+
+
+
+
+    // Initialize questionnaire
+    function initQuestionnaire() {
+      renderQuestion();
+      updateProgress();
+      
+      // Event listeners
+      prevBtn.addEventListener('click', () => {
+        if (currentQuestionIndex > 0) {
+          currentQuestionIndex--;
+          renderQuestion();
+          updateProgress();
+          submitBtn.classList.add('hidden');
+          nextBtn.classList.remove('hidden');
+          if (currentQuestionIndex === 0) {
+            prevBtn.disabled = true;
+          }
+        }
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        if (currentQuestionIndex < questions.length - 1) {
+          // Mandatory: block navigation if the current question is unanswered
+          if (!validateCurrentAnswer()) return;
+
+          saveAnswer();
+          currentQuestionIndex++;
+          renderQuestion();
+          updateProgress();
+          prevBtn.disabled = false;
+          if (currentQuestionIndex === questions.length - 1) {
+            nextBtn.classList.add('hidden');
+            submitBtn.classList.remove('hidden');
+          }
+        }
+      });
+      
+      submitBtn.addEventListener('click', () => {
+        // Mandatory: block submit if the last question is unanswered
+        if (!validateCurrentAnswer()) return;
+
+        saveAnswer();
+        generatePlan();
+        document.querySelector('.questionnaire-section').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    // Render current question
+    function renderQuestion() {
+      const question = questions[currentQuestionIndex];
+      let html = `
+        <div class="question-container">
+          <div class="question-header">
+            <span class="question-number">${question.id}</span>
+            <h3 class="question-text">${question.text}</h3>
+          </div>
+      `;
+      
+      switch(question.type) {
+        case 'binary':
+          html += `<div class="options-container">`;
+          question.options.forEach((option, index) => {
+            const isSelected = answers[question.id] === index;
+            html += `
+              <button class="option-btn ${isSelected ? 'selected' : ''}" data-value="${index}">
+                ${option}
+              </button>
+            `;
+          });
+          html += `</div>`;
+          break;
+          
+        case 'multiple':
+          html += `<div class="options-container">`;
+          question.options.forEach((option, index) => {
+            const isSelected = answers[question.id] === index;
+            html += `
+              <button class="option-btn ${isSelected ? 'selected' : ''}" data-value="${index}">
+                ${option}
+              </button>
+            `;
+          });
+          html += `</div>`;
+          break;
+          
+        case 'checkbox':
+          html += `<div class="checkbox-options">`;
+          question.options.forEach((option, index) => {
+            const isSelected = Array.isArray(answers[question.id]) && answers[question.id].includes(index);
+            html += `
+              <label class="checkbox-option">
+                <input type="checkbox" data-value="${index}" ${isSelected ? 'checked' : ''}>
+                ${option}
+              </label>
+            `;
+          });
+          html += `</div>`;
+          break;
+      }
+      
+
+      // Validation message (mandatory questions)
+      html += `<div class="validation-error hidden" id="validationError">Bu soru zorunlu. Devam etmek için seçim yapın.</div>`;
+      html += `</div>`;
+      questionnaireContent.innerHTML = html;
+      
+      // Add event listeners to options
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+          e.target.classList.add('selected');
+          const errorEl = document.getElementById('validationError');
+          if (errorEl) errorEl.classList.add('hidden');
+        });
+      });
+      
+      document.querySelectorAll('.checkbox-option input').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          const errorEl = document.getElementById('validationError');
+          if (errorEl) errorEl.classList.add('hidden');
+          const value = parseInt(checkbox.dataset.value);
+          if (!Array.isArray(answers[question.id])) {
+            answers[question.id] = [];
+          }
+          if (checkbox.checked) {
+            if (!answers[question.id].includes(value)) {
+              answers[question.id].push(value);
+            }
+          } else {
+            answers[question.id] = answers[question.id].filter(v => v !== value);
+          }
+        });
+      });
+    }
+
+
+    // Validate current question (MANDATORY)
+    // - multiple/binary: one option must be selected
+    // - checkbox: at least one checkbox must be checked
+    function validateCurrentAnswer() {
+      const question = questions[currentQuestionIndex];
+      const errorEl = document.getElementById('validationError');
+      let ok = true;
+
+      if (question.type === 'checkbox') {
+        ok = !!document.querySelector('.checkbox-option input:checked');
+      } else {
+        ok = !!document.querySelector('.option-btn.selected');
+      }
+
+      if (!ok) {
+        if (errorEl) errorEl.classList.remove('hidden');
+
+        // Small UX: shake the card so user notices
+        const card = document.querySelector('.questionnaire-container');
+        if (card) {
+          card.classList.remove('shake'); // reset if already there
+          // force reflow
+          void card.offsetWidth;
+          card.classList.add('shake');
+          setTimeout(() => card.classList.remove('shake'), 520);
+        }
+      } else {
+        if (errorEl) errorEl.classList.add('hidden');
+      }
+      return ok;
+    }
+
+    // Save answer for current question
+    function saveAnswer() {
+      const question = questions[currentQuestionIndex];
+      
+      switch(question.type) {
+        case 'binary':
+        case 'multiple':
+          const selectedBtn = document.querySelector('.option-btn.selected');
+          if (selectedBtn) {
+            answers[question.id] = parseInt(selectedBtn.dataset.value);
+          }
+          break;
+          
+        case 'checkbox':
+          // Already handled by checkbox event listeners
+          break;
+      }
+    }
+
+    // Update progress bar
+    function updateProgress() {
+      const progress = ((currentQuestionIndex) / questions.length) * 100;
+      progressFill.style.width = `${progress}%`;
+    }
+
+    // Generate personalized plan based on answers
+    /* ============================================================
+       Places merge (Kaş Guide dataset → Planner results)
+       ------------------------------------------------------------
+       Goal:
+       - Keep questionnaire logic as-is.
+       - When the user clicks "Planımı Oluştur", we build a preference
+         profile from answers and score places from places-data (data.js).
+       - You can later tune scoring by editing ONLY the config objects:
+         WEIGHTS, SLOT_TO_CATEGORIES, and TAG_MAP.
+       ============================================================ */
+
+    // 1) Where to read places from (supports a few common global names)
+    function getPlacesData() {
+      // In your project you likely have: const allPlaces = [...]
+      // We also tolerate other names to make integration painless.
+      const candidates = [
+        window.allPlaces,
+        window.places,
+        window.PLACES,
+        window.PLACES_DATA,
+        window.kasPlaces
+      ];
+      const arr = candidates.find(v => Array.isArray(v));
+      return Array.isArray(arr) ? arr : [];
+    }
+
+    // 2) Scoring knobs — tweak these later to change ranking behavior
+    const WEIGHTS = {
+      // base relevance by category match is handled by filtering;
+      // these weights influence ranking inside a category.
+      tagMatch: 6,
+      featureMatch: 5,
+      budgetMatch: 4,
+      distancePenalty: 2, // only used if you later add distance logic
+      ratingBoost: 1.5    // only used if your dataset has rating
+    };
+
+    // 3) Map questionnaire options → normalized preference tags
+    //    (Keep tags small and reusable; they should match your dataset tags when possible.)
+    const TAG_MAP = {
+      // Q9 "Hangi tür yemekleri tercih edersiniz?"
+      food: {
+        0: ["fish", "seafood"],
+        1: ["meat"],
+        2: ["vegetarian"],
+        3: ["seafood"],
+        4: ["local"]
+      },
+      // Q11 "Deniz aktiviteleriyle ilgili tercihiniz?"
+      seaStyle: {
+        0: ["beach"],
+        1: ["quiet-bay"],
+        2: ["budget-friendly"],
+        3: ["central"],
+        4: ["party"]
+      },
+      // Q12 "Hangi aktiviteleri tercih edersiniz?"
+      activities: {
+        0: ["sea"],
+        1: ["history"],
+        2: ["nature"],
+        3: ["shopping"],
+        4: ["culture"]
+      }
+    };
+
+    // 4) Which planner slot should pull from which dataset categories?
+    //    Uses your project category IDs (places, beaches, food, bar, cafe, meyhane, history, nature, shopping, breakfast, diving...)
+    const SLOT_TO_CATEGORIES = {
+      breakfast: ["breakfast", "cafe", "food"],
+      morningActivity: ["beaches", "places", "history", "nature", "diving", "activities"],
+      lunch: ["food", "cafe"],
+      afternoon: ["shopping", "places", "nature", "history"],
+      dinner: ["food", "meyhane"],
+      night: ["bar", "cafe", "meyhane"]
+    };
+
+    // 5) Build a compact profile from the answers object
+    function buildProfile(answers) {
+      const profile = {
+        tags: new Set(),
+        wants: {
+          breakfast: false,
+          lunch: false,
+          dinner: false
+        },
+        budget: answers[18] ?? 1, // 0 econ, 1 mid, 2 luxury, 3 unlimited
+        group: answers[17] ?? 1,  // 0 solo, 1 couple, 2 family, 3 friends, 4 big group
+        alcoholPref: answers[2] ?? 0,
+        energetic: (answers[3] === 0)
+      };
+
+      // Meals (Q10)
+      const meals = answers[10];
+      if (Array.isArray(meals)) {
+        profile.wants.breakfast = meals.includes(0);
+        profile.wants.lunch = meals.includes(1);
+        profile.wants.dinner = meals.includes(2);
+      }
+
+      // Food tags (Q9)
+      const food = answers[9];
+      if (Array.isArray(food)) {
+        food.forEach(idx => (TAG_MAP.food[idx] || []).forEach(t => profile.tags.add(t)));
+      }
+
+      // Sea style tags (Q11)
+      const seaStyle = answers[11];
+      if (Array.isArray(seaStyle)) {
+        seaStyle.forEach(idx => (TAG_MAP.seaStyle[idx] || []).forEach(t => profile.tags.add(t)));
+      }
+
+      // Activities tags (Q12)
+      const acts = answers[12];
+      if (Array.isArray(acts)) {
+        acts.forEach(idx => (TAG_MAP.activities[idx] || []).forEach(t => profile.tags.add(t)));
+      }
+
+      // Alcohol → nightlife hint (Q2)
+      if ([2,3,4].includes(profile.alcoholPref)) profile.tags.add("alcohol");
+
+      // Group hints
+      if (profile.group === 2) profile.tags.add("family");
+      if (profile.group >= 3) profile.tags.add("group");
+
+      return profile;
+    }
+
+    // 6) Normalize a place object (so planner doesn't depend on a single schema)
+    function normalizePlace(place) {
+      const categoryId =
+        place.categoryId ||
+        place.category ||
+        place.type ||
+        place.cat ||
+        "";
+
+      const name = place.name || place.title || "";
+      const rating = Number(place.rating || place.googleRating || place.score || 0);
+
+      // Collect tags from a few possible fields
+      const tags = []
+        .concat(place.tags || [])
+        .concat(place.features || [])
+        .concat(place.badges || [])
+        .concat(place.attributes || [])
+        .filter(Boolean)
+        .map(String)
+        .map(t => t.trim().toLowerCase());
+
+      // Budget in dataset (optional): 0..3
+      const priceLevel = (place.priceLevel ?? place.budget ?? place.price ?? null);
+      const budget = (priceLevel === null || priceLevel === undefined) ? null : Number(priceLevel);
+
+      // Optional link fields
+      const website = place.website || place.url || "";
+      const maps = place.googleMaps || place.maps || "";
+
+      return { raw: place, name, categoryId: String(categoryId), tags, budget, rating, website, maps };
+    }
+
+    // 7) Score a place against the profile
+    function scorePlace(placeN, profile) {
+      let score = 0;
+
+      // Tag matches
+      for (const t of profile.tags) {
+        if (placeN.tags.includes(String(t).toLowerCase())) score += WEIGHTS.tagMatch;
+      }
+
+      // Budget match (soft)
+      if (placeN.budget !== null) {
+        const diff = Math.abs(placeN.budget - profile.budget);
+        // exact match = +WEIGHTS.budgetMatch, off by 1 = smaller boost, far = none
+        if (diff === 0) score += WEIGHTS.budgetMatch;
+        else if (diff === 1) score += WEIGHTS.budgetMatch * 0.5;
+      }
+
+      // Rating boost (optional)
+      if (placeN.rating && placeN.rating > 0) {
+        score += Math.min(WEIGHTS.ratingBoost * placeN.rating, 8); // cap
+      }
+
+      return score;
+    }
+
+    // 8) Pick top places for a given slot
+    function pickTopPlacesForSlot(slotKey, profile, limit = 3) {
+      const places = getPlacesData();
+      if (!places.length) return [];
+
+      const allowedCategories = SLOT_TO_CATEGORIES[slotKey] || [];
+      const normalized = places.map(normalizePlace);
+
+      const filtered = normalized.filter(p => {
+        // if no category known, keep it as fallback only
+        if (!p.categoryId) return false;
+        return allowedCategories.includes(p.categoryId);
+      });
+
+      // If filtering yields nothing, relax filtering (use all places)
+      const pool = filtered.length ? filtered : normalized;
+
+      const ranked = pool
+        .map(p => ({ p, score: scorePlace(p, profile) }))
+        .sort((a, b) => b.score - a.score)
+        .slice(0, limit)
+        .map(x => x.p);
+
+      return ranked;
+    }
+
+    // 9) Render helper: show place with optional links
+    function placeToRecommendationLine(placeN) {
+      // Prefer clean text; keep links optional (depends on your dataset)
+      const parts = [placeN.name].filter(Boolean);
+      if (placeN.maps) parts.push("(Maps)");
+      if (placeN.website) parts.push("(Web)");
+      return parts.join(" ");
+    }
+
+
+    function generatePlan() {
+      // Hide questionnaire, show results
+      document.querySelector('.questionnaire-section').classList.add('hidden');
+      resultsSection.classList.remove('hidden');
+      
+      // Determine plan type based on answers
+      const hasAlcohol = answers[2] && [2, 3, 4].includes(answers[2]);
+      const prefersSea = answers[12] && answers[12].includes(0);
+      const prefersHistory = answers[12] && answers[12].includes(1);
+      const prefersNature = answers[12] && answers[12].includes(2);
+      const budgetLevel = answers[18] || 1; // Default to "Orta seviye"
+      const groupSize = answers[17] || 1; // Default to "Tek başıma"
+      const energyLevel = answers[3] === 0; // 0 = Yes, 1 = No
+      
+      // Generate itinerary
+      let itineraryHtml = '';
+      
+      // Morning
+      itineraryHtml += `
+        <div class="time-slot">
+          <div class="time-header">
+            <span class="time">08:00 - 10:00</span>
+          </div>
+          <h4 class="activity">Güneşin Doğuşu ile Kahvaltı</h4>
+          <p class="description">Kaş'ın en güzel manzaralı kahvaltı mekanlarından birinde bol peynirli, zeytinyağlı ve yerel ürünlerle hazırlanmış bir kahvaltı.</p>
+        </div>
+      `;
+      
+      // Mid-morning
+      if (prefersSea) {
+        itineraryHtml += `
+          <div class="time-slot">
+            <div class="time-header">
+              <span class="time">10:30 - 13:00</span>
+            </div>
+            <h4 class="activity">Deniz Zamanı: ${prefersSea ? 'Gizli Koy Keşfi' : 'Plaj Tatili'}</h4>
+            <p class="description">Tekne turuyla Kaş'ın gizli koylarını keşfedin veya favori plajınızda güneşlenin. ${hasAlcohol ? 'Öğle yemeğinde balık restoranında deniz manzaralı masada öğle yemeği ve soğuk bir içki!' : 'Deniz manzaralı bir kafede soğuk içecekler eşliğinde dinlenme.'}</p>
+          </div>
+        `;
+      } else if (prefersHistory) {
+        itineraryHtml += `
+          <div class="time-slot">
+            <div class="time-header">
+              <span class="time">10:30 - 13:00</span>
+            </div>
+            <h4 class="activity">Antik Kent Keşfi: Likya Yolu</h4>
+            <p class="description">Antik Likya kentlerinden biri olan Patara Antik Kenti'ni ziyaret edin. Tiyatro, parlamento binası ve dünyanın en uzun kumsalından birini görün.</p>
+          </div>
+        `;
+      } else if (prefersNature) {
+        itineraryHtml += `
+          <div class="time-slot">
+            <div class="time-header">
+              <span class="time">10:30 - 13:00</span>
+            </div>
+            <h4 class="activity">Doğa Yürüyüşü: Saklıkent Milli Parkı</h4>
+            <p class="description">Saklıkent Kanyonu'nda eşsiz bir doğa deneyimi yaşayın. Sıcak havalarda kanyonun serin sularında yürüyüş yapın.</p>
+          </div>
+        `;
+      }
+      
+      // Afternoon
+      itineraryHtml += `
+        <div class="time-slot">
+          <div class="time-header">
+            <span class="time">13:30 - 15:00</span>
+          </div>
+          <h4 class="activity">Öğle Yemeği: Yerel Lezzetler</h4>
+          <p class="description">${answers[9] && answers[9].includes(1) ? 'Balık veya etli yemeklerle' : 'Vejetaryen seçeneklerle'} zengin, yerel ürünlerden hazırlanmış öğle yemeği.</p>
+        </div>
+      `;
+      
+      if (answers[14] === 0) { // Siesta yapar
+        itineraryHtml += `
+          <div class="time-slot">
+            <div class="time-header">
+              <span class="time">15:30 - 17:00</span>
+            </div>
+            <h4 class="activity">Siesta & Relax</h4>
+            <p class="description">Otelinizde veya seçtiğiniz mekanda rahat bir öğle uykusu ve dinlenme zamanı.</p>
+          </div>
+        `;
+      } else {
+        itineraryHtml += `
+          <div class="time-slot">
+            <div class="time-header">
+              <span class="time">15:30 - 17:30</span>
+            </div>
+            <h4 class="activity">Alışveriş & Keşif</h4>
+            <p class="description">Kaş çarşısında yöresel ürünler, el sanatları ve hatıra alışverişi. Sanat galerilerini ve butik mağazaları keşfedin.</p>
+          </div>
+        `;
+      }
+      
+      // Evening
+      itineraryHtml += `
+        <div class="time-slot">
+          <div class="time-header">
+            <span class="time">18:30 - 20:30</span>
+          </div>
+          <h4 class="activity">Gün Batımı ile Akşam Yemeği</h4>
+          <p class="description">Kaş limanına bakan bir restoranda gün batımını izlerken, taze balık ve deniz ürünleriyle hazırlanan akşam yemeğiniz.</p>
+        </div>
+      `;
+      
+      // Night
+      if (answers[15] && answers[15] === 0) { // Bar tercihi
+        itineraryHtml += `
+          <div class="time-slot">
+            <div class="time-header">
+              <span class="time">21:30 - Gece</span>
+            </div>
+            <h4 class="activity">Gece Hayatı: Barlar ve Canlı Müzik</h4>
+            <p class="description">Kaş'ın en popüler barlarından birinde içki keyfi ve canlı müzik eşliğinde eğlenceli bir gece.</p>
+          </div>
+        `;
+      } else if (answers[16] === 0) { // Dans eder
+        itineraryHtml += `
+          <div class="time-slot">
+            <div class="time-header">
+              <span class="time">21:30 - Gece</span>
+            </div>
+            <h4 class="activity">Dans Zamanı!</h4>
+            <p class="description">Kaş'ın en hareketli kulüplerinden birinde dans ederek günü kapatın.</p>
+          </div>
+        `;
+      } else {
+        itineraryHtml += `
+          <div class="time-slot">
+            <div class="time-header">
+              <span class="time">21:30 - Gece</span>
+            </div>
+            <h4 class="activity">Sakin Bir Gece</h4>
+            <p class="description">Liman kenarında bir kafede çay veya kahve eşliğinde günün hikayelerini paylaşın.</p>
+          </div>
+        `;
+      }
+      
+      itinerary.innerHTML = itineraryHtml;
+      
+      // Generate recommendations
+      const recommendations = [];
+
+      // Build preference profile once
+      const profile = buildProfile(answers);
+
+      /* We pull candidates from places-data (data.js) for each slot.
+         You can tune:
+         - SLOT_TO_CATEGORIES to decide which dataset categories feed which slot
+         - TAG_MAP / WEIGHTS to change scoring behavior
+      */
+      const slotPicks = {
+        breakfast: pickTopPlacesForSlot("breakfast", profile, 1),
+        morningActivity: pickTopPlacesForSlot("morningActivity", profile, 2),
+        lunch: pickTopPlacesForSlot("lunch", profile, 1),
+        afternoon: pickTopPlacesForSlot("afternoon", profile, 1),
+        dinner: pickTopPlacesForSlot("dinner", profile, 1),
+        night: pickTopPlacesForSlot("night", profile, 1)
+      };
+
+      // Helper to push a labeled recommendation if we found a place
+      function pushPick(label, arr) {
+        if (Array.isArray(arr) && arr.length) {
+          recommendations.push(`${label}: ${placeToRecommendationLine(arr[0])}`);
+        }
+      }
+
+      // Only recommend meals/slots the user cares about; otherwise still add a couple highlights
+      if (profile.wants.breakfast) pushPick("Kahvaltı", slotPicks.breakfast);
+      pushPick("Sabah Aktivitesi", slotPicks.morningActivity);
+      if (profile.wants.lunch) pushPick("Öğle", slotPicks.lunch);
+      pushPick("Öğleden Sonra", slotPicks.afternoon);
+      if (profile.wants.dinner) pushPick("Akşam", slotPicks.dinner);
+      pushPick("Gece", slotPicks.night);
+
+      // If data.js is missing / empty, fall back to generic tips
+      if (recommendations.length === 0) {
+        recommendations.push("Plaj önerisi: Kaputaş / İnceboğaz gibi bir plaj seçip erken gidin (kalabalık artıyor).");
+        recommendations.push("Yemek: Yerel mutfağa şans verin; menüde günlük çıkanları sorun.");
+        recommendations.push("Çarşı: Akşamüstü kısa yürüyüş + kahve molası en keyifli saatler.");
+      }
+
+      // Add default recommendations if needed
+      if (recommendations.length === 0) {
+        recommendations.push("Kaş'ın en güzel plajları: Kaputaş, Kızkumu ve Patara");
+        recommendations.push("Yerel lezzetlerden mutlaka deneyin: Kaş balığı, zeytinyağlı yaprak sarması, pırasa");
+        recommendations.push("Alışveriş için: Kaş çarşısı, el dokuması ürünler, zeytinyağı ve bal");
+      }
+      
+      // Limit to 5 recommendations
+      const limitedRecommendations = recommendations.slice(0, 5);
+      
+      let recHtml = '';
+      limitedRecommendations.forEach(rec => {
+        recHtml += `<li>${rec}</li>`;
+      });
+      
+      recommendationsList.innerHTML = recHtml;
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+    // Back-to-top (header)
+  const backToTopBtn = document.querySelector('.back-to-top');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+
+  // Lock question area height to the tallest question (prevents UI jumping)
+  setFixedQuestionHeight();
+  window.addEventListener('resize', scheduleFixedHeightRecalc);
+  // Re-measure once more after first paint (fonts/wrapping can change height)
+  requestAnimationFrame(() => setFixedQuestionHeight());
+
+  initQuestionnaire();
+
+  // Optional: if a header/menu exists on other layouts, keep it functional
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  }
+});
+  </script>
+</body>
+</html>
