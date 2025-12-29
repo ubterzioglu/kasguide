@@ -383,8 +383,9 @@
       const statusClass = `status-${place.status}`;
       const createdDate = new Date(place.created_at).toLocaleString('tr-TR');
 
-      const images = place.images ? JSON.parse(place.images) : [];
-      const categories = place.categories ? JSON.parse(place.categories) : [];
+      // Images and categories are already arrays from the API (json_agg in SQL)
+      const images = place.images || [];
+      const categories = place.categories || [];
 
       return `
         <div class="submission-card">
