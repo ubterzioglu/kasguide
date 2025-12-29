@@ -15,6 +15,11 @@
     "db:import:faqspecial": "node db/import-data.js faqspecial",
     "db:import:faqs": "node db/import-data.js faqs",
     "db:setup": "node db/migrate.js && node db/import-data.js",
+    "db:unified": "node db/migrate-unified.js",
+    "db:unified:schema": "node db/migrate-unified.js schema-only",
+    "db:unified:data": "node db/migrate-unified.js data-only",
+    "db:unified:verify": "node db/migrate-unified.js verify",
+    "db:unified:rollback": "node db/migrate-unified.js rollback",
     "dev": "vercel dev",
     "build": "echo 'Static site - no build needed'",
     "start": "vercel dev"
