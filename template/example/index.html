@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template Preview - Kaş Plajları Örneği</title>
+  <meta name="description" content="Kaş Guide Template System - Çalışan Örnek">
+
+  <!-- Template Styles -->
+  <link rel="stylesheet" href="../template-style.css">
+
+  <!-- Preview-specific styles -->
+  <style>
+    /* Preview Banner */
+    .preview-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .preview-banner-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .preview-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .preview-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .preview-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .preview-btn {
+      background: white;
+      color: #667eea;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: transform 0.2s;
+    }
+
+    .preview-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .preview-btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .preview-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Adjust header to account for preview banner */
+    .header {
+      top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .preview-banner-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .preview-actions {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preview Banner -->
+  <div class="preview-banner">
+    <div class="preview-banner-content">
+      <div class="preview-title">
+        <span>🎨</span>
+        <span>Template Preview</span>
+        <span class="preview-badge">Example: Kaş Plajları</span>
+      </div>
+      <div class="preview-actions">
+        <a href="../README.md" class="preview-btn">
+          📚 Dökümanlar
+        </a>
+        <a href="/" class="preview-btn preview-btn-secondary">
+          🏠 Ana Sayfa
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <span class="logo-text">🏖️ Kaş Plajları</span>
+        </a>
+      </div>
+
+      <nav class="nav">
+        <a href="/" class="nav-link">Ana Sayfa</a>
+        <a href="/contact/contact.html" class="nav-link">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Kaş'ın En Güzel Plajları</h1>
+      <p class="hero-subtitle">Turkuaz sularla buluşmaya hazır mısın?</p>
+
+      <!-- Search Box -->
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Plaj ara..."
+          class="search-input"
+        >
+        <button class="clear-btn" id="clearSearch">Temizle</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-label">Toplam Plaj</div>
+          <div class="stat-value" id="totalCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Gösterilen</div>
+          <div class="stat-value" id="filteredCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Kategoriler</div>
+          <div class="stat-value" id="categoryCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Aktif Filtre</div>
+          <div class="stat-value" id="activeFilters">0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Categories -->
+  <section class="filters-section">
+    <div class="container">
+      <h2 class="section-title">Kategoriler</h2>
+
+      <div class="filters-grid" id="filtersGrid">
+        <button class="filter-btn active" data-category="all">
+          <span class="filter-icon">🌟</span>
+          <span class="filter-text">Tümü</span>
+          <span class="filter-count" id="count-all">0</span>
+        </button>
+
+        <button class="filter-btn" data-category="kumsal">
+          <span class="filter-icon">🏖️</span>
+          <span class="filter-text">Kumsal</span>
+          <span class="filter-count" id="count-kumsal">0</span>
+        </button>
+
+        <button class="filter-btn" data-category="kayalik">
+          <span class="filter-icon">🪨</span>
+          <span class="filter-text">Kayalık</span>
+          <span class="filter-count" id="count-kayalik">0</span>
+        </button>
+
+        <button class="filter-btn" data-category="gizli">
+          <span class="filter-icon">🗺️</span>
+          <span class="filter-text">Gizli Koy</span>
+          <span class="filter-count" id="count-gizli">0</span>
+        </button>
+
+        <button class="filter-btn" data-category="populer">
+          <span class="filter-icon">🔥</span>
+          <span class="filter-text">Popüler</span>
+          <span class="filter-count" id="count-populer">0</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Items Grid -->
+  <section class="items-section">
+    <div class="container">
+      <div class="items-grid" id="itemsGrid">
+        <!-- Items will be dynamically inserted here by JavaScript -->
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results" id="noResults" style="display: none;">
+        <div class="no-results-icon">🔍</div>
+        <h3>Sonuç bulunamadı</h3>
+        <p>Arama kriterlerinize uygun plaj bulunamadı.</p>
+        <button class="btn-primary" id="resetFilters">Filtreleri Sıfırla</button>
+      </div>
+
+      <!-- Loading State -->
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Plajlar yükleniyor...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          </svg>
+          <span>Kaş Guide - Template Preview</span>
+        </div>
+        <p class="footer-tagline">Bu bir template önizleme sayfasıdır</p>
+        <div class="footer-links">
+          <a href="/" class="footer-link">Ana Sayfa</a>
+          <a href="../README.md" class="footer-link">Dökümanlar</a>
+          <a href="/contact/contact.html" class="footer-link">İletişim</a>
+        </div>
+        <p class="footer-copyright">© 2024 Kaş Guide. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Example Data for Beaches -->
+  <script>
+    // Example data - Kaş Beaches
+    window.templateData = [
+      {
+        id: 1,
+        slug: 'kaputas-plaji',
+        title: 'Kaputaş Plajı',
+        description: 'Turkuaz sularıyla ünlü, muhteşem manzaralı plaj. Kaş\'ın en popüler plajlarından biri.',
+        longDescription: 'Kaputaş Plajı, Kaş ile Kalkan arasında, deniz seviyesinden yaklaşık 150 metre yükseklikte bulunan muhteşem bir doğal güzelliktir.',
+        category: 'kumsal',
+        categories: ['kumsal', 'populer'],
+        image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800',
+        images: [
+          'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800',
+          'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800'
+        ],
+        rating: 4.8,
+        price: 'Ücretsiz',
+        featured: true,
+        tags: ['turkuaz-su', 'manzara', 'fotografik'],
+        facilities: ['Duş', 'WC', 'Kantin'],
+        createdAt: '2024-01-01'
+      },
+      {
+        id: 2,
+        slug: 'buyuk-cakil-plaji',
+        title: 'Büyük Çakıl Plajı',
+        description: 'Kaş merkeze yakın, çakıl taşlı sakin plaj. Şehir merkezine yürüme mesafesinde.',
+        category: 'kayalik',
+        categories: ['kayalik', 'populer'],
+        image: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800',
+        rating: 4.3,
+        price: 'Ücretsiz',
+        featured: false,
+        tags: ['merkez', 'kolayerisim'],
+        facilities: ['Şezlong', 'Duş', 'Restoran', 'Bar'],
+        createdAt: '2024-01-05'
+      },
+      {
+        id: 3,
+        slug: 'limanagzi',
+        title: 'Limanağzı',
+        description: 'Gizli cennet, teknelerle ulaşılabilen muhteşem koy. Berrak suları ve sakin atmosferiyle ünlü.',
+        category: 'gizli',
+        categories: ['gizli', 'kayalik'],
+        image: 'https://images.unsplash.com/photo-1589900243924-c022c6c2850c?w=800',
+        rating: 4.9,
+        price: 'Tekne turu',
+        featured: true,
+        tags: ['gizli-cennet', 'tekne-turu', 'snorkeling'],
+        facilities: ['Doğal ortam'],
+        createdAt: '2024-01-10'
+      },
+      {
+        id: 4,
+        slug: 'kucuk-cakil-plaji',
+        title: 'Küçük Çakıl Plajı',
+        description: 'Rahat ve huzurlu, yerel halkın tercih ettiği sakin plaj.',
+        category: 'kayalik',
+        categories: ['kayalik'],
+        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800',
+        rating: 4.1,
+        price: 'Ücretsiz',
+        featured: false,
+        tags: ['sakin', 'yerel'],
+        facilities: ['Duş', 'Kantin'],
+        createdAt: '2024-01-15'
+      },
+      {
+        id: 5,
+        slug: 'hidayet-koyu',
+        title: 'Hidayet Koyu',
+        description: 'Doğal güzelliği ve berrak denizi ile tatilcilerin gözdesi.',
+        category: 'kumsal',
+        categories: ['kumsal', 'populer'],
+        image: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800',
+        rating: 4.6,
+        price: 'Ücretsiz',
+        featured: false,
+        tags: ['aile-dostu', 'kumsal'],
+        facilities: ['Şezlong', 'Duş', 'Restoran'],
+        createdAt: '2024-01-20'
+      },
+      {
+        id: 6,
+        slug: 'akcagerme-plaji',
+        title: 'Akçağerme Plajı',
+        description: 'Uzun kumsal ve sığ denizi ile aileler için ideal.',
+        category: 'kumsal',
+        categories: ['kumsal'],
+        image: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800',
+        rating: 4.4,
+        price: 'Ücretsiz',
+        featured: false,
+        tags: ['aile-dostu', 'sig-deniz'],
+        facilities: ['Şezlong', 'WC', 'Kantin'],
+        createdAt: '2024-02-01'
+      },
+      {
+        id: 7,
+        slug: 'inonu-koyu',
+        title: 'İnönü Koyu',
+        description: 'Dalış tutkunları için harika bir nokta. Su altı zenginliği muhteşem.',
+        category: 'gizli',
+        categories: ['gizli', 'kayalik'],
+        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800',
+        rating: 4.7,
+        price: 'Tekne turu',
+        featured: true,
+        tags: ['dalis', 'snorkeling', 'sualty'],
+        facilities: ['Doğal ortam'],
+        createdAt: '2024-02-05'
+      },
+      {
+        id: 8,
+        slug: 'patara-plaji',
+        title: 'Patara Plajı',
+        description: 'Türkiye\'nin en uzun plajı. Antik şehir kalıntıları yakınında.',
+        category: 'kumsal',
+        categories: ['kumsal', 'populer'],
+        image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800',
+        rating: 4.8,
+        price: '₺50 (Antik kent girişi)',
+        featured: true,
+        tags: ['uzun-plaj', 'antik-sehir', 'dogal'],
+        facilities: ['WC', 'Şezlong', 'Kantin'],
+        createdAt: '2024-02-10'
+      }
+    ];
+
+    // Categories configuration
+    window.templateCategories = [
+      { slug: 'all', name: 'Tümü', icon: '🌟', description: 'Tüm plajlar' },
+      { slug: 'kumsal', name: 'Kumsal', icon: '🏖️', description: 'Kumsal plajlar' },
+      { slug: 'kayalik', name: 'Kayalık', icon: '🪨', description: 'Kayalık plajlar' },
+      { slug: 'gizli', name: 'Gizli Koy', icon: '🗺️', description: 'Gizli koylar' },
+      { slug: 'populer', name: 'Popüler', icon: '🔥', description: 'Popüler plajlar' }
+    ];
+
+    // Template configuration
+    window.templateConfig = {
+      itemsPerPage: 12,
+      showRatings: true,
+      showPrices: true,
+      showFeaturedFirst: true,
+      searchFields: ['title', 'description', 'tags'],
+      searchMinLength: 2,
+      allowMultipleCategories: true,
+      defaultCategory: 'all',
+      defaultSort: 'rating',
+      sortOrder: 'desc'
+    };
+  </script>
+
+  <!-- Template Scripts -->
+  <script src="../template-script.js"></script>
+
+</body>
+</html>

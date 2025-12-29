@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    TEMPLATE INSTRUCTIONS:
+    1. Replace "DATATYPE" with your data type name (e.g., "museums", "beaches", "events")
+    2. Update the title and meta descriptions
+    3. Customize the hero section content
+    4. Modify the filter categories to match your data
+    5. Update the template-data.js with your actual data
+    6. Adjust styles in template-style.css to match your branding
+  -->
+
+  <title>DATATYPE - Kaş Guide</title>
+  <meta name="description" content="Kaş'taki DATATYPE'ları keşfedin">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="template-style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="/assets/0_img/logokasguide.png" alt="Kaş Guide" class="logo-img">
+          <span class="logo-text">Kaş Guide</span>
+        </a>
+      </div>
+
+      <nav class="nav">
+        <a href="/" class="nav-link">Ana Sayfa</a>
+        <a href="/contact/contact.html" class="nav-link">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Kaş DATATYPE Rehberi</h1>
+      <p class="hero-subtitle">En iyi DATATYPE'ları keşfet!</p>
+
+      <!-- Search Box -->
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="DATATYPE ara..."
+          class="search-input"
+        >
+        <button class="clear-btn" id="clearSearch">Temizle</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-label">Toplam</div>
+          <div class="stat-value" id="totalCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Gösterilen</div>
+          <div class="stat-value" id="filteredCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Kategoriler</div>
+          <div class="stat-value" id="categoryCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Aktif Filtre</div>
+          <div class="stat-value" id="activeFilters">0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Categories -->
+  <section class="filters-section">
+    <div class="container">
+      <h2 class="section-title">Kategoriler</h2>
+
+      <!--
+        CUSTOMIZE FILTERS:
+        Add or remove filter buttons based on your data categories
+        Each button should have:
+        - class="filter-btn"
+        - data-category="category-slug"
+      -->
+      <div class="filters-grid" id="filtersGrid">
+        <button class="filter-btn" data-category="all">
+          <span class="filter-icon">🌟</span>
+          <span class="filter-text">Tümü</span>
+          <span class="filter-count" id="count-all">0</span>
+        </button>
+
+        <button class="filter-btn" data-category="category1">
+          <span class="filter-icon">📍</span>
+          <span class="filter-text">Kategori 1</span>
+          <span class="filter-count" id="count-category1">0</span>
+        </button>
+
+        <button class="filter-btn" data-category="category2">
+          <span class="filter-icon">⭐</span>
+          <span class="filter-text">Kategori 2</span>
+          <span class="filter-count" id="count-category2">0</span>
+        </button>
+
+        <button class="filter-btn" data-category="category3">
+          <span class="filter-icon">🎯</span>
+          <span class="filter-text">Kategori 3</span>
+          <span class="filter-count" id="count-category3">0</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Items Grid -->
+  <section class="items-section">
+    <div class="container">
+      <div class="items-grid" id="itemsGrid">
+        <!-- Items will be dynamically inserted here by JavaScript -->
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results" id="noResults" style="display: none;">
+        <div class="no-results-icon">🔍</div>
+        <h3>Sonuç bulunamadı</h3>
+        <p>Arama kriterlerinize uygun DATATYPE bulunamadı.</p>
+        <button class="btn-primary" id="resetFilters">Filtreleri Sıfırla</button>
+      </div>
+
+      <!-- Loading State -->
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Yükleniyor...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          </svg>
+          <span>Kaş Guide</span>
+        </div>
+        <p class="footer-tagline">Akdeniz'in incisi Kaş'ı keşfet</p>
+        <div class="footer-links">
+          <a href="/" class="footer-link">Ana Sayfa</a>
+          <a href="/contact/contact.html" class="footer-link">İletişim</a>
+        </div>
+        <p class="footer-copyright">© 2024 Kaş Guide. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Load data first, then initialize the app -->
+  <script src="template-data.js"></script>
+  <script src="template-script.js"></script>
+
+</body>
+</html>
