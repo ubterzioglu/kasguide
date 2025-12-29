@@ -414,6 +414,239 @@ async function importFAQs() {
 }
 
 /**
+ * Import Pets from pet-data.js
+ */
+async function importPets() {
+  console.log('\n🐾 Importing Pets...');
+
+  const dataPath = path.join(projectRoot, 'pet', 'pet-data.js');
+
+  if (!fs.existsSync(dataPath)) {
+    console.log('⚠️  pet-data.js not found, skipping...');
+    return;
+  }
+
+  const fileContent = fs.readFileSync(dataPath, 'utf8');
+  const match = fileContent.match(/const\s+pets\s*=\s*(\[[\s\S]*?\]);/);
+
+  if (!match) {
+    console.log('⚠️  Could not parse pets from pet-data.js, skipping...');
+    return;
+  }
+
+  let pets;
+  try {
+    pets = eval(match[1]);
+  } catch (error) {
+    console.error('❌ Error parsing pets data:', error.message);
+    return;
+  }
+
+  console.log(`   Found ${pets.length} pets to import`);
+
+  let imported = 0;
+
+  for (const pet of pets) {
+    try {
+      // Insert pet
+      const result = await sql`
+        INSERT INTO pets (
+          listing_type, pet_name, pet_type, age, breed,
+          short_note, extra_notes, phone, status
+        ) VALUES (
+          'bulundu',
+          ${pet.id || ''},
+          ${pet.type || ''},
+          ${pet.age || ''},
+          ${pet.breed || ''},
+          ${pet.shortNote || ''},
+          ${pet.extraNotes || ''},
+          'Bilinmiyor',
+          'active'
+        ) RETURNING id
+      `;
+
+      const petId = result.rows[0].id;
+
+      // Insert photos
+      if (pet.photos && Array.isArray(pet.photos)) {
+        for (const photo of pet.photos) {
+          await sql`
+            INSERT INTO pet_photos (pet_id, photo_url)
+            VALUES (${petId}, ${photo})
+          `;
+        }
+      }
+
+      console.log(`   ✅ Imported: ${pet.type} - ${pet.breed}`);
+      imported++;
+
+    } catch (error) {
+      console.error(`   ❌ Error importing pet '${pet.id}':`, error.message);
+    }
+  }
+
+  console.log(`\n   📊 Results: ${imported} imported\n`);
+}
+
+/**
+ * Import Articles from articles-data.js
+ */
+async function importArticles() {
+  console.log('\n📝 Importing Articles...');
+
+  const dataPath = path.join(projectRoot, 'articles', 'articles-data.js');
+
+  if (!fs.existsSync(dataPath)) {
+    console.log('⚠️  articles-data.js not found, skipping...');
+    return;
+  }
+
+  const fileContent = fs.readFileSync(dataPath, 'utf8');
+  const match = fileContent.match(/const\s+articles\s*=\s*(\[[\s\S]*?\]);/);
+
+  if (!match) {
+    console.log('⚠️  Could not parse articles from articles-data.js, skipping...');
+    return;
+  }
+
+  let articles;
+  try {
+    articles = eval(match[1]);
+  } catch (error) {
+    console.error('❌ Error parsing articles data:', error.message);
+    return;
+  }
+
+  console.log(`   Found ${articles.length} articles to import`);
+
+  let imported = 0;
+
+  for (const article of articles) {
+    try {
+      const slug = article.id || generateSlug(article.title);
+
+      // Check if already exists
+      const existing = await sql`SELECT id FROM articles WHERE slug = ${slug}`;
+      if (existing.rows.length > 0) {
+        console.log(`   ⏭️  Skipping '${article.title}' (already exists)`);
+        continue;
+      }
+
+      // Insert article
+      const result = await sql`
+        INSERT INTO articles (
+          slug, title, description, content,
+          author, read_time, featured_image,
+          status, published_at
+        ) VALUES (
+          ${slug},
+          ${article.title || ''},
+          ${article.description || ''},
+          ${article.longText || ''},
+          ${article.author || 'Kaş Guide'},
+          ${article.readTime || ''},
+          ${article.image || null},
+          'published',
+          NOW()
+        ) RETURNING id
+      `;
+
+      const articleId = result.rows[0].id;
+
+      // Insert tags
+      if (article.tags && Array.isArray(article.tags)) {
+        for (const tag of article.tags) {
+          await sql`
+            INSERT INTO article_tags (article_id, tag_name)
+            VALUES (${articleId}, ${tag})
+          `;
+        }
+      }
+
+      console.log(`   ✅ Imported: ${article.title}`);
+      imported++;
+
+    } catch (error) {
+      console.error(`   ❌ Error importing article '${article.title}':`, error.message);
+    }
+  }
+
+  console.log(`\n   📊 Results: ${imported} imported\n`);
+}
+
+/**
+ * Import FAQ Series from faqspecial-data.js
+ */
+async function importFaqSeries() {
+  console.log('\n❓ Importing FAQ Series...');
+
+  const dataPath = path.join(projectRoot, 'faqspecial', 'faqspecial-data.js');
+
+  if (!fs.existsSync(dataPath)) {
+    console.log('⚠️  faqspecial-data.js not found, skipping...');
+    return;
+  }
+
+  const fileContent = fs.readFileSync(dataPath, 'utf8');
+  const match = fileContent.match(/const\s+faqspecialSeries\s*=\s*(\[[\s\S]*?\]);/);
+
+  if (!match) {
+    console.log('⚠️  Could not parse faqspecialSeries from faqspecial-data.js, skipping...');
+    return;
+  }
+
+  let faqSeries;
+  try {
+    faqSeries = eval(match[1]);
+  } catch (error) {
+    console.error('❌ Error parsing faqspecial data:', error.message);
+    return;
+  }
+
+  console.log(`   Found ${faqSeries.length} faq series to import`);
+
+  let imported = 0;
+
+  for (const faq of faqSeries) {
+    try {
+      const slug = faq.id || generateSlug(faq.title);
+
+      // Check if already exists
+      const existing = await sql`SELECT id FROM faq_series WHERE slug = ${slug}`;
+      if (existing.rows.length > 0) {
+        console.log(`   ⏭️  Skipping '${faq.title}' (already exists)`);
+        continue;
+      }
+
+      // Insert faq series
+      await sql`
+        INSERT INTO faq_series (
+          slug, title, description, content,
+          featured_image, is_published, published_at
+        ) VALUES (
+          ${slug},
+          ${faq.title || ''},
+          ${faq.description || ''},
+          ${faq.longText || ''},
+          ${faq.image || null},
+          true,
+          NOW()
+        )
+      `;
+
+      console.log(`   ✅ Imported: ${faq.title}`);
+      imported++;
+
+    } catch (error) {
+      console.error(`   ❌ Error importing faq series '${faq.title}':`, error.message);
+    }
+  }
+
+  console.log(`\n   📊 Results: ${imported} imported\n`);
+}
+
+/**
  * Main import function
  */
 async function main() {
@@ -431,6 +664,18 @@ async function main() {
 
     if (entity === 'hotels' || entity === 'all') {
       await importHotels();
+    }
+
+    if (entity === 'pets' || entity === 'all') {
+      await importPets();
+    }
+
+    if (entity === 'articles' || entity === 'all') {
+      await importArticles();
+    }
+
+    if (entity === 'faqseries' || entity === 'faqspecial' || entity === 'all') {
+      await importFaqSeries();
     }
 
     if (entity === 'faqs' || entity === 'all') {
@@ -455,4 +700,4 @@ if (isMainModule()) {
   main();
 }
 
-export { importPlaces, importHotels, importFAQs };
+export { importPlaces, importHotels, importPets, importArticles, importFaqSeries, importFAQs };
