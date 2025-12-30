@@ -214,6 +214,244 @@
     .liste-small p {
       margin: 0.5rem 0;
     }
+
+    /* Category Grid - Checkbox Style */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .category-option {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .category-checkbox {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .category-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      user-select: none;
+      text-align: center;
+      min-height: 48px;
+    }
+
+    .category-label:hover {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(76, 175, 80, 0.4);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .category-checkbox:checked + .category-label {
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(76, 175, 80, 0.25));
+      border-color: rgba(76, 175, 80, 0.6);
+      color: #2e7d32;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+    }
+
+    .category-checkbox:checked + .category-label::after {
+      content: '✓';
+      position: absolute;
+      top: 4px;
+      right: 6px;
+      width: 18px;
+      height: 18px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 50%;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* Selection Grid - Radio Box Style (Pet Form) */
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .selection-box {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .selection-box input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .selection-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.12);
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      min-height: 120px;
+      text-align: center;
+    }
+
+    .selection-box:hover .selection-content {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(76, 175, 80, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .selection-box input[type="radio"]:checked + .selection-content {
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.12), rgba(76, 175, 80, 0.22));
+      border-color: #4CAF50;
+      border-width: 3px;
+      box-shadow: 0 4px 16px rgba(76, 175, 80, 0.25);
+    }
+
+    .selection-icon {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .selection-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .selection-desc {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.3;
+    }
+
+    .selection-box input[type="radio"]:checked + .selection-content .selection-text {
+      color: #2e7d32;
+    }
+
+    .selection-box input[type="radio"]:checked + .selection-content::before {
+      content: '✓';
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 50%;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Photo Upload Beautification */
+    .file-upload-wrapper {
+      margin: 10px 0;
+    }
+
+    .file-upload-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .file-upload-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+    }
+
+    .file-upload-button:active {
+      transform: translateY(0);
+    }
+
+    .file-upload-icon {
+      font-size: 1.3rem;
+    }
+
+    .file-upload-input {
+      display: none;
+    }
+
+    .file-upload-info {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .file-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: rgba(76, 175, 80, 0.1);
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      border-radius: 8px;
+      color: #2e7d32;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .category-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 8px;
+      }
+
+      .category-label {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+      }
+
+      .selection-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .selection-content {
+        min-height: 100px;
+        padding: 16px;
+      }
+
+      .selection-icon {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -408,6 +646,61 @@
                 <span>Mekan Bilgileri</span>
               </div>
 
+              <!-- Kategoriler -->
+              <div class="form-group">
+                <label class="form-label">Kategoriler</label>
+                <div class="category-grid">
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="plaj" class="category-checkbox">
+                    <span class="category-label">🏖️ Plaj</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="aktivite" class="category-checkbox">
+                    <span class="category-label">🏄 Aktivite</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="restoran" class="category-checkbox">
+                    <span class="category-label">🍽️ Restoran</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="otel" class="category-checkbox">
+                    <span class="category-label">🏨 Otel</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="tarih" class="category-checkbox">
+                    <span class="category-label">🏛️ Tarih</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="doga" class="category-checkbox">
+                    <span class="category-label">🌿 Doğa</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="carsi" class="category-checkbox">
+                    <span class="category-label">🛍️ Çarşı</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="kahvalti" class="category-checkbox">
+                    <span class="category-label">🥐 Kahvaltı</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="meyhane" class="category-checkbox">
+                    <span class="category-label">🍷 Meyhane</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="bar" class="category-checkbox">
+                    <span class="category-label">🍸 Bar</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="cafe" class="category-checkbox">
+                    <span class="category-label">☕ Cafe</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="dalis" class="category-checkbox">
+                    <span class="category-label">🤿 Dalış</span>
+                  </label>
+                </div>
+              </div>
+
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label">Konum</label>
@@ -437,14 +730,16 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="form-label">Google Maps Link</label>
-                <input type="url" class="form-input" name="googleMapsQuery" placeholder="https://maps.google.com/...">
-              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Google Maps Link</label>
+                  <input type="url" class="form-input" name="googleMapsQuery" placeholder="https://maps.google.com/...">
+                </div>
 
-              <div class="form-group">
-                <label class="form-label">Rezervasyon Linki</label>
-                <input type="url" class="form-input" name="booking" placeholder="https://...">
+                <div class="form-group">
+                  <label class="form-label">Rezervasyon Linki</label>
+                  <input type="url" class="form-input" name="booking" placeholder="https://...">
+                </div>
               </div>
             </div>
           </div>
@@ -454,26 +749,49 @@
             <div class="form-box">
               <div class="form-box__head">
                 <span class="form-ico">🐾</span>
-                <span>Hayvan Bilgileri</span>
+                <span>Patili Bilgileri</span>
               </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">Hayvan Tipi</label>
-                  <select class="form-input" name="petType">
-                    <option value="">Seçiniz</option>
-                    <option value="kedi">🐱 Kedi</option>
-                    <option value="kopek">🐶 Köpek</option>
-                  </select>
+              <!-- Seçim Kutuları -->
+              <div class="form-group">
+                <label class="form-label">İlan Tipi</label>
+                <div class="selection-grid">
+                  <label class="selection-box">
+                    <input type="radio" name="listingType" value="kayip">
+                    <span class="selection-content">
+                      <span class="selection-icon">🔍</span>
+                      <span class="selection-text">Kayıp</span>
+                      <span class="selection-desc">Kaybolmuş hayvan bildirimi</span>
+                    </span>
+                  </label>
+                  <label class="selection-box">
+                    <input type="radio" name="listingType" value="bulundu">
+                    <span class="selection-content">
+                      <span class="selection-icon">🎉</span>
+                      <span class="selection-text">Sahiplendirilecek</span>
+                      <span class="selection-desc">Bulundu veya sahiplendirilecek</span>
+                    </span>
+                  </label>
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <label class="form-label">İlan Tipi</label>
-                  <select class="form-input" name="listingType">
-                    <option value="">Seçiniz</option>
-                    <option value="kayip">Kayıp</option>
-                    <option value="bulundu">Bulundu</option>
-                  </select>
+              <div class="form-group">
+                <label class="form-label">Tür</label>
+                <div class="selection-grid">
+                  <label class="selection-box">
+                    <input type="radio" name="petType" value="kopek">
+                    <span class="selection-content">
+                      <span class="selection-icon">🐶</span>
+                      <span class="selection-text">Köpek</span>
+                    </span>
+                  </label>
+                  <label class="selection-box">
+                    <input type="radio" name="petType" value="kedi">
+                    <span class="selection-content">
+                      <span class="selection-icon">🐱</span>
+                      <span class="selection-text">Kedi</span>
+                    </span>
+                  </label>
                 </div>
               </div>
 
@@ -490,8 +808,8 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label">Kısa Not</label>
-                <textarea class="form-textarea" name="shortNote" placeholder="Kısa bilgi..."></textarea>
+                <label class="form-label">Kısa Bilgi (max 500 karakter)</label>
+                <textarea class="form-textarea" name="shortNote" placeholder="Nerede görüldü, karakteri nasıl, özel işaretler..." maxlength="500"></textarea>
               </div>
             </div>
           </div>
@@ -576,23 +894,93 @@
                 <span>Sanatçı Bilgileri</span>
               </div>
 
-              <div class="form-group">
-                <label class="form-label">YouTube Kanalı</label>
-                <input type="url" class="form-input" name="youtube" placeholder="https://youtube.com/...">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">YouTube Kanalı</label>
+                  <input type="url" class="form-input" name="youtube" placeholder="https://youtube.com/...">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Müzik Linki</label>
+                  <input type="url" class="form-input" name="musicLink" placeholder="https://...">
+                </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label">Müzik Linki (Spotify, SoundCloud vb.)</label>
-                <input type="url" class="form-input" name="musicLink" placeholder="https://...">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Kategori</label>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
-                  <label><input type="checkbox" name="categories" value="musician"> Müzisyen</label>
-                  <label><input type="checkbox" name="categories" value="dj"> DJ</label>
-                  <label><input type="checkbox" name="categories" value="singer"> Şarkıcı</label>
-                  <label><input type="checkbox" name="categories" value="band"> Grup</label>
+                <label class="form-label">Kategoriler</label>
+                <div class="category-grid">
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Müzisyen" class="category-checkbox">
+                    <span class="category-label">🎤 Müzisyen</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Grup" class="category-checkbox">
+                    <span class="category-label">👥 Grup</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="DJ" class="category-checkbox">
+                    <span class="category-label">🎧 DJ</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Tiyatro" class="category-checkbox">
+                    <span class="category-label">🎭 Tiyatro</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Stand-Up" class="category-checkbox">
+                    <span class="category-label">🎙️ Stand-Up</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Dans" class="category-checkbox">
+                    <span class="category-label">💃 Dans</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Koro" class="category-checkbox">
+                    <span class="category-label">🎶 Koro</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Dövme" class="category-checkbox">
+                    <span class="category-label">🖋️ Dövme</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Karikatür" class="category-checkbox">
+                    <span class="category-label">✏️ Karikatür</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Resim" class="category-checkbox">
+                    <span class="category-label">🎨 Resim</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Sinema" class="category-checkbox">
+                    <span class="category-label">🎬 Sinema</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Seramik" class="category-checkbox">
+                    <span class="category-label">🏺 Seramik</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Takı Tasarımı" class="category-checkbox">
+                    <span class="category-label">💍 Takı Tasarımı</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Sosyal Medya" class="category-checkbox">
+                    <span class="category-label">📱 Sosyal Medya</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Fotoğraf" class="category-checkbox">
+                    <span class="category-label">📷 Fotoğraf</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Produksiyon" class="category-checkbox">
+                    <span class="category-label">🎥 Produksiyon</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Dijital" class="category-checkbox">
+                    <span class="category-label">💻 Dijital</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Diğer" class="category-checkbox">
+                    <span class="category-label">✨ Diğer</span>
+                  </label>
                 </div>
               </div>
             </div>
@@ -610,7 +998,17 @@
 
             <div class="form-group">
               <label class="form-label">Fotoğraf Yükle (Maks. 5 adet)</label>
-              <input type="file" class="form-input" name="photos" accept="image/*" multiple>
+              <div class="file-upload-wrapper">
+                <input type="file" id="photoUpload" class="file-upload-input" name="photos" accept="image/*" multiple>
+                <label for="photoUpload" class="file-upload-button">
+                  <span class="file-upload-icon">📸</span>
+                  <span>Fotoğraf Seç</span>
+                </label>
+                <div id="fileCount" class="file-count" style="display: none;">
+                  <span>✓</span>
+                  <span id="fileCountText">0 fotoğraf seçildi</span>
+                </div>
+              </div>
               <p class="form-hint">JPG, PNG veya WEBP formatında, her biri max 2MB</p>
             </div>
 

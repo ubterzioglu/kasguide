@@ -25,6 +25,22 @@ const typeFieldsMap = {
 };
 
 /**
+ * Handle photo upload file count
+ */
+function handlePhotoUpload(e) {
+  const files = e.target.files;
+  const fileCountDiv = document.getElementById('fileCount');
+  const fileCountText = document.getElementById('fileCountText');
+
+  if (files && files.length > 0) {
+    fileCountText.textContent = `${files.length} fotoğraf seçildi`;
+    fileCountDiv.style.display = 'inline-flex';
+  } else {
+    fileCountDiv.style.display = 'none';
+  }
+}
+
+/**
  * Initialize form
  */
 function init() {
@@ -32,6 +48,12 @@ function init() {
   typeCards.forEach(card => {
     card.addEventListener('click', () => selectType(card.dataset.type));
   });
+
+  // Photo upload listener
+  const photoUpload = document.getElementById('photoUpload');
+  if (photoUpload) {
+    photoUpload.addEventListener('change', handlePhotoUpload);
+  }
 
   // Form submission
   itemForm.addEventListener('submit', handleSubmit);
