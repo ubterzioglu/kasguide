@@ -73,8 +73,8 @@ export default async function handler(req, res) {
         }
         break;
       case 'hotel':
-        if (!title || !first(fields.hotelType) || !location || !phone || !email) {
-          validationError = "Zorunlu alanlar: Otel Adı, Tip, Konum, Telefon, Email";
+        if (!title || !first(fields.hotelType) || !location || !phone) {
+          validationError = "Zorunlu alanlar: Otel Adı, Tip, Konum, Telefon";
         }
         break;
       case 'artist':
