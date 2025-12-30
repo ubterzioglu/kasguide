@@ -213,9 +213,10 @@ async function resetDatabase() {
     console.error('\n❌ ERROR:', error.message);
     console.error(error);
     process.exit(1);
-  } finally {
-    await sql.end();
   }
+
+  // Connection will be closed automatically when process exits
+  process.exit(0);
 }
 
 // Run the reset
