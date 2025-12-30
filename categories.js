@@ -211,7 +211,7 @@ const categories = [
       <circle cx="20" cy="16" r="2"/>
       <path d="M9 10a5 5 0 0 1 5 5v6h1a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2h-1"/>
     </svg>`,
-    color: 'category-rose',
+    color: 'category-pink',
     action: { type: 'page', href: 'owner/owner.html?type=pet' }
   }
 ];
