@@ -192,16 +192,16 @@ async function resetDatabase() {
       FROM information_schema.tables
       WHERE table_schema = 'public'
     `;
-    console.log(`📊 Tables created: ${tables[0].count}`);
+    console.log(`📊 Tables created: ${tables.rows[0].count}`);
 
     const categories = await sql`SELECT COUNT(*) as count FROM categories`;
-    console.log(`📊 Categories loaded: ${categories[0].count}`);
+    console.log(`📊 Categories loaded: ${categories.rows[0].count}`);
 
     const badges = await sql`SELECT COUNT(*) as count FROM badges`;
-    console.log(`📊 Badges loaded: ${badges[0].count}`);
+    console.log(`📊 Badges loaded: ${badges.rows[0].count}`);
 
     const items = await sql`SELECT COUNT(*) as count FROM items`;
-    console.log(`📊 Items in database: ${items[0].count}`);
+    console.log(`📊 Items in database: ${items.rows[0].count}`);
 
     console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log('🎉 DATABASE RESET COMPLETE!');
