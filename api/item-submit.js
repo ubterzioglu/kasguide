@@ -28,10 +28,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    const form = formidable({
+   const form = formidable({
   multiples: true,
-  maxFileSize: 2 * 1024 * 1024, // 2MB per file
-  allowEmptyFiles: true,  // Allow submissions without photos
+  maxFileSize: 2 * 1024 * 1024,
+  allowEmptyFiles: true,
+  minFileSize: 0,  // 0 bytes kabul et (boş file input için)
 });
 
     const [fields, files] = await form.parse(req);
@@ -90,43 +91,33 @@ export default async function handler(req, res) {
       });
     }
 
-    // Handle photos - TEMPORARILY DISABLED
+// Handle photos
 let photoUrls = [];
+const photoFiles = files.photos ? asArray(files.photos).filter(f => f && f.size > 0) : [];
 
-// TODO: Enable photo upload after configuring Vercel Blob
-/*
-let photos = asArray(files.photos).filter(f => f && f.size > 0);
-
-if (photos.length > 5) {
-  return res.status(400).json({
-    success: false,
-    message: "En fazla 5 fotoğraf yüklenebilir",
-  });
-}
-
-const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
-for (const file of photos) {
-  if (!allowedTypes.includes(file.mimetype)) {
+// Only process if user actually uploaded photos
+if (photoFiles.length > 0) {
+  if (photoFiles.length > 5) {
     return res.status(400).json({
       success: false,
-      message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
+      message: "En fazla 5 fotoğraf yüklenebilir",
     });
   }
-}
 
-if (photos.length > 0) {
-  try {
-    photoUrls = await upload(photos, itemType + 's');
-    console.log('✅ Photos uploaded:', photoUrls.length);
-  } catch (uploadError) {
-    console.error('Photo upload error:', uploadError);
-    return res.status(500).json({
-      success: false,
-      message: "Fotoğraf yükleme hatası",
-    });
+  const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+  for (const file of photoFiles) {
+    if (!allowedTypes.includes(file.mimetype)) {
+      return res.status(400).json({
+        success: false,
+        message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
+      });
+    }
   }
+
+  // Skip upload for now - will enable after Vercel Blob setup
+  // photoUrls = await upload(photoFiles, itemType + 's');
+  console.log('📷 Photo upload skipped (not configured yet)');
 }
-*/
 
     // Build item data based on type
     let itemData = {
