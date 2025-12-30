@@ -80,10 +80,10 @@ function normalizeItem(item, type) {
 
 async function loadPlacesFromAPI() {
   try {
-    const response = await fetch('/api/places');
+    const response = await fetch('/api/items?type=place');
     if (!response.ok) throw new Error(`API error: ${response.status}`);
     const data = await response.json();
-    return (data.places || []).map(convertAPIPlace);
+    return (data.items || []).map(convertAPIPlace);
   } catch (error) {
     console.error('Error loading places:', error);
     return [];
@@ -116,10 +116,10 @@ async function loadFaqSeriesFromAPI() {
 
 async function loadHotelsFromAPI() {
   try {
-    const response = await fetch('/api/hotels');
+    const response = await fetch('/api/items?type=hotel');
     if (!response.ok) throw new Error(`API error: ${response.status}`);
     const data = await response.json();
-    return (data.hotels || []).map(convertAPIHotel);
+    return (data.items || []).map(convertAPIHotel);
   } catch (error) {
     console.error('Error loading hotels:', error);
     return [];
@@ -128,29 +128,34 @@ async function loadHotelsFromAPI() {
 
 async function loadPetsFromAPI() {
   try {
-    const response = await fetch('/api/pets');
+    const response = await fetch('/api/items?type=pet');
     if (!response.ok) throw new Error(`API error: ${response.status}`);
     const data = await response.json();
-    return (data.pets || []).map(convertAPIPet);
+    return (data.items || []).map(convertAPIPet);
   } catch (error) {
     console.error('Error loading pets:', error);
     return [];
   }
 }
 
-// Convert API data to match static data format
+// Convert unified items API data to match static data format
 function convertAPIPlace(apiData) {
+  const attrs = apiData.attributes || {};
+  const photos = apiData.photos || [];
+
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
     longText: apiData.long_text,
-    category: apiData.categories || [],
-    images: apiData.images || [],
-    rating: apiData.rating,
-    price: apiData.price,
-    badge: apiData.badge_emoji ? { emoji: apiData.badge_emoji, title: apiData.badge_title } : null,
-    tags: apiData.tags || []
+    category: attrs.categories || [],
+    images: photos.map(p => p.url),
+    rating: attrs.rating || '',
+    price: attrs.price || '',
+    duration: attrs.duration || '',
+    distance: attrs.distance || '',
+    badge: apiData.badge ? { emoji: apiData.badge.emoji, title: apiData.badge.title } : null,
+    tags: attrs.tags || []
   };
 }
 
@@ -177,24 +182,30 @@ function convertAPIFaqSeries(apiData) {
 }
 
 function convertAPIHotel(apiData) {
+  const attrs = apiData.attributes || {};
+  const photos = apiData.photos || [];
+
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
-    category: apiData.categories || [],
-    images: apiData.images || [],
-    rating: apiData.rating,
-    facilities: apiData.facilities || []
+    category: attrs.categories || [],
+    images: photos.map(p => p.url),
+    rating: attrs.rating || '',
+    facilities: attrs.facilities || []
   };
 }
 
 function convertAPIPet(apiData) {
+  const attrs = apiData.attributes || {};
+  const photos = apiData.photos || [];
+
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
-    category: apiData.categories || [],
-    images: apiData.images || []
+    category: attrs.categories || [],
+    images: photos.map(p => p.url)
   };
 }
 
