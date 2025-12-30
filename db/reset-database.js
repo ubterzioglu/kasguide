@@ -34,6 +34,57 @@ function askQuestion(question) {
   });
 }
 
+// Smart SQL parser that handles function definitions
+function parseSqlStatements(sqlContent) {
+  const statements = [];
+  let current = '';
+  let inDollarQuote = false;
+  let dollarQuoteTag = null;
+
+  const lines = sqlContent.split('\n');
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    // Skip empty lines and comments
+    if (!trimmed || trimmed.startsWith('--')) {
+      continue;
+    }
+
+    // Check for dollar quote markers ($$, $BODY$, etc.)
+    const dollarMatches = line.match(/\$([A-Za-z_]*)\$/g);
+    if (dollarMatches) {
+      for (const match of dollarMatches) {
+        if (!inDollarQuote) {
+          inDollarQuote = true;
+          dollarQuoteTag = match;
+        } else if (match === dollarQuoteTag) {
+          inDollarQuote = false;
+          dollarQuoteTag = null;
+        }
+      }
+    }
+
+    current += line + '\n';
+
+    // If we hit a semicolon and we're not inside a dollar quote, it's a statement
+    if (line.includes(';') && !inDollarQuote) {
+      const stmt = current.trim();
+      if (stmt && !stmt.startsWith('--')) {
+        statements.push(stmt);
+      }
+      current = '';
+    }
+  }
+
+  // Add any remaining statement
+  if (current.trim()) {
+    statements.push(current.trim());
+  }
+
+  return statements;
+}
+
 // Execute SQL file
 async function executeSqlFile(filePath, description) {
   console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
@@ -41,27 +92,18 @@ async function executeSqlFile(filePath, description) {
   console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
 
   const sqlContent = await fs.readFile(filePath, 'utf-8');
-
-  // Split by semicolons but be smart about it
-  const statements = sqlContent
-    .split(';')
-    .map(s => s.trim())
-    .filter(s => s.length > 0 && !s.startsWith('--'));
+  const statements = parseSqlStatements(sqlContent);
 
   for (const statement of statements) {
-    const trimmed = statement.trim();
-    if (trimmed && !trimmed.startsWith('--')) {
-      try {
-        // Use template literal workaround for dynamic SQL
-        await sql.query(trimmed);
-      } catch (error) {
-        // Ignore "does not exist" errors during DROP
-        if (!error.message.includes('does not exist') &&
-            !error.message.includes('already exists')) {
-          console.error(`❌ Error executing statement:`, error.message);
-          console.error(`Statement: ${trimmed.substring(0, 100)}...`);
-          throw error;
-        }
+    try {
+      await sql.query(statement);
+    } catch (error) {
+      // Ignore "does not exist" and "already exists" errors
+      if (!error.message.includes('does not exist') &&
+          !error.message.includes('already exists')) {
+        console.error(`❌ Error executing statement:`, error.message);
+        console.error(`Statement: ${statement.substring(0, 150)}...`);
+        throw error;
       }
     }
   }
