@@ -9,7 +9,7 @@ const categories = [
     color: 'category-orange'
   },
   {
-    id: 'beaches',
+    id: 'plaj',
     name: 'Plaj',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 12h.01"/>
@@ -24,7 +24,7 @@ const categories = [
     color: 'category-cyan'
   },
   {
-    id: 'activities',
+    id: 'aktivite',
     name: 'Aktivite',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
@@ -32,7 +32,7 @@ const categories = [
     color: 'category-green'
   },
 {
-  id: 'food',
+  id: 'restoran',
   name: 'Restoran',
   icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <!-- Çatal -->
@@ -47,7 +47,7 @@ const categories = [
 },
 
   {
-    id: 'hotels',
+    id: 'otel',
     name: 'Otel',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 4v16"/>
@@ -58,7 +58,7 @@ const categories = [
     color: 'category-purple'
   },
   {
-    id: 'history',
+    id: 'tarih',
     name: 'Tarih',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M12 2a10 10 0 1 0 10 10H12V2z"/>
@@ -67,7 +67,7 @@ const categories = [
     color: 'category-indigo'
   },
   {
-    id: 'nature',
+    id: 'doga',
     name: 'Doğa',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M12 2a10 10 0 0 0-8 16"/>
@@ -78,7 +78,7 @@ const categories = [
     color: 'category-blue'
   },
   {
-    id: 'shopping',
+    id: 'carsi',
     name: 'Çarşı',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <circle cx="9" cy="21" r="1"/>
@@ -90,7 +90,7 @@ const categories = [
 
   // sayfa action'ı olanalar aynı kalır (Kahvaltı)
     {
-    id: 'breakfast',
+    id: 'kahvalti',
     name: 'Kahvaltı',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
@@ -147,7 +147,7 @@ const categories = [
     color: 'category-amber'
   },
   {
-    id: 'diving',
+    id: 'dalis',
     name: 'Dalış',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M2 12c3-3 7-3 10 0s7 3 10 0"/>
