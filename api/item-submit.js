@@ -233,9 +233,16 @@ export default async function handler(req, res) {
 
     } catch (dbError) {
       console.error('❌ Database error:', dbError.message);
+      console.error('❌ Full error:', dbError);
       return res.status(500).json({
         success: false,
         message: "Veritabanı hatası. Lütfen tekrar deneyin.",
+        debug: {
+          error: dbError.message,
+          code: dbError.code,
+          detail: dbError.detail,
+          stack: dbError.stack?.split('\n')[0]
+        }
       });
     }
 
@@ -244,6 +251,11 @@ export default async function handler(req, res) {
     return res.status(500).json({
       success: false,
       message: err?.message || "Sunucu hatası",
+      debug: {
+        error: err?.message,
+        type: err?.constructor?.name,
+        stack: err?.stack?.split('\n')[0]
+      }
     });
   }
 }
