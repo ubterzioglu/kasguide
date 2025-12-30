@@ -7,7 +7,7 @@
 import formidable from "formidable";
 import nodemailer from "nodemailer";
 import { createItem } from '../lib/db-items.js';
-// import { upload } from '../lib/upload.js'; // TODO: Re-enable after Vercel Blob setup
+import { upload } from '../lib/upload.js';
 
 export const config = {
   api: { bodyParser: false },
@@ -91,10 +91,42 @@ export default async function handler(req, res) {
       });
     }
 
-    // TODO: Photo upload will be enabled after Vercel Blob configuration
-    // For now, skip all photo handling to get basic submission working
-    const photoUrls = [];
-    console.log('📷 Photo upload temporarily disabled (not configured yet)');
+    // Handle photo uploads
+    let photoUrls = [];
+    const photoFiles = files.photos ? asArray(files.photos).filter(f => f && f.size > 0) : [];
+
+    if (photoFiles.length > 0) {
+      // Validate photo count
+      if (photoFiles.length > 5) {
+        return res.status(400).json({
+          success: false,
+          message: "En fazla 5 fotoğraf yüklenebilir",
+        });
+      }
+
+      // Validate file types
+      const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+      for (const file of photoFiles) {
+        if (!allowedTypes.includes(file.mimetype)) {
+          return res.status(400).json({
+            success: false,
+            message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
+          });
+        }
+      }
+
+      // Upload photos (uses Vercel Blob if configured, otherwise saves locally)
+      try {
+        photoUrls = await upload(photoFiles, itemType + 's');
+        console.log(`✅ ${photoFiles.length} photo(s) uploaded successfully`);
+      } catch (uploadError) {
+        console.error('Photo upload error:', uploadError);
+        return res.status(500).json({
+          success: false,
+          message: "Fotoğraf yükleme hatası. Lütfen tekrar deneyin.",
+        });
+      }
+    }
 
     // Build item data based on type
     let itemData = {
@@ -172,10 +204,8 @@ export default async function handler(req, res) {
 
     // Save to database
     try {
-      console.log('📝 Creating item:', { itemType, title: itemData.title });
       const result = await createItem(itemType, itemData);
-
-      console.log(`✅ ${itemType} created in database:`, result.item_number);
+      console.log(`✅ ${itemType} submitted:`, result.item_number);
 
       // Send notification email (optional - don't fail if this errors)
       try {
@@ -193,13 +223,10 @@ export default async function handler(req, res) {
       });
 
     } catch (dbError) {
-      console.error('❌ Database error:', dbError);
-      console.error('Error stack:', dbError.stack);
+      console.error('❌ Database error:', dbError.message);
       return res.status(500).json({
         success: false,
-        message: "Veritabanı hatası",
-        error: dbError.message,
-        details: process.env.NODE_ENV === 'development' ? dbError.stack : undefined
+        message: "Veritabanı hatası. Lütfen tekrar deneyin.",
       });
     }
 
