@@ -47,15 +47,16 @@ const categories = [
 },
 
   {
-    id: 'otel',
-    name: 'Otel',
+    id: 'deniz',
+    name: 'Deniz',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M2 4v16"/>
-      <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
-      <path d="M2 17h20"/>
-      <path d="M6 8v9"/>
+      <path d="M2 12c.6-1.2 1.5-2.4 2.5-3.5"/>
+      <path d="M22 12c-.6-1.2-1.5-2.4-2.5-3.5"/>
+      <path d="M2 16c.6 1.2 1.5 2.4 2.5 3.5"/>
+      <path d="M22 16c-.6 1.2-1.5 2.4-2.5 3.5"/>
+      <path d="M6.5 8.5c2-2 4.5-3 7.5-3s5.5 1 7.5 3"/>
     </svg>`,
-    color: 'category-purple'
+    color: 'category-cyan'
   },
   {
     id: 'tarih',
