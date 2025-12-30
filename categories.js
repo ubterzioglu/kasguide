@@ -88,7 +88,7 @@ const categories = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
     </svg>`,
-    color: 'category-emerald'
+    color: 'category-amber'
   },
   {
     id: 'sanatci',
@@ -156,7 +156,37 @@ const categories = [
       <path d="M2 8c6-4.5 14-4.5 20 0"/>
       <path d="M2 16c6 4.5 14 4.5 20 0"/>
     </svg>`,
-    color: 'category-sky'
+    color: 'category-cyan'
+  },
+  {
+    id: 'roportaj',
+    name: 'Röportaj',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+      <line x1="12" y1="19" x2="12" y2="22"/>
+      <line x1="8" y1="22" x2="16" y2="22"/>
+    </svg>`,
+    color: 'category-purple'
+  },
+  {
+    id: 'fotograf',
+    name: 'Fotoğraf',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+      <circle cx="12" cy="13" r="4"/>
+    </svg>`,
+    color: 'category-indigo'
+  },
+  {
+    id: 'acildurum',
+    name: 'Acil Durum',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+      <path d="M2 17l10 5 10-5"/>
+      <path d="M2 12l10 5 10-5"/>
+    </svg>`,
+    color: 'category-red'
   },
 
   // Special item types (hotels, pets) - separate forms

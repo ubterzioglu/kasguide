@@ -12,12 +12,15 @@ INSERT INTO categories (slug, name, icon_code, color_code) VALUES
 ('tarih', 'Tarih', '🏛️', '#5D4E37'),
 ('doga', 'Doğa', '🌿', '#2ECC71'),
 ('dalis', 'Dalış', '🤿', '#00BCD4'),
-('aktivite', 'Aktivite', '🏄', '#10B981'),
+('aktivite', 'Aktivite', '🏄', '#F59E0B'),
 ('sanatci', 'Sanatçı', '🎨', '#EC4899'),
 -- Son Sıra - Diğer
 ('carsi', 'Çarşı', '🛍️', '#6B7280'),
 ('articles', 'Yazılar', '📝', '#64748B'),
 ('faqspecial', 'Özel Soru Serileri', '❓', '#8B5CF6'),
 ('places', 'Gezi', '🗺️', '#3B82F6'),
-('plaj', 'Plaj', '🏖️', '#0EA5E9')
+('plaj', 'Plaj', '🏖️', '#06B6D4'),
+('roportaj', 'Röportaj', '🎙️', '#8B5CF6'),
+('fotograf', 'Fotoğraf', '📷', '#6366F1'),
+('acildurum', 'Acil Durum', '🚨', '#EF4444')
 ON CONFLICT (slug) DO NOTHING;
