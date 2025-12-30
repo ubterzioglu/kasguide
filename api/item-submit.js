@@ -172,6 +172,7 @@ export default async function handler(req, res) {
 
     // Save to database
     try {
+      console.log('📝 Creating item:', { itemType, title: itemData.title });
       const result = await createItem(itemType, itemData);
 
       console.log(`✅ ${itemType} created in database:`, result.item_number);
@@ -192,11 +193,13 @@ export default async function handler(req, res) {
       });
 
     } catch (dbError) {
-      console.error('Database error:', dbError);
+      console.error('❌ Database error:', dbError);
+      console.error('Error stack:', dbError.stack);
       return res.status(500).json({
         success: false,
         message: "Veritabanı hatası",
         error: dbError.message,
+        details: process.env.NODE_ENV === 'development' ? dbError.stack : undefined
       });
     }
 
