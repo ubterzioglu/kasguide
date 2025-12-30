@@ -58,36 +58,11 @@ export default async function handler(req, res) {
     const location = first(fields.location);
     const extraNotes = first(fields.extraNotes);
 
-    // Validate required fields based on type
-    let validationError = null;
-
-    switch (itemType) {
-      case 'place':
-        if (!title || !longText || !phone) {
-          validationError = "Zorunlu alanlar: Başlık, Detaylı Açıklama, Telefon";
-        }
-        break;
-      case 'pet':
-        if (!first(fields.petType) || !first(fields.listingType) || !phone) {
-          validationError = "Zorunlu alanlar: Hayvan Tipi, İlan Tipi, Telefon";
-        }
-        break;
-      case 'hotel':
-        if (!title || !first(fields.hotelType) || !location || !phone) {
-          validationError = "Zorunlu alanlar: Otel Adı, Tip, Konum, Telefon";
-        }
-        break;
-      case 'artist':
-        if (!title || !longText) {
-          validationError = "Zorunlu alanlar: Sanatçı Adı, Bio";
-        }
-        break;
-    }
-
-    if (validationError) {
+    // Validate only title (all other fields optional)
+    if (!title) {
       return res.status(400).json({
         success: false,
-        message: validationError,
+        message: "Başlık zorunludur",
       });
     }
 
