@@ -6,6 +6,7 @@
  * GET /api/items?type=pet                   - Get all pets
  * GET /api/items?type=hotel                 - Get all hotels
  * GET /api/items?type=artist                - Get all artists
+ * GET /api/items?id=123                     - Get item by database ID
  * GET /api/items?slug=frida-pub             - Get item by slug
  * GET /api/items?number=PLACE-001           - Get item by number
  * GET /api/items?type=place&category=bar    - Get places by category
@@ -17,6 +18,7 @@ import {
   getAllItems,
   getItemBySlug,
   getItemByNumber,
+  getItemById,
   searchItems
 } from '../lib/db-items.js';
 
@@ -31,6 +33,7 @@ export default async function handler(req, res) {
       type,
       slug,
       number,
+      id,
       category,
       search,
       limit,
@@ -52,6 +55,17 @@ export default async function handler(req, res) {
     // Get single item by number
     if (number) {
       const item = await getItemByNumber(number);
+
+      if (!item) {
+        return res.status(404).json({ error: 'Item not found' });
+      }
+
+      return res.status(200).json(item);
+    }
+
+    // Get single item by id
+    if (id) {
+      const item = await getItemById(parseInt(id));
 
       if (!item) {
         return res.status(404).json({ error: 'Item not found' });

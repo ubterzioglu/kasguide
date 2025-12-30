@@ -16,9 +16,51 @@
     return new URLSearchParams(window.location.search).get("id");
   }
 
-  function getPlaceById(id) {
-    const list = (typeof allPlaces !== "undefined" && Array.isArray(allPlaces)) ? allPlaces : [];
-    return list.find((x) => String(x.id) === String(id));
+  async function getPlaceById(id) {
+    if (!id) return null;
+
+    try {
+      const response = await fetch(`/api/items?id=${encodeURIComponent(id)}`);
+      if (!response.ok) {
+        console.error('Failed to fetch place:', response.status);
+        return null;
+      }
+      const data = await response.json();
+
+      // Convert unified items data to places format
+      if (data && data.item_type === 'place') {
+        const attributes = data.attributes || {};
+        const convertedPlace = {
+          id: data.id,
+          title: data.title,
+          description: data.description,
+          longText: data.long_text,
+          category: attributes.categories || [],
+          images: data.photos || [],
+          rating: attributes.rating || '',
+          price: attributes.price || '',
+          duration: attributes.duration || '',
+          distance: attributes.distance || '',
+          location: attributes.location || '',
+          googleMapsQuery: attributes.google_maps_query || '',
+          booking: attributes.booking_url || '',
+          website: data.website || '',
+          instagram: data.instagram || '',
+          phone: data.phone || '',
+          badgeId: attributes.badge_id || 'tourist',
+          facilities: attributes.facilities || [],
+          features: attributes.features || [],
+          tags: attributes.tags || [],
+          trust: attributes.trust || {}
+        };
+        return convertedPlace;
+      }
+
+      return null;
+    } catch (error) {
+      console.error('Error fetching place:', error);
+      return null;
+    }
   }
 
   function getCategoryNames(place) {
@@ -432,6 +474,34 @@ function render(place) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  const id = getId();
-  render(getPlaceById(id));
+  // Initialize page
+  (async function init() {
+    const id = getId();
+    if (!id) {
+      const root = document.getElementById("detailRoot");
+      if (root) {
+        root.innerHTML = `
+          <div style="text-align: center; padding: 3rem;">
+            <h2>❌ ID Bulunamadı</h2>
+            <p>Geçerli bir mekan ID'si belirtilmedi.</p>
+            <a href="../index.html" style="color: #4CAF50;">← Ana Sayfaya Dön</a>
+          </div>
+        `;
+      }
+      return;
+    }
+
+    // Show loading
+    const root = document.getElementById("detailRoot");
+    if (root) {
+      root.innerHTML = `
+        <div style="text-align: center; padding: 3rem;">
+          <h2>📡 Yükleniyor...</h2>
+        </div>
+      `;
+    }
+
+    const place = await getPlaceById(id);
+    render(place);
+  })();
 })();
