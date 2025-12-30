@@ -468,7 +468,7 @@
   <main class="container">
     <section class="page-head">
       <h1>Kaş Guide'a Katkıda Bulunun!</h1>
-      <p class="muted">Mekan, otel, sanatçı bilgisi ekleyin veya kayıp hayvan ilanı verin</p>
+      <p class="muted">Mekan,otel,sanatçı bilgisi ekleyin! Yuva arayan, kayıp patililer için ilan verin!</p>
     </section>
 
     <!-- TYPE SELECTION -->
@@ -479,19 +479,19 @@
         <div class="type-card" data-type="place">
           <div class="type-card__icon">🏪</div>
           <div class="type-card__title">Mekan</div>
-          <div class="type-card__desc">Restoran, kafe, plaj, aktivite</div>
+          <div class="type-card__desc">15 Kategoride mekan ekleyin!</div>
         </div>
 
         <div class="type-card" data-type="pet">
           <div class="type-card__icon">🐾</div>
-          <div class="type-card__title">Hayvan</div>
-          <div class="type-card__desc">Kayıp/bulunan hayvan ilanı</div>
+          <div class="type-card__title">Patili</div>
+          <div class="type-card__desc">Kayıp, Bulunan, Yuva Arayan patililer için ilan verin</div>
         </div>
 
         <div class="type-card" data-type="hotel">
           <div class="type-card__icon">🏨</div>
           <div class="type-card__title">Otel</div>
-          <div class="type-card__desc">Otel, pansiyon, apart, villa</div>
+          <div class="type-card__desc">Her türden kalacak yerleri ekleyin! Otel, pansiyon, apart, villa, airbnb!</div>
         </div>
 
         <div class="type-card" data-type="artist">
@@ -595,18 +595,18 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label">Başlık<span class="required">*</span></label>
+              <label class="form-label" id="titleLabel">Başlık<span class="required">*</span></label>
               <input type="text" class="form-input" name="title" id="title" placeholder="Başlık girin" required>
             </div>
 
             <div class="form-group">
               <label class="form-label">Kısa Açıklama</label>
-              <textarea class="form-textarea" name="description" id="description" placeholder="Kısa açıklama (1-2 cümle)"></textarea>
+              <input type="text" class="form-input" name="description" id="description" placeholder="Kısa açıklama (1-2 cümle)">
             </div>
 
             <div class="form-group">
               <label class="form-label">Detaylı Açıklama</label>
-              <textarea class="form-textarea" name="longText" id="longText" placeholder="Detaylı bilgi" style="min-height: 150px;"></textarea>
+              <textarea class="form-textarea" name="longText" id="longText" placeholder="Detaylı bilgi" rows="5"></textarea>
             </div>
 
             <div class="form-row">
@@ -687,8 +687,12 @@
                     <span class="category-label">🏄 Aktivite</span>
                   </label>
                   <label class="category-option">
-                    <input type="checkbox" name="categories" value="sanatci" class="category-checkbox">
-                    <span class="category-label">🎨 Sanatçı</span>
+                    <input type="checkbox" name="categories" value="sergi" class="category-checkbox">
+                    <span class="category-label">🖼️ Sergi</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="etkinlik" class="category-checkbox">
+                    <span class="category-label">🎪 Etkinlik</span>
                   </label>
                   <label class="category-option">
                     <input type="checkbox" name="categories" value="carsi" class="category-checkbox">
@@ -982,14 +986,6 @@
                     <span class="category-label">📷 Fotoğraf</span>
                   </label>
                   <label class="category-option">
-                    <input type="checkbox" name="categories" value="Produksiyon" class="category-checkbox">
-                    <span class="category-label">🎥 Produksiyon</span>
-                  </label>
-                  <label class="category-option">
-                    <input type="checkbox" name="categories" value="Dijital" class="category-checkbox">
-                    <span class="category-label">💻 Dijital</span>
-                  </label>
-                  <label class="category-option">
                     <input type="checkbox" name="categories" value="Diğer" class="category-checkbox">
                     <span class="category-label">✨ Diğer</span>
                   </label>
@@ -1000,12 +996,12 @@
 
         </section>
 
-        <!-- Photos & Notes -->
+        <!-- Photos -->
         <section class="form-section active">
           <div class="form-box">
             <div class="form-box__head">
               <span class="form-ico">📸</span>
-              <span>Fotoğraflar ve Ek Notlar</span>
+              <span>Fotoğraflar</span>
             </div>
 
             <div class="form-group">
@@ -1023,10 +1019,19 @@
               </div>
               <p class="form-hint">JPG, PNG veya WEBP formatında, her biri max 2MB</p>
             </div>
+          </div>
+        </section>
+
+        <!-- Notes -->
+        <section class="form-section active">
+          <div class="form-box">
+            <div class="form-box__head">
+              <span class="form-ico">📝</span>
+              <span>Bize iletmek istediğiniz özel notlar</span>
+            </div>
 
             <div class="form-group">
-              <label class="form-label">Ek Notlar</label>
-              <textarea class="form-textarea" name="extraNotes" placeholder="Eklemek istediğiniz başka bir şey var mı?"></textarea>
+              <textarea class="form-textarea" name="extraNotes" placeholder="Eklemek istediğiniz başka bir şey var mı?" rows="2"></textarea>
             </div>
           </div>
         </section>

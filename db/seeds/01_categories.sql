@@ -13,7 +13,8 @@ INSERT INTO categories (slug, name, icon_code, color_code) VALUES
 ('doga', 'Doğa', '🌿', '#2ECC71'),
 ('dalis', 'Dalış', '🤿', '#00BCD4'),
 ('aktivite', 'Aktivite', '🏄', '#F59E0B'),
-('sanatci', 'Sanatçı', '🎨', '#EC4899'),
+('sergi', 'Sergi', '🖼️', '#EC4899'),
+('etkinlik', 'Etkinlik', '🎪', '#FBBF24'),
 -- Son Sıra - Diğer
 ('carsi', 'Çarşı', '🛍️', '#6B7280'),
 ('articles', 'Yazılar', '📝', '#64748B'),
