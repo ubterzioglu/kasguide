@@ -159,6 +159,61 @@
     #mainForm.active {
       display: block;
     }
+
+    /* Accordion styles */
+    .info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 10px 0 14px;
+    }
+
+    .accordion-item {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .section-title {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      cursor: pointer;
+      user-select: none;
+      background: rgba(255, 255, 255, 0.3);
+      transition: background 0.2s;
+    }
+
+    .section-title:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .section-icon {
+      font-size: 1.25rem;
+    }
+
+    .chev {
+      margin-left: auto;
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+    }
+
+    details[open] .chev {
+      transform: rotate(180deg);
+    }
+
+    .liste-small {
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .liste-small p {
+      margin: 0.5rem 0;
+    }
   </style>
 </head>
 <body>
@@ -219,6 +274,76 @@
         <p>Desteğiniz için teşekkür ederiz.</p>
         <p><strong>Kaş Guide</strong></p>
       </div>
+
+      <!-- INFO ACCORDIONS - Shown after type selection -->
+      <section class="info-section" id="infoSection" style="display:none; margin-bottom: 1.5rem;">
+        <!-- Place accordions -->
+        <div id="placeInfo" class="type-info" style="display:none;">
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🌿</span>
+              Kaş Guide
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>🌿 En iyi deneyim için masaüstü/laptop üzerinden ekleme yapmanızı öneririz.</p>
+              <p>🌿 Kaş Guide, Kaş'ı gerçekten bilenler ve yaşayanlar için hazırlanıyor.</p>
+              <p>🌿 Sezona kadar hazır, düzenli ve güvenilir bir rehber oluşturuyoruz.</p>
+              <p>🌿 İçerikler, sizin katkılarınızla zamanla oturacak ve zenginleşecek.</p>
+              <p>🌿 Esnafla iç içe, yereli destekleyen bir anlayışla hareket ediyoruz.</p>
+              <p>🌿 Birlikte Kaş için kalıcı ve faydalı bir rehber oluşturuyoruz.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Pet accordions -->
+        <div id="petInfo" class="type-info" style="display:none;">
+          <details class="accordion-item">
+            <summary class="section-title">
+              <span class="section-icon">📌</span>
+              Küçük not
+              <span class="chev">▾</span>
+            </summary>
+            <div class="liste-small">
+              <p>Paylaştığın bilgiler ve fotoğraflar değerlendirilip uygun görüldüğünde yayınlanır.</p>
+              <p>İletişim için WhatsApp/Tel yeterli. Lütfen mümkünse doğru ve ulaşılabilir bir numara yaz.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Hotel accordions -->
+        <div id="hotelInfo" class="type-info" style="display:none;">
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🏨</span>
+              Kaş Guide Hotels Hakkında
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>🏨 Kaş'taki otellerin resmi rehberi olmayı hedefliyoruz.</p>
+              <p>🏨 Tamamen ücretsiz listeleme - hiçbir ücret ödemezsiniz.</p>
+              <p>🏨 Direkt rezervasyon linklerinizi (Booking, Airbnb vb.) paylaşabilirsiniz.</p>
+              <p>🏨 Fotoğraflarınızı ve özelliklerinizi en iyi şekilde gösterebilirsiniz.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Artist accordions -->
+        <div id="artistInfo" class="type-info" style="display:none;">
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🎨</span>
+              Sanatçılar İçin
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>🎨 Sanatın ne olursa olsun, Kaş'ta seni tanıtacak bir yer var.</p>
+              <p>🎨 Müzik, dövme, karikatür, seramik, gümüş ve daha fazlası…</p>
+              <p>🎨 Üreten herkese açığız, Kaş'ta yeteneklerin keşfedilsin!</p>
+            </div>
+          </details>
+        </div>
+      </section>
 
       <form id="itemForm" class="form" novalidate>
         <input type="hidden" name="itemType" id="itemType">

@@ -56,6 +56,28 @@ function selectType(type) {
     }
   });
 
+  // Show/hide type-specific info accordions
+  const infoSection = document.getElementById('infoSection');
+  const placeInfo = document.getElementById('placeInfo');
+  const petInfo = document.getElementById('petInfo');
+  const hotelInfo = document.getElementById('hotelInfo');
+  const artistInfo = document.getElementById('artistInfo');
+
+  // Hide all info sections first
+  placeInfo.style.display = 'none';
+  petInfo.style.display = 'none';
+  hotelInfo.style.display = 'none';
+  artistInfo.style.display = 'none';
+
+  // Show the relevant one
+  if (type === 'place') placeInfo.style.display = 'block';
+  if (type === 'pet') petInfo.style.display = 'block';
+  if (type === 'hotel') hotelInfo.style.display = 'block';
+  if (type === 'artist') artistInfo.style.display = 'block';
+
+  // Show info section
+  infoSection.style.display = 'block';
+
   // Show main form
   typeSelection.style.display = 'none';
   mainForm.classList.add('active');
