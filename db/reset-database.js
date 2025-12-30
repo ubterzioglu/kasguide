@@ -49,13 +49,17 @@ async function executeSqlFile(filePath, description) {
     .filter(s => s.length > 0 && !s.startsWith('--'));
 
   for (const statement of statements) {
-    if (statement.trim()) {
+    const trimmed = statement.trim();
+    if (trimmed && !trimmed.startsWith('--')) {
       try {
-        await sql.unsafe(statement);
+        // Use template literal workaround for dynamic SQL
+        await sql.query(trimmed);
       } catch (error) {
         // Ignore "does not exist" errors during DROP
-        if (!error.message.includes('does not exist')) {
+        if (!error.message.includes('does not exist') &&
+            !error.message.includes('already exists')) {
           console.error(`❌ Error executing statement:`, error.message);
+          console.error(`Statement: ${trimmed.substring(0, 100)}...`);
           throw error;
         }
       }
