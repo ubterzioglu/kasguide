@@ -119,6 +119,7 @@ export default async function handler(req, res) {
       try {
         photoUrls = await upload(photoFiles, itemType + 's');
         console.log(`✅ ${photoFiles.length} photo(s) uploaded successfully`);
+        console.log('📸 Photo URLs:', JSON.stringify(photoUrls));
       } catch (uploadError) {
         console.error('⚠️  Photo upload failed:', uploadError.message);
         console.log('📝 Continuing without photos (Vercel Blob not configured)');
@@ -126,6 +127,8 @@ export default async function handler(req, res) {
         photoUrls = [];
       }
     }
+
+    console.log('📝 Final photoUrls before database:', JSON.stringify(photoUrls));
 
     // Build item data based on type
     let itemData = {
