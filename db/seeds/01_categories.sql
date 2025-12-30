@@ -2,19 +2,22 @@
 -- Based on analysis of categories.js
 
 INSERT INTO categories (slug, name, icon_code, color_code) VALUES
-('places', 'Gezi', '🗺️', '#4A90E2'),
-('plaj', 'Plaj', '🏖️', '#50C878'),
-('aktivite', 'Aktivite', '⚡', '#FF6B6B'),
-('restoran', 'Restoran', '🍽️', '#FF9F1C'),
-('deniz', 'Deniz', '🌊', '#00BCD4'),
-('tarih', 'Tarih', '🏛️', '#A0522D'),
-('doga', 'Doğa', '🌿', '#2ECC71'),
-('carsi', 'Çarşı', '🛍️', '#E74C3C'),
-('kahvalti', 'Kahvaltı', '☕', '#F39C12'),
-('faqspecial', 'Özel Soru Serileri', '❓', '#3498DB'),
-('meyhane', 'Meyhane', '🍷', '#8E44AD'),
-('bar', 'Bar', '🍺', '#E67E22'),
+-- İlk Sıra - Yeme İçme
+('bar', 'Bar', '🍸', '#FF6B35'),
+('meyhane', 'Meyhane', '🍷', '#9B59B6'),
+('restoran', 'Restoran', '🍽️', '#E74C3C'),
 ('cafe', 'Cafe', '☕', '#16A085'),
-('dalis', 'Dalış', '🤿', '#3498DB'),
-('articles', 'Yazılar', '📝', '#95A5A6')
+('kahvalti', 'Kahvaltı', '🥐', '#F39C12'),
+-- İkinci Sıra - Aktivite & Kültür
+('tarih', 'Tarih', '🏛️', '#5D4E37'),
+('doga', 'Doğa', '🌿', '#2ECC71'),
+('dalis', 'Dalış', '🤿', '#00BCD4'),
+('aktivite', 'Aktivite', '🏄', '#10B981'),
+('sanatci', 'Sanatçı', '🎨', '#EC4899'),
+-- Son Sıra - Diğer
+('carsi', 'Çarşı', '🛍️', '#6B7280'),
+('articles', 'Yazılar', '📝', '#64748B'),
+('faqspecial', 'Özel Soru Serileri', '❓', '#8B5CF6'),
+('places', 'Gezi', '🗺️', '#3B82F6'),
+('plaj', 'Plaj', '🏖️', '#0EA5E9')
 ON CONFLICT (slug) DO NOTHING;
