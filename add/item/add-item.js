@@ -314,7 +314,7 @@ async function handleSubmit(e) {
     }
 
     // Submit to API
-    const response = await fetch('/api/item-submit.js', {
+    const response = await fetch('/api/item-submit', {
       method: 'POST',
       body: formData
     });
