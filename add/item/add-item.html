@@ -532,6 +532,36 @@
               <p>🌿 Birlikte Kaş için kalıcı ve faydalı bir rehber oluşturuyoruz.</p>
             </div>
           </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">📍</span>
+              Bilgi 2
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">ℹ️</span>
+              Bilgi 3
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">💡</span>
+              Bilgi 4
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
         </div>
 
         <!-- Pet accordions -->
@@ -545,6 +575,36 @@
             <div class="liste-small">
               <p>Paylaştığın bilgiler ve fotoğraflar değerlendirilip uygun görüldüğünde yayınlanır.</p>
               <p>İletişim için WhatsApp/Tel yeterli. Lütfen mümkünse doğru ve ulaşılabilir bir numara yaz.</p>
+            </div>
+          </details>
+          <details class="accordion-item">
+            <summary class="section-title">
+              <span class="section-icon">🐾</span>
+              Bilgi 2
+              <span class="chev">▾</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item">
+            <summary class="section-title">
+              <span class="section-icon">💚</span>
+              Bilgi 3
+              <span class="chev">▾</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item">
+            <summary class="section-title">
+              <span class="section-icon">🏠</span>
+              Bilgi 4
+              <span class="chev">▾</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
             </div>
           </details>
         </div>
@@ -578,6 +638,36 @@
               <p>🎨 Sanatın ne olursa olsun, Kaş'ta seni tanıtacak bir yer var.</p>
               <p>🎨 Müzik, dövme, karikatür, seramik, gümüş ve daha fazlası…</p>
               <p>🎨 Üreten herkese açığız, Kaş'ta yeteneklerin keşfedilsin!</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🎭</span>
+              Bilgi 2
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🎪</span>
+              Bilgi 3
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🌟</span>
+              Bilgi 4
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
             </div>
           </details>
         </div>
@@ -762,6 +852,7 @@
 
           <!-- PET FIELDS -->
           <div id="petFields" class="type-fields">
+            <!-- Patili Bilgileri Card (moved to top) -->
             <div class="form-box">
               <div class="form-box__head">
                 <span class="form-ico">🐾</span>
@@ -826,6 +917,38 @@
               <div class="form-group">
                 <label class="form-label">Kısa Bilgi (max 500 karakter)</label>
                 <textarea class="form-textarea" name="shortNote" placeholder="Nerede görüldü, karakteri nasıl, özel işaretler..." maxlength="500"></textarea>
+              </div>
+            </div>
+
+            <!-- İletişim Bilgileri Card for Pet -->
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">📞</span>
+                <span>İletişim Bilgileri</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Telefon</label>
+                  <input type="tel" class="form-input" name="petPhone" placeholder="+90 555 123 4567">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">E-posta</label>
+                  <input type="email" class="form-input" name="petEmail" placeholder="ornek@email.com">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Website</label>
+                  <input type="url" class="form-input" name="petWebsite" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Instagram</label>
+                  <input type="text" class="form-input" name="petInstagram" placeholder="@kullaniciadi">
+                </div>
               </div>
             </div>
           </div>
@@ -904,22 +1027,36 @@
 
           <!-- ARTIST FIELDS -->
           <div id="artistFields" class="type-fields">
+            <!-- İletişim Bilgileri Card for Artist -->
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">📞</span>
+                <span>İletişim Bilgileri</span>
+              </div>
+
+              <div class="form-row" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="form-group">
+                  <label class="form-label">Telefon</label>
+                  <input type="tel" class="form-input" name="artistPhone" placeholder="+90 555 123 4567">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">E-posta</label>
+                  <input type="email" class="form-input" name="artistEmail" placeholder="ornek@email.com">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Instagram</label>
+                  <input type="text" class="form-input" name="artistInstagram" placeholder="@kullaniciadi">
+                </div>
+              </div>
+            </div>
+
+            <!-- Sanatçı Bilgileri Card -->
             <div class="form-box">
               <div class="form-box__head">
                 <span class="form-ico">🎨</span>
                 <span>Sanatçı Bilgileri</span>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">YouTube Kanalı</label>
-                  <input type="url" class="form-input" name="youtube" placeholder="https://youtube.com/...">
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label">Müzik Linki</label>
-                  <input type="url" class="form-input" name="musicLink" placeholder="https://...">
-                </div>
               </div>
 
               <div class="form-group">

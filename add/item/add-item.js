@@ -100,6 +100,27 @@ function selectType(type) {
   // Show info section
   infoSection.style.display = 'block';
 
+  // Update title label based on type
+  const titleLabel = document.getElementById('titleLabel');
+  if (titleLabel) {
+    const titleLabelText = {
+      place: 'Mekan İsmi',
+      pet: 'Patili İsmi',
+      hotel: 'Başlık',
+      artist: 'İsim'
+    };
+    titleLabel.innerHTML = `${titleLabelText[type] || 'Başlık'}<span class="required">*</span>`;
+  }
+
+  // Hide common contact fields for artist and pet (they have their own contact cards)
+  const commonContactRows = document.querySelectorAll('#itemForm > section:first-of-type .form-box .form-row');
+  if (commonContactRows.length >= 2) {
+    // Phone/Email row
+    commonContactRows[0].style.display = (type === 'artist' || type === 'pet') ? 'none' : 'grid';
+    // Website/Instagram row
+    commonContactRows[1].style.display = (type === 'artist' || type === 'pet') ? 'none' : 'grid';
+  }
+
   // Show main form
   typeSelection.style.display = 'none';
   mainForm.classList.add('active');
