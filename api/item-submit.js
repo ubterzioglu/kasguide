@@ -7,7 +7,7 @@
 import formidable from "formidable";
 import nodemailer from "nodemailer";
 import { createItem } from '../lib/db-items.js';
-import { upload } from '../lib/upload.js';
+// import { upload } from '../lib/upload.js'; // TODO: Re-enable after Vercel Blob setup
 
 export const config = {
   api: { bodyParser: false },
@@ -28,12 +28,12 @@ export default async function handler(req, res) {
   }
 
   try {
-   const form = formidable({
-  multiples: true,
-  maxFileSize: 2 * 1024 * 1024,
-  allowEmptyFiles: true,
-  minFileSize: 0,  // 0 bytes kabul et (boş file input için)
-});
+    const form = formidable({
+      multiples: true,
+      maxFileSize: 2 * 1024 * 1024, // 2MB per file
+      allowEmptyFiles: true,
+      minFileSize: 0,
+    });
 
     const [fields, files] = await form.parse(req);
 
@@ -91,33 +91,10 @@ export default async function handler(req, res) {
       });
     }
 
-// Handle photos
-let photoUrls = [];
-const photoFiles = files.photos ? asArray(files.photos).filter(f => f && f.size > 0) : [];
-
-// Only process if user actually uploaded photos
-if (photoFiles.length > 0) {
-  if (photoFiles.length > 5) {
-    return res.status(400).json({
-      success: false,
-      message: "En fazla 5 fotoğraf yüklenebilir",
-    });
-  }
-
-  const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
-  for (const file of photoFiles) {
-    if (!allowedTypes.includes(file.mimetype)) {
-      return res.status(400).json({
-        success: false,
-        message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
-      });
-    }
-  }
-
-  // Skip upload for now - will enable after Vercel Blob setup
-  // photoUrls = await upload(photoFiles, itemType + 's');
-  console.log('📷 Photo upload skipped (not configured yet)');
-}
+    // TODO: Photo upload will be enabled after Vercel Blob configuration
+    // For now, skip all photo handling to get basic submission working
+    const photoUrls = [];
+    console.log('📷 Photo upload temporarily disabled (not configured yet)');
 
     // Build item data based on type
     let itemData = {
