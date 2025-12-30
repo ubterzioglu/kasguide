@@ -266,8 +266,10 @@ function updateReview() {
 
     case 'hotel':
       const hotelType = formData.get('hotelType');
+      const hotelLocation = formData.get('location');
       const starRating = formData.get('starRating');
       if (hotelType) html += `<p><strong>Tip:</strong> ${hotelType}</p>`;
+      if (hotelLocation) html += `<p><strong>Konum:</strong> ${hotelLocation}</p>`;
       if (starRating) html += `<p><strong>Yıldız:</strong> ${'⭐'.repeat(starRating)}</p>`;
       break;
 
