@@ -119,16 +119,12 @@ export default async function handler(req, res) {
       try {
         photoUrls = await upload(photoFiles, itemType + 's');
         console.log(`✅ ${photoFiles.length} photo(s) uploaded successfully`);
-        console.log('📸 Photo URLs:', JSON.stringify(photoUrls));
       } catch (uploadError) {
         console.error('⚠️  Photo upload failed:', uploadError.message);
-        console.log('📝 Continuing without photos (Vercel Blob not configured)');
         // Continue without photos rather than failing the entire submission
         photoUrls = [];
       }
     }
-
-    console.log('📝 Final photoUrls before database:', JSON.stringify(photoUrls));
 
     // Build item data based on type
     let itemData = {
@@ -237,12 +233,6 @@ export default async function handler(req, res) {
       return res.status(500).json({
         success: false,
         message: "Veritabanı hatası. Lütfen tekrar deneyin.",
-        debug: {
-          error: dbError.message,
-          code: dbError.code,
-          detail: dbError.detail,
-          stack: dbError.stack?.split('\n')[0]
-        }
       });
     }
 
@@ -251,11 +241,6 @@ export default async function handler(req, res) {
     return res.status(500).json({
       success: false,
       message: err?.message || "Sunucu hatası",
-      debug: {
-        error: err?.message,
-        type: err?.constructor?.name,
-        stack: err?.stack?.split('\n')[0]
-      }
     });
   }
 }
