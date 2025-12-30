@@ -120,11 +120,10 @@ export default async function handler(req, res) {
         photoUrls = await upload(photoFiles, itemType + 's');
         console.log(`✅ ${photoFiles.length} photo(s) uploaded successfully`);
       } catch (uploadError) {
-        console.error('Photo upload error:', uploadError);
-        return res.status(500).json({
-          success: false,
-          message: "Fotoğraf yükleme hatası. Lütfen tekrar deneyin.",
-        });
+        console.error('⚠️  Photo upload failed:', uploadError.message);
+        console.log('📝 Continuing without photos (Vercel Blob not configured)');
+        // Continue without photos rather than failing the entire submission
+        photoUrls = [];
       }
     }
 
@@ -215,11 +214,18 @@ export default async function handler(req, res) {
         console.warn('⚠️  Email notification failed (non-critical):', emailError.message);
       }
 
+      // Prepare success message
+      let message = "Başvurunuz alındı! İnceleme sonrası yayınlanacaktır.";
+      if (photoFiles.length > 0 && photoUrls.length === 0) {
+        message += " (Not: Fotoğraflar yüklenemedi - Vercel Blob yapılandırması gerekiyor)";
+      }
+
       return res.status(200).json({
         success: true,
-        message: "Başvurunuz alındı! İnceleme sonrası yayınlanacaktır.",
+        message,
         itemNumber: result.item_number,
         submissionId: result.id,
+        photosUploaded: photoUrls.length,
       });
 
     } catch (dbError) {
