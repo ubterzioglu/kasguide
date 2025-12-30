@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "db:reset": "node db/reset-database.js",
     "db:migrate": "node db/migrate.js",
     "db:seed": "node db/migrate.js seeds",
     "db:import": "node db/import-data.js",
