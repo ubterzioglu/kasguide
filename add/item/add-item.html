@@ -220,31 +220,11 @@
         <p><strong>Kaş Guide</strong></p>
       </div>
 
-      <!-- Step Indicator -->
-      <div class="step-indicator" id="stepIndicator">
-        <div class="step active" data-step="1">
-          <span class="step-number">1</span>
-          <span class="step-label">Temel Bilgiler</span>
-        </div>
-        <div class="step" data-step="2">
-          <span class="step-number">2</span>
-          <span class="step-label">Özel Alanlar</span>
-        </div>
-        <div class="step" data-step="3">
-          <span class="step-number">3</span>
-          <span class="step-label">Fotoğraflar</span>
-        </div>
-        <div class="step" data-step="4">
-          <span class="step-number">4</span>
-          <span class="step-label">Önizleme</span>
-        </div>
-      </div>
-
       <form id="itemForm" class="form" novalidate>
         <input type="hidden" name="itemType" id="itemType">
 
-        <!-- STEP 1: Common Fields -->
-        <section class="form-section active" data-step="1">
+        <!-- Common Fields -->
+        <section class="form-section active">
           <div class="form-box">
             <div class="form-box__head">
               <span class="form-ico">📝</span>
@@ -268,8 +248,8 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Telefon<span class="required">*</span></label>
-                <input type="tel" class="form-input" name="phone" id="phone" placeholder="+90 555 123 4567" required>
+                <label class="form-label">Telefon</label>
+                <input type="tel" class="form-input" name="phone" id="phone" placeholder="+90 555 123 4567">
               </div>
 
               <div class="form-group">
@@ -292,8 +272,8 @@
           </div>
         </section>
 
-        <!-- STEP 2: Type-Specific Fields -->
-        <section class="form-section" data-step="2">
+        <!-- Type-Specific Fields -->
+        <section class="form-section active">
 
           <!-- PLACE FIELDS -->
           <div id="placeFields" class="type-fields">
@@ -354,8 +334,8 @@
 
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label">Hayvan Tipi<span class="required">*</span></label>
-                  <select class="form-input" name="petType" required>
+                  <label class="form-label">Hayvan Tipi</label>
+                  <select class="form-input" name="petType">
                     <option value="">Seçiniz</option>
                     <option value="kedi">🐱 Kedi</option>
                     <option value="kopek">🐶 Köpek</option>
@@ -363,8 +343,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label">İlan Tipi<span class="required">*</span></label>
-                  <select class="form-input" name="listingType" required>
+                  <label class="form-label">İlan Tipi</label>
+                  <select class="form-input" name="listingType">
                     <option value="">Seçiniz</option>
                     <option value="kayip">Kayıp</option>
                     <option value="bulundu">Bulundu</option>
@@ -385,8 +365,8 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label">Kısa Not<span class="required">*</span></label>
-                <textarea class="form-textarea" name="shortNote" placeholder="Kısa bilgi..." required></textarea>
+                <label class="form-label">Kısa Not</label>
+                <textarea class="form-textarea" name="shortNote" placeholder="Kısa bilgi..."></textarea>
               </div>
             </div>
           </div>
@@ -401,8 +381,8 @@
 
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label">Otel Tipi<span class="required">*</span></label>
-                  <select class="form-input" name="hotelType" required>
+                  <label class="form-label">Otel Tipi</label>
+                  <select class="form-input" name="hotelType">
                     <option value="">Seçiniz</option>
                     <option value="butik">Butik Otel</option>
                     <option value="aile">Aile Oteli</option>
@@ -452,8 +432,8 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label">Konum<span class="required">*</span></label>
-                <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez" required>
+                <label class="form-label">Konum</label>
+                <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez">
               </div>
 
               <div class="form-group">
@@ -495,32 +475,18 @@
 
         </section>
 
-        <!-- STEP 3: Photos -->
-        <section class="form-section" data-step="3">
+        <!-- Photos & Notes -->
+        <section class="form-section active">
           <div class="form-box">
             <div class="form-box__head">
               <span class="form-ico">📸</span>
-              <span>Fotoğraflar</span>
+              <span>Fotoğraflar ve Ek Notlar</span>
             </div>
 
             <div class="form-group">
               <label class="form-label">Fotoğraf Yükle (Maks. 5 adet)</label>
               <input type="file" class="form-input" name="photos" accept="image/*" multiple>
               <p class="form-hint">JPG, PNG veya WEBP formatında, her biri max 2MB</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- STEP 4: Review -->
-        <section class="form-section" data-step="4">
-          <div class="form-box">
-            <div class="form-box__head">
-              <span class="form-ico">👀</span>
-              <span>Önizleme ve Gönder</span>
-            </div>
-
-            <div id="reviewContent">
-              <p style="text-align: center; color: #666;">Bilgileriniz burada görünecek...</p>
             </div>
 
             <div class="form-group">
@@ -530,11 +496,9 @@
           </div>
         </section>
 
-        <!-- Navigation -->
+        <!-- Submit Button -->
         <div class="form-nav">
-          <button type="button" class="btn btn-secondary" id="prevBtn" style="display:none;">⬅ Geri</button>
-          <button type="button" class="btn btn-primary" id="nextBtn">İleri ➡</button>
-          <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">
+          <button type="submit" class="btn btn-primary" id="submitBtn">
             <span id="submitBtnText">Gönder</span>
             <span id="submitSpinner" style="display:none;">⏳ Gönderiliyor...</span>
           </button>
