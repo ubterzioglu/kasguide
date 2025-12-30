@@ -91,41 +91,43 @@ export default async function handler(req, res) {
       });
     }
 
-    // Handle photos
-    let photos = asArray(files.photos).filter(f => f && f.size > 0);
+    // Handle photos - TEMPORARILY DISABLED
+let photoUrls = [];
 
-    if (photos.length > 5) {
-      return res.status(400).json({
-        success: false,
-        message: "En fazla 5 fotoğraf yüklenebilir",
-      });
-    }
+// TODO: Enable photo upload after configuring Vercel Blob
+/*
+let photos = asArray(files.photos).filter(f => f && f.size > 0);
 
-    // Validate file types
-    const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
-    for (const file of photos) {
-      if (!allowedTypes.includes(file.mimetype)) {
-        return res.status(400).json({
-          success: false,
-          message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
-        });
-      }
-    }
+if (photos.length > 5) {
+  return res.status(400).json({
+    success: false,
+    message: "En fazla 5 fotoğraf yüklenebilir",
+  });
+}
 
-    // Upload photos
-    let photoUrls = [];
-    if (photos.length > 0) {
-      try {
-        photoUrls = await upload(photos, itemType + 's');
-        console.log('✅ Photos uploaded:', photoUrls.length);
-      } catch (uploadError) {
-        console.error('Photo upload error:', uploadError);
-        return res.status(500).json({
-          success: false,
-          message: "Fotoğraf yükleme hatası",
-        });
-      }
-    }
+const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+for (const file of photos) {
+  if (!allowedTypes.includes(file.mimetype)) {
+    return res.status(400).json({
+      success: false,
+      message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
+    });
+  }
+}
+
+if (photos.length > 0) {
+  try {
+    photoUrls = await upload(photos, itemType + 's');
+    console.log('✅ Photos uploaded:', photoUrls.length);
+  } catch (uploadError) {
+    console.error('Photo upload error:', uploadError);
+    return res.status(500).json({
+      success: false,
+      message: "Fotoğraf yükleme hatası",
+    });
+  }
+}
+*/
 
     // Build item data based on type
     let itemData = {
