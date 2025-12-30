@@ -29,11 +29,10 @@ export default async function handler(req, res) {
 
   try {
     const form = formidable({
-      multiples: true,
-      maxFileSize: 2 * 1024 * 1024, // 2MB per file
-      allowEmptyFiles: false,
-      minFileSize: 1,
-    });
+  multiples: true,
+  maxFileSize: 2 * 1024 * 1024, // 2MB per file
+  allowEmptyFiles: true,  // Allow submissions without photos
+});
 
     const [fields, files] = await form.parse(req);
 
