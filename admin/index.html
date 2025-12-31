@@ -360,6 +360,9 @@
         <button class="content-type-tab" onclick="switchContentType('artist')">
           🎨 Artists (Sanatçılar)
         </button>
+        <button class="content-type-tab" onclick="switchContentType('survey')">
+          📊 Surveys (Anketler)
+        </button>
       </div>
 
       <!-- Status Tabs -->
@@ -442,6 +445,12 @@
       container.innerHTML = '';
 
       try {
+        // Handle surveys differently
+        if (currentContentType === 'survey') {
+          await loadSurveys();
+          return;
+        }
+
         // Use unified items endpoint
         const typeParam = currentContentType !== 'all' ? `&type=${currentContentType}` : '';
         const response = await fetch(`/api/admin/items?status=${currentStatus}${typeParam}`, {
@@ -779,6 +788,319 @@
         </div>
       `;
     }
+
+    // ============================================================================
+    // SURVEY MANAGEMENT FUNCTIONS
+    // ============================================================================
+
+    async function loadSurveys() {
+      const loading = document.getElementById('loading');
+      const container = document.getElementById('submissions');
+
+      try {
+        const [surveysRes, unreviewedRes] = await Promise.all([
+          fetch('/api/admin/surveys', { headers: { 'X-API-Key': apiKey } }),
+          fetch('/api/admin/surveys?unreviewed=true', { headers: { 'X-API-Key': apiKey } })
+        ]);
+
+        const surveysData = await surveysRes.json();
+        const unreviewedData = await unreviewedRes.json();
+
+        loading.style.display = 'none';
+
+        const surveys = surveysData.surveys || [];
+        const unreviewedOptions = unreviewedData.options || [];
+
+        let html = '';
+
+        if (unreviewedOptions.length > 0) {
+          html += `
+            <div class="submission-card" style="background: #fff3cd; border-left: 4px solid #ffc107;">
+              <div class="submission-header">
+                <div>
+                  <div class="submission-title">⚠️ Gözden Geçirilmeyi Bekleyen Kullanıcı Önerileri (${unreviewedOptions.length})</div>
+                </div>
+              </div>
+              <div class="submission-content">
+                ${unreviewedOptions.map(option => `
+                  <div style="padding: 12px; background: white; margin-bottom: 10px; border-radius: 6px; border: 1px solid #dee2e6;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <div>
+                        <strong>${option.option_text}</strong>
+                        <div style="font-size: 12px; color: #666; margin-top: 4px;">
+                          📊 Anket: ${option.survey_title} • 🗳️ ${option.vote_count} oy • 📅 ${new Date(option.created_at).toLocaleString('tr-TR')}
+                        </div>
+                      </div>
+                      <div style="display: flex; gap: 8px;">
+                        <button class="btn" style="background: #28a745; color: white; font-size: 12px; padding: 6px 12px;"
+                                onclick="reviewOption(${option.id}, true)">✅ Onayla</button>
+                        <button class="btn" style="background: #ffc107; color: black; font-size: 12px; padding: 6px 12px;"
+                                onclick="editSurveyOption(${option.id}, '${option.option_text.replace(/'/g, "\\'")}')">✏️ Düzenle</button>
+                        <button class="btn btn-delete" style="font-size: 12px; padding: 6px 12px;"
+                                onclick="deleteSurveyOption(${option.id})">🗑️ Sil</button>
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+
+        if (surveys.length === 0) {
+          html += '<div class="empty">Henüz anket bulunamaktadır</div>';
+        } else {
+          html += surveys.map(survey => renderSurvey(survey)).join('');
+        }
+
+        container.innerHTML = html;
+
+      } catch (error) {
+        loading.style.display = 'none';
+        container.innerHTML = `<div class="error">Hata: ${error.message}</div>`;
+      }
+    }
+
+    function renderSurvey(survey) {
+      const createdDate = new Date(survey.created_at).toLocaleString('tr-TR');
+      const statusClass = survey.is_active ? 'status-active' : 'status-rejected';
+      const statusText = survey.is_active ? 'Aktif' : 'Pasif';
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">📊 ${survey.title}</div>
+              <div class="submission-meta">
+                ID: ${survey.id} • ${createdDate} • <span class="status-badge ${statusClass}">${statusText}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            ${survey.description ? `
+              <div class="field">
+                <div class="field-label">Açıklama:</div>
+                <div class="field-value">${survey.description}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">İstatistikler:</div>
+              <div class="field-value">
+                🗳️ ${survey.total_votes || 0} oy
+                ${survey.user_options_count > 0 ? ` • 💡 ${survey.user_options_count} kullanıcı önerisi` : ''}
+                ${survey.unreviewed_options_count > 0 ? ` • ⚠️ ${survey.unreviewed_options_count} gözden geçirilmemiş` : ''}
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">Ayarlar:</div>
+              <div class="field-value">
+                ${survey.allow_user_options ? '✅ Kullanıcı önerilerine açık' : '❌ Kullanıcı önerileri kapalı'}
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" style="background: #2196F3; color: white;" onclick="viewSurveyDetails(${survey.id})">
+              📋 Detayları Gör
+            </button>
+            <button class="btn" style="background: ${survey.is_active ? '#ff9800' : '#4CAF50'}; color: white;"
+                    onclick="toggleSurveyStatus(${survey.id}, ${!survey.is_active})">
+              ${survey.is_active ? '⏸️ Pasif Yap' : '▶️ Aktif Yap'}
+            </button>
+            <button class="btn btn-delete" onclick="deleteSurvey(${survey.id}, '${survey.title.replace(/'/g, "\\'")}')">
+              🗑️ Sil
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    async function viewSurveyDetails(surveyId) {
+      try {
+        const response = await fetch(`/api/admin/surveys?id=${surveyId}`, {
+          headers: { 'X-API-Key': apiKey }
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          const survey = data.survey;
+          const options = survey.options || [];
+
+          let html = `
+            <h3>${survey.title}</h3>
+            <p><strong>Toplam Oy:</strong> ${survey.total_votes || 0}</p>
+            <hr>
+            <h4>Seçenekler:</h4>
+            <ul>
+              ${options.map(opt => `
+                <li>
+                  ${opt.option_text}
+                  (${opt.vote_count} oy)
+                  ${opt.submitted_by === 'user' ? '<span style="color: #ffc107;">👤 Kullanıcı</span>' : '<span style="color: #4CAF50;">👨‍💼 Admin</span>'}
+                  ${!opt.is_reviewed && opt.submitted_by === 'user' ? '<span style="color: red;">⚠️ Gözden geçirilmemiş</span>' : ''}
+                </li>
+              `).join('')}
+            </ul>
+          `;
+
+          alert(html.replace(/<[^>]*>/g, '\n').replace(/\n+/g, '\n'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function toggleSurveyStatus(surveyId, newStatus) {
+      if (!confirm(`Anketi ${newStatus ? 'aktif' : 'pasif'} yapmak istediğinizden emin misiniz?`)) {
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/admin/surveys', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({
+            surveyId: surveyId,
+            data: { is_active: newStatus }
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Anket durumu güncellendi!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Güncellenemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function deleteSurvey(surveyId, title) {
+      if (!confirm(`"${title}" anketini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz!`)) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/admin/surveys?id=${surveyId}`, {
+          method: 'DELETE',
+          headers: { 'X-API-Key': apiKey }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Anket silindi!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Silinemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function reviewOption(optionId, approve) {
+      try {
+        const response = await fetch('/api/admin/surveys', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({
+            optionId: optionId,
+            data: {
+              is_reviewed: true,
+              reviewed_by: 'admin'
+            }
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Seçenek onaylandı!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Güncellenemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function editSurveyOption(optionId, currentText) {
+      const newText = prompt('Yeni metin:', currentText);
+      if (!newText || newText === currentText) {
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/admin/surveys', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({
+            optionId: optionId,
+            data: {
+              option_text: newText,
+              is_reviewed: true,
+              reviewed_by: 'admin'
+            }
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Seçenek güncellendi!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Güncellenemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function deleteSurveyOption(optionId) {
+      if (!confirm('Bu seçeneği silmek istediğinizden emin misiniz?')) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/admin/surveys?optionId=${optionId}`, {
+          method: 'DELETE',
+          headers: { 'X-API-Key': apiKey }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Seçenek silindi!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Silinemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    // ============================================================================
+    // END SURVEY MANAGEMENT
+    // ============================================================================
 
     function renderActions(id, status, title) {
       return `
