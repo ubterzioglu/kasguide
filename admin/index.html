@@ -5,6 +5,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kaş Guide - Admin Panel</title>
   <style>
+
+
+/* Dark theme overrides for Kaş Guide - Unified Admin Panel
+   Usage: include AFTER existing styles, or replace the <style> block with this file content.
+   This file does not require any HTML/content changes.
+*/
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    color-scheme: dark;
+  }
+
+  body{
+    background:#0f1115;
+    color:#e6e6e6;
+  }
+
+  header,
+  .login-form,
+  .submission-card,
+  .stat-card,
+  .modal-content{
+    background:#171a21;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.55);
+  }
+
+  h1,
+  .login-form h2,
+  .submission-title,
+  .modal-header h2,
+  .edit-form-group label{
+    color:#f1f3f5;
+  }
+
+  /* Inline <p style="color:#666"> etc. can't be changed directly, but we can increase readability */
+  header p,
+  .submission-meta,
+  .loading,
+  .empty{
+    color:#aab2bd !important;
+  }
+
+  label,
+  .field-label,
+  .stat-label{
+    color:#aab2bd;
+  }
+
+  .field-value{
+    color:#e6e6e6;
+  }
+
+  /* Inputs */
+  input,
+  .edit-form-group input,
+  .edit-form-group textarea{
+    background:#0f1115;
+    border:1px solid #2a2f3a;
+    color:#e6e6e6;
+  }
+
+  input::placeholder,
+  textarea::placeholder{
+    color:#7f8896;
+  }
+
+  input:focus,
+  textarea:focus{
+    outline:none;
+    border-color:#4d79ff;
+    box-shadow:0 0 0 3px rgba(77,121,255,0.22);
+  }
+
+  /* Tabs */
+  .content-type-tab,
+  .status-tab{
+    background:#171a21;
+    border-color:#2a2f3a;
+    color:#e6e6e6;
+  }
+
+  .content-type-tab:hover{
+    border-color:#5bd066;
+  }
+
+  .content-type-tab.active{
+    background:#4CAF50;
+    color:#0b0f0c;
+    border-color:#4CAF50;
+  }
+
+  .status-tab.active{
+    background:#2196F3;
+    color:#0b0f0c;
+    border-color:#2196F3;
+  }
+
+  /* Cards / borders */
+  header,
+  .submission-card,
+  .stat-card{
+    border:1px solid rgba(255,255,255,0.04);
+  }
+
+  .modal-header{
+    border-bottom:1px solid #2a2f3a;
+  }
+  .modal-footer{
+    border-top:1px solid #2a2f3a;
+  }
+
+  .modal-close{
+    color:#aab2bd;
+  }
+  .modal-close:hover{
+    color:#f1f3f5;
+  }
+
+  /* Buttons */
+  button{
+    color:#0b0f0c;
+  }
+
+  button:hover{
+    filter: brightness(1.03);
+  }
+
+  .btn{
+    color:#0b0f0c;
+  }
+
+  /* Make action buttons readable on dark background */
+  .btn-approve,
+  .btn-reject,
+  .btn-delete,
+  .btn-edit,
+  .btn-cancel{
+    color:#0b0f0c;
+  }
+
+  /* If you prefer white text on colored buttons, uncomment:
+  .btn-approve,.btn-reject,.btn-delete,.btn-edit,.btn-cancel{ color:#fff; }
+  */
+
+  /* Status badges */
+  .status-badge{
+    border:1px solid rgba(255,255,255,0.08);
+  }
+
+  .status-pending{
+    background: rgba(245,124,0,0.16);
+    color:#ffb86b;
+  }
+
+  .status-approved{
+    background: rgba(46,125,50,0.18);
+    color:#8be28f;
+  }
+
+  .status-rejected{
+    background: rgba(198,40,40,0.18);
+    color:#ff8f8f;
+  }
+
+  .status-active{
+    background: rgba(25,118,210,0.20);
+    color:#8cc6ff;
+  }
+
+  /* Alerts */
+  .error{
+    background: rgba(198,40,40,0.18);
+    color:#ffb4b4;
+    border:1px solid rgba(198,40,40,0.35);
+  }
+
+  .success{
+    background: rgba(46,125,50,0.18);
+    color:#b8f0bb;
+    border:1px solid rgba(46,125,50,0.35);
+  }
+
+  /* Images */
+  .images img{
+    outline:1px solid rgba(255,255,255,0.06);
+  }
+}
+
+
+  /* SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON SECTON  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     * {
       margin: 0;
       padding: 0;
