@@ -150,6 +150,7 @@ function convertAPIPlace(apiData) {
     longText: apiData.long_text,
     category: attrs.categories || [],
     images: photos.map(p => p.url),
+    image: photos.length > 0 ? photos[0].url : null, // First photo for card display
     isPlaceholder: photos.length > 0 && photos[0].placeholder === true,
     rating: attrs.rating || '',
     price: attrs.price || '',
@@ -192,6 +193,7 @@ function convertAPIHotel(apiData) {
     description: apiData.description,
     category: attrs.categories || [],
     images: photos.map(p => p.url),
+    image: photos.length > 0 ? photos[0].url : null, // First photo for card display
     isPlaceholder: photos.length > 0 && photos[0].placeholder === true,
     rating: attrs.rating || '',
     facilities: attrs.facilities || []
@@ -208,6 +210,7 @@ function convertAPIPet(apiData) {
     description: apiData.description,
     category: attrs.categories || [],
     images: photos.map(p => p.url),
+    image: photos.length > 0 ? photos[0].url : null, // First photo for card display
     isPlaceholder: photos.length > 0 && photos[0].placeholder === true
   };
 }
