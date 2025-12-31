@@ -63,9 +63,17 @@ async function main() {
     process.exit(1);
   }
 
-  if (PLACEHOLDER_URLS.some(url => url.includes('TODO') || url.includes('unsplash.com/photo-'))) {
-    console.warn('⚠️  Warning: Placeholder URLs look like placeholders!');
-    console.log('Make sure to replace with real Kaş photo URLs.\n');
+  // Check for obvious placeholder patterns (not real Unsplash photos)
+  const hasPlaceholders = PLACEHOLDER_URLS.some(url =>
+    url.includes('TODO') ||
+    url.includes('XXXXX') ||
+    url.includes('example.com') ||
+    url.match(/photo-\d{1}[^\d]/) // Single digit photo IDs like photo-1, photo-2 (but not photo-12345)
+  );
+
+  if (hasPlaceholders) {
+    console.warn('⚠️  Warning: Placeholder URLs detected!');
+    console.log('Make sure to replace with real photo URLs.\n');
 
     if (!OPTIONS.dryRun) {
       console.log('Running in DRY RUN mode to prevent mistakes...');
