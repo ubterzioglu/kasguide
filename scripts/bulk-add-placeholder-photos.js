@@ -174,7 +174,8 @@ async function main() {
     console.error('\n❌ Fatal error:', error);
     process.exit(1);
   } finally {
-    await sql.end();
+    // Connection pool will close automatically on exit
+    process.exit(0);
   }
 }
 
