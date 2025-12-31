@@ -150,6 +150,7 @@ function convertAPIPlace(apiData) {
     longText: apiData.long_text,
     category: attrs.categories || [],
     images: photos.map(p => p.url),
+    isPlaceholder: photos.length > 0 && photos[0].placeholder === true,
     rating: attrs.rating || '',
     price: attrs.price || '',
     duration: attrs.duration || '',
@@ -191,6 +192,7 @@ function convertAPIHotel(apiData) {
     description: apiData.description,
     category: attrs.categories || [],
     images: photos.map(p => p.url),
+    isPlaceholder: photos.length > 0 && photos[0].placeholder === true,
     rating: attrs.rating || '',
     facilities: attrs.facilities || []
   };
@@ -205,7 +207,8 @@ function convertAPIPet(apiData) {
     title: apiData.title,
     description: apiData.description,
     category: attrs.categories || [],
-    images: photos.map(p => p.url)
+    images: photos.map(p => p.url),
+    isPlaceholder: photos.length > 0 && photos[0].placeholder === true
   };
 }
 
@@ -391,8 +394,9 @@ function renderCards() {
       `;
     } else {
       card.className = 'card';
+      const placeholderClass = item.isPlaceholder ? 'has-placeholder' : '';
       card.innerHTML = `
-      <div class="card-image-wrapper">
+      <div class="card-image-wrapper ${placeholderClass}">
         <img src="${img}" alt="${item.title || ''}" class="card-image" loading="lazy">
         <div class="card-badge" style="background: var(--primary-${badgeColor})">
           ${safeArr(item.category)
@@ -400,6 +404,7 @@ function renderCards() {
             .slice(0, 2)
             .join(', ')}
         </div>
+        ${item.isPlaceholder ? '<div class="placeholder-watermark">📸 Fotoğraflarınızı bekliyoruz!</div>' : ''}
       </div>
 
       <div class="card-content">

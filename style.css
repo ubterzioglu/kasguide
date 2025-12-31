@@ -675,6 +675,28 @@ body {
   transition: transform 0.5s;
 }
 
+/* Placeholder watermark overlay */
+.placeholder-watermark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+  color: white;
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  z-index: 3;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.card-image-wrapper.has-placeholder .card-image {
+  opacity: 0.7;
+}
+
 .card-item:hover .card-image {
   transform: scale(1.1);
 }

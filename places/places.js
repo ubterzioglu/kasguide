@@ -30,13 +30,15 @@
       // Convert unified items data to places format
       if (data && data.item_type === 'place') {
         const attributes = data.attributes || {};
+        const photos = data.photos || [];
         const convertedPlace = {
           id: data.id,
           title: data.title,
           description: data.description,
           longText: data.long_text,
           category: attributes.categories || [],
-          images: data.photos || [],
+          images: photos.map(p => typeof p === 'string' ? p : p.url),
+          isPlaceholder: photos.length > 0 && photos[0].placeholder === true,
           rating: attributes.rating || '',
           price: attributes.price || '',
           duration: attributes.duration || '',
@@ -420,6 +422,8 @@ function render(place) {
 
           <div id="heroCounter" class="hero-counter" aria-label="Fotoğraf sayacı"></div>
           <div id="heroDots" class="hero-dots" aria-label="Fotoğraf noktaları"></div>
+
+          ${place.isPlaceholder ? '<div class="detail-placeholder-watermark">📸 Fotoğraflarınızı bekliyoruz!</div>' : ''}
 
           <div class="detail-hero-overlay"></div>
           <div class="detail-hero-content">
