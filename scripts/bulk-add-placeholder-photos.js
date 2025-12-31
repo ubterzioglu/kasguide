@@ -17,16 +17,16 @@ import sql from '../db/connection.js';
 // 📸 PLACEHOLDER PHOTOS - Edit these URLs with your Kaş photos
 // ============================================================================
 const PLACEHOLDER_URLS = [
-  'https://images.unsplash.com/photo-1',  // TODO: Replace with real URLs
-  'https://images.unsplash.com/photo-2',
-  'https://images.unsplash.com/photo-3',
-  'https://images.unsplash.com/photo-4',
-  'https://images.unsplash.com/photo-5',
-  'https://images.unsplash.com/photo-6',
-  'https://images.unsplash.com/photo-7',
-  'https://images.unsplash.com/photo-8',
-  'https://images.unsplash.com/photo-9',
-  'https://images.unsplash.com/photo-10',
+  'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200',
+  'https://images.unsplash.com/photo-1541336032412-2048a678540d?w=1200',
+  'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200',
+  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200',
+  'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1200',
+  'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200',
+  'https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1200',
+  'https://images.unsplash.com/photo-1548678967-f1aec58f6fb2?w=1200',
+  'https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200',
+  'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200',
 ];
 
 // ============================================================================
