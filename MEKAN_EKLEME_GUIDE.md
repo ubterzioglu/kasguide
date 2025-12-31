@@ -305,7 +305,7 @@ await sql`
 
 ## ✅ Checklist
 
-Mekan eklemeden önce:
+Mekan eklemeden önce:a
 
 - [ ] `item_number` benzersiz mi?
 - [ ] `slug` benzersiz mi?
