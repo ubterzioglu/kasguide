@@ -14,7 +14,7 @@
 import sql from '../db/connection.js';
 
 // ============================================================================
-// 📸 PLACEHOLDER PHOTOS - Kaş Guide Collection Photos
+// 📸 PLACEHOLDER PHOTOS - Edit these URLs with your Kaş photos
 // ============================================================================
 const PLACEHOLDER_URLS = [
   'https://images.unsplash.com/photo-1728603980950-ab5ec764aa1d?w=1200',
@@ -26,7 +26,7 @@ const PLACEHOLDER_URLS = [
   'https://images.unsplash.com/photo-oSy2vA18vHo?w=1200',
   'https://images.unsplash.com/photo-ppmb12yzD0M?w=1200',
   'https://images.unsplash.com/photo-TIVKP6Jib-4?w=1200',
-  'https://images.unsplash.com/photo-RDXw0MeI7zE?w=1200',
+  'https://images.unsplash.com/photo-RDXw0MeI7zE?w=1200'
 ];
 
 // ============================================================================
@@ -61,17 +61,9 @@ async function main() {
     process.exit(1);
   }
 
-  // Check for obvious placeholder patterns (not real Unsplash photos)
-  const hasPlaceholders = PLACEHOLDER_URLS.some(url =>
-    url.includes('TODO') ||
-    url.includes('XXXXX') ||
-    url.includes('example.com') ||
-    url.match(/photo-\d{1}[^\d]/) // Single digit photo IDs like photo-1, photo-2 (but not photo-12345)
-  );
-
-  if (hasPlaceholders) {
-    console.warn('⚠️  Warning: Placeholder URLs detected!');
-    console.log('Make sure to replace with real photo URLs.\n');
+  if (PLACEHOLDER_URLS.some(url => url.includes('TODO') || url.includes('unsplash.com/photo-'))) {
+    console.warn('⚠️  Warning: Placeholder URLs look like placeholders!');
+    console.log('Make sure to replace with real Kaş photo URLs.\n');
 
     if (!OPTIONS.dryRun) {
       console.log('Running in DRY RUN mode to prevent mistakes...');
@@ -182,8 +174,7 @@ async function main() {
     console.error('\n❌ Fatal error:', error);
     process.exit(1);
   } finally {
-    // Connection pool will close automatically on exit
-    process.exit(0);
+    await sql.end();
   }
 }
 
