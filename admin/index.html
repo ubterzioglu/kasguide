@@ -319,6 +319,128 @@
       color: #666;
       margin-top: 4px;
     }
+
+    /* Edit Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 8px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .modal-header {
+      padding: 20px 30px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      color: #333;
+    }
+
+    .modal-body {
+      padding: 30px;
+    }
+
+    .edit-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .edit-form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .edit-form-group label {
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .edit-form-group input,
+    .edit-form-group textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .edit-form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .modal-footer {
+      padding: 20px 30px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .btn-edit {
+      background: #2196F3;
+      color: white;
+    }
+
+    .btn-edit:hover {
+      background: #1976D2;
+    }
+
+    .btn-cancel {
+      background: #666;
+      color: white;
+    }
+
+    .btn-cancel:hover {
+      background: #555;
+    }
   </style>
 </head>
 <body>
@@ -372,6 +494,66 @@
       <div id="message" style="display:none;"></div>
       <div id="loading" class="loading">Yükleniyor...</div>
       <div id="submissions" class="submissions"></div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>✏️ Mekan Düzenle</h2>
+          <button class="modal-close" onclick="closeEditModal()">×</button>
+        </div>
+        <div class="modal-body">
+          <form id="editForm" class="edit-form" onsubmit="saveEdit(event)">
+            <input type="hidden" id="editItemId">
+            <input type="hidden" id="editItemType">
+
+            <div class="edit-form-group">
+              <label>Başlık *</label>
+              <input type="text" id="editTitle" required>
+            </div>
+
+            <div class="edit-form-group">
+              <label>Kısa Açıklama</label>
+              <textarea id="editDescription"></textarea>
+            </div>
+
+            <div class="edit-form-group">
+              <label>Detaylı Açıklama</label>
+              <textarea id="editLongText"></textarea>
+            </div>
+
+            <div class="edit-form-group">
+              <label>Telefon</label>
+              <input type="tel" id="editPhone">
+            </div>
+
+            <div class="edit-form-group">
+              <label>Email</label>
+              <input type="email" id="editEmail">
+            </div>
+
+            <div class="edit-form-group">
+              <label>Website</label>
+              <input type="url" id="editWebsite">
+            </div>
+
+            <div class="edit-form-group">
+              <label>Instagram</label>
+              <input type="text" id="editInstagram" placeholder="@username">
+            </div>
+
+            <div class="edit-form-group">
+              <label>Konum</label>
+              <input type="text" id="editLocation">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-cancel" onclick="closeEditModal()">İptal</button>
+          <button type="submit" form="editForm" class="btn btn-edit">💾 Kaydet</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -775,23 +957,27 @@
             ` : ''}
           </div>
 
-          ${renderActions(item.id, item.status, item.title)}
+          ${renderActions(item)}
         </div>
       `;
     }
 
-    function renderActions(id, status, title) {
+    function renderActions(item) {
+      const itemDataJson = JSON.stringify(item).replace(/'/g, "\\'").replace(/"/g, '&quot;');
       return `
         <div class="actions">
-          ${status === 'pending' ? `
-            <button class="btn btn-approve" onclick="updateStatus(${id}, 'approved')">
+          ${item.status === 'pending' ? `
+            <button class="btn btn-approve" onclick="updateStatus(${item.id}, 'approved')">
               ✅ Onayla
             </button>
-            <button class="btn btn-reject" onclick="updateStatus(${id}, 'rejected')">
+            <button class="btn btn-reject" onclick="updateStatus(${item.id}, 'rejected')">
               ❌ Reddet
             </button>
           ` : ''}
-          <button class="btn btn-delete" onclick="confirmDelete(${id}, '${title.replace(/'/g, "\\'")}')">
+          <button class="btn btn-edit" onclick='openEditModal(${itemDataJson})'>
+            ✏️ Düzenle
+          </button>
+          <button class="btn btn-delete" onclick="confirmDelete(${item.id}, '${item.title.replace(/'/g, "\\'")}')">
             🗑️ Sil
           </button>
         </div>
@@ -863,6 +1049,85 @@
       setTimeout(() => {
         messageDiv.style.display = 'none';
       }, 3000);
+    }
+
+    // Edit Modal Functions
+    function openEditModal(item) {
+      const modal = document.getElementById('editModal');
+      const attrs = item.attributes || {};
+
+      // Set item data
+      document.getElementById('editItemId').value = item.id;
+      document.getElementById('editItemType').value = item.item_type;
+      document.getElementById('editTitle').value = item.title || '';
+      document.getElementById('editDescription').value = item.description || '';
+      document.getElementById('editLongText').value = item.long_text || '';
+      document.getElementById('editPhone').value = item.phone || '';
+      document.getElementById('editEmail').value = item.email || '';
+      document.getElementById('editWebsite').value = item.website || '';
+      document.getElementById('editInstagram').value = item.instagram || '';
+      document.getElementById('editLocation').value = item.location || '';
+
+      // Update modal title
+      const modalTitle = document.querySelector('.modal-header h2');
+      const typeEmojis = {
+        place: '🏪',
+        pet: '🐾',
+        hotel: '🏨',
+        artist: '🎨'
+      };
+      modalTitle.textContent = `${typeEmojis[item.item_type] || '✏️'} ${item.title || 'Öğe'} Düzenle`;
+
+      // Show modal
+      modal.classList.add('active');
+    }
+
+    function closeEditModal() {
+      const modal = document.getElementById('editModal');
+      modal.classList.remove('active');
+      document.getElementById('editForm').reset();
+    }
+
+    async function saveEdit(event) {
+      event.preventDefault();
+
+      const id = parseInt(document.getElementById('editItemId').value);
+      const itemType = document.getElementById('editItemType').value;
+
+      // Collect form data
+      const data = {
+        title: document.getElementById('editTitle').value,
+        description: document.getElementById('editDescription').value || null,
+        longText: document.getElementById('editLongText').value || null,
+        phone: document.getElementById('editPhone').value || null,
+        email: document.getElementById('editEmail').value || null,
+        website: document.getElementById('editWebsite').value || null,
+        instagram: document.getElementById('editInstagram').value || null,
+        location: document.getElementById('editLocation').value || null
+      };
+
+      try {
+        const response = await fetch('/api/admin/items', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({ id, data })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          showMessage('✅ Başarıyla güncellendi!', 'success');
+          closeEditModal();
+          loadSubmissions();
+        } else {
+          showMessage('❌ Hata: ' + result.error, 'error');
+        }
+      } catch (error) {
+        showMessage('❌ Hata: ' + error.message, 'error');
+      }
     }
   </script>
 </body>
