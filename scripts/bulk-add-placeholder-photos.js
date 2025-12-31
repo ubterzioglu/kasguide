@@ -72,11 +72,16 @@ async function main() {
   }
 
   try {
-    // Find items without photos
+    // Find items WITHOUT photos OR with placeholder photos (to replace old ones)
     let query = `
       SELECT id, item_number, item_type, title, photos, status
       FROM items
-      WHERE (photos IS NULL OR photos = '[]'::jsonb OR JSONB_ARRAY_LENGTH(photos) = 0)
+      WHERE (
+        photos IS NULL
+        OR photos = '[]'::jsonb
+        OR JSONB_ARRAY_LENGTH(photos) = 0
+        OR photos::text LIKE '%"placeholder":true%'
+      )
     `;
 
     const conditions = [];
@@ -101,17 +106,19 @@ async function main() {
     const result = await sql.query(query, params);
     const items = result.rows;
 
-    console.log(`📊 Found ${items.length} items without photos\n`);
+    console.log(`📊 Found ${items.length} items to update (includes items with old placeholders)\n`);
 
     if (items.length === 0) {
-      console.log('✅ All items already have photos!\n');
+      console.log('✅ All items already have real photos!\n');
       process.exit(0);
     }
 
     // Show sample items
     console.log('Sample items:');
     items.slice(0, 5).forEach((item, i) => {
-      console.log(`  ${i + 1}. [${item.item_number}] ${item.title} (${item.item_type})`);
+      const hasOldPlaceholder = item.photos && item.photos.toString().includes('placeholder');
+      const status = hasOldPlaceholder ? '(replacing old placeholder)' : '(no photo)';
+      console.log(`  ${i + 1}. [${item.item_number}] ${item.title} ${status}`);
     });
     if (items.length > 5) {
       console.log(`  ... and ${items.length - 5} more\n`);
