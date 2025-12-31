@@ -114,3 +114,15 @@ a {
     font-size: 0.95rem;
   }
 }
+
+
+/* ============================================================
+   BASE PATCH (safe defaults for forms)
+   ============================================================ */
+*, *::before, *::after{
+  box-sizing:border-box;
+}
+
+input, select, textarea{
+  font: inherit;
+}

@@ -419,3 +419,51 @@ textarea {
     padding: 14px;
   }
 }
+
+
+/* ============================================================
+   FORM LAYOUT PATCH (grid rows + full-width fields)
+   Note: Visual-only; does not change form item names/ids.
+   ============================================================ */
+
+.form-group{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:12px;
+}
+
+.form-label{
+  font-weight:600;
+}
+
+.form-input,
+.form-textarea{
+  width:100%;
+  max-width:100%;
+}
+
+.form-textarea{
+  resize: vertical;
+}
+
+/* Two-column rows (Phone+Email, Website+Instagram, etc.) */
+.form-row{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:12px;
+  align-items:start;
+  width:100%;
+}
+
+/* Ensure rows don't create extra bottom gaps (groups already have margin) */
+.form-row > .form-group{
+  margin-bottom:0;
+}
+
+@media (max-width: 640px){
+  .form-row{
+    grid-template-columns: 1fr;
+  }
+}
