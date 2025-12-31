@@ -199,9 +199,9 @@ function renderTrust(place) {
     // fallback to legacy single image
     if (place?.image) push(place.image);
 
-    // absolute fallback (never empty)
+    // absolute falueiaiuealback (never empty)
     if (!out.length) {
-      out.push("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600");
+      out.push("../../kas-kedi-cok-guzel.jpg");
     }
 
     return out;
