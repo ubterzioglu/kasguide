@@ -141,7 +141,20 @@ async function loadPetsFromAPI() {
 // Convert unified items API data to match static data format
 function convertAPIPlace(apiData) {
   const attrs = apiData.attributes || {};
-  const photos = apiData.photos || [];
+
+  // Parse photos - may come as string (JSONB) or already parsed array
+  let photos = apiData.photos || [];
+  if (typeof photos === 'string') {
+    try {
+      photos = JSON.parse(photos);
+    } catch (e) {
+      console.warn('Failed to parse photos for', apiData.title, e);
+      photos = [];
+    }
+  }
+  if (!Array.isArray(photos)) {
+    photos = [];
+  }
 
   return {
     id: apiData.id,
@@ -149,8 +162,8 @@ function convertAPIPlace(apiData) {
     description: apiData.description,
     longText: apiData.long_text,
     category: attrs.categories || [],
-    images: photos.map(p => p.url),
-    image: photos.length > 0 ? photos[0].url : null, // First photo for card display
+    images: photos.map(p => typeof p === 'string' ? p : (p.url || p)),
+    image: photos.length > 0 ? (typeof photos[0] === 'string' ? photos[0] : (photos[0].url || photos[0])) : null,
     isPlaceholder: photos.length > 0 && photos[0].placeholder === true,
     rating: attrs.rating || '',
     price: attrs.price || '',
@@ -185,15 +198,27 @@ function convertAPIFaqSeries(apiData) {
 
 function convertAPIHotel(apiData) {
   const attrs = apiData.attributes || {};
-  const photos = apiData.photos || [];
+
+  // Parse photos - may come as string (JSONB) or already parsed array
+  let photos = apiData.photos || [];
+  if (typeof photos === 'string') {
+    try {
+      photos = JSON.parse(photos);
+    } catch (e) {
+      photos = [];
+    }
+  }
+  if (!Array.isArray(photos)) {
+    photos = [];
+  }
 
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
     category: attrs.categories || [],
-    images: photos.map(p => p.url),
-    image: photos.length > 0 ? photos[0].url : null, // First photo for card display
+    images: photos.map(p => typeof p === 'string' ? p : (p.url || p)),
+    image: photos.length > 0 ? (typeof photos[0] === 'string' ? photos[0] : (photos[0].url || photos[0])) : null,
     isPlaceholder: photos.length > 0 && photos[0].placeholder === true,
     rating: attrs.rating || '',
     facilities: attrs.facilities || []
@@ -202,15 +227,27 @@ function convertAPIHotel(apiData) {
 
 function convertAPIPet(apiData) {
   const attrs = apiData.attributes || {};
-  const photos = apiData.photos || [];
+
+  // Parse photos - may come as string (JSONB) or already parsed array
+  let photos = apiData.photos || [];
+  if (typeof photos === 'string') {
+    try {
+      photos = JSON.parse(photos);
+    } catch (e) {
+      photos = [];
+    }
+  }
+  if (!Array.isArray(photos)) {
+    photos = [];
+  }
 
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
     category: attrs.categories || [],
-    images: photos.map(p => p.url),
-    image: photos.length > 0 ? photos[0].url : null, // First photo for card display
+    images: photos.map(p => typeof p === 'string' ? p : (p.url || p)),
+    image: photos.length > 0 ? (typeof photos[0] === 'string' ? photos[0] : (photos[0].url || photos[0])) : null,
     isPlaceholder: photos.length > 0 && photos[0].placeholder === true
   };
 }
