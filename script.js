@@ -394,9 +394,8 @@ function renderCards() {
       `;
     } else {
       card.className = 'card';
-      const placeholderClass = item.isPlaceholder ? 'has-placeholder' : '';
       card.innerHTML = `
-      <div class="card-image-wrapper ${placeholderClass}">
+      <div class="card-image-wrapper">
         <img src="${img}" alt="${item.title || ''}" class="card-image" loading="lazy">
         <div class="card-badge" style="background: var(--primary-${badgeColor})">
           ${safeArr(item.category)
@@ -404,7 +403,6 @@ function renderCards() {
             .slice(0, 2)
             .join(', ')}
         </div>
-        ${item.isPlaceholder ? '<div class="placeholder-watermark">📸 Fotoğraflarınızı bekliyoruz!</div>' : ''}
       </div>
 
       <div class="card-content">
