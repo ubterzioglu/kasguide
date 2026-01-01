@@ -3,6 +3,24 @@
 (function () {
   const PLACEHOLDER = "—";
 
+  // Track venue view for analytics
+  async function trackView(venueId, venueType) {
+    try {
+      await fetch('/api/analytics/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          venue_id: venueId,
+          venue_type: venueType,
+          event_type: 'view'
+        })
+      });
+    } catch (e) {
+      // Silent fail - analytics shouldn't break the page
+      console.debug('Analytics tracking failed:', e);
+    }
+  }
+
   function escapeHtml(str) {
     return String(str ?? "")
       .replaceAll("&", "&amp;")
@@ -527,5 +545,10 @@ function render(place) {
 
     const place = await getPlaceById(id);
     render(place);
+
+    // Track page view for analytics
+    if (place && place.id) {
+      trackView(place.id, 'place');
+    }
   })();
 })();
