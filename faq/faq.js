@@ -98,4 +98,26 @@
   // init
   setCounts(window.faqData.length, window.faqData.length);
   render(window.faqData);
+
+  // Generate and inject FAQPage structured data for SEO
+  if (window.faqData && window.faqData.length > 0) {
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': window.faqData.map(faq => ({
+        '@type': 'Question',
+        'name': faq.question,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': faq.answer
+        }
+      }))
+    };
+
+    // Inject schema into page
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(faqSchema, null, 2);
+    document.head.appendChild(script);
+  }
 })();
