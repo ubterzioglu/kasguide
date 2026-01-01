@@ -91,22 +91,12 @@ const categories = [
     color: 'category-amber'
   },
   {
-    id: 'sergi',
-    name: 'Sergi',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <rect x="3" y="3" width="18" height="18" rx="2"/>
-      <path d="M3 9h18"/>
-      <path d="M9 21V9"/>
-    </svg>`,
-    color: 'category-pink'
-  },
-  {
     id: 'etkinlik',
     name: 'Etkinlik',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
     </svg>`,
-    color: 'category-yellow'
+    color: 'category-orange'
   },
 
   // Son Sıra - Diğer
@@ -219,7 +209,7 @@ const categories = [
       <circle cx="20" cy="16" r="2"/>
       <path d="M9 10a5 5 0 0 1 5 5v6h1a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2h-1"/>
     </svg>`,
-    color: 'category-rose',
+    color: 'category-pink',
     action: { type: 'page', href: 'owner/owner.html?type=pet' }
   }
 ];
