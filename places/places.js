@@ -30,13 +30,37 @@
       // Convert unified items data to places format
       if (data && data.item_type === 'place') {
         const attributes = data.attributes || {};
+
+        // Parse photos - may come as string (JSONB) or already parsed array
+        let photos = data.photos || [];
+        if (typeof photos === 'string') {
+          try {
+            photos = JSON.parse(photos);
+          } catch (e) {
+            console.warn('Failed to parse photos for', data.title, e);
+            photos = [];
+          }
+        }
+        if (!Array.isArray(photos)) {
+          photos = [];
+        }
+
+        // Extract URLs and check for placeholder
+        const imageUrls = photos.map(p => {
+          if (typeof p === 'string') return p;
+          return p.url || p;
+        }).filter(url => url);
+
+        const isPlaceholder = photos.length > 0 && photos[0].placeholder === true;
+
         const convertedPlace = {
           id: data.id,
           title: data.title,
           description: data.description,
           longText: data.long_text,
           category: attributes.categories || [],
-          images: data.photos || [],
+          images: imageUrls,
+          isPlaceholder: isPlaceholder,
           rating: attributes.rating || '',
           price: attributes.price || '',
           duration: attributes.duration || '',
@@ -406,10 +430,20 @@ function render(place) {
     const location = fmt(place.location);
     const konum = fmt(place.distance) || location;
 
+    // Check if placeholder
+    const isPlaceholder = place.isPlaceholder === true;
+
     root.innerHTML = `
       <article class="detail-card">
         <div class="detail-hero">
           <img id="heroImg" class="detail-hero-img" src="${escapeHtml(firstImg)}" alt="${escapeHtml(title)}">
+
+          ${isPlaceholder ? `
+            <div class="photo-watermark">
+              <div class="watermark-icon">📸</div>
+              <div class="watermark-text">Fotoğraflarınızı bekliyoruz!</div>
+            </div>
+          ` : ''}
 
           <button id="heroPrev" class="hero-nav hero-prev" type="button" aria-label="Önceki fotoğraf">
             ${chevronSvg("left")}

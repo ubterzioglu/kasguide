@@ -141,7 +141,29 @@ async function loadPetsFromAPI() {
 // Convert unified items API data to match static data format
 function convertAPIPlace(apiData) {
   const attrs = apiData.attributes || {};
-  const photos = apiData.photos || [];
+
+  // Parse photos - may come as string (JSONB) or already parsed array
+  let photos = apiData.photos || [];
+  if (typeof photos === 'string') {
+    try {
+      photos = JSON.parse(photos);
+    } catch (e) {
+      console.warn('Failed to parse photos for', apiData.title, e);
+      photos = [];
+    }
+  }
+  if (!Array.isArray(photos)) {
+    photos = [];
+  }
+
+  // Extract image URLs - handle both object {url: "..."} and string formats
+  const imageUrls = photos.map(p => {
+    if (typeof p === 'string') return p;
+    return p.url || p;
+  }).filter(url => url);
+
+  // Get placeholder status
+  const isPlaceholder = photos.length > 0 && photos[0].placeholder === true;
 
   return {
     id: apiData.id,
@@ -149,7 +171,9 @@ function convertAPIPlace(apiData) {
     description: apiData.description,
     longText: apiData.long_text,
     category: attrs.categories || [],
-    images: photos.map(p => p.url),
+    images: imageUrls,
+    image: imageUrls[0] || null,  // Single image for cards
+    isPlaceholder: isPlaceholder,
     rating: attrs.rating || '',
     price: attrs.price || '',
     duration: attrs.duration || '',
@@ -183,14 +207,37 @@ function convertAPIFaqSeries(apiData) {
 
 function convertAPIHotel(apiData) {
   const attrs = apiData.attributes || {};
-  const photos = apiData.photos || [];
+
+  // Parse photos - may come as string (JSONB) or already parsed array
+  let photos = apiData.photos || [];
+  if (typeof photos === 'string') {
+    try {
+      photos = JSON.parse(photos);
+    } catch (e) {
+      console.warn('Failed to parse photos for', apiData.title, e);
+      photos = [];
+    }
+  }
+  if (!Array.isArray(photos)) {
+    photos = [];
+  }
+
+  // Extract image URLs
+  const imageUrls = photos.map(p => {
+    if (typeof p === 'string') return p;
+    return p.url || p;
+  }).filter(url => url);
+
+  const isPlaceholder = photos.length > 0 && photos[0].placeholder === true;
 
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
     category: attrs.categories || [],
-    images: photos.map(p => p.url),
+    images: imageUrls,
+    image: imageUrls[0] || null,
+    isPlaceholder: isPlaceholder,
     rating: attrs.rating || '',
     facilities: attrs.facilities || []
   };
@@ -198,14 +245,37 @@ function convertAPIHotel(apiData) {
 
 function convertAPIPet(apiData) {
   const attrs = apiData.attributes || {};
-  const photos = apiData.photos || [];
+
+  // Parse photos - may come as string (JSONB) or already parsed array
+  let photos = apiData.photos || [];
+  if (typeof photos === 'string') {
+    try {
+      photos = JSON.parse(photos);
+    } catch (e) {
+      console.warn('Failed to parse photos for', apiData.title, e);
+      photos = [];
+    }
+  }
+  if (!Array.isArray(photos)) {
+    photos = [];
+  }
+
+  // Extract image URLs
+  const imageUrls = photos.map(p => {
+    if (typeof p === 'string') return p;
+    return p.url || p;
+  }).filter(url => url);
+
+  const isPlaceholder = photos.length > 0 && photos[0].placeholder === true;
 
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
     category: attrs.categories || [],
-    images: photos.map(p => p.url)
+    images: imageUrls,
+    image: imageUrls[0] || null,
+    isPlaceholder: isPlaceholder
   };
 }
 
