@@ -704,6 +704,24 @@ body {
   line-height: 1.4;
 }
 
+.card-title-link {
+  color: #000;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.card-title-link:hover {
+  opacity: 0.7;
+}
+
+.card-badge-emoji {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0.75rem 0;
+  margin-top: 0.5rem;
+  user-select: none;
+}
+
 .card-description {
   color: var(--gray-600);
   font-size: 0.875rem;
