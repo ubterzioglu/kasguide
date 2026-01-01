@@ -186,7 +186,7 @@
 - **Priority**: 🟢 **RESOLVED**
 
 #### 4. **Missing Placeholder Email**
-- **Issue**: Contact page has `hello@example.com`
+- **Issue**: Contact page has `info@kasguide.de`
 - **Risk**: Poor user experience, low E-E-A-T
 - **Solution**: Replace with real contact email
 - **Priority**: 🔴 **HIGH** (E-E-A-T)
