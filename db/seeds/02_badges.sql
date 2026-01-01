@@ -2,7 +2,7 @@
 -- Based on badgeDefinitions from places-data.js
 
 INSERT INTO badges (slug, emoji, title, description) VALUES
-('tourist', '🧑‍🧳', 'Turist Dostu', 'İlk kez gelenler için anlaşılır, rahat ve pratik bir tercih.'),
+('tourist', '🎒', 'Turist Dostu', 'İlk kez gelenler için anlaşılır, rahat ve pratik bir tercih.'),
 ('recommend', '⭐', 'Kaş Guide Önerir', 'Kaş Guide ekibinin net önerisi.'),
 ('localFav', '❤️', 'Yerel Favori', 'Kaşlıların sık gittiği, sevdiği yer.'),
 ('classic', '🏛️', 'Kaş Klasiği', 'Yıllardır bilinen, adı oturmuş klasik durak.'),
