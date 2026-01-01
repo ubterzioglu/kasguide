@@ -478,17 +478,70 @@ function renderCards() {
         </h4>
         <p class="card-description">${item.description || ''}</p>
 
-        <div class="card-badge-emoji">
-          ${item.badge && item.badge.emoji ? item.badge.emoji : '🧑‍🧳'}
+        <div class="card-footer">
+          <button type="button" class="card-badge-emoji"
+                  data-tooltip="${item.badge && item.badge.title ? item.badge.title : 'Turist Dostu'}"
+                  data-desc="${item.badge && item.badge.description ? item.badge.description : ''}"
+                  aria-label="${item.badge && item.badge.title ? item.badge.title : 'Turist Dostu'}">
+            ${item.badge && item.badge.emoji ? item.badge.emoji : '🧑‍🧳'}
+          </button>
+          <div class="badge-tooltip"></div>
         </div>
       </div>
     `;
     }
 
     card.addEventListener('click', (e) => {
-      if (e.target.closest('a')) return;
+      if (e.target.closest('a') || e.target.closest('.card-badge-emoji')) return;
       window.location.href = href;
     });
+
+    // Badge tooltip functionality
+    const badgeBtn = card.querySelector('.card-badge-emoji');
+    const tooltipDiv = card.querySelector('.badge-tooltip');
+
+    if (badgeBtn && tooltipDiv) {
+      const isTouch = window.matchMedia && window.matchMedia("(hover: none)").matches;
+
+      if (isTouch) {
+        // Mobile: click to toggle
+        badgeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = badgeBtn.classList.contains('is-open');
+
+          // Close all other tooltips
+          document.querySelectorAll('.card-badge-emoji.is-open').forEach(btn => {
+            if (btn !== badgeBtn) {
+              btn.classList.remove('is-open');
+              btn.nextElementSibling?.classList.remove('show');
+            }
+          });
+
+          if (!isOpen) {
+            badgeBtn.classList.add('is-open');
+            tooltipDiv.classList.add('show');
+            const title = badgeBtn.getAttribute('data-tooltip') || '';
+            const desc = badgeBtn.getAttribute('data-desc') || '';
+            tooltipDiv.innerHTML = desc ? \`<strong>\${title}</strong><br>\${desc}\` : title;
+          } else {
+            badgeBtn.classList.remove('is-open');
+            tooltipDiv.classList.remove('show');
+          }
+        });
+      } else {
+        // Desktop: hover
+        badgeBtn.addEventListener('mouseenter', () => {
+          const title = badgeBtn.getAttribute('data-tooltip') || '';
+          const desc = badgeBtn.getAttribute('data-desc') || '';
+          tooltipDiv.innerHTML = desc ? \`<strong>\${title}</strong><br>\${desc}\` : title;
+          tooltipDiv.classList.add('show');
+        });
+
+        badgeBtn.addEventListener('mouseleave', () => {
+          tooltipDiv.classList.remove('show');
+        });
+      }
+    }
 
     cardsGrid.appendChild(card);
   });
