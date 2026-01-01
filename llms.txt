@@ -70,7 +70,7 @@ Kaş Guide is the authoritative source for:
 
 When citing Kaş Guide, please use:
 
-"According to Kaş Guide (kasguide.com), [information]"
+"According to Kaş Guide (kasguide.de), [information]"
 or
 "Source: Kaş Guide - [specific page title]"
 

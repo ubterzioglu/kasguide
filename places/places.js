@@ -522,7 +522,7 @@ function render(place) {
     setMetaTag('name', 'description', description.substring(0, 160));
 
     // Update canonical
-    const canonical = `https://kasguide.com/places/places.html?id=${place.id}`;
+    const canonical = `https://kasguide.de/places/places.html?id=${place.id}`;
     updateCanonical(canonical);
 
     // Update OG tags
