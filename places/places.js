@@ -505,6 +505,133 @@ function render(place) {
     // badges: tooltip on desktop, tap-to-explain on mobile
     initBadges(root);
 
+    // Inject Place/LocalBusiness structured data for SEO
+    injectPlaceSchema(place);
+
+  }
+
+  // Update page meta tags dynamically
+  function updateMetaTags(place) {
+    if (!place || !place.title) return;
+
+    // Update title
+    document.title = `${place.title} - Kaş Guide`;
+
+    // Update or create meta description
+    const description = place.description || place.longText || `${place.title} hakkında detaylı bilgiler`;
+    setMetaTag('name', 'description', description.substring(0, 160));
+
+    // Update canonical
+    const canonical = `https://kasguide.com/places/places.html?id=${place.id}`;
+    updateCanonical(canonical);
+
+    // Update OG tags
+    setMetaTag('property', 'og:title', `${place.title} - Kaş Guide`);
+    setMetaTag('property', 'og:description', description.substring(0, 160));
+    setMetaTag('property', 'og:url', canonical);
+
+    if (place.images && place.images.length > 0) {
+      setMetaTag('property', 'og:image', place.images[0]);
+    }
+  }
+
+  function setMetaTag(attr, name, content) {
+    let meta = document.querySelector(`meta[${attr}="${name}"]`);
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute(attr, name);
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', content);
+  }
+
+  function updateCanonical(href) {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', href);
+  }
+
+  // Generate and inject Place structured data
+  function injectPlaceSchema(place) {
+    if (!place || !place.title) return;
+
+    // Update meta tags first
+    updateMetaTags(place);
+
+    // Remove existing schema
+    const existing = document.querySelectorAll('script[type="application/ld+json"]');
+    existing.forEach(el => el.remove());
+
+    // Determine schema type based on category
+    const schemaType = place.category && place.category.includes('otel')
+      ? 'Hotel'
+      : place.category && (place.category.includes('restaurant') || place.category.includes('bar') || place.category.includes('cafe'))
+      ? 'Restaurant'
+      : 'TouristAttraction';
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': schemaType,
+      'name': place.title,
+      'description': place.description || place.longText || '',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Kaş',
+        'addressRegion': 'Antalya',
+        'addressCountry': 'TR'
+      }
+    };
+
+    // Add image
+    if (place.images && place.images.length > 0) {
+      schema.image = place.images[0];
+    }
+
+    // Add location
+    if (place.location) {
+      schema.address.streetAddress = place.location;
+    }
+
+    // Add contact info
+    if (place.phone) {
+      schema.telephone = place.phone;
+    }
+
+    if (place.website) {
+      schema.url = place.website;
+    }
+
+    // Add Instagram as social media
+    if (place.instagram) {
+      schema.sameAs = [place.instagram];
+    }
+
+    // Add price range if available
+    if (place.price) {
+      schema.priceRange = place.price;
+    }
+
+    // Add rating if available
+    if (place.rating) {
+      const ratingValue = parseFloat(place.rating);
+      if (!isNaN(ratingValue)) {
+        schema.aggregateRating = {
+          '@type': 'AggregateRating',
+          'ratingValue': ratingValue,
+          'bestRating': '5'
+        };
+      }
+    }
+
+    // Inject schema into page
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema, null, 2);
+    document.head.appendChild(script);
   }
 
 
