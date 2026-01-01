@@ -108,12 +108,12 @@ Special tags for places (Tourist-friendly, Local favorite, etc.)
 |--------|------|-------------|
 | `id` | SERIAL | Unique ID |
 | `slug` | VARCHAR | Badge ID (e.g., "tourist") |
-| `emoji` | VARCHAR | Badge emoji (e.g., "🧑‍🧳") |
+| `emoji` | VARCHAR | Badge emoji (e.g., "🎒") |
 | `title` | VARCHAR | Badge title |
 | `description` | TEXT | Badge description |
 
 **Your 16 badges:**
-1. 🧑‍🧳 Turist Dostu (tourist)
+1. 🎒 Turist Dostu (tourist)
 2. 🏛️ Klasik (classic)
 3. 🆕 Yeni Keşif (newFind)
 4. ✍️ Editörün Seçimi (editorsPick)
@@ -400,7 +400,7 @@ fetch('/api/places?limit=20&offset=0')
       "slug": "frida-pub",
       "title": "Frida Pub",
       "description": "...",
-      "badge_emoji": "🧑‍🧳",
+      "badge_emoji": "🎒",
       "badge_title": "Turist Dostu",
       "images": ["url1", "url2"],
       "categories": ["bar", "nightlife"],

@@ -144,7 +144,7 @@
       : {};
     const badgeId = String(place?.badgeId || place?.badge || "tourist").trim() || "tourist";
     const def = defs[badgeId] || {};
-    const emoji = String(def.emoji || place?.badgeEmoji || "🧑‍🧳");
+    const emoji = String(def.emoji || place?.badgeEmoji || "🎒");
     const title = String(def.title || def.label || "Turist Dostu");
     const description = String(def.description || "");
     // Tooltip text: prefer description; fall back to title

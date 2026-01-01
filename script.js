@@ -483,7 +483,7 @@ function renderCards() {
                   data-tooltip="${item.badge && item.badge.title ? item.badge.title : 'Turist Dostu'}"
                   data-desc="${item.badge && item.badge.description ? item.badge.description : ''}"
                   aria-label="${item.badge && item.badge.title ? item.badge.title : 'Turist Dostu'}">
-            ${item.badge && item.badge.emoji ? item.badge.emoji : '🧑‍🧳'}
+            ${item.badge && item.badge.emoji ? item.badge.emoji : '🎒'}
           </button>
           <div class="badge-tooltip"></div>
         </div>

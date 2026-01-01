@@ -22,7 +22,7 @@ Yazılar : articles
 const badgeDefinitions = {
   // Default (for now: applied to all places)
   tourist: {
-    emoji: "🧑‍🧳",
+    emoji: "🎒",
     title: "Turist Dostu",
     description: "İlk kez gelenler için anlaşılır, rahat ve pratik bir tercih."
   },
