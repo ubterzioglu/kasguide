@@ -522,7 +522,7 @@ function renderCards() {
             tooltipDiv.classList.add('show');
             const title = badgeBtn.getAttribute('data-tooltip') || '';
             const desc = badgeBtn.getAttribute('data-desc') || '';
-            tooltipDiv.innerHTML = desc ? \`<strong>\${title}</strong><br>\${desc}\` : title;
+            tooltipDiv.innerHTML = desc ? `<strong>${title}</strong><br>${desc}` : title;
           } else {
             badgeBtn.classList.remove('is-open');
             tooltipDiv.classList.remove('show');
@@ -533,7 +533,7 @@ function renderCards() {
         badgeBtn.addEventListener('mouseenter', () => {
           const title = badgeBtn.getAttribute('data-tooltip') || '';
           const desc = badgeBtn.getAttribute('data-desc') || '';
-          tooltipDiv.innerHTML = desc ? \`<strong>\${title}</strong><br>\${desc}\` : title;
+          tooltipDiv.innerHTML = desc ? `<strong>${title}</strong><br>${desc}` : title;
           tooltipDiv.classList.add('show');
         });
 
