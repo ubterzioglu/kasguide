@@ -430,20 +430,10 @@ function render(place) {
     const location = fmt(place.location);
     const konum = fmt(place.distance) || location;
 
-    // Check if placeholder
-    const isPlaceholder = place.isPlaceholder === true;
-
     root.innerHTML = `
       <article class="detail-card">
         <div class="detail-hero">
           <img id="heroImg" class="detail-hero-img" src="${escapeHtml(firstImg)}" alt="${escapeHtml(title)}">
-
-          ${isPlaceholder ? `
-            <div class="photo-watermark">
-              <div class="watermark-icon">📸</div>
-              <div class="watermark-text">Fotoğraflarınızı bekliyoruz!</div>
-            </div>
-          ` : ''}
 
           <button id="heroPrev" class="hero-nav hero-prev" type="button" aria-label="Önceki fotoğraf">
             ${chevronSvg("left")}
