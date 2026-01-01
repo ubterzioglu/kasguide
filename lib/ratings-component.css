@@ -1,0 +1,166 @@
+/* Ratings Section Component Styles */
+
+.ratings-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ratings-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.25rem;
+}
+
+.ratings-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.rating-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.rating-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.rating-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.rating-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.google-icon {
+  /* SVG already has colors */
+}
+
+.tripadvisor-icon {
+  /* SVG already has colors */
+}
+
+.rating-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 2px;
+  font-size: 0.9rem;
+}
+
+.star {
+  display: inline-block;
+}
+
+.star-full {
+  color: #fbbf24;
+}
+
+.star-half {
+  color: #fbbf24;
+  opacity: 0.6;
+}
+
+.star-empty {
+  color: #d1d5db;
+}
+
+.rating-reviews {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.rating-empty {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.rating-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.rating-cta:hover {
+  background: #45a049;
+  transform: translateX(2px);
+}
+
+.ratings-updated {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .ratings-section {
+    padding: 1rem;
+  }
+
+  .ratings-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .rating-value {
+    font-size: 1.75rem;
+  }
+
+  .ratings-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* Graceful empty state */
+.ratings-section:empty {
+  display: none;
+}
