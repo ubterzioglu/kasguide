@@ -73,21 +73,6 @@
   border: 1px solid rgba(255,255,255,.18);
 }
 
-.hero-badge{
-  display:inline-flex;
-  align-self:flex-start;
-  padding: 8px 12px;
-  border-radius: 999px;
-  color: rgba(255,255,255,.95);
-  font-weight: 800;
-  font-size: .9rem;
-  background: rgba(139, 92, 246, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.25);
-  box-shadow: 0 4px 12px rgba(0,0,0,.25);
-  margin-top: 4px;
-}
-
 .detail-body{
   padding: 1.25rem;
 }
@@ -246,6 +231,17 @@
   .kg-badge-help{ display:none; }
 }
 
+/* Badge Label */
+.badge-label{
+  font-size: .9rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin: 0 0 .5rem 0;
+  padding: 0 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
 /* Action bar: icon-only - Extended outside card */
 .detail-actions{
   display:flex;
@@ -295,6 +291,27 @@
 .detail-action.is-disabled:hover{
   transform:none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Badge Button (special purple style) */
+.detail-action.is-badge{
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  cursor: pointer;
+}
+.detail-action.is-badge:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.25);
+  background: rgba(139, 92, 246, 0.22);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+.detail-action.is-badge:active{
+  transform: translateY(0) scale(1);
+}
+.badge-emoji-icon{
+  font-size: 26px;
+  line-height: 1;
+  display: inline-block;
 }
 
 /* Uzunca */

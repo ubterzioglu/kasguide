@@ -482,7 +482,6 @@ function render(place) {
           <div class="detail-hero-content">
             <h2 class="detail-title">${escapeHtml(title)}</h2>
             ${cats ? `<div class="detail-cats">${escapeHtml(cats)}</div>` : ""}
-            <div class="hero-badge" title="${escapeHtml(badgeTitle)}">${escapeHtml(badgeEmoji)} ${escapeHtml(badgeTitle)}</div>
           </div>
         </div>
 
@@ -501,7 +500,11 @@ function render(place) {
 
           ${renderTrust(place)}
 
+          <div class="badge-label">Kaş Guide Badge:</div>
           <div class="detail-actions">
+            <button class="detail-action is-badge" type="button" title="${escapeHtml(badgeTitle)}" aria-label="${escapeHtml(badgeTitle)}">
+              <span class="badge-emoji-icon">${escapeHtml(badgeEmoji)}</span>
+            </button>
             ${actionButton(map, "Harita", "map")}
             ${actionButton(googleMaps, "Google Maps", "googlemaps")}
             ${actionButton(tripadvisor, "TripAdvisor", "tripadvisor")}
