@@ -35,6 +35,19 @@
   transform: translateY(-2px);
 }
 
+.rating-card-link-only {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.link-only-message {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0.75rem 0 1rem 0;
+}
+
 .rating-card-header {
   display: flex;
   align-items: center;
