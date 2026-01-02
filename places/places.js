@@ -85,6 +85,8 @@
           distance: attributes.distance || '',
           location: attributes.location || '',
           googleMapsQuery: attributes.google_maps_query || '',
+          googleMapsUrl: data.google_maps_url || '',
+          tripadvisorUrl: data.tripadvisor_url || '',
           booking: attributes.booking_url || '',
           website: data.website || '',
           instagram: data.instagram || '',
@@ -200,6 +202,8 @@ function renderTrust(place) {
   function icon(name) {
     const common = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
     if (name === "map") return `<svg viewBox="0 0 24 24" ${common}><path d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg>`;
+    if (name === "googlemaps") return `<svg viewBox="0 0 24 24" ${common}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>`;
+    if (name === "tripadvisor") return `<svg viewBox="0 0 24 24" ${common}><circle cx="8.5" cy="12" r="3.5"/><circle cx="15.5" cy="12" r="3.5"/><path d="M2 12h4.5M17.5 12H22"/><path d="M12 5c-2 0-4 1-4 1s1-2 4-2 4 2 4 2-2-1-4-1z"/></svg>`;
     if (name === "instagram") return `<svg viewBox="0 0 24 24" ${common}><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>`;
     if (name === "web") return `<svg viewBox="0 0 24 24" ${common}><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`;
     if (name === "booking") return `<svg viewBox="0 0 24 24" ${common}><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg>`;
@@ -434,6 +438,8 @@ function render(place) {
     const cats = getCategoryNames(place);
     const { instagram, website, booking, phone } = normalizeLinks(place);
     const map = mapsHref(place);
+    const googleMaps = fmt(place.googleMapsUrl);
+    const tripadvisor = fmt(place.tripadvisorUrl);
 
     const title = fmt(place.title) || "Detay";
     const photos = normalizePhotos(place);
@@ -442,11 +448,20 @@ function render(place) {
     const desc = fmt(place.description);
     const longText = fmt(place.longText);
 
-    // meta values
+    // meta values (kept for backend)
     const rating = fmt(place.rating);
     const price = fmt(place.price);
     const location = fmt(place.location);
     const konum = fmt(place.distance) || location;
+
+    // Badge for hero
+    const defs = (typeof badgeDefinitions !== "undefined" && badgeDefinitions && typeof badgeDefinitions === "object")
+      ? badgeDefinitions
+      : {};
+    const badgeId = String(place?.badgeId || place?.badge || "tourist").trim() || "tourist";
+    const def = defs[badgeId] || {};
+    const badgeEmoji = String(def.emoji || place?.badgeEmoji || "🎒");
+    const badgeTitle = String(def.title || def.label || "Turist Dostu");
 
     root.innerHTML = `
       <article class="detail-card">
@@ -467,23 +482,29 @@ function render(place) {
           <div class="detail-hero-content">
             <h2 class="detail-title">${escapeHtml(title)}</h2>
             ${cats ? `<div class="detail-cats">${escapeHtml(cats)}</div>` : ""}
+            <div class="hero-badge" title="${escapeHtml(badgeTitle)}">${escapeHtml(badgeEmoji)} ${escapeHtml(badgeTitle)}</div>
           </div>
         </div>
 
         <div class="detail-body">
           ${desc ? `<div class="detail-kisaca"><strong>🟢 Kısaca:</strong> ${escapeHtml(desc)}</div>` : ""}
 
+          <!-- PUAN, FİYAT, KONUM - Hidden from frontend, kept for backend -->
+          <!--
           <div class="detail-meta-grid">
             ${metaItem("Puan", rating, "meta-rating")}
             ${metaItem("Fiyat", price, "meta-price")}
             ${metaItem("Konum", konum, "meta-location")}
             ${badgeMetaItem(place)}
           </div>
+          -->
 
           ${renderTrust(place)}
 
           <div class="detail-actions">
             ${actionButton(map, "Harita", "map")}
+            ${actionButton(googleMaps, "Google Maps", "googlemaps")}
+            ${actionButton(tripadvisor, "TripAdvisor", "tripadvisor")}
             ${actionButton(instagram, "Instagram", "instagram")}
             ${actionButton(website, "Web", "web")}
             ${actionButton(booking, "Rezervasyon", "booking")}
