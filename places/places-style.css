@@ -248,8 +248,9 @@
   gap: .8rem;
   flex-wrap: wrap;
   margin: .25rem -1.25rem 1rem -1.25rem;
-  padding: 0 1.25rem;
+  padding: 0.5rem 1.25rem;
   overflow-x: auto;
+  overflow-y: visible;
   scrollbar-width: thin;
 }
 .detail-action{
@@ -316,7 +317,7 @@
 
 /* Uzunca */
 .detail-long{
-  margin-top: .25rem;
+  margin-top: 1.5rem;
   padding: 1rem;
   border-radius: var(--radius-xl);
   background: white;
