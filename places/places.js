@@ -500,18 +500,30 @@ function render(place) {
 
           ${renderTrust(place)}
 
-          <div class="badge-label">Kaş Guide Badge:</div>
-          <div class="detail-actions">
-            <button class="detail-action is-badge" type="button" title="${escapeHtml(badgeTitle)}" aria-label="${escapeHtml(badgeTitle)}">
-              <span class="badge-emoji-icon">${escapeHtml(badgeEmoji)}</span>
-            </button>
-            ${actionButton(map, "Harita", "map")}
-            ${actionButton(googleMaps, "Google Maps", "googlemaps")}
-            ${actionButton(tripadvisor, "TripAdvisor", "tripadvisor")}
-            ${actionButton(instagram, "Instagram", "instagram")}
-            ${actionButton(website, "Web", "web")}
-            ${actionButton(booking, "Rezervasyon", "booking")}
-            ${actionButton(phone, "Telefon", "phone", true)}
+          <div class="actions-badge-wrapper">
+            <div class="links-section">
+              <div class="section-label">Linkler</div>
+              <div class="detail-actions">
+                ${actionButton(map, "Harita", "map")}
+                ${actionButton(googleMaps, "Google Maps", "googlemaps")}
+                ${actionButton(tripadvisor, "TripAdvisor", "tripadvisor")}
+                ${actionButton(instagram, "Instagram", "instagram")}
+                ${actionButton(website, "Web", "web")}
+                ${actionButton(booking, "Rezervasyon", "booking")}
+                ${actionButton(phone, "Telefon", "phone", true)}
+              </div>
+            </div>
+
+            <div class="vertical-divider"></div>
+
+            <div class="badge-section">
+              <div class="section-label">Kaş Guide Badge:</div>
+              <div class="badge-display">
+                <button class="detail-action is-badge" type="button" title="${escapeHtml(badgeTitle)}" aria-label="${escapeHtml(badgeTitle)}">
+                  <span class="badge-emoji-icon">${escapeHtml(badgeEmoji)}</span>
+                </button>
+              </div>
+            </div>
           </div>
 
           ${longText ? `

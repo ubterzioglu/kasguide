@@ -231,27 +231,55 @@
   .kg-badge-help{ display:none; }
 }
 
-/* Badge Label */
-.badge-label{
+/* Actions & Badge Wrapper - Two Column Layout */
+.actions-badge-wrapper{
+  display: flex;
+  gap: 1.5rem;
+  margin: .5rem 0 1rem 0;
+  align-items: flex-start;
+}
+
+.links-section{
+  flex: 1;
+  min-width: 0;
+}
+
+.badge-section{
+  flex-shrink: 0;
+  width: auto;
+  min-width: 180px;
+}
+
+.section-label{
   font-size: .9rem;
   font-weight: 800;
   color: var(--gray-900);
   margin: 0 0 .5rem 0;
-  padding: 0 0 0 0;
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 
-/* Action bar: icon-only - Extended outside card */
+.vertical-divider{
+  width: 1px;
+  background: var(--gray-300);
+  align-self: stretch;
+  margin: 2rem 0;
+}
+
+/* Action bar: icon-only */
 .detail-actions{
   display:flex;
   gap: .8rem;
   flex-wrap: wrap;
-  margin: .25rem -1.25rem 1rem -1.25rem;
-  padding: 0.5rem 1.25rem;
   overflow-x: auto;
   overflow-y: visible;
   scrollbar-width: thin;
+}
+
+.badge-display{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 .detail-action{
   width: 52px;
@@ -334,13 +362,32 @@
 }
 
 /* Responsive */
+@media (max-width: 767px){
+  /* Mobile: Stack vertically */
+  .actions-badge-wrapper{
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .vertical-divider{
+    display: none;
+  }
+
+  .badge-section{
+    width: 100%;
+    min-width: 0;
+  }
+
+  .badge-display{
+    justify-content: flex-start;
+  }
+}
+
 @media (min-width: 860px){
   .detail-body{ padding: 1.5rem; }
   .detail-hero{ height: 360px; }
   /* Desktop: show 4 cards in one row */
   .detail-meta-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  /* Desktop: extend actions outside card more */
-  .detail-actions{ margin: .25rem -1.5rem 1rem -1.5rem; padding: 0 1.5rem; }
 }
 
 
