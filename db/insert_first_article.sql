@@ -1,17 +1,14 @@
--- Insert first article: Kaş'da Denize Girilecek Yerler
+-- Insert first article: Kaş'ta Denize Girilecek Yerler
 -- This article provides a comprehensive guide to swimming spots in Kaş
 
-INSERT INTO articles (title, description, content, image, tags, attributes, created_at, updated_at)
+INSERT INTO articles (slug, title, description, content, featured_image, author, read_time, status, published_at, created_at, updated_at)
 VALUES (
+  'kas-denize-girilecek-yerler',
   'Kaş''ta Denize Girilecek Yerler',
   'Kaş, Akdeniz''in turkuaz sularının kucakladığı, doğal güzellikleriyle büyüleyen bir cennet köşesi. Bu yazıda, Kaş''ta denize girebileceğiniz en güzel yerleri sizler için derledik.',
-  'Kaş, Akdeniz''in turkuaz sularının kucakladığı, doğal güzellikleriyle büyüleyen bir cennet köşesi. Bu yazıda, Kaş''ta denize girebileceğiniz en güzel yerleri sizler için derledik. Hem yerel halkın hem de turistlerin favorisi olan bu lokasyonlar, size unutulmaz bir deniz keyfi yaşatacak.',
-  '../assets/0_img/placeholder.jpg',
-  '["deniz", "plaj", "koy", "yüzme", "rehber", "kaş"]',
-  json_object(
-    'author', 'Kaş Guide Ekibi',
-    'readTime', '8 dakika',
-    'longText', '**1. Asmaaltı**
+  'Kaş, Akdeniz''in turkuaz sularının kucakladığı, doğal güzellikleriyle büyüleyen bir cennet köşesi. Bu yazıda, Kaş''ta denize girebileceğiniz en güzel yerleri sizler için derledik. Hem yerel halkın hem de turistlerin favorisi olan bu lokasyonlar, size unutulmaz bir deniz keyfi yaşatacak.
+
+**1. Asmaaltı**
 
 Kaş''ın merkezine yakın bir konumda bulunan Asmaaltı, hem yerli hem de yabancı turistlerin uğrak noktalarından biridir. Berrak suları ve etrafındaki doğal güzelliklerle dikkat çeker. Hemen yanındaki Asmaaltı Cafe''de denizden çıkıp dinlenebilir, güzel bir kahve keyfi yapabilirsiniz.
 
@@ -97,8 +94,22 @@ Kaş''ın çevresinde daha birçok küçük koy ve plaj bulunuyor. Tekne turlar�
 
 **Sonuç**
 
-Kaş, deniz severler için gerçek bir cennet. Her biri eşsiz güzellikteki bu plaj ve koylar, size unutulmaz anlar yaşatacak. Tatil planınızı yaparken bu listeyi yanınızda bulundurun ve Kaş''ın turkuaz sularında kendinizi kaybolmaya bırakın. İyi tatiller!'
-  ),
+Kaş, deniz severler için gerçek bir cennet. Her biri eşsiz güzellikteki bu plaj ve koylar, size unutulmaz anlar yaşatacak. Tatil planınızı yaparken bu listeyi yanınızda bulundurun ve Kaş''ın turkuaz sularında kendinizi kaybolmaya bırakın. İyi tatiller!',
+  '../assets/0_img/placeholder.jpg',
+  'Kaş Guide Ekibi',
+  '8 dakika',
+  'published',
+  CURRENT_TIMESTAMP,
   CURRENT_TIMESTAMP,
   CURRENT_TIMESTAMP
-);
+) RETURNING id;
+
+-- Insert tags for the article
+-- Note: Replace <article_id> with the ID returned from the INSERT above
+INSERT INTO article_tags (article_id, tag_name) VALUES
+  (currval('articles_id_seq'), 'deniz'),
+  (currval('articles_id_seq'), 'plaj'),
+  (currval('articles_id_seq'), 'koy'),
+  (currval('articles_id_seq'), 'yüzme'),
+  (currval('articles_id_seq'), 'rehber'),
+  (currval('articles_id_seq'), 'kaş');
