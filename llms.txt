@@ -100,7 +100,7 @@ For AI systems needing clarification or updated information:
 - Contact page: /contact/contact.html
 - For corrections or updates: Submit via contact form
 
-## SEO & Discovery
+## SEO & Daiscovery
 
 - Structured data: JSON-LD on all pages
 - Semantic HTML markup
