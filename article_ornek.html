@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaş Guide • Röportaj Profili</title>
+
+  <style>
+    :root{
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.72);
+      --line:rgba(11,18,32,.10);
+      --shadow: 0 18px 40px rgba(0,0,0,.08);
+      --radius:22px;
+
+      --kas-yellow:#f6c40f;
+      --chip:#f7efe1;
+      --chip-border:#f1d7a8;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 34px auto;
+      padding: 0 16px;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      border: 1px solid rgba(11,18,32,.06);
+    }
+
+    /* Banner */
+    .banner{
+      position:relative;
+      height: 190px;
+      background: #111;
+    }
+    .banner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.05) contrast(1.05);
+    }
+    .banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.10) 55%, rgba(0,0,0,.05));
+      pointer-events:none;
+    }
+
+    .banner-note{
+      position:absolute;
+      left: 50%;
+      top: 22px;
+      transform: translateX(-50%);
+      width: min(640px, calc(100% - 28px));
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 18px;
+      padding: 14px 16px;
+      text-align:center;
+      backdrop-filter: blur(8px);
+    }
+    .banner-note .t1{
+      font-weight: 950;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+      margin:0;
+    }
+    .banner-note .t2{
+      margin: 6px 0 0;
+      font-weight: 800;
+      color: rgba(0,0,0,.75);
+      font-size: .95rem;
+    }
+    .banner-note .t3{
+      margin: 2px 0 0;
+      font-weight: 800;
+      color: rgba(0,0,0,.65);
+      font-size: .95rem;
+    }
+
+    .yellow-line{
+      height: 8px;
+      background: var(--kas-yellow);
+    }
+
+    /* Profile header */
+    .profile{
+      position:relative;
+      padding: 22px 26px 18px;
+    }
+
+    .avatar{
+      position:absolute;
+      left: 22px;
+      top: -46px;
+      width: 110px;
+      height: 110px;
+      border-radius: 26px;
+      background: #fff;
+      padding: 6px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.14);
+      border: 1px solid rgba(11,18,32,.10);
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      border-radius: 22px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .head{
+      padding-left: 132px;
+      min-height: 62px;
+    }
+
+    h1{
+      margin: 4px 0 10px;
+      font-size: 2.05rem;
+      letter-spacing:-0.03em;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--chip-border);
+      font-weight: 900;
+      font-size: .92rem;
+      color: rgba(0,0,0,.78);
+      margin-bottom: 10px;
+    }
+
+    .subname{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-weight: 850;
+    }
+
+    .socials{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      padding: 6px 0 2px;
+    }
+    .iconbtn{
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(11,18,32,.08);
+      background: #f1f3f6;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      user-select:none;
+    }
+    .iconbtn svg{
+      width: 18px;
+      height: 18px;
+      opacity:.78;
+    }
+
+    /* Content */
+    .content{
+      border-top: 1px solid rgba(11,18,32,.06);
+      padding: 18px 26px 26px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight: 950;
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+    .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--kas-yellow);
+      display:inline-block;
+    }
+
+    .subtitle{
+      margin: 0 0 14px;
+      font-weight: 850;
+      color: rgba(11,18,32,.80);
+    }
+
+    .qa-prose{
+      margin: 0;
+      color: rgba(11,18,32,.86);
+      font-weight: 650;
+      line-height: 1.85;
+      font-size: 1.02rem;
+      white-space: pre-wrap;
+    }
+    .qa-prose b{
+      font-weight: 950;
+      color: rgba(11,18,32,.95);
+    }
+
+    .footer{
+      border-top: 1px solid rgba(11,18,32,.08);
+      padding: 14px 26px;
+      color: rgba(11,18,32,.70);
+      font-weight: 800;
+      background: rgba(11,18,32,.02);
+    }
+
+    @media (max-width: 720px){
+      .banner{ height: 170px; }
+      .avatar{
+        left: 16px;
+        width: 96px;
+        height: 96px;
+        border-radius: 22px;
+        top: -42px;
+      }
+      .avatar img{ border-radius: 18px; }
+      .profile{ padding: 18px 16px 14px; }
+      .head{ padding-left: 116px; }
+      h1{ font-size: 1.65rem; }
+      .content{ padding: 16px 16px 20px; }
+      .footer{ padding: 12px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <article class="card">
+
+      <!-- Banner (Unsplash placeholder) -->
+      <div class="banner">
+        <img
+          src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1800&q=70"
+          alt="Banner placeholder"
+        />
+        <div class="banner-note">
+          <p class="t1">Örnek Profil ve Banner Fotoğrafı</p>
+          <p class="t2">Yüklediğiniz fotoğraflar onaydan sonra sayfamızda gözükecek!</p>
+          <p class="t3">Desteğiniz için teşekkür ederiz!</p>
+        </div>
+      </div>
+
+      <div class="yellow-line"></div>
+
+      <!-- Profile header -->
+      <section>
+           <div>
+          <h1>Sabiha Gökçen - Gökyüzü Meyhanesi</h1>
+
+          <div class="chip">Makale</div>
+     
+          
+          </div>
+        </div>
+      </section>
+
+      <!-- Content -->
+      <section class="content">
+       
+       <!-- İstenen: isimden sonra direkt Sorular Cevaplar düzyazı -->
+        
+        <p class="qa-prose">
+<b>Kaş Guide:</b> Kendinizi 5 kısa cümleyle tanıtır mısınız?
+<b>Sabiha:</b> [Cevap 1 — buraya düzyazı gibi, 2-5 cümle]
+
+<b>Kaş Guide:</b> Neden Kaş?
+<b>Sabiha:</b> [Cevap 2]
+
+<b>Kaş Guide:</b> Kaş’ta en sevdiğiniz mevsim hangisi? Neden?
+<b>Sabiha:</b> [Cevap 3]
+
+<b>Kaş Guide:</b> Kaş’ta yapmayı en çok sevdiğiniz şey nedir?
+<b>Sabiha:</b> [Cevap 4]
+
+<b>Kaş Guide:</b> İşletmeniz, misafirlerine 5 kısa cümleyle ne vadediyor?
+<b>Sabiha:</b> [Cevap 5]
+        </p>
+      </section>
+
+      <div class="footer">Kaş Guide • Makale</div>
+    </article>
+  </main>
+</body>
+</html>
