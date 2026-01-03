@@ -1,9 +1,9 @@
 /**
- * API Endpoint: Get Articles
- * GET /api/articles
- * GET /api/articles?id=90
+ * API Endpoint: Get Interviews
+ * GET /api/interviews
+ * GET /api/interviews?id=91
  *
- * Articles are stored in the unified 'items' table with item_type='article'
+ * Interviews are stored in the unified 'items' table with item_type='interview'
  */
 
 import sql from '../db/connection.js';
@@ -17,41 +17,41 @@ export default async function handler(req, res) {
   try {
     const { id } = req.query;
 
-    // Get single article by ID
+    // Get single interview by ID
     if (id) {
       const result = await sql`
         SELECT *
         FROM items
         WHERE id = ${id}
-          AND item_type = 'article'
+          AND item_type = 'interview'
           AND status = 'active'
       `;
 
-      const article = result[0];
+      const interview = result[0];
 
-      if (!article) {
-        return res.status(404).json({ error: 'Article not found' });
+      if (!interview) {
+        return res.status(404).json({ error: 'Interview not found' });
       }
 
-      return res.status(200).json(article);
+      return res.status(200).json(interview);
     }
 
-    // Get all published articles
+    // Get all published interviews
     const result = await sql`
       SELECT *
       FROM items
-      WHERE item_type = 'article'
+      WHERE item_type = 'interview'
         AND status = 'active'
       ORDER BY published_at DESC
     `;
 
     return res.status(200).json({
-      articles: result,
+      interviews: result,
       count: result.length
     });
 
   } catch (error) {
-    console.error('Articles API error:', error);
+    console.error('Interviews API error:', error);
     return res.status(500).json({
       error: 'Internal server error',
       message: error.message

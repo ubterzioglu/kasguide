@@ -15,9 +15,16 @@
     return new URLSearchParams(window.location.search).get("id");
   }
 
-  function getArticleById(id) {
-    const list = (typeof articles !== "undefined" && Array.isArray(articles)) ? articles : [];
-    return list.find((x) => String(x.id) === String(id));
+  async function getArticleById(id) {
+    try {
+      const response = await fetch(`/api/articles?id=${id}`);
+      if (!response.ok) throw new Error('API error');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error loading article:', error);
+      return null;
+    }
   }
 
   function fmt(v) {
@@ -31,33 +38,51 @@
     btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
-  function render() {
+  async function render() {
     const root = document.getElementById("articleRoot");
     if (!root) return;
 
     const id = getId();
-    const a = getArticleById(id);
-
-    if (!id || !a) {
+    if (!id) {
       root.innerHTML = `
         <div class="article-card">
           <div class="article-body">
             <h2>Yazı bulunamadı</h2>
             <p class="muted">Bu yazı henüz eklenmemiş olabilir.</p>
-            <p><a href="../main/index.html">Ana sayfaya dön</a></p>
+            <p><a href="../index.html">Ana sayfaya dön</a></p>
           </div>
         </div>
       `;
       return;
     }
 
-    const img = a.image || "../assets/0_img/placeholder.jpg";
+    const a = await getArticleById(id);
+
+    if (!a) {
+      root.innerHTML = `
+        <div class="article-card">
+          <div class="article-body">
+            <h2>Yazı bulunamadı</h2>
+            <p class="muted">Bu yazı henüz eklenmemiş olabilir.</p>
+            <p><a href="../index.html">Ana sayfaya dön</a></p>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    // Extract data from items table structure
+    const attrs = a.attributes || {};
+    const photos = a.photos || [];
+    const primaryPhoto = photos.find(p => p.is_primary) || photos[0] || null;
+
+    const img = primaryPhoto ? primaryPhoto.url : "../assets/0_img/placeholder.jpg";
     const title = fmt(a.title) || PLACEHOLDER;
     const desc = fmt(a.description);
-    const author = fmt(a.author);
-    const readTime = fmt(a.readTime);
+    const author = fmt(attrs.author);
+    const readTime = fmt(attrs.readTime);
 
-    const content = fmt(a.longText) || fmt(a.content) || "";
+    const content = fmt(a.long_text) || "";
 
     root.innerHTML = `
       <article class="article-card">

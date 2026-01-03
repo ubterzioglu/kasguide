@@ -17,11 +17,10 @@
 
   async function getInterviewById(id) {
     try {
-      const response = await fetch('/api/interviews');
+      const response = await fetch(`/api/interviews?id=${id}`);
       if (!response.ok) throw new Error('API error');
       const data = await response.json();
-      const interviews = data.interviews || [];
-      return interviews.find((x) => String(x.id) === String(id));
+      return data;
     } catch (error) {
       console.error('Error loading interview:', error);
       return null;
@@ -73,14 +72,18 @@
       return;
     }
 
+    // Extract data from items table structure
     const attrs = interview.attributes || {};
-    const img = interview.image || attrs.image || "../assets/0_img/placeholder.jpg";
+    const photos = interview.photos || [];
+    const primaryPhoto = photos.find(p => p.is_primary) || photos[0] || null;
+
+    const img = primaryPhoto ? primaryPhoto.url : "../assets/0_img/placeholder.jpg";
     const title = fmt(interview.title) || PLACEHOLDER;
     const desc = fmt(interview.description);
     const interviewee = fmt(attrs.interviewee);
     const interviewer = fmt(attrs.interviewer) || 'Kaş Guide';
     const date = fmt(attrs.date);
-    const content = fmt(attrs.longText || interview.content) || "";
+    const content = fmt(interview.long_text) || "";
 
     // Format content with line breaks (simple markdown-like conversion)
     const formattedContent = content.split('\n').map(line => {

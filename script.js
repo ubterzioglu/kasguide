@@ -199,16 +199,19 @@ function convertAPIPlace(apiData) {
 
 function convertAPIArticle(apiData) {
   const attrs = apiData.attributes || {};
+  const photos = apiData.photos || [];
+  const primaryPhoto = photos.find(p => p.is_primary) || photos[0] || null;
+
   return {
     id: apiData.id,
     title: apiData.title,
-    description: apiData.description || (apiData.content ? apiData.content.substring(0, 200) : ''),
-    content: apiData.content,
-    longText: attrs.longText || apiData.content,
+    description: apiData.description || '',
+    content: apiData.long_text || '',
+    longText: apiData.long_text || '',
     category: ['articles'],
-    image: apiData.image || attrs.image || null,
-    images: apiData.images || [],
-    tags: apiData.tags || attrs.tags || [],
+    image: primaryPhoto ? primaryPhoto.url : null,
+    images: photos.map(p => p.url),
+    tags: attrs.tags || [],
     author: attrs.author || 'Kaş Guide',
     readTime: attrs.readTime || ''
   };
@@ -216,16 +219,19 @@ function convertAPIArticle(apiData) {
 
 function convertAPIInterview(apiData) {
   const attrs = apiData.attributes || {};
+  const photos = apiData.photos || [];
+  const primaryPhoto = photos.find(p => p.is_primary) || photos[0] || null;
+
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description || '',
-    content: apiData.content,
-    longText: attrs.longText || apiData.content,
+    content: apiData.long_text || '',
+    longText: apiData.long_text || '',
     category: ['interviews'],
-    image: apiData.image || attrs.image || null,
-    images: apiData.images || [],
-    tags: apiData.tags || attrs.tags || [],
+    image: primaryPhoto ? primaryPhoto.url : null,
+    images: photos.map(p => p.url),
+    tags: attrs.tags || [],
     interviewee: attrs.interviewee || '',
     interviewer: attrs.interviewer || 'Kaş Guide',
     date: attrs.date || ''
