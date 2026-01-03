@@ -446,11 +446,11 @@ function renderCategories() {
 
 // ---------- render cards ----------
 function getItemHref(item) {
-  // mevcut yapına göre path’leri aynı bıraktım
-  if (item.type === 'article') return `../articles/articles.html?id=${encodeURIComponent(item.id)}`;
-  if (item.type === 'interview') return `../interviews/interviews.html?id=${encodeURIComponent(item.id)}`;
-  if (item.type === 'faqspecial') return `../faqspecial/faqspecial.html?id=${encodeURIComponent(item.id)}`;
-  return `../places/places.html?id=${encodeURIComponent(item.id)}`;
+  // Paths relative to index.html in root directory
+  if (item.type === 'article') return `articles/articles.html?id=${encodeURIComponent(item.id)}`;
+  if (item.type === 'interview') return `interviews/interviews.html?id=${encodeURIComponent(item.id)}`;
+  if (item.type === 'faqspecial') return `faqspecial/faqspecial.html?id=${encodeURIComponent(item.id)}`;
+  return `places/places.html?id=${encodeURIComponent(item.id)}`;
 }
 
 function renderCards() {
