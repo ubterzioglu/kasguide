@@ -195,6 +195,52 @@
       object-fit: cover;
     }
 
+    /* Top Navigation */
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.25);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      animation: fadeInUp 0.6s ease;
+      animation-fill-mode: both;
+    }
+
+    .nav-link:nth-child(1) { animation-delay: 0.2s; }
+    .nav-link:nth-child(2) { animation-delay: 0.3s; }
+    .nav-link:nth-child(3) { animation-delay: 0.4s; }
+
+    .nav-link:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .nav-link-alert {
+      background: rgba(255,107,107,0.2);
+      border-color: rgba(255,107,107,0.4);
+    }
+
+    .nav-link-alert:hover {
+      background: rgba(255,107,107,0.3);
+    }
+
     .subtitle {
       font-size: 1.35rem;
       margin-bottom: 1.8rem;
@@ -388,6 +434,62 @@
       opacity: 0.95;
     }
 
+    /* Fast Links Section */
+    .fastlinks-section {
+      margin: 2.5rem auto 2rem;
+      max-width: 900px;
+    }
+
+    .fastlinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 1.2rem;
+    }
+
+    .fastlink-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 2px solid rgba(255,255,255,0.25);
+      padding: 24px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      animation: fadeInUp 0.6s ease;
+      animation-fill-mode: both;
+    }
+
+    .fastlink-card:nth-child(1) { animation-delay: 0.5s; }
+    .fastlink-card:nth-child(2) { animation-delay: 0.6s; }
+    .fastlink-card:nth-child(3) { animation-delay: 0.7s; }
+
+    .fastlink-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .fastlink-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    .fastlink-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 4px;
+    }
+
+    .fastlink-desc {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -493,6 +595,32 @@
         font-size: 0.75rem;
         line-height: 1.35;
       }
+
+      .nav-link {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+      }
+
+      .fastlinks-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .fastlink-card {
+        padding: 20px 16px;
+      }
+
+      .fastlink-icon {
+        font-size: 2rem;
+      }
+
+      .fastlink-title {
+        font-size: 1rem;
+      }
+
+      .fastlink-desc {
+        font-size: 0.8rem;
+      }
     }
 
 @media (max-width: 768px) {
@@ -566,7 +694,13 @@
 
     <img src="jpgkasguidelogo.jpg" alt="Kaş Guide Logo" class="hero-logo">
 
-   
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <a href="bizkimiz/bizkimiz.html" class="nav-link">🌿 Biz Kimiz?</a>
+      <a href="contact/contact.html" class="nav-link">📧 İletişim</a>
+      <a href="emergency/emergency.html" class="nav-link nav-link-alert">🚨 Acil Durum!</a>
+    </div>
+
     <p class="message">
       Akdeniz'in İncisi'ne Kapsamlı Rehberiniz <br>
       Kaş hakkında her şey!        </p>
@@ -675,7 +809,27 @@
       </div>
     </div>
 
-   
+    <!-- Fast Links Section -->
+    <div class="fastlinks-section">
+      <h2 class="stats-title">⚡ Hızlı Erişim</h2>
+      <div class="fastlinks-grid">
+        <a href="fastlink/pop10/pop10.html" class="fastlink-card">
+          <div class="fastlink-icon">🔥</div>
+          <div class="fastlink-title">En Popüler 10 Yer</div>
+          <div class="fastlink-desc">Kaş'ın en sevilen mekanları</div>
+        </a>
+        <a href="fastlink/freeentrance/freeentrance.html" class="fastlink-card">
+          <div class="fastlink-icon">🆓</div>
+          <div class="fastlink-title">Ücretsiz Giriş</div>
+          <div class="fastlink-desc">Bütçe dostu keşifler</div>
+        </a>
+        <a href="fastlink/familyfriendly/familyfriendly.html" class="fastlink-card">
+          <div class="fastlink-icon">👨‍👩‍👧‍👦</div>
+          <div class="fastlink-title">Aile Dostu</div>
+          <div class="fastlink-desc">Çocuklarla keyifle</div>
+        </a>
+      </div>
+    </div>
 
   </div>
 
