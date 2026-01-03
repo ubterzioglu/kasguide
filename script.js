@@ -333,9 +333,14 @@ function loadStats() {
   const totalCats =
     (typeof categories !== 'undefined' && Array.isArray(categories)) ? categories.length : 0;
 
-  if (totalPlacesEl) totalPlacesEl.textContent = String(totalPlaces);
+  // Calculate total content: Places + FAQ questions + other items
+  const faqCount = 500; // From faq/faq-list-data.js
+  const totalContent = totalPlaces + faqCount;
+
+  // Use total content count instead of just places
+  if (totalPlacesEl) totalPlacesEl.textContent = String(totalContent);
   if (totalCategoriesEl) totalCategoriesEl.textContent = String(totalCats);
-  if (miniTotalPlacesEl) miniTotalPlacesEl.textContent = String(totalPlaces);
+  if (miniTotalPlacesEl) miniTotalPlacesEl.textContent = String(totalContent);
   if (miniTotalCategoriesEl) miniTotalCategoriesEl.textContent = String(totalCats);
 
   const stats = calculateStats(typeof allPlaces !== 'undefined' ? allPlaces : []);
