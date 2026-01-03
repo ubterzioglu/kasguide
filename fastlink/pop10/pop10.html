@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>En Popüler 10 Yer - Kaş Guide</title>
+  <meta name="description" content="Kaş'ın en popüler 10 mekanı yakında burada listelenecek.">
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    body {
+      background: linear-gradient(180deg, #FFB627 0%, #FF8C00 40%, #FF6B35 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .coming-soon-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      padding: 4rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: fadeInScale 0.6s ease;
+    }
+
+    .coming-soon-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      animation: bounce 2s infinite;
+    }
+
+    .coming-soon-title {
+      font-size: 2.5rem;
+      color: #FF6B35;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .coming-soon-subtitle {
+      font-size: 1.3rem;
+      color: #023E8A;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .coming-soon-text {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF8C00, #FF6B35);
+      color: white;
+      text-decoration: none;
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    }
+
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .coming-soon-card {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .coming-soon-icon {
+        font-size: 3.5rem;
+      }
+
+      .coming-soon-title {
+        font-size: 1.8rem;
+      }
+
+      .coming-soon-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .coming-soon-text {
+        font-size: 1rem;
+      }
+
+      .back-btn {
+        font-size: 1rem;
+        padding: 12px 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <!-- LEFT ACTIONS -->
+      <div class="header-actions">
+        <a href="../../index.html" class="action-btn" aria-label="Ana Sayfa">
+          <img src="../../assets/0_img/clip_home.png" alt="Home">
+        </a>
+
+        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="../../assets/0_img/clip_up.png" alt="Up">
+        </button>
+      </div>
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img class="logo-img" src="../../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  <main class="content-container">
+    <div class="coming-soon-card">
+      <div class="coming-soon-icon">🔥</div>
+      <h1 class="coming-soon-title">Yakında Burada!</h1>
+      <p class="coming-soon-subtitle">En Popüler 10 Yer</p>
+      <p class="coming-soon-text">
+        Kaş'ın en çok ziyaret edilen ve en sevilen mekanları çok yakında bu sayfada listelenecek.
+        Yerel halkın ve ziyaretçilerin favorileri bir arada!
+      </p>
+      <a href="../../index.html" class="back-btn">🏠 Ana Sayfaya Dön</a>
+    </div>
+  </main>
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

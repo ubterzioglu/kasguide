@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biz Kimiz? - Kaş Guide</title>
+  <meta name="description" content="Kaş Guide ekibi hakkında bilgi. Kaş'ı seven, Kaş'a gönül vermiş küçük bir ekip.">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background: linear-gradient(180deg, #00B4D8 0%, #0077BE 40%, #023E8A 100%);
+      min-height: 100vh;
+    }
+
+    .content-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .about-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 0.6s ease;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-title {
+      font-size: 2rem;
+      color: #023E8A;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 2rem;
+      text-align: justify;
+    }
+
+    .contact-info {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-info p {
+      font-size: 1.05rem;
+      margin: 0.8rem 0;
+      color: #555;
+    }
+
+    .contact-info strong {
+      color: #0077BE;
+    }
+
+    .signature {
+      text-align: center;
+      margin-top: 2rem;
+      font-style: italic;
+      color: #666;
+      font-size: 1.05rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .about-title {
+        font-size: 1.5rem;
+      }
+
+      .about-text {
+        font-size: 1rem;
+        text-align: left;
+      }
+
+      .contact-info p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <!-- LEFT ACTIONS -->
+      <div class="header-actions">
+        <a href="../index.html" class="action-btn" aria-label="Ana Sayfa">
+          <img src="../assets/0_img/clip_home.png" alt="Home">
+        </a>
+
+        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="../assets/0_img/clip_up.png" alt="Up">
+        </button>
+      </div>
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  <main class="content-container">
+    <div class="about-card">
+      <div class="logo-container">
+        <img src="../assets/0_img/logokasguide.png" alt="Kaş Guide Logo" class="logo-img">
+      </div>
+
+      <h1 class="about-title">Biz Kimiz?</h1>
+
+      <p class="about-text">
+        Biz, uzun yıllardır Kaş'ta yaşayan; Kaş'ı seven, Kaş'a gönül vermiş, Kaş'ın sorunlarına duyarlı, hayvansever ve doğasever küçük bir ekibiz. Kaş Guide'ın ilk yılında, tarafsızlığımızı ve objektifliğimizi korumak adına anonim kalmayı tercih ediyoruz. Bu sayfayı doldurarak bize destek olduğunuz için teşekkür ederiz.
+      </p>
+
+      <div class="contact-info">
+        <p>📸 Instagram: <strong>@guidekas</strong></p>
+        <p>✉️ E-posta: <strong>mekan@kasguide.de</strong></p>
+      </div>
+
+      <p class="signature">Kaş Guide Ekibi</p>
+    </div>
+  </main>
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
