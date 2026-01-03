@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../kasguideico.ico">
+
   <!-- Primary Meta Tags -->
   <title>Hakkımızda - Kaş Guide | Yerel Uzmanlar Tarafından</title>
   <meta name="title" content="Hakkımızda - Kaş Guide | Yerel Uzmanlar Tarafından">
@@ -76,6 +79,33 @@
       justify-content: space-between;
     }
 
+    .header-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .action-btn {
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background: white;
+    }
+
     .logo {
       display: flex;
       align-items: center;
@@ -84,32 +114,12 @@
     }
 
     .logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: linear-gradient(to right, var(--primary-blue), #2563eb);
-  background-clip: text;
-  -webkit-background-clip: text; /* Safari için, buna VS Code ses etmiyor */
-  color: transparent;
-}
-
-
-    .back-btn {
-      background: var(--gray-100);
-      color: var(--gray-700);
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius-full);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.875rem;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .back-btn:hover {
-      background: var(--gray-200);
-      transform: translateX(-2px);
+      font-size: 1.25rem;
+      font-weight: bold;
+      background: linear-gradient(to right, var(--primary-blue), #2563eb);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     /* Hero */
@@ -376,15 +386,24 @@
   <!-- Header -->
   <header class="header">
     <div class="container header-content">
-      <a href="../index.html" class="logo">
-        <span class="logo-text">Kaş Guide</span>
-      </a>
-      <a href="../index.html" class="back-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-          <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        Ana Sayfa
-      </a>
+      <!-- LEFT ACTIONS -->
+      <div class="header-actions">
+        <a href="../index.html" class="action-btn" aria-label="Ana Sayfa">
+          <img src="../assets/0_img/clip_home.png" alt="Home" style="width: 24px; height: 24px;">
+        </a>
+
+        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="../assets/0_img/clip_up.png" alt="Up" style="width: 24px; height: 24px;">
+        </button>
+      </div>
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide" style="width: 32px; height: 32px;">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <div style="width:48px"></div>
     </div>
   </header>
 
@@ -535,15 +554,16 @@
         </div>
         <div class="accordion-content">
           <div class="accordion-body">
-            <p><strong>Her Kartta Neler Var:</strong></p>
+            <p><strong>Her Mekan Kartında:</strong></p>
             <ul>
-              <li><strong>Görsel:</strong> Mekanın fotoğrafı</li>
-              <li><strong>Kategori Rozeti:</strong> Sol üst köşede renkli</li>
-              <li><strong>Puan:</strong> Yıldız ikonu ile (⭐)</li>
-              <li><strong>Süre/Mesafe:</strong> Ne kadar zaman ayırmalısın</li>
-              <li><strong>Fiyat:</strong> Bütçe planlaman için</li>
+              <li><strong>Görsel:</strong> Mekanın fotoğrafı ve atmosferi</li>
+              <li><strong>Kategori Rozeti:</strong> Sol üst köşede renkli kategori etiketi</li>
+              <li><strong>Kaş Guide Badge:</strong> Yerel uzmanların özel önerileri</li>
+              <li><strong>Harici Linkler:</strong> Google Maps, TripAdvisor ve web sitesi</li>
+              <li><strong>Açıklama:</strong> Kısa ve uzun metin seçenekleri</li>
             </ul>
-            <p><strong>İpucu:</strong> Kartın herhangi bir yerine tıkla, detay sayfasına git!</p>
+            <p><strong>Detay Sayfasında:</strong> Kartlara tıklayarak tam açıklama, konum bilgisi, fotoğraflar ve tüm linklere ulaşabilirsin. Kaş Guide Badge mekanın hangi özellikleriyle öne çıktığını gösterir.</p>
+            <p><strong>İpucu:</strong> Badge'leri kullanarak aradığın özellikte (örn: Manzara, Aile Dostu, Romantik) mekanları kolayca bulabilirsin!</p>
           </div>
         </div>
       </div>
@@ -565,13 +585,41 @@
           <div class="accordion-body">
             <p><strong>Görebileceğin İstatistikler:</strong></p>
             <ul>
-              <li><strong>Toplam Mekan:</strong> Kaç yer var</li>
-              <li><strong>Kategori Sayısı:</strong> Kaç farklı kategori</li>
-              <li><strong>Ortalama Puan:</strong> Genel memnuniyet</li>
+              <li><strong>Toplam İçerik:</strong> Toplam mekan, soru-cevap ve yazı sayısı</li>
+              <li><strong>Kategori Sayısı:</strong> Kaç farklı kategori var</li>
+              <li><strong>Ortalama Puan:</strong> Genel memnuniyet seviyesi</li>
               <li><strong>Aktif Filtre:</strong> Şu an kaç filtre seçili</li>
               <li><strong>Gösterilen:</strong> Filtrelere göre kaç sonuç var</li>
             </ul>
-            <p>İstatistikler dinamik - filtre seçince güncellenir!</p>
+            <p>İstatistikler dinamik - filtre seçince anında güncellenir!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            İçerik Ekle!
+          </div>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <p><strong>Kaş Guide'ı Birlikte Büyütelim!</strong></p>
+            <p>Sen de katkıda bulunarak Kaş'ın en doğru ve kapsamlı rehberini oluşturmamıza yardımcı olabilirsin:</p>
+            <ul>
+              <li><strong>🏪 Mekan Ekle:</strong> Sevdiğin bir restoran, kafe veya aktivite noktası ekle - <a href="../add/place/add-place.html" style="color: var(--primary-blue); font-weight: 600;">Mekan Ekle</a></li>
+              <li><strong>🎤 Sanatçı Profili Ekle:</strong> Kaş'taki müzisyen, DJ veya performans sanatçıları tanıt - <a href="../add/artist/add-artist.html" style="color: var(--primary-blue); font-weight: 600;">Sanatçı Ekle</a></li>
+              <li><strong>🐾 Patili Dost İlanı:</strong> Kayıp veya yuva arayan patililer için ilan ver - <a href="../add/pet/try/add-pet.html" style="color: var(--primary-blue); font-weight: 600;">Patili Ekle</a></li>
+              <li><strong>📧 Hata Bildir:</strong> Yanlış bilgi gördün mü? Bize bildir - <a href="../contact/contact.html" style="color: var(--primary-blue); font-weight: 600;">İletişim</a></li>
+              <li><strong>💬 Geri Bildirim:</strong> Önerilerini paylaş, yeni fikirler sun - <a href="../feedback/feedback.html" style="color: var(--primary-blue); font-weight: 600;">Geri Bildirim</a></li>
+            </ul>
+            <p><strong>Neden Önemli:</strong> Birlikte daha doğru, daha gerçek! Her katkı, Kaş Guide'ı daha değerli kılıyor. 💙</p>
           </div>
         </div>
       </div>
@@ -595,30 +643,6 @@
         <div class="tip-card">
           <strong>Hızlı Erişim:</strong> Ana sayfadaki "Hızlı Erişim" bölümünden özel koleksiyonlara ulaş
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories Guide -->
-  <section class="accordion-section">
-    <div class="container">
-      <h2 class="section-title">🏷️ Kategoriler Rehberi</h2>
-      <div class="categories-compact">
-        <div class="category-badge">🗺️ Gezi</div>
-        <div class="category-badge">🏖️ Plaj</div>
-        <div class="category-badge">⛰️ Aktivite</div>
-        <div class="category-badge">🍽️ Yeme-İçme</div>
-        <div class="category-badge">🏨 Otel</div>
-        <div class="category-badge">🏛️ Tarih</div>
-        <div class="category-badge">🌲 Doğa</div>
-        <div class="category-badge">🛍️ Çarşı</div>
-        <div class="category-badge">☕ Kahvaltı</div>
-        <div class="category-badge">🍷 Meyhane</div>
-        <div class="category-badge">🍹 Bar</div>
-        <div class="category-badge">☕ Cafe</div>
-        <div class="category-badge">🤿 Dalış</div>
-        <div class="category-badge">📝 Yazılar</div>
-        <div class="category-badge">❓ FAQ Serileri</div>
       </div>
     </div>
   </section>
@@ -655,5 +679,8 @@
       });
     });
   </script>
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
