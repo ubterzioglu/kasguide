@@ -333,9 +333,11 @@ function loadStats() {
   const totalCats =
     (typeof categories !== 'undefined' && Array.isArray(categories)) ? categories.length : 0;
 
-  // Calculate total content: Places + FAQ questions + other items
+  // Calculate total content: Places + FAQ questions + Hotels + Pets
   const faqCount = 500; // From faq/faq-list-data.js
-  const totalContent = totalPlaces + faqCount;
+  const hotelCount = (typeof allHotels !== 'undefined' && Array.isArray(allHotels)) ? allHotels.length : 0;
+  const petCount = (typeof allPets !== 'undefined' && Array.isArray(allPets)) ? allPets.length : 0;
+  const totalContent = totalPlaces + faqCount + hotelCount + petCount;
 
   // Use total content count instead of just places
   if (totalPlacesEl) totalPlacesEl.textContent = String(totalContent);
