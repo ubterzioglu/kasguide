@@ -327,25 +327,25 @@ function calculateStats(list) {
 }
 
 function loadStats() {
-  const totalPlaces =
-    (typeof allPlaces !== 'undefined' && Array.isArray(allPlaces)) ? allPlaces.length : 0;
+  // Get total items from database (allItems includes: places, articles, faqspecial, hotels, pets)
+  const totalItems = Array.isArray(allItems) ? allItems.length : 0;
 
   const totalCats =
     (typeof categories !== 'undefined' && Array.isArray(categories)) ? categories.length : 0;
 
-  // Calculate total content: Places + FAQ questions + Hotels + Pets
+  // Calculate total content: FAQ questions (500) + Database items (allItems)
   const faqCount = 500; // From faq/faq-list-data.js
-  const hotelCount = (typeof allHotels !== 'undefined' && Array.isArray(allHotels)) ? allHotels.length : 0;
-  const petCount = (typeof allPets !== 'undefined' && Array.isArray(allPets)) ? allPets.length : 0;
-  const totalContent = totalPlaces + faqCount + hotelCount + petCount;
+  const totalContent = faqCount + totalItems;
 
-  // Use total content count instead of just places
+  // Use total content count
   if (totalPlacesEl) totalPlacesEl.textContent = String(totalContent);
   if (totalCategoriesEl) totalCategoriesEl.textContent = String(totalCats);
   if (miniTotalPlacesEl) miniTotalPlacesEl.textContent = String(totalContent);
   if (miniTotalCategoriesEl) miniTotalCategoriesEl.textContent = String(totalCats);
 
-  const stats = calculateStats(typeof allPlaces !== 'undefined' ? allPlaces : []);
+  // Calculate average rating from places only
+  const places = allItems.filter(item => item.type === 'place');
+  const stats = calculateStats(places);
   if (averageRatingEl) averageRatingEl.textContent = stats.avg;
 }
 
