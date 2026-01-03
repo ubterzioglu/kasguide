@@ -19,10 +19,8 @@
       margin: 4rem auto;
       padding: 0 1rem;
       flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      display: block;
+      }
 
     .coming-soon-card {
       background: rgba(255, 255, 255, 0.95);
@@ -125,6 +123,128 @@
         padding: 12px 32px;
       }
     }
+  
+    .page-header {
+      text-align: center;
+      color: white;
+      margin: 2.5rem 0 1.5rem;
+      animation: fadeInScale 0.6s ease;
+    }
+    .page-header h1 {
+      font-size: 2.3rem;
+      font-weight: 900;
+      margin-bottom: 0.4rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+    }
+    .page-header p {
+      opacity: 0.95;
+      font-size: 1.05rem;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      padding: 0 0 1.5rem;
+    }
+
+    .place-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 16px 45px rgba(0,0,0,0.28);
+      animation: fadeInScale 0.6s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .place-rank {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: rgba(0,0,0,0.7);
+      font-size: 0.9rem;
+    }
+
+    .place-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .place-name {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #6B46C1;
+      line-height: 1.25;
+    }
+
+    .place-cat {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #023E8A;
+      background: rgba(2,62,138,0.10);
+      border: 1px solid rgba(2,62,138,0.12);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .place-desc {
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin: 0.25rem 0 0.9rem;
+    }
+
+    .place-actions {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .place-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(159,122,234,1), #6B46C1);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .place-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+    }
+
+    .info-note {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 1.2rem 1.2rem;
+      margin: 0.5rem 0 2.5rem;
+      text-align: center;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 1.8rem; }
+      .place-card { padding: 1.2rem 1.1rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -151,18 +271,216 @@
     </div>
   </header>
 
+  
   <main class="content-container">
-    <div class="coming-soon-card">
-      <div class="coming-soon-icon">👨‍👩‍👧‍👦</div>
-      <h1 class="coming-soon-title">Yakında Burada!</h1>
-      <p class="coming-soon-subtitle">Aile Dostu Yerler</p>
-      <p class="coming-soon-text">
-        Kaş'ta çocuklarla keyifle vakit geçirebileceğiniz restoranlar, kafeler ve aktivite alanları çok yakında bu sayfada listelenecek.
-        Ailecek güvenle gezebilmeniz için özenle seçilmiş mekanlar!
-      </p>
-      <a href="../../index.html" class="back-btn">🏠 Ana Sayfaya Dön</a>
+    <div class="page-header">
+      <h1>👨‍👩‍👧‍👦 Aile Dostu Yerler</h1>
+      <p>Kaş merkez ağırlıklı (gerektiğinde çevre) — çocukla rahat edeceğiniz karışık öneriler.</p>
+    </div>
+
+    <div class="places-grid">
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Kaş Belediyesi Halk Plajı</div>
+          <div class="place-cat">🏖️ Plaj</div>
+        </div>
+        <div class="place-desc">Geniş alan, tesisler ve nispeten sakin deniz. Çocuklarla kum–su derken rahat bir gün çıkar.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20Belediyesi%20Halk%20Plaj%C4%B1" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Akçagerme Plajı</div>
+          <div class="place-cat">🛝 Aile Plajı</div>
+        </div>
+        <div class="place-desc">Sığ giriş ve geniş plaj alanı sayesinde çocuklu ailelerin klasik favorisi. Şezlong/duş gibi imkanlar sezon içinde bulunur.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Ak%C3%A7agerme%20Plaj%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Büyük Çakıl</div>
+          <div class="place-cat">🌊 Denize Gir</div>
+        </div>
+        <div class="place-desc">Kaş merkeze çok yakın; kısa bir araçla ulaşılıyor. Deniz serin olabilir, sabah saatleri daha keyifli.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=B%C3%BCy%C3%BCk%20%C3%87ak%C4%B1l%20Plaj%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Küçük Çakıl</div>
+          <div class="place-cat">🪨 Koy</div>
+        </div>
+        <div class="place-desc">Merkezden yürüyerek inilebilen küçük bir koy. Kısa deniz molası + fotoğraf için ideal.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=K%C3%BC%C3%A7%C3%BCk%20%C3%87ak%C4%B1l%20Plaj%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">İnceboğaz / Kaş Yarımada</div>
+          <div class="place-cat">🌅 Manzara</div>
+        </div>
+        <div class="place-desc">Yarımada tarafında gün batımı ve sakin yürüyüş için güzel. Çocuk arabasıyla yürünebilecek kısa rotalar bulunur.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=%C4%B0ncebo%C4%9Faz%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Antiphellos Antik Tiyatrosu</div>
+          <div class="place-cat">🏛️ Tarih</div>
+        </div>
+        <div class="place-desc">Merkezde; kısa bir tırmanışla ulaşılıyor. Gün batımında manzara nefis, çocuklar için de &#x27;antik&#x27; deneyimi.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Antiphellos%20Theatre%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Kaş Çarşı &amp; Uzun Çarşı</div>
+          <div class="place-cat">🛍️ Gezi</div>
+        </div>
+        <div class="place-desc">Akşamüstü serinliğinde dondurma/atıştırmalık eşliğinde dolaşmalık. Hediyelik ve küçük butiklere göz atılır.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20Uzun%20%C3%87ar%C5%9F%C4%B1" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Meis (Kastellorizo) Günübirlik</div>
+          <div class="place-cat">🇬🇷 Mini Kaçamak</div>
+        </div>
+        <div class="place-desc">Kaş’tan feribotla farklı bir gün geçirmek isteyen ailelere güzel seçenek. Liman çevresi düz ve gezmesi kolay.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Kastellorizo%20port" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Kekova Tekne Turu (Batık Şehir)</div>
+          <div class="place-cat">⛵ Tekne</div>
+        </div>
+        <div class="place-desc">Çocuklarla denizde geçen keyifli bir gün. Kaleköy/Simena molası ve yüzme durakları ile dolu dolu olur.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Kekova%20boat%20tour%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Kaleköy (Simena)</div>
+          <div class="place-cat">🏰 Kale</div>
+        </div>
+        <div class="place-desc">Tekneyle gidilen, araç girmeyen sakin bir köy. Kısa kale yürüyüşü + dondurma molası ailece güzel gider.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Kalek%C3%B6y%20Simena" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Patara Antik Kent &amp; Plaj</div>
+          <div class="place-cat">🏖️+🏛️ Günübirlik</div>
+        </div>
+        <div class="place-desc">Kocaman kumsal ve tarihi kalıntılar bir arada. Çocuklar kumda oynarken siz de antik kenti gezebilirsiniz.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Patara%20Antik%20Kenti" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Saklıkent Kanyonu</div>
+          <div class="place-cat">💦 Doğa</div>
+        </div>
+        <div class="place-desc">Sıcak günlerde serin kaçamak. Su seviyesi mevsime göre değişir; çocuklar için uygun rotayı seçmek önemli.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Sakl%C4%B1kent%20Kanyonu" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Limanağzı</div>
+          <div class="place-cat">🐠 Şnorkel</div>
+        </div>
+        <div class="place-desc">Tekneyle geçilen sakin koylar. Şnorkel ve sakin deniz arayan ailelere uygun.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Limana%C4%9Fz%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Kral Mezarı</div>
+          <div class="place-cat">🪦 Tarih</div>
+        </div>
+        <div class="place-desc">Merkeze yakın, kısa bir merdivenle ulaşılan Likya mezarı. Çocuklara &#x27;eski Kaş&#x27; hikayesi anlatmalık nokta.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20Kral%20Mezar%C4%B1" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        
+        <div class="place-head">
+          <div class="place-name">Çocuk Oyun Parkı (Belediye)</div>
+          <div class="place-cat">🎠 Park</div>
+        </div>
+        <div class="place-desc">Enerji boşaltmak için en garantili çözüm. Yakın çevredeki kafelerle ebeveynlere de mola imkanı verir.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20%C3%A7ocuk%20park%C4%B1" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-note">
+      <strong>İpucu:</strong> Yazın öğle sıcağında plaj yerine kanyon/tekne turu daha konforlu olabilir. Çocuklar için su ayakkabısı ve güneş kremi hayat kurtarır.
     </div>
   </main>
+
 
   <!-- GoatCounter Analytics -->
   <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
