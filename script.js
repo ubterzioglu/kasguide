@@ -63,6 +63,8 @@ function normalizeItem(item, type) {
     base.category = safeArr(base.category);
   } else if (type === 'article') {
     base.category = ['articles'];
+  } else if (type === 'interview') {
+    base.category = ['interviews'];
   } else if (type === 'faqspecial') {
     base.category = ['faqspecial'];
   } else if (type === 'hotel') {
@@ -138,6 +140,18 @@ async function loadPetsFromAPI() {
   }
 }
 
+async function loadInterviewsFromAPI() {
+  try {
+    const response = await fetch('/api/interviews');
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    const data = await response.json();
+    return (data.interviews || []).map(convertAPIInterview);
+  } catch (error) {
+    console.error('Error loading interviews:', error);
+    return [];
+  }
+}
+
 // Convert unified items API data to match static data format
 function convertAPIPlace(apiData) {
   const attrs = apiData.attributes || {};
@@ -184,14 +198,37 @@ function convertAPIPlace(apiData) {
 }
 
 function convertAPIArticle(apiData) {
+  const attrs = apiData.attributes || {};
   return {
     id: apiData.id,
     title: apiData.title,
-    description: apiData.content ? apiData.content.substring(0, 200) : '',
+    description: apiData.description || (apiData.content ? apiData.content.substring(0, 200) : ''),
     content: apiData.content,
+    longText: attrs.longText || apiData.content,
     category: ['articles'],
+    image: apiData.image || attrs.image || null,
     images: apiData.images || [],
-    tags: apiData.tags || []
+    tags: apiData.tags || attrs.tags || [],
+    author: attrs.author || 'Kaş Guide',
+    readTime: attrs.readTime || ''
+  };
+}
+
+function convertAPIInterview(apiData) {
+  const attrs = apiData.attributes || {};
+  return {
+    id: apiData.id,
+    title: apiData.title,
+    description: apiData.description || '',
+    content: apiData.content,
+    longText: attrs.longText || apiData.content,
+    category: ['interviews'],
+    image: apiData.image || attrs.image || null,
+    images: apiData.images || [],
+    tags: apiData.tags || attrs.tags || [],
+    interviewee: attrs.interviewee || '',
+    interviewer: attrs.interviewer || 'Kaş Guide',
+    date: attrs.date || ''
   };
 }
 
@@ -279,13 +316,14 @@ function convertAPIPet(apiData) {
   };
 }
 
-// Build one unified list: places + articles + faqspecial + hotels + pets
+// Build one unified list: places + articles + interviews + faqspecial + hotels + pets
 async function buildAllItems() {
   try {
     // Load all data in parallel
-    const [placesData, articlesData, faqSeriesData, hotelsData, petsData] = await Promise.all([
+    const [placesData, articlesData, interviewsData, faqSeriesData, hotelsData, petsData] = await Promise.all([
       loadPlacesFromAPI(),
       loadArticlesFromAPI(),
+      loadInterviewsFromAPI(),
       loadFaqSeriesFromAPI(),
       loadHotelsFromAPI(),
       loadPetsFromAPI()
@@ -293,11 +331,12 @@ async function buildAllItems() {
 
     const places = placesData.map((p) => normalizeItem(p, 'place'));
     const articlesList = articlesData.map((a) => normalizeItem(a, 'article'));
+    const interviewsList = interviewsData.map((i) => normalizeItem(i, 'interview'));
     const faqs = faqSeriesData.map((f) => normalizeItem(f, 'faqspecial'));
     const hotels = hotelsData.map((h) => normalizeItem(h, 'hotel'));
     const pets = petsData.map((p) => normalizeItem(p, 'pet'));
 
-    allItems = [...places, ...articlesList, ...faqs, ...hotels, ...pets];
+    allItems = [...places, ...articlesList, ...interviewsList, ...faqs, ...hotels, ...pets];
     filteredItems = [...allItems];
 
     console.log(`✅ Loaded ${allItems.length} items from database`);
@@ -409,6 +448,7 @@ function renderCategories() {
 function getItemHref(item) {
   // mevcut yapına göre path’leri aynı bıraktım
   if (item.type === 'article') return `../articles/articles.html?id=${encodeURIComponent(item.id)}`;
+  if (item.type === 'interview') return `../interviews/interviews.html?id=${encodeURIComponent(item.id)}`;
   if (item.type === 'faqspecial') return `../faqspecial/faqspecial.html?id=${encodeURIComponent(item.id)}`;
   return `../places/places.html?id=${encodeURIComponent(item.id)}`;
 }

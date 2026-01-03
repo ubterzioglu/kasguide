@@ -157,7 +157,7 @@ const categories = [
     color: 'category-cyan'
   },
   {
-    id: 'roportaj',
+    id: 'interviews',
     name: 'Röportaj',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>

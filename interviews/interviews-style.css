@@ -1,0 +1,247 @@
+/* interviews-style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-blue: #0077BE;
+  --dark-blue: #023E8A;
+  --light-blue: #00B4D8;
+  --sand: #F4E8D0;
+  --text-dark: #333;
+  --text-light: #666;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.action-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+/* Interview Page */
+.interview-page {
+  padding: 2rem 0;
+}
+
+.interview-root {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.interview-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.interview-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.interview-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.interview-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.interview-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  color: white;
+  z-index: 2;
+}
+
+.interview-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.interview-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.interview-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.interview-body {
+  padding: 3rem 2rem;
+}
+
+.interview-lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-style: italic;
+  border-left: 4px solid var(--primary-blue);
+  padding-left: 1.5rem;
+}
+
+.interview-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.interview-content h3 {
+  color: var(--dark-blue);
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.interview-content p {
+  margin-bottom: 1rem;
+}
+
+.interview-content br {
+  display: block;
+  margin-bottom: 0.5rem;
+  content: "";
+}
+
+.muted {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .interview-hero {
+    height: 300px;
+  }
+
+  .interview-title {
+    font-size: 2rem;
+  }
+
+  .interview-meta {
+    font-size: 0.9rem;
+    gap: 1rem;
+  }
+
+  .interview-body {
+    padding: 2rem 1.5rem;
+  }
+
+  .interview-lead {
+    font-size: 1.1rem;
+  }
+
+  .interview-content {
+    font-size: 1rem;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}
