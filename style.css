@@ -90,6 +90,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-right: 4.25rem; /* Two icon widths spacing from nav items (2 * 34px ≈ 68px) */
 }
 
 .logo-img{

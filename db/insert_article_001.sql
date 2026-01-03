@@ -1,8 +1,23 @@
 -- Insert first article: Kaş'ta Denize Girilecek Yerler
--- This article provides a comprehensive guide to swimming spots in Kaş
+-- Type: article in unified items system
 
-INSERT INTO articles (slug, title, description, content, featured_image, author, read_time, status, published_at, created_at, updated_at)
+INSERT INTO items (
+  item_number,
+  item_type,
+  slug,
+  title,
+  description,
+  long_text,
+  photos,
+  attributes,
+  status,
+  published_at,
+  created_at,
+  updated_at
+)
 VALUES (
+  'ARTICLE-001',
+  'article',
   'kas-denize-girilecek-yerler',
   'Kaş''ta Denize Girilecek Yerler',
   'Kaş, Akdeniz''in turkuaz sularının kucakladığı, doğal güzellikleriyle büyüleyen bir cennet köşesi. Bu yazıda, Kaş''ta denize girebileceğiniz en güzel yerleri sizler için derledik.',
@@ -54,7 +69,7 @@ Seyrek Çakıl, Kaş''ın merkezine yakın, sakin ve temiz bir plajdır. Çakıl
 
 **12. Kaputaş Plajı**
 
-Kaputaş Plajı, Türkiye''nin en ünlü plajlarından biri. Kaş ile Kalkan arasında yer alan bu plaj, turkuaz renkli denizi ve beyaz kumlu sahiliyle büyüler. Plajai ulaşmak için 187 basamaklı merdivenden inmeniz gerekir, ancak manzara her adımda buna değer. Özellikle gün batımında muhteşem manzaralar sunar.
+Kaputaş Plajı, Türkiye''nin en ünlü plajlarından biri. Kaş ile Kalkan arasında yer alan bu plaj, turkuaz renkli denizi ve beyaz kumlu sahiliyle büyüler. Plaja ulaşmak için 187 basamaklı merdivenden inmeniz gerekir, ancak manzara her adımda buna değer. Özellikle gün batımında muhteşem manzaralar sunar.
 
 **13. Kalamar Koyu**
 
@@ -95,21 +110,21 @@ Kaş''ın çevresinde daha birçok küçük koy ve plaj bulunuyor. Tekne turlar�
 **Sonuç**
 
 Kaş, deniz severler için gerçek bir cennet. Her biri eşsiz güzellikteki bu plaj ve koylar, size unutulmaz anlar yaşatacak. Tatil planınızı yaparken bu listeyi yanınızda bulundurun ve Kaş''ın turkuaz sularında kendinizi kaybolmaya bırakın. İyi tatiller!',
-  '../assets/0_img/placeholder.jpg',
-  'Kaş Guide Ekibi',
-  '8 dakika',
-  'published',
+  '[
+    {
+      "url": "../assets/0_img/placeholder.jpg",
+      "sequence": 0,
+      "is_primary": true,
+      "caption": "Kaş deniz manzarası"
+    }
+  ]'::jsonb,
+  '{
+    "author": "Kaş Guide Ekibi",
+    "readTime": "8 dakika",
+    "tags": ["deniz", "plaj", "koy", "yüzme", "rehber", "kaş"]
+  }'::jsonb,
+  'active',
   CURRENT_TIMESTAMP,
   CURRENT_TIMESTAMP,
   CURRENT_TIMESTAMP
-) RETURNING id;
-
--- Insert tags for the article
--- Note: Replace <article_id> with the ID returned from the INSERT above
-INSERT INTO article_tags (article_id, tag_name) VALUES
-  (currval('articles_id_seq'), 'deniz'),
-  (currval('articles_id_seq'), 'plaj'),
-  (currval('articles_id_seq'), 'koy'),
-  (currval('articles_id_seq'), 'yüzme'),
-  (currval('articles_id_seq'), 'rehber'),
-  (currval('articles_id_seq'), 'kaş');
+);
