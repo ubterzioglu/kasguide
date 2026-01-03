@@ -1,159 +1,408 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim • Kaş Guide</title>
+  <link rel="icon" type="image/png" href="../jpgkasguidelogo.jpg">
 
-  <!-- Primary Meta Tags -->
-  <title>İletişim ve Hakkımızda - Kaş Guide Ekibi</title>
-  <meta name="title" content="İletişim ve Hakkımızda - Kaş Guide Ekibi">
-  <meta name="description" content="Kaş Guide ekibi ile iletişime geçin. Yerel uzmanlar ve Kaş sakinleri tarafından oluşturulan kapsamlı rehber. Mekan önerileri, düzeltmeler ve iş birliği için.">
-  <meta name="keywords" content="kaş guide iletişim, kaş rehber, kaş yerel uzmanlar, kaş mekan öner">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://kasguide.de/contact/contact.html">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kasguide.de/contact/contact.html">
-  <meta property="og:title" content="İletişim - Kaş Guide">
-  <meta property="og:description" content="Kaş Guide ekibi ile iletişime geçin. Mekan önerileri ve iş birliği için.">
-  <meta property="og:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
-
-  <link rel="stylesheet" href="contact-style.css" />
-
-  <!-- Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Kaş Guide",
-    "url": "https://kasguide.de",
-    "logo": "https://kasguide.de/assets/0_img/logokasguide.png",
-    "description": "Kaş, Turkey için kapsamlı yerel rehber. Yerel uzmanlar ve Kaş sakinleri tarafından oluşturuldu.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Kaş",
-      "addressRegion": "Antalya",
-      "addressCountry": "TR"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Service",
-      "availableLanguage": ["Turkish", "English"]
+  <style>
+    :root {
+      --azure: #0077BE;
+      --turquoise: #00B4D8;
+      --sand: #F4E8D0;
+      --coral: #FF6B6B;
+      --deep-blue: #023E8A;
+      --white: #FFFFFF;
+      --cream: #FFF9F0;
+      --gray: #666;
     }
-  }
-  </script>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, var(--turquoise) 0%, var(--azure) 40%, var(--deep-blue) 100%);
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(20px);
+      border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      display: inline-block;
+    }
+
+    .back-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .page-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .card h2 {
+      color: var(--deep-blue);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Card 2: İçerik Ekle */
+    .content-add-card {
+      background: linear-gradient(135deg, rgba(0,119,190,0.05), rgba(0,180,216,0.05));
+    }
+
+    .content-add-card ul {
+      list-style: none;
+      margin: 20px 0 0 0;
+    }
+
+    .content-add-card li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,119,190,0.1);
+      color: #333;
+      font-size: 1.05rem;
+    }
+
+    .content-add-card li:last-child {
+      border-bottom: none;
+    }
+
+    /* Card 3: Feedback Form */
+    .feedback-form {
+      margin-top: 24px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--deep-blue);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid rgba(0,119,190,0.2);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--azure);
+      box-shadow: 0 0 0 3px rgba(0,119,190,0.1);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .hint {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    .req {
+      color: var(--coral);
+    }
+
+    .btn {
+      padding: 14px 32px;
+      background: var(--azure);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,119,190,0.3);
+    }
+
+    .btn:hover {
+      background: var(--deep-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,119,190,0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05));
+      border-radius: 16px;
+      border: 2px solid rgba(16,185,129,0.3);
+    }
+
+    .success-message.active {
+      display: block;
+    }
+
+    .success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .success-message h3 {
+      color: var(--deep-blue);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .success-message p {
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .card h2 {
+        font-size: 1.4rem;
+      }
+
+      .card p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container header-content">
-      <a class="home-link" href="../index.html" aria-label="Ana Sayfa">
-        <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 10.5L12 3l9 7.5"/>
-          <path d="M5 10v10h14V10"/>
-          <path d="M9 20v-6h6v6"/>
-        </svg>
-      </a>
+  <div class="container">
+    <a href="../index.html" class="back-btn">← Ana Sayfaya Dön</a>
 
-      <div class="logo">
-        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
-        <h1 class="logo-text">Kaş Guide</h1>
+    <div class="page-header">
+      <h1>İletişim</h1>
+    </div>
+
+    <div class="cards-container">
+
+      <!-- Card 1: Kaş Guide'ı Birlikte Büyütelim -->
+      <div class="card">
+        <h2>Kaş Guide'ı birlikte büyütelim!</h2>
+
+        <p>
+          <strong>Kaş Guide'ı birlikte büyütelim.</strong><br>
+          Burası tek kişinin rehberi değil. Deneyenlerin, gezenlerin, yaşayanların sesi. Küçük öneriler büyük fark yaratır.
+        </p>
+
+        <p>
+          <strong>Bildiklerini paylaş.</strong><br>
+          Bir mekân, bir yürüyüş yolu, bir gün batımı. Kısa bir not bile yeter. Deneyim çoğaldıkça rehber zenginleşir.
+        </p>
+
+        <p>
+          <strong>Birlikte daha doğru, daha gerçek.</strong><br>
+          Reklam dili yok. Abartı yok. Kaş'ı Kaş gibi anlatıyoruz. Sen ekledikçe, Kaş Guide büyür.
+        </p>
       </div>
 
-      <div style="width:48px"></div>
-    </div>
-  </header>
+      <!-- Card 2: İçerik Ekle -->
+      <div class="card content-add-card">
+        <h2>İçerik Ekle</h2>
+        <p>Kaş Guide'a katkıda bulunmak için aşağıdaki içerik türlerinden birini ekleyebilirsiniz:</p>
 
-  <main class="contact-page">
-    <div class="container">
-      <section class="contact-hero">
-        <div class="contact-hero-badge">İLETİŞİM</div>
-        <h2>Kaş Guide’ni birlikte büyütelim.</h2>
-        <p>
-          Bu sayfa ilk sürüm. İleride formu aktif ederiz, sosyal linkleri netleştiririz.
-          Şimdilik en hızlı yol: bir mail at.
+        <ul>
+          <li>🏖️ Mekan ekle (restoran, kafe, bar, otel, plaj vb.)</li>
+          <li>🎤 Sanatçı profili ekle</li>
+          <li>🐶🐱 Kayıp veya yuva arayan patili ekle</li>
+          <li>💿 Kaş şarkıları playlistine şarkı öner</li>
+          <li>📝 Geri bildirim ve öneri gönder</li>
+        </ul>
+
+        <p style="margin-top: 20px; font-size: 0.95rem; color: var(--gray);">
+          <em>İçerik ekleme sayfalarına ana sayfadan erişebilirsiniz.</em>
         </p>
-        <div class="contact-cta">
-          <a class="btn-primary" href="mailto:info@kasguide.de">E-posta gönder</a>
-          <a class="btn-secondary" href="../index.html">Ana sayfaya dön</a>
+      </div>
+
+      <!-- Card 3: Bize Yaz -->
+      <div class="card">
+        <h2>Bize Yaz!</h2>
+        <p class="muted">Bir hata mı gördün, bir fikir mi var, bir şey mi ekleyelim? Yaz, biz bakalım.</p>
+        <p class="muted" style="font-size: 0.95rem;">Mesajında belirtmediğin sürece kişisel bilgilerin gizli kalır. Mesajın kimden geldiğini göremeyiz.</p>
+
+        <div class="success-message" id="successMessage">
+          <div class="success-icon">✅</div>
+          <h3>Mesajın Alındı!</h3>
+          <p>Okuyoruz ve mümkün olduğunca hızlı şekilde aksiyon almaya çalışıyoruz.</p>
+          <p>Teşekkürler.</p>
+          <p>Kaş Guide</p>
         </div>
-      </section>
 
-      <section class="contact-grid">
-        <article class="contact-card">
-          <div class="contact-card-top">
-            <div class="contact-ico" aria-hidden="true">✉️</div>
-            <div>
-              <h3>E-posta</h3>
-              <p>Öneri, düzeltme, iş birliği.</p>
-            </div>
+        <form id="feedbackForm" class="feedback-form" novalidate>
+          <div class="field">
+            <label for="title">Başlık <span class="req">*</span></label>
+            <input
+              id="title"
+              name="title"
+              type="text"
+              autocomplete="off"
+              placeholder="Örn: Haritada yanlış kategori / Yeni bölüm önerisi / Hata bildirimi"
+              required
+              maxlength="120"
+            />
+            <div class="hint">Kısa ve net bir başlık yeterli.</div>
           </div>
-          <a class="contact-link" href="mailto:info@kasguide.de">info@kasguide.de</a>
-          <div class="contact-note">Placeholder — kendi adresinle değiştir.</div>
-        </article>
 
-        <article class="contact-card">
-          <div class="contact-card-top">
-            <div class="contact-ico" aria-hidden="true">📍</div>
-            <div>
-              <h3>Yeni yer ekleme</h3>
-              <p>Bir mekan/yol/rota eklemek istersen şu bilgileri yolla:</p>
-            </div>
+          <div class="field">
+            <label for="message">Bizimle Paylaşın! <span class="req">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="10"
+              placeholder="Detayı yazın… Ne oldu? Nerede oldu? Varsa ekran görüntüsü / link / örnek paylaşın."
+              required
+              maxlength="5000"
+            ></textarea>
+            <div class="hint"><span id="charCount">0</span>/5000</div>
           </div>
-          <ul class="contact-list">
-            <li>İsim + kategori</li>
-            <li>Google Maps arama cümlesi</li>
-            <li>Instagram / web / telefon (varsa)</li>
-            <li>Kısaca + Uzunca (varsa)</li>
-          </ul>
-        </article>
 
-        <article class="contact-card">
-          <div class="contact-card-top">
-            <div class="contact-ico" aria-hidden="true">🧾</div>
-            <div>
-              <h3>Yazı fikri</h3>
-              <p>Kaş’la ilgili yazıları burada toparlayacağız.</p>
-            </div>
+          <div>
+            <button type="submit" class="btn" id="submitBtn">
+              Gönder
+            </button>
           </div>
-          <div class="contact-mini">
-            <div class="contact-mini-row"><span>Başlık</span><span>Kaynak</span></div>
-            <div class="contact-mini-row"><span>Kısa özet</span><span>Tarih</span></div>
-            <div class="contact-mini-row"><span>Görsel (ops.)</span><span>Link</span></div>
-          </div>
-          <div class="contact-note">İstersen sadece link at; kalanını beraber toplarız.</div>
-        </article>
+        </form>
+      </div>
 
-        <article class="contact-card contact-card-wide">
-          <div class="contact-card-top">
-            <div class="contact-ico" aria-hidden="true">💬</div>
-            <div>
-              <h3>Hızlı mesaj</h3>
-              <p>Form şimdilik pasif. Yakında aktif ederiz.</p>
-            </div>
-          </div>
-          <form class="contact-form" onsubmit="return false;">
-            <label>
-              Ad
-              <input type="text" placeholder="İsmin" />
-            </label>
-            <label>
-              Mesaj
-              <textarea rows="4" placeholder="Mesajın..."></textarea>
-            </label>
-            <button class="btn-disabled" type="button" disabled>Gönder (yakında)</button>
-          </form>
-        </article>
-      </section>
-
-      <footer class="contact-footer">
-        <div class="contact-footer-inner">
-          <span>Kaş Guide • v0</span>
-          <span class="dot">•</span>
-          <span>İçerik: sen + biz</span>
-        </div>
-      </footer>
     </div>
-  </main>
+  </div>
+
+  <script>
+    // Character counter
+    const messageTextarea = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
+
+    messageTextarea.addEventListener('input', () => {
+      charCount.textContent = messageTextarea.value.length;
+    });
+
+    // Form submission
+    const feedbackForm = document.getElementById('feedbackForm');
+    const successMessage = document.getElementById('successMessage');
+    const submitBtn = document.getElementById('submitBtn');
+
+    feedbackForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = {
+        title: document.getElementById('title').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toISOString(),
+        source: 'contact_page'
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Gönderiliyor...';
+
+      try {
+        const response = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+          feedbackForm.style.display = 'none';
+          successMessage.classList.add('active');
+        } else {
+          alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Gönder';
+        }
+      } catch (error) {
+        alert('Bağlantı hatası. Lütfen tekrar deneyin.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Gönder';
+      }
+    });
+  </script>
+
+  <!-- GoatCounter -->
+  <script
+    data-goatcounter="https://kasguidede.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js">
+  </script>
 </body>
 </html>
