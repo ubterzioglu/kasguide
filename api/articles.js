@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     // Get all published articles
     const articles = await getAllItems({
       item_type: 'article',
-      status: 'active'
+      status: 'approved'
     });
 
     console.log(`📚 Articles API: Found ${articles.length} articles`);

@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     // Get all published interviews
     const interviews = await getAllItems({
       item_type: 'interview',
-      status: 'active'
+      status: 'approved'
     });
 
     console.log(`🎙️ Interviews API: Found ${interviews.length} interviews`);
