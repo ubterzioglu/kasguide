@@ -1,0 +1,469 @@
+/* ============================================
+   COMPONENTS.CSS - Reusable Components
+
+   Contains:
+   - Accordion/Details
+   - Form elements (input, select, textarea)
+   - Buttons
+   - Categories grid
+   - File upload
+   - Messages (success, error)
+   - Utilities
+
+   Usage: Include this third in all add forms
+   ============================================ */
+
+/* ===== ACCORDION / DETAILS ===== */
+details.accordion-item {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+
+details.accordion-item[open] {
+  background: rgba(255, 255, 255, 0.70);
+}
+
+summary.section-title {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  cursor: pointer;
+  font-weight: 850;
+  user-select: none;
+}
+
+summary.section-title::-webkit-details-marker {
+  display: none;
+}
+
+.section-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid rgba(11, 18, 32, 0.08);
+  box-shadow: var(--shadow-xs);
+  flex: 0 0 auto;
+  font-size: 1.25rem;
+}
+
+.chev {
+  margin-left: auto;
+  opacity: 0.55;
+  font-weight: 900;
+  transition: transform 0.3s ease;
+}
+
+details[open] .chev {
+  transform: rotate(180deg);
+}
+
+.liste-small {
+  padding: 0 16px 14px;
+  color: rgba(11, 18, 32, 0.88);
+}
+
+.liste-small p {
+  margin: 10px 0;
+  line-height: 1.55;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form {
+  display: block;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: 750;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: var(--text);
+  border: 1px solid rgba(11, 18, 32, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.96);
+  max-width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--bg2);
+  box-shadow: 0 0 0 3px rgba(34, 193, 220, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.field__hint {
+  font-size: 0.85rem;
+  color: rgba(11, 18, 32, 0.60);
+  margin-top: 2px;
+}
+
+.help {
+  font-size: 0.9rem;
+  color: rgba(11, 18, 32, 0.62);
+  margin-top: 6px;
+}
+
+/* ===== CATEGORIES GRID ===== */
+.cats-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cats-title {
+  font-weight: 900;
+}
+
+.cats-hint {
+  font-size: 0.85rem;
+  color: rgba(11, 18, 32, 0.62);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.category-option {
+  position: relative;
+}
+
+.category-checkbox {
+  display: none;
+}
+
+.category-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 12px;
+  border: 1px solid rgba(11, 18, 32, 0.12);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  text-align: center;
+  user-select: none;
+}
+
+.category-label:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.10);
+}
+
+.category-checkbox:checked + .category-label {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.category-icon {
+  font-size: 1.35rem;
+}
+
+.category-name {
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.cat-error {
+  margin-top: 8px;
+  font-weight: 800;
+  color: var(--color-error);
+}
+
+/* ===== BUTTONS ===== */
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.actions--stack {
+  flex-direction: column;
+}
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--wide {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-full);
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.btn--preview {
+  background: var(--gradient-preview);
+}
+
+.btn--submit {
+  background: var(--gradient-submit);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.form-footnote {
+  text-align: center;
+  margin: 10px 0 2px;
+  font-size: 0.92rem;
+  color: rgba(11, 18, 32, 0.78);
+}
+
+.build-note {
+  text-align: center;
+  margin: 10px 0 2px;
+  font-size: 0.75rem;
+  color: rgba(11, 18, 32, 0.78);
+}
+
+/* ===== FILE UPLOAD ===== */
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.file-input {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -10px rgba(0, 0, 0, 0.25);
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.file-btn:hover {
+  transform: translateY(-1px);
+}
+
+.file-names {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.65);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-feedback {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.file-summary {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.file-list {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* ===== MESSAGES ===== */
+.submit-msg {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(11, 18, 32, 0.10);
+  background: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+}
+
+.success-message {
+  display: none;
+  background: var(--color-success-bg);
+  border: 2px solid var(--color-success);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.success-message.show {
+  display: block;
+  animation: slideDown 0.5s ease;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-error {
+  margin-top: 4px;
+  color: var(--color-error);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== UTILITIES ===== */
+.is-hidden {
+  display: none !important;
+}
+
+.form.is-hidden {
+  display: none !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-label {
+    padding: 12px 10px;
+  }
+
+  .category-name {
+    font-size: 0.88rem;
+  }
+
+  .btn--wide {
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+
+/* ============================================================
+   FORM LAYOUT PATCH (grid rows + full-width fields)
+   Note: Visual-only; does not change form item names/ids.
+   ============================================================ */
+
+.form-group{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:12px;
+}
+
+.form-label{
+  font-weight:600;
+}
+
+.form-input,
+.form-textarea{
+  width:100%;
+  max-width:100%;
+}
+
+.form-textarea{
+  resize: vertical;
+}
+
+/* Two-column rows (Phone+Email, Website+Instagram, etc.) */
+.form-row{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:12px;
+  align-items:start;
+  width:100%;
+}
+
+/* Ensure rows don't create extra bottom gaps (groups already have margin) */
+.form-row > .form-group{
+  margin-bottom:0;
+}
+
+@media (max-width: 640px){
+  .form-row{
+    grid-template-columns: 1fr;
+  }
+}

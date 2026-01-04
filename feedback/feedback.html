@@ -3,9 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Geri Bildirim • Kaş Guide</title>
 
-  <link rel="icon" type="image/png" href="../../assets/0_img/logokasguide.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../kasguideico.ico">
+
+  <!-- Primary Meta Tags -->
+  <title>Geri Bildirim • Kaş Guide</title>
+  <meta name="description" content="Kaş Guide hakkında düşüncelerinizi, önerilerinizi ve geri bildirimlerinizi paylaşın. Birlikte daha iyi bir rehber oluşturalım.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kasguide.de/feedback/feedback.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kasguide.de/feedback/feedback.html">
+  <meta property="og:title" content="Geri Bildirim • Kaş Guide">
+  <meta property="og:description" content="Kaş Guide hakkında düşüncelerinizi, önerilerinizi ve geri bildirimlerinizi paylaşın.">
+  <meta property="og:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Geri Bildirim • Kaş Guide">
+  <meta name="twitter:description" content="Kaş Guide hakkında düşüncelerinizi, önerilerinizi ve geri bildirimlerinizi paylaşın."
    <!-- Bu sayfaya özel minik düzenlemeler -->
   <link rel="stylesheet" href="./feedback.css" />
 
@@ -13,12 +32,26 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header class="topbar">
     <div class="container">
+      <!-- LEFT ACTIONS -->
+      <div class="header-actions" style="display: flex; gap: 0.5rem;">
+        <a href="../index.html" class="action-btn" aria-label="Ana Sayfa" style="background: rgba(255, 255, 255, 0.9); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+          <img src="../assets/0_img/clip_home.png" alt="Home" style="width: 24px; height: 24px;">
+        </a>
+
+        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background: rgba(255, 255, 255, 0.9); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+          <img src="../assets/0_img/clip_up.png" alt="Up" style="width: 24px; height: 24px;">
+        </button>
+      </div>
+
       <a class="brand" href="../index.html" aria-label="Kaş Guide">
         <div class="brand__title">Kaş Guide</div>
         <div class="brand__subtitle">Geri Bildirim</div>
       </a>
+
+      <div style="width:48px"></div>
     </div>
   </header>
 

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../kasguideico.ico">
+
+  <!-- Primary Meta Tags -->
+  <title>Ücretsiz Giriş - Kaş Guide</title>
+<<<<<<< HEAD
+  <meta name="description" content="Kaş'ta ücretsiz giriş yapabileceğiniz plajlar, yürüyüşler, manzara noktaları ve tarihi duraklar.">
+=======
+  <meta name="description" content="Kaş'ta ücretsiz giriş yapabileceğiniz yerler yakında burada listelenecek.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kasguide.de/fastlink/freeentrance/freeentrance.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kasguide.de/fastlink/freeentrance/freeentrance.html">
+  <meta property="og:title" content="Ücretsiz Giriş - Kaş Guide">
+  <meta property="og:description" content="Kaş'ta ücretsiz giriş yapabileceğiniz yerler yakında burada listelenecek.">
+  <meta property="og:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ücretsiz Giriş - Kaş Guide">
+  <meta name="twitter:description" content="Kaş'ta ücretsiz giriş yapabileceğiniz yerler yakında burada listelenecek.">
+
+  <link rel="stylesheet" href="../../style.css">
+>>>>>>> 485f0af63f91e87eb51949f5c7029fc4ff3acfba
+  <style>
+
+:root{
+  --gray-50:#f9fafb; --gray-100:#f3f4f6; --gray-200:#e5e7eb; --gray-600:#4b5563; --gray-800:#1f2937; --gray-900:#111827;
+  --shadow-sm:0 1px 2px 0 rgba(0,0,0,0.05);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;min-height:100vh;color:var(--gray-800)}
+.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+
+/* Header (Kaş Guide shared) */
+.header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);box-shadow:var(--shadow-sm);border-bottom:1px solid var(--gray-200)}
+.header-content{display:flex;align-items:center;justify-content:space-between;padding:1rem}
+.logo{display:flex;align-items:center;gap:.5rem}
+.logo-img{width:34px;height:34px;border-radius:999px;object-fit:cover;border:1px solid var(--gray-200);box-shadow:var(--shadow-sm)}
+.logo-text{font-size:1.5rem;font-weight:700;background:linear-gradient(to right,#0891b2,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Header left actions */
+.header-actions{display:flex;gap:10px;align-items:center}
+.action-btn{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;border:none;padding:0;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.08);transition:transform .18s ease,box-shadow .18s ease,background .18s ease;text-decoration:none}
+.action-btn img{width:22px;height:22px}
+.action-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.12)}
+.action-btn:active{transform:scale(0.96)}
+
+
+body{
+  background: linear-gradient(180deg, #48BB78 0%, #38A169 40%, #2F855A 100%);
+}
+
+/* Layout container */
+.content-container{
+  max-width: 900px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
+/* Page header */
+.page-header{
+  text-align:center;
+  color:white;
+  margin: 1.5rem 0 1.25rem;
+  animation: fadeInDown .5s ease;
+}
+.page-header h1{
+  font-size:2.3rem;
+  margin-bottom:.4rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,.25);
+}
+.page-header p{
+  font-size:1.05rem;
+  opacity:.95;
+}
+
+/* Cards */
+.places-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+.place-card{
+  background: rgba(255,255,255,0.96);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transition: transform .2s ease, box-shadow .2s ease;
+  animation: fadeInUp .6s ease;
+  animation-fill-mode: both;
+}
+.place-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+}
+.place-top{
+  display:flex;
+  gap:.85rem;
+  align-items:flex-start;
+}
+.place-icon{
+  width:52px;height:52px;border-radius:16px;
+  display:grid;place-items:center;
+  background: rgba(56,161,105,0.14);
+  font-size:1.55rem;
+  flex: 0 0 auto;
+}
+.place-title{
+  font-size:1.2rem;
+  font-weight:900;
+  color:#1f2937;
+  line-height:1.2;
+  margin-bottom:.25rem;
+}
+.place-tags{
+  display:flex; flex-wrap:wrap;
+  gap:.4rem;
+  margin-top:.35rem;
+}
+.tag{
+  font-size:.72rem;
+  font-weight:800;
+  padding:.22rem .55rem;
+  border-radius:999px;
+  background: rgba(8,145,178,0.12);
+  color:#0b4a5a;
+}
+.tag.free{
+  background: rgba(47,133,90,0.16);
+  color:#14532d;
+}
+.place-desc{
+  margin-top:.85rem;
+  color:#4b5563;
+  font-size:.95rem;
+  line-height:1.65;
+}
+.place-tip{
+  margin-top:.75rem;
+  padding-top:.75rem;
+  border-top:1px solid rgba(229,231,235,0.9);
+  color:#1f2937;
+  font-size:.9rem;
+}
+.place-actions{
+  margin-top: 1rem;
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  text-decoration:none;
+  border-radius:999px;
+  padding:.65rem 1rem;
+  font-weight:800;
+  font-size:.92rem;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.btn:active{transform:scale(.98)}
+.btn.map{
+  background: white;
+  color:#111827;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.btn.map:hover{opacity:.92}
+.btn.save{
+  background: linear-gradient(135deg, #48BB78, #2F855A);
+  color: white;
+  box-shadow: 0 8px 22px rgba(47,133,90,0.28);
+}
+.btn.save:hover{opacity:.96}
+
+/* Info note */
+.info-note{
+  margin-top: 1.5rem;
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  padding: 1.1rem 1.2rem;
+  color:#374151;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+  font-size:.95rem;
+  line-height:1.7;
+  animation: fadeInUp .7s ease;
+}
+
+/* Animations */
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+@media (max-width:768px){
+  .page-header h1{font-size:1.8rem}
+  .place-card{padding:1.25rem}
+  .place-icon{width:46px;height:46px;border-radius:14px;font-size:1.35rem}
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <div class="header-actions">
+        <a href="../../index.html" class="action-btn" aria-label="Ana Sayfa">
+          <img src="../../assets/0_img/clip_home.png" alt="Home">
+        </a>
+        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="../../assets/0_img/clip_up.png" alt="Up">
+        </button>
+      </div>
+
+      <div class="logo">
+        <img class="logo-img" src="../../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  <main class="content-container">
+    <div class="page-header">
+      <h1>🆓 Ücretsiz Giriş</h1>
+      <p>Kaş’ta para harcamadan da güzel vakit geçirenler kulübüne hoş geldin. Aşağıdaki yerler “giriş ücreti” istemeyen, Kaş’ın en keyifli durakları.</p>
+    </div>
+
+    <section class="places-grid">
+      
+    <article class="place-card" style="animation-delay:0.05s">
+      <div class="place-top">
+        <div class="place-icon">🌊</div>
+        <div>
+          <div class="place-title">Kaş Belediyesi Halk Plajı</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Plaj</span><span class='tag'>Merkez</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Giriş çoğu zaman ücretsiz; şezlong/şemsiye veya işletme kullanımı ücretli olabilir. Ulaşımı kolay, hızlı serinleme için ideal.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Kalabalık olmadan gitmek için 09:00–11:00 arası dene.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20Belediyesi%20Halk%20Plaj%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.10s">
+      <div class="place-top">
+        <div class="place-icon">🌊</div>
+        <div>
+          <div class="place-title">Küçük Çakıl Plajı</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Plaj</span><span class='tag'>Merkez</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Merkeze yürüyerek inilen küçük koy. Denize girip çıkması hızlı; kısa mola için birebir.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Deniz ayakkabısı işini kolaylaştırır (çakıl).</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=K%C3%BC%C3%A7%C3%BCk%20%C3%87ak%C4%B1l%20Plaj%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.15s">
+      <div class="place-top">
+        <div class="place-icon">🌊</div>
+        <div>
+          <div class="place-title">Büyük Çakıl Plajı</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Plaj</span><span class='tag'>Merkez</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Berrak su ve serinlik arayanların favorisi. Pek çok kaynakta girişin ücretsiz olduğundan bahsedilir.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Öğleden sonra rüzgâr artabiliyor; sabah daha sakin olur.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=B%C3%BCy%C3%BCk%20%C3%87ak%C4%B1l%20Plaj%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.20s">
+      <div class="place-top">
+        <div class="place-icon">🏛️</div>
+        <div>
+          <div class="place-title">Antiphellos Antik Tiyatrosu</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Tarih</span><span class='tag'>Günbatımı</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Kaş’ın simge noktalarından. Birçok gezgin kaynağında tiyatroya girişin ücretsiz olduğu belirtilir.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Günbatımına yakın git; manzara efsane.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Antiphellos%20Antik%20Tiyatrosu%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.25s">
+      <div class="place-top">
+        <div class="place-icon">🦁</div>
+        <div>
+          <div class="place-title">Aslanlı Lahit</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Tarih</span><span class='tag'>Merkez</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Çarşının içinde, yürürken denk gelirsin. Kısa ama çok ‘Kaş’ bir durak.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Fotoğraf için akşamüstü ışığı iyi.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Aslanl%C4%B1%20Lahit%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.30s">
+      <div class="place-top">
+        <div class="place-icon">🛍️</div>
+        <div>
+          <div class="place-title">Uzun Çarşı (Old Town yürüyüşü)</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Çarşı</span><span class='tag'>Merkez</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Dolaşması ücretsiz, Kaş atmosferini hissettiren sokaklar. Dondurma/coffee molasıyla çok keyifli.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Akşam 19:00 sonrası daha canlı.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Uzun%20%C3%87ar%C5%9F%C4%B1%20%28Old%20Town%20y%C3%BCr%C3%BCy%C3%BC%C5%9F%C3%BC%29%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.35s">
+      <div class="place-top">
+        <div class="place-icon">🥬</div>
+        <div>
+          <div class="place-title">Kaş Salı Pazarı</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Pazar</span><span class='tag'>Yerel</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Yerel ürün, meyve-sebze, peynir ve küçük atıştırmalıklar. Gezmesi ücretsiz; ‘Kaş’ı hızlı tanıtır.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Sabah erken git; kalabalık büyümeden rahat gezersin.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20Sal%C4%B1%20Pazar%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.40s">
+      <div class="place-top">
+        <div class="place-icon">⚓</div>
+        <div>
+          <div class="place-title">Kaş Marina & Sahil Yürüyüşü</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Yürüyüş</span><span class='tag'>Manzara</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Marina çevresinde sahil yürüyüşü, banklar, manzara. Tam ‘boş boş iyi hissetme’ yeri.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Günbatımında yürüyüş + fotoğraf kombinasyonu.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20Marina%20%26%20Sahil%20Y%C3%BCr%C3%BCy%C3%BC%C5%9F%C3%BC%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.45s">
+      <div class="place-top">
+        <div class="place-icon">👀</div>
+        <div>
+          <div class="place-title">Seyretme Noktaları (Merkez üst kotlar)</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Manzara</span><span class='tag'>Foto</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Merkezde yukarı çıktıkça Kaş manzarası açılır. Ücretsiz, kısa tırmanışla ödül gibi görüntüler.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Telefonun düşük ışık modu iş görür.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Seyretme%20Noktalar%C4%B1%20%28Merkez%20%C3%BCst%20kotlar%29%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.50s">
+      <div class="place-top">
+        <div class="place-icon">🚶</div>
+        <div>
+          <div class="place-title">Çukurbağ Yarımadası sahil şeridi (kıyı yürüyüşleri)</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Doğa</span><span class='tag'>Sahil</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Bazı noktalarda kıyıya inip denizi izleyebileceğin yürüyüş rotaları var. İşletmeye girmeden de keyif çıkar.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Kayalık zemin için spor ayakkabı.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=%C3%87ukurba%C4%9F%20Yar%C4%B1madas%C4%B1%20sahil%20%C5%9Feridi%20%28k%C4%B1y%C4%B1%20y%C3%BCr%C3%BCy%C3%BC%C5%9Fleri%29%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.55s">
+      <div class="place-top">
+        <div class="place-icon">🛶</div>
+        <div>
+          <div class="place-title">Limanağzı manzarası (tekneyle gidersen)</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Koy</span><span class='tag'>Deniz</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Limanağzı koyuna ulaşım genelde tekneyle; koyda işletmeler var ama manzara/deniz keyfi için gidilir.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Tekne saatlerini önceden kontrol et; dönüşü kaçırma.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Limana%C4%9Fz%C4%B1%20manzaras%C4%B1%20%28tekneyle%20gidersen%29%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.60s">
+      <div class="place-top">
+        <div class="place-icon">📸</div>
+        <div>
+          <div class="place-title">İskele/liman çevresi foto noktaları</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Foto</span><span class='tag'>Merkez</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Kaş’ın klasik ‘mavi-beyaz’ anlarını yakalamak için ücretsiz foto durakları.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Sabah ışığı daha yumuşak.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=%C4%B0skele%2Fliman%20%C3%A7evresi%20foto%20noktalar%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.65s">
+      <div class="place-top">
+        <div class="place-icon">🎨</div>
+        <div>
+          <div class="place-title">Andifli sokakları (duvar resimleri / küçük sürprizler)</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Sokak</span><span class='tag'>Keşif</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Merkez sokaklarında küçük detaylar, kediler ve sürpriz köşeler. Ücretsiz ‘slow travel’ modu.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Haritasız gez; kaybolmak burada güzel.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Andifli%20sokaklar%C4%B1%20%28duvar%20resimleri%20%2F%20k%C3%BC%C3%A7%C3%BCk%20s%C3%BCrprizler%29%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.70s">
+      <div class="place-top">
+        <div class="place-icon">🌅</div>
+        <div>
+          <div class="place-title">Kıyı şeridinde gün doğumu / gün batımı noktaları</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Günbatımı</span><span class='tag'>Rahat</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Sadece oturup izlemek bile planlı aktivite gibi hissettirir. Ücretsiz ve her gün farklı.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Rüzgâr için ince bir üst al.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=K%C4%B1y%C4%B1%20%C5%9Feridinde%20g%C3%BCn%20do%C4%9Fumu%20%2F%20g%C3%BCn%20bat%C4%B1m%C4%B1%20noktalar%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    <article class="place-card" style="animation-delay:0.75s">
+      <div class="place-top">
+        <div class="place-icon">☕</div>
+        <div>
+          <div class="place-title">Kaş merkez meydanı & kısa mola</div>
+          <div class="place-tags">
+            <span class="tag free">🆓 Ücretsiz</span>
+            <span class='tag'>Merkez</span><span class='tag'>Dinlenme</span>
+          </div>
+        </div>
+      </div>
+      <div class="place-desc">Bir şey satın almadan da oturup insan izleyebileceğin, enerjiyi hissedeceğin nokta.</div>
+      <div class="place-tip"><strong>İpucu:</strong> Yoğun saatte kenar sokaklara sapıp sakinleşebilirsin.</div>
+      <div class="place-actions">
+        <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20merkez%20meydan%C4%B1%20%26%20k%C4%B1sa%20mola%20Ka%C5%9F" target="_blank" rel="noopener">🗺️ Haritada Aç</a>
+      </div>
+    </article>
+    
+    </section>
+
+    <div class="info-note">
+      <strong>Not:</strong> Bazı plajlarda giriş ücretsiz olsa bile <em>şezlong/şemsiye</em> veya işletme hizmetleri ücretli olabilir.
+      Sezon, belediye uygulaması veya işletme düzeni değişebileceği için gitmeden önce “Haritada Aç” ile güncel durumu kontrol etmek en güvenlisi.
+      (Antiphellos Tiyatrosu için birden fazla kaynakta “giriş ücretsiz” bilgisi yer alır.) 
+    </div>
+  </main>
+
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+# Kaş Guide - robots.txt
+# Updated: 2026-01-01
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /add/
+
+# Disallow duplicate or test pages
+Disallow: /pet/pet2.html
+Disallow: /planner/planner-old.html
+Disallow: /template/
+
+# Disallow search and filter URLs (if applicable)
+Disallow: /*?search=
+Disallow: /*?filter=
+Disallow: /*?category=
+
+# Allow important bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Sitemap location
+Sitemap: https://kasguide.de/sitemap.xml

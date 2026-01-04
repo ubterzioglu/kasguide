@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../kasguideico.ico">
+
+  <!-- Primary Meta Tags -->
+  <title>En Popüler 10 Yer - Kaş Guide</title>
+  <meta name="description" content="Kaş'ın en popüler 10 mekanı yakında burada listelenecek.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kasguide.de/fastlink/pop10/pop10.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kasguide.de/fastlink/pop10/pop10.html">
+  <meta property="og:title" content="En Popüler 10 Yer - Kaş Guide">
+  <meta property="og:description" content="Kaş'ın en popüler 10 mekanı yakında burada listelenecek.">
+  <meta property="og:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="En Popüler 10 Yer - Kaş Guide">
+  <meta name="twitter:description" content="Kaş'ın en popüler 10 mekanı yakında burada listelenecek.">
+
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    body {
+      background: linear-gradient(180deg, #FFB627 0%, #FF8C00 40%, #FF6B35 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      flex: 1;
+      display: block;
+      }
+
+    .coming-soon-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      padding: 4rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: fadeInScale 0.6s ease;
+    }
+
+    .coming-soon-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      animation: bounce 2s infinite;
+    }
+
+    .coming-soon-title {
+      font-size: 2.5rem;
+      color: #FF6B35;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .coming-soon-subtitle {
+      font-size: 1.3rem;
+      color: #023E8A;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .coming-soon-text {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF8C00, #FF6B35);
+      color: white;
+      text-decoration: none;
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    }
+
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .coming-soon-card {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .coming-soon-icon {
+        font-size: 3.5rem;
+      }
+
+      .coming-soon-title {
+        font-size: 1.8rem;
+      }
+
+      .coming-soon-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .coming-soon-text {
+        font-size: 1rem;
+      }
+
+      .back-btn {
+        font-size: 1rem;
+        padding: 12px 32px;
+      }
+    }
+  
+    .page-header {
+      text-align: center;
+      color: white;
+      margin: 2.5rem 0 1.5rem;
+      animation: fadeInScale 0.6s ease;
+    }
+    .page-header h1 {
+      font-size: 2.3rem;
+      font-weight: 900;
+      margin-bottom: 0.4rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+    }
+    .page-header p {
+      opacity: 0.95;
+      font-size: 1.05rem;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      padding: 0 0 1.5rem;
+    }
+
+    .place-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 16px 45px rgba(0,0,0,0.28);
+      animation: fadeInScale 0.6s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .place-rank {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      color: rgba(0,0,0,0.7);
+      font-size: 0.9rem;
+    }
+
+    .place-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .place-name {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #FF6B35;
+      line-height: 1.25;
+    }
+
+    .place-cat {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #023E8A;
+      background: rgba(2,62,138,0.10);
+      border: 1px solid rgba(2,62,138,0.12);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .place-desc {
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin: 0.25rem 0 0.9rem;
+    }
+
+    .place-actions {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .place-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(159,122,234,1), #FF6B35);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .place-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+    }
+
+    .info-note {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 1.2rem 1.2rem;
+      margin: 0.5rem 0 2.5rem;
+      text-align: center;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 1.8rem; }
+      .place-card { padding: 1.2rem 1.1rem; }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <!-- LEFT ACTIONS -->
+      <div class="header-actions">
+        <a href="../../index.html" class="action-btn" aria-label="Ana Sayfa">
+          <img src="../../assets/0_img/clip_home.png" alt="Home">
+        </a>
+
+        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="../../assets/0_img/clip_up.png" alt="Up">
+        </button>
+      </div>
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img class="logo-img" src="../../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  
+  <main class="content-container">
+    <div class="page-header">
+      <h1>🔥 Kaş’ın En Popüler 10 Yeri</h1>
+      <p>İlk versiyon liste — beğenmediklerini sonra birlikte değiştiririz.</p>
+    </div>
+
+    <div class="places-grid">
+
+      <div class="place-card">
+        <div class="place-rank">#1</div>
+        <div class="place-head">
+          <div class="place-name">Kaputaş Plajı</div>
+          <div class="place-cat">🏖️ Plaj</div>
+        </div>
+        <div class="place-desc">Kaş–Kalkan yolunun en ikonik duraklarından. Turkuaz su ve dramatik kanyon manzarası fotoğraf için efsane; ama merdivenli iniş-çıkış var. Deniz hızlı derinleşebilir, küçük çocuklarla kıyıda oynama planı yapmak daha güvenli. Erken saatlerde gidince hem otopark hem de kalabalık açısından rahat ediliyor.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Kaputa%C5%9F%20Plaj%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#2</div>
+        <div class="place-head">
+          <div class="place-name">Antiphellos Antik Tiyatrosu</div>
+          <div class="place-cat">🏛️ Tarih</div>
+        </div>
+        <div class="place-desc">Kaş merkezde kısa bir yokuşla ulaşılan, manzarasıyla büyüleyen antik tiyatro. Gün batımında oturup kasabanın ışıklarını izlemek klasik Kaş ritüeli. Çocuklarla giderseniz &#x27;Roma tiyatrosu nasıl çalışırdı?&#x27; diye mini hikâye anlatmak keyifli oluyor. Yanınızda su alın; rüzgâr akşam serinletebilir.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Antiphellos%20Antik%20Tiyatrosu%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#3</div>
+        <div class="place-head">
+          <div class="place-name">Kekova – Batık Şehir Tekne Turu</div>
+          <div class="place-cat">⛵ Tekne</div>
+        </div>
+        <div class="place-desc">Kaş’ta &#x27;en çok önerilen&#x27; aktivite listesinin başında tekne günü gelir. Cam gibi sularda yüzme molaları, Kaleköy/Simena ziyareti ve batık şehir hattında manzara seyri birleşir. Çocuklu aileler için en konforlu seçenek genelde daha az duraklı, daha sakin turlar oluyor. Şnorkel maskesi varsa çantanıza atın; su altı sürprizleri çıkar.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Kekova%20%E2%80%93%20Bat%C4%B1k%20%C5%9Eehir%20Tekne%20Turu%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#4</div>
+        <div class="place-head">
+          <div class="place-name">Kaleköy (Simena)</div>
+          <div class="place-cat">🏰 Kale</div>
+        </div>
+        <div class="place-desc">Araç girmeyen, deniz kenarında sakin bir köy; tekneyle ulaşılır. Kısa ama keyifli bir tırmanışla kaleye çıkınca Kekova manzarası açılır. Köyde dondurma/atıştırmalık molası verip liman çevresinde oyalanmak tam aile modu. Yoğun sezonda öğle saatleri kalabalık, sabah/ikindi daha iyi.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Kalek%C3%B6y%20%28Simena%29%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#5</div>
+        <div class="place-head">
+          <div class="place-name">Büyük Çakıl</div>
+          <div class="place-cat">🌊 Denize Gir</div>
+        </div>
+        <div class="place-desc">Kaş merkeze yakın, bir anda &#x27;hadi denize&#x27; dedirten pratik plaj. Deniz genelde serin ve berrak; sıcak günlerde ferahlatır. Çakıl zeminde rahat etmek için deniz ayakkabısı büyük konfor. Öğleden sonra dalga artabiliyor; sakin su istiyorsanız sabahı hedefleyin.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=B%C3%BCy%C3%BCk%20%C3%87ak%C4%B1l%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#6</div>
+        <div class="place-head">
+          <div class="place-name">Kaş Çarşı &amp; Liman</div>
+          <div class="place-cat">🛍️ Gezi</div>
+        </div>
+        <div class="place-desc">Akşamüstü Kaş’ın nabzı çarşı ve liman hattında atar: küçük butikler, hediyelikler, dondurma molaları. Çocuklarla yürüyüş rotası kolay; sürekli bir şeyler keşfediliyor. Gün batımına yakın limanda fotoğraf ve kısa dinlenme çok iyi gider. Yemek planınız varsa erken rezervasyon işleri kolaylaştırır.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Ka%C5%9F%20%C3%87ar%C5%9F%C4%B1%20%26%20Liman%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#7</div>
+        <div class="place-head">
+          <div class="place-name">Patara Antik Kenti &amp; Plajı</div>
+          <div class="place-cat">🏖️+🏛️ Günübirlik</div>
+        </div>
+        <div class="place-desc">Kaş çevresinde hem tarih hem plaj isteyenler için Patara net bir gün kurtarıcıdır. Antik kentte kısa bir tur + dev kumsalda uzun yürüyüş yapılır. Çocuklar için kum oyunları ve geniş alan büyük avantaj. Rüzgâr bazen sert esebilir; şapka ve rüzgârlık işe yarar.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Patara%20Antik%20Kenti%20%26%20Plaj%C4%B1%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#8</div>
+        <div class="place-head">
+          <div class="place-name">Hidayet Koyu</div>
+          <div class="place-cat">🌿 Koy</div>
+        </div>
+        <div class="place-desc">Kaş’ta sakin bir yüzme noktası arayanların favorilerinden. Su genellikle net; sabah saatlerinde daha huzurlu olur. Koy yapısı sayesinde rüzgârın etkisi bazen azalır ve yüzme rahatlar. Sezonda oturma alanları hızlı dolabildiği için erken gitmek iyi fikir.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Hidayet%20Koyu%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#9</div>
+        <div class="place-head">
+          <div class="place-name">Meis (Kastellorizo) Günübirlik</div>
+          <div class="place-cat">🇬🇷 Feribot</div>
+        </div>
+        <div class="place-desc">Kaş’tan kısa feribot yolculuğuyla bambaşka bir gün: renkli evler, küçük liman, sakin sokaklar. Çocuklarla yürümesi kolay, tempo düşük. Pasaport/kapı geçişi gibi süreçler için sabah planlı hareket etmek konfor sağlar. Akşam dönüşte Kaş’ta gün batımı yakalanabiliyor.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Meis%20%28Kastellorizo%29%20G%C3%BCn%C3%BCbirlik%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+
+      <div class="place-card">
+        <div class="place-rank">#10</div>
+        <div class="place-head">
+          <div class="place-name">Saklıkent Kanyonu</div>
+          <div class="place-cat">💦 Doğa</div>
+        </div>
+        <div class="place-desc">Sıcaktan kaçmak için Kaş çevresinde en iyi serinleme alternatiflerinden. Kanyon yürüyüşünde su seviyesi mevsime göre değişir; çocuklarla kısa, güvenli kısım yeterli olur. Yanınıza su ayakkabısı/terlik ve yedek kıyafet almak akıllıca. Dönüşte kısa mola vereceğiniz bir kır lokantası günü tamamlar.</div>
+        <div class="place-actions">
+          <a class="place-btn" href="https://www.google.com/maps/search/?api=1&query=Sakl%C4%B1kent%20Kanyonu%20Ka%C5%9F" target="_blank" rel="noopener">📍 Haritada Aç</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-note">
+      <strong>Not:</strong> Popüler yerlerde yaz sezonunda kalabalık normal. En iyi deneyim için sabah erken veya gün batımı saatlerini hedefleyin.
+    </div>
+  </main>
+
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

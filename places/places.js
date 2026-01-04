@@ -1,0 +1,717 @@
+// places.js
+// Detail page renderer for Kaş Guide Places
+(function () {
+  const PLACEHOLDER = "—";
+
+  // Track venue view for analytics
+  async function trackView(venueId, venueType) {
+    try {
+      await fetch('/api/analytics/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          venue_id: venueId,
+          venue_type: venueType,
+          event_type: 'view'
+        })
+      });
+    } catch (e) {
+      // Silent fail - analytics shouldn't break the page
+      console.debug('Analytics tracking failed:', e);
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function getId() {
+    return new URLSearchParams(window.location.search).get("id");
+  }
+
+  async function getPlaceById(id) {
+    if (!id) return null;
+
+    try {
+      const response = await fetch(`/api/items?id=${encodeURIComponent(id)}`);
+      if (!response.ok) {
+        console.error('Failed to fetch place:', response.status);
+        return null;
+      }
+      const data = await response.json();
+
+      // Convert unified items data to places format
+      if (data && data.item_type === 'place') {
+        const attributes = data.attributes || {};
+
+        // Parse photos - may come as string (JSONB) or already parsed array
+        let photos = data.photos || [];
+        if (typeof photos === 'string') {
+          try {
+            photos = JSON.parse(photos);
+          } catch (e) {
+            console.warn('Failed to parse photos for', data.title, e);
+            photos = [];
+          }
+        }
+        if (!Array.isArray(photos)) {
+          photos = [];
+        }
+
+        // Extract URLs and check for placeholder
+        const imageUrls = photos.map(p => {
+          if (typeof p === 'string') return p;
+          return p.url || p;
+        }).filter(url => url);
+
+        const isPlaceholder = photos.length > 0 && photos[0].placeholder === true;
+
+        const convertedPlace = {
+          id: data.id,
+          title: data.title,
+          description: data.description,
+          longText: data.long_text,
+          category: attributes.categories || [],
+          images: imageUrls,
+          isPlaceholder: isPlaceholder,
+          rating: attributes.rating || '',
+          price: attributes.price || '',
+          duration: attributes.duration || '',
+          distance: attributes.distance || '',
+          location: attributes.location || '',
+          googleMapsQuery: attributes.google_maps_query || '',
+          googleMapsUrl: data.google_maps_url || '',
+          tripadvisorUrl: data.tripadvisor_url || '',
+          booking: attributes.booking_url || '',
+          website: data.website || '',
+          instagram: data.instagram || '',
+          phone: data.phone || '',
+          badgeId: attributes.badge_id || 'tourist',
+          facilities: attributes.facilities || [],
+          features: attributes.features || [],
+          tags: attributes.tags || [],
+          trust: attributes.trust || {}
+        };
+        return convertedPlace;
+      }
+
+      return null;
+    } catch (error) {
+      console.error('Error fetching place:', error);
+      return null;
+    }
+  }
+
+  function getCategoryNames(place) {
+    if (!place || !Array.isArray(place.category)) return "";
+    const cats = (typeof categories !== "undefined" && Array.isArray(categories)) ? categories : [];
+    return place.category
+      .map((cid) => (cats.find((c) => c.id === cid)?.name) || cid)
+      .filter(Boolean)
+      .join(" • ");
+  }
+
+  function normalizeLinks(place) {
+    const links = (place?.links && typeof place.links === "object") ? place.links : {};
+    const instagram = place.instagram || links.instagram || "";
+    const website = place.website || links.website || "";
+    const booking = place.booking || links.booking || "";
+    const phone = place.phone || links.phone || "";
+    return { instagram, website, booking, phone };
+  }
+
+  function mapsHref(place) {
+    const queryRaw =
+      place.googleMapsQuery ||
+      place.mapsQuery ||
+      place.googleMaps ||
+      place.maps ||
+      "";
+
+    const q =
+      String(queryRaw || "").trim() ||
+      String(place.title || "").trim() + (place.location ? ` ${place.location}` : "");
+
+    const encoded = encodeURIComponent(q.trim());
+    if (!encoded) return "";
+    return `https://www.google.com/maps/search/?api=1&query=${encoded}`;
+  }
+
+  function fmt(v) {
+    const s = String(v ?? "").trim();
+    return s || "";
+  }
+
+  function metaItem(label, value, extraClass = "") {
+    const v = fmt(value) || PLACEHOLDER;
+    const cls = extraClass ? ` ${extraClass}` : "";
+    return `
+      <div class="detail-meta${cls}">
+        <div class="detail-meta-label">${escapeHtml(label)}</div>
+        <div class="detail-meta-value">${escapeHtml(v)}</div>
+      </div>
+    `;
+  }
+
+  function badgeMetaItem(place) {
+    const defs = (typeof badgeDefinitions !== "undefined" && badgeDefinitions && typeof badgeDefinitions === "object")
+      ? badgeDefinitions
+      : {};
+    const badgeId = String(place?.badgeId || place?.badge || "tourist").trim() || "tourist";
+    const def = defs[badgeId] || {};
+    const emoji = String(def.emoji || place?.badgeEmoji || "🎒");
+    const title = String(def.title || def.label || "Turist Dostu");
+    const description = String(def.description || "");
+    // Tooltip text: prefer description; fall back to title
+    const tip = String((description || title) || "").trim();
+    // emoji-only, legend via tooltip (desktop) / tap-to-explain (mobile)
+    return `
+      <div class="detail-meta meta-badge" data-badge-id="${escapeHtml(badgeId)}">
+        <div class="detail-meta-label">Kaş Guide Badge</div>
+        <div class="detail-meta-value">
+          <button type="button" class="kg-badge-emoji" aria-label="${escapeHtml(title)}" data-tooltip="${escapeHtml(title)}" data-desc="${escapeHtml(description)}" data-tip="${escapeHtml(tip)}">
+            ${escapeHtml(emoji)}
+          </button>
+          <div class="kg-badge-help" aria-live="polite"></div>
+        </div>
+      </div>
+    `;
+  }
+function renderTrust(place) {
+    const t = (place && typeof place.trust === "object") ? place.trust : {};
+    const verified = !!t.verified;
+    const infoDate = String(t.infoDate ?? "").trim();
+    const disclaimer = !!t.disclaimer;
+
+    if (!verified && !infoDate && !disclaimer) return "";
+
+    return `
+      <div class="detail-trust" role="note" aria-label="Güven bilgisi">
+        ${verified ? `<span class="trust-item">📍 Yerinde doğrulandı</span>` : ""}
+        ${infoDate ? `<span class="trust-item">📅 Bilgi tarihi: ${escapeHtml(infoDate)}</span>` : ""}
+        ${disclaimer ? `<span class="trust-item">ℹ️ Değişiklik olabilir</span>` : ""}
+      </div>
+    `;
+  }
+
+  function icon(name) {
+    const common = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+    if (name === "map") return `<svg viewBox="0 0 24 24" ${common}><path d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg>`;
+    if (name === "googlemaps") return `<svg viewBox="0 0 24 24" ${common}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>`;
+    if (name === "tripadvisor") return `<svg viewBox="0 0 24 24" ${common}><circle cx="8.5" cy="12" r="3.5"/><circle cx="15.5" cy="12" r="3.5"/><path d="M2 12h4.5M17.5 12H22"/><path d="M12 5c-2 0-4 1-4 1s1-2 4-2 4 2 4 2-2-1-4-1z"/></svg>`;
+    if (name === "instagram") return `<svg viewBox="0 0 24 24" ${common}><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>`;
+    if (name === "web") return `<svg viewBox="0 0 24 24" ${common}><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`;
+    if (name === "booking") return `<svg viewBox="0 0 24 24" ${common}><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg>`;
+    if (name === "phone") return `<svg viewBox="0 0 24 24" ${common}><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L9 10a16 16 0 0 0 5 5l.67-1.12a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/></svg>`;
+    return "";
+  }
+
+  function actionButton(href, label, iconName, isPhone = false) {
+    const has = !!fmt(href);
+    let finalHref = href;
+
+    if (has && isPhone) {
+      const raw = fmt(href).replace(/\s+/g, "");
+      finalHref = `tel:${raw}`;
+    }
+
+    const cls = has ? "detail-action is-enabled" : "detail-action is-disabled";
+    const attrs = has
+      ? `href="${escapeHtml(finalHref)}" ${isPhone ? "" : 'target="_blank" rel="noopener noreferrer"'}`
+      : `href="javascript:void(0)" aria-disabled="true" tabindex="-1"`;
+
+    return `<a class="${cls}" ${attrs} title="${escapeHtml(label)}" aria-label="${escapeHtml(label)}">${icon(iconName)}</a>`;
+  }
+
+  // -------- Slider helpers --------
+  function normalizePhotos(place) {
+    const out = [];
+    const push = (x) => {
+      const s = String(x ?? "").trim();
+      if (!s) return;
+      if (!out.includes(s)) out.push(s);
+    };
+
+    const arr = place?.images || place?.photos || place?.gallery;
+    if (Array.isArray(arr)) arr.forEach(push);
+
+    // fallback to legacy single image
+    if (place?.image) push(place.image);
+
+    // absolute fallback (never empty)
+    if (!out.length) {
+      out.push("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600");
+    }
+
+    return out;
+  }
+
+  function chevronSvg(dir) {
+    const common = 'fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"';
+    if (dir === "left") return `<svg viewBox="0 0 24 24" ${common}><path d="M15 18l-6-6 6-6"/></svg>`;
+    return `<svg viewBox="0 0 24 24" ${common}><path d="M9 18l6-6-6-6"/></svg>`;
+  }
+
+  function initHeroSlider(root, photos, title) {
+    const imgEl = root.querySelector("#heroImg");
+    const prevBtn = root.querySelector("#heroPrev");
+    const nextBtn = root.querySelector("#heroNext");
+    const counterEl = root.querySelector("#heroCounter");
+    const dotsEl = root.querySelector("#heroDots");
+
+    if (!imgEl || !prevBtn || !nextBtn || !counterEl || !dotsEl) return;
+
+    let index = 0;
+    const n = photos.length;
+
+    // hide controls if single photo
+    if (n <= 1) {
+      prevBtn.style.display = "none";
+      nextBtn.style.display = "none";
+      dotsEl.style.display = "none";
+      counterEl.style.display = "none";
+      imgEl.src = photos[0];
+      imgEl.alt = title;
+      return;
+    }
+
+    // dots
+    dotsEl.innerHTML = photos.map((_, i) =>
+      `<span class="hero-dot ${i === 0 ? "is-active" : ""}" role="button" tabindex="0" aria-label="Foto ${i + 1}"></span>`
+    ).join("");
+
+    const dotEls = Array.from(dotsEl.querySelectorAll(".hero-dot"));
+
+    function syncUi() {
+      imgEl.src = photos[index];
+      imgEl.alt = title;
+      counterEl.textContent = `${index + 1} / ${n}`;
+
+      dotEls.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    }
+
+    function go(delta) {
+      index = (index + delta + n) % n;
+      syncUi();
+    }
+
+    function goTo(i) {
+      index = Math.max(0, Math.min(n - 1, i));
+      syncUi();
+    }
+
+    prevBtn.addEventListener("click", () => go(-1));
+    nextBtn.addEventListener("click", () => go(1));
+
+    dotEls.forEach((d, i) => {
+      d.addEventListener("click", () => goTo(i));
+      d.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") goTo(i);
+      });
+    });
+
+    // keyboard (left/right)
+    function onKey(e) {
+      if (e.key === "ArrowLeft") go(-1);
+      if (e.key === "ArrowRight") go(1);
+    }
+    window.addEventListener("keydown", onKey);
+
+    // swipe
+    let startX = 0;
+    let startY = 0;
+    let active = false;
+
+    imgEl.addEventListener("touchstart", (e) => {
+      const t = e.touches?.[0];
+      if (!t) return;
+      active = true;
+      startX = t.clientX;
+      startY = t.clientY;
+    }, { passive: true });
+
+    imgEl.addEventListener("touchend", (e) => {
+      if (!active) return;
+      active = false;
+      const t = e.changedTouches?.[0];
+      if (!t) return;
+
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+
+      // ignore mostly-vertical gestures
+      if (Math.abs(dy) > Math.abs(dx)) return;
+
+      if (dx > 35) go(-1);
+      if (dx < -35) go(1);
+    }, { passive: true });
+
+    // initial paint
+    syncUi();
+  }
+
+  function renderNotFound(root) {
+    root.innerHTML = `
+      <div class="detail-card">
+        <div class="detail-body">
+          <h2 class="detail-title" style="color: var(--gray-900); text-shadow:none;">Bulunamadı</h2>
+          <p style="color: var(--gray-600); margin-top:.5rem;">Bu id ile bir kayıt bulunamadı.</p>
+          <div style="margin-top:1rem;">
+            <a class="home-link" href="index.html" aria-label="Ana Sayfa">
+              <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 10.5L12 3l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  
+  function initBadges(root){
+    const btns = Array.from(root.querySelectorAll(".kg-badge-emoji"));
+    if (!btns.length) return;
+
+    const isTouch = window.matchMedia && window.matchMedia("(hover: none)").matches;
+
+    function closeAll(exceptBtn){
+      btns.forEach((b) => {
+        if (exceptBtn && b === exceptBtn) return;
+        b.classList.remove("is-open");
+        const card = b.closest(".detail-meta");
+        const help = card?.querySelector(".kg-badge-help");
+        if (help) help.textContent = "";
+      });
+    }
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        // On desktop: do nothing special (tooltip handles)
+        if (!isTouch) return;
+
+        e.preventDefault();
+        const card = btn.closest(".detail-meta");
+        const help = card?.querySelector(".kg-badge-help");
+        if (!help) return;
+
+        const title = btn.getAttribute("data-tooltip") || "";
+        const desc = btn.getAttribute("data-desc") || "";
+        const text = (desc || title).trim();
+
+        const opening = !btn.classList.contains("is-open");
+        closeAll(opening ? btn : null);
+
+        if (opening) {
+          btn.classList.add("is-open");
+          help.textContent = text || "";
+        } else {
+          btn.classList.remove("is-open");
+          help.textContent = "";
+        }
+      });
+    });
+
+    // tap outside closes
+    document.addEventListener("click", (e) => {
+      if (!isTouch) return;
+      const inside = e.target.closest(".meta-badge");
+      if (inside) return;
+      closeAll();
+    });
+  }
+
+function render(place) {
+    const root = document.getElementById("detailRoot");
+    if (!root) return;
+
+    if (!place) {
+      renderNotFound(root);
+      return;
+    }
+
+    const cats = getCategoryNames(place);
+    const { instagram, website, booking, phone } = normalizeLinks(place);
+    const map = mapsHref(place);
+    const googleMaps = fmt(place.googleMapsUrl);
+    const tripadvisor = fmt(place.tripadvisorUrl);
+
+    const title = fmt(place.title) || "Detay";
+    const photos = normalizePhotos(place);
+    const firstImg = photos[0];
+
+    const desc = fmt(place.description);
+    const longText = fmt(place.longText);
+
+    // meta values (kept for backend)
+    const rating = fmt(place.rating);
+    const price = fmt(place.price);
+    const location = fmt(place.location);
+    const konum = fmt(place.distance) || location;
+
+    // Badge for hero
+    const defs = (typeof badgeDefinitions !== "undefined" && badgeDefinitions && typeof badgeDefinitions === "object")
+      ? badgeDefinitions
+      : {};
+    const badgeId = String(place?.badgeId || place?.badge || "tourist").trim() || "tourist";
+    const def = defs[badgeId] || {};
+    const badgeEmoji = String(def.emoji || place?.badgeEmoji || "🎒");
+    const badgeTitle = String(def.title || def.label || "Turist Dostu");
+
+    root.innerHTML = `
+      <article class="detail-card">
+        <div class="detail-hero">
+          <img id="heroImg" class="detail-hero-img" src="${escapeHtml(firstImg)}" alt="${escapeHtml(title)}">
+
+          <button id="heroPrev" class="hero-nav hero-prev" type="button" aria-label="Önceki fotoğraf">
+            ${chevronSvg("left")}
+          </button>
+          <button id="heroNext" class="hero-nav hero-next" type="button" aria-label="Sonraki fotoğraf">
+            ${chevronSvg("right")}
+          </button>
+
+          <div id="heroCounter" class="hero-counter" aria-label="Fotoğraf sayacı"></div>
+          <div id="heroDots" class="hero-dots" aria-label="Fotoğraf noktaları"></div>
+
+          <div class="detail-hero-overlay"></div>
+          <div class="detail-hero-content">
+            <h2 class="detail-title">${escapeHtml(title)}</h2>
+            ${cats ? `<div class="detail-cats">${escapeHtml(cats)}</div>` : ""}
+          </div>
+        </div>
+
+        <div class="detail-body">
+          ${desc ? `<div class="detail-kisaca"><strong>🟢 Kısaca:</strong> ${escapeHtml(desc)}</div>` : ""}
+
+          <!-- PUAN, FİYAT, KONUM - Hidden from frontend, kept for backend -->
+          <!--
+          <div class="detail-meta-grid">
+            ${metaItem("Puan", rating, "meta-rating")}
+            ${metaItem("Fiyat", price, "meta-price")}
+            ${metaItem("Konum", konum, "meta-location")}
+            ${badgeMetaItem(place)}
+          </div>
+          -->
+
+          ${renderTrust(place)}
+
+          <div class="actions-badge-wrapper">
+            <div class="links-section">
+              <div class="section-label">Linkler</div>
+              <div class="detail-actions">
+                ${actionButton(map, "Harita", "map")}
+                ${actionButton(googleMaps, "Google Maps", "googlemaps")}
+                ${actionButton(tripadvisor, "TripAdvisor", "tripadvisor")}
+                ${actionButton(instagram, "Instagram", "instagram")}
+                ${actionButton(website, "Web", "web")}
+                ${actionButton(booking, "Rezervasyon", "booking")}
+                ${actionButton(phone, "Telefon", "phone", true)}
+              </div>
+            </div>
+
+            <div class="vertical-divider"></div>
+
+            <div class="badge-section">
+              <div class="section-label">Kaş Guide Badge:</div>
+              <div class="badge-display">
+                <button class="detail-action is-badge" type="button" title="${escapeHtml(badgeTitle)}" aria-label="${escapeHtml(badgeTitle)}">
+                  <span class="badge-emoji-icon">${escapeHtml(badgeEmoji)}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          ${longText ? `
+            <div class="detail-long">
+              <h3 class="detail-long-title">🟢 Uzunca:</h3>
+              <div class="detail-long-text">${escapeHtml(longText)}</div>
+            </div>
+          ` : ""}
+        </div>
+      </article>
+    `;
+
+    // after render: init slider
+    initHeroSlider(root, photos, title);
+    // badges: tooltip on desktop, tap-to-explain on mobile
+    initBadges(root);
+
+    // Inject Place/LocalBusiness structured data for SEO
+    injectPlaceSchema(place);
+
+  }
+
+  // Update page meta tags dynamically
+  function updateMetaTags(place) {
+    if (!place || !place.title) return;
+
+    // Update title
+    document.title = `${place.title} - Kaş Guide`;
+
+    // Update or create meta description
+    const description = place.description || place.longText || `${place.title} hakkında detaylı bilgiler`;
+    setMetaTag('name', 'description', description.substring(0, 160));
+
+    // Update canonical
+    const canonical = `https://kasguide.de/places/places.html?id=${place.id}`;
+    updateCanonical(canonical);
+
+    // Update OG tags
+    setMetaTag('property', 'og:title', `${place.title} - Kaş Guide`);
+    setMetaTag('property', 'og:description', description.substring(0, 160));
+    setMetaTag('property', 'og:url', canonical);
+
+    if (place.images && place.images.length > 0) {
+      setMetaTag('property', 'og:image', place.images[0]);
+    }
+  }
+
+  function setMetaTag(attr, name, content) {
+    let meta = document.querySelector(`meta[${attr}="${name}"]`);
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute(attr, name);
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', content);
+  }
+
+  function updateCanonical(href) {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', href);
+  }
+
+  // Generate and inject Place structured data
+  function injectPlaceSchema(place) {
+    if (!place || !place.title) return;
+
+    // Update meta tags first
+    updateMetaTags(place);
+
+    // Remove existing schema
+    const existing = document.querySelectorAll('script[type="application/ld+json"]');
+    existing.forEach(el => el.remove());
+
+    // Determine schema type based on category
+    const schemaType = place.category && place.category.includes('otel')
+      ? 'Hotel'
+      : place.category && (place.category.includes('restaurant') || place.category.includes('bar') || place.category.includes('cafe'))
+      ? 'Restaurant'
+      : 'TouristAttraction';
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': schemaType,
+      'name': place.title,
+      'description': place.description || place.longText || '',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Kaş',
+        'addressRegion': 'Antalya',
+        'addressCountry': 'TR'
+      }
+    };
+
+    // Add image
+    if (place.images && place.images.length > 0) {
+      schema.image = place.images[0];
+    }
+
+    // Add location
+    if (place.location) {
+      schema.address.streetAddress = place.location;
+    }
+
+    // Add contact info
+    if (place.phone) {
+      schema.telephone = place.phone;
+    }
+
+    if (place.website) {
+      schema.url = place.website;
+    }
+
+    // Add Instagram as social media
+    if (place.instagram) {
+      schema.sameAs = [place.instagram];
+    }
+
+    // Add price range if available
+    if (place.price) {
+      schema.priceRange = place.price;
+    }
+
+    // Add rating if available
+    if (place.rating) {
+      const ratingValue = parseFloat(place.rating);
+      if (!isNaN(ratingValue)) {
+        schema.aggregateRating = {
+          '@type': 'AggregateRating',
+          'ratingValue': ratingValue,
+          'bestRating': '5'
+        };
+      }
+    }
+
+    // Inject schema into page
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema, null, 2);
+    document.head.appendChild(script);
+  }
+
+
+  // Back to top button (header)
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".back-to-top");
+    if (!btn) return;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Initialize page
+  (async function init() {
+    const id = getId();
+    if (!id) {
+      const root = document.getElementById("detailRoot");
+      if (root) {
+        root.innerHTML = `
+          <div style="text-align: center; padding: 3rem;">
+            <h2>❌ ID Bulunamadı</h2>
+            <p>Geçerli bir mekan ID'si belirtilmedi.</p>
+            <a href="../index.html" style="color: #4CAF50;">← Ana Sayfaya Dön</a>
+          </div>
+        `;
+      }
+      return;
+    }
+
+    // Show loading
+    const root = document.getElementById("detailRoot");
+    if (root) {
+      root.innerHTML = `
+        <div style="text-align: center; padding: 3rem;">
+          <h2>📡 Yükleniyor...</h2>
+        </div>
+      `;
+    }
+
+    const place = await getPlaceById(id);
+    render(place);
+
+    // Track page view for analytics
+    if (place && place.id) {
+      trackView(place.id, 'place');
+    }
+  })();
+})();

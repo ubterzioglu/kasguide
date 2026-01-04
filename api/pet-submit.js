@@ -1,21 +1,31 @@
-import nodemailer from "nodemailer";
-import formidable from "formidable";
-import fs from "fs";
+/**
+ * Pet Submission API - Database Version
+ * Saves submissions to database for admin approval
+ * Optionally sends notification email
+ */
 
-export const config = { api: { bodyParser: false } };
+import formidable from "formidable";
+import nodemailer from "nodemailer";
+import { createPet } from '../lib/db-pets.js';
+import { upload } from '../lib/upload.js';
+
+export const config = {
+  api: { bodyParser: false },
+};
+
+function first(v) {
+  return Array.isArray(v) ? v[0] : v;
+}
 
 function asArray(v) {
   if (!v) return [];
   return Array.isArray(v) ? v : [v];
 }
-function first(v) {
-  return Array.isArray(v) ? v[0] : v;
-}
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(405).send("Method Not Allowed");
-
-  let filesToCleanup = [];
+  if (req.method !== "POST") {
+    return res.status(405).send("Method Not Allowed");
+  }
 
   try {
     const form = formidable({
@@ -27,125 +37,176 @@ export default async function handler(req, res) {
 
     const [fields, files] = await form.parse(req);
 
-    // --- Fieaalds (fraaom add-pet.html) ---
-    const listingType = (first(fields.listingType) || "").toString().trim();
-    const petName = (first(fields.petName) || "").toString().trim();
-    const petType = (first(fields.petType) || "").toString().trim();
-    const age = (first(fields.age) || "").toString().trim();
-    const breed = (first(fields.breed) || "").toString().trim();
-    const shortNote = (first(fields.shortNote) || "").toString().trim();
-    const phone = (first(fields.phone) || "").toString().trim();
-    const notes = (first(fields.notes) || "").toString().trim();
+    // Parse fields
+    const listingType = first(fields.listingType);
+    const petName = first(fields.petName);
+    const petType = first(fields.petType);
+    const age = first(fields.age);
+    const breed = first(fields.breed);
+    const shortNote = first(fields.shortNote);
+    const phone = first(fields.phone);
+    const notes = first(fields.notes);
 
-    // --- Photos ---
-    const photos = asArray(files.photos).filter(
-      (f) => f && f.filepath && typeof f.size === "number" && f.size > 0
-    );
-
-    // Basic validation (matches UI expectations)
-    if (!listingType || !petName || !petType || !shortNote || !phone) {
+    // Validation
+    if (!listingType || !petType || !shortNote || !phone) {
       return res.status(400).json({
         success: false,
-        message: "Zorunlu alanlar eksik (listingType, petName, petType, shortNote, phone).",
+        message: "Zorunlu alanlar eksik (listingType, petType, shortNote, phone)",
       });
     }
+
+    // Handle photos
+    let photos = asArray(files.photos).filter(f => f && f.size > 0);
+
     if (photos.length < 1 || photos.length > 5) {
       return res.status(400).json({
         success: false,
-        message: "Fotoğraf sayısı 1 ile 5 arasında olmalı.",
+        message: "1-5 arası fotoğraf yüklemelisiniz",
       });
     }
 
-    filesToCleanup = photos.map((p) => p.filepath);
-
-    // ---- SMTP ENV (same pattern as working endpoint) ----
-    const smtpHost = process.env.SMTP_HOST || process.env.MAIL_HOST;
-    const smtpPortRaw = process.env.SMTP_PORT || process.env.MAIL_PORT;
-    const smtpUser = process.env.SMTP_USER || process.env.MAIL_USER;
-    const smtpPass = process.env.SMTP_PASS || process.env.MAIL_PASS;
-
-    const mailTo =
-      process.env.PETS_MAIL_TO ||
-      process.env.MAIL_TO ||
-      "pet@kasguide.de";
-
-    if (!smtpHost || !smtpPortRaw || !smtpUser || !smtpPass) {
-      return res.status(500).json({
-        success: false,
-        message:
-          "Mail ayarları eksik. SMTP_HOST/PORT/USER/PASS (veya MAIL_HOST/PORT/USER/PASS) tanımlı olmalı.",
-      });
+    // Validate file types
+    const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+    for (const file of photos) {
+      if (!allowedTypes.includes(file.mimetype)) {
+        return res.status(400).json({
+          success: false,
+          message: "Sadece JPG, PNG veya WEBP fotoğraflar kabul edilir",
+        });
+      }
     }
 
-    const smtpPort = Number(smtpPortRaw);
-    if (!Number.isFinite(smtpPort) || smtpPort <= 0) {
-      return res.status(500).json({
-        success: false,
-        message: "Mail port değeri geçersiz (SMTP_PORT/MAIL_PORT).",
-      });
+    // Upload photos
+    let photoUrls = [];
+    if (photos.length > 0) {
+      try {
+        photoUrls = await upload(photos, 'pets');
+        console.log('✅ Photos uploaded:', photoUrls.length);
+      } catch (uploadError) {
+        console.error('Photo upload error:', uploadError);
+        return res.status(500).json({
+          success: false,
+          message: "Fotoğraf yükleme hatası",
+        });
+      }
     }
 
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: { user: smtpUser, pass: smtpPass },
-    });
-
-    // Enhanced email content with listing type
-    const listingTypeIcon = listingType === "Kayıp" ? "🔍" : "🏠";
-    const mailText =
-      [
-        `${listingTypeIcon} Yeni ${listingType} Pet Başvurusu`,
-        "=".repeat(40),
-        "",
-        `📋 İlan Tipi: ${listingType}`,
-        `🐾 Pet Adı: ${petName}`,
-        `🔖 Tür: ${petType}`,
-        age ? `📅 Yaş: ${age}` : null,
-        breed ? `🧬 Irk/Cins: ${breed}` : null,
-        "",
-        `📝 Kısa Not:`,
+    // Save to database
+    try {
+      const petData = {
+        listingType,
+        petName,
+        petType,
+        age,
+        breed,
         shortNote,
-        "",
-        `📞 İletişim: ${phone}`,
-        "",
-        notes ? `💬 Ek Notlar:\n${notes}` : null,
-        "",
-        "─".repeat(40),
-        `📸 ${photos.length} fotoğraf eklendi`,
-      ]
-        .filter(Boolean)
-        .join("\n") + "\n";
+        notes,
+        phone,
+        photos: photoUrls,
+      };
 
-    const attachments = photos.map((p, idx) => ({
-      filename:
-        p.originalFilename ||
-        `pet-photo-${idx + 1}${p.mimetype?.includes("png") ? ".png" : ".jpg"}`,
-      path: p.filepath,
-    }));
+      const result = await createPet(petData);
 
-    await transporter.sendMail({
-      from: `Kaş Guide Pet <${smtpUser}>`,
-      to: mailTo,
-      subject: `${listingTypeIcon} ${listingType} — ${petName} (${petType})`,
-      text: mailText,
-      attachments,
-    });
+      console.log('✅ Pet created in database:', result.id);
 
-    return res.status(200).json({ success: true });
+      // Send notification email (optional - don't fail if this errors)
+      try {
+        await sendNotificationEmail({
+          listingType,
+          petName,
+          petType,
+          age,
+          breed,
+          shortNote,
+          notes,
+          phone,
+          photoCount: photoUrls.length,
+          submissionId: result.id,
+        });
+        console.log('✅ Notification email sent');
+      } catch (emailError) {
+        console.warn('⚠️  Email notification failed (non-critical):', emailError.message);
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: "Başvurunuz alındı! İnceleme sonrası yayınlanacaktır.",
+        submissionId: result.id,
+      });
+
+    } catch (dbError) {
+      console.error('Database error:', dbError);
+      return res.status(500).json({
+        success: false,
+        message: "Veritabanı hatası",
+        error: dbError.message,
+      });
+    }
+
   } catch (err) {
-    console.error("PET MAIL ERROR:", err);
+    console.error("Pet submission error:", err);
     return res.status(500).json({
       success: false,
       message: err?.message || "Sunucu hatası",
     });
-  } finally {
-    // cleanup temp uploaded files
-    for (const fp of filesToCleanup) {
-      try {
-        fs.unlinkSync(fp);
-      } catch (_) {}
-    }
   }
+}
+
+/**
+ * Send notification email to admin
+ */
+async function sendNotificationEmail(data) {
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = Number(process.env.SMTP_PORT || 465);
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+
+  if (!smtpHost || !smtpUser || !smtpPass) {
+    throw new Error('SMTP configuration missing');
+  }
+
+  const mailTo = process.env.PETS_MAIL_TO || process.env.MAIL_TO || "pet@kasguide.de";
+  const mailFrom = process.env.MAIL_FROM || `Kaş Guide Pet <${smtpUser}>`;
+
+  const transporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
+    auth: { user: smtpUser, pass: smtpPass },
+    tls: {
+      rejectUnauthorized: false,
+      servername: smtpHost,
+    },
+  });
+
+  const listingTypeIcon = data.listingType === "Kayıp" ? "🔍" : "🏠";
+
+  const mailText = `${listingTypeIcon} Yeni ${data.listingType} Pet Başvurusu (ID: ${data.submissionId})
+
+📋 İlan Tipi: ${data.listingType}
+🐾 Pet Adı: ${data.petName || "-"}
+🔖 Tür: ${data.petType}
+📅 Yaş: ${data.age || "-"}
+🧬 Irk/Cins: ${data.breed || "-"}
+
+📝 Kısa Not:
+${data.shortNote}
+
+💬 Ek Notlar:
+${data.notes || "-"}
+
+📞 İletişim: ${data.phone}
+
+📸 ${data.photoCount} fotoğraf yüklendi
+
+---
+Admin panelden onaylayabilirsiniz: ${process.env.VERCEL_URL || 'localhost'}/admin
+`;
+
+  await transporter.sendMail({
+    from: mailFrom,
+    to: mailTo,
+    subject: `${listingTypeIcon} ${data.listingType} Pet — ${data.petName || data.petType}`,
+    text: mailText,
+  });
 }

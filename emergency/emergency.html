@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../kasguideico.ico">
+
+  <!-- Primary Meta Tags -->
+  <title>Acil Durum Telefonları - Kaş Guide</title>
+  <meta name="description" content="Kaş'ta acil durumlarda aranacak telefon numaraları. Ambulans, polis, itfaiye ve daha fazlası.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kasguide.de/emergency/emergency.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kasguide.de/emergency/emergency.html">
+  <meta property="og:title" content="Acil Durum Telefonları - Kaş Guide">
+  <meta property="og:description" content="Kaş'ta acil durumlarda aranacak telefon numaraları. Ambulans, polis, itfaiye ve daha fazlası.">
+  <meta property="og:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Acil Durum Telefonları - Kaş Guide">
+  <meta name="twitter:description" content="Kaş'ta acil durumlarda aranacak telefon numaraları. Ambulans, polis, itfaiye ve daha fazlası.">
+
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background: linear-gradient(180deg, #FF6B6B 0%, #EE5A6F 40%, #C92A2A 100%);
+      min-height: 100vh;
+    }
+
+    .content-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .emergency-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 2rem;
+      animation: fadeInDown 0.5s ease;
+    }
+
+    .emergency-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .emergency-header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .emergency-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      animation: fadeInUp 0.6s ease;
+      animation-fill-mode: both;
+    }
+
+    .emergency-card:nth-child(1) { animation-delay: 0.1s; }
+    .emergency-card:nth-child(2) { animation-delay: 0.2s; }
+    .emergency-card:nth-child(3) { animation-delay: 0.3s; }
+    .emergency-card:nth-child(4) { animation-delay: 0.4s; }
+    .emergency-card:nth-child(5) { animation-delay: 0.5s; }
+    .emergency-card:nth-child(6) { animation-delay: 0.6s; }
+    .emergency-card:nth-child(7) { animation-delay: 0.7s; }
+    .emergency-card:nth-child(8) { animation-delay: 0.8s; }
+    .emergency-card:nth-child(9) { animation-delay: 0.9s; }
+
+    .emergency-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .emergency-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .emergency-title {
+      font-size: 1.4rem;
+      color: #C92A2A;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .emergency-number {
+      font-size: 2.5rem;
+      color: #023E8A;
+      font-weight: 800;
+      margin: 1rem 0;
+      letter-spacing: 2px;
+    }
+
+    .call-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF6B6B, #C92A2A);
+      color: white;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(201, 42, 42, 0.3);
+    }
+
+    .call-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(201, 42, 42, 0.4);
+    }
+
+    .info-note {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      animation: fadeInUp 0.7s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .emergency-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .emergency-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .emergency-card {
+        padding: 1.5rem;
+      }
+
+      .emergency-icon {
+        font-size: 2.5rem;
+      }
+
+      .emergency-title {
+        font-size: 1.2rem;
+      }
+
+      .emergency-number {
+        font-size: 2rem;
+      }
+
+      .call-btn {
+        font-size: 1rem;
+        padding: 10px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <!-- LEFT ACTIONS -->
+      <div class="header-actions">
+        <a href="../index.html" class="action-btn" aria-label="Ana Sayfa">
+          <img src="../assets/0_img/clip_home.png" alt="Home">
+        </a>
+
+        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="../assets/0_img/clip_up.png" alt="Up">
+        </button>
+      </div>
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  <main class="content-container">
+    <div class="emergency-header">
+      <h1>🚨 Acil Durum Telefonları</h1>
+      <p>Kaş'ta acil bir durumda aşağıdaki numaraları arayabilirsiniz</p>
+    </div>
+
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <div class="emergency-icon">🚑</div>
+        <div class="emergency-title">Ambulans</div>
+        <div class="emergency-number">112</div>
+        <a href="tel:112" class="call-btn">📞 Hemen Ara</a>
+      </div>
+
+      <div class="emergency-card">
+        <div class="emergency-icon">👮</div>
+        <div class="emergency-title">Polis</div>
+        <div class="emergency-number">155</div>
+        <a href="tel:155" class="call-btn">📞 Hemen Ara</a>
+      </div>
+
+      <div class="emergency-card">
+        <div class="emergency-icon">🚒</div>
+        <div class="emergency-title">İtfaiye</div>
+        <div class="emergency-number">110</div>
+        <a href="tel:110" class="call-btn">📞 Hemen Ara</a>
+      </div>
+
+      <div class="emergency-card">
+        <div class="emergency-icon">⚓</div>
+        <div class="emergency-title">Sahil Güvenlik</div>
+        <div class="emergency-number">158</div>
+        <a href="tel:158" class="call-btn">📞 Hemen Ara</a>
+      </div>
+
+      <div class="emergency-card">
+        <div class="emergency-icon">🌲</div>
+        <div class="emergency-title">Orman Yangını</div>
+        <div class="emergency-number">177</div>
+        <a href="tel:177" class="call-btn">📞 Hemen Ara</a>
+      </div>
+
+      <div class="emergency-card">
+        <div class="emergency-icon">⚡</div>
+        <div class="emergency-title">Elektrik Arıza</div>
+        <div class="emergency-number">186</div>
+        <a href="tel:186" class="call-btn">📞 Hemen Ara</a>
+      </div>
+    
+      <div class="emergency-card">
+        <div class="emergency-icon">🏥</div>
+        <div class="emergency-title">Kaş Devlet Hastanesi</div>
+        <div class="emergency-number">0 242 836 11 85</div>
+        <a href="tel:+902428361185" class="call-btn">📞 Hastaneyi Ara</a>
+      </div>
+
+      <div class="emergency-card">
+        <div class="emergency-icon">🩺</div>
+        <div class="emergency-title">Sağlık Ocağı (ASM) - Merkez</div>
+        <div class="emergency-number">0 242 836 42 22</div>
+        <a href="tel:+902428364222" class="call-btn">📞 ASM'yi Ara</a>
+      </div>
+
+      <div class="emergency-card">
+        <div class="emergency-icon">💊</div>
+        <div class="emergency-title">Nöbetçi Eczane</div>
+        <div class="emergency-number">Güncel Liste</div>
+        <a href="https://www.antalyeczaciodasi.org.tr/nobetci-eczaneler" class="call-btn" target="_blank" rel="noopener">🔗 Resmi Liste</a>
+      </div>
+
+    </div>
+
+    <div class="info-note">
+      <strong>ℹ️ Önemli Bilgi:</strong> Acil durumlarda sakin kalın ve konumunuzu net bir şekilde belirtin.
+      Kaş ilçe merkezi için bu numaralar geçerlidir. Yurt dışından arama yapıyorsanız başına +90 ekleyiniz.
+    </div>
+  </main>
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

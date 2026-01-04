@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../kasguideico.ico">
+
+  <!-- Primary Meta Tags -->
+  <title>Anketler - Kaş Rehberi</title>
+  <meta name="description" content="Kaş hakkında anketlere katılın, oyunuzu kullanın ve topluluğun tercihlerini görün. Birlikte Kaş'ı keşfedin.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kasguide.de/anket/anket.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kasguide.de/anket/anket.html">
+  <meta property="og:title" content="Anketler - Kaş Rehberi">
+  <meta property="og:description" content="Kaş hakkında anketlere katılın, oyunuzu kullanın ve topluluğun tercihlerini görün.">
+  <meta property="og:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Anketler - Kaş Rehberi">
+  <meta name="twitter:description" content="Kaş hakkında anketlere katılın ve topluluğun tercihlerini görün."
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container { max-width: 800px; margin: 0 auto; }
+    .header { text-align: center; color: white; margin-bottom: 40px; }
+    .header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    .header p { font-size: 1.1rem; opacity: 0.95; }
+    
+    .back-link {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .back-link:hover { background: rgba(255,255,255,0.3); }
+    
+    .survey-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    
+    .survey-title { font-size: 1.8rem; color: #333; margin-bottom: 10px; }
+    .survey-description { color: #666; margin-bottom: 20px; line-height: 1.6; }
+    
+    .survey-stats {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    .stat-item { display: flex; align-items: center; gap: 8px; color: #555; font-size: 0.95rem; }
+    .stat-icon { font-size: 1.2rem; }
+    
+    .options-list { margin-bottom: 20px; }
+    .option-item { position: relative; margin-bottom: 12px; }
+    .option-radio { display: none; }
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .option-label:hover { background: #e9ecef; border-color: #667eea; }
+    .option-radio:checked + .option-label { background: #667eea; color: white; border-color: #667eea; }
+    .option-text { flex: 1; font-size: 1.05rem; }
+    .option-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #ffc107;
+      color: #333;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      margin-left: 8px;
+      font-weight: 600;
+    }
+    
+    .result-item { margin-bottom: 15px; }
+    .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .result-text { font-size: 1.05rem; color: #333; font-weight: 500; }
+    .result-stats { display: flex; gap: 12px; align-items: center; color: #666; font-size: 0.9rem; }
+    .result-bar-container { height: 32px; background: #e9ecef; border-radius: 8px; overflow: hidden; }
+    .result-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      transition: width 0.6s ease;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .result-bar.winning { background: linear-gradient(90deg, #48bb78 0%, #38a169 100%); }
+    .result-bar.user-voted { box-shadow: inset 0 0 0 3px rgba(255,255,255,0.5); }
+    
+    .btn {
+      flex: 1;
+      min-width: 150px;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+    .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); }
+    .btn-secondary { background: #f8f9fa; color: #333; border: 2px solid #e9ecef; }
+    .btn-secondary:hover:not(:disabled) { background: #e9ecef; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    
+    .add-option-form { display: none; margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 12px; }
+    .add-option-form.active { display: block; }
+    .form-group { margin-bottom: 15px; }
+    .form-label { display: block; margin-bottom: 8px; color: #333; font-weight: 600; }
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .form-input:focus { outline: none; border-color: #667eea; }
+    .form-hint { margin-top: 6px; font-size: 0.85rem; color: #666; }
+    
+    .alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; }
+    .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    
+    .loading { text-align: center; padding: 40px; color: white; font-size: 1.2rem; }
+    .empty-state { text-align: center; padding: 60px 20px; color: #666; }
+    .empty-state-icon { font-size: 4rem; margin-bottom: 20px; opacity: 0.5; }
+    
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2rem; }
+      .survey-card { padding: 20px; }
+      .survey-title { font-size: 1.5rem; }
+      .buttons { flex-direction: column; }
+      .btn { width: 100%; }
+      .survey-stats { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back-link">← Ana Sayfaya Dön</a>
+
+    <div class="header">
+      <h1>📊 Anketler</h1>
+      <p>Kaş hakkındaki düşüncelerinizi paylaşın!</p>
+    </div>
+
+    <div id="loadingState" class="loading">Anketler yükleniyor...</div>
+    <div id="surveysContainer" style="display: none;"></div>
+    <div id="emptyState" class="empty-state" style="display: none;">
+      <div class="empty-state-icon">📋</div>
+      <h2>Henüz Aktif Anket Yok</h2>
+      <p>Şu anda aktif bir anket bulunmamaktadır.</p>
+    </div>
+  </div>
+
+  <script>
+    let surveys = [];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadSurveys();
+    });
+
+    async function loadSurveys() {
+      try {
+        const response = await fetch('/api/surveys/list');
+        const data = await response.json();
+
+        if (data.success && data.surveys.length > 0) {
+          surveys = data.surveys;
+          renderSurveys();
+        } else {
+          showEmptyState();
+        }
+      } catch (error) {
+        console.error('Error loading surveys:', error);
+        showEmptyState();
+      }
+    }
+
+    function renderSurveys() {
+      const container = document.getElementById('surveysContainer');
+      const loading = document.getElementById('loadingState');
+
+      loading.style.display = 'none';
+      container.style.display = 'block';
+
+      container.innerHTML = surveys.map(survey => renderSurveyCard(survey)).join('');
+
+      // Load options for all surveys
+      setTimeout(() => {
+        surveys.forEach(survey => {
+          if (!survey.user_has_voted) {
+            loadSurveyOptions(survey.id);
+          } else {
+            loadResults(survey.id, survey.user_voted_option_id);
+          }
+        });
+      }, 100);
+    }
+
+    function renderSurveyCard(survey) {
+      const hasVoted = survey.user_has_voted;
+      const totalVotes = parseInt(survey.total_votes) || 0;
+      const userOptionsCount = parseInt(survey.user_options_count) || 0;
+
+      return `
+        <div class="survey-card" id="survey-${survey.id}">
+          <h2 class="survey-title">${escapeHtml(survey.title)}</h2>
+          ${survey.description ? `<p class="survey-description">${escapeHtml(survey.description)}</p>` : ''}
+
+          <div class="survey-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🗳️</span>
+              <span>${totalVotes} oy</span>
+            </div>
+            ${userOptionsCount > 0 ? `
+              <div class="stat-item">
+                <span class="stat-icon">💡</span>
+                <span>${userOptionsCount} kullanıcı önerisi</span>
+              </div>
+            ` : ''}
+          </div>
+
+          ${hasVoted ? renderResults(survey) : renderVotingForm(survey)}
+        </div>
+      `;
+    }
+
+    function renderVotingForm(survey) {
+      return `
+        <div class="voting-view">
+          <form id="voteForm-${survey.id}" onsubmit="handleVote(event, ${survey.id})">
+            <div class="options-list" id="options-${survey.id}"></div>
+
+            <div class="buttons">
+              <button type="submit" class="btn btn-primary">
+                <span>🗳️</span>
+                <span>Oy Ver</span>
+              </button>
+              ${survey.allow_user_options ? `
+                <button type="button" class="btn btn-secondary" onclick="toggleAddOptionForm(${survey.id})">
+                  <span>➕</span>
+                  <span>Yeni Seçenek Öner</span>
+                </button>
+              ` : ''}
+            </div>
+          </form>
+
+          ${survey.allow_user_options ? `
+            <div id="addOptionForm-${survey.id}" class="add-option-form">
+              <form onsubmit="handleAddOption(event, ${survey.id})">
+                <div class="form-group">
+                  <label class="form-label">Yeni Seçenek</label>
+                  <input type="text" class="form-input" id="newOption-${survey.id}" placeholder="Örn: Kaputaş Plajı" maxlength="255" required>
+                  <div class="form-hint">💡 Her ankete en fazla 3 seçenek ekleyebilirsiniz</div>
+                </div>
+                <div class="buttons">
+                  <button type="submit" class="btn btn-primary">Ekle</button>
+                  <button type="button" class="btn btn-secondary" onclick="toggleAddOptionForm(${survey.id})">İptal</button>
+                </div>
+              </form>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
+    function renderResults(survey) {
+      return `
+        <div class="results-view active" id="results-${survey.id}">
+          <div class="alert alert-success">✅ Oyunuz kaydedildi! Teşekkürler.</div>
+          <div id="resultsData-${survey.id}"></div>
+        </div>
+      `;
+    }
+
+    async function loadSurveyOptions(surveyId) {
+      try {
+        const response = await fetch(`/api/surveys/results?id=${surveyId}`);
+        const data = await response.json();
+
+        if (data.success) {
+          renderOptions(surveyId, data.results);
+        }
+      } catch (error) {
+        console.error('Error loading options:', error);
+      }
+    }
+
+    function renderOptions(surveyId, results) {
+      const container = document.getElementById(`options-${surveyId}`);
+      if (!container) return;
+
+      container.innerHTML = results.map(option => `
+        <div class="option-item">
+          <input type="radio" class="option-radio" id="option-${option.option_id}" name="survey-${surveyId}" value="${option.option_id}" required>
+          <label class="option-label" for="option-${option.option_id}">
+            <span class="option-text">
+              ${escapeHtml(option.option_text)}
+              ${option.submitted_by === 'user' ? '<span class="option-badge">Kullanıcı Önerisi</span>' : ''}
+            </span>
+          </label>
+        </div>
+      `).join('');
+    }
+
+    async function loadResults(surveyId, userVotedOptionId = null) {
+      try {
+        const response = await fetch(`/api/surveys/results?id=${surveyId}`);
+        const data = await response.json();
+
+        if (data.success) {
+          renderResultsData(surveyId, data.results, data.survey.total_votes, userVotedOptionId);
+        }
+      } catch (error) {
+        console.error('Error loading results:', error);
+      }
+    }
+
+    function renderResultsData(surveyId, results, totalVotes, userVotedOptionId) {
+      const container = document.getElementById(`resultsData-${surveyId}`);
+      if (!container) return;
+
+      const maxVotes = Math.max(...results.map(r => parseInt(r.vote_count)));
+
+      container.innerHTML = results.map(option => {
+        const votes = parseInt(option.vote_count);
+        const percentage = parseFloat(option.percentage) || 0;
+        const isWinning = votes === maxVotes && maxVotes > 0;
+        const isUserVoted = userVotedOptionId && option.option_id === userVotedOptionId;
+
+        return `
+          <div class="result-item">
+            <div class="result-header">
+              <div class="result-text">
+                ${escapeHtml(option.option_text)}
+                ${option.submitted_by === 'user' ? '<span class="option-badge">Kullanıcı Önerisi</span>' : ''}
+              </div>
+              <div class="result-stats">
+                <span>${votes} oy</span>
+                <span>•</span>
+                <span>${percentage.toFixed(1)}%</span>
+              </div>
+            </div>
+            <div class="result-bar-container">
+              <div class="result-bar ${isWinning ? 'winning' : ''} ${isUserVoted ? 'user-voted' : ''}" style="width: ${percentage}%">
+                ${isUserVoted ? '✓ Sizin Oyunuz' : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function handleVote(event, surveyId) {
+      event.preventDefault();
+
+      const form = event.target;
+      const selectedOption = form.querySelector('input[name="survey-' + surveyId + '"]:checked');
+
+      if (!selectedOption) {
+        alert('Lütfen bir seçenek seçin');
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Oy kaydediliyor...';
+
+      try {
+        const response = await fetch('/api/surveys/vote', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            surveyId: surveyId,
+            optionId: parseInt(selectedOption.value)
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          const survey = surveys.find(s => s.id === surveyId);
+          if (survey) {
+            survey.user_has_voted = true;
+            survey.user_voted_option_id = parseInt(selectedOption.value);
+          }
+
+          const card = document.getElementById(`survey-${surveyId}`);
+          if (card) {
+            const surveyData = surveys.find(s => s.id === surveyId);
+            card.outerHTML = renderSurveyCard(surveyData);
+            await loadResults(surveyId, parseInt(selectedOption.value));
+          }
+
+          alert('Oyunuz kaydedildi! Teşekkürler 🎉');
+        } else {
+          alert(data.error || 'Oy kaydedilemedi');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>🗳️</span><span>Oy Ver</span>';
+        }
+      } catch (error) {
+        console.error('Vote error:', error);
+        alert('Bir hata oluştu, lütfen tekrar deneyin');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>🗳️</span><span>Oy Ver</span>';
+      }
+    }
+
+    async function handleAddOption(event, surveyId) {
+      event.preventDefault();
+
+      const input = document.getElementById(`newOption-${surveyId}`);
+      const optionText = input.value.trim();
+
+      if (!optionText) {
+        alert('Lütfen bir seçenek yazın');
+        return;
+      }
+
+      const submitBtn = event.target.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Ekleniyor...';
+
+      try {
+        const response = await fetch('/api/surveys/add-option', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            surveyId: surveyId,
+            optionText: optionText
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Seçeneğiniz eklendi! 🎉');
+          input.value = '';
+          toggleAddOptionForm(surveyId);
+          await loadSurveyOptions(surveyId);
+        } else {
+          alert(data.error || 'Seçenek eklenemedi');
+        }
+      } catch (error) {
+        console.error('Add option error:', error);
+        alert('Bir hata oluştu, lütfen tekrar deneyin');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Ekle';
+      }
+    }
+
+    function toggleAddOptionForm(surveyId) {
+      const form = document.getElementById(`addOptionForm-${surveyId}`);
+      if (form) {
+        form.classList.toggle('active');
+      }
+    }
+
+    function showEmptyState() {
+      document.getElementById('loadingState').style.display = 'none';
+      document.getElementById('emptyState').style.display = 'block';
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

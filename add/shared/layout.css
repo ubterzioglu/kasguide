@@ -1,0 +1,173 @@
+/* ============================================
+   LAYOUT.CSS - Structural Components
+
+   Contains:
+   - Container system
+   - Topbar/Header
+   - Page head section
+   - Grid system
+   - Structural wrappers
+
+   Usage: Include this second in all add forms
+   ============================================ */
+
+/* ===== CONTAINER ===== */
+.container {
+  width: min(1100px, 96vw);
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* ===== TOPBAR / HEADER ===== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.topbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px;
+}
+
+/* Brand Logo */
+.brand {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.brand__title {
+  font-weight: 900;
+  font-size: 1.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand__subtitle {
+  color: rgba(11, 18, 32, 0.70);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== PAGE HEAD ===== */
+.page-head {
+  padding: 16px 0 10px;
+}
+
+.page-head h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  text-align: center;
+}
+
+.page-head .muted {
+  margin: 10px auto 0;
+  max-width: 70ch;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: center;
+}
+
+/* ===== GRID SYSTEM ===== */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.grid > * {
+  min-width: 0;
+}
+
+/* ===== INFO SECTION ===== */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 10px 0 14px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  backdrop-filter: blur(14px);
+}
+
+/* ===== FORM BOX (Inner container for form sections) ===== */
+.form-box {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius);
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 14px;
+}
+
+.form-box__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(11, 18, 32, 0.08);
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.form-ico {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(11, 18, 32, 0.08);
+  font-size: 1.25rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-head h1 {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 0 8px;
+  }
+}
+
+
+/* ============================================================
+   FORM BOX WIDTH PATCH
+   ============================================================ */
+.form-box{
+  width:100%;
+}
+
+.form-section{
+  width:100%;
+}

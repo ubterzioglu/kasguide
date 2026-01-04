@@ -22,7 +22,7 @@ Yazılar : articles
 const badgeDefinitions = {
   // Default (for now: applied to all places)
   tourist: {
-    emoji: "🧑‍🧳",
+    emoji: "🎒",
     title: "Turist Dostu",
     description: "İlk kez gelenler için anlaşılır, rahat ve pratik bir tercih."
   },
@@ -33,6 +33,7 @@ const badgeDefinitions = {
   classic: { emoji: "🏛️", title: "Kaş Klasiği", description: "Yıllardır bilinen, adı oturmuş klasik durak." },
   newFind: { emoji: "🌱", title: "Yeni Keşif", description: "Yeni açılan/yeniden parlayan, keşiflik yer." },
   editorsPick: { emoji: "🖊️", title: "Editör Seçimi", description: "Detaylarıyla öne çıkan, seçilmiş deneyim." },
+
   surprise: { emoji: "🎯", title: "Sürpriz Nokta", description: "Beklenenden iyi çıkan, hoş sürpriz." },
   hidden: { emoji: "👀", title: "Gizli Kalmış", description: "Çok bilinmeyen ama değerli bir köşe." },
   again: { emoji: "🔁", title: "Tekrar Gidilir", description: "Bir kez gidince listede kalan yer." },
@@ -11023,9 +11024,7 @@ Geniş ölçekte Likya tarihi: yürüyüşlü, etkileyici ve Patara Plajı’yla
   website: '',
   phone: '',
   tags: [],
-  longText: `Cumhuriyet Meydanı'nın tam ortasında, bir geçitten içeri girdiğinizde sizi bekleyen sürpriz, Kaş'ın en sevilen gizli bahçelerinden biri: Hideaway Bar. 2002'den beri bu şirin avluda keyif yapan mekan, adının hakkını sonuna kadar veriyor - gerçekten de bir "sığınak" havasında, şehrin kalabalığından uzak, loş ışıklar altında yeşil bir vaha. Sabah 9'dan gece 3'e kadar açık olan Hideaway, kahvaltıyla başlayıp gece kokteylleriyle biten bir yolculuk sunuyor. Ayaklarınızın altında uyuyan köpekler, bacaklarınıza sürtünen kediler, bambu ve ağaçlarla bezenmiş dekorasyon... Burası Bali'nin ortasından Kaş'a taşınmış gibi, bohem bir atmosfere sahip.
-Hideaway'in en güçlü tarafı müziği ve içkileri. Rock ve blues tutkunları için adeta bir cennet olan mekan, klasiklerden gizli kalmış şarkılara kadar geniş bir playlist sunuyor. Özellikle Perşembe akşamları düzenlenen canlı müzik performansları gecenin yıldızı. Sahibi Şükrü Bey müzik konusunda gerçekten tutkulu biri; müşterileriyle şarkılar, albümler hakkında sohbet ediyor, öneriler veriyor. Kokteyl menüsü oldukça zengin - özellikle böğürtlenli frozen margarita ve şeftali daiquiri ilk tercihlerde olmalı. Kovalı içkileriyle de Güneydoğu Asya bar kültürünü hatırlatan mekan, sangria sürahi ve klasik kokteyller konusunda da başarılı. Fiyatlar Kaş standartlarında ve gayet makul.
-Gece eğlencesinin ötesinde, Hideaway kahvaltısıyla da nam salmış durumda. Türk kahvaltısı seçenekleri peynirlerinden reçellerine, sıcak yumurtalı yemeklerinden taze portakal suyuna kadar övgüyle bahsediliyor - bazı gezginler Kaş'ta farklı kahvaltı yerlerini denedikten sonra tekrar tekrar buraya dönüyor. Öğleden sonraları kahve ve tatlı için, akşamları ise kokteyller eşliğinde sohbet için ideal. Foursquare'de 8.5 puan ve 385 yorumla Kaş'ın en sevilen barları arasında yerini almış. Rezervasyon gerektirmiyor ama kalabalık zamanlarda erken gitmek faydalı. Kaş'ta hem huzurlu bir kahvaltı hem de geceleri müzik eşliğinde kokteyl keyfi arıyorsanız, Hideaway tam size göre.`
+  longText: `Yakında...`
 }
 ,
 {
@@ -11133,12 +11132,7 @@ Gece eğlencesinin ötesinde, Hideaway kahvaltısıyla da nam salmış durumda. 
   website: '',
   phone: '',
   tags: [],
-  longText: `
-Kaş'ın tam kalbinde, Hükümet Caddesi'nde keyif ehline bir sığınak arayanlar için Ehl-i Keyf Meyhanesi, isminin hakkını sonuna kadar veren nadir mekanlardan. "Keyif yapmasını bilen kişi" anlamına gelen Ehl-i Keyf, şirin bahçesiyle Kaş Meydanı'ndan Hükümet Konağı'na çıkarken sol tarafınızda sizi bekliyor. Sabahın 8'inden gece 3'e kadar açık olan mekan, hem kahvaltıdan hem de gece rakı sofrasından anlayan gezginlerin vazgeçilmezi haline gelmiş durumda. TripAdvisor'da 400'ün üzerinde yorumla 4.3 puan alan restoran, Kaş'taki 270'i aşkın mekan arasında ilk 50'de yerini almayı başarmış.
-
-Mekanın asıl gücü mezelerinde ve deniz ürünlerinde yatıyor. Özellikle kalamar tava özel sosuyla adeta efsane statüsüne yükselmiş durumda - buraya gelip de tatmadan geçenler pişman oluyor diyebiliriz. Kaya koruğu da bir diğer yıldız oyuncu menüde; Kaş'ta birçok yerde deneyip buranın en iyisini yaptığını söyleyenler az değil. Günlük taze mezeler sofranızı donatırken, levrek gibi taze balıklar da ana yemek olarak masanıza gelir. Vejetaryen, vegan, halal ve gluten-free seçenekleriyle her damak tadına hitap eden mekan, fiyat konusunda da Kaş standartlarında gayet makul kalıyor.
-
-Ehl-i Keyf'i özel kılan sadece yemekleri değil. Akşamları canlı fasıl müziğiyle adeta bir İstanbul meyhanesini andıran atmosfer, sıcak ve samimi ortam, özenli servis... Özellikle personelin ilgisi ziyaretçiler tarafından övgüyle bahsedilir - masanıza uğrayıp her şeyin yolunda olup olmadığını soran, damak zevkinize uymayan bir şey olursa anında alternatif sunan bir ekip sizi karşılıyor. Rezervasyon yaptırmanızı şiddetle tavsiye ederiz çünkü mekan özellikle yaz aylarında oldukça dolabiliyor. Kaş'ta rakı keyfi yapmak, Akdeniz esintili mezelerle doyumsuz bir akşam geçirmek istiyorsanız, Ehl-i Keyf tam size göre.`
+  longText: `Yakında...`
 }
 ,
 {

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratings Management - Kaş Guide Admin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .back-link {
+      color: #4CAF50;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .sync-section {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .sync-section h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .sync-info {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .sync-button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .sync-button:hover:not(:disabled) {
+      background: #45a049;
+    }
+
+    .sync-button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .sync-button.loading {
+      position: relative;
+      color: transparent;
+    }
+
+    .sync-button.loading::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      left: 50%;
+      margin-left: -8px;
+      margin-top: -8px;
+      border: 2px solid #fff;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .sync-result {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .sync-result.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
+    }
+
+    .sync-result.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      display: block;
+    }
+
+    .table-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      padding: 12px;
+      background: #f9f9f9;
+      font-size: 13px;
+      color: #666;
+      font-weight: 600;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+
+    tr:hover {
+      background: #fafafa;
+    }
+
+    .place-name {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .rating {
+      display: inline-block;
+      padding: 4px 8px;
+      background: #fff3cd;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .rating.good {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .rating.average {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .rating.poor {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .edit-input {
+      width: 80px;
+      padding: 6px 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .save-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .save-btn:hover {
+      background: #0056b3;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px;
+      color: #999;
+    }
+
+    .loading-state {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+    }
+
+    .link-icon {
+      color: #4CAF50;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .last-sync {
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 Ratings Management</h1>
+      <a href="index.html" class="back-link">← Admin Paneline Dön</a>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Google Place ID'li Mekanlar</div>
+        <div class="stat-value" id="statTotalWithGoogle">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Google Rating'li Mekanlar</div>
+        <div class="stat-value" id="statWithGoogleRating">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">TripAdvisor Rating'li</div>
+        <div class="stat-value" id="statWithTripadvisor">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Son 32 Günde Sync'lenenler</div>
+        <div class="stat-value" id="statSyncedRecently">—</div>
+      </div>
+    </div>
+
+    <!-- Google Sync Section -->
+    <div class="sync-section">
+      <h2>🔄 Google Ratings Monthly Sync</h2>
+      <div class="sync-info">
+        <strong>Last sync:</strong> <span id="lastSyncDate">Never</span><br>
+        <strong>Note:</strong> This should be run once per month. Syncs all places with Google Place ID.
+      </div>
+      <button id="syncButton" class="sync-button" onclick="syncGoogleRatings()">
+        Update Google Ratings (Monthly)
+      </button>
+      <div id="syncResult" class="sync-result"></div>
+    </div>
+
+    <!-- Places Table -->
+    <div class="table-section">
+      <h2 style="margin-bottom: 15px;">All Places with Ratings</h2>
+      <div id="loadingState" class="loading-state">Loading...</div>
+      <div id="tableContainer" style="display:none;">
+        <table id="ratingsTable">
+          <thead>
+            <tr>
+              <th>Place</th>
+              <th>Google Place ID</th>
+              <th>Google Rating</th>
+              <th>Google Reviews</th>
+              <th>TripAdvisor URL</th>
+              <th>TA Rating</th>
+              <th>TA Reviews</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API_KEY = localStorage.getItem('adminApiKey');
+
+    // Load ratings data on page load
+    async function loadRatings() {
+      try {
+        const response = await fetch('/api/admin/ratings', {
+          headers: {
+            'X-Admin-Token': API_KEY
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to load ratings');
+        }
+
+        const data = await response.json();
+
+        // Update stats
+        updateStats(data.stats);
+
+        // Render table
+        renderTable(data.places);
+
+        document.getElementById('loadingState').style.display = 'none';
+        document.getElementById('tableContainer').style.display = 'block';
+
+      } catch (error) {
+        console.error('Load ratings error:', error);
+        document.getElementById('loadingState').innerHTML =
+          '<div style="color: #d32f2f;">Failed to load ratings data. Please check your admin token.</div>';
+      }
+    }
+
+    function updateStats(stats) {
+      document.getElementById('statTotalWithGoogle').textContent = stats.total_with_google_id || '0';
+      document.getElementById('statWithGoogleRating').textContent = stats.total_with_google_rating || '0';
+      document.getElementById('statWithTripadvisor').textContent = stats.total_with_tripadvisor || '0';
+      document.getElementById('statSyncedRecently').textContent = stats.synced_last_month || '0';
+
+      if (stats.last_sync_date) {
+        document.getElementById('lastSyncDate').textContent = new Date(stats.last_sync_date).toLocaleString('tr-TR');
+      }
+    }
+
+    function renderTable(places) {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      if (places.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:#999;">No places found</td></tr>';
+        return;
+      }
+
+      places.forEach(place => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td class="place-name">${place.title}</td>
+          <td>${place.google_place_id || '—'}</td>
+          <td>${formatRating(place.google_rating)}</td>
+          <td>${place.google_reviews_count || '—'}</td>
+          <td>
+            ${place.tripadvisor_url ? `<a href="${place.tripadvisor_url}" target="_blank" class="link-icon">🔗</a>` : '—'}
+            <input type="text" class="edit-input" id="ta-url-${place.id}" value="${place.tripadvisor_url || ''}" placeholder="URL">
+          </td>
+          <td>
+            <input type="number" class="edit-input" id="ta-rating-${place.id}" value="${place.tripadvisor_rating || ''}" min="0" max="5" step="0.1" placeholder="0.0">
+          </td>
+          <td>
+            <input type="number" class="edit-input" id="ta-reviews-${place.id}" value="${place.tripadvisor_reviews_count || ''}" min="0" placeholder="0">
+          </td>
+          <td>
+            <button class="save-btn" onclick="saveTripAdvisor(${place.id})">Save TA</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function formatRating(rating) {
+      if (!rating) return '—';
+      const num = parseFloat(rating);
+      const className = num >= 4.0 ? 'good' : num >= 3.0 ? 'average' : 'poor';
+      return `<span class="rating ${className}">${num.toFixed(1)} ⭐</span>`;
+    }
+
+    async function syncGoogleRatings() {
+      const button = document.getElementById('syncButton');
+      const result = document.getElementById('syncResult');
+
+      button.disabled = true;
+      button.classList.add('loading');
+      result.style.display = 'none';
+
+      try {
+        const response = await fetch('/api/admin/sync-google-ratings', {
+          method: 'POST',
+          headers: {
+            'X-Admin-Token': API_KEY
+          }
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.message || 'Sync failed');
+        }
+
+        result.className = 'sync-result success';
+        result.innerHTML = `
+          ✅ <strong>Sync completed!</strong><br>
+          Total: ${data.total} | Updated: ${data.updated} | Failed: ${data.failed}
+          ${data.errors && data.errors.length > 0 ? `<br><small>Errors: ${data.errors.map(e => e.title).join(', ')}</small>` : ''}
+        `;
+
+        // Reload data
+        setTimeout(() => loadRatings(), 1000);
+
+      } catch (error) {
+        console.error('Sync error:', error);
+        result.className = 'sync-result error';
+        result.innerHTML = `❌ <strong>Sync failed:</strong> ${error.message}`;
+      } finally {
+        button.disabled = false;
+        button.classList.remove('loading');
+      }
+    }
+
+    async function saveTripAdvisor(placeId) {
+      const url = document.getElementById(`ta-url-${placeId}`).value.trim();
+      const rating = document.getElementById(`ta-rating-${placeId}`).value;
+      const reviews = document.getElementById(`ta-reviews-${placeId}`).value;
+
+      try {
+        const response = await fetch('/api/admin/update-tripadvisor-rating', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Admin-Token': API_KEY
+          },
+          body: JSON.stringify({
+            placeId: placeId,
+            url: url || null,
+            rating: rating ? parseFloat(rating) : null,
+            reviewsCount: reviews ? parseInt(reviews) : null
+          })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.message || 'Update failed');
+        }
+
+        alert('✅ TripAdvisor rating saved successfully!');
+
+      } catch (error) {
+        console.error('Save TripAdvisor error:', error);
+        alert('❌ Failed to save: ' + error.message);
+      }
+    }
+
+    // Load on page load
+    loadRatings();
+  </script>
+</body>
+</html>

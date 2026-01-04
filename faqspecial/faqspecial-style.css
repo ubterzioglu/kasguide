@@ -1,0 +1,12 @@
+@import url("../style.css");
+.faq-page{ padding: 2rem 0 3rem; }
+.faq-root{ display:flex; justify-content:center; }
+.faq-card{
+  width:100%; max-width: 980px;
+  background:white; border-radius: var(--radius-xl);
+  overflow:hidden; box-shadow: var(--shadow-lg);
+  border:1px solid var(--gray-200);
+}
+.faq-hero{ padding: 1.25rem; border-bottom:1px solid var(--gray-200); }
+.faq-title{ margin:0; font-size: 1.7rem; }
+.faq-body{ padding: 1.25rem; white-space: pre-wrap; line-height:1.75; }

@@ -3,688 +3,406 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="jpgkasguidelogo.jpg">
-  <title>Kaş Guide</title>
 
-  <style>
-    :root {
-      --azure: #0077BE;
-      --turquoise: #00B4D8;
-      --sand: #F4E8D0;
-      --coral: #FF6B6B;
-      --deep-blue: #023E8A;
-      --white: #FFFFFF;
-      --cream: #FFF9F0;
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/kasguideico.ico">
+
+  <!-- Primary Meta Tags -->
+  <title>Kaş Guide - Kaş'ta Gezilecek Yerler, Restoranlar ve Yerel Rehber 2026</title>
+  <meta name="title" content="Kaş Guide - Kaş'ta Gezilecek Yerler, Restoranlar ve Yerel Rehber 2026">
+  <meta name="description" content="Kaş'ın en kapsamlı yerel rehberi. Gezilecek yerler, en iyi restoranlar, barlar, oteller, patili dostu mekanlar ve güncel seyahat bilgileri. Yerel uzmanlar tarafından hazırlandı.">
+  <meta name="keywords" content="kaş gezilecek yerler, kaş restoranlar, kaş oteller, kaş gezi rehberi, kaş türkiye, kaş plajları, kaş aktiviteler, kaş patili dostlar, kaputaş plajı, kekova">
+  <meta name="author" content="Kaş Guide Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kasguide.de/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kasguide.de/">
+  <meta property="og:site_name" content="Kaş Guide">
+  <meta property="og:title" content="Kaş Guide - Kaş'ta Gezilecek Yerler ve Yerel Rehber">
+  <meta property="og:description" content="Kaş'ın en kapsamlı yerel rehberi. Gezilecek yerler, restoranlar, oteller, patili dostu mekanlar ve pratik seyahat bilgileri.">
+  <meta property="og:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://kasguide.de/">
+  <meta name="twitter:title" content="Kaş Guide - Kaş'ta Gezilecek Yerler ve Yerel Rehber">
+  <meta name="twitter:description" content="Kaş'ın en kapsamlı yerel rehberi. Gezilecek yerler, restoranlar, oteller ve pratik seyahat bilgileri.">
+  <meta name="twitter:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
+
+  <!-- Mobile -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Kaş Guide">
+  <meta name="theme-color" content="#4CAF50">
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="TR-07">
+  <meta name="geo.placename" content="Kaş, Antalya">
+  <meta name="geo.position" content="36.2015;29.6401">
+  <meta name="ICBM" content="36.2015, 29.6401">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data - WebSite + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kaş Guide",
+    "url": "https://kasguide.de",
+    "description": "Kaş'ın en kapsamlı yerel rehberi. Gezilecek yerler, restoranlar, oteller ve pratik seyahat bilgileri.",
+    "inLanguage": "tr",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kaş Guide",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://kasguide.de/assets/0_img/logokasguide.png"
+      },
+      "url": "https://kasguide.de",
+      "sameAs": []
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://kasguide.de/?search={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(180deg, var(--turquoise) 0%, var(--azure) 40%, var(--deep-blue) 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow-x: hidden;
-      overflow-y: auto;
-      padding: 40px 20px;
-      position: relative;
-    }
-
-    /* Animated waves background */
-    .wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 200px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-      background-size: cover;
-      animation: wave1 15s ease-in-out infinite;
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    .wave:nth-child(2) {
-      bottom: -50px;
-      animation: wave2 20s ease-in-out infinite reverse;
-      opacity: 0.2;
-    }
-
-    .wave:nth-child(3) {
-      bottom: -100px;
-      animation: wave1 25s ease-in-out infinite;
-      opacity: 0.15;
-    }
-
-    @keyframes wave1 {
-      0%, 100% {
-        transform: translateX(0) translateY(0);
-      }
-      50% {
-        transform: translateX(-50px) translateY(10px);
-      }
-    }
-
-    @keyframes wave2 {
-      0%, 100% {
-        transform: translateX(0) translateY(0);
-      }
-      50% {
-        transform: translateX(50px) translateY(-10px);
-      }
-    }
-
-    /* Floating elements */
-    .float-element {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      animation: float 20s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .float-element:nth-child(4) {
-      width: 80px;
-      height: 80px;
-      top: 20%;
-      left: 15%;
-      animation-delay: 0s;
-    }
-
-    .float-element:nth-child(5) {
-      width: 120px;
-      height: 120px;
-      top: 60%;
-      right: 20%;
-      animation-delay: -5s;
-    }
-
-    .float-element:nth-child(6) {
-      width: 60px;
-      height: 60px;
-      bottom: 30%;
-      left: 25%;
-      animation-delay: -10s;
-    }
-
-    .float-element:nth-child(7) {
-      width: 100px;
-      height: 100px;
-      top: 30%;
-      right: 10%;
-      animation-delay: -15s;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0) translateX(0) scale(1);
-        opacity: 0.3;
-      }
-      33% {
-        transform: translateY(-30px) translateX(20px) scale(1.1);
-        opacity: 0.5;
-      }
-      66% {
-        transform: translateY(-15px) translateX(-20px) scale(0.9);
-        opacity: 0.4;
-      }
-    }
-
-    /* Sun element */
-    .sun {
-      position: absolute;
-      top: 10%;
-      right: 12%;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #FFE66D 0%, #FF6B6B 100%);
-      box-shadow: 0 0 60px rgba(255, 230, 109, 0.6);
-      animation: pulse 4s ease-in-out infinite, float-sun 20s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 60px rgba(255, 230, 109, 0.6);
-      }
-      50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 80px rgba(255, 230, 109, 0.8);
-      }
-    }
-
-    @keyframes float-sun {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-
-    /* CONTENT */
-    .container {
-      text-align: center;
-      color: #fff;
-      z-index: 10;
-      position: relative;
-      max-width: 1000px;
-      width: 100%;
-    }
-
-    .hero-logo {
-      width: 200px;
-      height: 200px;
-      max-width: 78vw;
-      margin: 0 auto 20px;
-      display: block;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
-      border: 4px solid rgba(255,255,255,0.4);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-      animation: fadeInDown 1s ease;
-      object-fit: cover;
-    }
-
-    .subtitle {
-      font-size: 1.35rem;
-      margin-bottom: 1.8rem;
-      opacity: 0.95;
-      font-weight: 500;
-    }
-
-    .icons {
-      display: flex;
-      justify-content: center;
-      gap: 1.6rem;
-      margin: 1.8rem 0;
-    }
-
-    .icon {
-      font-size: 2.8rem;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .icon:nth-child(2) { animation-delay: .5s; }
-    .icon:nth-child(3) { animation-delay: 1s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-16px); }
-    }
-
-    .message {
-      font-size: 1.25rem;
-      line-height: 1.65;
-      margin-bottom: 1.2rem;
-      opacity: 0.95;
-      font-weight: 500;
-    }
-
-    .message.cta-message {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-    }
-
-    /* STATS SECTION */
-    .stats-section {
-      margin: 2rem auto 1.5rem;
-      max-width: 900px;
-    }
-
-    .stats-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      opacity: 0.95;
-      text-align: center;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-    }
-
-    .stat-card {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      border: 2px solid rgba(255,255,255,0.25);
-      padding: 20px 16px;
-      text-align: center;
-      transition: all 0.3s ease;
-      animation: fadeInUp 0.6s ease;
-      animation-fill-mode: both;
-    }
-
-    .stat-card:nth-child(1) { animation-delay: 0.1s; }
-    .stat-card:nth-child(2) { animation-delay: 0.15s; }
-    .stat-card:nth-child(3) { animation-delay: 0.2s; }
-    .stat-card:nth-child(4) { animation-delay: 0.25s; }
-
-    .stat-card:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.2);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: #fff;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      opacity: 0.9;
-      font-weight: 500;
-    }
-
-    .message {
-      font-size: 1.1rem;
-      line-height: 1.65;
-      margin-bottom: 1.2rem;
-      opacity: 0.95;
-    }
-
-    .coming-soon {
-      display: inline-block;
-      padding: 14px 36px;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(20px);
-      border-radius: 50px;
-      border: 2px solid rgba(255,255,255,0.3);
-      font-size: 1.05rem;
-      font-weight: 600;
-      animation: pulse 2s ease-in-out infinite;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    /* CTA SECTION */
-
-.cta-section {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 360px));
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
-
-
-    .cta-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      padding: 24px 20px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(20px);
-      border-radius: 20px;
-      border: 2px solid rgba(255,255,255,0.2);
-      transition: all 0.3s ease;
-      animation: fadeInUp 0.6s ease;
-      animation-fill-mode: both;
-      text-align: center;
-    }
-
-    .cta-item:nth-child(1) { animation-delay: 0.1s; }
-    .cta-item:nth-child(2) { animation-delay: 0.2s; }
-    .cta-item:nth-child(3) { animation-delay: 0.3s; }
-
-    .cta-item:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 24px;
-      border-radius: 999px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      width: 100%;
-      background: rgba(255,255,255,0.2);
-      border: 2px solid rgba(255,255,255,0.3);
-      transition: all 0.3s ease;
-    }
-
-    .cta-item:hover .cta-btn {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .cta-description {
-      font-size: 0.88rem;
-      line-height: 1.5;
-      opacity: 0.95;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      
-      .sun { 
-        width: 70px;
-        height: 70px;
-        top: 5%;
-        right: 5%;
-      }
-
-      body {
-        padding: 16px 12px;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      }
-
-      .hero-logo { 
-        width: 150px;
-        height: 150px;
-        margin-bottom: 10px; 
-      }
-      
-      .subtitle { 
-        font-size: 0.92rem; 
-        margin-bottom: 0.8rem; 
-      }
-      
-      .coming-soon {
-        padding: 14px 32px;
-        font-size: 1rem;
-        margin-bottom: 1rem;
-      }
-      
-      .message { 
-        font-size: 0.95rem; 
-        margin-bottom: 0.6rem;
-        line-height: 1.4;
-        font-weight: 500;
-      }
-
-      .message.cta-message {
-        font-size: 1.05rem;
-        font-weight: 700;
-        margin-bottom: 0.6rem;
-      }
-
-      .stats-section {
-        margin: 1rem auto 0.8rem;
-      }
-
-      .stats-title {
-        font-size: 1.05rem;
-        margin-bottom: 0.8rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-
-      .stat-card {
-        padding: 12px 10px;
-      }
-
-      .stat-number {
-        font-size: 1.4rem;
-        margin-bottom: 2px;
-      }
-
-      .stat-label {
-        font-size: 0.72rem;
-      }
-      
-      .cta-section {
-        margin-top: 1rem;
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .cta-item {
-        padding: 14px 12px;
-        gap: 10px;
-      }
-
-      .cta-btn {
-        width: 100%;
-        padding: 10px 16px;
-        font-size: 0.85rem;
-      }
-
-      .cta-description {
-        font-size: 0.75rem;
-        line-height: 1.35;
-      }
-    }
-
-@media (max-width: 768px) {
-
-  /* Detay linki küçük, ama tıklanabilir */
-  .cta-details {
-    width: 100%;
   }
-
-  .cta-more {
-    list-style: none;
-    cursor: pointer;
-    font-size: 0.72rem;
-    font-weight: 700;
-    opacity: 0.9;
-    margin-top: -4px; /* ekstra yer yemesin */
-  }
-
-  /* default: açıklama 1 satır teaser */
-.cta-details .cta-description {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-  /* açılınca: clamp kalksın, tam metin görünsün */
-  .cta-details[open] .cta-description {
-    display: block;
-    overflow: visible;
-    margin-top: 6px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </style>
-</head>
-
-<body>  <div class="wave"></div>
-  <div class="wave"></div>
-  <div class="wave"></div>
-  <div class="float-element"></div>
-  <div class="float-element"></div>
-  <div class="float-element"></div>
-  <div class="float-element"></div>
-  <div class="sun"></div>
-
-  <div class="container">
-
-    <img src="jpgkasguidelogo.jpg" alt="Kaş Guide Logo" class="hero-logo">
-
-   
-    <p class="message">
-      Akdeniz'in İncisi'ne Kapsamlı Rehberiniz <br>
-      Kaş hakkında her şey!        </p>
-
-    <div class="coming-soon">✨ Çok Yakında ✨</div>
-
-    <p class="message cta-message">
-      Şimdiden katkıda bulunabilirsin!<br>      
-    </p>
-
-    <div class="cta-section">
-
-
-       <div class="cta-item">
-        <a href="https://kasguide.de/feedback/feedback.html" class="cta-btn">
-          📝 Bize Yazın!
-        </a>
-        <div class="cta-description">
-          Anonim kalarak fikirlerini, önerilerini ve geri bildirimlerini bize ilet! Rehberi birlikte geliştirelim!
-        </div>
-      </div>
-
-      
-      <div class="cta-item">
-        <a href="https://kasguide.de/add/place/add-place.html" class="cta-btn">
-          🪸 Mekan Ekle
-        </a>
-        <div class="cta-description">
-          Kendi işletmeni ekle! Başkasının işletmesini öner! Desteğin için teşekkürler!
-        </div>
-      </div>
-
-
-       <div class="cta-item">
-        <a href="https://kasguide.de/hotelsoon.html" class="cta-btn">
-          🛖 Otel Ekle (Yakında)
-        </a>
-        <div class="cta-description">
-          Kendi otelini/pansiyonunu ekle! Başkasının işletmesini öner! Desteğin için teşekkürler!
-        </div>
-      </div>
-
-      
-
-      
-
-      <div class="cta-item">
-        <a href="https://kasguide.de/add/artist/add-artist.html" class="cta-btn">
-          🎤 Sanatçı Ekle
-        </a>
-        <div class="cta-description">
-          Sanatçı mısın? Kendi profilini ekle! Kaş'ta müziğini dinletelim, seni tanıyalım ve seni tanıtalım!
-        </div>
-      </div>
-
-      <div class="cta-item">
-        <a href="https://kasguide.de/add/pet/try/add-pet.html" class="cta-btn">
-          🐶🐱 Patili Ekle
-        </a>
-        <div class="cta-description">
-          Kayıp veya yuva arayan patilileri ekle! Onların bulunmasına veya sahiplendirilmesine yardımcı olalım!
-        </div>
-      </div>
-
-       <div class="cta-item">
-        <a href="https://open.spotify.com/playlist/6OfCJmru3hnFAYUpzR4ptr?si=97d29c7c88cf42b0&pt=a7ca5b202b2bb8e649deec1ad2e71975" class="cta-btn">
-          💿 Şarkı Ekle!
-        </a>
-        <div class="cta-description">
-          Kaş Şarkıları'na kendi favori Kaş şarkını ekle! Müzik koleksiyonunu birlikte büyütelim!
-        </div>
-      </div>
-
-      
-    </div>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-    <div class="stats-section">
-      <h2 class="stats-title">Birlikte Büyüyen Rehberimiz</h2>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">105</div>
-          <div class="stat-label">Mekan</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">500</div>
-          <div class="stat-label">Soru Cevap</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">9</div>
-          <div class="stat-label">Sanatçı</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">14,785</div>
-          <div class="stat-label">Kelime</div>
-        </div>
-      </div>
-    </div>
-
-   
-
-  </div>
-
-  <!-- !GoatCounter -->
-  <script
-    data-goatcounter="https://kasguidede.goatcounter.com/count"
-    async
-    src="//gc.zgo.at/count.js">
   </script>
+</head>
+<body>
+  <div id="top"></div>
 
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <img class="logo-img" src="/assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <nav class="nav-desktop">
+        <a href="/contact/benioku.html" class="nav-link">Beni oku!</a>
+        <a href="/add/item/add-item.html" class="nav-link">İçerik Ekle!</a>
+        <a href="#top" class="nav-link">Ana Sayfa</a>
+        <a href="#cards-section" class="nav-link">Keşfet</a>
+        <a href="#categories" class="nav-link">Kategoriler</a>
+        <a href="#stats" class="nav-link">İstatistikler</a>
+        <a href="#quick-links" class="nav-link">Hızlı Erişim</a>
+        <a href="/bizkimiz/bizkimiz.html" class="nav-link">Biz kimiz?</a>
+        <a href="/contact/contact.html" class="nav-link">İletişim</a>
+        <a href="/emergency/emergency.html" class="nav-link nav-link-alert">🚨 Acil Durum!</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü">
+        <span class="menu-icon"></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="mobileMenu">
+      <a href="/contact/benioku.html" class="nav-link-mobile">Beni oku!</a>
+      <a href="/add/item/add-item.html" class="nav-link-mobile">İçerik Ekle!</a>
+      <a href="#top" class="nav-link-mobile">Ana Sayfa</a>
+      <a href="#cards-section" class="nav-link-mobile">Keşfet</a>
+      <a href="#categories" class="nav-link-mobile">Kategoriler</a>
+      <a href="#stats" class="nav-link-mobile">İstatistikler</a>
+      <a href="#quick-links" class="nav-link-mobile">Hızlı Erişim</a>
+      <a href="/bizkimiz/bizkimiz.html" class="nav-link-mobile">Biz kimiz?</a>
+      <a href="/contact/contact.html" class="nav-link-mobile">İletişim</a>
+      <a href="/emergency/emergency.html" class="nav-link-mobile nav-link-alert">🚨 Acil Durum!</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h2 class="hero-title">Kaş Guide şu an test yayınında. Kaş’ı birlikte keşfediyoruz.</h2>
+      <h2 class="hero-title">Kaş'ta Maceran Başlasın!</h2>
+      <p class="hero-subtitle">Merak ettiğin her şey Kaş Guide’da!</p>
+
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Kaş'ta ne aramak istersin?" class="search-input">
+        <button class="search-button" id="clearFilters">Filtreleri Temizle</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini Stats (compact feedback) -->
+  <section class="mini-stats" id="mini-stats">
+    <div class="container">
+      <div class="mini-stats-grid">
+        <div class="mini-stat">
+          <div class="mini-stat-label">Toplam İçerik</div>
+          <div class="mini-stat-value" id="miniTotalPlaces">0</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-label">Kategori</div>
+          <div class="mini-stat-value" id="miniTotalCategories">0</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-label">Gösterilen</div>
+          <div class="mini-stat-value" id="miniShown">0</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-label">Aktif Filtre</div>
+          <div class="mini-stat-value" id="miniActiveFilters">0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Categories -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-title">Kategoriler</h3>
+        <div class="filter-info">
+          <span id="activeFilterCount">0 aktif filtre</span>
+        </div>
+      </div>
+      <div class="categories-grid" id="categoriesGrid"></div>
+    </div>
+  </section>
+
+  <!-- Quick Actions (compact) -->
+  <section class="quick-actions" id="quick-actions">
+    <div class="container">
+      <div class="quick-actions-header">
+        <h3 class="quick-actions-title">Hızlı Erişim</h3>
+        <p class="quick-actions-subtitle">Tek tıkla en çok arananlar</p>
+      </div>
+
+      <div class="quick-actions-grid">
+        <a href="faq/faq.html" class="quick-action-card">
+          <span class="quick-action-icon" aria-hidden="true">❓</span>
+          <span class="quick-action-text">Soru - Cevap</span>
+        </a>
+
+        <a href="/fastlink/pop10/pop10.html" class="quick-action-card">
+          <span class="quick-action-icon" aria-hidden="true">🔥</span>
+          <span class="quick-action-text">En Popüler 10</span>
+        </a>
+
+        <a href="/fastlink/freeentrance/freeentrance.html" class="quick-action-card">
+          <span class="quick-action-icon" aria-hidden="true">🆓</span>
+          <span class="quick-action-text">Ücretsiz Giriş</span>
+        </a>
+
+        <a href="/fastlink/familyfriendly/familyfriendly.html" class="quick-action-card">
+          <span class="quick-action-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
+          <span class="quick-action-text">Aile Dostu</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--- Cards --->
+  <section class="cards-section" id="cards-section">
+    <div class="container">
+      <div class="cards-container">
+        <div class="cards-grid" id="cardsGrid">
+          <!-- Kartlar buraya JavaScript ile yüklenecek -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Statistics -->
+  <section class="detailed-statistics" id="stats">
+    <div class="container">
+      <h3 class="section-title">📊 Kaş Guide İstatistikleri <a href="#top" style="text-decoration: none; opacity: 0.7; margin-left: 10px;">⬆️</a></h3>
+      <div class="stats-overview">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number" id="totalPlaces">0</div>
+            <div class="stat-label">Toplam İçerik</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 3v18"/>
+              <path d="M15 3v18"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number" id="totalCategories">0</div>
+            <div class="stat-label">Kategori</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number" id="averageRating">0.0</div>
+            <div class="stat-label">Ortalama Puan</div>
+          </div>
+        </div>
+      
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16"/>
+              <path d="M4 9h16"/>
+              <path d="M4 14h10"/>
+              <path d="M4 19h7"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number" id="totalWords">0</div>
+            <div class="stat-label">Toplam Kelime</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Filters Info -->
+      <div class="stats-bottom">
+        <div class="big-stat-card">
+          <div class="big-stat-label">Aktif Filtre</div>
+          <div class="big-stat-value" id="activeFiltersCount">0</div>
+        </div>
+
+        <div class="big-stat-card">
+          <div class="big-stat-label">Gösterilen</div>
+          <div class="big-stat-value" id="filteredCountBig">0</div>
+        </div>
+      </div>
+</div>
+    </div>
+  </section>
+
+  <!-- Quick Links Section -->
+  <section class="quick-links" id="quick-links">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-title">Hızlı Erişim <a href="#top" style="text-decoration: none; opacity: 0.7; margin-left: 10px;">⬆️</a></h3>
+        <p class="section-subtitle">Özel koleksiyonlar ve önerilen rotalar</p>
+      </div>
+
+      
+      <div class="links-grid">
+
+        <a href="faq/faq.html" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              <path d="M8 10h8"/>
+              <path d="M8 14h5"/>
+            </svg>
+          </div>
+          <div class="link-title">Soru - Cevap</div>
+          <div class="link-subtitle">Hızlı bilgi ve ipuçları</div>
+        </a>
+
+        <a href="/fastlink/pop10/pop10.html" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z"/>
+            </svg>
+          </div>
+          <div class="link-title">En Popüler 10</div>
+          <div class="link-subtitle">Kaş'ın en çok ziyaret edilen yerleri</div>
+        </a>
+
+        <a href="/fastlink/freeentrance/freeentrance.html" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="6" width="18" height="12" rx="2"/>
+              <path d="M8 10h8"/>
+              <path d="M8 14h5"/>
+            </svg>
+          </div>
+          <div class="link-title">Ücretsiz Giriş</div>
+          <div class="link-subtitle">Bedava gezebileceğiniz noktalar</div>
+        </a>
+
+        <a href="/fastlink/familyfriendly/familyfriendly.html" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <path d="M20 8v6"/>
+              <path d="M23 11h-6"/>
+            </svg>
+          </div>
+          <div class="link-title">Aile Dostu</div>
+          <div class="link-subtitle">Çocuklarla gidilebilecek yerler</div>
+        </a>
+
+        <a href="contact/contact.html" class="link-card">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.3 1.7.54 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.06a2 2 0 0 1 2.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="link-title">İletişim</div>
+          <div class="link-subtitle">Öneri ve geri bildirim</div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <span class="footer-brand">Kaş Guide</span>
+      </div>
+      <p class="footer-tagline">Akdeniz'in incisi Kaş'ı keşfet</p>
+      <p class="footer-copyright">@2026 Kaş Guide. Tüm Hakları Saklıdır</p>
+    </div>
+  </footer>
+
+  <!-- Floating Filter Jump (visible only when filters active) -->
+  <button class="filter-fab" id="filterJump" type="button" aria-label="Filtreler">
+    <span class="filter-fab-icon" aria-hidden="true">
+      <!-- funnel icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z"/>
+      </svg>
+    </span>
+    <span class="filter-fab-text">Filtre</span>
+  </button>
+
+    <!-- Scripts -->
+  <!-- Data now loaded from database APIs via script.js -->
+
+  <script src="categories.js"></script>
+  <script src="script.js"></script>
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

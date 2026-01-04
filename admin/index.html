@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaş Guide - Admin Panel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .login-form {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 100px auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .login-form h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .content-type-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .content-type-tab {
+      padding: 12px 24px;
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .content-type-tab:hover {
+      border-color: #4CAF50;
+    }
+
+    .content-type-tab.active {
+      background: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+
+    .status-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .status-tab {
+      padding: 10px 20px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .status-tab.active {
+      background: #2196F3;
+      color: white;
+      border-color: #2196F3;
+    }
+
+    .submissions {
+      display: grid;
+      gap: 20px;
+    }
+
+    .submission-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .submission-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 15px;
+    }
+
+    .submission-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .submission-meta {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
+    }
+
+    .submission-content {
+      margin: 15px 0;
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+
+    .field-label {
+      font-weight: 600;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .field-value {
+      color: #333;
+      margin-top: 3px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .btn-approve {
+      background: #4CAF50;
+      color: black;
+    }
+
+    .btn-reject {
+      background: #f44336;
+      color: black;
+    }
+
+    .btn-delete {
+      background: #ff9800;
+      color: black;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .status-pending {
+      background: #FFF3E0;
+      color: #F57C00;
+    }
+
+    .status-approved {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    .status-rejected {
+      background: #FFEBEE;
+      color: #C62828;
+    }
+
+    .status-active {
+      background: #E3F2FD;
+      color: #1976D2;
+    }
+
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .success {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #999;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .images img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    #mainContent {
+      display: none;
+    }
+
+    .stats {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      min-width: 120px;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Form -->
+  <div id="loginForm" class="login-form">
+    <h2>🔐 Admin Girişi</h2>
+    <div id="loginError" class="error" style="display:none;"></div>
+    <form onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label>API Key</label>
+        <input type="password" id="apiKey" placeholder="Admin API anahtarınızı girin" required>
+      </div>
+      <button type="submit">Giriş Yap</button>
+    </form>
+  </div>
+
+  <!-- Main Content (hidden until logged in) -->
+  <div id="mainContent">
+    <div class="container">
+      <header>
+        <div>
+          <h1>🏝️ Kaş Guide - Unified Admin Panel</h1>
+          <p style="color: #666; font-size: 14px;">Tüm başvuruları tek panelden yönetin</p>
+        </div>
+        <div style="display: flex; gap: 15px;">
+          <a href="analytics.html" style="color: #4CAF50; text-decoration: none; font-size: 14px; font-weight: 500;">
+            📊 Analytics →
+          </a>
+          <a href="ratings.html" style="color: #4CAF50; text-decoration: none; font-size: 14px; font-weight: 500;">
+            ⭐ Ratings →
+          </a>
+        </div>
+      </header>
+
+      <!-- Content Type Selection -->
+      <div class="content-type-tabs">
+        <button class="content-type-tab active" onclick="switchContentType('all')">
+          🌟 All (Hepsi)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('place')">
+          🏪 Places (Mekanlar)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('pet')">
+          🐾 Pets (Hayvanlar)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('hotel')">
+          🏨 Hotels (Oteller)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('artist')">
+          🎨 Artists (Sanatçılar)
+        </button>
+        <button class="content-type-tab" onclick="switchContentType('survey')">
+          📊 Surveys (Anketler)
+        </button>
+      </div>
+
+      <!-- Status Tabs -->
+      <div class="status-tabs">
+        <button class="status-tab active" onclick="switchStatus('pending')">Bekleyenler</button>
+        <button class="status-tab" onclick="switchStatus('approved')">Onaylananlar</button>
+        <button class="status-tab" onclick="switchStatus('rejected')">Reddedilenler</button>
+      </div>
+
+      <div id="message" style="display:none;"></div>
+      <div id="loading" class="loading">Yükleniyor...</div>
+      <div id="submissions" class="submissions"></div>
+    </div>
+  </div>
+
+  <script>
+    let apiKey = '';
+    let currentContentType = 'all';
+    let currentStatus = 'pending';
+
+    // Check if already logged in
+    const savedKey = localStorage.getItem('adminApiKey');
+    if (savedKey) {
+      apiKey = savedKey;
+      showMainContent();
+      loadSubmissions();
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const key = document.getElementById('apiKey').value;
+
+      apiKey = key;
+      localStorage.setItem('adminApiKey', key);
+
+      showMainContent();
+      loadSubmissions();
+    }
+
+    function showMainContent() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+    }
+
+    function showLoginError(message) {
+      const errorDiv = document.getElementById('loginError');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+    }
+
+    function switchContentType(type) {
+      currentContentType = type;
+
+      // Update active tab
+      document.querySelectorAll('.content-type-tab').forEach(t => {
+        t.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      loadSubmissions();
+    }
+
+    function switchStatus(status) {
+      currentStatus = status;
+
+      // Update active tab
+      document.querySelectorAll('.status-tab').forEach(t => {
+        t.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      loadSubmissions();
+    }
+
+    async function loadSubmissions() {
+      const loading = document.getElementById('loading');
+      const container = document.getElementById('submissions');
+
+      loading.style.display = 'block';
+      container.innerHTML = '';
+
+      try {
+        // Handle surveys differently
+        if (currentContentType === 'survey') {
+          await loadSurveys();
+          return;
+        }
+
+        // Use unified items endpoint
+        const typeParam = currentContentType !== 'all' ? `&type=${currentContentType}` : '';
+        const response = await fetch(`/api/admin/items?status=${currentStatus}${typeParam}`, {
+          headers: {
+            'X-API-Key': apiKey
+          }
+        });
+
+        if (response.status === 401) {
+          showLoginError('Geçersiz API anahtarı');
+          localStorage.removeItem('adminApiKey');
+          location.reload();
+          return;
+        }
+
+        const data = await response.json();
+
+        loading.style.display = 'none';
+
+        // Get items from unified response
+        const items = data.items || [];
+
+        if (items.length === 0) {
+          container.innerHTML = '<div class="empty">Başvuru bulunamadı</div>';
+          return;
+        }
+
+        // Render items based on their item_type
+        container.innerHTML = items.map(item => renderItem(item)).join('');
+
+      } catch (error) {
+        loading.style.display = 'none';
+        container.innerHTML = `<div class="error">Hata: ${error.message}</div>`;
+      }
+    }
+
+    function renderItem(item) {
+      const statusClass = `status-${item.status}`;
+      const createdDate = new Date(item.created_at).toLocaleString('tr-TR');
+
+      // Parse photos and attributes from JSONB
+      const photos = item.photos ? (typeof item.photos === 'string' ? JSON.parse(item.photos) : item.photos) : [];
+      const attributes = item.attributes ? (typeof item.attributes === 'string' ? JSON.parse(item.attributes) : item.attributes) : {};
+
+      switch (item.item_type) {
+        case 'place':
+          return renderPlace(item, attributes, photos, statusClass, createdDate);
+        case 'pet':
+          return renderPet(item, attributes, photos, statusClass, createdDate);
+        case 'hotel':
+          return renderHotel(item, attributes, photos, statusClass, createdDate);
+        case 'artist':
+          return renderArtist(item, attributes, photos, statusClass, createdDate);
+        default:
+          return '';
+      }
+    }
+
+    function renderPlace(item, attributes, photos, statusClass, createdDate) {
+      const photoUrls = photos.map(p => p.url || p);
+      const categories = attributes.categories || [];
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">🏪 ${item.title} <span style="color:#999;font-size:0.85em;">#${item.item_number}</span></div>
+              <div class="submission-meta">
+                ID: ${item.id} • ${createdDate} • <span class="status-badge ${statusClass}">${item.status}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            ${item.description ? `
+              <div class="field">
+                <div class="field-label">Kısa Açıklama:</div>
+                <div class="field-value">${item.description}</div>
+              </div>
+            ` : ''}
+
+            ${item.long_text ? `
+              <div class="field">
+                <div class="field-label">Detaylı Açıklama:</div>
+                <div class="field-value">${item.long_text.substring(0, 200)}${item.long_text.length > 200 ? '...' : ''}</div>
+              </div>
+            ` : ''}
+
+            ${item.location ? `
+              <div class="field">
+                <div class="field-label">Konum:</div>
+                <div class="field-value">${item.location} ${attributes.distance ? `(${attributes.distance})` : ''}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">İletişim:</div>
+              <div class="field-value">
+                ${item.phone ? `📞 ${item.phone}` : ''}
+                ${item.instagram ? ` • 📸 ${item.instagram}` : ''}
+                ${item.website ? ` • 🌐 ${item.website}` : ''}
+              </div>
+            </div>
+
+            ${attributes.price ? `
+              <div class="field">
+                <div class="field-label">Fiyat:</div>
+                <div class="field-value">${attributes.price}</div>
+              </div>
+            ` : ''}
+
+            ${categories.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Kategoriler:</div>
+                <div class="field-value">${categories.join(', ')}</div>
+              </div>
+            ` : ''}
+
+            ${photoUrls.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Fotoğraflar (${photoUrls.length}):</div>
+                <div class="images">
+                  ${photoUrls.map(img => `<img src="${img}" alt="Photo">`).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          ${renderActions(item.id, item.status, item.title)}
+        </div>
+      `;
+    }
+
+    function renderPet(item, attributes, photos, statusClass, createdDate) {
+      const photoUrls = photos.map(p => p.url || p);
+      const listingIcon = attributes.listing_type === 'kayip' ? '🔍' : '🏠';
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">${listingIcon} ${item.title} <span style="color:#999;font-size:0.85em;">#${item.item_number}</span></div>
+              <div class="submission-meta">
+                ID: ${item.id} • ${createdDate} • <span class="status-badge ${statusClass}">${item.status}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            <div class="field">
+              <div class="field-label">Tür:</div>
+              <div class="field-value">${attributes.pet_type || ''} ${attributes.breed ? `- ${attributes.breed}` : ''} ${attributes.age ? `(${attributes.age})` : ''}</div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">İlan Tipi:</div>
+              <div class="field-value">${attributes.listing_type || ''}</div>
+            </div>
+
+            ${attributes.short_note ? `
+              <div class="field">
+                <div class="field-label">Kısa Not:</div>
+                <div class="field-value">${attributes.short_note}</div>
+              </div>
+            ` : ''}
+
+            ${attributes.extra_notes ? `
+              <div class="field">
+                <div class="field-label">Ek Notlar:</div>
+                <div class="field-value">${attributes.extra_notes}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">İletişim:</div>
+              <div class="field-value">📞 ${item.phone || ''}</div>
+            </div>
+
+            ${photoUrls.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Fotoğraflar (${photoUrls.length}):</div>
+                <div class="images">
+                  ${photoUrls.map(img => `<img src="${img}" alt="Pet photo">`).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          ${renderActions(item.id, item.status, item.title)}
+        </div>
+      `;
+    }
+
+    function renderHotel(item, attributes, photos, statusClass, createdDate) {
+      const photoUrls = photos.map(p => p.url || p);
+      const facilities = attributes.facilities || [];
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">🏨 ${item.title} <span style="color:#999;font-size:0.85em;">#${item.item_number}</span></div>
+              <div class="submission-meta">
+                ID: ${item.id} • ${createdDate} • <span class="status-badge ${statusClass}">${item.status}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            <div class="field">
+              <div class="field-label">Tip:</div>
+              <div class="field-value">${attributes.hotel_type || ''} ${attributes.star_rating ? `⭐ ${attributes.star_rating}` : ''}</div>
+            </div>
+
+            ${attributes.room_count || attributes.capacity ? `
+              <div class="field">
+                <div class="field-label">Kapasite:</div>
+                <div class="field-value">
+                  ${attributes.room_count ? `${attributes.room_count} oda` : ''}
+                  ${attributes.capacity ? ` • ${attributes.capacity} kişi` : ''}
+                </div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">Konum:</div>
+              <div class="field-value">${item.location} ${attributes.distance_to_sea ? `(Deniz: ${attributes.distance_to_sea})` : ''}</div>
+            </div>
+
+            ${item.description ? `
+              <div class="field">
+                <div class="field-label">Açıklama:</div>
+                <div class="field-value">${item.description}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">İletişim:</div>
+              <div class="field-value">
+                ${item.phone ? `📞 ${item.phone}` : ''} ${item.email ? `• 📧 ${item.email}` : ''}
+                ${item.website ? ` • 🌐 ${item.website}` : ''}
+              </div>
+            </div>
+
+            ${facilities.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Tesisler:</div>
+                <div class="field-value">${facilities.join(', ')}</div>
+              </div>
+            ` : ''}
+
+            ${photoUrls.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Fotoğraflar (${photoUrls.length}):</div>
+                <div class="images">
+                  ${photoUrls.map(img => `<img src="${img}" alt="Hotel photo">`).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          ${renderActions(item.id, item.status, item.title)}
+        </div>
+      `;
+    }
+
+    function renderArtist(item, attributes, photos, statusClass, createdDate) {
+      const photoUrls = photos.map(p => p.url || p);
+      const categories = attributes.categories || [];
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">🎨 ${item.title} <span style="color:#999;font-size:0.85em;">#${item.item_number}</span></div>
+              <div class="submission-meta">
+                ID: ${item.id} • ${createdDate} • <span class="status-badge ${statusClass}">${item.status}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            ${categories.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Kategoriler:</div>
+                <div class="field-value">${categories.join(', ')}</div>
+              </div>
+            ` : ''}
+
+            ${attributes.short_text || item.description ? `
+              <div class="field">
+                <div class="field-label">Kısa Tanıtım:</div>
+                <div class="field-value">${attributes.short_text || item.description}</div>
+              </div>
+            ` : ''}
+
+            ${item.long_text ? `
+              <div class="field">
+                <div class="field-label">Detaylı Tanıtım:</div>
+                <div class="field-value">${item.long_text.substring(0, 200)}${item.long_text.length > 200 ? '...' : ''}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">Sosyal Medya:</div>
+              <div class="field-value">
+                ${item.instagram ? `📸 ${item.instagram}` : ''}
+                ${attributes.youtube ? ` • 📺 ${attributes.youtube}` : ''}
+                ${item.website ? ` • 🌐 ${item.website}` : ''}
+                ${attributes.music_link ? ` • 🎵 ${attributes.music_link}` : ''}
+              </div>
+            </div>
+
+            ${item.phone || item.email ? `
+              <div class="field">
+                <div class="field-label">İletişim:</div>
+                <div class="field-value">
+                  ${item.phone ? `📞 ${item.phone}` : ''}
+                  ${item.email ? ` • 📧 ${item.email}` : ''}
+                </div>
+              </div>
+            ` : ''}
+
+            ${photoUrls.length > 0 ? `
+              <div class="field">
+                <div class="field-label">Fotoğraflar:</div>
+                <div class="images">
+                  ${photoUrls.map(img => `<img src="${img}" alt="Photo">`).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          ${renderActions(item.id, item.status, item.title)}
+        </div>
+      `;
+    }
+
+    // ============================================================================
+    // SURVEY MANAGEMENT FUNCTIONS
+    // ============================================================================
+
+    async function loadSurveys() {
+      const loading = document.getElementById('loading');
+      const container = document.getElementById('submissions');
+
+      try {
+        const [surveysRes, unreviewedRes] = await Promise.all([
+          fetch('/api/admin/surveys', { headers: { 'X-API-Key': apiKey } }),
+          fetch('/api/admin/surveys?unreviewed=true', { headers: { 'X-API-Key': apiKey } })
+        ]);
+
+        const surveysData = await surveysRes.json();
+        const unreviewedData = await unreviewedRes.json();
+
+        loading.style.display = 'none';
+
+        const surveys = surveysData.surveys || [];
+        const unreviewedOptions = unreviewedData.options || [];
+
+        let html = '';
+
+        if (unreviewedOptions.length > 0) {
+          html += `
+            <div class="submission-card" style="background: #fff3cd; border-left: 4px solid #ffc107;">
+              <div class="submission-header">
+                <div>
+                  <div class="submission-title">⚠️ Gözden Geçirilmeyi Bekleyen Kullanıcı Önerileri (${unreviewedOptions.length})</div>
+                </div>
+              </div>
+              <div class="submission-content">
+                ${unreviewedOptions.map(option => `
+                  <div style="padding: 12px; background: white; margin-bottom: 10px; border-radius: 6px; border: 1px solid #dee2e6;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <div>
+                        <strong>${option.option_text}</strong>
+                        <div style="font-size: 12px; color: #666; margin-top: 4px;">
+                          📊 Anket: ${option.survey_title} • 🗳️ ${option.vote_count} oy • 📅 ${new Date(option.created_at).toLocaleString('tr-TR')}
+                        </div>
+                      </div>
+                      <div style="display: flex; gap: 8px;">
+                        <button class="btn" style="background: #28a745; color: white; font-size: 12px; padding: 6px 12px;"
+                                onclick="reviewOption(${option.id}, true)">✅ Onayla</button>
+                        <button class="btn" style="background: #ffc107; color: black; font-size: 12px; padding: 6px 12px;"
+                                onclick="editSurveyOption(${option.id}, '${option.option_text.replace(/'/g, "\\'")}')">✏️ Düzenle</button>
+                        <button class="btn btn-delete" style="font-size: 12px; padding: 6px 12px;"
+                                onclick="deleteSurveyOption(${option.id})">🗑️ Sil</button>
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+
+        if (surveys.length === 0) {
+          html += '<div class="empty">Henüz anket bulunamaktadır</div>';
+        } else {
+          html += surveys.map(survey => renderSurvey(survey)).join('');
+        }
+
+        container.innerHTML = html;
+
+      } catch (error) {
+        loading.style.display = 'none';
+        container.innerHTML = `<div class="error">Hata: ${error.message}</div>`;
+      }
+    }
+
+    function renderSurvey(survey) {
+      const createdDate = new Date(survey.created_at).toLocaleString('tr-TR');
+      const statusClass = survey.is_active ? 'status-active' : 'status-rejected';
+      const statusText = survey.is_active ? 'Aktif' : 'Pasif';
+
+      return `
+        <div class="submission-card">
+          <div class="submission-header">
+            <div>
+              <div class="submission-title">📊 ${survey.title}</div>
+              <div class="submission-meta">
+                ID: ${survey.id} • ${createdDate} • <span class="status-badge ${statusClass}">${statusText}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="submission-content">
+            ${survey.description ? `
+              <div class="field">
+                <div class="field-label">Açıklama:</div>
+                <div class="field-value">${survey.description}</div>
+              </div>
+            ` : ''}
+
+            <div class="field">
+              <div class="field-label">İstatistikler:</div>
+              <div class="field-value">
+                🗳️ ${survey.total_votes || 0} oy
+                ${survey.user_options_count > 0 ? ` • 💡 ${survey.user_options_count} kullanıcı önerisi` : ''}
+                ${survey.unreviewed_options_count > 0 ? ` • ⚠️ ${survey.unreviewed_options_count} gözden geçirilmemiş` : ''}
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">Ayarlar:</div>
+              <div class="field-value">
+                ${survey.allow_user_options ? '✅ Kullanıcı önerilerine açık' : '❌ Kullanıcı önerileri kapalı'}
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" style="background: #2196F3; color: white;" onclick="viewSurveyDetails(${survey.id})">
+              📋 Detayları Gör
+            </button>
+            <button class="btn" style="background: ${survey.is_active ? '#ff9800' : '#4CAF50'}; color: white;"
+                    onclick="toggleSurveyStatus(${survey.id}, ${!survey.is_active})">
+              ${survey.is_active ? '⏸️ Pasif Yap' : '▶️ Aktif Yap'}
+            </button>
+            <button class="btn btn-delete" onclick="deleteSurvey(${survey.id}, '${survey.title.replace(/'/g, "\\'")}')">
+              🗑️ Sil
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    async function viewSurveyDetails(surveyId) {
+      try {
+        const response = await fetch(`/api/admin/surveys?id=${surveyId}`, {
+          headers: { 'X-API-Key': apiKey }
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          const survey = data.survey;
+          const options = survey.options || [];
+
+          let html = `
+            <h3>${survey.title}</h3>
+            <p><strong>Toplam Oy:</strong> ${survey.total_votes || 0}</p>
+            <hr>
+            <h4>Seçenekler:</h4>
+            <ul>
+              ${options.map(opt => `
+                <li>
+                  ${opt.option_text}
+                  (${opt.vote_count} oy)
+                  ${opt.submitted_by === 'user' ? '<span style="color: #ffc107;">👤 Kullanıcı</span>' : '<span style="color: #4CAF50;">👨‍💼 Admin</span>'}
+                  ${!opt.is_reviewed && opt.submitted_by === 'user' ? '<span style="color: red;">⚠️ Gözden geçirilmemiş</span>' : ''}
+                </li>
+              `).join('')}
+            </ul>
+          `;
+
+          alert(html.replace(/<[^>]*>/g, '\n').replace(/\n+/g, '\n'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function toggleSurveyStatus(surveyId, newStatus) {
+      if (!confirm(`Anketi ${newStatus ? 'aktif' : 'pasif'} yapmak istediğinizden emin misiniz?`)) {
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/admin/surveys', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({
+            surveyId: surveyId,
+            data: { is_active: newStatus }
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Anket durumu güncellendi!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Güncellenemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function deleteSurvey(surveyId, title) {
+      if (!confirm(`"${title}" anketini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz!`)) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/admin/surveys?id=${surveyId}`, {
+          method: 'DELETE',
+          headers: { 'X-API-Key': apiKey }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Anket silindi!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Silinemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function reviewOption(optionId, approve) {
+      try {
+        const response = await fetch('/api/admin/surveys', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({
+            optionId: optionId,
+            data: {
+              is_reviewed: true,
+              reviewed_by: 'admin'
+            }
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Seçenek onaylandı!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Güncellenemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function editSurveyOption(optionId, currentText) {
+      const newText = prompt('Yeni metin:', currentText);
+      if (!newText || newText === currentText) {
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/admin/surveys', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({
+            optionId: optionId,
+            data: {
+              option_text: newText,
+              is_reviewed: true,
+              reviewed_by: 'admin'
+            }
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Seçenek güncellendi!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Güncellenemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    async function deleteSurveyOption(optionId) {
+      if (!confirm('Bu seçeneği silmek istediğinizden emin misiniz?')) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/admin/surveys?optionId=${optionId}`, {
+          method: 'DELETE',
+          headers: { 'X-API-Key': apiKey }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Seçenek silindi!');
+          loadSubmissions();
+        } else {
+          alert('Hata: ' + (data.error || 'Silinemedi'));
+        }
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    // ============================================================================
+    // END SURVEY MANAGEMENT
+    // ============================================================================
+
+    function renderActions(id, status, title) {
+      return `
+        <div class="actions">
+          ${status === 'pending' ? `
+            <button class="btn btn-approve" onclick="updateStatus(${id}, 'approved')">
+              ✅ Onayla
+            </button>
+            <button class="btn btn-reject" onclick="updateStatus(${id}, 'rejected')">
+              ❌ Reddet
+            </button>
+          ` : ''}
+          <button class="btn btn-delete" onclick="confirmDelete(${id}, '${title.replace(/'/g, "\\'")}')">
+            🗑️ Sil
+          </button>
+        </div>
+      `;
+    }
+
+    async function updateStatus(id, status) {
+      if (!confirm(`Bu başvuruyu ${status === 'approved' ? 'onaylamak' : 'reddetmek'} istediğinize emin misiniz?`)) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/admin/items`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({ id, status })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          showMessage('Başarıyla güncellendi!', 'success');
+          loadSubmissions();
+        } else {
+          showMessage('Hata: ' + data.error, 'error');
+        }
+      } catch (error) {
+        showMessage('Hata: ' + error.message, 'error');
+      }
+    }
+
+    function confirmDelete(id, title) {
+      if (confirm(`"${title}" başvurusunu kalıcı olarak silmek istediğinize emin misiniz?`)) {
+        deleteSubmission(id);
+      }
+    }
+
+    async function deleteSubmission(id) {
+      try {
+        const response = await fetch(`/api/admin/items?id=${id}`, {
+          method: 'DELETE',
+          headers: {
+            'X-API-Key': apiKey
+          }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          showMessage('Başarıyla silindi!', 'success');
+          loadSubmissions();
+        } else {
+          showMessage('Hata: ' + data.error, 'error');
+        }
+      } catch (error) {
+        showMessage('Hata: ' + error.message, 'error');
+      }
+    }
+
+    function showMessage(text, type) {
+      const messageDiv = document.getElementById('message');
+      messageDiv.className = type;
+      messageDiv.textContent = text;
+      messageDiv.style.display = 'block';
+
+      setTimeout(() => {
+        messageDiv.style.display = 'none';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

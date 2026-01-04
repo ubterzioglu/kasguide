@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../kasguideico.ico">
+
+  <!-- Primary Meta Tags -->
+  <title>Sık Sorulan Sorular - Kaş Gezi Rehberi | Kaş Guide</title>
+  <meta name="title" content="Sık Sorulan Sorular - Kaş Gezi Rehberi | Kaş Guide">
+  <meta name="description" content="Kaş hakkında en çok sorulan sorular ve cevapları. Ulaşım, konaklama, gezilecek yerler, plajlar, aktiviteler ve pratik bilgiler. Yerel uzmanlar yanıtladı.">
+  <meta name="keywords" content="kaş sss, kaş nasıl gidilir, kaş ulaşım, kaş gezilecek yerler, kaş plajları, kaş soru cevap, kaputaş plajı, kekova">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kasguide.de/faq/faq.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kasguide.de/faq/faq.html">
+  <meta property="og:title" content="Sık Sorulan Sorular - Kaş Guide">
+  <meta property="og:description" content="Kaş hakkında en çok sorulan sorular ve cevapları. Ulaşım, konaklama, gezilecek yerler ve pratik bilgiler.">
+  <meta property="og:image" content="https://kasguide.de/assets/0_img/logokasguide.png">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sık Sorulan Sorular - Kaş Guide">
+  <meta name="twitter:description" content="Kaş hakkında en çok sorulan sorular ve cevapları.">
+
+  <link rel="stylesheet" href="faq-style.css">
+</head>
+<body>
+
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <!-- LEFT ACTIONS -->
+      <div class="header-actions">
+        <a href="../index.html" class="action-btn" aria-label="Ana Sayfa">
+          <img src="../assets/0_img/clip_home.png" alt="Home" style="width: 24px; height: 24px;">
+        </a>
+
+        <button class="action-btn back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img src="../assets/0_img/clip_up.png" alt="Up" style="width: 24px; height: 24px;">
+        </button>
+      </div>
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <div style="width:48px"></div>
+    </div>
+  </header>
+
+  <main class="faq-page">
+    <div class="container">
+
+      <div class="faq-top">
+        <div class="faq-title">Sık Sorulan Sorular</div>
+
+        <!-- FULL-WIDTH SEARCH ROW -->
+        <div class="faq-search-row">
+          <input id="faqSearch" class="faq-search" type="text" placeholder="Sorularda ara... (ör. ulaşım, plaj, Meis)">
+        </div>
+
+        <!-- STATS (2 CARDS) -->
+        <div class="faq-stats">
+          <div class="faq-stat-card">
+            <div class="faq-stat-label">Toplam Soru</div>
+            <div id="faqTotalCount" class="faq-stat-value">—</div>
+          </div>
+
+          <div class="faq-stat-card">
+            <div class="faq-stat-label">Arama Sonucu</div>
+            <div id="faqResultCount" class="faq-stat-value">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="cardsGrid" class="faq-list"></div>
+    </div>
+  </main>
+
+  <script src="faq-list-data.js"></script>
+  <script src="faq.js"></script>
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kasguidede.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İçerik Ekle • Kaş Guide</title>
+  <link rel="icon" type="image/png" href="../../assets/0_img/logokasguide.png">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="../shared/layout.css">
+  <link rel="stylesheet" href="../shared/components.css">
+
+  <style>
+    /* Type Selection Cards */
+    .type-selection {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .type-card {
+      background: var(--card-bg, #fff);
+      border: 2px solid var(--border-color, #e0e0e0);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .type-card:hover {
+      border-color: var(--primary-color, #4CAF50);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .type-card.selected {
+      border-color: var(--primary-color, #4CAF50);
+      background: var(--primary-light, #f1f8f4);
+    }
+
+    .type-card__icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .type-card__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .type-card__desc {
+      font-size: 0.875rem;
+      color: var(--text-muted, #666);
+    }
+
+    /* Step Progress */
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+      gap: 1rem;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--border-color, #e0e0e0);
+      color: var(--text-muted, #666);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .step.active .step-number {
+      background: var(--primary-color, #4CAF50);
+      color: white;
+    }
+
+    .step.completed .step-number {
+      background: var(--success-color, #2196F3);
+      color: white;
+    }
+
+    /* Form Sections */
+    .form-section {
+      display: none;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+
+    /* Type-specific fields */
+    .type-fields {
+      display: none;
+    }
+
+    .type-fields.active {
+      display: block;
+    }
+
+    /* Navigation Buttons */
+    .form-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary-color, #4CAF50);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark, #45a049);
+    }
+
+    .btn-secondary {
+      background: var(--border-color, #e0e0e0);
+      color: var(--text-color, #333);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border-hover, #d0d0d0);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Hide initially */
+    #mainForm {
+      display: none;
+    }
+
+    #mainForm.active {
+      display: block;
+    }
+
+    /* Accordion styles */
+    .info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 10px 0 14px;
+    }
+
+    .accordion-item {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .section-title {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      cursor: pointer;
+      user-select: none;
+      background: rgba(255, 255, 255, 0.3);
+      transition: background 0.2s;
+    }
+
+    .section-title:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .section-icon {
+      font-size: 1.25rem;
+    }
+
+    .chev {
+      margin-left: auto;
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+    }
+
+    details[open] .chev {
+      transform: rotate(180deg);
+    }
+
+    .liste-small {
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .liste-small p {
+      margin: 0.5rem 0;
+    }
+
+    /* Category Grid - Checkbox Style */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .category-option {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .category-checkbox {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .category-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      user-select: none;
+      text-align: center;
+      min-height: 48px;
+    }
+
+    .category-label:hover {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(76, 175, 80, 0.4);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .category-checkbox:checked + .category-label {
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(76, 175, 80, 0.25));
+      border-color: rgba(76, 175, 80, 0.6);
+      color: #2e7d32;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+    }
+
+    .category-checkbox:checked + .category-label::after {
+      content: '✓';
+      position: absolute;
+      top: 4px;
+      right: 6px;
+      width: 18px;
+      height: 18px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 50%;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* Selection Grid - Radio Box Style (Pet Form) */
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .selection-box {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .selection-box input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .selection-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.12);
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      min-height: 120px;
+      text-align: center;
+    }
+
+    .selection-box:hover .selection-content {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(76, 175, 80, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .selection-box input[type="radio"]:checked + .selection-content {
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.12), rgba(76, 175, 80, 0.22));
+      border-color: #4CAF50;
+      border-width: 3px;
+      box-shadow: 0 4px 16px rgba(76, 175, 80, 0.25);
+    }
+
+    .selection-icon {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .selection-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .selection-desc {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.3;
+    }
+
+    .selection-box input[type="radio"]:checked + .selection-content .selection-text {
+      color: #2e7d32;
+    }
+
+    .selection-box input[type="radio"]:checked + .selection-content::before {
+      content: '✓';
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 50%;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Photo Upload Beautification */
+    .file-upload-wrapper {
+      margin: 10px 0;
+    }
+
+    .file-upload-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .file-upload-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+    }
+
+    .file-upload-button:active {
+      transform: translateY(0);
+    }
+
+    .file-upload-icon {
+      font-size: 1.3rem;
+    }
+
+    .file-upload-input {
+      display: none;
+    }
+
+    .file-upload-info {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .file-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: rgba(76, 175, 80, 0.1);
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      border-radius: 8px;
+      color: #2e7d32;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .category-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 8px;
+      }
+
+      .category-label {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+      }
+
+      .selection-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .selection-content {
+        min-height: 100px;
+        padding: 16px;
+      }
+
+      .selection-icon {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../../index.html" aria-label="Kaş Guide">
+        <div class="brand__title">Kaş Guide</div>
+        <div class="brand__subtitle">İçerik Ekle</div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Kaş Guide'a Katkıda Bulunun!</h1>
+      <p class="muted">Mekan, otel, sanatçı bilgisi ekleyin! Yuva arayan, kayıp patililer için ilan verin!</p>
+    </section>
+
+    <!-- TYPE SELECTION -->
+    <section id="typeSelection" class="card">
+      <h2 style="text-align: center; margin-bottom: 1.5rem;">Ne Eklemek İstersiniz?</h2>
+
+      <div class="type-selection">
+        <div class="type-card" data-type="place">
+          <div class="type-card__icon">🏪</div>
+          <div class="type-card__title">Mekan</div>
+          <div class="type-card__desc">15 Kategoride mekan ekleyin!</div>
+        </div>
+
+        <div class="type-card" data-type="pet">
+          <div class="type-card__icon">🐾</div>
+          <div class="type-card__title">Patili</div>
+          <div class="type-card__desc">Kayıp, Bulunan, Yuva Arayan patililer için ilan verin</div>
+        </div>
+
+        <div class="type-card" data-type="hotel">
+          <div class="type-card__icon">🏨</div>
+          <div class="type-card__title">Otel</div>
+          <div class="type-card__desc">Her türden kalacak yerleri ekleyin! Otel, pansiyon, apart, villa, airbnb!</div>
+        </div>
+
+        <div class="type-card" data-type="artist">
+          <div class="type-card__icon">🎨</div>
+          <div class="type-card__title">Sanatçı</div>
+          <div class="type-card__desc">Müzisyen, DJ, sahne sanatçısı</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN FORM -->
+    <section id="mainForm" class="card">
+      <!-- Success Message -->
+      <div class="success-message" id="successMessage" style="display:none;">
+        <div class="success-icon">✅</div>
+        <h3>Başvurunuz Alındı!</h3>
+        <p id="successText">Bilgilerinizi inceliyoruz. En kısa sürede size dönüş yapacağız.</p>
+        <p>Desteğiniz için teşekkür ederiz.</p>
+        <p><strong>Kaş Guide</strong></p>
+      </div>
+
+      <!-- INFO ACCORDIONS - Shown after type selection -->
+      <section class="info-section" id="infoSection" style="display:none; margin-bottom: 1.5rem;">
+        <!-- Place accordions -->
+        <div id="placeInfo" class="type-info" style="display:none;">
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🌿</span>
+              Kaş Guide
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>🌿 En iyi deneyim için masaüstü/laptop üzerinden ekleme yapmanızı öneririz.</p>
+              <p>🌿 Kaş Guide, Kaş'ı gerçekten bilenler ve yaşayanlar için hazırlanıyor.</p>
+              <p>🌿 Sezona kadar hazır, düzenli ve güvenilir bir rehber oluşturuyoruz.</p>
+              <p>🌿 İçerikler, sizin katkılarınızla zamanla oturacak ve zenginleşecek.</p>
+              <p>🌿 Esnafla iç içe, yereli destekleyen bir anlayışla hareket ediyoruz.</p>
+              <p>🌿 Birlikte Kaş için kalıcı ve faydalı bir rehber oluşturuyoruz.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">📍</span>
+              Bilgi 2
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">ℹ️</span>
+              Bilgi 3
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">💡</span>
+              Bilgi 4
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Pet accordions -->
+        <div id="petInfo" class="type-info" style="display:none;">
+          <details class="accordion-item">
+            <summary class="section-title">
+              <span class="section-icon">📌</span>
+              Küçük not
+              <span class="chev">▾</span>
+            </summary>
+            <div class="liste-small">
+              <p>Paylaştığın bilgiler ve fotoğraflar değerlendirilip uygun görüldüğünde yayınlanır.</p>
+              <p>İletişim için WhatsApp/Tel yeterli. Lütfen mümkünse doğru ve ulaşılabilir bir numara yaz.</p>
+            </div>
+          </details>
+          <details class="accordion-item">
+            <summary class="section-title">
+              <span class="section-icon">🐾</span>
+              Bilgi 2
+              <span class="chev">▾</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item">
+            <summary class="section-title">
+              <span class="section-icon">💚</span>
+              Bilgi 3
+              <span class="chev">▾</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item">
+            <summary class="section-title">
+              <span class="section-icon">🏠</span>
+              Bilgi 4
+              <span class="chev">▾</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Hotel accordions -->
+        <div id="hotelInfo" class="type-info" style="display:none;">
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🏨</span>
+              Kaş Guide Hotels Hakkında
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>🏨 Kaş'taki otellerin resmi rehberi olmayı hedefliyoruz.</p>
+              <p>🏨 Tamamen ücretsiz listeleme - hiçbir ücret ödemezsiniz.</p>
+              <p>🏨 Direkt rezervasyon linklerinizi (Booking, Airbnb vb.) paylaşabilirsiniz.</p>
+              <p>🏨 Fotoğraflarınızı ve özelliklerinizi en iyi şekilde gösterebilirsiniz.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Artist accordions -->
+        <div id="artistInfo" class="type-info" style="display:none;">
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🎨</span>
+              Sanatçılar İçin
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>🎨 Sanatın ne olursa olsun, Kaş'ta seni tanıtacak bir yer var.</p>
+              <p>🎨 Müzik, dövme, karikatür, seramik, gümüş ve daha fazlası…</p>
+              <p>🎨 Üreten herkese açığız, Kaş'ta yeteneklerin keşfedilsin!</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🎭</span>
+              Bilgi 2
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🎪</span>
+              Bilgi 3
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+          <details class="accordion-item info-acc">
+            <summary class="section-title">
+              <span class="section-icon">🌟</span>
+              Bilgi 4
+              <span class="chev">˅</span>
+            </summary>
+            <div class="liste-small">
+              <p>Bu alan içerik için hazırlanmıştır.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <form id="itemForm" class="form" novalidate>
+        <input type="hidden" name="itemType" id="itemType">
+
+        <!-- Common Fields -->
+        <section class="form-section active">
+          <div class="form-box">
+            <div class="form-box__head">
+              <span class="form-ico">📝</span>
+              <span>Temel Bilgiler</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" id="titleLabel">Başlık<span class="required">*</span></label>
+              <input type="text" class="form-input" name="title" id="title" placeholder="Başlık girin" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Kısa Açıklama</label>
+              <input type="text" class="form-input" name="description" id="description" placeholder="Kısa açıklama (1-2 cümle)">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Detaylı Açıklama</label>
+              <textarea class="form-textarea" name="longText" id="longText" placeholder="Detaylı bilgi" rows="5"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Telefon</label>
+                <input type="tel" class="form-input" name="phone" id="phone" placeholder="+90 555 123 4567">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">E-posta</label>
+                <input type="email" class="form-input" name="email" id="email" placeholder="ornek@email.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Website</label>
+                <input type="url" class="form-input" name="website" id="website" placeholder="https://...">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Instagram</label>
+                <input type="text" class="form-input" name="instagram" id="instagram" placeholder="@kullaniciadi">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Type-Specific Fields -->
+        <section class="form-section active">
+
+          <!-- PLACE FIELDS -->
+          <div id="placeFields" class="type-fields">
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">🏪</span>
+                <span>Mekan Bilgileri</span>
+              </div>
+
+              <!-- Kategoriler -->
+              <div class="form-group">
+                <label class="form-label">Kategoriler</label>
+                <div class="category-grid">
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="bar" class="category-checkbox">
+                    <span class="category-label">🍸 Bar</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="meyhane" class="category-checkbox">
+                    <span class="category-label">🍷 Meyhane</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="restoran" class="category-checkbox">
+                    <span class="category-label">🍽️ Restoran</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="cafe" class="category-checkbox">
+                    <span class="category-label">☕ Cafe</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="kahvalti" class="category-checkbox">
+                    <span class="category-label">🥐 Kahvaltı</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="tarih" class="category-checkbox">
+                    <span class="category-label">🏛️ Tarih</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="doga" class="category-checkbox">
+                    <span class="category-label">🌿 Doğa</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="dalis" class="category-checkbox">
+                    <span class="category-label">🤿 Dalış</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="aktivite" class="category-checkbox">
+                    <span class="category-label">🏄 Aktivite</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="sergi" class="category-checkbox">
+                    <span class="category-label">🖼️ Sergi</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="etkinlik" class="category-checkbox">
+                    <span class="category-label">🎪 Etkinlik</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="carsi" class="category-checkbox">
+                    <span class="category-label">🛍️ Çarşı</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="plaj" class="category-checkbox">
+                    <span class="category-label">🏖️ Plaj</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="roportaj" class="category-checkbox">
+                    <span class="category-label">🎙️ Röportaj</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="acildurum" class="category-checkbox">
+                    <span class="category-label">🚨 Acil Durum</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Konum</label>
+                  <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Google Maps Link</label>
+                  <input type="url" class="form-input" name="googleMapsQuery" placeholder="https://maps.google.com/...">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Fiyat Aralığı</label>
+                  <select class="form-input" name="price">
+                    <option value="">Seçiniz</option>
+                    <option value="₺">₺ - Ekonomik</option>
+                    <option value="₺₺">₺₺ - Orta</option>
+                    <option value="₺₺₺">₺₺₺ - Lüks</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Rezervasyon Linki</label>
+                  <input type="url" class="form-input" name="booking" placeholder="https://...">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PET FIELDS -->
+          <div id="petFields" class="type-fields">
+            <!-- Patili Bilgileri Card (moved to top) -->
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">🐾</span>
+                <span>Patili Bilgileri</span>
+              </div>
+
+              <!-- Seçim Kutuları -->
+              <div class="form-group">
+                <label class="form-label">İlan Tipi</label>
+                <div class="selection-grid">
+                  <label class="selection-box">
+                    <input type="radio" name="listingType" value="kayip">
+                    <span class="selection-content">
+                      <span class="selection-icon">🔍</span>
+                      <span class="selection-text">Kayıp</span>
+                      <span class="selection-desc">Kaybolmuş hayvan bildirimi</span>
+                    </span>
+                  </label>
+                  <label class="selection-box">
+                    <input type="radio" name="listingType" value="bulundu">
+                    <span class="selection-content">
+                      <span class="selection-icon">🎉</span>
+                      <span class="selection-text">Sahiplendirilecek</span>
+                      <span class="selection-desc">Bulundu veya sahiplendirilecek</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Tür</label>
+                <div class="selection-grid">
+                  <label class="selection-box">
+                    <input type="radio" name="petType" value="kopek">
+                    <span class="selection-content">
+                      <span class="selection-icon">🐶</span>
+                      <span class="selection-text">Köpek</span>
+                    </span>
+                  </label>
+                  <label class="selection-box">
+                    <input type="radio" name="petType" value="kedi">
+                    <span class="selection-content">
+                      <span class="selection-icon">🐱</span>
+                      <span class="selection-text">Kedi</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Yaş</label>
+                  <input type="text" class="form-input" name="age" placeholder="Örn: 2 yaşında">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Cins</label>
+                  <input type="text" class="form-input" name="breed" placeholder="Örn: Golden Retriever">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kısa Bilgi (max 500 karakter)</label>
+                <textarea class="form-textarea" name="shortNote" placeholder="Nerede görüldü, karakteri nasıl, özel işaretler..." maxlength="500"></textarea>
+              </div>
+            </div>
+
+            <!-- İletişim Bilgileri Card for Pet -->
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">📞</span>
+                <span>İletişim Bilgileri</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Telefon</label>
+                  <input type="tel" class="form-input" name="petPhone" placeholder="+90 555 123 4567">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">E-posta</label>
+                  <input type="email" class="form-input" name="petEmail" placeholder="ornek@email.com">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Website</label>
+                  <input type="url" class="form-input" name="petWebsite" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Instagram</label>
+                  <input type="text" class="form-input" name="petInstagram" placeholder="@kullaniciadi">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HOTEL FIELDS -->
+          <div id="hotelFields" class="type-fields">
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">🏨</span>
+                <span>Otel Bilgileri</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Otel Tipi</label>
+                  <select class="form-input" name="hotelType">
+                    <option value="">Seçiniz</option>
+                    <option value="butik">Butik Otel</option>
+                    <option value="aile">Aile Oteli</option>
+                    <option value="luks">Lüks Otel</option>
+                    <option value="pansiyon">Pansiyon</option>
+                    <option value="apart">Apart Otel</option>
+                    <option value="hostel">Hostel</option>
+                    <option value="villa">Villa</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Yıldız</label>
+                  <select class="form-input" name="starRating">
+                    <option value="">Seçiniz</option>
+                    <option value="1">⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Oda Sayısı</label>
+                  <input type="number" class="form-input" name="roomCount" placeholder="20">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Kapasite</label>
+                  <input type="number" class="form-input" name="capacity" placeholder="40">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Check-in</label>
+                  <input type="time" class="form-input" name="checkinTime">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Check-out</label>
+                  <input type="time" class="form-input" name="checkoutTime">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Konum</label>
+                <input type="text" class="form-input" name="location" placeholder="Örn: Kaş Merkez">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Denize Mesafe</label>
+                <input type="text" class="form-input" name="distanceToSea" placeholder="Örn: 200m">
+              </div>
+            </div>
+          </div>
+
+          <!-- ARTIST FIELDS -->
+          <div id="artistFields" class="type-fields">
+            <!-- İletişim Bilgileri Card for Artist -->
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">📞</span>
+                <span>İletişim Bilgileri</span>
+              </div>
+
+              <div class="form-row" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="form-group">
+                  <label class="form-label">Telefon</label>
+                  <input type="tel" class="form-input" name="artistPhone" placeholder="+90 555 123 4567">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">E-posta</label>
+                  <input type="email" class="form-input" name="artistEmail" placeholder="ornek@email.com">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Instagram</label>
+                  <input type="text" class="form-input" name="artistInstagram" placeholder="@kullaniciadi">
+                </div>
+              </div>
+            </div>
+
+            <!-- Sanatçı Bilgileri Card -->
+            <div class="form-box">
+              <div class="form-box__head">
+                <span class="form-ico">🎨</span>
+                <span>Sanatçı Bilgileri</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kategoriler</label>
+                <div class="category-grid">
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Müzisyen" class="category-checkbox">
+                    <span class="category-label">🎤 Müzisyen</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Grup" class="category-checkbox">
+                    <span class="category-label">👥 Grup</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="DJ" class="category-checkbox">
+                    <span class="category-label">🎧 DJ</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Tiyatro" class="category-checkbox">
+                    <span class="category-label">🎭 Tiyatro</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Stand-Up" class="category-checkbox">
+                    <span class="category-label">🎙️ Stand-Up</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Dans" class="category-checkbox">
+                    <span class="category-label">💃 Dans</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Koro" class="category-checkbox">
+                    <span class="category-label">🎶 Koro</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Dövme" class="category-checkbox">
+                    <span class="category-label">🖋️ Dövme</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Karikatür" class="category-checkbox">
+                    <span class="category-label">✏️ Karikatür</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Resim" class="category-checkbox">
+                    <span class="category-label">🎨 Resim</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Sinema" class="category-checkbox">
+                    <span class="category-label">🎬 Sinema</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Seramik" class="category-checkbox">
+                    <span class="category-label">🏺 Seramik</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Takı Tasarımı" class="category-checkbox">
+                    <span class="category-label">💍 Takı Tasarımı</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Sosyal Medya" class="category-checkbox">
+                    <span class="category-label">📱 Sosyal Medya</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Fotoğraf" class="category-checkbox">
+                    <span class="category-label">📷 Fotoğraf</span>
+                  </label>
+                  <label class="category-option">
+                    <input type="checkbox" name="categories" value="Diğer" class="category-checkbox">
+                    <span class="category-label">✨ Diğer</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Photos -->
+        <section class="form-section active">
+          <div class="form-box">
+            <div class="form-box__head">
+              <span class="form-ico">📸</span>
+              <span>Fotoğraflar</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Fotoğraf Yükle (Maks. 5 adet)</label>
+              <div class="file-upload-wrapper">
+                <input type="file" id="photoUpload" class="file-upload-input" name="photos" accept="image/*" multiple>
+                <label for="photoUpload" class="file-upload-button">
+                  <span class="file-upload-icon">📸</span>
+                  <span>Fotoğraf Seç</span>
+                </label>
+                <div id="fileCount" class="file-count" style="display: none;">
+                  <span>✓</span>
+                  <span id="fileCountText">0 fotoğraf seçildi</span>
+                </div>
+              </div>
+              <p class="form-hint">JPG, PNG veya WEBP formatında, her biri max 2MB</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Notes -->
+        <section class="form-section active">
+          <div class="form-box">
+            <div class="form-box__head">
+              <span class="form-ico">📝</span>
+              <span>Bize iletmek istediğiniz özel notlar</span>
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-textarea" name="extraNotes" placeholder="Eklemek istediğiniz başka bir şey var mı?" rows="2"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Submit Button -->
+        <div class="form-nav">
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <span id="submitBtnText">Gönder</span>
+            <span id="submitSpinner" style="display:none;">⏳ Gönderiliyor...</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="./add-item.js"></script>
+</body>
+</html>
