@@ -305,11 +305,7 @@ body {
 }
 
 .hero-test-title {
-<<<<<<< HEAD
-  font-size: 2rem;
-=======
   font-size: 2.5rem;
->>>>>>> ec0dc650f3ba43e744fbb9f46fc04cc18cbb6dfe
   font-weight: bold;
   margin-bottom: 0.75rem;
   animation: fadeIn 1s ease-in;
