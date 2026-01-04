@@ -210,7 +210,7 @@ function convertAPIArticle(apiData) {
     longText: apiData.long_text || '',
     category: ['articles'],
     image: primaryPhoto ? primaryPhoto.url : null,
-    images: photos.map(p => p.url),
+    images: Array.isArray(photos) ? photos.map(p => p.url || p).filter(Boolean) : [],
     tags: attrs.tags || [],
     author: attrs.author || 'Kaş Guide',
     readTime: attrs.readTime || ''
@@ -230,7 +230,7 @@ function convertAPIInterview(apiData) {
     longText: apiData.long_text || '',
     category: ['interviews'],
     image: primaryPhoto ? primaryPhoto.url : null,
-    images: photos.map(p => p.url),
+    images: Array.isArray(photos) ? photos.map(p => p.url || p).filter(Boolean) : [],
     tags: attrs.tags || [],
     interviewee: attrs.interviewee || '',
     interviewer: attrs.interviewer || 'Kaş Guide',
@@ -335,6 +335,15 @@ async function buildAllItems() {
       loadPetsFromAPI()
     ]);
 
+    console.log('📊 Raw data loaded:', {
+      places: placesData.length,
+      articles: articlesData.length,
+      interviews: interviewsData.length,
+      faqs: faqSeriesData.length,
+      hotels: hotelsData.length,
+      pets: petsData.length
+    });
+
     const places = placesData.map((p) => normalizeItem(p, 'place'));
     const articlesList = articlesData.map((a) => normalizeItem(a, 'article'));
     const interviewsList = interviewsData.map((i) => normalizeItem(i, 'interview'));
@@ -342,10 +351,13 @@ async function buildAllItems() {
     const hotels = hotelsData.map((h) => normalizeItem(h, 'hotel'));
     const pets = petsData.map((p) => normalizeItem(p, 'pet'));
 
+    console.log('🔍 Sample article:', articlesList[0]);
+    console.log('🔍 Sample interview:', interviewsList[0]);
+
     allItems = [...places, ...articlesList, ...interviewsList, ...faqs, ...hotels, ...pets];
     filteredItems = [...allItems];
 
-    console.log(`✅ Loaded ${allItems.length} items from database`);
+    console.log(`✅ Loaded ${allItems.length} items from database (${articlesList.length} articles, ${interviewsList.length} interviews)`);
   } catch (error) {
     console.error('Error building items:', error);
     allItems = [];
