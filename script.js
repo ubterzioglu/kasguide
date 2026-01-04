@@ -68,9 +68,11 @@ function normalizeItem(item, type) {
   } else if (type === 'faqspecial') {
     base.category = ['faqspecial'];
   } else if (type === 'hotel') {
-    base.category = safeArr(base.category);
+    // Add 'hotels' category for filtering, plus any additional categories
+    base.category = ['hotels', ...safeArr(base.category)];
   } else if (type === 'pet') {
-    base.category = safeArr(base.category);
+    // Add 'pets' category for filtering, plus any additional categories
+    base.category = ['pets', ...safeArr(base.category)];
   } else {
     base.category = safeArr(base.category);
   }
