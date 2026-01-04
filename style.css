@@ -305,11 +305,11 @@ body {
 }
 
 .hero-test-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
   animation: fadeIn 1s ease-in;
-  text-shadow: 0 2px 4px rgb(0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
@@ -1209,19 +1209,23 @@ body {
   .nav-desktop {
     display: flex;
   }
-  
+
   .menu-toggle {
     display: none;
   }
-  
+
   .hero {
     height: 600px;
   }
-  
+
   .hero-title {
     font-size: 3.75rem;
   }
-  
+
+  .hero-test-title {
+    font-size: 4.5rem;
+  }
+
   .hero-subtitle {
     font-size: 1.25rem;
   }
