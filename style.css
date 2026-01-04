@@ -1403,3 +1403,14 @@ body {
 .card-article .card-meta.article-meta{
   margin-top: .75rem;
 }
+
+
+/* ===== Hero Test Subtitle – page specific ===== */
+.hero-subtitle-test a,
+.hero-subtitle-test a:visited,
+.hero-subtitle-test a:hover,
+.hero-subtitle-test a:active {
+  color: #ffffff !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
