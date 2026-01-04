@@ -304,6 +304,14 @@ body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.hero-test-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in;
+  text-shadow: 0 2px 4px rgb(0, 0, 0.3);
+}
+
 .hero-subtitle {
   font-size: 1.125rem;
   margin-bottom: 2rem;
