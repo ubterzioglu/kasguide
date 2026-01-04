@@ -34,6 +34,8 @@ export default async function handler(req, res) {
       status: 'active'
     });
 
+    console.log(`🎙️ Interviews API: Found ${interviews.length} interviews`);
+
     return res.status(200).json({
       interviews,
       count: interviews.length

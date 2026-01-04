@@ -34,6 +34,8 @@ export default async function handler(req, res) {
       status: 'active'
     });
 
+    console.log(`📚 Articles API: Found ${articles.length} articles`);
+
     return res.status(200).json({
       articles,
       count: articles.length
