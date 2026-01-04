@@ -6,7 +6,7 @@
  * Interviews are stored in the unified 'items' table with item_type='interview'
  */
 
-import sql from '../db/connection.js';
+import { getAllItems, getItemById } from '../lib/db-items.js';
 
 export default async function handler(req, res) {
   // Only allow GET requests
@@ -19,17 +19,9 @@ export default async function handler(req, res) {
 
     // Get single interview by ID
     if (id) {
-      const result = await sql`
-        SELECT *
-        FROM items
-        WHERE id = ${id}
-          AND item_type = 'interview'
-          AND status = 'active'
-      `;
+      const interview = await getItemById(parseInt(id));
 
-      const interview = result[0];
-
-      if (!interview) {
+      if (!interview || interview.item_type !== 'interview') {
         return res.status(404).json({ error: 'Interview not found' });
       }
 
@@ -37,17 +29,14 @@ export default async function handler(req, res) {
     }
 
     // Get all published interviews
-    const result = await sql`
-      SELECT *
-      FROM items
-      WHERE item_type = 'interview'
-        AND status = 'active'
-      ORDER BY published_at DESC
-    `;
+    const interviews = await getAllItems({
+      item_type: 'interview',
+      status: 'active'
+    });
 
     return res.status(200).json({
-      interviews: result,
-      count: result.length
+      interviews,
+      count: interviews.length
     });
 
   } catch (error) {

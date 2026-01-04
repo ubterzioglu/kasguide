@@ -6,7 +6,7 @@
  * Articles are stored in the unified 'items' table with item_type='article'
  */
 
-import sql from '../db/connection.js';
+import { getAllItems, getItemById } from '../lib/db-items.js';
 
 export default async function handler(req, res) {
   // Only allow GET requests
@@ -19,17 +19,9 @@ export default async function handler(req, res) {
 
     // Get single article by ID
     if (id) {
-      const result = await sql`
-        SELECT *
-        FROM items
-        WHERE id = ${id}
-          AND item_type = 'article'
-          AND status = 'active'
-      `;
+      const article = await getItemById(parseInt(id));
 
-      const article = result[0];
-
-      if (!article) {
+      if (!article || article.item_type !== 'article') {
         return res.status(404).json({ error: 'Article not found' });
       }
 
@@ -37,17 +29,14 @@ export default async function handler(req, res) {
     }
 
     // Get all published articles
-    const result = await sql`
-      SELECT *
-      FROM items
-      WHERE item_type = 'article'
-        AND status = 'active'
-      ORDER BY published_at DESC
-    `;
+    const articles = await getAllItems({
+      item_type: 'article',
+      status: 'active'
+    });
 
     return res.status(200).json({
-      articles: result,
-      count: result.length
+      articles,
+      count: articles.length
     });
 
   } catch (error) {
