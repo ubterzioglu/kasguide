@@ -271,7 +271,7 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 500px;
+  height: 650px;
   overflow: hidden;
   background-image: url('../assets/0_img/clip_home_bg.jpg');
   background-size: cover;
@@ -305,19 +305,25 @@ body {
 }
 
 .hero-test-title {
+<<<<<<< HEAD
   font-size: 2rem;
+=======
+  font-size: 2.5rem;
+>>>>>>> ec0dc650f3ba43e744fbb9f46fc04cc18cbb6dfe
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   animation: fadeIn 1s ease-in;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.3;
 }
 
 .hero-subtitle {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
   max-width: 42rem;
   opacity: 0.9;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.5;
 }
 
 .search-box {
@@ -357,13 +363,14 @@ body {
 .search-button {
   background: linear-gradient(to right, var(--primary-cyan), var(--primary-blue));
   color: white;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1rem;
   border: none;
   border-radius: var(--radius-full);
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s;
   white-space: nowrap;
+  font-size: 0.85rem;
 }
 
 .search-button:hover {
@@ -1224,12 +1231,19 @@ body {
 
   .hero-test-title {
     font-size: 4.5rem;
+    margin-bottom: 1rem;
   }
 
   .hero-subtitle {
     font-size: 1.25rem;
+    margin-bottom: 2rem;
   }
-  
+
+  .search-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+
   .categories-grid {
     grid-template-columns: repeat(5, 1fr);
   }
