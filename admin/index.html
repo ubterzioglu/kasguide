@@ -234,6 +234,11 @@
       color: white;
     }
 
+    .btn-edit {
+      background: #2196F3;
+      color: white;
+    }
+
     .btn:hover {
       opacity: 0.9;
     }
@@ -292,6 +297,131 @@
       text-align: center;
       padding: 60px 20px;
       color: #999;
+    }
+
+    /* Edit Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .modal-header {
+      padding: 20px 30px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 10;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #999;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .modal-body {
+      padding: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .modal-footer {
+      padding: 20px 30px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      position: sticky;
+      bottom: 0;
+      background: white;
     }
 
     .images {
@@ -396,6 +526,23 @@
       <div id="message" style="display:none;"></div>
       <div id="loading" class="loading">Yükleniyor...</div>
       <div id="submissions" class="submissions"></div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">✏️ İçerik Düzenle</h2>
+        <button class="modal-close" onclick="closeEditModal()">×</button>
+      </div>
+      <div class="modal-body" id="editModalBody">
+        <!-- Form will be injected here -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn" style="background: #999; color: white;" onclick="closeEditModal()">İptal</button>
+        <button class="btn btn-approve" onclick="saveEdit()">💾 Kaydet</button>
+      </div>
     </div>
   </div>
 
@@ -1123,9 +1270,14 @@
     // END SURVEY MANAGEMENT
     // ============================================================================
 
+    let currentEditItem = null;
+
     function renderActions(id, status, title) {
       return `
         <div class="actions">
+          <button class="btn btn-edit" onclick="openEditModal(${id})">
+            ✏️ Düzenle
+          </button>
           ${status === 'pending' ? `
             <button class="btn btn-approve" onclick="updateStatus(${id}, 'approved')">
               ✅ Onayla
@@ -1207,6 +1359,583 @@
         messageDiv.style.display = 'none';
       }, 3000);
     }
+
+    // ============================================================================
+    // EDIT FUNCTIONALITY
+    // ============================================================================
+
+    async function openEditModal(itemId) {
+      try {
+        // Fetch item details
+        const response = await fetch(`/api/admin/items?status=all&type=all`, {
+          headers: { 'X-API-Key': apiKey }
+        });
+
+        if (!response.ok) {
+          alert('İçerik yüklenemedi');
+          return;
+        }
+
+        const data = await response.json();
+        const item = data.items.find(i => i.id === itemId);
+
+        if (!item) {
+          alert('İçerik bulunamadı');
+          return;
+        }
+
+        currentEditItem = item;
+        renderEditForm(item);
+        document.getElementById('editModal').classList.add('active');
+      } catch (error) {
+        alert('Hata: ' + error.message);
+      }
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.remove('active');
+      currentEditItem = null;
+    }
+
+    function renderEditForm(item) {
+      const photos = item.photos ? (typeof item.photos === 'string' ? JSON.parse(item.photos) : item.photos) : [];
+      const attributes = item.attributes ? (typeof item.attributes === 'string' ? JSON.parse(item.attributes) : item.attributes) : {};
+
+      let formHTML = '';
+
+      switch (item.item_type) {
+        case 'place':
+          formHTML = renderPlaceEditForm(item, attributes, photos);
+          break;
+        case 'pet':
+          formHTML = renderPetEditForm(item, attributes, photos);
+          break;
+        case 'hotel':
+          formHTML = renderHotelEditForm(item, attributes, photos);
+          break;
+        case 'artist':
+          formHTML = renderArtistEditForm(item, attributes, photos);
+          break;
+        default:
+          formHTML = renderGenericEditForm(item, attributes, photos);
+      }
+
+      document.getElementById('editModalBody').innerHTML = formHTML;
+    }
+
+    function renderPlaceEditForm(item, attributes, photos) {
+      const categories = attributes.categories || [];
+      const price = attributes.price || '';
+      const distance = attributes.distance || '';
+      const duration = attributes.duration || '';
+      const rating = item.rating || attributes.rating || '';
+
+      return `
+        <div class="form-group">
+          <label>Başlık *</label>
+          <input type="text" id="edit-title" value="${escapeHtml(item.title || '')}" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kısa Açıklama</label>
+          <textarea id="edit-description" rows="3">${escapeHtml(item.description || '')}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Detaylı Açıklama</label>
+          <textarea id="edit-long-text" rows="6">${escapeHtml(item.long_text || '')}</textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Konum</label>
+            <input type="text" id="edit-location" value="${escapeHtml(item.location || '')}">
+          </div>
+          <div class="form-group">
+            <label>Mesafe</label>
+            <input type="text" id="edit-distance" value="${escapeHtml(distance)}" placeholder="örn: 500m from center">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Telefon</label>
+            <input type="text" id="edit-phone" value="${escapeHtml(item.phone || '')}">
+          </div>
+          <div class="form-group">
+            <label>Instagram</label>
+            <input type="text" id="edit-instagram" value="${escapeHtml(item.instagram || '')}" placeholder="@username">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Website</label>
+            <input type="text" id="edit-website" value="${escapeHtml(item.website || '')}" placeholder="https://...">
+          </div>
+          <div class="form-group">
+            <label>Puan</label>
+            <input type="text" id="edit-rating" value="${escapeHtml(rating)}" placeholder="4.5">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Fiyat Aralığı</label>
+            <input type="text" id="edit-price" value="${escapeHtml(price)}" placeholder="₺₺">
+          </div>
+          <div class="form-group">
+            <label>Süre</label>
+            <input type="text" id="edit-duration" value="${escapeHtml(duration)}" placeholder="2-3 hours">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Kategoriler (virgülle ayırın)</label>
+          <input type="text" id="edit-categories" value="${categories.join(', ')}" placeholder="restoran, bar, cafe">
+          <small style="color: #666; font-size: 12px; margin-top: 4px; display: block;">Mevcut kategoriler: bar, meyhane, restoran, cafe, kahvalti, tarih, doga, dalis, aktivite, etkinlik, carsi, plaj</small>
+        </div>
+
+        <div class="form-group">
+          <label>Durum</label>
+          <select id="edit-status">
+            <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Beklemede</option>
+            <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Onaylandı</option>
+            <option value="active" ${item.status === 'active' ? 'selected' : ''}>Aktif</option>
+            <option value="rejected" ${item.status === 'rejected' ? 'selected' : ''}>Reddedildi</option>
+          </select>
+        </div>
+      `;
+    }
+
+    function renderPetEditForm(item, attributes, photos) {
+      return `
+        <div class="form-group">
+          <label>Başlık *</label>
+          <input type="text" id="edit-title" value="${escapeHtml(item.title || '')}" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kısa Açıklama</label>
+          <textarea id="edit-description" rows="3">${escapeHtml(item.description || '')}</textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Pet Türü</label>
+            <input type="text" id="edit-pet-type" value="${escapeHtml(attributes.pet_type || '')}" placeholder="Köpek, Kedi, vb.">
+          </div>
+          <div class="form-group">
+            <label>Cins</label>
+            <input type="text" id="edit-breed" value="${escapeHtml(attributes.breed || '')}">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>İlan Tipi</label>
+            <select id="edit-listing-type">
+              <option value="kayip" ${attributes.listing_type === 'kayip' ? 'selected' : ''}>Kayıp</option>
+              <option value="sahiplendirilecek" ${attributes.listing_type === 'sahiplendirilecek' ? 'selected' : ''}>Sahiplendirilecek</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Yaş</label>
+            <input type="text" id="edit-age" value="${escapeHtml(attributes.age || '')}">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Kısa Not</label>
+          <textarea id="edit-short-note" rows="3">${escapeHtml(attributes.short_note || '')}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Ek Notlar</label>
+          <textarea id="edit-extra-notes" rows="4">${escapeHtml(attributes.extra_notes || '')}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="text" id="edit-phone" value="${escapeHtml(item.phone || '')}">
+        </div>
+
+        <div class="form-group">
+          <label>Durum</label>
+          <select id="edit-status">
+            <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Beklemede</option>
+            <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Onaylandı</option>
+            <option value="active" ${item.status === 'active' ? 'selected' : ''}>Aktif</option>
+            <option value="resolved" ${item.status === 'resolved' ? 'selected' : ''}>Çözüldü</option>
+            <option value="rejected" ${item.status === 'rejected' ? 'selected' : ''}>Reddedildi</option>
+          </select>
+        </div>
+      `;
+    }
+
+    function renderHotelEditForm(item, attributes, photos) {
+      return `
+        <div class="form-group">
+          <label>Başlık *</label>
+          <input type="text" id="edit-title" value="${escapeHtml(item.title || '')}" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kısa Açıklama</label>
+          <textarea id="edit-description" rows="3">${escapeHtml(item.description || '')}</textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Otel Tipi</label>
+            <input type="text" id="edit-hotel-type" value="${escapeHtml(attributes.hotel_type || '')}" placeholder="Boutique, Pansiyon, vb.">
+          </div>
+          <div class="form-group">
+            <label>Yıldız</label>
+            <input type="text" id="edit-star-rating" value="${escapeHtml(attributes.star_rating || '')}" placeholder="3, 4, 5">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Oda Sayısı</label>
+            <input type="text" id="edit-room-count" value="${escapeHtml(attributes.room_count || '')}">
+          </div>
+          <div class="form-group">
+            <label>Kapasite</label>
+            <input type="text" id="edit-capacity" value="${escapeHtml(attributes.capacity || '')}" placeholder="kişi sayısı">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Konum</label>
+          <input type="text" id="edit-location" value="${escapeHtml(item.location || '')}">
+        </div>
+
+        <div class="form-group">
+          <label>Denize Mesafe</label>
+          <input type="text" id="edit-distance-to-sea" value="${escapeHtml(attributes.distance_to_sea || '')}" placeholder="örn: 50m">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Telefon</label>
+            <input type="text" id="edit-phone" value="${escapeHtml(item.phone || '')}">
+          </div>
+          <div class="form-group">
+            <label>E-posta</label>
+            <input type="email" id="edit-email" value="${escapeHtml(item.email || '')}">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Website</label>
+            <input type="text" id="edit-website" value="${escapeHtml(item.website || '')}">
+          </div>
+          <div class="form-group">
+            <label>Instagram</label>
+            <input type="text" id="edit-instagram" value="${escapeHtml(item.instagram || '')}">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tesisler (virgülle ayırın)</label>
+          <input type="text" id="edit-facilities" value="${(attributes.facilities || []).join(', ')}" placeholder="wifi, parking, pool, ac">
+        </div>
+
+        <div class="form-group">
+          <label>Durum</label>
+          <select id="edit-status">
+            <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Beklemede</option>
+            <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Onaylandı</option>
+            <option value="active" ${item.status === 'active' ? 'selected' : ''}>Aktif</option>
+            <option value="rejected" ${item.status === 'rejected' ? 'selected' : ''}>Reddedildi</option>
+          </select>
+        </div>
+      `;
+    }
+
+    function renderArtistEditForm(item, attributes, photos) {
+      const categories = attributes.categories || [];
+      return `
+        <div class="form-group">
+          <label>Başlık (Sanatçı Adı) *</label>
+          <input type="text" id="edit-title" value="${escapeHtml(item.title || '')}" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kısa Tanıtım</label>
+          <textarea id="edit-description" rows="3">${escapeHtml(item.description || attributes.short_text || '')}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Detaylı Tanıtım</label>
+          <textarea id="edit-long-text" rows="6">${escapeHtml(item.long_text || '')}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Kategoriler (virgülle ayırın)</label>
+          <input type="text" id="edit-categories" value="${categories.join(', ')}" placeholder="müzik, resim, heykel">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Instagram</label>
+            <input type="text" id="edit-instagram" value="${escapeHtml(item.instagram || '')}">
+          </div>
+          <div class="form-group">
+            <label>YouTube</label>
+            <input type="text" id="edit-youtube" value="${escapeHtml(attributes.youtube || '')}">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Website</label>
+            <input type="text" id="edit-website" value="${escapeHtml(item.website || '')}">
+          </div>
+          <div class="form-group">
+            <label>Müzik Linki</label>
+            <input type="text" id="edit-music-link" value="${escapeHtml(attributes.music_link || '')}">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Telefon</label>
+            <input type="text" id="edit-phone" value="${escapeHtml(item.phone || '')}">
+          </div>
+          <div class="form-group">
+            <label>E-posta</label>
+            <input type="email" id="edit-email" value="${escapeHtml(item.email || '')}">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Durum</label>
+          <select id="edit-status">
+            <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Beklemede</option>
+            <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Onaylandı</option>
+            <option value="active" ${item.status === 'active' ? 'selected' : ''}>Aktif</option>
+            <option value="rejected" ${item.status === 'rejected' ? 'selected' : ''}>Reddedildi</option>
+          </select>
+        </div>
+      `;
+    }
+
+    function renderGenericEditForm(item, attributes, photos) {
+      return `
+        <div class="form-group">
+          <label>Başlık *</label>
+          <input type="text" id="edit-title" value="${escapeHtml(item.title || '')}" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kısa Açıklama</label>
+          <textarea id="edit-description" rows="3">${escapeHtml(item.description || '')}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Detaylı Açıklama</label>
+          <textarea id="edit-long-text" rows="6">${escapeHtml(item.long_text || '')}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Durum</label>
+          <select id="edit-status">
+            <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Beklemede</option>
+            <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Onaylandı</option>
+            <option value="active" ${item.status === 'active' ? 'selected' : ''}>Aktif</option>
+            <option value="rejected" ${item.status === 'rejected' ? 'selected' : ''}>Reddedildi</option>
+          </select>
+        </div>
+      `;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    async function saveEdit() {
+      if (!currentEditItem) return;
+
+      try {
+        const item = currentEditItem;
+        const updateData = {};
+
+        // Common fields
+        const title = document.getElementById('edit-title')?.value;
+        if (title) updateData.title = title;
+
+        const description = document.getElementById('edit-description')?.value;
+        if (description !== undefined) updateData.description = description;
+
+        const longText = document.getElementById('edit-long-text')?.value;
+        if (longText !== undefined) updateData.longText = longText;
+
+        const status = document.getElementById('edit-status')?.value;
+        if (status) updateData.status = status;
+
+        // Type-specific fields
+        if (item.item_type === 'place') {
+          const phone = document.getElementById('edit-phone')?.value;
+          if (phone !== undefined) updateData.phone = phone;
+
+          const instagram = document.getElementById('edit-instagram')?.value;
+          if (instagram !== undefined) updateData.instagram = instagram;
+
+          const website = document.getElementById('edit-website')?.value;
+          if (website !== undefined) updateData.website = website;
+
+          const location = document.getElementById('edit-location')?.value;
+          if (location !== undefined) updateData.location = location;
+
+          const rating = document.getElementById('edit-rating')?.value;
+          const price = document.getElementById('edit-price')?.value;
+          const distance = document.getElementById('edit-distance')?.value;
+          const duration = document.getElementById('edit-duration')?.value;
+          const categoriesStr = document.getElementById('edit-categories')?.value || '';
+
+          const attributes = item.attributes ? (typeof item.attributes === 'string' ? JSON.parse(item.attributes) : item.attributes) : {};
+          
+          if (rating) attributes.rating = rating;
+          if (price) attributes.price = price;
+          if (distance) attributes.distance = distance;
+          if (duration) attributes.duration = duration;
+          if (categoriesStr) {
+            attributes.categories = categoriesStr.split(',').map(c => c.trim()).filter(c => c);
+          }
+
+          updateData.attributes = attributes;
+        } else if (item.item_type === 'pet') {
+          const phone = document.getElementById('edit-phone')?.value;
+          if (phone !== undefined) updateData.phone = phone;
+
+          const petType = document.getElementById('edit-pet-type')?.value;
+          const breed = document.getElementById('edit-breed')?.value;
+          const listingType = document.getElementById('edit-listing-type')?.value;
+          const age = document.getElementById('edit-age')?.value;
+          const shortNote = document.getElementById('edit-short-note')?.value;
+          const extraNotes = document.getElementById('edit-extra-notes')?.value;
+
+          const attributes = item.attributes ? (typeof item.attributes === 'string' ? JSON.parse(item.attributes) : item.attributes) : {};
+          
+          if (petType) attributes.pet_type = petType;
+          if (breed) attributes.breed = breed;
+          if (listingType) attributes.listing_type = listingType;
+          if (age) attributes.age = age;
+          if (shortNote) attributes.short_note = shortNote;
+          if (extraNotes) attributes.extra_notes = extraNotes;
+
+          updateData.attributes = attributes;
+        } else if (item.item_type === 'hotel') {
+          const phone = document.getElementById('edit-phone')?.value;
+          if (phone !== undefined) updateData.phone = phone;
+
+          const email = document.getElementById('edit-email')?.value;
+          if (email !== undefined) updateData.email = email;
+
+          const website = document.getElementById('edit-website')?.value;
+          if (website !== undefined) updateData.website = website;
+
+          const instagram = document.getElementById('edit-instagram')?.value;
+          if (instagram !== undefined) updateData.instagram = instagram;
+
+          const location = document.getElementById('edit-location')?.value;
+          if (location !== undefined) updateData.location = location;
+
+          const hotelType = document.getElementById('edit-hotel-type')?.value;
+          const starRating = document.getElementById('edit-star-rating')?.value;
+          const roomCount = document.getElementById('edit-room-count')?.value;
+          const capacity = document.getElementById('edit-capacity')?.value;
+          const distanceToSea = document.getElementById('edit-distance-to-sea')?.value;
+          const facilitiesStr = document.getElementById('edit-facilities')?.value || '';
+
+          const attributes = item.attributes ? (typeof item.attributes === 'string' ? JSON.parse(item.attributes) : item.attributes) : {};
+          
+          if (hotelType) attributes.hotel_type = hotelType;
+          if (starRating) attributes.star_rating = starRating;
+          if (roomCount) attributes.room_count = roomCount;
+          if (capacity) attributes.capacity = capacity;
+          if (distanceToSea) attributes.distance_to_sea = distanceToSea;
+          if (facilitiesStr) {
+            attributes.facilities = facilitiesStr.split(',').map(f => f.trim()).filter(f => f);
+          }
+
+          updateData.attributes = attributes;
+        } else if (item.item_type === 'artist') {
+          const phone = document.getElementById('edit-phone')?.value;
+          if (phone !== undefined) updateData.phone = phone;
+
+          const email = document.getElementById('edit-email')?.value;
+          if (email !== undefined) updateData.email = email;
+
+          const instagram = document.getElementById('edit-instagram')?.value;
+          if (instagram !== undefined) updateData.instagram = instagram;
+
+          const website = document.getElementById('edit-website')?.value;
+          if (website !== undefined) updateData.website = website;
+
+          const youtube = document.getElementById('edit-youtube')?.value;
+          const musicLink = document.getElementById('edit-music-link')?.value;
+          const categoriesStr = document.getElementById('edit-categories')?.value || '';
+
+          const attributes = item.attributes ? (typeof item.attributes === 'string' ? JSON.parse(item.attributes) : item.attributes) : {};
+          
+          if (youtube) attributes.youtube = youtube;
+          if (musicLink) attributes.music_link = musicLink;
+          if (categoriesStr) {
+            attributes.categories = categoriesStr.split(',').map(c => c.trim()).filter(c => c);
+          }
+
+          updateData.attributes = attributes;
+        }
+
+        // Send update request
+        const response = await fetch(`/api/admin/items`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': apiKey
+          },
+          body: JSON.stringify({
+            id: item.id,
+            data: updateData
+          })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          showMessage('Başarıyla güncellendi!', 'success');
+          closeEditModal();
+          loadSubmissions();
+        } else {
+          showMessage('Hata: ' + (result.error || 'Güncellenemedi'), 'error');
+        }
+      } catch (error) {
+        showMessage('Hata: ' + error.message, 'error');
+      }
+    }
+
+    // Close modal on overlay click
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('editModal');
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeEditModal();
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>
