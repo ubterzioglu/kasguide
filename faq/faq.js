@@ -77,23 +77,123 @@
     });
   }
 
+  // Debounce function for performance
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Advanced search function with relevance scoring
+  function searchFAQ(query, data) {
+    if (!query || !query.trim()) {
+      return data.map((item, idx) => ({ item, score: 0, index: idx }));
+    }
+
+    const queryLower = query.trim().toLowerCase();
+    const queryWords = queryLower.split(/\s+/).filter(w => w.length > 0);
+
+    return data.map((item, idx) => {
+      const question = (item.question || "").toLowerCase();
+      const answer = (item.answer || "").toLowerCase();
+      const questionText = question;
+      const answerText = answer;
+      const fullText = questionText + " " + answerText;
+
+      let score = 0;
+
+      // Exact phrase match (highest priority)
+      if (fullText.includes(queryLower)) {
+        score += 100;
+        // Question exact match gets bonus
+        if (question.includes(queryLower)) {
+          score += 50;
+        }
+      }
+
+      // Word-by-word matching
+      let matchedWords = 0;
+      let questionMatches = 0;
+      let answerMatches = 0;
+
+      queryWords.forEach(word => {
+        if (word.length < 2) return; // Skip very short words
+
+        // Question matches (higher weight)
+        if (question.includes(word)) {
+          score += 20;
+          questionMatches++;
+          matchedWords++;
+        }
+        // Answer matches
+        if (answer.includes(word)) {
+          score += 10;
+          answerMatches++;
+          matchedWords++;
+        }
+      });
+
+      // Bonus for matching all words
+      if (matchedWords === queryWords.length && queryWords.length > 1) {
+        score += 30;
+      }
+
+      // Bonus for question matches (questions are more important)
+      if (questionMatches > 0) {
+        score += questionMatches * 5;
+      }
+
+      // Position bonus (earlier in question is better)
+      const questionIndex = question.indexOf(queryLower);
+      if (questionIndex >= 0) {
+        score += Math.max(0, 20 - questionIndex / 10);
+      }
+
+      return { item, score, index: idx };
+    })
+    .filter(result => result.score > 0) // Only return matches
+    .sort((a, b) => {
+      // Sort by score (descending), then by original index
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      return a.index - b.index;
+    });
+  }
+
   function applyFilter() {
-    const q = (search.value || "").trim().toLowerCase();
-    if (!q) {
+    const query = (search.value || "").trim();
+    
+    if (!query) {
       render(window.faqData);
       return;
     }
 
-    const filtered = window.faqData.filter(x => {
-      const qq = (x.question || "").toLowerCase();
-      const aa = (x.answer || "").toLowerCase();
-      return qq.includes(q) || aa.includes(q);
-    });
+    // Use advanced search with scoring
+    const results = searchFAQ(query, window.faqData);
+    const filtered = results.map(r => r.item);
 
     render(filtered);
   }
 
-  search.addEventListener("input", applyFilter);
+  // Debounced search (300ms delay for better performance)
+  const debouncedSearch = debounce(applyFilter, 300);
+  search.addEventListener("input", debouncedSearch);
+  
+  // Also trigger on Enter for immediate feedback
+  search.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      debouncedSearch.cancel?.();
+      applyFilter();
+    }
+  });
 
   // init
   setCounts(window.faqData.length, window.faqData.length);
