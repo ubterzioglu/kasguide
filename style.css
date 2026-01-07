@@ -181,27 +181,47 @@ body {
 
 .nav-mobile {
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 130px; /* Menu toggle button width (~130px) */
+  height: 100vh;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem;
-  border-top: 1px solid var(--gray-200);
+  padding: 1rem 0.75rem;
   background: white;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
 }
 
 .nav-mobile.active {
   display: flex;
+  transform: translateX(0);
+}
+
+/* Body scroll lock when menu is open - but allow horizontal scroll to see shift */
+body.menu-open {
+  overflow-x: visible;
+  /* Don't add padding, let the page shift naturally so user can see it */
 }
 
 .nav-link-mobile {
   color: var(--gray-700);
   text-decoration: none;
-  padding: 0.75rem 0;
+  padding: 0.75rem 0.5rem; /* Added horizontal padding */
   transition: color 0.3s;
   font-weight: 500;
+  font-size: 0.9rem; /* Slightly smaller to fit in narrow menu */
+  white-space: nowrap;
+  text-align: left;
 }
 
 .nav-link-mobile:hover {
   color: var(--primary-blue);
+  background: rgba(8, 145, 178, 0.05);
 }
 
 /* =====================================================
@@ -454,6 +474,7 @@ body {
   font-size: 1.875rem;
   font-weight: bold;
   color: var(--gray-800);
+  line-height: 1.2;
 }
 
 .filter-info {
@@ -1451,6 +1472,24 @@ body {
 
   .category-count {
     font-size: 0.65rem;
+  }
+
+  /* Mobile: Ensure "Kategori seç! Mekanlar aşağıda!" fits on one line */
+  .section-title {
+    font-size: 1rem; /* Smaller font for mobile to fit on one line */
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Allow wrapping if really needed on very small screens */
+  @media (max-width: 360px) {
+    .section-title {
+      font-size: 0.9rem;
+      white-space: normal;
+      line-height: 1.4;
+    }
   }
 }
 

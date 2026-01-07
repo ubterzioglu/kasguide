@@ -7,6 +7,7 @@ if (menuToggle && mobileMenu) {
   menuToggle.addEventListener('click', () => {
     const isActive = mobileMenu.classList.toggle('active');
     menuToggle.classList.toggle('active', isActive);
+    document.body.classList.toggle('menu-open', isActive);
     const menuText = menuToggle.querySelector('.menu-text');
     if (menuText) {
       menuText.textContent = isActive ? 'Menüyü Kapat' : 'Menü';
