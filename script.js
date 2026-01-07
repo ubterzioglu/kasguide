@@ -4,7 +4,14 @@
 const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 if (menuToggle && mobileMenu) {
-  menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+  menuToggle.addEventListener('click', () => {
+    const isActive = mobileMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active', isActive);
+    const menuText = menuToggle.querySelector('.menu-text');
+    if (menuText) {
+      menuText.textContent = isActive ? 'Menüyü Kapat' : 'Menü';
+    }
+  });
 }
 
 // State
@@ -68,9 +75,21 @@ function normalizeItem(item, type) {
   } else if (type === 'faqspecial') {
     base.category = ['faqspecial'];
   } else if (type === 'hotel') {
-    base.category = safeArr(base.category);
+    // Hotels: keep existing categories and add 'hotels' for filtering
+    const existingCats = safeArr(base.category);
+    if (!existingCats.includes('hotels')) {
+      base.category = [...existingCats, 'hotels'];
+    } else {
+      base.category = existingCats;
+    }
   } else if (type === 'pet') {
-    base.category = safeArr(base.category);
+    // Pets: keep existing categories and add 'pets' for filtering
+    const existingCats = safeArr(base.category);
+    if (!existingCats.includes('pets')) {
+      base.category = [...existingCats, 'pets'];
+    } else {
+      base.category = existingCats;
+    }
   } else {
     base.category = safeArr(base.category);
   }
@@ -468,6 +487,8 @@ function getItemHref(item) {
   if (item.type === 'article') return `articles/articles.html?id=${encodeURIComponent(item.id)}`;
   if (item.type === 'interview') return `interviews/interviews.html?id=${encodeURIComponent(item.id)}`;
   if (item.type === 'faqspecial') return `faqspecial/faqspecial.html?id=${encodeURIComponent(item.id)}`;
+  if (item.type === 'hotel') return `hotelsoon.html`; // Hotel detail pages coming soon
+  if (item.type === 'pet') return `pet/pet2.html?id=${encodeURIComponent(item.id)}`;
   return `places/places.html?id=${encodeURIComponent(item.id)}`;
 }
 
@@ -630,21 +651,39 @@ function applyFilters() {
   let filtered = [...allItems];
 
   const hasArticles = selectedCategories.has('articles');
-  if (hasArticles) {
-    // Articles are always included when "articles" filter is active.
-    const otherCats = new Set([...selectedCategories].filter((c) => c !== 'articles'));
+  const hasHotels = selectedCategories.has('hotels');
+  const hasPets = selectedCategories.has('pets');
 
-    const articleItems = filtered.filter((it) => it.type === 'article');
+  // Special handling for articles, hotels, and pets (type-based filtering)
+  if (hasArticles || hasHotels || hasPets) {
+    const specialCats = new Set();
+    if (hasArticles) specialCats.add('articles');
+    if (hasHotels) specialCats.add('hotels');
+    if (hasPets) specialCats.add('pets');
+
+    // Get items by type for special categories
+    const specialItems = filtered.filter((it) => {
+      if (hasArticles && it.type === 'article') return true;
+      if (hasHotels && it.type === 'hotel') return true;
+      if (hasPets && it.type === 'pet') return true;
+      return false;
+    });
+
+    // Get other selected categories (excluding special ones)
+    const otherCats = new Set([...selectedCategories].filter((c) => !specialCats.has(c)));
 
     let otherItems = [];
     if (otherCats.size > 0) {
-      // Keep the existing OR behavior for non-article items
-      otherItems = filtered.filter((it) =>
-        it.type !== 'article' && safeArr(it.category).some((c) => otherCats.has(c))
-      );
+      // Keep the existing OR behavior for non-special items
+      otherItems = filtered.filter((it) => {
+        const isSpecial = (hasArticles && it.type === 'article') ||
+                         (hasHotels && it.type === 'hotel') ||
+                         (hasPets && it.type === 'pet');
+        return !isSpecial && safeArr(it.category).some((c) => otherCats.has(c));
+      });
     }
 
-    filtered = [...articleItems, ...otherItems];
+    filtered = [...specialItems, ...otherItems];
   } else {
     // category filter: item.category intersects selectedCategories (OR behavior)
     if (selectedCategories.size > 0) {

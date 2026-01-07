@@ -26,6 +26,53 @@
     btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
+  // Update page meta tags dynamically
+  function updateMetaTags(item) {
+    if (!item) return;
+
+    const title = `${item.title || "Özel Seri"} - Kaş Guide`;
+    const description = item.description || item.longText || "Kaş hakkında özel seriler ve detaylı rehber içerikleri.";
+    const canonical = `https://kasguide.de/faqspecial/faqspecial.html?id=${item.id}`;
+
+    // Update document title
+    document.title = title;
+
+    // Update or create meta description
+    setMetaTag('name', 'description', description.substring(0, 160));
+
+    // Update canonical
+    updateCanonical(canonical);
+
+    // Update Open Graph tags
+    setMetaTag('property', 'og:title', title);
+    setMetaTag('property', 'og:description', description.substring(0, 160));
+    setMetaTag('property', 'og:url', canonical);
+
+    // Update Twitter tags
+    setMetaTag('name', 'twitter:title', title);
+    setMetaTag('name', 'twitter:description', description.substring(0, 160));
+  }
+
+  function setMetaTag(attr, name, content) {
+    let meta = document.querySelector(`meta[${attr}="${name}"]`);
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute(attr, name);
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', content);
+  }
+
+  function updateCanonical(href) {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', href);
+  }
+
   function render() {
     const root = document.getElementById("faqRoot");
     if (!root) return;
@@ -46,6 +93,9 @@
       `;
       return;
     }
+
+    // Update meta tags first
+    updateMetaTags(item);
 
     root.innerHTML = `
       <div class="faq-card">
