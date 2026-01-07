@@ -1474,7 +1474,7 @@ body.menu-open {
     font-size: 0.65rem;
   }
 
-  /* Mobile: Ensure "Kategori seç! Mekanlar aşağıda!" fits on one line */
+  /* Mobile: Ensure "Kategori seç! Sonuçlar aşağıda!" fits on one line */
   .section-title {
     font-size: 1rem; /* Smaller font for mobile to fit on one line */
     line-height: 1.3;
