@@ -653,19 +653,22 @@ function applyFilters() {
   const hasArticles = selectedCategories.has('articles');
   const hasHotels = selectedCategories.has('hotels');
   const hasPets = selectedCategories.has('pets');
+  const hasFaqSpecial = selectedCategories.has('faqspecial');
 
-  // Special handling for articles, hotels, and pets (type-based filtering)
-  if (hasArticles || hasHotels || hasPets) {
+  // Special handling for articles, hotels, pets, and faqspecial (type-based filtering)
+  if (hasArticles || hasHotels || hasPets || hasFaqSpecial) {
     const specialCats = new Set();
     if (hasArticles) specialCats.add('articles');
     if (hasHotels) specialCats.add('hotels');
     if (hasPets) specialCats.add('pets');
+    if (hasFaqSpecial) specialCats.add('faqspecial');
 
     // Get items by type for special categories
     const specialItems = filtered.filter((it) => {
       if (hasArticles && it.type === 'article') return true;
       if (hasHotels && it.type === 'hotel') return true;
       if (hasPets && it.type === 'pet') return true;
+      if (hasFaqSpecial && it.type === 'faqspecial') return true;
       return false;
     });
 
@@ -678,7 +681,8 @@ function applyFilters() {
       otherItems = filtered.filter((it) => {
         const isSpecial = (hasArticles && it.type === 'article') ||
                          (hasHotels && it.type === 'hotel') ||
-                         (hasPets && it.type === 'pet');
+                         (hasPets && it.type === 'pet') ||
+                         (hasFaqSpecial && it.type === 'faqspecial');
         return !isSpecial && safeArr(it.category).some((c) => otherCats.has(c));
       });
     }

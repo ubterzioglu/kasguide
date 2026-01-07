@@ -456,14 +456,8 @@
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="container">
-      <a class="brand" href="../../index.html" aria-label="Kaş Guide">
-        <div class="brand__title">Kaş Guide</div>
-        <div class="brand__subtitle">İçerik Ekle</div>
-      </a>
-    </div>
-  </header>
+  <!-- Header -->
+  <div id="shared-header"></div>
 
   <main class="container">
     <section class="page-head">
@@ -1170,5 +1164,12 @@
   </main>
 
   <script src="./add-item.js"></script>
+  <script src="../../lib/shared-header.js"></script>
+  <script>
+    initSharedHeader({
+      homePath: '../../index.html',
+      assetsPath: '../../assets'
+    });
+  </script>
 </body>
 </html>

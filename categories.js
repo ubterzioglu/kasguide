@@ -128,8 +128,7 @@ const categories = [
       <path d="M8 12h8"/>
       <path d="M8 16h5"/>
     </svg>`,
-    color: 'category-violet',
-    action: { type: 'page', href: 'faqspecial/faqspecial.html' }
+    color: 'category-violet'
   },
   {
     id: 'places',
