@@ -15,6 +15,32 @@ const pool = new Pool({
 
 const SITE_URL = process.env.SITE_URL || 'https://kasguide.de';
 
+/**
+ * Format date to W3C Datetime format (ISO 8601) for sitemap
+ * Accepts: Date object, ISO string, or null/undefined
+ * Returns: YYYY-MM-DD format (sitemap spec allows this simplified format)
+ */
+function formatSitemapDate(dateValue) {
+  if (!dateValue) {
+    return new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+  }
+  
+  try {
+    const date = dateValue instanceof Date ? dateValue : new Date(dateValue);
+    
+    // Check if date is valid
+    if (isNaN(date.getTime())) {
+      return new Date().toISOString().split('T')[0];
+    }
+    
+    // Return YYYY-MM-DD format (sitemap spec compliant)
+    return date.toISOString().split('T')[0];
+  } catch (err) {
+    // Fallback to current date if parsing fails
+    return new Date().toISOString().split('T')[0];
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -22,7 +48,7 @@ export default async function handler(req, res) {
 
   try {
     const urls = [];
-    const now = new Date().toISOString();
+    const now = formatSitemapDate(new Date());
 
     // Static pages - High priority
     urls.push({
@@ -129,7 +155,7 @@ export default async function handler(req, res) {
       placesResult.rows.forEach(place => {
         urls.push({
           loc: `${SITE_URL}/places/places.html?id=${place.id}`,
-          lastmod: place.updated_at || now,
+          lastmod: formatSitemapDate(place.updated_at),
           changefreq: 'monthly',
           priority: '0.8'
         });
@@ -151,7 +177,7 @@ export default async function handler(req, res) {
       hotelsResult.rows.forEach(hotel => {
         urls.push({
           loc: `${SITE_URL}/hotel/hotel.html?id=${hotel.id}`,
-          lastmod: hotel.updated_at || now,
+          lastmod: formatSitemapDate(hotel.updated_at),
           changefreq: 'monthly',
           priority: '0.7'
         });
@@ -173,7 +199,7 @@ export default async function handler(req, res) {
       petsResult.rows.forEach(pet => {
         urls.push({
           loc: `${SITE_URL}/pet/pet.html?id=${pet.id}`,
-          lastmod: pet.updated_at || now,
+          lastmod: formatSitemapDate(pet.updated_at),
           changefreq: 'monthly',
           priority: '0.7'
         });
@@ -195,7 +221,7 @@ export default async function handler(req, res) {
       articlesResult.rows.forEach(article => {
         urls.push({
           loc: `${SITE_URL}/articles/articles.html?id=${article.id}`,
-          lastmod: article.updated_at || now,
+          lastmod: formatSitemapDate(article.updated_at),
           changefreq: 'monthly',
           priority: '0.7'
         });
@@ -217,7 +243,7 @@ export default async function handler(req, res) {
       interviewsResult.rows.forEach(interview => {
         urls.push({
           loc: `${SITE_URL}/interviews/interviews.html?id=${interview.id}`,
-          lastmod: interview.updated_at || now,
+          lastmod: formatSitemapDate(interview.updated_at),
           changefreq: 'monthly',
           priority: '0.7'
         });
@@ -239,7 +265,7 @@ export default async function handler(req, res) {
       faqSpecialResult.rows.forEach(faq => {
         urls.push({
           loc: `${SITE_URL}/faqspecial/faqspecial.html?id=${faq.id}`,
-          lastmod: faq.updated_at || now,
+          lastmod: formatSitemapDate(faq.updated_at),
           changefreq: 'monthly',
           priority: '0.7'
         });

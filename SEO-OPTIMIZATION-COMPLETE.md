@@ -9,7 +9,7 @@
 
 ### 1. XML Sitemap (HIGH) ✅
 
-**Status**: Enhanced and complete
+**Status**: Enhanced, complete, and validated
 
 **Added Pages**:
 - `/emergency/emergency.html`
@@ -26,6 +26,13 @@
 - ✅ Articles (from articles table)
 - ✅ Interviews (from interviews table)
 - ✅ FAQ Special Series (from faqspecial table)
+
+**Date Formatting Fix** (2026-01-07):
+- ✅ Fixed invalid date format errors (85 instances)
+- ✅ Added `formatSitemapDate()` helper function
+- ✅ All dates now in W3C Datetime format (YYYY-MM-DD)
+- ✅ Handles Date objects, ISO strings, and null values
+- ✅ Validates and falls back to current date if invalid
 
 **Access**: `https://kasguide.de/sitemap.xml` (via `/api/sitemap.xml.js`)
 
