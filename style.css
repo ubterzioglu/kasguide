@@ -117,6 +117,17 @@ body {
   background-clip: text;
 }
 
+/* Email obfuscation - basic protection */
+.email-link {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
 .nav-desktop {
   display: none;
   gap: 1.5rem;
@@ -278,6 +289,10 @@ body {
   background-image: url('../assets/0_img/clip_home_bg.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  /* Optimize hero image loading */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .hero-overlay {
@@ -1014,7 +1029,7 @@ body {
   color: white;
 }
 
-.link-card h4 {
+.link-card .link-title {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -1034,7 +1049,7 @@ body {
   margin-top: 2rem;
 }
 
-.quick-links-guide h4 {
+.quick-links-guide h3 {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -1182,7 +1197,7 @@ body {
   color: var(--gray-500);
 }
 
-.no-results h4 {
+.no-results h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--gray-600);

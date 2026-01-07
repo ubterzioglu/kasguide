@@ -499,7 +499,7 @@ function renderCards() {
   if (!filteredItems.length) {
     cardsGrid.innerHTML = `
       <div class="no-results">
-        <h4>Sonuç bulunamadı</h4>
+        <h3>Sonuç bulunamadı</h3>
         <p>Arama kriterlerinize uygun içerik bulunamadı. Filtreleri temizlemeyi deneyin.</p>
       </div>
     `;
@@ -525,14 +525,14 @@ function renderCards() {
       const author = item.author || '';
       card.innerHTML = `
         <div class="card-image-wrapper">
-          <img src="${img}" alt="${item.title || ''}" class="card-image" loading="lazy">
+          <img src="${img}" alt="${item.title || ''}" class="card-image" loading="lazy" width="400" height="300" style="aspect-ratio: 4/3; object-fit: cover;">
           <div class="card-badge card-badge-article">Yazı</div>
         </div>
 
         <div class="card-content">
-          <h4 class="card-title">
+          <h3 class="card-title">
             <a class="card-title-link" href="${href}">${item.title || ''}</a>
-          </h4>
+          </h3>
           <p class="card-description">${item.description || ''}</p>
 
           <div class="card-meta article-meta">

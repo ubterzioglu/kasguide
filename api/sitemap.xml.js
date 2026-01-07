@@ -74,6 +74,48 @@ export default async function handler(req, res) {
       priority: '0.8'
     });
 
+    urls.push({
+      loc: `${SITE_URL}/emergency/emergency.html`,
+      lastmod: now,
+      changefreq: 'monthly',
+      priority: '0.7'
+    });
+
+    urls.push({
+      loc: `${SITE_URL}/bizkimiz/bizkimiz.html`,
+      lastmod: now,
+      changefreq: 'monthly',
+      priority: '0.8'
+    });
+
+    urls.push({
+      loc: `${SITE_URL}/interviews/interviews.html`,
+      lastmod: now,
+      changefreq: 'weekly',
+      priority: '0.8'
+    });
+
+    urls.push({
+      loc: `${SITE_URL}/fastlink/pop10/pop10.html`,
+      lastmod: now,
+      changefreq: 'weekly',
+      priority: '0.7'
+    });
+
+    urls.push({
+      loc: `${SITE_URL}/fastlink/familyfriendly/familyfriendly.html`,
+      lastmod: now,
+      changefreq: 'weekly',
+      priority: '0.7'
+    });
+
+    urls.push({
+      loc: `${SITE_URL}/fastlink/freeentrance/freeentrance.html`,
+      lastmod: now,
+      changefreq: 'weekly',
+      priority: '0.7'
+    });
+
     // Dynamic pages from database - Places
     try {
       const placesQuery = `
@@ -144,22 +186,66 @@ export default async function handler(req, res) {
     try {
       const articlesQuery = `
         SELECT id, updated_at
-        FROM items
-        WHERE item_type = 'article' AND status = 'approved'
+        FROM articles
+        WHERE status = 'approved' OR status = 'active'
         ORDER BY updated_at DESC
       `;
       const articlesResult = await pool.query(articlesQuery);
 
       articlesResult.rows.forEach(article => {
         urls.push({
-          loc: `${SITE_URL}/articles/article.html?id=${article.id}`,
+          loc: `${SITE_URL}/articles/articles.html?id=${article.id}`,
           lastmod: article.updated_at || now,
           changefreq: 'monthly',
-          priority: '0.6'
+          priority: '0.7'
         });
       });
     } catch (err) {
       console.error('Error fetching articles for sitemap:', err);
+    }
+
+    // Dynamic pages from database - Interviews
+    try {
+      const interviewsQuery = `
+        SELECT id, updated_at
+        FROM interviews
+        WHERE status = 'approved' OR status = 'active'
+        ORDER BY updated_at DESC
+      `;
+      const interviewsResult = await pool.query(interviewsQuery);
+
+      interviewsResult.rows.forEach(interview => {
+        urls.push({
+          loc: `${SITE_URL}/interviews/interviews.html?id=${interview.id}`,
+          lastmod: interview.updated_at || now,
+          changefreq: 'monthly',
+          priority: '0.7'
+        });
+      });
+    } catch (err) {
+      console.error('Error fetching interviews for sitemap:', err);
+    }
+
+    // Dynamic pages from database - FAQ Special Series
+    try {
+      const faqSpecialQuery = `
+        SELECT id, updated_at
+        FROM faqspecial
+        WHERE status = 'approved' OR status = 'active'
+        ORDER BY updated_at DESC
+      `;
+      const faqSpecialResult = await pool.query(faqSpecialQuery);
+
+      faqSpecialResult.rows.forEach(faq => {
+        urls.push({
+          loc: `${SITE_URL}/faqspecial/faqspecial.html?id=${faq.id}`,
+          lastmod: faq.updated_at || now,
+          changefreq: 'monthly',
+          priority: '0.7'
+        });
+      });
+    } catch (err) {
+      console.error('Error fetching FAQ special for sitemap:', err);
     }
 
     // Generate XML
