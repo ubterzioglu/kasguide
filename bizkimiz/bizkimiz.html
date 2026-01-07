@@ -52,11 +52,22 @@
       margin-bottom: 2rem;
     }
 
-    .logo-img {
+    /* Only apply large logo to about-card, not header */
+    .about-card .logo-img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Ensure header logo stays small */
+    .header .logo-img {
+      width: 34px !important;
+      height: 34px !important;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
     }
 
     .about-title {
