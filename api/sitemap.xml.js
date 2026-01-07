@@ -42,8 +42,10 @@ function formatSitemapDate(dateValue) {
 }
 
 export default async function handler(req, res) {
+  // Only allow GET requests
   if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    res.setHeader('Allow', 'GET');
+    return res.status(405).send('Method Not Allowed');
   }
 
   try {
@@ -277,10 +279,19 @@ export default async function handler(req, res) {
     // Generate XML
     const xml = generateSitemapXML(urls);
 
-    // Set headers for XML
+    // Validate XML is not empty
+    if (!xml || xml.trim().length === 0) {
+      console.error('Generated empty sitemap XML');
+      return res.status(500).send('Error: Empty sitemap generated');
+    }
+
+    // Set headers for XML - critical for Google Search Console
+    // Use text/xml as fallback for better compatibility
     res.setHeader('Content-Type', 'application/xml; charset=utf-8');
     res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+    res.setHeader('X-Content-Type-Options', 'nosniff');
 
+    // Ensure proper XML response with status 200
     return res.status(200).send(xml);
 
   } catch (error) {
@@ -290,19 +301,37 @@ export default async function handler(req, res) {
 }
 
 function generateSitemapXML(urls) {
+  // Ensure valid XML structure per sitemaps.org protocol
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   urls.forEach(url => {
+    // Validate URL before adding
+    if (!url.loc || typeof url.loc !== 'string') {
+      console.warn('Skipping invalid URL in sitemap:', url);
+      return;
+    }
+
     xml += '  <url>\n';
     xml += `    <loc>${escapeXml(url.loc)}</loc>\n`;
-    xml += `    <lastmod>${url.lastmod}</lastmod>\n`;
-    xml += `    <changefreq>${url.changefreq}</changefreq>\n`;
-    xml += `    <priority>${url.priority}</priority>\n`;
+    
+    // Only include lastmod if it's a valid date string
+    if (url.lastmod && typeof url.lastmod === 'string' && url.lastmod.match(/^\d{4}-\d{2}-\d{2}$/)) {
+      xml += `    <lastmod>${escapeXml(url.lastmod)}</lastmod>\n`;
+    }
+    
+    // changefreq and priority are optional but recommended
+    if (url.changefreq) {
+      xml += `    <changefreq>${escapeXml(url.changefreq)}</changefreq>\n`;
+    }
+    if (url.priority) {
+      xml += `    <priority>${escapeXml(url.priority)}</priority>\n`;
+    }
+    
     xml += '  </url>\n';
   });
 
-  xml += '</urlset>';
+  xml += '</urlset>\n';
   return xml;
 }
 
