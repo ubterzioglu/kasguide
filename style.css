@@ -634,7 +634,7 @@ body.menu-open {
 /* Categories Section */
 .categories-section {
   background: white;
-  padding: 2rem 0;
+  padding: 2rem 0 1rem 0; /* Alt padding azaltıldı */
   position: relative;
   z-index: 2;
 }
@@ -740,17 +740,17 @@ body.menu-open {
 
 /* Quick Actions (compact, under categories) */
 .quick-actions{
-  padding: 1.5rem 0 0.5rem;
+  padding: 0.75rem 0 0.5rem; /* Üst ve alt padding azaltıldı */
   background: linear-gradient(to bottom, #ffffff, var(--gray-50));
 }
 
 .quick-actions-header{
-  text-align: center;
-  margin-bottom: 1rem;
+  text-align: left; /* Sola yatırıldı */
+  margin-bottom: 0.5rem; /* Alt mesafe azaltıldı */
 }
 
 .quick-actions-title{
-  font-size: 1.1rem;
+  font-size: 0.95rem; /* Yazı boyutu küçültüldü */
   font-weight: 600;
   color: var(--gray-800);
   margin-bottom: 0.25rem;
@@ -872,7 +872,7 @@ body.menu-open {
 }
 
 .cards-container {
-  margin-top: 2rem;
+  margin-top: 1rem; /* Üst mesafe azaltıldı */
 }
 
 .cards-grid {
