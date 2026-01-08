@@ -84,6 +84,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  position: relative;
 }
 
 .logo {
@@ -91,6 +92,21 @@ body {
   align-items: center;
   gap: 0.5rem;
   margin-right: 4.25rem; /* Two icon widths spacing from nav items (2 * 34px ≈ 68px) */
+}
+
+.logo-centered {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 1;
+}
+
+/* Ana sayfa için logo ortalaması (nav-desktop varsa) */
+.header-content:has(.nav-desktop) .logo-centered {
+  position: static;
+  transform: none;
+  margin: 0 auto;
 }
 
 .logo-img{
