@@ -28,6 +28,7 @@
       --primary-cyan: #06b6d4;
       --primary-green: #10b981;
       --primary-orange: #f97316;
+      --primary-violet: #8b5cf6;
       --gray-50: #f9fafb;
       --gray-100: #f3f4f6;
       --gray-200: #e5e7eb;
@@ -86,24 +87,96 @@
     }
 
     .action-btn {
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.95);
       display: flex;
       align-items: center;
       justify-content: center;
+      border: none;
+      padding: 0;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
       text-decoration: none;
+    }
+
+    .action-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(8, 145, 178, 0.1);
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease;
+    }
+
+    .action-btn:hover::before {
+      width: 100%;
+      height: 100%;
+    }
+
+    .action-btn svg {
+      width: 20px;
+      height: 20px;
+      color: var(--primary-blue);
+      position: relative;
+      z-index: 1;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .action-btn-home {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.15));
+    }
+
+    .action-btn-home svg {
+      color: var(--primary-green);
+    }
+
+    .action-btn-home:hover {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.25));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25), 0 3px 8px rgba(5, 150, 105, 0.2);
+    }
+
+    .action-btn-home:hover svg {
+      color: #059669;
+      transform: scale(1.1);
+    }
+
+    .action-btn-up {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(124, 58, 237, 0.15));
+    }
+
+    .action-btn-up svg {
+      color: var(--primary-violet);
+    }
+
+    .action-btn-up:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(124, 58, 237, 0.25));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.25), 0 3px 8px rgba(124, 58, 237, 0.2);
+    }
+
+    .action-btn-up:hover svg {
+      color: #7c3aed;
+      transform: scale(1.1) translateY(-2px);
     }
 
     .action-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      background: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18), 0 4px 8px rgba(0, 0, 0, 0.14);
+    }
+
+    .action-btn:active {
+      transform: scale(0.95) translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
     }
 
     .logo {
@@ -135,6 +208,149 @@
       padding: 0 !important;
       line-height: 1.2;
       display: block;
+    }
+
+    /* Menu Toggle Button - Ana sayfadaki gibi */
+    .menu-toggle {
+      display: block;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      border: none;
+      cursor: pointer;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      color: white;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3), 0 2px 4px rgba(76, 175, 80, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-toggle::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease;
+    }
+
+    .menu-toggle:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .menu-toggle:hover {
+      background: linear-gradient(135deg, #45a049, #4CAF50);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(76, 175, 80, 0.4), 0 3px 8px rgba(76, 175, 80, 0.3);
+    }
+
+    .menu-toggle.active {
+      background: linear-gradient(135deg, #f44336, #d32f2f);
+      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3), 0 2px 4px rgba(211, 47, 47, 0.2);
+    }
+
+    .menu-toggle.active:hover {
+      background: linear-gradient(135deg, #d32f2f, #f44336);
+      box-shadow: 0 6px 18px rgba(244, 67, 54, 0.4), 0 3px 8px rgba(211, 47, 47, 0.3);
+    }
+
+    .menu-text {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Mobile Menu - Ana sayfadaki gibi */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 130px;
+      height: 100vh;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 0.75rem;
+      background: white;
+      box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-mobile.active {
+      display: flex;
+      transform: translateX(0);
+    }
+
+    body.menu-open {
+      overflow-x: visible;
+    }
+
+    .nav-link-mobile {
+      color: var(--gray-700);
+      text-decoration: none;
+      padding: 0.75rem 0.5rem;
+      transition: color 0.3s;
+      font-weight: 500;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      text-align: left;
+      border: none;
+      background: none;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+    }
+
+    .nav-link-mobile:hover {
+      color: var(--primary-blue);
+      background: rgba(8, 145, 178, 0.05);
+    }
+
+    .nav-close-btn {
+      background: linear-gradient(135deg, #f44336, #d32f2f) !important;
+      color: white !important;
+      font-weight: 600 !important;
+      font-size: 0.85rem !important;
+      padding: 0.5rem 0.75rem !important;
+      border-radius: 6px !important;
+      margin-bottom: 0.5rem !important;
+      text-align: center !important;
+      box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .nav-close-btn:hover {
+      background: linear-gradient(135deg, #d32f2f, #f44336) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4) !important;
+    }
+
+    .nav-link-alert {
+      color: #f44336 !important;
+      font-weight: 600;
+    }
+
+    /* Desktop'ta menü toggle gizle */
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+      
+      .nav-mobile {
+        display: none !important;
+      }
     }
 
     /* Hero */
@@ -399,7 +615,49 @@
 </head>
 <body>
   <!-- Header -->
-  <div id="shared-header"></div>
+  <header class="header">
+    <div class="container header-content">
+      <!-- LEFT ACTIONS -->
+      <div class="header-actions">
+        <a href="../index.html" class="action-btn action-btn-home" aria-label="Ana Sayfa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </a>
+        <button class="action-btn action-btn-up back-to-top" aria-label="Başa Dön" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide" width="34" height="34">
+        <h1 class="logo-text">Kaş Guide</h1>
+      </div>
+
+      <!-- RIGHT ACTIONS (Menu Toggle - Sadece Mobilde) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü">
+        <span class="menu-text">Menü</span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="nav-mobile" id="mobileMenu">
+      <button class="nav-link-mobile nav-close-btn" id="mobileMenuClose" type="button">Menüyü Kapat</button>
+      <a href="../index.html" class="nav-link-mobile">Ana Sayfa</a>
+      <a href="../index.html#cards-section" class="nav-link-mobile">Keşfet</a>
+      <a href="../index.html#categories" class="nav-link-mobile">Kategoriler</a>
+      <a href="../index.html#stats" class="nav-link-mobile">İstatistikler</a>
+      <a href="../index.html#quick-links" class="nav-link-mobile">Hızlı Erişim</a>
+      <a href="../bizkimiz/bizkimiz.html" class="nav-link-mobile">Biz kimiz?</a>
+      <a href="contact.html" class="nav-link-mobile">İletişim</a>
+      <a href="../emergency/emergency.html" class="nav-link-mobile nav-link-alert">🚨 Acil Durum!</a>
+    </nav>
+  </header>
 
   <!-- Hero -->
   <section class="hero">
@@ -674,12 +932,36 @@
     });
   </script>
 
-  <script src="../lib/shared-header.js"></script>
+  <!-- Mobile Menu Toggle Script -->
   <script>
-    initSharedHeader({
-      homePath: '../index.html',
-      assetsPath: '../assets'
-    });
+    // Mobile menu toggle - Ana sayfadaki gibi
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+    function closeMobileMenu() {
+      if (mobileMenu) mobileMenu.classList.remove('active');
+      if (menuToggle) menuToggle.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      const menuText = menuToggle?.querySelector('.menu-text');
+      if (menuText) menuText.textContent = 'Menü';
+    }
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isActive = mobileMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active', isActive);
+        document.body.classList.toggle('menu-open', isActive);
+        const menuText = menuToggle.querySelector('.menu-text');
+        if (menuText) {
+          menuText.textContent = 'Menü';
+        }
+      });
+    }
+
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
   </script>
 
   <!-- GoatCounter Analytics -->
