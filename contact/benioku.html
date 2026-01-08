@@ -65,19 +65,21 @@
 
     /* Header */
     .header {
-      background: rgba(255, 255, 255, 0.95);
+      background: #21a8ff; /* Mavi arkaplan */
       backdrop-filter: blur(10px);
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       padding: 1rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .header-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
 
     .header-actions {
@@ -186,24 +188,22 @@
       text-decoration: none;
     }
 
-    .header .logo-img {
-      width: 34px !important;
-      height: 34px !important;
-      object-fit: contain !important;
-      display: block !important;
-      border-radius: 0 !important;
-      border: none !important;
-      box-shadow: none !important;
+    .header .logo-centered {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      z-index: 1;
     }
 
     .header .logo-text {
-      font-size: 1.25rem !important;
+      font-size: 1.5rem !important;
       font-weight: bold;
-      background: linear-gradient(to right, var(--primary-blue), #2563eb);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
+      color: white !important; /* Mavi arkaplan üzerinde beyaz yazı */
+      background: none !important;
+      background-clip: unset !important;
+      -webkit-background-clip: unset !important;
+      -webkit-text-fill-color: white !important;
       margin: 0 !important;
       padding: 0 !important;
       line-height: 1.2;
@@ -633,10 +633,9 @@
         </button>
       </div>
 
-      <!-- LOGO -->
-      <div class="logo">
-        <img class="logo-img" src="../assets/0_img/logokasguide.png" alt="Kaş Guide" width="34" height="34">
-        <h1 class="logo-text">Kaş Guide</h1>
+      <!-- LOGO (Sadece "Kaş" yazısı, ortada) -->
+      <div class="logo logo-centered">
+        <h1 class="logo-text">Kaş</h1>
       </div>
 
       <!-- RIGHT ACTIONS (Menu Toggle - Sadece Mobilde) -->

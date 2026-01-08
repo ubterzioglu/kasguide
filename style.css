@@ -73,10 +73,31 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: #21a8ff; /* Alt sayfalar için mavi arkaplan */
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-sm);
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ana sayfa için beyaz header (override) - nav-desktop varsa ana sayfadır */
+.header:has(+ .nav-desktop),
+body:has(.nav-desktop) .header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid var(--gray-200) !important;
+}
+
+body:has(.nav-desktop) .header .logo-text {
+  color: transparent !important;
+  background: linear-gradient(to right, var(--primary-blue), #2563eb) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body:has(.nav-desktop) .header .logo-centered {
+  position: static;
+  transform: none;
+  margin: 0 auto;
 }
 
 .header-content {
@@ -84,6 +105,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  position: relative;
 }
 
 .logo {
@@ -91,6 +113,14 @@ body {
   align-items: center;
   gap: 0.5rem;
   margin-right: 4.25rem; /* Two icon widths spacing from nav items (2 * 34px ≈ 68px) */
+}
+
+.logo-centered {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 1;
 }
 
 
@@ -112,10 +142,12 @@ body {
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
-  background: linear-gradient(to right, var(--primary-blue), #2563eb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* Varsayılan: Alt sayfalar için beyaz yazı (mavi arkaplan) */
+  color: white;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: white;
+  background-clip: unset;
 }
 
 /* Email obfuscation - basic protection */
