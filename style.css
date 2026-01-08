@@ -102,13 +102,6 @@ body {
   z-index: 1;
 }
 
-/* Ana sayfa için logo ortalaması (nav-desktop varsa) */
-.header-content:has(.nav-desktop) .logo-centered {
-  position: static;
-  transform: none;
-  margin: 0 auto;
-}
-
 .logo-img{
   width: 34px;
   height: 34px;
