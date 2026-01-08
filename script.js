@@ -3,6 +3,16 @@
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+function closeMobileMenu() {
+  if (mobileMenu) mobileMenu.classList.remove('active');
+  if (menuToggle) menuToggle.classList.remove('active');
+  document.body.classList.remove('menu-open');
+  const menuText = menuToggle?.querySelector('.menu-text');
+  if (menuText) menuText.textContent = 'Menü';
+}
+
 if (menuToggle && mobileMenu) {
   menuToggle.addEventListener('click', () => {
     const isActive = mobileMenu.classList.toggle('active');
@@ -10,9 +20,14 @@ if (menuToggle && mobileMenu) {
     document.body.classList.toggle('menu-open', isActive);
     const menuText = menuToggle.querySelector('.menu-text');
     if (menuText) {
-      menuText.textContent = isActive ? 'Menüyü Kapat' : 'Menü';
+      menuText.textContent = isActive ? 'Menü' : 'Menü';
     }
   });
+}
+
+// Close button inside menu
+if (mobileMenuClose) {
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
 }
 
 // State

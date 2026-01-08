@@ -217,11 +217,34 @@ body.menu-open {
   font-size: 0.9rem; /* Slightly smaller to fit in narrow menu */
   white-space: nowrap;
   text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
 }
 
 .nav-link-mobile:hover {
   color: var(--primary-blue);
   background: rgba(8, 145, 178, 0.05);
+}
+
+.nav-close-btn {
+  background: linear-gradient(135deg, #f44336, #d32f2f) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important; /* Smaller than menu toggle button */
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 6px !important;
+  margin-bottom: 0.5rem !important;
+  text-align: center !important;
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3) !important;
+}
+
+.nav-close-btn:hover {
+  background: linear-gradient(135deg, #d32f2f, #f44336) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4) !important;
 }
 
 /* =====================================================
