@@ -209,7 +209,7 @@ body {
 
 .nav-mobile,
 .shared-nav-mobile {
-  display: none;
+  display: none !important;
   position: fixed;
   top: 0;
   right: 0;
@@ -224,12 +224,17 @@ body {
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform 0.3s ease;
+  /* Ensure menu is never visible inside header */
+  visibility: hidden;
+  opacity: 0;
 }
 
 .nav-mobile.active,
 .shared-nav-mobile.active {
-  display: flex;
+  display: flex !important;
   transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Body scroll lock when menu is open - but allow horizontal scroll to see shift */
