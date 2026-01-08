@@ -28,6 +28,7 @@
   "dependencies": {
     "@vercel/blob": "^2.0.0",
     "@vercel/postgres": "^0.10.0",
+    "dotenv": "^17.2.3",
     "formidable": "^3.5.2",
     "nodemailer": "^6.9.16",
     "pg": "^8.16.3"
@@ -43,5 +44,17 @@
     "database"
   ],
   "author": "Kaş Guide Team",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "main": "categories.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubterzioglu/kasguide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ubterzioglu/kasguide/issues"
+  },
+  "homepage": "https://github.com/ubterzioglu/kasguide#readme"
 }
