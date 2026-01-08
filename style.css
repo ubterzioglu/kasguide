@@ -1162,34 +1162,41 @@ body.menu-open {
 @media (max-width: 640px){
   .stats-overview{ 
     grid-template-columns: repeat(5, minmax(0, 1fr)); /* Mobilde 5 kart tek satır */
-    gap: 0.4rem; /* Çok küçük gap */
+    gap: 0.3rem; /* Çok küçük gap */
   }
   
   .stat-card,
   .big-stat-card {
-    padding: 0.6rem 0.4rem; /* Küçük padding */
+    padding: 0.5rem 0.3rem; /* Daha küçük padding */
   }
   
   .stat-icon {
-    width: 1.5rem; /* Icon küçültüldü */
-    height: 1.5rem;
+    display: none; /* Icon'lar kaldırıldı */
   }
   
   .stat-number {
-    font-size: 1rem; /* Sayı küçültüldü */
+    font-size: 0.85rem; /* Sayı daha küçük */
+    font-weight: 700;
   }
   
   .stat-label {
-    font-size: 0.65rem; /* Label küçültüldü */
+    font-size: 0.55rem; /* Label daha küçük */
+    line-height: 1.2;
   }
   
   .big-stat-label {
-    font-size: 0.65rem; /* Big stat label küçültüldü */
-    margin-bottom: 0.2rem;
+    font-size: 0.55rem; /* Big stat label daha küçük */
+    margin-bottom: 0.15rem;
+    line-height: 1.2;
   }
   
   .big-stat-value {
-    font-size: 1.2rem; /* Big stat value küçültüldü */
+    font-size: 1rem; /* Big stat value daha küçük */
+    font-weight: 800;
+  }
+  
+  .stat-content {
+    gap: 0.2rem; /* İçerideki gap azaltıldı */
   }
 }
 
