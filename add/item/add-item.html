@@ -12,6 +12,161 @@
   <link rel="stylesheet" href="../shared/components.css">
 
   <style>
+    /* Header Styles - Standardized for alt pages */
+    .header {
+      background: white !important;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .action-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .action-btn svg {
+      width: 20px;
+      height: 20px;
+      color: #374151;
+    }
+
+    .logo-centered {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      z-index: 1;
+    }
+
+    .logo-text {
+      color: #21a8ff !important;
+      text-shadow: 0 2px 8px rgba(33, 168, 255, 0.2);
+      letter-spacing: 0.5px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .menu-toggle {
+      display: none; /* Desktop'ta gizli */
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.25s ease;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .menu-toggle:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .menu-text {
+      display: block;
+    }
+
+    /* Mobile Menu */
+    .nav-mobile {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 50%;
+      height: 100vh;
+      background: white;
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+      z-index: 9999;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+
+    .nav-mobile.active {
+      right: 0;
+    }
+
+    .nav-link-mobile {
+      display: block;
+      padding: 1rem;
+      color: #374151;
+      text-decoration: none;
+      border-bottom: 1px solid #e5e7eb;
+      transition: background 0.2s;
+    }
+
+    .nav-link-mobile:hover {
+      background: #f3f4f6;
+    }
+
+    .nav-close-btn {
+      width: 100%;
+      text-align: center;
+      font-weight: 600;
+      background: #f3f4f6;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+    }
+
+    /* Mobile only - show menu toggle and mobile menu */
+    @media (max-width: 767px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .nav-mobile {
+        display: block;
+      }
+    }
+
+    /* Desktop - hide mobile menu and menu toggle */
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none !important;
+      }
+      
+      .nav-mobile {
+        display: none !important;
+      }
+    }
+
     /* Type Selection Cards */
     .type-selection {
       display: grid;
