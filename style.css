@@ -661,8 +661,8 @@ body.menu-open {
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* MOBİLDE 3 */
-  gap: 0.75rem; /* biraz sıkı, mobil için daha iyi */
+  grid-template-columns: repeat(4, 1fr); /* MOBİLDE 4 */
+  gap: 0.5rem; /* 4 sütun için daha sıkı gap */
 }
 
 .category-card {
@@ -1870,21 +1870,29 @@ body.menu-open {
 
 
 @media (max-width: 639px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr); /* Mobilde 4 sütun */
+    gap: 0.4rem; /* Daha sıkı gap */
+  }
+
   .category-card {
-    padding: 0.75rem;
+    padding: 0.6rem 0.4rem; /* Daha küçük padding */
+    gap: 0.35rem; /* İçerideki gap'i de küçült */
   }
 
   .category-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem; /* Daha küçük icon */
+    height: 1.25rem;
   }
 
   .category-name {
-    font-size: 0.75rem;
+    font-size: 0.7rem; /* Daha küçük font */
+    line-height: 1.2;
   }
 
   .category-count {
-    font-size: 0.65rem;
+    font-size: 0.6rem; /* Daha küçük count */
+    padding: 0.2rem 0.4rem;
   }
 
   /* Mobile: Ensure "Kategori seç! Sonuçlar aşağıda!" fits on one line */
