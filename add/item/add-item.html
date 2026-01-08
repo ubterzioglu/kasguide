@@ -15,10 +15,13 @@
     /* Header Styles - Standardized for alt pages */
     .header {
       background: white !important;
-      border-bottom: 1px solid #e5e7eb;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 1rem 0;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .header-content {
@@ -47,21 +50,87 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
       text-decoration: none;
     }
 
-    .action-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.12);
+    .action-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(8, 145, 178, 0.1);
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease;
+    }
+
+    .action-btn:hover::before {
+      width: 100%;
+      height: 100%;
     }
 
     .action-btn svg {
       width: 20px;
       height: 20px;
-      color: #374151;
+      color: var(--primary-blue, #0891b2);
+      position: relative;
+      z-index: 1;
+      transition: color 0.25s ease, transform 0.25s ease;
     }
 
-    .logo-centered {
+    .action-btn-home {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.15));
+    }
+
+    .action-btn-home svg {
+      color: var(--primary-green, #10b981);
+    }
+
+    .action-btn-home:hover {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.25));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25), 0 3px 8px rgba(5, 150, 105, 0.2);
+    }
+
+    .action-btn-home:hover svg {
+      color: #059669;
+      transform: scale(1.1);
+    }
+
+    .action-btn-up {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(124, 58, 237, 0.15));
+    }
+
+    .action-btn-up svg {
+      color: var(--primary-violet, #8b5cf6);
+    }
+
+    .action-btn-up:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(124, 58, 237, 0.25));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.25), 0 3px 8px rgba(124, 58, 237, 0.2);
+    }
+
+    .action-btn-up:hover svg {
+      color: #7c3aed;
+      transform: scale(1.1) translateY(-2px);
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18), 0 4px 8px rgba(0, 0, 0, 0.14);
+    }
+
+    .action-btn:active {
+      transform: scale(0.95) translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .header .logo-centered {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -70,34 +139,69 @@
     }
 
     .logo-text {
+      font-size: 1.5rem !important;
+      font-weight: bold;
       color: #21a8ff !important;
+      background: none !important;
+      background-clip: unset !important;
+      -webkit-background-clip: unset !important;
+      -webkit-text-fill-color: #21a8ff !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.2;
+      display: block;
       text-shadow: 0 2px 8px rgba(33, 168, 255, 0.2);
       letter-spacing: 0.5px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0;
     }
 
     .menu-toggle {
-      display: none; /* Desktop'ta gizli */
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.95);
+      display: block;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: all 0.25s ease;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
       font-weight: 600;
-      color: #374151;
+      font-size: 15px;
+      color: white;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3), 0 2px 4px rgba(76, 175, 80, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-toggle::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease;
+    }
+
+    .menu-toggle:hover::before {
+      width: 300px;
+      height: 300px;
     }
 
     .menu-toggle:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.12);
+      background: linear-gradient(135deg, #45a049, #4CAF50);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(76, 175, 80, 0.4), 0 3px 8px rgba(76, 175, 80, 0.3);
+    }
+
+    .menu-toggle.active {
+      background: linear-gradient(135deg, #f44336, #d32f2f);
+      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3), 0 2px 4px rgba(211, 47, 47, 0.2);
+    }
+
+    .menu-toggle.active:hover {
+      background: linear-gradient(135deg, #d32f2f, #f44336);
+      box-shadow: 0 6px 18px rgba(244, 67, 54, 0.4), 0 3px 8px rgba(211, 47, 47, 0.3);
     }
 
     .menu-text {
@@ -145,18 +249,14 @@
       border-radius: 8px;
     }
 
-    /* Mobile only - show menu toggle and mobile menu */
+    /* Mobile only - show mobile menu */
     @media (max-width: 767px) {
-      .menu-toggle {
-        display: flex;
-      }
-      
       .nav-mobile {
         display: block;
       }
     }
 
-    /* Desktop - hide mobile menu and menu toggle */
+    /* Desktop - hide mobile menu */
     @media (min-width: 768px) {
       .menu-toggle {
         display: none !important;
