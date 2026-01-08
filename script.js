@@ -59,8 +59,10 @@ const filterJumpBtn = document.getElementById('filterJump');
 
 function updateFilterJumpVisibility() {
   if (!filterJumpBtn) return;
-  const visible = selectedCategories.size > 0 || (searchQuery || '').trim().length > 0;
-  filterJumpBtn.classList.toggle('is-visible', visible);
+  const hasFilter = selectedCategories.size > 0 || (searchQuery || '').trim().length > 0;
+  filterJumpBtn.classList.toggle('is-visible', hasFilter);
+  // Filtre seçilmişse yeşil, seçilmemişse kırmızı
+  filterJumpBtn.classList.toggle('has-filter', hasFilter);
 }
 
 function scrollToCategories() {

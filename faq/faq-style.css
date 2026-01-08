@@ -2,6 +2,25 @@
 
 /* Kaş Guide – FAQ page styles (on top of global style.css) */
 
+/* Header için özel stiller */
+.header-content {
+  position: relative;
+}
+
+.header .logo-centered {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 1;
+}
+
+.header .logo-text {
+  color: #21a8ff !important;
+  text-shadow: 0 2px 8px rgba(33, 168, 255, 0.2);
+  letter-spacing: 0.5px;
+}
+
 .faq-page{
   padding: 22px 0 40px 0;
 }

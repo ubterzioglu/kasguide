@@ -65,14 +65,14 @@
 
     /* Header */
     .header {
-      background: #21a8ff; /* Mavi arkaplan */
+      background: white; /* Beyaz arkaplan */
       backdrop-filter: blur(10px);
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       padding: 1rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid var(--gray-200);
     }
 
     .header-content {
@@ -199,15 +199,17 @@
     .header .logo-text {
       font-size: 1.5rem !important;
       font-weight: bold;
-      color: white !important; /* Mavi arkaplan üzerinde beyaz yazı */
+      color: #21a8ff !important; /* Turkuaz yazı */
       background: none !important;
       background-clip: unset !important;
       -webkit-background-clip: unset !important;
-      -webkit-text-fill-color: white !important;
+      -webkit-text-fill-color: #21a8ff !important;
       margin: 0 !important;
       padding: 0 !important;
       line-height: 1.2;
       display: block;
+      text-shadow: 0 2px 8px rgba(33, 168, 255, 0.2); /* Artistik gölge */
+      letter-spacing: 0.5px; /* Daha şık görünüm */
     }
 
     /* Menu Toggle Button - Ana sayfadaki gibi */

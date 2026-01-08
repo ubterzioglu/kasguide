@@ -73,10 +73,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #21a8ff; /* Alt sayfalar için mavi arkaplan */
+  background: white; /* Alt sayfalar için beyaz arkaplan */
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-sm);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--gray-200);
 }
 
 /* Ana sayfa için beyaz header (override) - nav-desktop varsa ana sayfadır */
@@ -142,12 +142,14 @@ body:has(.nav-desktop) .header .logo-centered {
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
-  /* Varsayılan: Alt sayfalar için beyaz yazı (mavi arkaplan) */
-  color: white;
+  /* Varsayılan: Alt sayfalar için turkuaz yazı (#21a8ff) */
+  color: #21a8ff;
   background: none;
   -webkit-background-clip: unset;
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: #21a8ff;
   background-clip: unset;
+  text-shadow: 0 2px 8px rgba(33, 168, 255, 0.2); /* Artistik gölge efekti */
+  letter-spacing: 0.5px; /* Daha şık görünüm */
 }
 
 /* Email obfuscation - basic protection */
@@ -1686,58 +1688,171 @@ body.menu-open {
   transform: scale(1);
 }
 
-/* Sticky "filters active" floating button (bottom-right) */
-.filter-fab {
+/* Floating Action Buttons (bottom-right, mobile only) */
+.floating-buttons {
   position: fixed;
   right: calc(16px + env(safe-area-inset-right, 0px));
   bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  height: 48px;
-  padding: 0 14px;
-  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+}
+
+/* Up Button - Always visible on mobile */
+.up-fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: none; /* shown only on mobile */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3), 0 4px 12px rgba(139, 92, 246, 0.2);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(124, 58, 237, 0.95));
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.up-fab::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.up-fab:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.up-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(139, 92, 246, 0.4), 0 6px 16px rgba(124, 58, 237, 0.3);
+}
+
+.up-fab:active {
+  transform: scale(0.95) translateY(0);
+}
+
+.up-fab-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.up-fab-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+/* Filter Button - Visible when filters active */
+.filter-fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
   display: none; /* shown only when filters active */
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-  background: rgba(255,255,255,0.95);
-  color: rgba(0,0,0,0.85);
-  z-index: 9999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(0, 0, 0, 0.12);
+  background: rgba(239, 68, 68, 0.95); /* Kırmızı - filtre seçilmemiş */
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .filter-fab.is-visible {
   display: flex;
 }
 
+.filter-fab.has-filter {
+  background: rgba(16, 185, 129, 0.95); /* Yeşil - filtre seçilmiş */
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3), 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+.filter-fab::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.filter-fab:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.filter-fab:hover {
+  transform: translateY(-2px);
+}
+
+.filter-fab.has-filter:hover {
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4), 0 6px 16px rgba(5, 150, 105, 0.3);
+}
+
+.filter-fab:active {
+  transform: scale(0.95) translateY(0);
+}
+
 .filter-fab-icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .filter-fab-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
 }
 
 .filter-fab-text {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  line-height: 1;
+  display: none; /* Text kaldırıldı, sadece icon */
 }
 
-/* subtle "active filters" pulse */
-.filter-fab.is-visible {
-  animation: fabPulse 2.2s ease-in-out infinite;
+/* Mobile only */
+@media (max-width: 767px) {
+  .floating-buttons {
+    display: flex;
+  }
+  
+  .up-fab {
+    display: flex;
+  }
 }
 
-@keyframes fabPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+/* Desktop'ta gizle */
+@media (min-width: 768px) {
+  .floating-buttons {
+    display: none !important;
+  }
 }
 
 /* ===== Detail page (selection.html) =====

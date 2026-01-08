@@ -425,16 +425,28 @@
     </div>
   </footer>
 
-  <!-- Floating Filter Jump (visible only when filters active) -->
-  <button class="filter-fab" id="filterJump" type="button" aria-label="Filtreler">
-    <span class="filter-fab-icon" aria-hidden="true">
-      <!-- funnel icon -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z"/>
-      </svg>
-    </span>
-    <span class="filter-fab-text">Filtre</span>
-  </button>
+  <!-- Floating Action Buttons (mobile only) -->
+  <div class="floating-buttons">
+    <!-- Up Button -->
+    <button class="up-fab" id="upButton" type="button" aria-label="Yukarı" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      <span class="up-fab-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </span>
+    </button>
+    
+    <!-- Filter Button (visible only when filters active) -->
+    <button class="filter-fab" id="filterJump" type="button" aria-label="Filtreler">
+      <span class="filter-fab-icon" aria-hidden="true">
+        <!-- funnel icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z"/>
+        </svg>
+      </span>
+    </button>
+  </div>
 
     <!-- Scripts -->
   <!-- Data now loaded from database APIs via script.js -->
