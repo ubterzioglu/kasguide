@@ -121,7 +121,7 @@ const categories = [
   },
   {
     id: 'faqspecial',
-    name: 'Özel Soru Serileri',
+    name: 'Ö.S.S.',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M4 4h16v14H5.5L4 19.5V4z"/>
       <path d="M8 8h8"/>
@@ -199,7 +199,7 @@ const categories = [
   },
   {
     id: 'pets',
-    name: 'Patili Dostlar',
+    name: 'Patililer',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <circle cx="11" cy="4" r="2"/>
       <circle cx="18" cy="8" r="2"/>
