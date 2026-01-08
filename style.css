@@ -878,7 +878,7 @@ body.menu-open {
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0; /* Remove gap, using margin-bottom on cards instead for separator spacing */
+  gap: 0; /* Mobilde gap yok, margin-bottom kullanılıyor */
   padding-bottom: 1rem; /* Extra padding at bottom */
 }
 
@@ -1562,7 +1562,10 @@ body.menu-open {
   }
   
   .category-card {
-    aspect-ratio: 1; /* Desktop'ta da kare */
+    aspect-ratio: unset; /* Desktop'ta dikdörtgen */
+    padding: 0.75rem 1.25rem; /* Yüksekliği azaltmak için padding azaltıldı */
+    min-height: auto; /* Yükseklik sınırı kaldırıldı */
+    height: auto; /* Otomatik yükseklik */
   }
   
   .links-grid {
@@ -1678,6 +1681,7 @@ body.menu-open {
 @media (min-width: 1024px) {
   .cards-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; /* Desktop'ta kartlar arası yatay mesafe */
   }
   
   .links-grid {
@@ -1719,6 +1723,7 @@ body.menu-open {
 @media (min-width: 1280px) {
   .cards-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; /* Desktop'ta kartlar arası yatay mesafe */
   }
 }
 
