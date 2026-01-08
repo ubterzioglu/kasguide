@@ -84,7 +84,6 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  position: relative;
 }
 
 .logo {
@@ -94,13 +93,6 @@ body {
   margin-right: 4.25rem; /* Two icon widths spacing from nav items (2 * 34px ≈ 68px) */
 }
 
-.logo-centered {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  z-index: 1;
-}
 
 .logo-img{
   width: 34px;
