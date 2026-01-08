@@ -1101,30 +1101,21 @@ body.menu-open {
 /* Detailed Statistics */
 .detailed-statistics {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 3rem 0;
+  padding: 2rem 0; /* Yükseklik azaltıldı */
   color: white;
 }
 
 .detailed-statistics .section-title {
   color: white;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Alt margin azaltıldı */
 }
 
 .stats-overview {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr)); /* 5 kart tek satır */
+  gap: 1rem; /* Gap azaltıldı */
   margin-bottom: 1.5rem;
-}
-
-
-
-/* Two big cards under stats */
-.stats-bottom{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
 }
 
 .big-stat-card{
@@ -1133,6 +1124,11 @@ body.menu-open {
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .big-stat-label{
@@ -1151,12 +1147,23 @@ body.menu-open {
 }
 
 /* Responsive stats */
-@media (max-width: 1100px){
-  .stats-overview{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stats-bottom{ grid-template-columns: 1fr; }
+@media (max-width: 1200px){
+  .stats-overview{ 
+    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    gap: 0.75rem;
+  }
+}
+@media (max-width: 768px){
+  .stats-overview{ 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: 0.75rem;
+  }
 }
 @media (max-width: 640px){
-  .stats-overview{ grid-template-columns: 1fr; }
+  .stats-overview{ 
+    grid-template-columns: 1fr; 
+    gap: 0.75rem;
+  }
 }
 
 .stat-card {
@@ -1597,11 +1604,11 @@ body.menu-open {
   }
   
   .stats-overview {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
