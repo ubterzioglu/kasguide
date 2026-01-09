@@ -309,11 +309,15 @@ function convertAPIHotel(apiData) {
 
   const isPlaceholder = photos.length > 0 && photos[0].placeholder === true;
 
+  // Hotels: if no categories in attributes, use 'hotels' as default category
+  const categories = attrs.categories || [];
+  const hotelCategories = categories.length > 0 ? categories : ['hotels'];
+
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
-    category: attrs.categories || [],
+    category: hotelCategories,
     images: imageUrls,
     image: imageUrls[0] || null,
     isPlaceholder: isPlaceholder,
@@ -347,11 +351,15 @@ function convertAPIPet(apiData) {
 
   const isPlaceholder = photos.length > 0 && photos[0].placeholder === true;
 
+  // Pets: if no categories in attributes, use 'pets' as default category
+  const categories = attrs.categories || [];
+  const petCategories = categories.length > 0 ? categories : ['pets'];
+
   return {
     id: apiData.id,
     title: apiData.title,
     description: apiData.description,
-    category: attrs.categories || [],
+    category: petCategories,
     images: imageUrls,
     image: imageUrls[0] || null,
     isPlaceholder: isPlaceholder
