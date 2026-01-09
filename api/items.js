@@ -1,17 +1,16 @@
 /**
  * Unified API Endpoint: Get Items
- * Handles: places, pets, hotels, artists
+ * Handles: pets, hotels, artists
+ * NOTE: Places are now handled by /api/places endpoint
  *
- * GET /api/items?type=place                 - Get all places
  * GET /api/items?type=pet                   - Get all pets
  * GET /api/items?type=hotel                 - Get all hotels
  * GET /api/items?type=artist                - Get all artists
  * GET /api/items?id=123                     - Get item by database ID
  * GET /api/items?slug=frida-pub             - Get item by slug
- * GET /api/items?number=PLACE-001           - Get item by number
- * GET /api/items?type=place&category=bar    - Get places by category
+ * GET /api/items?number=PET-001             - Get item by number
  * GET /api/items?search=beach               - Search all items
- * GET /api/items?type=place&search=beach    - Search within type
+ * GET /api/items?type=hotel&search=beach    - Search within type
  */
 
 import {
@@ -78,6 +77,14 @@ export default async function handler(req, res) {
     if (search) {
       const items = await searchItems(search, type || null);
       return res.status(200).json({ items, count: items.length });
+    }
+
+    // Exclude places - they are now handled by /api/places
+    if (type === 'place') {
+      return res.status(400).json({
+        error: 'Places are now handled by /api/places endpoint',
+        message: 'Use GET /api/places instead of GET /api/items?type=place'
+      });
     }
 
     // Get all items with optional filters

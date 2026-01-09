@@ -619,13 +619,23 @@
           return;
         }
 
-        // Use unified items endpoint
-        const typeParam = currentContentType !== 'all' ? `&type=${currentContentType}` : '';
-        const response = await fetch(`/api/admin/items?status=${currentStatus}${typeParam}`, {
-          headers: {
-            'X-API-Key': apiKey
-          }
-        });
+        // Use places endpoint for places, unified items endpoint for others
+        let response;
+        if (currentContentType === 'place') {
+          response = await fetch(`/api/admin/places?status=${currentStatus}`, {
+            headers: {
+              'X-API-Key': apiKey
+            }
+          });
+        } else {
+          // Use unified items endpoint for other types
+          const typeParam = currentContentType !== 'all' ? `&type=${currentContentType}` : '';
+          response = await fetch(`/api/admin/items?status=${currentStatus}${typeParam}`, {
+            headers: {
+              'X-API-Key': apiKey
+            }
+          });
+        }
 
         if (response.status === 401) {
           showLoginError('Geçersiz API anahtarı');
@@ -638,8 +648,10 @@
 
         loading.style.display = 'none';
 
-        // Get items from unified response
-        const items = data.items || [];
+        // Get items from response (places endpoint returns 'places', items endpoint returns 'items')
+        const items = currentContentType === 'place' 
+          ? (data.places || []).map(p => ({ ...p, item_type: 'place' })) // Add item_type for compatibility
+          : (data.items || []);
 
         if (items.length === 0) {
           container.innerHTML = '<div class="empty">Başvuru bulunamadı</div>';
@@ -1299,7 +1311,9 @@
       }
 
       try {
-        const response = await fetch(`/api/admin/items`, {
+        // Use places endpoint for places, items endpoint for others
+        const endpoint = currentContentType === 'place' ? '/api/admin/places' : '/api/admin/items';
+        const response = await fetch(endpoint, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -1329,7 +1343,9 @@
 
     async function deleteSubmission(id) {
       try {
-        const response = await fetch(`/api/admin/items?id=${id}`, {
+        // Use places endpoint for places, items endpoint for others
+        const endpoint = currentContentType === 'place' ? '/api/admin/places' : '/api/admin/items';
+        const response = await fetch(`${endpoint}?id=${id}`, {
           method: 'DELETE',
           headers: {
             'X-API-Key': apiKey

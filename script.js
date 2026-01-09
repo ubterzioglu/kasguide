@@ -118,10 +118,10 @@ function normalizeItem(item, type) {
 
 async function loadPlacesFromAPI() {
   try {
-    const response = await fetch('/api/items?type=place');
+    const response = await fetch('/api/places');
     if (!response.ok) throw new Error(`API error: ${response.status}`);
     const data = await response.json();
-    return (data.items || []).map(convertAPIPlace);
+    return (data.places || []).map(convertAPIPlace);
   } catch (error) {
     console.error('Error loading places:', error);
     return [];

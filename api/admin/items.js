@@ -1,9 +1,10 @@
 /**
  * Unified Admin API - Items Management
- * Handles: places, pets, hotels, artists
+ * Handles: pets, hotels, artists
+ * NOTE: Places are now handled by /api/admin/places endpoint
  *
  * GET /api/admin/items?status=pending              - List pending items (all types)
- * GET /api/admin/items?status=pending&type=place   - List pending places
+ * GET /api/admin/items?status=pending&type=hotel  - List pending hotels
  * GET /api/admin/items?status=approved             - List approved items
  * GET /api/admin/items?stats=true                  - Get statistics
  * PATCH /api/admin/items                           - Update item status
@@ -52,6 +53,14 @@ export default async function handler(req, res) {
         return res.status(200).json({
           success: true,
           stats: statistics
+        });
+      }
+
+      // Exclude places - they are now handled by /api/admin/places
+      if (type === 'place') {
+        return res.status(400).json({
+          error: 'Places are now handled by /api/admin/places endpoint',
+          message: 'Use GET /api/admin/places instead'
         });
       }
 
