@@ -158,7 +158,12 @@ async function loadHotelsFromAPI() {
     const response = await fetch('/api/places?category=hotels');
     if (!response.ok) throw new Error(`API error: ${response.status}`);
     const data = await response.json();
-    return (data.places || []).map(convertAPIPlaceToHotel);
+    const hotels = (data.places || []).map(convertAPIPlaceToHotel);
+    console.log(`🏨 Loaded ${hotels.length} hotels from API`);
+    if (hotels.length > 0) {
+      console.log('🏨 First hotel:', { id: hotels[0].id, title: hotels[0].title, type: hotels[0].type, category: hotels[0].category });
+    }
+    return hotels;
   } catch (error) {
     console.error('Error loading hotels:', error);
     return [];
@@ -169,6 +174,9 @@ async function loadHotelsFromAPI() {
 function convertAPIPlaceToHotel(apiData) {
   // Use the same convertAPIPlace logic since hotels are now places
   const placeData = convertAPIPlace(apiData);
+  
+  // Set type to 'hotel' for filtering to work correctly
+  placeData.type = 'hotel';
   
   // Ensure hotels category is included
   if (!placeData.category.includes('hotels')) {
@@ -220,6 +228,20 @@ function convertAPIPlace(apiData) {
     photos = [];
   }
 
+  // Parse categories - ensure it's an array
+  let categories = attrs.categories || [];
+  if (typeof categories === 'string') {
+    try {
+      categories = JSON.parse(categories);
+    } catch (e) {
+      console.warn('Failed to parse categories for', apiData.title, e);
+      categories = [];
+    }
+  }
+  if (!Array.isArray(categories)) {
+    categories = [];
+  }
+
   // Extract image URLs - handle both object {url: "..."} and string formats
   const imageUrls = photos.map(p => {
     if (typeof p === 'string') return p;
@@ -234,7 +256,7 @@ function convertAPIPlace(apiData) {
     title: apiData.title,
     description: apiData.description,
     longText: apiData.long_text,
-    category: attrs.categories || [],
+    category: categories,
     images: imageUrls,
     image: imageUrls[0] || null,  // Single image for cards
     isPlaceholder: isPlaceholder,
@@ -420,6 +442,7 @@ async function buildAllItems() {
 
     console.log('🔍 Sample article:', articlesList[0]);
     console.log('🔍 Sample interview:', interviewsList[0]);
+    console.log('🔍 Sample hotel:', hotels[0]);
 
     allItems = [...places, ...articlesList, ...interviewsList, ...faqs, ...hotels, ...pets];
     filteredItems = [...allItems];
@@ -714,7 +737,11 @@ function applyFilters() {
     // Get items by type for special categories
     const specialItems = filtered.filter((it) => {
       if (hasArticles && it.type === 'article') return true;
-      if (hasHotels && it.type === 'hotel') return true;
+      if (hasHotels && it.type === 'hotel') {
+        // Debug: Log hotel items when filtering
+        console.log('🏨 Hotel item found:', { id: it.id, title: it.title, type: it.type, category: it.category });
+        return true;
+      }
       if (hasPets && it.type === 'pet') return true;
       if (hasFaqSpecial && it.type === 'faqspecial') return true;
       return false;
