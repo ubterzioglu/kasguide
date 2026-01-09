@@ -21,6 +21,8 @@
     "db:unified:data": "node db/migrate-unified.js data-only",
     "db:unified:verify": "node db/migrate-unified.js verify",
     "db:unified:rollback": "node db/migrate-unified.js rollback",
+    "db:migrate:places": "node db/migrate-places-from-items.js",
+    "db:migrate:places:dry-run": "node db/migrate-places-from-items.js --dry-run",
     "dev": "vercel dev",
     "build": "echo 'Static site - no build needed'",
     "start": "vercel dev"

@@ -50,7 +50,7 @@ SELECT
   i.slug,
   i.title,
   i.description,
-  i.long_text,
+  COALESCE(i.long_text, '') as long_text,
   CASE
     WHEN i.attributes->>'badge_id' IS NOT NULL 
     THEN (i.attributes->>'badge_id')::integer
@@ -107,31 +107,31 @@ INSERT INTO place_images (place_id, image_url, sequence_order, caption)
 SELECT
   p.id as place_id,
   CASE
-    WHEN jsonb_typeof(photo) = 'object' THEN photo->>'url'
-    WHEN jsonb_typeof(photo) = 'string' THEN photo #>> '{}'
+    WHEN jsonb_typeof(photo.value) = 'object' THEN photo.value->>'url'
+    WHEN jsonb_typeof(photo.value) = 'string' THEN photo.value #>> '{}'
     ELSE NULL
   END as image_url,
   COALESCE(
     CASE
-      WHEN jsonb_typeof(photo) = 'object' THEN (photo->>'sequence')::integer
+      WHEN jsonb_typeof(photo.value) = 'object' THEN (photo.value->>'sequence')::integer
       ELSE NULL
     END,
-    ordinality - 1
+    photo.ordinality - 1
   ) as sequence_order,
   CASE
-    WHEN jsonb_typeof(photo) = 'object' THEN photo->>'caption'
+    WHEN jsonb_typeof(photo.value) = 'object' THEN photo.value->>'caption'
     ELSE NULL
   END as caption
 FROM items i
 JOIN places p ON p.slug = i.slug
-CROSS JOIN LATERAL jsonb_array_elements(i.photos) WITH ORDINALITY AS photo
+CROSS JOIN LATERAL jsonb_array_elements(i.photos) WITH ORDINALITY AS photo(value, ordinality)
 WHERE i.item_type = 'place'
   AND i.photos IS NOT NULL
   AND jsonb_array_length(i.photos) > 0
   AND (
     CASE
-      WHEN jsonb_typeof(photo) = 'object' THEN photo->>'url'
-      WHEN jsonb_typeof(photo) = 'string' THEN photo #>> '{}'
+      WHEN jsonb_typeof(photo.value) = 'object' THEN photo.value->>'url'
+      WHEN jsonb_typeof(photo.value) = 'string' THEN photo.value #>> '{}'
       ELSE NULL
     END
   ) IS NOT NULL
@@ -141,8 +141,8 @@ WHERE i.item_type = 'place'
     WHERE pi.place_id = p.id 
       AND pi.image_url = (
         CASE
-          WHEN jsonb_typeof(photo) = 'object' THEN photo->>'url'
-          WHEN jsonb_typeof(photo) = 'string' THEN photo #>> '{}'
+          WHEN jsonb_typeof(photo.value) = 'object' THEN photo.value->>'url'
+          WHEN jsonb_typeof(photo.value) = 'string' THEN photo.value #>> '{}'
           ELSE NULL
         END
       )
@@ -153,9 +153,9 @@ WHERE i.item_type = 'place'
 -- ============================================================================
 
 INSERT INTO place_categories (place_id, category_id)
-SELECT
+SELECT DISTINCT
   p.id as place_id,
-  (cat_id::text)::integer as category_id
+  c.id as category_id
 FROM items i
 JOIN places p ON p.slug = i.slug
 CROSS JOIN LATERAL jsonb_array_elements_text(
@@ -164,15 +164,18 @@ CROSS JOIN LATERAL jsonb_array_elements_text(
     THEN i.attributes->'categories'
     ELSE '[]'::jsonb
   END
-) AS cat_id
+) AS cat_slug(value)
+JOIN categories c ON c.slug = cat_slug.value
 WHERE i.item_type = 'place'
   AND i.attributes->'categories' IS NOT NULL
   AND jsonb_array_length(i.attributes->'categories') > 0
+  AND cat_slug.value IS NOT NULL
+  AND cat_slug.value != ''
   AND NOT EXISTS (
     -- Skip if category already linked to this place
     SELECT 1 FROM place_categories pc 
     WHERE pc.place_id = p.id 
-      AND pc.category_id = (cat_id::text)::integer
+      AND pc.category_id = c.id
   );
 
 -- ============================================================================
@@ -182,7 +185,7 @@ WHERE i.item_type = 'place'
 INSERT INTO place_facilities (place_id, facility_name)
 SELECT
   p.id as place_id,
-  facility #>> '{}' as facility_name
+  facility.value as facility_name
 FROM items i
 JOIN places p ON p.slug = i.slug
 CROSS JOIN LATERAL jsonb_array_elements_text(
@@ -191,15 +194,17 @@ CROSS JOIN LATERAL jsonb_array_elements_text(
     THEN i.attributes->'facilities'
     ELSE '[]'::jsonb
   END
-) AS facility
+) AS facility(value)
 WHERE i.item_type = 'place'
   AND i.attributes->'facilities' IS NOT NULL
   AND jsonb_array_length(i.attributes->'facilities') > 0
+  AND facility.value IS NOT NULL
+  AND facility.value != ''
   AND NOT EXISTS (
     -- Skip if facility already exists for this place
     SELECT 1 FROM place_facilities pf 
     WHERE pf.place_id = p.id 
-      AND pf.facility_name = facility #>> '{}'
+      AND pf.facility_name = facility.value
   );
 
 -- ============================================================================
@@ -209,7 +214,7 @@ WHERE i.item_type = 'place'
 INSERT INTO place_features (place_id, feature_text)
 SELECT
   p.id as place_id,
-  feature #>> '{}' as feature_text
+  feature.value as feature_text
 FROM items i
 JOIN places p ON p.slug = i.slug
 CROSS JOIN LATERAL jsonb_array_elements_text(
@@ -218,15 +223,17 @@ CROSS JOIN LATERAL jsonb_array_elements_text(
     THEN i.attributes->'features'
     ELSE '[]'::jsonb
   END
-) AS feature
+) AS feature(value)
 WHERE i.item_type = 'place'
   AND i.attributes->'features' IS NOT NULL
   AND jsonb_array_length(i.attributes->'features') > 0
+  AND feature.value IS NOT NULL
+  AND feature.value != ''
   AND NOT EXISTS (
     -- Skip if feature already exists for this place
     SELECT 1 FROM place_features pft 
     WHERE pft.place_id = p.id 
-      AND pft.feature_text = feature #>> '{}'
+      AND pft.feature_text = feature.value
   );
 
 -- ============================================================================
@@ -236,7 +243,7 @@ WHERE i.item_type = 'place'
 INSERT INTO place_tags (place_id, tag_name)
 SELECT
   p.id as place_id,
-  tag #>> '{}' as tag_name
+  tag.value as tag_name
 FROM items i
 JOIN places p ON p.slug = i.slug
 CROSS JOIN LATERAL jsonb_array_elements_text(
@@ -245,15 +252,17 @@ CROSS JOIN LATERAL jsonb_array_elements_text(
     THEN i.attributes->'tags'
     ELSE '[]'::jsonb
   END
-) AS tag
+) AS tag(value)
 WHERE i.item_type = 'place'
   AND i.attributes->'tags' IS NOT NULL
   AND jsonb_array_length(i.attributes->'tags') > 0
+  AND tag.value IS NOT NULL
+  AND tag.value != ''
   AND NOT EXISTS (
     -- Skip if tag already exists for this place
     SELECT 1 FROM place_tags pt 
     WHERE pt.place_id = p.id 
-      AND pt.tag_name = tag #>> '{}'
+      AND pt.tag_name = tag.value
   );
 
 -- ============================================================================
