@@ -24,6 +24,11 @@
     "db:migrate:places": "node db/migrate-places-from-items.js",
     "db:migrate:places:dry-run": "node db/migrate-places-from-items.js --dry-run",
     "db:fix:categories": "node db/fix-place-categories.js",
+    "db:check": "node db/check-current-state.js",
+    "db:cleanup:places": "node db/cleanup-items-places.js",
+    "db:create:hotel-placeholder": "node db/create-hotel-placeholder.js",
+    "db:migrate:hotels": "node db/migrate-hotels-to-places.js",
+    "db:migrate:hotels:dry-run": "node db/migrate-hotels-to-places.js --dry-run",
     "dev": "vercel dev",
     "build": "echo 'Static site - no build needed'",
     "start": "vercel dev"

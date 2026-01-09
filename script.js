@@ -154,14 +154,28 @@ async function loadFaqSeriesFromAPI() {
 
 async function loadHotelsFromAPI() {
   try {
-    const response = await fetch('/api/items?type=hotel');
+    // Hotels are now in places table with 'hotels' category
+    const response = await fetch('/api/places?category=hotels');
     if (!response.ok) throw new Error(`API error: ${response.status}`);
     const data = await response.json();
-    return (data.items || []).map(convertAPIHotel);
+    return (data.places || []).map(convertAPIPlaceToHotel);
   } catch (error) {
     console.error('Error loading hotels:', error);
     return [];
   }
+}
+
+// Convert place (with hotels category) to hotel format
+function convertAPIPlaceToHotel(apiData) {
+  // Use the same convertAPIPlace logic since hotels are now places
+  const placeData = convertAPIPlace(apiData);
+  
+  // Ensure hotels category is included
+  if (!placeData.category.includes('hotels')) {
+    placeData.category.push('hotels');
+  }
+  
+  return placeData;
 }
 
 async function loadPetsFromAPI() {
@@ -370,21 +384,30 @@ function convertAPIPet(apiData) {
 async function buildAllItems() {
   try {
     // Load all data in parallel
-    const [placesData, articlesData, interviewsData, faqSeriesData, hotelsData, petsData] = await Promise.all([
-      loadPlacesFromAPI(),
+    // Note: Hotels are loaded from places table with 'hotels' category
+    // Places are loaded without hotels category to avoid duplicates
+    const [allPlacesData, articlesData, interviewsData, faqSeriesData, hotelsData, petsData] = await Promise.all([
+      loadPlacesFromAPI(), // Loads all places (including hotels, but we'll filter)
       loadArticlesFromAPI(),
       loadInterviewsFromAPI(),
       loadFaqSeriesFromAPI(),
-      loadHotelsFromAPI(),
+      loadHotelsFromAPI(), // Loads only places with 'hotels' category
       loadPetsFromAPI()
     ]);
 
+    // Separate places from hotels
+    // Places: all places except those with 'hotels' category
+    const placesData = allPlacesData.filter(p => {
+      const cats = p.category || [];
+      return !cats.includes('hotels');
+    });
+
     console.log('📊 Raw data loaded:', {
       places: placesData.length,
+      hotels: hotelsData.length,
       articles: articlesData.length,
       interviews: interviewsData.length,
       faqs: faqSeriesData.length,
-      hotels: hotelsData.length,
       pets: petsData.length
     });
 
@@ -401,7 +424,7 @@ async function buildAllItems() {
     allItems = [...places, ...articlesList, ...interviewsList, ...faqs, ...hotels, ...pets];
     filteredItems = [...allItems];
 
-    console.log(`✅ Loaded ${allItems.length} items from database (${articlesList.length} articles, ${interviewsList.length} interviews)`);
+    console.log(`✅ Loaded ${allItems.length} items from database (${places.length} places, ${hotels.length} hotels, ${articlesList.length} articles, ${interviewsList.length} interviews)`);
   } catch (error) {
     console.error('Error building items:', error);
     allItems = [];
