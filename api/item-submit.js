@@ -141,7 +141,7 @@ export default async function handler(req, res) {
           listingType: first(fields.listingType),
           age: first(fields.age),
           breed: first(fields.breed),
-          shortNote: first(fields.shortNote) || description,
+          shortNote: description || first(fields.shortNote) || '',
         };
         break;
 

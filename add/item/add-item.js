@@ -121,6 +121,19 @@ function selectType(type) {
     commonContactRows[1].style.display = (type === 'artist' || type === 'pet') ? 'none' : 'grid';
   }
 
+  // Initialize character counter for pet description
+  if (type === 'pet') {
+    const petDescInput = document.getElementById('petDescription');
+    const petDescCounter = document.getElementById('petDescriptionCounter');
+    if (petDescInput && petDescCounter) {
+      const updateCounter = () => {
+        petDescCounter.textContent = String(petDescInput.value.length || 0);
+      };
+      petDescInput.addEventListener('input', updateCounter);
+      updateCounter(); // Initial count
+    }
+  }
+
   // Show main form
   typeSelection.style.display = 'none';
   mainForm.classList.add('active');

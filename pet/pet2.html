@@ -390,6 +390,189 @@ a { color: inherit; text-decoration: none; }
 .hidden {
   display: none !important;
 }
+
+/* Pet Detail Styles */
+.pet-detail-card {
+  background: rgba(255,255,255,.95);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255,255,255,.4);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pet-detail-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.pet-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-detail-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 800;
+  font-size: .85rem;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  backdrop-filter: blur(4px);
+}
+
+.pet-detail-card.lost .pet-detail-badge {
+  background: linear-gradient(135deg, #f59e0b, #dc2626);
+}
+
+.pet-detail-card.adopt .pet-detail-badge {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+}
+
+.pet-detail-content {
+  padding: 2rem;
+}
+
+.pet-detail-header {
+  margin-bottom: 1.5rem;
+}
+
+.pet-detail-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+}
+
+.pet-detail-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: .9rem;
+  color: var(--gray-600);
+}
+
+.pet-detail-meta .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pet-detail-meta .meta-icon {
+  font-size: 1.1rem;
+}
+
+.pet-detail-gallery {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pet-detail-gallery .gallery-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--gray-200);
+}
+
+.pet-detail-gallery .gallery-thumb:hover {
+  transform: scale(1.1);
+  border-color: var(--brand);
+}
+
+.pet-detail-gallery .gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-detail-description {
+  margin-bottom: 1.5rem;
+}
+
+.pet-detail-description h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.75rem;
+}
+
+.pet-detail-description p {
+  color: var(--gray-700);
+  font-size: 1rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.pet-detail-contact {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.btn-large {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.pet-detail-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255,255,255,.95);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pet-detail-empty h2 {
+  font-size: 1.75rem;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+}
+
+.pet-detail-empty p {
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+}
+
+.pet-detail-loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: rgba(255,255,255,.8);
+}
+
+.loading-spinner {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .pet-detail-hero {
+    height: 300px;
+  }
+  
+  .pet-detail-content {
+    padding: 1.5rem;
+  }
+  
+  .pet-detail-name {
+    font-size: 1.5rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -402,7 +585,7 @@ a { color: inherit; text-decoration: none; }
       </a>
       <nav class="nav">
         <a href="../index.html" class="nav__link">Ana Sayfa</a>
-        <a href="./add-pet/add-pet.html" class="nav__link nav__link--primary">+ Pet Ekle</a>
+        <a href="../add/pet/add-pet.html" class="nav__link nav__link--primary">+ Pet Ekle</a>
       </nav>
     </div>
   </header>
@@ -444,131 +627,11 @@ a { color: inherit; text-decoration: none; }
 
     <section class="pets-section">
       <div class="container">
-        <div class="pets-grid" id="petsGrid">
-          
-          <!-- ÖRNEK PET CARD 1 - KAYIP -->
-          <article class="pet-card" data-type="Kayıp">
-            <div class="pet-badge">🔍 Kayıp</div>
-            <div class="pet-image">
-              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600" alt="Minnoş">
-              <div class="pet-gallery">
-                <div class="gallery-thumb">
-                  <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=100" alt="Thumb 1">
-                </div>
-                <div class="gallery-thumb">
-                  <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=100" alt="Thumb 2">
-                </div>
-                <div class="gallery-thumb">
-                  <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=100" alt="Thumb 3">
-                </div>
-              </div>
-            </div>
-            <div class="pet-content">
-              <div class="pet-header">
-                <h3 class="pet-name">Minnoş</h3>
-                <div class="pet-meta">
-                  <span class="meta-item">
-                    <span class="meta-icon">🐱</span> Kedi
-                  </span>
-                  <span class="meta-item">
-                    <span class="meta-icon">📅</span> 2-3 yaş
-                  </span>
-                  <span class="meta-item">
-                    <span class="meta-icon">🧬</span> Tekir
-                  </span>
-                </div>
-              </div>
-              <p class="pet-description">
-                Kaş merkez Hükümet Caddesi'nde görüldü. Çok ürkek, yeşil gözlü tekir kedi. Beyaz pati ve göğsü var. Lütfen görürseniz haber verin.
-              </p>
-              <div class="pet-footer">
-                <a href="tel:+4917012345678" class="btn btn-primary">📞 İletişim</a>
-                <button class="btn btn-secondary">📝 Detay</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- ÖRNEK PET CARD 2 - SAHİPLENDİRİLECEK -->
-          <article class="pet-card" data-type="Sahiplendirilecek">
-            <div class="pet-badge">🏠 Sahiplendirme</div>
-            <div class="pet-image">
-              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600" alt="Çıtır">
-              <div class="pet-gallery">
-                <div class="gallery-thumb">
-                  <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=100" alt="Thumb 1">
-                </div>
-                <div class="gallery-thumb">
-                  <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=100" alt="Thumb 2">
-                </div>
-              </div>
-            </div>
-            <div class="pet-content">
-              <div class="pet-header">
-                <h3 class="pet-name">Çıtır</h3>
-                <div class="pet-meta">
-                  <span class="meta-item">
-                    <span class="meta-icon">🐶</span> Köpek
-                  </span>
-                  <span class="meta-item">
-                    <span class="meta-icon">📅</span> 6 ay
-                  </span>
-                  <span class="meta-item">
-                    <span class="meta-icon">🧬</span> Mix
-                  </span>
-                </div>
-              </div>
-              <p class="pet-description">
-                Çok oyuncu, insanlarla iyi geçinen, aşıları tam genç dişi köpek. Bahçeli eve uygun. Çok sevecen ve akıllı.
-              </p>
-              <div class="pet-footer">
-                <a href="tel:+4917087654321" class="btn btn-primary">📞 İletişim</a>
-                <button class="btn btn-secondary">📝 Detay</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- ÖRNEK PET CARD 3 - SAHİPLENDİRİLECEK -->
-          <article class="pet-card" data-type="Sahiplendirilecek">
-            <div class="pet-badge">🏠 Sahiplendirme</div>
-            <div class="pet-image">
-              <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=600" alt="Pamuk">
-              <div class="pet-gallery">
-                <div class="gallery-thumb">
-                  <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=100" alt="Thumb 1">
-                </div>
-              </div>
-            </div>
-            <div class="pet-content">
-              <div class="pet-header">
-                <h3 class="pet-name">Pamuk</h3>
-                <div class="pet-meta">
-                  <span class="meta-item">
-                    <span class="meta-icon">🐱</span> Kedi
-                  </span>
-                  <span class="meta-item">
-                    <span class="meta-icon">📅</span> 4 yaş
-                  </span>
-                  <span class="meta-item">
-                    <span class="meta-icon">🧬</span> Van kedisi
-                  </span>
-                </div>
-              </div>
-              <p class="pet-description">
-                Beyaz, uzun tüylü, mavi gözlü Van kedisi. Çok sakin, evde yaşamaya alışkın. Kısırlaştırılmış, aşıları tam.
-              </p>
-              <div class="pet-footer">
-                <a href="tel:+4917011223344" class="btn btn-primary">📞 İletişim</a>
-                <button class="btn btn-secondary">📝 Detay</button>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="empty-state hidden" id="emptyState">
-          <div class="empty-state-icon">🐾</div>
-          <h3>Henüz ilan yok</h3>
-          <p>Bu kategoride henüz pet ilanı bulunmuyor.</p>
+        <div id="petDetailContainer">
+          <!-- Pet detail will be loaded here by pet2.js -->
+          <div class="pet-detail-loading">
+            <div class="loading-spinner">Yükleniyor...</div>
+          </div>
         </div>
       </div>
     </section>
@@ -636,10 +699,6 @@ a { color: inherit; text-decoration: none; }
       });
     });
 
-    // Initialize
-    updateStats();
-    filterPets('all');
-  </script>
-
+  <script src="pet2.js"></script>
 </body>
 </html>

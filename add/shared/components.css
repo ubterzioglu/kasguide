@@ -462,6 +462,22 @@ textarea {
   margin-bottom:0;
 }
 
+/* Character counter styles */
+.charline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.counter {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
 @media (max-width: 640px){
   .form-row{
     grid-template-columns: 1fr;
